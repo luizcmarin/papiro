@@ -1,0 +1,1210 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 37,
+    "identityHash": "b03c590d37f7f47ad7e36e969a57fc26",
+    "entities": [
+      {
+        "tableName": "tbl_pasta",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nome` TEXT NOT NULL, `icone` TEXT NOT NULL, `ordem` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "icone",
+            "columnName": "icone",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ordem",
+            "columnName": "ordem",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": ["id"]
+        }
+      },
+      {
+        "tableName": "tbl_anotacao",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `pasta_id` INTEGER, `titulo` TEXT NOT NULL, `conteudo` TEXT NOT NULL, `tipo_modelo` TEXT NOT NULL, `data_criacao` INTEGER NOT NULL, `data_modificacao` INTEGER NOT NULL, `esta_fixada` INTEGER NOT NULL, `esta_arquivada` INTEGER NOT NULL, `etiquetas` TEXT NOT NULL, FOREIGN KEY(`pasta_id`) REFERENCES `tbl_pasta`(`id`) ON UPDATE NO ACTION ON DELETE SET NULL )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pastaId",
+            "columnName": "pasta_id",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "titulo",
+            "columnName": "titulo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "conteudo",
+            "columnName": "conteudo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoModelo",
+            "columnName": "tipo_modelo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataCriacao",
+            "columnName": "data_criacao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataModificacao",
+            "columnName": "data_modificacao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "estaFixada",
+            "columnName": "esta_fixada",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "estaArquivada",
+            "columnName": "esta_arquivada",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "etiquetas",
+            "columnName": "etiquetas",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": ["id"]
+        },
+        "indices": [
+          {
+            "name": "index_tbl_anotacao_pasta_id",
+            "unique": false,
+            "columnNames": ["pasta_id"],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_tbl_anotacao_pasta_id` ON `${TABLE_NAME}` (`pasta_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "tbl_pasta",
+            "onDelete": "SET NULL",
+            "onUpdate": "NO ACTION",
+            "columns": ["pasta_id"],
+            "referencedColumns": ["id"]
+          }
+        ]
+      },
+      {
+        "tableName": "tbl_perguntas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `pergunta` TEXT NOT NULL, `referencia` TEXT NOT NULL, `dificuldade` INTEGER NOT NULL, `resposta1` TEXT NOT NULL, `resposta2` TEXT NOT NULL, `resposta3` TEXT NOT NULL, `resposta4` TEXT NOT NULL, `correta` INTEGER NOT NULL, `publicar` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pergunta",
+            "columnName": "pergunta",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "referencia",
+            "columnName": "referencia",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dificuldade",
+            "columnName": "dificuldade",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resposta1",
+            "columnName": "resposta1",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resposta2",
+            "columnName": "resposta2",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resposta3",
+            "columnName": "resposta3",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resposta4",
+            "columnName": "resposta4",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "correta",
+            "columnName": "correta",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "publicar",
+            "columnName": "publicar",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": ["id"]
+        }
+      },
+      {
+        "tableName": "tbl_poesias",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `titulo` TEXT NOT NULL, `texto` TEXT NOT NULL, `conteudo` TEXT NOT NULL, `anteriorId` INTEGER, `proximoId` INTEGER, `publicar` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "titulo",
+            "columnName": "titulo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "texto",
+            "columnName": "texto",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "conteudo",
+            "columnName": "conteudo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "anteriorId",
+            "columnName": "anteriorId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "proximoId",
+            "columnName": "proximoId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "publicar",
+            "columnName": "publicar",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": ["id"]
+        }
+      },
+      {
+        "tableName": "tbl_conquistas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `nome` TEXT, `descricao` TEXT, `meta` INTEGER, `icone` TEXT, `publicar` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "nome",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "descricao",
+            "columnName": "descricao",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "meta",
+            "columnName": "meta",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "icone",
+            "columnName": "icone",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "publicar",
+            "columnName": "publicar",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": ["id"]
+        }
+      },
+      {
+        "tableName": "tbl_vibes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `texto` TEXT, `animacao` TEXT, `publicar` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "texto",
+            "columnName": "texto",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "animacao",
+            "columnName": "animacao",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "publicar",
+            "columnName": "publicar",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": ["id"]
+        }
+      },
+      {
+        "tableName": "tbl_recordes_memoria",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`dificuldade` TEXT NOT NULL, `melhorTempoMs` INTEGER NOT NULL, `melhorMovimentos` INTEGER NOT NULL, `partidasConcluidas` INTEGER NOT NULL, `atualizadoEm` INTEGER NOT NULL, PRIMARY KEY(`dificuldade`))",
+        "fields": [
+          {
+            "fieldPath": "dificuldade",
+            "columnName": "dificuldade",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "melhorTempoMs",
+            "columnName": "melhorTempoMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "melhorMovimentos",
+            "columnName": "melhorMovimentos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "partidasConcluidas",
+            "columnName": "partidasConcluidas",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "atualizadoEm",
+            "columnName": "atualizadoEm",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": ["dificuldade"]
+        }
+      },
+      {
+        "tableName": "tbl_guias",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `titulo` TEXT NOT NULL, `texto` TEXT NOT NULL, `publicar` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "titulo",
+            "columnName": "titulo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "texto",
+            "columnName": "texto",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "publicar",
+            "columnName": "publicar",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": ["id"]
+        }
+      },
+      {
+        "tableName": "tbl_categorias_financeiro",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nome` TEXT NOT NULL, `icone` TEXT NOT NULL, `hex_cor` TEXT NOT NULL, `limite_mensal` REAL NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "icone",
+            "columnName": "icone",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hexCor",
+            "columnName": "hex_cor",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limiteMensal",
+            "columnName": "limite_mensal",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": ["id"]
+        }
+      },
+      {
+        "tableName": "tbl_transacoes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `descricao` TEXT NOT NULL, `valor` REAL NOT NULL, `tipo` INTEGER NOT NULL, `categoria_id` INTEGER NOT NULL, `data_vencimento` INTEGER NOT NULL, `esta_pago` INTEGER NOT NULL, `data_criacao` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "descricao",
+            "columnName": "descricao",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "valor",
+            "columnName": "valor",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipo",
+            "columnName": "tipo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "categoriaId",
+            "columnName": "categoria_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataVencimento",
+            "columnName": "data_vencimento",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "estaPago",
+            "columnName": "esta_pago",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataCriacao",
+            "columnName": "data_criacao",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": ["id"]
+        }
+      },
+      {
+        "tableName": "tbl_meta",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `titulo` TEXT NOT NULL, `item` TEXT NOT NULL, `ativo_id` INTEGER NOT NULL DEFAULT 0, `ativo_nome` TEXT NOT NULL DEFAULT '', `data_meta` INTEGER NOT NULL, `prazo_final` INTEGER NOT NULL, `progresso_atual` REAL NOT NULL, `progresso_alvo` REAL NOT NULL, `esta_concluida` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "titulo",
+            "columnName": "titulo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "item",
+            "columnName": "item",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ativoId",
+            "columnName": "ativo_id",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          },
+          {
+            "fieldPath": "ativoNome",
+            "columnName": "ativo_nome",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "''"
+          },
+          {
+            "fieldPath": "dataMeta",
+            "columnName": "data_meta",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "prazoFinal",
+            "columnName": "prazo_final",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "progressoAtual",
+            "columnName": "progresso_atual",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "progressoAlvo",
+            "columnName": "progresso_alvo",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "estaConcluida",
+            "columnName": "esta_concluida",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": ["id"]
+        }
+      },
+      {
+        "tableName": "tbl_kits_checklist",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `id_remoto` INTEGER, `nome` TEXT NOT NULL, `icone` TEXT NOT NULL, `publicar` INTEGER NOT NULL, `data_criacao` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "idRemoto",
+            "columnName": "id_remoto",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "icone",
+            "columnName": "icone",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "publicar",
+            "columnName": "publicar",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataCriacao",
+            "columnName": "data_criacao",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": ["id"]
+        }
+      },
+      {
+        "tableName": "tbl_itens_checklist",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `id_remoto` INTEGER, `kit_id` INTEGER NOT NULL, `rotulo` TEXT NOT NULL, `quantidade` TEXT NOT NULL, `esta_marcado` INTEGER NOT NULL, `data_vencimento` INTEGER NOT NULL, `observacoes` TEXT NOT NULL, `publicar` INTEGER NOT NULL, FOREIGN KEY(`kit_id`) REFERENCES `tbl_kits_checklist`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "idRemoto",
+            "columnName": "id_remoto",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "kitId",
+            "columnName": "kit_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rotulo",
+            "columnName": "rotulo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "quantidade",
+            "columnName": "quantidade",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "estaMarcado",
+            "columnName": "esta_marcado",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataVencimento",
+            "columnName": "data_vencimento",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "observacoes",
+            "columnName": "observacoes",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "publicar",
+            "columnName": "publicar",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": ["id"]
+        },
+        "indices": [
+          {
+            "name": "index_tbl_itens_checklist_kit_id",
+            "unique": false,
+            "columnNames": ["kit_id"],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_tbl_itens_checklist_kit_id` ON `${TABLE_NAME}` (`kit_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "tbl_kits_checklist",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": ["kit_id"],
+            "referencedColumns": ["id"]
+          }
+        ]
+      },
+      {
+        "tableName": "tbl_documentos_cofre",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `rotulo` TEXT NOT NULL, `tipo_mime` TEXT NOT NULL, `blob_criptografado` BLOB NOT NULL, `data_criacao` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rotulo",
+            "columnName": "rotulo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoMime",
+            "columnName": "tipo_mime",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "blobCriptografado",
+            "columnName": "blob_criptografado",
+            "affinity": "BLOB",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataCriacao",
+            "columnName": "data_criacao",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": ["id"]
+        }
+      },
+      {
+        "tableName": "tbl_estoque_alimentos",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `item` TEXT NOT NULL, `quantidade` INTEGER NOT NULL DEFAULT 1, `peso_unitario` INTEGER NOT NULL, `calorias_por_100g` INTEGER NOT NULL, `data_vencimento` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "item",
+            "columnName": "item",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "quantidade",
+            "columnName": "quantidade",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "1"
+          },
+          {
+            "fieldPath": "pesoUnitario",
+            "columnName": "peso_unitario",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "caloriasPor100g",
+            "columnName": "calorias_por_100g",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataVencimento",
+            "columnName": "data_vencimento",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": ["id"]
+        }
+      },
+      {
+        "tableName": "tbl_sessoes_estudo",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `assunto` TEXT NOT NULL, `tipo_ciclo` TEXT NOT NULL, `duracao_minutos` INTEGER NOT NULL, `concluido_em` INTEGER NOT NULL, `nota_meditacao` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "assunto",
+            "columnName": "assunto",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoCiclo",
+            "columnName": "tipo_ciclo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "duracaoMinutos",
+            "columnName": "duracao_minutos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "concluidoEm",
+            "columnName": "concluido_em",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "notaMeditacao",
+            "columnName": "nota_meditacao",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": ["id"]
+        }
+      },
+      {
+        "tableName": "tbl_conquistas_estudo",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `tipo` TEXT NOT NULL, `desbloqueado_em` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipo",
+            "columnName": "tipo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "desbloqueadoEm",
+            "columnName": "desbloqueado_em",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": ["id"]
+        }
+      },
+      {
+        "tableName": "tbl_receitas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `id_remoto` INTEGER, `titulo` TEXT NOT NULL, `categoria` TEXT NOT NULL, `ingredientes` TEXT NOT NULL, `instrucoes` TEXT NOT NULL, `publicar` INTEGER NOT NULL, `data_criacao` INTEGER NOT NULL, `data_atualizacao` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "idRemoto",
+            "columnName": "id_remoto",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "titulo",
+            "columnName": "titulo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "categoria",
+            "columnName": "categoria",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ingredientes",
+            "columnName": "ingredientes",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "instrucoes",
+            "columnName": "instrucoes",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "publicar",
+            "columnName": "publicar",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataCriacao",
+            "columnName": "data_criacao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataAtualizacao",
+            "columnName": "data_atualizacao",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": ["id"]
+        }
+      },
+      {
+        "tableName": "tbl_relatorios_ministerio",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mes` INTEGER NOT NULL, `ano` INTEGER NOT NULL, `ano_servico` INTEGER NOT NULL, `horas` REAL NOT NULL, `estudos` INTEGER NOT NULL, `participacao` INTEGER NOT NULL, `tipo_publicador` TEXT NOT NULL, `meta_horas` REAL NOT NULL, `notas_publicacoes` TEXT NOT NULL, `telefone_dirigente` TEXT NOT NULL, `nome_dirigente` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mes",
+            "columnName": "mes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ano",
+            "columnName": "ano",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "anoServico",
+            "columnName": "ano_servico",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "horas",
+            "columnName": "horas",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "estudos",
+            "columnName": "estudos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "participacao",
+            "columnName": "participacao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoPublicador",
+            "columnName": "tipo_publicador",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "metaHoras",
+            "columnName": "meta_horas",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "notasPublicacoes",
+            "columnName": "notas_publicacoes",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "telefoneDirigente",
+            "columnName": "telefone_dirigente",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nomeDirigente",
+            "columnName": "nome_dirigente",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": ["id"]
+        }
+      },
+      {
+        "tableName": "tbl_estudos_biblicos",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nome` TEXT NOT NULL, `contato` TEXT NOT NULL, `endereco` TEXT NOT NULL, `zoom_link` TEXT NOT NULL, `publicacao_atual` TEXT NOT NULL, `licao_atual` INTEGER NOT NULL, `dia_semana` TEXT NOT NULL, `horario_minutos` INTEGER NOT NULL, `proximo_estudo_em` INTEGER NOT NULL, `notas` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contato",
+            "columnName": "contato",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endereco",
+            "columnName": "endereco",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "zoomLink",
+            "columnName": "zoom_link",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "publicacaoAtual",
+            "columnName": "publicacao_atual",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "licaoAtual",
+            "columnName": "licao_atual",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "diaSemana",
+            "columnName": "dia_semana",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "horarioMinutos",
+            "columnName": "horario_minutos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "proximoEstudoEm",
+            "columnName": "proximo_estudo_em",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "notas",
+            "columnName": "notas",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": ["id"]
+        }
+      },
+      {
+        "tableName": "tbl_meu_perfil",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `nome` TEXT NOT NULL, `telefone` TEXT NOT NULL, `email` TEXT NOT NULL, `link` TEXT NOT NULL, `comentario` TEXT NOT NULL, `nomeSecretario` TEXT NOT NULL, `telefoneSecretario` TEXT NOT NULL, `tipoSanguineo` TEXT NOT NULL, `alergias` TEXT NOT NULL, `medicamentosEmUso` TEXT NOT NULL, `observacoesMedicas` TEXT NOT NULL, `recusaTransfusao` INTEGER NOT NULL, `fracoesAceitas` TEXT NOT NULL, `uriScanDpa` TEXT NOT NULL, `contatoEmergencia` TEXT NOT NULL, `contatoEmergenciaTelefone` TEXT NOT NULL, `nomeColih` TEXT NOT NULL, `telefoneColih` TEXT NOT NULL, `dpaCategoriaAtualizado` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "telefone",
+            "columnName": "telefone",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "link",
+            "columnName": "link",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "comentario",
+            "columnName": "comentario",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nomeSecretario",
+            "columnName": "nomeSecretario",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "telefoneSecretario",
+            "columnName": "telefoneSecretario",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoSanguineo",
+            "columnName": "tipoSanguineo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "alergias",
+            "columnName": "alergias",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "medicamentosEmUso",
+            "columnName": "medicamentosEmUso",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "observacoesMedicas",
+            "columnName": "observacoesMedicas",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "recusaTransfusao",
+            "columnName": "recusaTransfusao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fracoesAceitas",
+            "columnName": "fracoesAceitas",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uriScanDpa",
+            "columnName": "uriScanDpa",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contatoEmergencia",
+            "columnName": "contatoEmergencia",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contatoEmergenciaTelefone",
+            "columnName": "contatoEmergenciaTelefone",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nomeColih",
+            "columnName": "nomeColih",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "telefoneColih",
+            "columnName": "telefoneColih",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dpaCategoriaAtualizado",
+            "columnName": "dpaCategoriaAtualizado",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": ["id"]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b509f4e66a1845fcd664e88a555eb9da')"
+    ]
+  }
+}

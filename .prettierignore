@@ -1,0 +1,5 @@
+dist
+node_modules
+public/webawesome
+package-lock.json
+bun.lock

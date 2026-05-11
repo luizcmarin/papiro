@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Papiro">
+  <rect width="512" height="512" rx="112" fill="#1a1a2e" />
+  <path
+    fill="#f5efe6"
+    d="M148 92h216c23 0 42 19 42 42v244c0 23-19 42-42 42H148c-23 0-42-19-42-42V134c0-23 19-42 42-42Z"
+  />
+  <path
+    fill="#d8b26e"
+    d="M148 92h216c23 0 42 19 42 42v32H106v-32c0-23 19-42 42-42Zm-42 254h300v32c0 23-19 42-42 42H148c-23 0-42-19-42-42v-32Z"
+  />
+  <path
+    fill="#1a1a2e"
+    d="M170 210h172v24H170v-24Zm0 64h172v24H170v-24Zm0 64h118v24H170v-24Z"
+  />
+  <path fill="#4fc3f7" d="M352 212l38 38-38 38-18-18 20-20-20-20 18-18Z" />
+</svg>
