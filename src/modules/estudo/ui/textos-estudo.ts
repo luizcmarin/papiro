@@ -5,6 +5,7 @@ export interface TextosEstudo {
   timerTitulo: string;
   faseFoco: string;
   fasePausa: string;
+  fasePausaLonga: string;
   iniciar: string;
   pausar: string;
   retomar: string;
@@ -25,6 +26,7 @@ const PT: TextosEstudo = {
   timerTitulo: 'Pomodoro',
   faseFoco: 'Foco',
   fasePausa: 'Pausa curta',
+  fasePausaLonga: 'Pausa longa',
   iniciar: 'Iniciar',
   pausar: 'Pausar',
   retomar: 'Retomar',
@@ -45,6 +47,7 @@ const EN: TextosEstudo = {
   timerTitulo: 'Pomodoro',
   faseFoco: 'Focus',
   fasePausa: 'Short break',
+  fasePausaLonga: 'Long break',
   iniciar: 'Start',
   pausar: 'Pause',
   retomar: 'Resume',

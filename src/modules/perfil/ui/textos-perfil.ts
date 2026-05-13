@@ -3,6 +3,7 @@ import type { LocaleId } from '../../shared/ui/locale.js';
 export interface TextosPerfil {
   tituloPagina: string;
   subtituloIce: string;
+  editar: string;
   guardar: string;
   gravadoOk: string;
   erroBd: string;
@@ -37,6 +38,7 @@ const PT: TextosPerfil = {
   tituloPagina: 'Perfil e ficha ICE',
   subtituloIce:
     'Dados locais na sua base SQLite. Trate informação médica com cuidado; só preencha o que fizer sentido para si.',
+  editar: 'Editar perfil',
   guardar: 'Guardar perfil',
   gravadoOk: 'Perfil guardado.',
   erroBd: 'Não foi possível guardar. Tente de novo.',
@@ -71,6 +73,7 @@ const EN: TextosPerfil = {
   tituloPagina: 'Profile & ICE card',
   subtituloIce:
     'Local data in your SQLite database. Enter only medical details you are comfortable storing on this device.',
+  editar: 'Edit profile',
   guardar: 'Save profile',
   gravadoOk: 'Profile saved.',
   erroBd: 'Could not save. Please try again.',

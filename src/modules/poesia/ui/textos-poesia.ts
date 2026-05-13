@@ -17,6 +17,10 @@ export interface TextosPoesia {
   dialogoCancelar: string;
   erroBd: string;
   leituraTitulo: string;
+  ler: string;
+  anterior: string;
+  proxima: string;
+  leituraVazia: string;
 }
 
 const PT: TextosPoesia = {
@@ -27,7 +31,7 @@ const PT: TextosPoesia = {
   cancelarEdicao: 'Nova (limpar)',
   campoTitulo: 'Título',
   campoTexto: 'Texto (parágrafos separados por linha em branco)',
-  vazia: 'Ainda não há poesias. Crie uma com o formulário acima.',
+  vazia: 'Ainda não há poesias. Use o botão Nova poesia para criar uma.',
   editar: 'Editar',
   apagar: 'Apagar',
   dialogoApagarLabel: 'Apagar poesia',
@@ -36,6 +40,10 @@ const PT: TextosPoesia = {
   dialogoCancelar: 'Cancelar',
   erroBd: 'Operação falhou na base local.',
   leituraTitulo: 'Pré-visualização (HTML sanitizado)',
+  ler: 'Ler',
+  anterior: 'Anterior',
+  proxima: 'Próxima',
+  leituraVazia: 'Escolha uma poesia para leitura sequencial.',
 };
 
 const EN: TextosPoesia = {
@@ -46,7 +54,7 @@ const EN: TextosPoesia = {
   cancelarEdicao: 'Clear form',
   campoTitulo: 'Title',
   campoTexto: 'Text (blank line between paragraphs)',
-  vazia: 'No poems yet. Add one using the form above.',
+  vazia: 'No poems yet. Use the New poem button to add one.',
   editar: 'Edit',
   apagar: 'Delete',
   dialogoApagarLabel: 'Delete poem',
@@ -55,6 +63,10 @@ const EN: TextosPoesia = {
   dialogoCancelar: 'Cancel',
   erroBd: 'The local database refused that operation.',
   leituraTitulo: 'Preview (sanitised HTML)',
+  ler: 'Read',
+  anterior: 'Previous',
+  proxima: 'Next',
+  leituraVazia: 'Choose a poem for sequential reading.',
 };
 
 export function obterTextosPoesia(locale: LocaleId): TextosPoesia {

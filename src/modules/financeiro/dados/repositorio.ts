@@ -1,4 +1,5 @@
 import { obterClienteSqlocal } from '../../../infra/db/cliente-sqlocal.js';
+import { MS_POR_DIA } from '../../shared/dados/datas.js';
 import type {
   AgregadoCategoriaMes,
   CategoriaFinanceiroInput,
@@ -115,7 +116,7 @@ export async function somarDespesasPorCategoriaNoIntervalo(
 export async function agregarReceitaDespesaUltimosMeses(maxMeses: number): Promise<PontoMesReceitaDespesa[]> {
   const { sql } = obterClienteSqlocal();
   const limiteMs = Date.now();
-  const inicioApprox = limiteMs - maxMeses * 31 * 86400000;
+  const inicioApprox = limiteMs - maxMeses * 31 * MS_POR_DIA;
   const linhas = await sql`
     SELECT
       CAST(strftime('%Y', data_vencimento / 1000, 'unixepoch') AS INTEGER) AS y,

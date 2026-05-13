@@ -1,6 +1,4 @@
-import '@awesome.me/webawesome/dist/components/button/button.js';
-import '@awesome.me/webawesome/dist/components/dialog/dialog.js';
-
+import { criarControleGeracaoGraficos } from '../../infra/charts/controle-geracao-grafico.js';
 import { garantirEchartsRegistrado } from '../../infra/charts/echarts-bundle.js';
 import type { EChartsType } from '../../infra/charts/echarts-bundle.js';
 import { lerCoresGraficoDoDocumento } from '../../infra/charts/cores-documento.js';
@@ -11,56 +9,20 @@ import type {
   TransacaoRow,
 } from '../../modules/financeiro/dados/types.js';
 import { obterTextosFinanceiro } from '../../modules/financeiro/ui/textos-financeiro.js';
-import type { LocaleId } from '../../modules/shared/ui/locale.js';
+import { eAbortoDom } from '../../modules/shared/dados/aborto-dom.js';
+import { formatarDataInputUtc, intervaloMesInputUtc, parseDataInputUtcMs } from '../../modules/shared/dados/datas.js';
 import { obterLocaleAtual, registarAoLocaleAtualizado } from '../../modules/shared/ui/locale.js';
-import { obterTextosConfig } from '../../modules/configuracao/ui/textos-config.js';
+import { criarDialogoConfirmacao, criarDialogoFormulario } from '../ui/dialogos.js';
+import { criarCampoData, criarCampoNumero, criarCampoSelect, criarCampoTexto, criarFormGrid, limparCampos } from '../ui/form.js';
+import { formatarMoeda } from '../ui/formatos.js';
+import { criarCardUi, criarGrid, criarPaginaUi } from '../ui/layout.js';
+import { criarBotaoAcao, criarLinhaLista, criarListaCrud } from '../ui/lista.js';
 import type { PaginaMontavel } from '../pagina-montavel.js';
-
-function limitesMesReferencia(anoMes: string): { min: number; maxEx: number } | null {
-  const ok = /^(\d{4})-(\d{2})$/.exec(anoMes.trim());
-  if (!ok) return null;
-  const ano = Number(ok[1]);
-  const mesIdx = Number(ok[2]) - 1;
-  if (mesIdx < 0 || mesIdx > 11) return null;
-  return {
-    min: Date.UTC(ano, mesIdx, 1, 0, 0, 0, 0),
-    maxEx: Date.UTC(ano, mesIdx + 1, 1, 0, 0, 0, 0),
-  };
-}
-
-function formatoDataInput(ms: number): string {
-  const d = new Date(ms);
-  const y = d.getUTCFullYear();
-  const m = String(d.getUTCMonth() + 1).padStart(2, '0');
-  const dia = String(d.getUTCDate()).padStart(2, '0');
-  return `${y}-${m}-${dia}`;
-}
-
-function parseDataInputParaUtc(s: string): number | null {
-  const ok = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s.trim());
-  if (!ok) return null;
-  const t = Date.UTC(Number(ok[1]), Number(ok[2]) - 1, Number(ok[3]), 12, 0, 0, 0);
-  return Number.isNaN(t) ? null : t;
-}
+import { definirTituloDocumentoApp, reporTituloDocumentoSoNomeApp } from '../ui/titulo-documento.js';
 
 function mesAtualAAAAMM(): string {
   const d = new Date();
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
-}
-
-const nfMoedaPorLocale = new Map<LocaleId, Intl.NumberFormat>();
-
-function formatarMoeda(v: number, localeId: LocaleId): string {
-  let nf = nfMoedaPorLocale.get(localeId);
-  if (!nf) {
-    nf = new Intl.NumberFormat(localeId === 'en' ? 'en-US' : 'pt-BR', {
-      style: 'currency',
-      currency: localeId === 'en' ? 'USD' : 'BRL',
-      maximumFractionDigits: 2,
-    });
-    nfMoedaPorLocale.set(localeId, nf);
-  }
-  return nf.format(v);
 }
 
 /** Instâncias ECharts da página atual (dispose no unmount ou remontagem). */
@@ -74,31 +36,21 @@ const financeiroPagina: PaginaMontavel = {
     graficosFinanceiroPaginaAtual = [];
 
     const echarts = garantirEchartsRegistrado();
+    const graf = criarControleGeracaoGraficos(sinal);
     const loc = obterLocaleAtual();
     const tLoc = obterTextosFinanceiro(loc);
-    const appNome = obterTextosConfig(loc).appNomeTituloDoc;
-    document.title = `${tLoc.tituloPagina} — ${appNome}`;
+    definirTituloDocumentoApp(tLoc.tituloPagina, loc);
 
     const divBar = document.createElement('div');
-    divBar.style.height = '260px';
-    divBar.style.marginBottom = 'var(--wa-space-l, 1.5rem)';
+    divBar.className = 'shell__grafico';
     const divPie = document.createElement('div');
-    divPie.style.height = '260px';
+    divPie.className = 'shell__grafico';
 
     let categorias: CategoriaFinanceiroRow[] = [];
     let transacoes: TransacaoRow[] = [];
 
     let mesRef = mesAtualAAAAMM();
-    let idApagarTx: number | null = null;
-    let idApagarCat: number | null = null;
     let editingTx: TransacaoRow | null = null;
-
-    const barra = document.createElement('div');
-    barra.className = 'shell__barra-ficha';
-    const titulo = document.createElement('h1');
-    titulo.className = 'shell__titulo';
-    titulo.textContent = tLoc.tituloPagina;
-    barra.append(titulo);
 
     const wrapMes = document.createElement('div');
     wrapMes.className = 'shell__campo';
@@ -113,76 +65,32 @@ const financeiroPagina: PaginaMontavel = {
     inputMes.value = mesRef;
     wrapMes.append(rotMes, inputMes);
 
-    const grafWrap = document.createElement('div');
-    grafWrap.className = 'shell__cartao';
-    const subBar = document.createElement('h2');
-    subBar.className = 'shell__subtitulo';
-    subBar.textContent = tLoc.graficoBarrasTitulo;
-    const subPie = document.createElement('h2');
-    subPie.className = 'shell__subtitulo';
-    subPie.textContent = tLoc.graficoPizzaTitulo;
-    grafWrap.append(subBar, divBar, subPie, divPie);
+    const botaoNovaCategoria = criarBotaoAcao(tLoc.novaCategoria, { variant: 'brand' });
+    const botaoNovaTransacao = criarBotaoAcao(tLoc.novaTransacao, { variant: 'brand' });
+    const pagina = criarPaginaUi({
+      titulo: tLoc.tituloPagina,
+      acoes: [wrapMes, botaoNovaCategoria, botaoNovaTransacao],
+    });
 
-    const secCat = document.createElement('section');
-    const hCat = document.createElement('h2');
-    hCat.className = 'shell__titulo';
-    hCat.textContent = tLoc.categoriasTitulo;
-    const formCat = document.createElement('div');
-    formCat.className = 'shell__form-linha';
-    const nCat = document.createElement('input');
-    nCat.placeholder = tLoc.campoNome;
-    nCat.className = 'shell__input-texto';
-    const iCat = document.createElement('input');
-    iCat.placeholder = tLoc.campoIcone;
-    iCat.className = 'shell__input-texto';
-    const cCor = document.createElement('input');
-    cCor.type = 'text';
-    cCor.placeholder = tLoc.campoCor;
-    cCor.className = 'shell__input-texto';
-    cCor.value = '#4FC3F7';
-    const lCat = document.createElement('input');
-    lCat.type = 'number';
-    lCat.step = 'any';
-    lCat.placeholder = tLoc.campoLimite;
-    lCat.className = 'shell__input-texto';
-    lCat.value = '0';
-    const btnCat = document.createElement('wa-button');
-    btnCat.textContent = tLoc.novaCategoria;
-    formCat.append(nCat, iCat, cCor, lCat, btnCat);
+    const campoCatNome = criarCampoTexto({ rotulo: tLoc.campoNome });
+    const campoCatIcone = criarCampoTexto({ rotulo: tLoc.campoIcone, valorInicial: 'payments' });
+    const campoCatCor = criarCampoTexto({ rotulo: tLoc.campoCor, valorInicial: '#4FC3F7' });
+    const campoCatLimite = criarCampoNumero({ rotulo: tLoc.campoLimite, valorInicial: 0, step: 'any' });
 
-    const ulCat = document.createElement('ul');
-    ulCat.className = 'shell__lista';
-    secCat.append(hCat, formCat, ulCat);
-
-    const secTx = document.createElement('section');
-    const hTx = document.createElement('h2');
-    hTx.className = 'shell__titulo';
-    hTx.textContent = tLoc.transacoesTitulo;
-    const formTx = document.createElement('div');
-    formTx.className = 'shell__form-linha';
-    const dDesc = document.createElement('input');
-    dDesc.className = 'shell__input-texto';
-    dDesc.placeholder = tLoc.campoDescricao;
-    const dVal = document.createElement('input');
-    dVal.type = 'number';
-    dVal.step = 'any';
-    dVal.className = 'shell__input-texto';
-    dVal.placeholder = tLoc.campoValor;
-    const dTipo = document.createElement('select');
-    dTipo.className = 'shell__select';
-    const oR = document.createElement('option');
-    oR.value = '0';
-    oR.textContent = tLoc.tipoReceita;
-    const oD = document.createElement('option');
-    oD.value = '1';
-    oD.textContent = tLoc.tipoDespesa;
-    dTipo.append(oR, oD);
-    const dCat = document.createElement('select');
-    dCat.className = 'shell__select';
-    const dVenc = document.createElement('input');
-    dVenc.type = 'date';
-    dVenc.className = 'shell__input-texto';
-    dVenc.value = formatoDataInput(Date.now());
+    const campoTxDescricao = criarCampoTexto({ rotulo: tLoc.campoDescricao });
+    const campoTxValor = criarCampoNumero({ rotulo: tLoc.campoValor, valorInicial: 0, min: 0, step: 'any' });
+    const campoTxTipo = criarCampoSelect({
+      rotulo: tLoc.campoTipo,
+      opcoes: [
+        { valor: '0', texto: tLoc.tipoReceita },
+        { valor: '1', texto: tLoc.tipoDespesa },
+      ],
+    });
+    const campoTxCategoria = criarCampoSelect({ rotulo: tLoc.campoCategoria });
+    const campoTxVencimento = criarCampoData({
+      rotulo: tLoc.campoVencimento,
+      valorInicial: formatarDataInputUtc(Date.now()),
+    });
     const dPago = document.createElement('label');
     dPago.className = 'shell__checkbox-linha';
     const ckPago = document.createElement('input');
@@ -190,83 +98,260 @@ const financeiroPagina: PaginaMontavel = {
     ckPago.checked = true;
     const textoPago = document.createTextNode(tLoc.pagoLabel);
     dPago.append(ckPago, textoPago);
-    const btnTx = document.createElement('wa-button');
-    btnTx.textContent = tLoc.novaTransacao;
-    formTx.append(dDesc, dVal, dTipo, dCat, dVenc, dPago, btnTx);
-
-    const ulTx = document.createElement('ul');
-    ulTx.className = 'shell__lista';
-    secTx.append(hTx, formTx, ulTx);
 
     const msgBd = document.createElement('p');
     msgBd.className = 'shell__sub';
     msgBd.hidden = true;
 
-    let geracaoCharts = 0;
+    const confirmacao = criarDialogoConfirmacao({
+      titulo: tLoc.apagarTransacaoTitulo,
+      texto: tLoc.apagarTransacaoTitulo,
+      cancelar: tLoc.cancelarDialogo,
+      confirmar: tLoc.apagarConfirmar,
+      signal: sinal,
+    });
 
-    const dialogoCat = document.createElement('wa-dialog');
-    dialogoCat.setAttribute('label', tLoc.apagarCategoriaTitulo);
-    const dlgCatP = document.createElement('p');
-    const dlgCatF = document.createElement('div');
-    dlgCatF.setAttribute('slot', 'footer');
-    const dlgCatCx = document.createElement('wa-button');
-    dlgCatCx.setAttribute('variant', 'neutral');
-    dlgCatCx.textContent = tLoc.cancelarDialogo;
-    const dlgCatOk = document.createElement('wa-button');
-    dlgCatOk.setAttribute('variant', 'danger');
-    dlgCatOk.textContent = tLoc.apagarConfirmar;
-    dlgCatF.append(dlgCatCx, dlgCatOk);
-    dialogoCat.append(dlgCatP, dlgCatF);
+    const listaCategorias = criarListaCrud<CategoriaFinanceiroRow>({
+      vazio: tLoc.listaVaziaCategorias,
+      renderItem: (categoria) => {
+        const tm = obterTextosFinanceiro(obterLocaleAtual());
+        const apagar = criarBotaoAcao(tm.apagar, { variant: 'danger' });
+        apagar.addEventListener(
+          'click',
+          () => {
+            confirmacao.abrir({
+              titulo: tm.apagarCategoriaTitulo,
+              texto: tm.apagarCategoriaTitulo,
+              aoConfirmar: async () => {
+                await repo.apagarCategoria(categoria.id);
+                await refrescarListaCategorias();
+                await refrescarTransacoesMes();
+                encadearCharts();
+              },
+            });
+          },
+          { signal: sinal },
+        );
 
-    const dialogoTx = document.createElement('wa-dialog');
-    dialogoTx.setAttribute('label', tLoc.apagarTransacaoTitulo);
-    const dlgTxP = document.createElement('p');
-    const dlgTxF = document.createElement('div');
-    dlgTxF.setAttribute('slot', 'footer');
-    const dlgTxCx = document.createElement('wa-button');
-    dlgTxCx.setAttribute('variant', 'neutral');
-    dlgTxCx.textContent = tLoc.cancelarDialogo;
-    const dlgTxOk = document.createElement('wa-button');
-    dlgTxOk.setAttribute('variant', 'danger');
-    dlgTxOk.textContent = tLoc.apagarConfirmar;
-    dlgTxF.append(dlgTxCx, dlgTxOk);
-    dialogoTx.append(dlgTxP, dlgTxF);
+        return criarLinhaLista({
+          titulo: categoria.nome,
+          meta: `${categoria.icone || 'payments'} · ${categoria.hex_cor} · ${formatarMoeda(
+            categoria.limite_mensal,
+            obterLocaleAtual(),
+          )}`,
+          acoes: [apagar],
+        });
+      },
+    });
 
-    container.replaceChildren();
-    container.append(barra, wrapMes, grafWrap, secCat, secTx, msgBd, dialogoCat, dialogoTx);
+    const listaTransacoes = criarListaCrud<TransacaoRow>({
+      vazio: tLoc.listaVaziaTransacoes,
+      renderItem: (transacao) => {
+        const tm = obterTextosFinanceiro(obterLocaleAtual());
+        const mapaNome = new Map(categorias.map((c) => [c.id, c.nome] as const));
+        const tag = transacao.tipo === 0 ? tm.tipoReceita : tm.tipoDespesa;
+        const editar = criarBotaoAcao(tm.editar, { variant: 'neutral' });
+        editar.addEventListener(
+          'click',
+          () => {
+            editingTx = transacao;
+            campoTxDescricao.definirValor(transacao.descricao);
+            campoTxValor.definirValor(transacao.valor);
+            campoTxTipo.definirValor(String(transacao.tipo));
+            campoTxCategoria.definirValor(String(transacao.categoria_id));
+            campoTxVencimento.definirValor(formatarDataInputUtc(transacao.data_vencimento));
+            ckPago.checked = transacao.esta_pago !== 0;
+            dialogoTransacao.definirTitulo(tm.salvarTransacao);
+            dialogoTransacao.botaoConfirmar.textContent = tm.salvarTransacao;
+            dialogoTransacao.abrir();
+          },
+          { signal: sinal },
+        );
+        const apagar = criarBotaoAcao(tm.apagar, { variant: 'danger' });
+        apagar.addEventListener(
+          'click',
+          () => {
+            confirmacao.abrir({
+              titulo: tm.apagarTransacaoTitulo,
+              texto: tm.apagarTransacaoTitulo,
+              aoConfirmar: async () => {
+                await repo.apagarTransacao(transacao.id);
+                await refrescarTransacoesMes();
+                encadearCharts();
+              },
+            });
+          },
+          { signal: sinal },
+        );
+
+        return criarLinhaLista({
+          titulo: `${tag} · ${transacao.descricao}`,
+          meta: `${formatarMoeda(transacao.valor, obterLocaleAtual())} · ${
+            mapaNome.get(transacao.categoria_id) ?? '—'
+          } · ${formatarDataParaUi(transacao.data_vencimento)}`,
+          acoes: [editar, apagar],
+        });
+      },
+    });
+
+    const listaAlertas = criarListaCrud<string>({
+      vazio: tLoc.semAlertas,
+      renderItem: (alerta) => criarLinhaLista({ titulo: alerta }),
+    });
+
+    const dialogoCategoria = criarDialogoFormulario({
+      titulo: tLoc.novaCategoria,
+      confirmarTexto: tLoc.salvarCategoria,
+      cancelarTexto: tLoc.cancelarDialogo,
+      conteudo: [criarFormGrid(campoCatNome.elemento, campoCatIcone.elemento, campoCatCor.elemento, campoCatLimite.elemento)],
+      signal: sinal,
+      aoConfirmar: async () => {
+        msgBd.hidden = true;
+        const nome = campoCatNome.valor();
+        if (!nome) return false;
+
+        try {
+          await repo.inserirCategoria({
+            nome,
+            icone: campoCatIcone.valor() || 'payments',
+            hex_cor: campoCatCor.valor() || '#4FC3F7',
+            limite_mensal: Number.isFinite(campoCatLimite.valor()) ? campoCatLimite.valor() : 0,
+          });
+          limparCampos(campoCatNome, campoCatIcone, campoCatCor);
+          campoCatIcone.definirValor('payments');
+          campoCatCor.definirValor('#4FC3F7');
+          campoCatLimite.definirValor(0);
+          await refrescarListaCategorias();
+          await refrescarTransacoesMes();
+        } catch {
+          msgBd.hidden = false;
+          msgBd.textContent = obterTextosFinanceiro(obterLocaleAtual()).erroBd;
+          return false;
+        }
+      },
+    });
+
+    const dialogoTransacao = criarDialogoFormulario({
+      titulo: tLoc.novaTransacao,
+      confirmarTexto: tLoc.salvarTransacao,
+      cancelarTexto: tLoc.cancelarDialogo,
+      conteudo: [
+        criarFormGrid(
+          campoTxDescricao.elemento,
+          campoTxValor.elemento,
+          campoTxTipo.elemento,
+          campoTxCategoria.elemento,
+          campoTxVencimento.elemento,
+        ),
+        dPago,
+      ],
+      signal: sinal,
+      aoConfirmar: async () => {
+        msgBd.hidden = true;
+        const catId = Number(campoTxCategoria.valor());
+        const val = campoTxValor.valor();
+        const utc = parseDataInputUtcMs(campoTxVencimento.valor());
+        if (!Number.isFinite(catId) || catId <= 0 || !Number.isFinite(val) || utc === null) return false;
+
+        const entrada = {
+          descricao: campoTxDescricao.valor(),
+          valor: Math.abs(val),
+          tipo: Number(campoTxTipo.valor()) as TipoTransacao,
+          categoria_id: catId,
+          data_vencimento: utc,
+          esta_pago: ckPago.checked ? 1 : 0,
+        };
+        try {
+          if (editingTx) {
+            await repo.atualizarTransacao(editingTx.id, entrada);
+          } else {
+            await repo.inserirTransacao(entrada);
+          }
+          reporFormularioTransacao();
+          await refrescarTransacoesMes();
+          encadearCharts();
+        } catch {
+          msgBd.hidden = false;
+          msgBd.textContent = obterTextosFinanceiro(obterLocaleAtual()).erroBd;
+          return false;
+        }
+      },
+    });
+
+    const cardBar = criarCardUi({ titulo: tLoc.graficoBarrasTitulo, conteudo: [divBar] });
+    const cardPie = criarCardUi({ titulo: tLoc.graficoPizzaTitulo, conteudo: [divPie] });
+    const cardCategorias = criarCardUi({ titulo: tLoc.categoriasTitulo, conteudo: [listaCategorias.elemento] });
+    const cardTransacoes = criarCardUi({ titulo: tLoc.transacoesTitulo, conteudo: [listaTransacoes.elemento] });
+    const cardAlertas = criarCardUi({ titulo: tLoc.alertasTitulo, conteudo: [listaAlertas.elemento] });
+
+    pagina.corpo.append(
+      msgBd,
+      criarGrid(cardBar.cartao, cardPie.cartao),
+      cardAlertas.cartao,
+      criarGrid(cardCategorias.cartao, cardTransacoes.cartao),
+    );
+    container.replaceChildren(pagina.raiz, dialogoCategoria.elemento, dialogoTransacao.elemento, confirmacao.elemento);
 
     function aplicarTitulosLocales(): void {
       const lc = obterLocaleAtual();
       const tm = obterTextosFinanceiro(lc);
-      const nm = obterTextosConfig(lc).appNomeTituloDoc;
-      document.title = `${tm.tituloPagina} — ${nm}`;
-      titulo.textContent = tm.tituloPagina;
+      definirTituloDocumentoApp(tm.tituloPagina, lc);
+      pagina.titulo.textContent = tm.tituloPagina;
       rotMes.textContent = tm.mesReferencia;
-      subBar.textContent = tm.graficoBarrasTitulo;
-      subPie.textContent = tm.graficoPizzaTitulo;
-      hCat.textContent = tm.categoriasTitulo;
-      hTx.textContent = tm.transacoesTitulo;
-      nCat.placeholder = tm.campoNome;
-      iCat.placeholder = tm.campoIcone;
-      cCor.placeholder = tm.campoCor;
-      lCat.placeholder = tm.campoLimite;
-      btnCat.textContent = tm.novaCategoria;
-      dDesc.placeholder = tm.campoDescricao;
-      dVal.placeholder = tm.campoValor;
-      oR.textContent = tm.tipoReceita;
-      oD.textContent = tm.tipoDespesa;
+      botaoNovaCategoria.textContent = tm.novaCategoria;
+      botaoNovaTransacao.textContent = tm.novaTransacao;
+      cardBar.titulo.textContent = tm.graficoBarrasTitulo;
+      cardPie.titulo.textContent = tm.graficoPizzaTitulo;
+      cardAlertas.titulo.textContent = tm.alertasTitulo;
+      cardCategorias.titulo.textContent = tm.categoriasTitulo;
+      cardTransacoes.titulo.textContent = tm.transacoesTitulo;
+      campoCatNome.definirRotulo(tm.campoNome);
+      campoCatNome.definirPlaceholder(tm.campoNome);
+      campoCatIcone.definirRotulo(tm.campoIcone);
+      campoCatIcone.definirPlaceholder(tm.campoIcone);
+      campoCatCor.definirRotulo(tm.campoCor);
+      campoCatCor.definirPlaceholder(tm.campoCor);
+      campoCatLimite.definirRotulo(tm.campoLimite);
+      campoCatLimite.definirPlaceholder(tm.campoLimite);
+      campoTxDescricao.definirRotulo(tm.campoDescricao);
+      campoTxDescricao.definirPlaceholder(tm.campoDescricao);
+      campoTxValor.definirRotulo(tm.campoValor);
+      campoTxValor.definirPlaceholder(tm.campoValor);
+      campoTxTipo.definirRotulo(tm.campoTipo);
+      renderizarTiposTransacao();
+      campoTxCategoria.definirRotulo(tm.campoCategoria);
+      campoTxVencimento.definirRotulo(tm.campoVencimento);
+      campoTxVencimento.definirPlaceholder(tm.campoVencimento);
       textoPago.textContent = tm.pagoLabel;
-      btnTx.textContent = tm.salvarTransacao;
-      dialogoCat.setAttribute('label', tm.apagarCategoriaTitulo);
-      dialogoTx.setAttribute('label', tm.apagarTransacaoTitulo);
-      dlgCatCx.textContent = tm.cancelarDialogo;
-      dlgCatOk.textContent = tm.apagarConfirmar;
-      dlgTxCx.textContent = tm.cancelarDialogo;
-      dlgTxOk.textContent = tm.apagarConfirmar;
+      dialogoCategoria.definirTitulo(tm.novaCategoria);
+      dialogoCategoria.botaoConfirmar.textContent = tm.salvarCategoria;
+      dialogoCategoria.botaoCancelar.textContent = tm.cancelarDialogo;
+      dialogoTransacao.definirTitulo(editingTx ? tm.salvarTransacao : tm.novaTransacao);
+      dialogoTransacao.botaoConfirmar.textContent = tm.salvarTransacao;
+      dialogoTransacao.botaoCancelar.textContent = tm.cancelarDialogo;
+      listaCategorias.definirTextoVazio(tm.listaVaziaCategorias);
+      listaTransacoes.definirTextoVazio(tm.listaVaziaTransacoes);
+      listaAlertas.definirTextoVazio(tm.semAlertas);
+      confirmacao.definirTextos({
+        titulo: tm.apagarTransacaoTitulo,
+        texto: tm.apagarTransacaoTitulo,
+        cancelar: tm.cancelarDialogo,
+        confirmar: tm.apagarConfirmar,
+      });
+    }
+
+    function renderizarTiposTransacao(): void {
+      const valorAtual = campoTxTipo.valor() || '1';
+      const tm = obterTextosFinanceiro(obterLocaleAtual());
+      campoTxTipo.input.replaceChildren(
+        Object.assign(document.createElement('option'), { value: '0', textContent: tm.tipoReceita }),
+        Object.assign(document.createElement('option'), { value: '1', textContent: tm.tipoDespesa }),
+      );
+      campoTxTipo.definirValor(valorAtual);
     }
 
     function encadearCharts(): void {
-      const minhaGeracao = ++geracaoCharts;
+      const minhaGeracao = graf.novaGeracao();
       for (const g of graficosFinanceiroPaginaAtual) {
         g.dispose();
       }
@@ -276,14 +361,16 @@ const financeiroPagina: PaginaMontavel = {
         const cores = lerCoresGraficoDoDocumento(container);
         const localeId = obterLocaleAtual();
         const tmGraf = obterTextosFinanceiro(localeId);
-        if (sinal.aborted || minhaGeracao !== geracaoCharts) return;
+        if (graf.obsoleto(minhaGeracao)) return;
         let pts;
         try {
           pts = await repo.agregarReceitaDespesaUltimosMeses(8);
-        } catch {
+          sinal.throwIfAborted();
+        } catch (erro) {
+          if (eAbortoDom(erro)) return;
           return;
         }
-        if (sinal.aborted || minhaGeracao !== geracaoCharts) return;
+        if (graf.obsoleto(minhaGeracao)) return;
         if (divBar.offsetParent === null && !divBar.isConnected) return;
 
         const cBar = echarts.init(divBar);
@@ -320,17 +407,23 @@ const financeiroPagina: PaginaMontavel = {
           ],
         });
 
-        const limites = limitesMesReferencia(mesRef);
+        const limites = intervaloMesInputUtc(mesRef);
         let agrega: Awaited<ReturnType<typeof repo.somarDespesasPorCategoriaNoIntervalo>>;
         if (!limites) agrega = [];
         else {
           try {
             agrega = await repo.somarDespesasPorCategoriaNoIntervalo(limites.min, limites.maxEx);
-          } catch {
+            sinal.throwIfAborted();
+          } catch (erro) {
+            if (eAbortoDom(erro)) {
+              graficosFinanceiroPaginaAtual.forEach((x) => x.dispose());
+              graficosFinanceiroPaginaAtual = [];
+              return;
+            }
             agrega = [];
           }
         }
-        if (sinal.aborted || minhaGeracao !== geracaoCharts) {
+        if (graf.obsoleto(minhaGeracao)) {
           graficosFinanceiroPaginaAtual.forEach((x) => x.dispose());
           graficosFinanceiroPaginaAtual = [];
           return;
@@ -349,7 +442,7 @@ const financeiroPagina: PaginaMontavel = {
           return;
         }
 
-        if (sinal.aborted || minhaGeracao !== geracaoCharts) {
+        if (graf.obsoleto(minhaGeracao)) {
           graficosFinanceiroPaginaAtual.forEach((x) => x.dispose());
           graficosFinanceiroPaginaAtual = [];
           return;
@@ -370,6 +463,44 @@ const financeiroPagina: PaginaMontavel = {
           ],
         });
       })();
+    }
+
+    function renderizarAlertasFinanceiros(): void {
+      const tm = obterTextosFinanceiro(obterLocaleAtual());
+      const alertas: string[] = [];
+      const despesas = transacoes.filter((t) => t.tipo === 1);
+      const receitas = transacoes.filter((t) => t.tipo === 0);
+      const totalReceita = receitas.reduce((total, tx) => total + tx.valor, 0);
+      const totalDespesa = despesas.reduce((total, tx) => total + tx.valor, 0);
+      const vencidas = despesas.filter((tx) => tx.esta_pago === 0 && tx.data_vencimento < Date.now()).length;
+
+      for (const categoria of categorias) {
+        if (categoria.limite_mensal <= 0) continue;
+        const totalCategoria = despesas
+          .filter((tx) => tx.categoria_id === categoria.id)
+          .reduce((total, tx) => total + tx.valor, 0);
+        if (totalCategoria > categoria.limite_mensal) {
+          alertas.push(
+            `${tm.limiteCategoria} ${categoria.nome}: ${formatarMoeda(totalCategoria, obterLocaleAtual())} / ${formatarMoeda(
+              categoria.limite_mensal,
+              obterLocaleAtual(),
+            )}`,
+          );
+        }
+      }
+
+      if (vencidas > 0) {
+        alertas.push(`${tm.transacoesVencidas}: ${String(vencidas)}`);
+      }
+
+      const saldo = totalReceita - totalDespesa;
+      const diasMes = 30;
+      const gastoDia = totalDespesa / diasMes;
+      if (saldo > 0 && gastoDia > 0) {
+        alertas.push(`${tm.diasSobrevivencia}: ${String(Math.floor(saldo / gastoDia))}`);
+      }
+
+      listaAlertas.renderizar(alertas);
     }
 
     async function garantirSeedCategoria(): Promise<void> {
@@ -395,41 +526,25 @@ const financeiroPagina: PaginaMontavel = {
         categorias = await repo.listarCategorias();
       }
 
-      ulCat.replaceChildren();
-      const tm = obterTextosFinanceiro(obterLocaleAtual());
-      dCat.replaceChildren();
-      const opEsc = document.createElement('option');
-      opEsc.value = '';
-      opEsc.textContent = '—';
-      dCat.append(opEsc);
+      renderizarOpcoesCategorias();
+      listaCategorias.renderizar(categorias);
+      renderizarAlertasFinanceiros();
+    }
+
+    function renderizarOpcoesCategorias(): void {
+      const valorAtual = campoTxCategoria.valor();
+      campoTxCategoria.input.replaceChildren(Object.assign(document.createElement('option'), { value: '', textContent: '—' }));
       for (const c of categorias) {
         const opt = document.createElement('option');
         opt.value = String(c.id);
         opt.textContent = c.nome;
-        dCat.append(opt);
-
-        const li = document.createElement('li');
-        li.className = 'shell__lista-item';
-        const span = document.createElement('span');
-        span.textContent = `${c.nome} · ${formatarMoeda(c.limite_mensal, obterLocaleAtual())}`;
-        const bAp = document.createElement('wa-button');
-        bAp.setAttribute('variant', 'danger');
-        bAp.textContent = tm.apagar;
-        bAp.addEventListener('click', () => {
-          idApagarCat = c.id;
-          dlgCatP.textContent = tm.apagarCategoriaTitulo;
-          (dialogoCat as unknown as { show?: () => void }).show?.();
-        }, { signal: sinal });
-        li.append(span, bAp);
-        ulCat.append(li);
+        campoTxCategoria.input.append(opt);
       }
-      if (categorias.length === 0) {
-        ulCat.append(Object.assign(document.createElement('li'), { textContent: tm.listaVaziaCategorias }));
-      }
+      campoTxCategoria.definirValor(categorias.some((c) => String(c.id) === valorAtual) ? valorAtual : '');
     }
 
     async function refrescarTransacoesMes(): Promise<void> {
-      const limites = limitesMesReferencia(mesRef);
+      const limites = intervaloMesInputUtc(mesRef);
       if (!limites) return;
       try {
         transacoes = await repo.listarTransacoesNoIntervalo(limites.min, limites.maxEx);
@@ -438,59 +553,12 @@ const financeiroPagina: PaginaMontavel = {
         msgBd.textContent = obterTextosFinanceiro(obterLocaleAtual()).erroBd;
         return;
       }
-      ulTx.replaceChildren();
-      const tm = obterTextosFinanceiro(obterLocaleAtual());
-      if (transacoes.length === 0) {
-        ulTx.append(
-          Object.assign(document.createElement('li'), {
-            textContent: tm.listaVaziaTransacoes,
-          }),
-        );
-        return;
-      }
-      const mapaNome = new Map(categorias.map((c) => [c.id, c.nome] as const));
-      for (const tx of transacoes) {
-        const li = document.createElement('li');
-        li.className = 'shell__lista-item';
-        const tag = tx.tipo === 0 ? tm.tipoReceita : tm.tipoDespesa;
-        const lin = document.createElement('span');
-        lin.textContent = `${tag} · ${tx.descricao} · ${formatarMoeda(tx.valor, obterLocaleAtual())} · ${mapaNome.get(tx.categoria_id) ?? '—'} · ${formatarDataParaUi(tx.data_vencimento)}`;
-        const bEd = document.createElement('wa-button');
-        bEd.setAttribute('variant', 'neutral');
-        bEd.textContent = tm.editar;
-        bEd.addEventListener(
-          'click',
-          () => {
-            editingTx = tx;
-            dDesc.value = tx.descricao;
-            dVal.value = String(tx.valor);
-            dTipo.value = String(tx.tipo);
-            dCat.value = String(tx.categoria_id);
-            dVenc.value = formatoDataInput(tx.data_vencimento);
-            ckPago.checked = tx.esta_pago !== 0;
-            btnTx.textContent = tm.salvarTransacao;
-          },
-          { signal: sinal },
-        );
-        const bAp = document.createElement('wa-button');
-        bAp.setAttribute('variant', 'danger');
-        bAp.textContent = tm.apagar;
-        bAp.addEventListener(
-          'click',
-          () => {
-            idApagarTx = tx.id;
-            dlgTxP.textContent = tm.apagarTransacaoTitulo;
-            (dialogoTx as unknown as { show?: () => void }).show?.();
-          },
-          { signal: sinal },
-        );
-        li.append(lin, bEd, bAp);
-        ulTx.append(li);
-      }
+      listaTransacoes.renderizar(transacoes);
+      renderizarAlertasFinanceiros();
     }
 
     function formatarDataParaUi(ms: number): string {
-      return formatoDataInput(ms);
+      return formatarDataInputUtc(ms);
     }
 
     aplicarTitulosLocales();
@@ -508,102 +576,39 @@ const financeiroPagina: PaginaMontavel = {
       { signal: sinal },
     );
 
-    btnCat.addEventListener(
+    botaoNovaCategoria.addEventListener(
       'click',
-      async () => {
-        msgBd.hidden = true;
-        const limStr = Number(lCat.value);
-        try {
-          await repo.inserirCategoria({
-            nome: nCat.value.trim(),
-            icone: iCat.value.trim() || 'payments',
-            hex_cor: cCor.value.trim() || '#4FC3F7',
-            limite_mensal: Number.isFinite(limStr) ? limStr : 0,
-          });
-          nCat.value = '';
-          iCat.value = '';
-          await refrescarListaCategorias();
-          await refrescarTransacoesMes();
-        } catch {
-          msgBd.hidden = false;
-          msgBd.textContent = obterTextosFinanceiro(obterLocaleAtual()).erroBd;
-        }
+      () => {
+        limparCampos(campoCatNome, campoCatIcone, campoCatCor);
+        campoCatIcone.definirValor('payments');
+        campoCatCor.definirValor('#4FC3F7');
+        campoCatLimite.definirValor(0);
+        dialogoCategoria.abrir();
       },
       { signal: sinal },
     );
 
-    btnTx.addEventListener(
+    botaoNovaTransacao.addEventListener(
       'click',
-      async () => {
-        msgBd.hidden = true;
-        const catId = Number(dCat.value);
-        const val = Number(dVal.value.replace(',', '.'));
-        const utc = parseDataInputParaUtc(dVenc.value);
-        if (!Number.isFinite(catId) || catId <= 0 || !Number.isFinite(val) || utc === null) {
-          return;
-        }
-        const entrada = {
-          descricao: dDesc.value.trim(),
-          valor: Math.abs(val),
-          tipo: Number(dTipo.value) as TipoTransacao,
-          categoria_id: catId,
-          data_vencimento: utc,
-          esta_pago: ckPago.checked ? 1 : 0,
-        };
-        try {
-          if (editingTx) {
-            await repo.atualizarTransacao(editingTx.id, entrada);
-            editingTx = null;
-          } else {
-            await repo.inserirTransacao(entrada);
-          }
-          dDesc.value = '';
-          dVal.value = '';
-          dTipo.value = '1';
-          dVenc.value = formatoDataInput(Date.now());
-          ckPago.checked = true;
-          editingTx = null;
-          btnTx.textContent = obterTextosFinanceiro(obterLocaleAtual()).novaTransacao;
-          await refrescarTransacoesMes();
-          encadearCharts();
-        } catch {
-          msgBd.hidden = false;
-          msgBd.textContent = obterTextosFinanceiro(obterLocaleAtual()).erroBd;
-        }
+      () => {
+        reporFormularioTransacao();
+        const tm = obterTextosFinanceiro(obterLocaleAtual());
+        dialogoTransacao.definirTitulo(tm.novaTransacao);
+        dialogoTransacao.botaoConfirmar.textContent = tm.salvarTransacao;
+        dialogoTransacao.abrir();
       },
       { signal: sinal },
     );
 
-    dlgCatCx.addEventListener('click', () => dialogoCat.removeAttribute('open'), { signal: sinal });
-    dlgCatOk.addEventListener(
-      'click',
-      async () => {
-        if (idApagarCat !== null) {
-          await repo.apagarCategoria(idApagarCat);
-          idApagarCat = null;
-        }
-        dialogoCat.removeAttribute('open');
-        await refrescarListaCategorias();
-        await refrescarTransacoesMes();
-        encadearCharts();
-      },
-      { signal: sinal },
-    );
-
-    dlgTxCx.addEventListener('click', () => dialogoTx.removeAttribute('open'), { signal: sinal });
-    dlgTxOk.addEventListener(
-      'click',
-      async () => {
-        if (idApagarTx !== null) {
-          await repo.apagarTransacao(idApagarTx);
-          idApagarTx = null;
-        }
-        dialogoTx.removeAttribute('open');
-        await refrescarTransacoesMes();
-        encadearCharts();
-      },
-      { signal: sinal },
-    );
+    function reporFormularioTransacao(): void {
+      editingTx = null;
+      limparCampos(campoTxDescricao);
+      campoTxValor.definirValor(0);
+      campoTxTipo.definirValor('1');
+      campoTxCategoria.definirValor(categorias[0] ? String(categorias[0].id) : '');
+      campoTxVencimento.definirValor(formatarDataInputUtc(Date.now()));
+      ckPago.checked = true;
+    }
 
     registarAoLocaleAtualizado(() => {
       aplicarTitulosLocales();
@@ -618,7 +623,7 @@ const financeiroPagina: PaginaMontavel = {
       gc.dispose();
     }
     graficosFinanceiroPaginaAtual = [];
-    document.title = obterTextosConfig(obterLocaleAtual()).appNomeTituloDoc;
+    reporTituloDocumentoSoNomeApp();
   },
 };
 

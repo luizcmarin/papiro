@@ -15,3 +15,10 @@ export interface ContagemMetas {
   abertas: number;
   concluidas: number;
 }
+
+export interface PerfilDashboardResumo {
+  recusaTransfusao: number;
+  uriScanDpa: string;
+  contatoEmergencia: string;
+  contatoEmergenciaTelefone: string;
+}

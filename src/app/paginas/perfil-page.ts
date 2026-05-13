@@ -1,253 +1,295 @@
 import * as perfilRepo from '../../modules/perfil/dados/repositorio.js';
 import type { MeuPerfilRow } from '../../modules/perfil/dados/types.js';
 import { obterTextosPerfil } from '../../modules/perfil/ui/textos-perfil.js';
-import { obterTextosConfig } from '../../modules/configuracao/ui/textos-config.js';
 import { obterLocaleAtual, registarAoLocaleAtualizado } from '../../modules/shared/ui/locale.js';
+import { criarDialogoFormulario } from '../ui/dialogos.js';
+import type { CampoFormulario } from '../ui/form.js';
+import { criarCampoNumero, criarCampoTexto, criarFormGrid } from '../ui/form.js';
+import { criarCardUi, criarGrid, criarPaginaUi, criarTituloSecao } from '../ui/layout.js';
+import { criarBlocoLista, criarBotaoAcao } from '../ui/lista.js';
 import type { PaginaMontavel } from '../pagina-montavel.js';
+import { definirTituloDocumentoApp, reporTituloDocumentoSoNomeApp } from '../ui/titulo-documento.js';
 
 interface CamposPerfilUi {
-  nome: HTMLInputElement;
-  telefone: HTMLInputElement;
-  email: HTMLInputElement;
-  link: HTMLInputElement;
-  comentario: HTMLTextAreaElement;
-  nomeSecretario: HTMLInputElement;
-  telefoneSecretario: HTMLInputElement;
-  tipoSanguineo: HTMLInputElement;
-  alergias: HTMLTextAreaElement;
-  medicamentosEmUso: HTMLTextAreaElement;
-  observacoesMedicas: HTMLTextAreaElement;
+  nome: CampoFormulario<string>;
+  telefone: CampoFormulario<string>;
+  email: CampoFormulario<string>;
+  link: CampoFormulario<string>;
+  comentario: CampoFormulario<string>;
+  nomeSecretario: CampoFormulario<string>;
+  telefoneSecretario: CampoFormulario<string>;
+  tipoSanguineo: CampoFormulario<string>;
+  alergias: CampoFormulario<string>;
+  medicamentosEmUso: CampoFormulario<string>;
+  observacoesMedicas: CampoFormulario<string>;
   recusaTransfusao: HTMLInputElement;
-  fracoesAceitas: HTMLTextAreaElement;
-  uriScanDpa: HTMLInputElement;
-  contatoEmergencia: HTMLInputElement;
-  contatoEmergenciaTelefone: HTMLInputElement;
-  nomeColih: HTMLInputElement;
-  telefoneColih: HTMLInputElement;
-  dpaCategoriaAtualizado: HTMLInputElement;
+  fracoesAceitas: CampoFormulario<string>;
+  uriScanDpa: CampoFormulario<string>;
+  contatoEmergencia: CampoFormulario<string>;
+  contatoEmergenciaTelefone: CampoFormulario<string>;
+  nomeColih: CampoFormulario<string>;
+  telefoneColih: CampoFormulario<string>;
+  dpaCategoriaAtualizado: CampoFormulario<number>;
 }
 
-function mkLinhaCampo(
-  rotuloTexto: string,
-  entrada: HTMLInputElement | HTMLTextAreaElement,
-): HTMLElement {
-  const lbl = document.createElement('label');
-  lbl.className = 'shell__campo';
-  const sp = document.createElement('span');
-  sp.className = 'shell__etiqueta';
-  sp.textContent = rotuloTexto;
-  lbl.append(sp, entrada);
-  return lbl;
+function valorOuTraco(valor: string | number): string {
+  const texto = String(valor).trim();
+  return texto || '-';
 }
 
-function mkInput(kind: 'text' | 'number', valor: string): HTMLInputElement {
-  const inp = document.createElement('input');
-  inp.type = kind;
-  inp.className = 'shell__input-texto';
-  inp.value = valor;
-  return inp;
-}
-
-function mkTextArea(valor: string, linhas: number): HTMLTextAreaElement {
-  const ta = document.createElement('textarea');
-  ta.rows = linhas;
-  ta.className = 'shell__textarea';
-  ta.value = valor;
-  return ta;
-}
-
-function rowParaCampos(
-  row: MeuPerfilRow,
-  tm: ReturnType<typeof obterTextosPerfil>,
-): { refs: CamposPerfilUi } {
-  const nome = mkInput('text', row.nome);
-  const telefone = mkInput('text', row.telefone);
-  const email = mkInput('text', row.email);
-  const link = mkInput('text', row.link);
-  const comentario = mkTextArea(row.comentario, 2);
-  const nomeSecretario = mkInput('text', row.nomeSecretario);
-  const telefoneSecretario = mkInput('text', row.telefoneSecretario);
-  const tipoSanguineo = mkInput('text', row.tipoSanguineo);
-  const alergias = mkTextArea(row.alergias, 2);
-  const medicamentosEmUso = mkTextArea(row.medicamentosEmUso, 2);
-  const observacoesMedicas = mkTextArea(row.observacoesMedicas, 4);
+function criarCamposPerfil(tm: ReturnType<typeof obterTextosPerfil>): CamposPerfilUi {
   const recusaTransfusao = document.createElement('input');
   recusaTransfusao.type = 'checkbox';
-  recusaTransfusao.checked = row.recusaTransfusao !== 0;
-  const fracoesAceitas = mkTextArea(row.fracoesAceitas, 2);
-  const uriScanDpa = mkInput('text', row.uriScanDpa);
-  const contatoEmergencia = mkInput('text', row.contatoEmergencia);
-  const contatoEmergenciaTelefone = mkInput('text', row.contatoEmergenciaTelefone);
-  const nomeColih = mkInput('text', row.nomeColih);
-  const telefoneColih = mkInput('text', row.telefoneColih);
-  const dpaCategoriaAtualizado = mkInput('number', String(row.dpaCategoriaAtualizado ?? 0));
-  dpaCategoriaAtualizado.title = tm.hintDpaCategoria;
 
   return {
-    refs: {
-      nome,
-      telefone,
-      email,
-      link,
-      comentario,
-      nomeSecretario,
-      telefoneSecretario,
-      tipoSanguineo,
-      alergias,
-      medicamentosEmUso,
-      observacoesMedicas,
-      recusaTransfusao,
-      fracoesAceitas,
-      uriScanDpa,
-      contatoEmergencia,
-      contatoEmergenciaTelefone,
-      nomeColih,
-      telefoneColih,
-      dpaCategoriaAtualizado,
-    },
+    nome: criarCampoTexto({ rotulo: tm.campoNome }),
+    telefone: criarCampoTexto({ rotulo: tm.campoTelefone }),
+    email: criarCampoTexto({ rotulo: tm.campoEmail }),
+    link: criarCampoTexto({ rotulo: tm.campoLink }),
+    comentario: criarCampoTexto({ rotulo: tm.campoComentario, linhas: 2 }),
+    nomeSecretario: criarCampoTexto({ rotulo: tm.campoNomeSecretario }),
+    telefoneSecretario: criarCampoTexto({ rotulo: tm.campoTelSecretario }),
+    tipoSanguineo: criarCampoTexto({ rotulo: tm.campoTipoSanguineo }),
+    alergias: criarCampoTexto({ rotulo: tm.campoAlergias, linhas: 2 }),
+    medicamentosEmUso: criarCampoTexto({ rotulo: tm.campoMedicamentos, linhas: 2 }),
+    observacoesMedicas: criarCampoTexto({ rotulo: tm.campoObsMedicas, linhas: 4 }),
+    recusaTransfusao,
+    fracoesAceitas: criarCampoTexto({ rotulo: tm.campoFracoesAceitas, linhas: 2 }),
+    uriScanDpa: criarCampoTexto({ rotulo: tm.campoUriDpa }),
+    contatoEmergencia: criarCampoTexto({ rotulo: tm.campoContatoEmergencia }),
+    contatoEmergenciaTelefone: criarCampoTexto({ rotulo: tm.campoTelEmergencia }),
+    nomeColih: criarCampoTexto({ rotulo: tm.campoNomeColih }),
+    telefoneColih: criarCampoTexto({ rotulo: tm.campoTelColih }),
+    dpaCategoriaAtualizado: criarCampoNumero({ rotulo: tm.campoDpaCategoria, valorInicial: 0 }),
   };
+}
+
+function preencherCampos(row: MeuPerfilRow, campos: CamposPerfilUi): void {
+  campos.nome.definirValor(row.nome);
+  campos.telefone.definirValor(row.telefone);
+  campos.email.definirValor(row.email);
+  campos.link.definirValor(row.link);
+  campos.comentario.definirValor(row.comentario);
+  campos.nomeSecretario.definirValor(row.nomeSecretario);
+  campos.telefoneSecretario.definirValor(row.telefoneSecretario);
+  campos.tipoSanguineo.definirValor(row.tipoSanguineo);
+  campos.alergias.definirValor(row.alergias);
+  campos.medicamentosEmUso.definirValor(row.medicamentosEmUso);
+  campos.observacoesMedicas.definirValor(row.observacoesMedicas);
+  campos.recusaTransfusao.checked = row.recusaTransfusao !== 0;
+  campos.fracoesAceitas.definirValor(row.fracoesAceitas);
+  campos.uriScanDpa.definirValor(row.uriScanDpa);
+  campos.contatoEmergencia.definirValor(row.contatoEmergencia);
+  campos.contatoEmergenciaTelefone.definirValor(row.contatoEmergenciaTelefone);
+  campos.nomeColih.definirValor(row.nomeColih);
+  campos.telefoneColih.definirValor(row.telefoneColih);
+  campos.dpaCategoriaAtualizado.definirValor(row.dpaCategoriaAtualizado ?? 0);
 }
 
 function coletarInput(r: CamposPerfilUi): Omit<MeuPerfilRow, 'id'> {
   return {
-    nome: r.nome.value.trim(),
-    telefone: r.telefone.value.trim(),
-    email: r.email.value.trim(),
-    link: r.link.value.trim(),
-    comentario: r.comentario.value.trim(),
-    nomeSecretario: r.nomeSecretario.value.trim(),
-    telefoneSecretario: r.telefoneSecretario.value.trim(),
-    tipoSanguineo: r.tipoSanguineo.value.trim(),
-    alergias: r.alergias.value.trim(),
-    medicamentosEmUso: r.medicamentosEmUso.value.trim(),
-    observacoesMedicas: r.observacoesMedicas.value.trim(),
+    nome: r.nome.valor(),
+    telefone: r.telefone.valor(),
+    email: r.email.valor(),
+    link: r.link.valor(),
+    comentario: r.comentario.valor(),
+    nomeSecretario: r.nomeSecretario.valor(),
+    telefoneSecretario: r.telefoneSecretario.valor(),
+    tipoSanguineo: r.tipoSanguineo.valor(),
+    alergias: r.alergias.valor(),
+    medicamentosEmUso: r.medicamentosEmUso.valor(),
+    observacoesMedicas: r.observacoesMedicas.valor(),
     recusaTransfusao: r.recusaTransfusao.checked ? 1 : 0,
-    fracoesAceitas: r.fracoesAceitas.value.trim(),
-    uriScanDpa: r.uriScanDpa.value.trim(),
-    contatoEmergencia: r.contatoEmergencia.value.trim(),
-    contatoEmergenciaTelefone: r.contatoEmergenciaTelefone.value.trim(),
-    nomeColih: r.nomeColih.value.trim(),
-    telefoneColih: r.telefoneColih.value.trim(),
-    dpaCategoriaAtualizado: Number.parseInt(String(r.dpaCategoriaAtualizado.value), 10) || 0,
+    fracoesAceitas: r.fracoesAceitas.valor(),
+    uriScanDpa: r.uriScanDpa.valor(),
+    contatoEmergencia: r.contatoEmergencia.valor(),
+    contatoEmergenciaTelefone: r.contatoEmergenciaTelefone.valor(),
+    nomeColih: r.nomeColih.valor(),
+    telefoneColih: r.telefoneColih.valor(),
+    dpaCategoriaAtualizado: r.dpaCategoriaAtualizado.valor() || 0,
   };
-}
-
-function secaoTitulo(txt: string): HTMLElement {
-  const h = document.createElement('h2');
-  h.className = 'shell__subtitulo';
-  h.textContent = txt;
-  return h;
 }
 
 const perfilPagina: PaginaMontavel = {
   async mount(container, sinal) {
     const loc = obterLocaleAtual();
     let tm = obterTextosPerfil(loc);
-    const appNome = obterTextosConfig(loc).appNomeTituloDoc;
-    document.title = `${tm.tituloPagina} — ${appNome}`;
+    definirTituloDocumentoApp(tm.tituloPagina, loc);
 
-    const barra = document.createElement('div');
-    barra.className = 'shell__barra-ficha';
-    const h1 = document.createElement('h1');
-    h1.className = 'shell__titulo';
+    let perfilAtual = await perfilRepo.obterPerfil();
 
-    const sub = document.createElement('p');
-    sub.className = 'shell__sub';
+    const botaoEditar = criarBotaoAcao(tm.editar, { variant: 'brand' });
+    const pagina = criarPaginaUi({ titulo: tm.tituloPagina, subtitulo: tm.subtituloIce, acoes: [botaoEditar] });
+    const campos = criarCamposPerfil(tm);
 
-    const form = document.createElement('div');
-    form.className = 'shell__secao-config';
+    const recusaWrap = document.createElement('label');
+    recusaWrap.className = 'shell__checkbox-linha';
+    const recusaTexto = document.createTextNode(tm.campoRecusaTransfusao);
+    recusaWrap.append(campos.recusaTransfusao, recusaTexto);
 
     const estado = document.createElement('p');
     estado.className = 'shell__hint';
     estado.hidden = true;
     estado.setAttribute('role', 'status');
 
-    const btnGuardar = document.createElement('button');
-    btnGuardar.type = 'button';
-    btnGuardar.className = 'shell__acao-primaria-botao';
+    const corpoDialogo = [
+      criarTituloSecao(tm.secDados),
+      criarFormGrid(campos.nome.elemento, campos.telefone.elemento, campos.email.elemento, campos.link.elemento),
+      campos.comentario.elemento,
+      criarTituloSecao(tm.secSecretario),
+      criarFormGrid(campos.nomeSecretario.elemento, campos.telefoneSecretario.elemento),
+      criarTituloSecao(tm.secMedico),
+      criarFormGrid(campos.tipoSanguineo.elemento, campos.uriScanDpa.elemento, campos.dpaCategoriaAtualizado.elemento),
+      criarFormGrid(campos.alergias.elemento, campos.medicamentosEmUso.elemento),
+      campos.observacoesMedicas.elemento,
+      recusaWrap,
+      campos.fracoesAceitas.elemento,
+      criarTituloSecao(tm.secEmergencia),
+      criarFormGrid(campos.contatoEmergencia.elemento, campos.contatoEmergenciaTelefone.elemento),
+      criarTituloSecao(tm.secColih),
+      criarFormGrid(campos.nomeColih.elemento, campos.telefoneColih.elemento),
+    ];
 
-    container.replaceChildren();
-    barra.append(h1);
-    container.append(barra, sub, form, estado, btnGuardar);
-
-    let campoRefs = rowParaCampos(
-      await perfilRepo.obterPerfil(),
-      tm,
-    ).refs;
-
-    function montarFormulario(tmAtual: typeof tm): void {
-      tm = tmAtual;
-      document.title = `${tm.tituloPagina} — ${obterTextosConfig(obterLocaleAtual()).appNomeTituloDoc}`;
-      h1.textContent = tm.tituloPagina;
-      sub.textContent = tm.subtituloIce;
-      btnGuardar.textContent = tm.guardar;
-      form.replaceChildren();
-
-      const chkWrap = document.createElement('label');
-      chkWrap.className = 'shell__checkbox-linha';
-      const lblRec = document.createTextNode(tm.campoRecusaTransfusao);
-      chkWrap.append(campoRefs.recusaTransfusao, lblRec);
-
-      form.append(
-        secaoTitulo(tm.secDados),
-        mkLinhaCampo(tm.campoNome, campoRefs.nome),
-        mkLinhaCampo(tm.campoTelefone, campoRefs.telefone),
-        mkLinhaCampo(tm.campoEmail, campoRefs.email),
-        mkLinhaCampo(tm.campoLink, campoRefs.link),
-        mkLinhaCampo(tm.campoComentario, campoRefs.comentario),
-
-        secaoTitulo(tm.secSecretario),
-        mkLinhaCampo(tm.campoNomeSecretario, campoRefs.nomeSecretario),
-        mkLinhaCampo(tm.campoTelSecretario, campoRefs.telefoneSecretario),
-
-        secaoTitulo(tm.secMedico),
-        mkLinhaCampo(tm.campoTipoSanguineo, campoRefs.tipoSanguineo),
-        mkLinhaCampo(tm.campoAlergias, campoRefs.alergias),
-        mkLinhaCampo(tm.campoMedicamentos, campoRefs.medicamentosEmUso),
-        mkLinhaCampo(tm.campoObsMedicas, campoRefs.observacoesMedicas),
-        chkWrap,
-        mkLinhaCampo(tm.campoFracoesAceitas, campoRefs.fracoesAceitas),
-        mkLinhaCampo(tm.campoUriDpa, campoRefs.uriScanDpa),
-
-        secaoTitulo(tm.secEmergencia),
-        mkLinhaCampo(tm.campoContatoEmergencia, campoRefs.contatoEmergencia),
-        mkLinhaCampo(tm.campoTelEmergencia, campoRefs.contatoEmergenciaTelefone),
-
-        secaoTitulo(tm.secColih),
-        mkLinhaCampo(tm.campoNomeColih, campoRefs.nomeColih),
-        mkLinhaCampo(tm.campoTelColih, campoRefs.telefoneColih),
-        mkLinhaCampo(tm.campoDpaCategoria, campoRefs.dpaCategoriaAtualizado),
-      );
-    }
-
-    montarFormulario(tm);
-
-    btnGuardar.addEventListener(
-      'click',
-      async () => {
+    const dialogoPerfil = criarDialogoFormulario({
+      titulo: tm.editar,
+      confirmarTexto: tm.guardar,
+      cancelarTexto: obterLocaleAtual() === 'en' ? 'Cancel' : 'Cancelar',
+      conteudo: corpoDialogo,
+      signal: sinal,
+      aoConfirmar: async () => {
         estado.hidden = true;
         try {
-          await perfilRepo.gravarPerfil(coletarInput(campoRefs));
+          await perfilRepo.gravarPerfil(coletarInput(campos));
+          perfilAtual = await perfilRepo.obterPerfil();
+          renderizarResumo();
           estado.hidden = false;
           estado.textContent = obterTextosPerfil(obterLocaleAtual()).gravadoOk;
         } catch {
           estado.hidden = false;
           estado.textContent = obterTextosPerfil(obterLocaleAtual()).erroBd;
+          return false;
         }
+      },
+    });
+
+    pagina.corpo.append(estado);
+    container.replaceChildren(pagina.raiz, dialogoPerfil.elemento);
+
+    function renderizarResumo(): void {
+      const t = obterTextosPerfil(obterLocaleAtual());
+      const cardDados = criarCardUi({
+        titulo: t.secDados,
+        conteudo: [
+          criarBlocoLista(perfilAtual.nome || t.campoNome, [
+            `${t.campoTelefone}: ${valorOuTraco(perfilAtual.telefone)}`,
+            `${t.campoEmail}: ${valorOuTraco(perfilAtual.email)}`,
+            `${t.campoLink}: ${valorOuTraco(perfilAtual.link)}`,
+            valorOuTraco(perfilAtual.comentario),
+          ]),
+        ],
+      });
+      const cardMedico = criarCardUi({
+        titulo: t.secMedico,
+        conteudo: [
+          criarBlocoLista(valorOuTraco(perfilAtual.tipoSanguineo), [
+            `${t.campoAlergias}: ${valorOuTraco(perfilAtual.alergias)}`,
+            `${t.campoMedicamentos}: ${valorOuTraco(perfilAtual.medicamentosEmUso)}`,
+            `${t.campoRecusaTransfusao}: ${perfilAtual.recusaTransfusao !== 0 ? 'sim' : 'não'}`,
+          ]),
+        ],
+      });
+      const cardEmergencia = criarCardUi({
+        titulo: t.secEmergencia,
+        conteudo: [
+          criarBlocoLista(valorOuTraco(perfilAtual.contatoEmergencia), [
+            `${t.campoTelEmergencia}: ${valorOuTraco(perfilAtual.contatoEmergenciaTelefone)}`,
+          ]),
+        ],
+      });
+      const cardApoio = criarCardUi({
+        titulo: t.secSecretario,
+        conteudo: [
+          criarBlocoLista(valorOuTraco(perfilAtual.nomeSecretario), [
+            `${t.campoTelSecretario}: ${valorOuTraco(perfilAtual.telefoneSecretario)}`,
+            `${t.secColih}: ${valorOuTraco(perfilAtual.nomeColih)} · ${valorOuTraco(perfilAtual.telefoneColih)}`,
+          ]),
+        ],
+      });
+
+      pagina.corpo.replaceChildren(
+        estado,
+        criarGrid(cardDados.cartao, cardMedico.cartao, cardEmergencia.cartao, cardApoio.cartao),
+      );
+    }
+
+    function aplicarTextos(t: typeof tm): void {
+      tm = t;
+      definirTituloDocumentoApp(tm.tituloPagina);
+      pagina.titulo.textContent = tm.tituloPagina;
+      pagina.subtitulo.textContent = tm.subtituloIce;
+      botaoEditar.textContent = tm.editar;
+      dialogoPerfil.definirTitulo(tm.editar);
+      dialogoPerfil.botaoConfirmar.textContent = tm.guardar;
+      dialogoPerfil.botaoCancelar.textContent = obterLocaleAtual() === 'en' ? 'Cancel' : 'Cancelar';
+      recusaTexto.textContent = tm.campoRecusaTransfusao;
+      campos.nome.definirRotulo(tm.campoNome);
+      campos.nome.definirPlaceholder(tm.campoNome);
+      campos.telefone.definirRotulo(tm.campoTelefone);
+      campos.telefone.definirPlaceholder(tm.campoTelefone);
+      campos.email.definirRotulo(tm.campoEmail);
+      campos.email.definirPlaceholder(tm.campoEmail);
+      campos.link.definirRotulo(tm.campoLink);
+      campos.link.definirPlaceholder(tm.campoLink);
+      campos.comentario.definirRotulo(tm.campoComentario);
+      campos.comentario.definirPlaceholder(tm.campoComentario);
+      campos.nomeSecretario.definirRotulo(tm.campoNomeSecretario);
+      campos.nomeSecretario.definirPlaceholder(tm.campoNomeSecretario);
+      campos.telefoneSecretario.definirRotulo(tm.campoTelSecretario);
+      campos.telefoneSecretario.definirPlaceholder(tm.campoTelSecretario);
+      campos.tipoSanguineo.definirRotulo(tm.campoTipoSanguineo);
+      campos.tipoSanguineo.definirPlaceholder(tm.campoTipoSanguineo);
+      campos.alergias.definirRotulo(tm.campoAlergias);
+      campos.alergias.definirPlaceholder(tm.campoAlergias);
+      campos.medicamentosEmUso.definirRotulo(tm.campoMedicamentos);
+      campos.medicamentosEmUso.definirPlaceholder(tm.campoMedicamentos);
+      campos.observacoesMedicas.definirRotulo(tm.campoObsMedicas);
+      campos.observacoesMedicas.definirPlaceholder(tm.campoObsMedicas);
+      campos.fracoesAceitas.definirRotulo(tm.campoFracoesAceitas);
+      campos.fracoesAceitas.definirPlaceholder(tm.campoFracoesAceitas);
+      campos.uriScanDpa.definirRotulo(tm.campoUriDpa);
+      campos.uriScanDpa.definirPlaceholder(tm.campoUriDpa);
+      campos.contatoEmergencia.definirRotulo(tm.campoContatoEmergencia);
+      campos.contatoEmergencia.definirPlaceholder(tm.campoContatoEmergencia);
+      campos.contatoEmergenciaTelefone.definirRotulo(tm.campoTelEmergencia);
+      campos.contatoEmergenciaTelefone.definirPlaceholder(tm.campoTelEmergencia);
+      campos.nomeColih.definirRotulo(tm.campoNomeColih);
+      campos.nomeColih.definirPlaceholder(tm.campoNomeColih);
+      campos.telefoneColih.definirRotulo(tm.campoTelColih);
+      campos.telefoneColih.definirPlaceholder(tm.campoTelColih);
+      campos.dpaCategoriaAtualizado.definirRotulo(tm.campoDpaCategoria);
+      renderizarResumo();
+    }
+
+    botaoEditar.addEventListener(
+      'click',
+      async () => {
+        perfilAtual = await perfilRepo.obterPerfil();
+        preencherCampos(perfilAtual, campos);
+        dialogoPerfil.abrir();
       },
       { signal: sinal },
     );
 
+    aplicarTextos(tm);
+
     registarAoLocaleAtualizado(async () => {
-      const atual = await perfilRepo.obterPerfil();
-      const { refs } = rowParaCampos(atual, obterTextosPerfil(obterLocaleAtual()));
-      campoRefs = refs;
-      montarFormulario(obterTextosPerfil(obterLocaleAtual()));
+      perfilAtual = await perfilRepo.obterPerfil();
+      aplicarTextos(obterTextosPerfil(obterLocaleAtual()));
     }, sinal);
   },
 
   unmount() {
-    document.title = obterTextosConfig(obterLocaleAtual()).appNomeTituloDoc;
+    reporTituloDocumentoSoNomeApp();
   },
 };
 

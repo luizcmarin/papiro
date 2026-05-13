@@ -1,21 +1,30 @@
-import '@awesome.me/webawesome/dist/components/button/button.js';
-
 import * as repoQuiz from '../../modules/quiz/dados/repositorio.js';
-import type { PerguntaQuizRow } from '../../modules/quiz/dados/types.js';
+import type { PerguntaQuizRow, RecordeMemoriaRow } from '../../modules/quiz/dados/types.js';
+import { avaliarRespostaQuiz, calcularNivelQuiz, respostasDaPergunta } from '../../modules/quiz/aplicacao/motor-quiz.js';
 import { obterTextosQuiz } from '../../modules/quiz/ui/textos-quiz.js';
 import { obterLocaleAtual, registarAoLocaleAtualizado } from '../../modules/shared/ui/locale.js';
-import { obterTextosConfig } from '../../modules/configuracao/ui/textos-config.js';
+import { criarDialogoFormulario } from '../ui/dialogos.js';
+import { criarCampoNumero, criarCampoTexto, criarFormGrid } from '../ui/form.js';
+import { criarCardUi, criarGrid, criarPaginaUi } from '../ui/layout.js';
+import { criarBotaoAcao, criarLinhaLista, criarListaCrud } from '../ui/lista.js';
 import type { PaginaMontavel } from '../pagina-montavel.js';
+import { definirTituloDocumentoApp, reporTituloDocumentoSoNomeApp } from '../ui/titulo-documento.js';
 
 const quizPagina: PaginaMontavel = {
   async mount(container, sinal) {
     let atual: PerguntaQuizRow | null = null;
+    let escolheu = 0;
+    let radios: { r: HTMLInputElement; l: HTMLLabelElement }[] = [];
+    let xpTotal = 0;
+    let sequencia = 0;
+    let usouDica = false;
 
-    const bar = document.createElement('div');
-    bar.className = 'shell__barra-ficha';
-    const h1 = document.createElement('h1');
-    h1.className = 'shell__titulo';
-    bar.append(h1);
+    const tl = (): ReturnType<typeof obterTextosQuiz> => obterTextosQuiz(obterLocaleAtual());
+    const t0 = tl();
+    definirTituloDocumentoApp(t0.tituloPagina);
+
+    const botaoNovaPergunta = criarBotaoAcao(t0.novaPerguntaTitulo, { variant: 'brand' });
+    const pagina = criarPaginaUi({ titulo: t0.tituloPagina, acoes: [botaoNovaPergunta] });
 
     const perguntaTxt = document.createElement('p');
     perguntaTxt.className = 'shell__lista-titulo';
@@ -24,96 +33,132 @@ const quizPagina: PaginaMontavel = {
     campoRef.className = 'shell__lista-meta';
 
     const escolhas = document.createElement('div');
-    escolhas.className = 'shell__filtros';
+    escolhas.className = 'shell__stack shell__stack--compacta';
 
     const resultado = document.createElement('p');
     resultado.className = 'shell__sub';
     resultado.setAttribute('role', 'status');
 
-    const btOutra = document.createElement('wa-button');
-    const btVer = document.createElement('wa-button');
+    const progresso = document.createElement('p');
+    progresso.className = 'shell__empty';
 
-    const hNovo = document.createElement('h2');
-    hNovo.className = 'shell__titulo';
+    const btOutra = criarBotaoAcao(t0.carregarPergunta, { variant: 'neutral' });
+    const btVer = criarBotaoAcao(t0.responder, { variant: 'brand' });
+    const btDica = criarBotaoAcao(t0.dica, { variant: 'neutral' });
+    const acoesQuiz = document.createElement('div');
+    acoesQuiz.className = 'shell__acoes';
+    acoesQuiz.append(btVer, btDica, btOutra);
 
-    const inP = document.createElement('textarea');
-    inP.rows = 2;
-    inP.className = 'shell__input-texto';
-
-    const inRf = document.createElement('input');
-    inRf.type = 'text';
-    inRf.className = 'shell__input-texto';
-
-    const inDif = document.createElement('input');
-    inDif.type = 'number';
-    inDif.min = '1';
-    inDif.value = '2';
-    inDif.className = 'shell__input-texto';
-
-    const inR1 = document.createElement('input');
-    const inR2 = document.createElement('input');
-    const inR3 = document.createElement('input');
-    const inR4 = document.createElement('input');
-    for (const x of [inR1, inR2, inR3, inR4]) {
-      x.type = 'text';
-      x.className = 'shell__input-texto';
-    }
-
-    const inCor = document.createElement('input');
-    inCor.type = 'number';
-    inCor.min = '1';
-    inCor.max = '4';
-    inCor.value = '1';
-    inCor.className = 'shell__input-texto';
-
-    const inId = document.createElement('input');
-    inId.type = 'number';
-    inId.min = '1';
-    inId.className = 'shell__input-texto';
-
+    const campoPergunta = criarCampoTexto({ rotulo: t0.perguntaCampo, linhas: 3 });
+    const campoReferencia = criarCampoTexto({ rotulo: t0.referenciaCampo });
+    const campoDificuldade = criarCampoNumero({ rotulo: t0.nivelCampo, valorInicial: 2, min: 1 });
+    const campoResposta1 = criarCampoTexto({ rotulo: `${t0.opcaoCampoPrefixo}1` });
+    const campoResposta2 = criarCampoTexto({ rotulo: `${t0.opcaoCampoPrefixo}2` });
+    const campoResposta3 = criarCampoTexto({ rotulo: `${t0.opcaoCampoPrefixo}3` });
+    const campoResposta4 = criarCampoTexto({ rotulo: `${t0.opcaoCampoPrefixo}4` });
+    const campoCorreta = criarCampoNumero({ rotulo: t0.indiceRespCorretaCampo, valorInicial: 1, min: 1 });
+    campoCorreta.input.setAttribute('max', '4');
+    const campoId = criarCampoNumero({ rotulo: t0.idCampoManual, min: 1 });
     const legId = document.createElement('p');
     legId.className = 'shell__hint';
 
-    const btGravar = document.createElement('wa-button');
+    const listaRecordes = criarListaCrud<RecordeMemoriaRow>({
+      vazio: t0.recordesVazio,
+      renderItem: (recorde) =>
+        criarLinhaLista({
+          titulo: recorde.dificuldade,
+          meta: `${String(recorde.partidasConcluidas)} partidas · ${String(recorde.melhorMovimentos)} movimentos`,
+        }),
+    });
 
-    const hRec = document.createElement('h2');
-    hRec.className = 'shell__titulo';
+    const dialogoPergunta = criarDialogoFormulario({
+      titulo: t0.novaPerguntaTitulo,
+      confirmarTexto: t0.gravarManual,
+      cancelarTexto: obterLocaleAtual() === 'en' ? 'Cancel' : 'Cancelar',
+      conteudo: [
+        legId,
+        criarFormGrid(campoId.elemento, campoDificuldade.elemento, campoCorreta.elemento),
+        campoPergunta.elemento,
+        criarFormGrid(campoReferencia.elemento, campoResposta1.elemento, campoResposta2.elemento, campoResposta3.elemento, campoResposta4.elemento),
+      ],
+      signal: sinal,
+      aoConfirmar: async () => {
+        const idNum = campoId.valor();
+        const cor = campoCorreta.valor();
+        if (!Number.isFinite(idNum) || idNum < 1 || cor < 1 || cor > 4) return false;
+        await repoQuiz.inserirOuSubstituirPerguntaManual({
+          id: idNum,
+          pergunta: campoPergunta.valor(),
+          referencia: campoReferencia.valor(),
+          dificuldade: campoDificuldade.valor() || 1,
+          resposta1: campoResposta1.valor(),
+          resposta2: campoResposta2.valor(),
+          resposta3: campoResposta3.valor(),
+          resposta4: campoResposta4.valor(),
+          correta: cor,
+          publicar: 1,
+        });
+        limparPerguntaManual();
+        await legendaId();
+        await tirarPergunta();
+      },
+    });
 
-    const ulRec = document.createElement('ul');
-    ulRec.className = 'shell__lista';
-
-    container.replaceChildren();
-    container.append(bar, perguntaTxt, campoRef, escolhas, btVer, btOutra, resultado, hNovo, legId, inId, inP, inRf, inDif, inR1, inR2, inR3, inR4, inCor, btGravar, hRec, ulRec);
-
-    let escolheu = 0;
-    let radios: { r: HTMLInputElement; l: HTMLLabelElement }[] = [];
-
-    const tl = (): ReturnType<typeof obterTextosQuiz> => obterTextosQuiz(obterLocaleAtual());
+    const cardPergunta = criarCardUi({
+      titulo: t0.tituloPagina,
+      conteudo: [progresso, perguntaTxt, campoRef, escolhas, acoesQuiz, resultado],
+    });
+    const cardRecordes = criarCardUi({ titulo: t0.recordesTitulo, conteudo: [listaRecordes.elemento] });
+    pagina.corpo.append(criarGrid(cardPergunta.cartao, cardRecordes.cartao));
+    container.replaceChildren(pagina.raiz, dialogoPergunta.elemento);
 
     async function legendaId(): Promise<void> {
       const nx = await repoQuiz.proximoIdLivrePergunta();
       legId.textContent = `${tl().novoIdLegendaPrefixo} ${String(nx)}`;
-      if (inId.value === '') inId.value = String(nx);
+      if (!Number.isFinite(campoId.valor()) || campoId.valor() <= 0) campoId.definirValor(nx);
     }
 
     function rot(): void {
       const T = tl();
-      document.title = `${T.tituloPagina} — ${obterTextosConfig(obterLocaleAtual()).appNomeTituloDoc}`;
-      h1.textContent = T.tituloPagina;
+      definirTituloDocumentoApp(T.tituloPagina);
+      pagina.titulo.textContent = T.tituloPagina;
+      botaoNovaPergunta.textContent = T.novaPerguntaTitulo;
       btOutra.textContent = T.carregarPergunta;
       btVer.textContent = T.responder;
-      hNovo.textContent = T.novaPerguntaTitulo;
-      inP.placeholder = T.perguntaCampo;
-      inRf.placeholder = T.referenciaCampo;
-      inDif.placeholder = T.nivelCampo;
-      inR1.placeholder = `${T.opcaoCampoPrefixo}1`;
-      inR2.placeholder = `${T.opcaoCampoPrefixo}2`;
-      inR3.placeholder = `${T.opcaoCampoPrefixo}3`;
-      inR4.placeholder = `${T.opcaoCampoPrefixo}4`;
-      inCor.placeholder = T.indiceRespCorretaCampo;
-      inId.placeholder = T.idCampoManual;
-      btGravar.textContent = T.gravarManual;
-      hRec.textContent = T.recordesTitulo;
+      btDica.textContent = T.dica;
+      cardPergunta.titulo.textContent = T.tituloPagina;
+      cardRecordes.titulo.textContent = T.recordesTitulo;
+      campoPergunta.definirRotulo(T.perguntaCampo);
+      campoPergunta.definirPlaceholder(T.perguntaCampo);
+      campoReferencia.definirRotulo(T.referenciaCampo);
+      campoReferencia.definirPlaceholder(T.referenciaCampo);
+      campoDificuldade.definirRotulo(T.nivelCampo);
+      campoDificuldade.definirPlaceholder(T.nivelCampo);
+      campoResposta1.definirRotulo(`${T.opcaoCampoPrefixo}1`);
+      campoResposta1.definirPlaceholder(`${T.opcaoCampoPrefixo}1`);
+      campoResposta2.definirRotulo(`${T.opcaoCampoPrefixo}2`);
+      campoResposta2.definirPlaceholder(`${T.opcaoCampoPrefixo}2`);
+      campoResposta3.definirRotulo(`${T.opcaoCampoPrefixo}3`);
+      campoResposta3.definirPlaceholder(`${T.opcaoCampoPrefixo}3`);
+      campoResposta4.definirRotulo(`${T.opcaoCampoPrefixo}4`);
+      campoResposta4.definirPlaceholder(`${T.opcaoCampoPrefixo}4`);
+      campoCorreta.definirRotulo(T.indiceRespCorretaCampo);
+      campoCorreta.definirPlaceholder(T.indiceRespCorretaCampo);
+      campoId.definirRotulo(T.idCampoManual);
+      campoId.definirPlaceholder(T.idCampoManual);
+      dialogoPergunta.definirTitulo(T.novaPerguntaTitulo);
+      dialogoPergunta.botaoConfirmar.textContent = T.gravarManual;
+      dialogoPergunta.botaoCancelar.textContent = obterLocaleAtual() === 'en' ? 'Cancel' : 'Cancelar';
+      listaRecordes.definirTextoVazio(T.recordesVazio);
+      atualizarProgresso();
+    }
+
+    function atualizarProgresso(): void {
+      const T = tl();
+      progresso.textContent = T.progressoResumo
+        .replace('{xp}', String(xpTotal))
+        .replace('{nivel}', String(calcularNivelQuiz(xpTotal)))
+        .replace('{seq}', String(sequencia));
     }
 
     function encherPergunta(row: PerguntaQuizRow): void {
@@ -121,7 +166,7 @@ const quizPagina: PaginaMontavel = {
       atual = row;
       perguntaTxt.textContent = row.pergunta;
       campoRef.textContent = `${T.referenciaCampo}: ${row.referencia}`;
-      const resps = [row.resposta1, row.resposta2, row.resposta3, row.resposta4];
+      const resps = respostasDaPergunta(row);
       for (let i = 0; i < 4; i++) {
         const rd = radios[i];
         if (!rd) continue;
@@ -129,16 +174,21 @@ const quizPagina: PaginaMontavel = {
         rd.l.childNodes[1]!.textContent = ` ${resps[i] ?? ''}`;
       }
       escolheu = 0;
+      usouDica = false;
+      btDica.toggleAttribute('disabled', false);
       resultado.textContent = '';
+      atualizarProgresso();
     }
 
     async function tirarPergunta(): Promise<void> {
       const T = tl();
       const p = await repoQuiz.obterPerguntaAleatoria();
       if (!p) {
+        atual = null;
         perguntaTxt.textContent = T.semPerguntasTitulo;
         campoRef.textContent = '';
         escolhas.replaceChildren();
+        btDica.toggleAttribute('disabled', true);
         return;
       }
       escolhas.replaceChildren();
@@ -158,23 +208,21 @@ const quizPagina: PaginaMontavel = {
       encherPergunta(p);
     }
 
-    async function recordesLista(): Promise<void> {
-      ulRec.replaceChildren();
-      const rows = await repoQuiz.listarRecordesMemoria();
-      const T = tl();
-      if (rows.length === 0) {
-        ulRec.append(Object.assign(document.createElement('li'), { textContent: T.recordesVazio, className: 'shell__sub' }));
-        return;
-      }
-      for (const r of rows) {
-        const li = document.createElement('li');
-        li.className = 'shell__lista-linha';
-        li.textContent = `${r.dificuldade} · ${String(r.partidasConcluidas)} `;
-        ulRec.append(li);
-      }
+    function usarDica(): void {
+      if (!atual || usouDica) return;
+      const erradas = radios.filter((rd) => Number(rd.r.value) !== atual?.correta && !rd.r.checked);
+      const alvo = erradas[0];
+      if (!alvo) return;
+      alvo.r.disabled = true;
+      alvo.l.classList.add('shell__lista-meta');
+      usouDica = true;
+      btDica.toggleAttribute('disabled', true);
     }
 
-    registarAoLocaleAtualizado(() => void init(), sinal);
+    async function recordesLista(): Promise<void> {
+      const rows = await repoQuiz.listarRecordesMemoria();
+      listaRecordes.renderizar(rows);
+    }
 
     async function init(): Promise<void> {
       rot();
@@ -183,7 +231,20 @@ const quizPagina: PaginaMontavel = {
       await recordesLista();
     }
 
+    function limparPerguntaManual(): void {
+      campoPergunta.limpar();
+      campoReferencia.limpar();
+      campoResposta1.limpar();
+      campoResposta2.limpar();
+      campoResposta3.limpar();
+      campoResposta4.limpar();
+      campoDificuldade.definirValor(2);
+      campoCorreta.definirValor(1);
+    }
+
+    registarAoLocaleAtualizado(() => void init(), sinal);
     btOutra.addEventListener('click', () => void tirarPergunta(), { signal: sinal });
+    btDica.addEventListener('click', usarDica, { signal: sinal });
 
     btVer.addEventListener(
       'click',
@@ -191,32 +252,29 @@ const quizPagina: PaginaMontavel = {
         if (!atual) return;
         const T = tl();
         if (escolheu < 1 || escolheu > 4) return;
-        const ok = escolheu === atual.correta;
-        resultado.textContent = ok ? T.corretoToast : T.erradoToast;
+        const aval = avaliarRespostaQuiz({
+          pergunta: atual,
+          escolha: escolheu,
+          xpAtual: xpTotal,
+          sequenciaAtual: sequencia,
+          usouDica,
+        });
+        xpTotal += aval.xpGanho;
+        sequencia = aval.sequenciaNova;
+        resultado.textContent = aval.correta
+          ? `${T.corretoToast} +${String(aval.xpGanho)} XP`
+          : T.erradoToast;
+        atualizarProgresso();
       },
       { signal: sinal },
     );
 
-    btGravar.addEventListener(
+    botaoNovaPergunta.addEventListener(
       'click',
       async () => {
-        const idNum = Number(inId.value);
-        const cor = Number(inCor.value);
-        if (!Number.isFinite(idNum) || idNum < 1 || cor < 1 || cor > 4) return;
-        await repoQuiz.inserirOuSubstituirPerguntaManual({
-          id: idNum,
-          pergunta: inP.value.trim(),
-          referencia: inRf.value.trim(),
-          dificuldade: Number(inDif.value) || 1,
-          resposta1: inR1.value.trim(),
-          resposta2: inR2.value.trim(),
-          resposta3: inR3.value.trim(),
-          resposta4: inR4.value.trim(),
-          correta: cor,
-          publicar: 1,
-        });
+        limparPerguntaManual();
         await legendaId();
-        await tirarPergunta();
+        dialogoPergunta.abrir();
       },
       { signal: sinal },
     );
@@ -225,7 +283,7 @@ const quizPagina: PaginaMontavel = {
   },
 
   unmount() {
-    document.title = obterTextosConfig(obterLocaleAtual()).appNomeTituloDoc;
+    reporTituloDocumentoSoNomeApp();
   },
 };
 

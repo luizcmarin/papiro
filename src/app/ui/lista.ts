@@ -85,3 +85,22 @@ export function criarLinhaLista(opcoes: {
   li.append(titulo, meta, acoes);
   return li;
 }
+
+export function criarBlocoLista(tituloTexto: string, detalhes: string[] = []): HTMLElement {
+  const bloco = document.createElement('span');
+  bloco.className = 'shell__lista-bloco';
+
+  const titulo = document.createElement('span');
+  titulo.className = 'shell__lista-titulo';
+  titulo.textContent = tituloTexto;
+  bloco.append(titulo);
+
+  for (const detalheTexto of detalhes.filter(Boolean)) {
+    const detalhe = document.createElement('span');
+    detalhe.className = 'shell__lista-sub';
+    detalhe.textContent = detalheTexto;
+    bloco.append(detalhe);
+  }
+
+  return bloco;
+}

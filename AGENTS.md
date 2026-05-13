@@ -1,6 +1,6 @@
 ---
 name: papiro-spa-agent
-description: 'Papiro: SPA TS offline-first (Bun, Vite, Page.js, Web Awesome, SQLocal, TipTap); basedados.json v37; docs na raiz'
+description: 'Papiro: SPA TS offline-first (Bun, Vite, router SPA, Web Awesome, SQLocal, TipTap); basedados.json v37; docs na raiz'
 visibility: workspace
 priority: critical
 autoLoad: true
@@ -16,7 +16,7 @@ Este ficheiro existe para **alinhar o assistente** ao que o repositório **é ho
 
 ## O que é o Papiro
 
-PWA **offline-first** para Testemunhas de Jeová (vida espiritual, ministério, finanças, prontidão, etc.). Implementação-alvo: **SPA em TypeScript** — **Vite**, rotas (**Page.js** ou equivalente documentado), **Web Awesome** (UI + tema), **SQLocal** (SQLite em worker + OPFS), editor **TipTap**, **DOMPurify** centralizado, gráficos **ECharts** onde aplicável.
+PWA **offline-first** para Testemunhas de Jeová (vida espiritual, ministério, finanças, prontidão, etc.). Implementação-alvo: **SPA em TypeScript** — **Vite**, rotas (**History API** + `app/router.ts` / `app/navegacao/router-spa.ts`), **Web Awesome** (UI + tema), **SQLocal** (SQLite em worker + OPFS), editor **TipTap**, **DOMPurify** centralizado, gráficos **ECharts** onde aplicável.
 
 ---
 
@@ -24,13 +24,13 @@ PWA **offline-first** para Testemunhas de Jeová (vida espiritual, ministério, 
 
 | O quê                                    | Onde                                                                                                              |
 | :--------------------------------------- | :---------------------------------------------------------------------------------------------------------------- |
-| Plano por fases                          | [`PLANEJAMENTO_MESTRE.md`](./PLANEJAMENTO_MESTRE.md)                                                              |
+| Visão técnica, stack, fatias, estado     | [`DOCUMENTACAO.md`](./DOCUMENTACAO.md)                                                                            |
 | Esquema SQL (JSON de contrato)           | [`basedados.json`](./basedados.json) na **raiz** — `database.version` **37** e `identityHash` no próprio ficheiro |
 | Dados, sync, lazy selection, `id_remoto` | [`BANCO_DE_DADOS.md`](./BANCO_DE_DADOS.md)                                                                        |
-| Arquitetura SPA, fatias, shell           | [`ARQUITETURA_SOLUCAO.md`](./ARQUITETURA_SOLUCAO.md)                                                              |
 | Tema e marca (Web Awesome nativo)        | [`DESIGN_SYSTEM.md`](./DESIGN_SYSTEM.md)                                                                          |
+| Fluxos de produto (UX por módulo)        | [`GUIA_USUARIO.md`](./GUIA_USUARIO.md) — visão geral em [`README.md`](./README.md#sobre-o-produto)               |
 
-Se o código ainda não existir para um ponto do plano, **não** tratar o plano como se já estivesse implementado: proponha ou implemente em harmonia com estes documentos.
+Se o código ainda não existir para um ponto descrito na documentação, **não** tratar como já implementado: proponha ou implemente em harmonia com estes documentos.
 
 ---
 
@@ -112,4 +112,4 @@ Para alterações não triviais, podes fechar com três blocos curtos: **O que m
 
 ## Documentação do produto (mesmo pacote)
 
-[`PLANEJAMENTO_MESTRE.md`](./PLANEJAMENTO_MESTRE.md) · [`ARQUITETURA_SOLUCAO.md`](./ARQUITETURA_SOLUCAO.md) · [`BANCO_DE_DADOS.md`](./BANCO_DE_DADOS.md) · [`DESIGN_SYSTEM.md`](./DESIGN_SYSTEM.md) · [`basedados.json`](./basedados.json)
+[`DOCUMENTACAO.md`](./DOCUMENTACAO.md) · [`BANCO_DE_DADOS.md`](./BANCO_DE_DADOS.md) · [`DESIGN_SYSTEM.md`](./DESIGN_SYSTEM.md) · [`GUIA_USUARIO.md`](./GUIA_USUARIO.md) · [`basedados.json`](./basedados.json)

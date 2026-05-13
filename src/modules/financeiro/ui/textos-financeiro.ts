@@ -30,6 +30,11 @@ export interface TextosFinanceiro {
   listaVaziaCategorias: string;
   listaVaziaTransacoes: string;
   listaVaziaGraficos: string;
+  alertasTitulo: string;
+  semAlertas: string;
+  limiteCategoria: string;
+  transacoesVencidas: string;
+  diasSobrevivencia: string;
   editar: string;
   apagar: string;
   erroBd: string;
@@ -65,6 +70,11 @@ const PT: TextosFinanceiro = {
   listaVaziaCategorias: 'Sem categorias.',
   listaVaziaTransacoes: 'Sem transações este mês.',
   listaVaziaGraficos: 'Sem dados para gráficos.',
+  alertasTitulo: 'Alertas financeiros',
+  semAlertas: 'Sem alertas para o mês selecionado.',
+  limiteCategoria: 'Limite excedido em',
+  transacoesVencidas: 'Transações vencidas em aberto',
+  diasSobrevivencia: 'Dias estimados de sobrevivência financeira',
   editar: 'Editar',
   apagar: 'Apagar',
   erroBd: 'Erro ao carregar dados.',
@@ -100,6 +110,11 @@ const EN: TextosFinanceiro = {
   listaVaziaCategorias: 'No categories yet.',
   listaVaziaTransacoes: 'No transactions this month.',
   listaVaziaGraficos: 'Not enough data for charts.',
+  alertasTitulo: 'Financial alerts',
+  semAlertas: 'No alerts for the selected month.',
+  limiteCategoria: 'Cap exceeded in',
+  transacoesVencidas: 'Overdue open transactions',
+  diasSobrevivencia: 'Estimated financial survival days',
   editar: 'Edit',
   apagar: 'Delete',
   erroBd: 'Could not load data.',

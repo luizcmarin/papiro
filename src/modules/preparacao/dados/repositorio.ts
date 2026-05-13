@@ -2,6 +2,8 @@ import { obterClienteSqlocal } from '../../../infra/db/cliente-sqlocal.js';
 import type {
   EstoqueAlimentoInput,
   EstoqueAlimentoRow,
+  DocumentoCofreInput,
+  DocumentoCofreRow,
   GuiaDetalheRow,
   GuiaResumoRow,
   ItemChecklistInput,
@@ -32,6 +34,34 @@ export async function contarLinhasCofre(): Promise<number> {
   return primeira?.c ?? 0;
 }
 
+export async function listarDocumentosCofre(): Promise<DocumentoCofreRow[]> {
+  const { sql } = obterClienteSqlocal();
+  const linhas = await sql`
+    SELECT id, rotulo, tipo_mime, data_criacao
+    FROM tbl_documentos_cofre
+    ORDER BY data_criacao DESC, id DESC
+  `;
+  return linhas as DocumentoCofreRow[];
+}
+
+export async function inserirDocumentoCofre(d: DocumentoCofreInput): Promise<number> {
+  const { sql } = obterClienteSqlocal();
+  const agora = Date.now();
+  const res = await sql`
+    INSERT INTO tbl_documentos_cofre (rotulo, tipo_mime, blob_criptografado, data_criacao)
+    VALUES (${d.rotulo}, ${d.tipo_mime}, ${d.blob_criptografado}, ${agora})
+    RETURNING id
+  `;
+  const primeira = res[0] as { id: number } | undefined;
+  if (!primeira) throw new Error('INSERT documento cofre falhou.');
+  return primeira.id;
+}
+
+export async function apagarDocumentoCofre(id: number): Promise<void> {
+  const { sql } = obterClienteSqlocal();
+  await sql`DELETE FROM tbl_documentos_cofre WHERE id = ${id}`;
+}
+
 export async function listarKits(): Promise<KitChecklistRow[]> {
   const { sql } = obterClienteSqlocal();
   const linhas = await sql`
@@ -58,6 +88,15 @@ export async function inserirKit(d: KitChecklistInput): Promise<number> {
 export async function apagarKit(id: number): Promise<void> {
   const { sql } = obterClienteSqlocal();
   await sql`DELETE FROM tbl_kits_checklist WHERE id = ${id}`;
+}
+
+export async function atualizarKit(id: number, d: KitChecklistInput): Promise<void> {
+  const { sql } = obterClienteSqlocal();
+  await sql`
+    UPDATE tbl_kits_checklist
+    SET nome = ${d.nome}, icone = ${d.icone}, publicar = ${d.publicar}
+    WHERE id = ${id}
+  `;
 }
 
 export async function listarItensDoKit(kitId: number): Promise<ItemChecklistRow[]> {
@@ -92,6 +131,20 @@ export async function atualizarItemMarcacao(id: number, estaMarcado: number): Pr
   await sql`UPDATE tbl_itens_checklist SET esta_marcado = ${estaMarcado} WHERE id = ${id}`;
 }
 
+export async function atualizarItemKit(id: number, d: ItemChecklistInput): Promise<void> {
+  const { sql } = obterClienteSqlocal();
+  await sql`
+    UPDATE tbl_itens_checklist
+    SET rotulo = ${d.rotulo},
+        quantidade = ${d.quantidade},
+        esta_marcado = ${d.esta_marcado},
+        data_vencimento = ${d.data_vencimento},
+        observacoes = ${d.observacoes},
+        publicar = ${d.publicar}
+    WHERE id = ${id}
+  `;
+}
+
 export async function apagarItemChecklist(id: number): Promise<void> {
   const { sql } = obterClienteSqlocal();
   await sql`DELETE FROM tbl_itens_checklist WHERE id = ${id}`;
@@ -102,7 +155,7 @@ export async function listarEstoque(): Promise<EstoqueAlimentoRow[]> {
   const linhas = await sql`
     SELECT id, item, quantidade, peso_unitario, calorias_por_100g, data_vencimento
     FROM tbl_estoque_alimentos
-    ORDER BY data_vencimento ASC, item COLLATE NOCASE
+    ORDER BY CASE WHEN data_vencimento > 0 THEN 0 ELSE 1 END, data_vencimento ASC, item COLLATE NOCASE
   `;
   return linhas as EstoqueAlimentoRow[];
 }

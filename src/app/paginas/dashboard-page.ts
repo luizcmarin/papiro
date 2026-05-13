@@ -1,59 +1,23 @@
+import { criarControleGeracaoGraficos } from '../../infra/charts/controle-geracao-grafico.js';
 import { garantirEchartsRegistrado } from '../../infra/charts/echarts-bundle.js';
 import type { EChartsType } from '../../infra/charts/echarts-bundle.js';
 import { lerCoresGraficoDoDocumento } from '../../infra/charts/cores-documento.js';
 import * as dashRepo from '../../modules/dashboard/dados/repositorio.js';
 import { obterTextosDashboard } from '../../modules/dashboard/ui/textos-dashboard.js';
-import type { LocaleId } from '../../modules/shared/ui/locale.js';
+import { eAbortoDom } from '../../modules/shared/dados/aborto-dom.js';
+import { intervaloMesLocalAtualUtc } from '../../modules/shared/dados/datas.js';
 import { obterLocaleAtual, registarAoLocaleAtualizado } from '../../modules/shared/ui/locale.js';
-import { obterTextosConfig } from '../../modules/configuracao/ui/textos-config.js';
 import { contarSessoesFocoCompletas } from '../../modules/estudo/dados/repositorio.js';
+import { formatarMoeda } from '../ui/formatos.js';
+import { criarCardUi, criarGrid, criarPaginaUi } from '../ui/layout.js';
+import { criarBotaoAcao } from '../ui/lista.js';
+import { criarGradeMetricas, renderizarMetricas } from '../ui/metricas.js';
+import { hrefParaRota } from '../menu-rotas.js';
 import type { PaginaMontavel } from '../pagina-montavel.js';
-
-function limitesMesLocalAtual(): { min: number; maxEx: number } {
-  const d = new Date();
-  const y = d.getFullYear();
-  const m = d.getMonth();
-  return {
-    min: Date.UTC(y, m, 1, 0, 0, 0, 0),
-    maxEx: Date.UTC(y, m + 1, 1, 0, 0, 0, 0),
-  };
-}
+import { definirTituloDocumentoApp, reporTituloDocumentoSoNomeApp } from '../ui/titulo-documento.js';
 
 /** Instâncias ECharts da página (dispose no `unmount`). */
 let graficosDashboardPagina: EChartsType[] = [];
-
-function formatarMoeda(v: number, loc: LocaleId): string {
-  return new Intl.NumberFormat(loc === 'en' ? 'en-US' : 'pt-BR', {
-    style: 'currency',
-    currency: loc === 'en' ? 'USD' : 'BRL',
-    maximumFractionDigits: 0,
-  }).format(v);
-}
-
-function mkKpiCartao(rotulo: string, valor: string): HTMLElement {
-  const bl = document.createElement('div');
-  bl.style.display = 'flex';
-  bl.style.flexDirection = 'column';
-  bl.style.gap = '0.35rem';
-  bl.style.padding = 'var(--wa-space-m, 1rem)';
-  bl.style.border = '1px solid var(--wa-color-neutral-border-soft, rgba(128,128,128,0.35))';
-  bl.style.borderRadius = 'var(--wa-border-radius-m, 6px)';
-  bl.style.minWidth = '140px';
-  bl.style.flex = '1 1 140px';
-
-  const r = document.createElement('span');
-  r.className = 'shell__sub';
-  r.textContent = rotulo;
-
-  const v = document.createElement('span');
-  v.className = 'shell__titulo';
-  v.style.fontSize = '1.25rem';
-  v.style.margin = '0';
-  v.textContent = valor;
-
-  bl.append(r, v);
-  return bl;
-}
 
 const dashboardPagina: PaginaMontavel = {
   async mount(container, sinal) {
@@ -63,120 +27,113 @@ const dashboardPagina: PaginaMontavel = {
     graficosDashboardPagina = [];
 
     const echarts = garantirEchartsRegistrado();
-    let geracaoCharts = 0;
+    const graf = criarControleGeracaoGraficos(sinal);
+    let valoresKpi = ['—', '—', '—', '—', '—', '—', '—'];
 
     const loc0 = obterLocaleAtual();
     const t0 = obterTextosDashboard(loc0);
-    const appNome = obterTextosConfig(loc0).appNomeTituloDoc;
-    document.title = `${t0.tituloPagina} — ${appNome}`;
+    definirTituloDocumentoApp(t0.tituloPagina, loc0);
 
-    const barra = document.createElement('div');
-    barra.className = 'shell__barra-ficha';
-    const h1 = document.createElement('h1');
-    h1.className = 'shell__titulo';
-    h1.textContent = t0.tituloPagina;
-    barra.append(h1);
+    const pagina = criarPaginaUi({ titulo: t0.tituloPagina });
 
     const msgBd = document.createElement('p');
     msgBd.className = 'shell__sub';
     msgBd.hidden = true;
     msgBd.setAttribute('role', 'alert');
 
-    const kpiRow = document.createElement('div');
-    kpiRow.style.display = 'flex';
-    kpiRow.style.flexWrap = 'wrap';
-    kpiRow.style.gap = 'var(--wa-space-m, 1rem)';
-    kpiRow.style.marginBottom = 'var(--wa-space-l, 1.5rem)';
+    const alertaDpa = document.createElement('p');
+    alertaDpa.className = 'shell__empty shell__empty--erro';
+    alertaDpa.hidden = true;
+    alertaDpa.setAttribute('role', 'status');
 
-    const cartoes: {
-      anot: HTMLElement;
-      rec: HTMLElement;
-      fin: HTMLElement;
-      mAb: HTMLElement;
-      mOk: HTMLElement;
-      foco: HTMLElement;
-    } = {
-      anot: mkKpiCartao(t0.kpiAnotacoes, '—'),
-      rec: mkKpiCartao(t0.kpiReceitas, '—'),
-      fin: mkKpiCartao(t0.kpiFinanceiroMes, '—'),
-      mAb: mkKpiCartao(t0.kpiMetasAbertas, '—'),
-      mOk: mkKpiCartao(t0.kpiMetasConcluidas, '—'),
-      foco: mkKpiCartao(t0.kpiSessoesFoco, '—'),
-    };
-    kpiRow.append(cartoes.anot, cartoes.rec, cartoes.fin, cartoes.mAb, cartoes.mOk, cartoes.foco);
+    const kpiRow = criarGradeMetricas();
 
-    const wrapGraf = document.createElement('div');
-    wrapGraf.className = 'shell__cartao';
-    wrapGraf.style.display = 'grid';
-    wrapGraf.style.gridTemplateColumns = 'repeat(auto-fit, minmax(260px, 1fr))';
-    wrapGraf.style.gap = 'var(--wa-space-l, 1.5rem)';
-
-    const subGg = document.createElement('h2');
-    subGg.className = 'shell__subtitulo';
-    subGg.textContent = t0.graficoGaugeTitulo;
-    const detGg = document.createElement('p');
-    detGg.className = 'shell__sub';
-    detGg.textContent = t0.graficoGaugeSub;
     const divGauge = document.createElement('div');
-    divGauge.style.height = '200px';
+    divGauge.className = 'shell__grafico shell__grafico--compacto';
 
-    const colGauge = document.createElement('div');
-    colGauge.append(subGg, detGg, divGauge);
-
-    const subFin = document.createElement('h2');
-    subFin.className = 'shell__subtitulo';
-    subFin.textContent = t0.graficoFinMesTitulo;
     const divFin = document.createElement('div');
-    divFin.style.height = '220px';
+    divFin.className = 'shell__grafico';
 
-    const subMeta = document.createElement('h2');
-    subMeta.className = 'shell__subtitulo';
-    subMeta.textContent = t0.graficoMetasTitulo;
     const divMeta = document.createElement('div');
-    divMeta.style.height = '220px';
+    divMeta.className = 'shell__grafico';
 
-    const colFin = document.createElement('div');
-    colFin.append(subFin, divFin);
-    const colMeta = document.createElement('div');
-    colMeta.append(subMeta, divMeta);
+    const quickActions = document.createElement('div');
+    quickActions.className = 'shell__acoes';
 
-    wrapGraf.append(colGauge, colFin, colMeta);
+    const btnPerfil = criarBotaoAcao(t0.acaoPerfilIce, { variant: 'brand' });
+    const btnQr = criarBotaoAcao(t0.acaoQr, { variant: 'neutral' });
+    const btnPrep = criarBotaoAcao(t0.acaoPreparacao, { variant: 'neutral' });
+    const btnCofre = criarBotaoAcao(t0.acaoCofre, { variant: 'neutral' });
+    const btnConfig = criarBotaoAcao(t0.acaoConfig, { variant: 'neutral' });
+    quickActions.append(btnPerfil, btnQr, btnPrep, btnCofre, btnConfig);
 
-    container.replaceChildren();
-    container.append(barra, msgBd, kpiRow, wrapGraf);
+    const syncInfo = document.createElement('p');
+    syncInfo.className = 'shell__hint';
+    syncInfo.textContent = t0.syncFutura;
+
+    const cardAcoes = criarCardUi({
+      titulo: t0.acoesRapidasTitulo,
+      conteudo: [quickActions, syncInfo],
+    });
+    const cardGauge = criarCardUi({
+      titulo: t0.graficoGaugeTitulo,
+      descricao: t0.graficoGaugeSub,
+      conteudo: [divGauge],
+    });
+    const cardFin = criarCardUi({ titulo: t0.graficoFinMesTitulo, conteudo: [divFin] });
+    const cardMeta = criarCardUi({ titulo: t0.graficoMetasTitulo, conteudo: [divMeta] });
+
+    pagina.corpo.append(
+      msgBd,
+      alertaDpa,
+      kpiRow,
+      criarGrid(cardAcoes.cartao, cardGauge.cartao),
+      criarGrid(cardFin.cartao, cardMeta.cartao),
+    );
+    container.replaceChildren(pagina.raiz);
+
+    function renderizarKpis(): void {
+      const tm = obterTextosDashboard(obterLocaleAtual());
+      renderizarMetricas(kpiRow, [
+        { rotulo: tm.kpiAnotacoes, valor: valoresKpi[0] ?? '—' },
+        { rotulo: tm.kpiReceitas, valor: valoresKpi[1] ?? '—' },
+        { rotulo: tm.kpiFinanceiroMes, valor: valoresKpi[2] ?? '—' },
+        { rotulo: tm.kpiMetasAbertas, valor: valoresKpi[3] ?? '—' },
+        { rotulo: tm.kpiMetasConcluidas, valor: valoresKpi[4] ?? '—' },
+        { rotulo: tm.kpiSessoesFoco, valor: valoresKpi[5] ?? '—' },
+        { rotulo: tm.kpiProntidao, valor: valoresKpi[6] ?? '—' },
+      ]);
+    }
 
     function aplicarRotulos(): void {
       const lc = obterLocaleAtual();
       const tm = obterTextosDashboard(lc);
-      document.title = `${tm.tituloPagina} — ${obterTextosConfig(lc).appNomeTituloDoc}`;
-      h1.textContent = tm.tituloPagina;
-      subGg.textContent = tm.graficoGaugeTitulo;
-      detGg.textContent = tm.graficoGaugeSub;
-      subFin.textContent = tm.graficoFinMesTitulo;
-      subMeta.textContent = tm.graficoMetasTitulo;
-      msgBd.textContent = tm.erroBd;
-
-      const filhos = kpiRow.children;
-      const rotulos = [
-        tm.kpiAnotacoes,
-        tm.kpiReceitas,
-        tm.kpiFinanceiroMes,
-        tm.kpiMetasAbertas,
-        tm.kpiMetasConcluidas,
-        tm.kpiSessoesFoco,
-      ];
-      for (let i = 0; i < Math.min(filhos.length, rotulos.length); i++) {
-        const primeiro = filhos[i]?.firstElementChild;
-        if (primeiro) primeiro.textContent = rotulos[i];
+      definirTituloDocumentoApp(tm.tituloPagina, lc);
+      pagina.titulo.textContent = tm.tituloPagina;
+      cardGauge.titulo.textContent = tm.graficoGaugeTitulo;
+      if (cardGauge.subtitulo) {
+        cardGauge.subtitulo.textContent = tm.graficoGaugeSub;
       }
+      cardAcoes.titulo.textContent = tm.acoesRapidasTitulo;
+      cardFin.titulo.textContent = tm.graficoFinMesTitulo;
+      cardMeta.titulo.textContent = tm.graficoMetasTitulo;
+      msgBd.textContent = tm.erroBd;
+      alertaDpa.textContent = tm.alertaDpa;
+      btnPerfil.textContent = tm.acaoPerfilIce;
+      btnQr.textContent = tm.acaoQr;
+      btnPrep.textContent = tm.acaoPreparacao;
+      btnCofre.textContent = tm.acaoCofre;
+      btnConfig.textContent = tm.acaoConfig;
+      syncInfo.textContent = tm.syncFutura;
+      renderizarKpis();
     }
 
     function encadearCharts(
-      ultimoRel: Awaited<ReturnType<typeof dashRepo.obterUltimoRelatorioMinisterioResumo>>,
+      indiceProntidao: Awaited<ReturnType<typeof dashRepo.calcularIndiceProntidaoDashboard>>,
       totaisMes: Awaited<ReturnType<typeof dashRepo.totaisFinanceirosNoIntervalo>>,
       contMeta: Awaited<ReturnType<typeof dashRepo.contarMetasPorEstado>>,
     ): void {
-      const minhaGeracao = ++geracaoCharts;
+      const minhaGeracao = graf.novaGeracao();
       for (const g of graficosDashboardPagina) {
         g.dispose();
       }
@@ -188,8 +145,7 @@ const dashboardPagina: PaginaMontavel = {
       const cGg = echarts.init(divGauge);
       graficosDashboardPagina.push(cGg);
 
-      const objetivo = ultimoRel ? Math.max(Number(ultimoRel.meta_horas), 0.001) : 50;
-      const pct = ultimoRel ? Math.min(100, (100 * Number(ultimoRel.horas)) / objetivo) : 0;
+      const pct = Math.max(0, Math.min(100, indiceProntidao.percentual));
 
       cGg.setOption({
         tooltip: {},
@@ -225,12 +181,12 @@ const dashboardPagina: PaginaMontavel = {
               color: cores.textoPrincipal,
               formatter: `{value}%`,
             },
-            data: [{ value: Math.round(pct), name: tm.graficoGaugeTitulo }],
+            data: [{ value: Math.round(pct), name: indiceProntidao.alerta }],
           },
         ],
       });
 
-      if (sinal.aborted || minhaGeracao !== geracaoCharts) {
+      if (graf.obsoleto(minhaGeracao)) {
         graficosDashboardPagina.forEach((x) => x.dispose());
         graficosDashboardPagina = [];
         return;
@@ -264,7 +220,7 @@ const dashboardPagina: PaginaMontavel = {
         });
       }
 
-      if (sinal.aborted || minhaGeracao !== geracaoCharts) {
+      if (graf.obsoleto(minhaGeracao)) {
         graficosDashboardPagina.forEach((x) => x.dispose());
         graficosDashboardPagina = [];
         return;
@@ -301,43 +257,48 @@ const dashboardPagina: PaginaMontavel = {
 
     async function carregar(): Promise<void> {
       msgBd.hidden = true;
-      const lim = limitesMesLocalAtual();
+      const lim = intervaloMesLocalAtualUtc();
       try {
-        const [nAnot, nRec, tot, ultRel, mets, nFoco] = await Promise.all([
+        const [nAnot, nRec, tot, ultRel, mets, nFoco, indiceProntidao, perfil] = await Promise.all([
           dashRepo.contarAnotacoesNaoArquivadas(),
           dashRepo.contarReceitas(),
           dashRepo.totaisFinanceirosNoIntervalo(lim.min, lim.maxEx),
           dashRepo.obterUltimoRelatorioMinisterioResumo(),
           dashRepo.contarMetasPorEstado(),
           contarSessoesFocoCompletas(),
+          dashRepo.calcularIndiceProntidaoDashboard(),
+          dashRepo.obterPerfilDashboardResumo(),
         ]);
 
-        if (sinal.aborted) return;
+        sinal.throwIfAborted();
 
         const locM = obterLocaleAtual();
 
-        const setValor = (el: HTMLElement, txt: string): void => {
-          const v = el.lastElementChild;
-          if (v) v.textContent = txt;
-        };
+        valoresKpi = [
+          String(nAnot),
+          String(nRec),
+          `${formatarMoeda(tot.receita, locM, 0)} / ${formatarMoeda(tot.despesa, locM, 0)}`,
+          String(mets.abertas),
+          String(mets.concluidas),
+          `${String(nFoco)} · ${ultRel ? `${Math.round((100 * Number(ultRel.horas)) / Math.max(Number(ultRel.meta_horas), 0.001))}% campo` : 'sem relatório'}`,
+          `${indiceProntidao.percentual}%`,
+        ];
+        alertaDpa.hidden = !perfil || (perfil.recusaTransfusao === 0 && perfil.uriScanDpa.trim().length === 0);
+        renderizarKpis();
 
-        setValor(cartoes.anot, String(nAnot));
-        setValor(cartoes.rec, String(nRec));
-        setValor(
-          cartoes.fin,
-          `${formatarMoeda(tot.receita, locM)} / ${formatarMoeda(tot.despesa, locM)}`,
-        );
-        setValor(cartoes.mAb, String(mets.abertas));
-        setValor(cartoes.mOk, String(mets.concluidas));
-        setValor(cartoes.foco, String(nFoco));
-
-        encadearCharts(ultRel, tot, mets);
-      } catch {
+        encadearCharts(indiceProntidao, tot, mets);
+      } catch (erro) {
+        if (eAbortoDom(erro)) return;
         msgBd.hidden = false;
       }
     }
 
     aplicarRotulos();
+    btnPerfil.addEventListener('click', () => { window.location.href = hrefParaRota('/perfil'); }, { signal: sinal });
+    btnQr.addEventListener('click', () => { window.location.href = hrefParaRota('/qr'); }, { signal: sinal });
+    btnPrep.addEventListener('click', () => { window.location.href = hrefParaRota('/preparacao'); }, { signal: sinal });
+    btnCofre.addEventListener('click', () => { window.location.href = hrefParaRota('/preparacao/cofre'); }, { signal: sinal });
+    btnConfig.addEventListener('click', () => { window.location.href = hrefParaRota('/configuracoes'); }, { signal: sinal });
     await carregar();
 
     registarAoLocaleAtualizado(() => {
@@ -351,7 +312,7 @@ const dashboardPagina: PaginaMontavel = {
       g.dispose();
     }
     graficosDashboardPagina = [];
-    document.title = obterTextosConfig(obterLocaleAtual()).appNomeTituloDoc;
+    reporTituloDocumentoSoNomeApp();
   },
 };
 

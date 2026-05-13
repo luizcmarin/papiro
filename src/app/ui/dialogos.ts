@@ -38,7 +38,7 @@ export interface OpcoesDialogoFormulario {
   confirmarTexto: string;
   cancelarTexto: string;
   conteudo: Node[];
-  aoConfirmar: () => void | Promise<void>;
+  aoConfirmar: () => false | void | Promise<false | void>;
   signal?: AbortSignal;
 }
 
@@ -69,7 +69,8 @@ export function criarDialogoFormulario(opcoes: OpcoesDialogoFormulario): Dialogo
   confirmar.addEventListener(
     'click',
     async () => {
-      await opcoes.aoConfirmar();
+      const deveFechar = await opcoes.aoConfirmar();
+      if (deveFechar === false) return;
       fecharDialogo(dialogo);
     },
     { signal: opcoes.signal },
@@ -149,6 +150,26 @@ export function criarDialogoConfirmacao(opcoes: {
       cancelar.textContent = textos.cancelar;
       confirmar.textContent = textos.confirmar;
     },
+  };
+}
+
+export interface DialogoInformativo {
+  elemento: HTMLElement;
+  abrir: () => void;
+  fechar: () => void;
+  definirTitulo: (titulo: string) => void;
+}
+
+export function criarDialogoInformativo(opcoes: { titulo: string; conteudo: Node[] }): DialogoInformativo {
+  const dialogo = document.createElement('wa-dialog');
+  dialogo.setAttribute('label', opcoes.titulo);
+  dialogo.append(...opcoes.conteudo);
+
+  return {
+    elemento: dialogo,
+    abrir: () => abrirDialogo(dialogo),
+    fechar: () => fecharDialogo(dialogo),
+    definirTitulo: (titulo) => dialogo.setAttribute('label', titulo),
   };
 }
 

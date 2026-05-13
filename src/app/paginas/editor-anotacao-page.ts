@@ -1,6 +1,6 @@
 import '@awesome.me/webawesome/dist/components/button/button.js';
 
-import page from 'page';
+import { navegar } from '../router.js';
 
 import { sanitizarHtmlConteudoUtilizador } from '../../infra/sanitize.js';
 import * as repo from '../../modules/anotacoes/dados/repositorio.js';
@@ -15,10 +15,11 @@ import { arquivoImagemParaDataUriAutorizada } from '../../modules/anotacoes/ui/i
 import { obterTextosAnotacao } from '../../modules/anotacoes/ui/textos-anotacao.js';
 import type { FabricaTipTapEditorResultado } from '../../modules/anotacoes/ui/tiptap-editor.js';
 import { fabricarTipTapEditor } from '../../modules/anotacoes/ui/tiptap-editor.js';
-import { obterTextosConfig } from '../../modules/configuracao/ui/textos-config.js';
 import { obterLocaleAtual, registarAoLocaleAtualizado } from '../../modules/shared/ui/locale.js';
 import { hrefParaRota } from '../menu-rotas.js';
+import { criarDialogoConfirmacao } from '../ui/dialogos.js';
 import type { PaginaMontavel } from '../pagina-montavel.js';
+import { definirTituloDocumentoApp, reporTituloDocumentoSoNomeApp } from '../ui/titulo-documento.js';
 
 export interface OpcoesPaginaEditorAnotacao {
   modo: 'novo' | 'editar';
@@ -39,21 +40,30 @@ export function criarPaginaEditorAnotacao(opcoes: OpcoesPaginaEditorAnotacao): P
   /** Botão texto ecrã inteiro (referência ao nó atual). */
   let btnFullscreenRef: HTMLButtonElement | null = null;
   let handlerFullscreen: (() => void) | null = null;
+  let autoScrollId: number | null = null;
+  let indiceFocoApresentacao = -1;
+
+  function pararAutoScroll(): void {
+    if (autoScrollId !== null) {
+      window.clearInterval(autoScrollId);
+      autoScrollId = null;
+    }
+  }
 
   return {
     async mount(container, sinal) {
       const loc = obterLocaleAtual();
       const t = obterTextosAnotacao(loc);
-      const tc = obterTextosConfig(loc);
 
       recursoTipTap?.destruir();
       recursoTipTap = null;
       alvoFullscreen = null;
       btnFullscreenRef = null;
+      pararAutoScroll();
 
       let idPersistente: number | null = opcoes.modo === 'editar' ? (opcoes.idExistente ?? null) : null;
       if (opcoes.modo === 'editar' && (idPersistente === null || !Number.isFinite(idPersistente))) {
-        document.title = `${t.erroIdInvalido} — ${tc.appNomeTituloDoc}`;
+        definirTituloDocumentoApp(t.erroIdInvalido, loc);
         container.replaceChildren();
         const e = document.createElement('p');
         e.className = 'shell__sub';
@@ -70,7 +80,7 @@ export function criarPaginaEditorAnotacao(opcoes: OpcoesPaginaEditorAnotacao): P
       if (idPersistente !== null) {
         detalhe = await repo.obterAnotacaoComConteudo(idPersistente);
         if (!detalhe) {
-          document.title = `${t.erroCarregar} — ${tc.appNomeTituloDoc}`;
+          definirTituloDocumentoApp(t.erroCarregar, loc);
           container.replaceChildren();
           const e = document.createElement('p');
           e.className = 'shell__sub';
@@ -84,15 +94,15 @@ export function criarPaginaEditorAnotacao(opcoes: OpcoesPaginaEditorAnotacao): P
         }
       }
 
-      document.title =
-        detalhe !== null
-          ? `${detalhe.titulo.trim() || t.notaSemTituloFallback} — ${tc.appNomeTituloDoc}`
-          : `${t.novaNota} — ${tc.appNomeTituloDoc}`;
+      definirTituloDocumentoApp(
+        detalhe !== null ? detalhe.titulo.trim() || t.notaSemTituloFallback : t.novaNota,
+        loc,
+      );
 
       container.replaceChildren();
 
       const topo = document.createElement('div');
-      topo.className = 'shell__barra-ficha';
+      topo.className = 'shell__acoes';
 
       const linkVoltar = document.createElement('a');
       linkVoltar.href = hrefParaRota('/anotacoes');
@@ -116,6 +126,22 @@ export function criarPaginaEditorAnotacao(opcoes: OpcoesPaginaEditorAnotacao): P
       btnApagar.hidden = idPersistente === null;
 
       topo.append(linkVoltar, btnSalvar, btnApresentacao, btnApagar);
+
+      const confirmacaoApagar = criarDialogoConfirmacao({
+        titulo: t.confirmarApagarTitulo,
+        texto: t.confirmarApagarDescricao,
+        cancelar: t.cancelarDialogo,
+        confirmar: t.apagar,
+        signal: sinal,
+      });
+
+      const confirmacaoModelo = criarDialogoConfirmacao({
+        titulo: t.confirmarSubstituirCorpoTitulo,
+        texto: t.confirmarSubstituirCorpoDescricao,
+        cancelar: t.cancelarDialogo,
+        confirmar: t.aplicarEsqueleto,
+        signal: sinal,
+      });
 
       const rotuloTit = document.createElement('label');
       rotuloTit.className = 'shell__etiqueta';
@@ -232,6 +258,35 @@ export function criarPaginaEditorAnotacao(opcoes: OpcoesPaginaEditorAnotacao): P
       const htmlInicio = sanitizarHtmlConteudoUtilizador(detalhe?.conteudo ?? '<p></p>');
       recursoTipTap = fabricarTipTapEditor(hostEditor, htmlInicio);
 
+      function alternarAutoScroll(botao: HTMLButtonElement): void {
+        const txScroll = obterTextosAnotacao(obterLocaleAtual());
+        if (autoScrollId !== null) {
+          pararAutoScroll();
+          botao.textContent = txScroll.autoScroll;
+          return;
+        }
+        const scroller = apresentacao.querySelector<HTMLElement>('.shell__apresentacao--leitura');
+        if (!scroller) return;
+        autoScrollId = window.setInterval(() => {
+          if (apresentacao.hidden || scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight) {
+            pararAutoScroll();
+            botao.textContent = obterTextosAnotacao(obterLocaleAtual()).autoScroll;
+            return;
+          }
+          scroller.scrollBy({ top: 1, behavior: 'auto' });
+        }, 45);
+        botao.textContent = txScroll.pausarAutoScroll;
+      }
+
+      function focarProximoBloco(): void {
+        const alvos = Array.from(apresentacao.querySelectorAll<HTMLElement>('h1, h2, h3, p, li')).filter(
+          (el) => el.textContent?.trim(),
+        );
+        if (alvos.length === 0) return;
+        indiceFocoApresentacao = (indiceFocoApresentacao + 1) % alvos.length;
+        alvos[indiceFocoApresentacao]?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      }
+
       function atualizarTituloFullscreen(): void {
         if (!btnFullscreenRef || !apresentacao) return;
         const txFs = obterTextosAnotacao(obterLocaleAtual());
@@ -311,12 +366,16 @@ export function criarPaginaEditorAnotacao(opcoes: OpcoesPaginaEditorAnotacao): P
       btnAplicarModelo.addEventListener('click', () => {
         if (modoLeitura || !recursoTipTap) return;
         const txCf = obterTextosAnotacao(obterLocaleAtual());
-        if (!globalThis.confirm?.(`${txCf.confirmarSubstituirCorpoTitulo}\n${txCf.confirmarSubstituirCorpoDescricao}`)) {
-          return;
-        }
-        const idMod = modeloSel.value;
-        const html = esqueletoHtmlSanitizadoModelo(idMod, obterLocaleAtual());
-        recursoTipTap.definirConteudoHtml(html);
+        confirmacaoModelo.abrir({
+          titulo: txCf.confirmarSubstituirCorpoTitulo,
+          texto: txCf.confirmarSubstituirCorpoDescricao,
+          aoConfirmar: () => {
+            if (!recursoTipTap) return;
+            const idMod = modeloSel.value;
+            const html = esqueletoHtmlSanitizadoModelo(idMod, obterLocaleAtual());
+            recursoTipTap.definirConteudoHtml(html);
+          },
+        });
       });
 
       function atualizarApresentacao(): void {
@@ -325,6 +384,9 @@ export function criarPaginaEditorAnotacao(opcoes: OpcoesPaginaEditorAnotacao): P
 
         const barraLeitura = document.createElement('div');
         barraLeitura.className = 'shell__barra-apresentacao';
+        indiceFocoApresentacao = -1;
+
+        const txBarra = obterTextosAnotacao(obterLocaleAtual());
         const btnFs = document.createElement('button');
         btnFs.type = 'button';
         btnFs.className = 'shell__acao-secundaria-botao';
@@ -341,7 +403,19 @@ export function criarPaginaEditorAnotacao(opcoes: OpcoesPaginaEditorAnotacao): P
             /* ignorar se API indisponível */
           }
         });
-        barraLeitura.append(btnFs);
+        const btnScroll = document.createElement('button');
+        btnScroll.type = 'button';
+        btnScroll.className = 'shell__acao-secundaria-botao';
+        btnScroll.textContent = autoScrollId !== null ? txBarra.pausarAutoScroll : txBarra.autoScroll;
+        btnScroll.addEventListener('click', () => alternarAutoScroll(btnScroll), { signal: sinal });
+
+        const btnFoco = document.createElement('button');
+        btnFoco.type = 'button';
+        btnFoco.className = 'shell__acao-secundaria-botao';
+        btnFoco.textContent = txBarra.proximoFoco;
+        btnFoco.addEventListener('click', focarProximoBloco, { signal: sinal });
+
+        barraLeitura.append(btnFs, btnScroll, btnFoco);
 
         const saida = document.createElement('div');
         saida.className = 'shell__corpo-html-san';
@@ -367,6 +441,7 @@ export function criarPaginaEditorAnotacao(opcoes: OpcoesPaginaEditorAnotacao): P
           btnApresentacao.textContent = txApr.modoEdicao;
         } else {
           recursoTipTap.editor.setEditable(true);
+          pararAutoScroll();
           hostEditor.hidden = false;
           apresentacao.hidden = true;
           btnApresentacao.textContent = txApr.modoApresentacao;
@@ -412,18 +487,22 @@ export function criarPaginaEditorAnotacao(opcoes: OpcoesPaginaEditorAnotacao): P
           idPersistente !== null
             ? ((await repo.obterAnotacaoComConteudo(idPersistente)) ?? detalhe)
             : detalhe;
-        document.title = `${tituloLimpo} — ${obterTextosConfig(obterLocaleAtual()).appNomeTituloDoc}`;
+        definirTituloDocumentoApp(tituloLimpo);
       }
 
       btnSalvar.addEventListener('click', () => void gravar());
-      btnApagar.addEventListener('click', async () => {
-        if (
-          idPersistente === null ||
-          !globalThis.confirm?.(obterTextosAnotacao(obterLocaleAtual()).confirmarApagarTitulo)
-        )
-          return;
-        await repo.apagarAnotacao(idPersistente);
-        page('/anotacoes');
+      btnApagar.addEventListener('click', () => {
+        if (idPersistente === null) return;
+        const tx = obterTextosAnotacao(obterLocaleAtual());
+        confirmacaoApagar.abrir({
+          titulo: tx.confirmarApagarTitulo,
+          texto: tx.confirmarApagarDescricao,
+          aoConfirmar: async () => {
+            if (idPersistente === null) return;
+            await repo.apagarAnotacao(idPersistente);
+            navegar('/anotacoes');
+          },
+        });
       });
 
       const wrapModeloLinha = document.createElement('div');
@@ -446,19 +525,20 @@ export function criarPaginaEditorAnotacao(opcoes: OpcoesPaginaEditorAnotacao): P
         ferramentas,
         hostEditor,
         apresentacao,
+        confirmacaoApagar.elemento,
+        confirmacaoModelo.elemento,
       );
 
       function aplicarChromeEditorAnot(): void {
         const lang = obterLocaleAtual();
         const tx = obterTextosAnotacao(lang);
-        const tcx = obterTextosConfig(lang);
         const tituloOuFallback =
           inputTitulo.value.trim() !== ''
             ? inputTitulo.value.trim()
             : idPersistente === null
               ? tx.novaNota
               : tx.notaSemTituloFallback;
-        document.title = `${tituloOuFallback} — ${tcx.appNomeTituloDoc}`;
+        definirTituloDocumentoApp(tituloOuFallback, lang);
         linkVoltar.textContent = tx.voltarLista;
         btnSalvar.textContent = tx.salvar;
         btnApagar.textContent = tx.apagar;
@@ -496,6 +576,18 @@ export function criarPaginaEditorAnotacao(opcoes: OpcoesPaginaEditorAnotacao): P
           : 'livre';
 
         btnAplicarModelo.textContent = tx.aplicarEsqueleto;
+        confirmacaoApagar.definirTextos({
+          titulo: tx.confirmarApagarTitulo,
+          texto: tx.confirmarApagarDescricao,
+          cancelar: tx.cancelarDialogo,
+          confirmar: tx.apagar,
+        });
+        confirmacaoModelo.definirTextos({
+          titulo: tx.confirmarSubstituirCorpoTitulo,
+          texto: tx.confirmarSubstituirCorpoDescricao,
+          cancelar: tx.cancelarDialogo,
+          confirmar: tx.aplicarEsqueleto,
+        });
         rotuloEti.textContent = tx.etiquetasLabel;
         ajudaEti.textContent = tx.etiquetasAjuda;
         inputEtiquetas.placeholder = tx.etiquetasAjuda;
@@ -538,6 +630,7 @@ export function criarPaginaEditorAnotacao(opcoes: OpcoesPaginaEditorAnotacao): P
       if (sinal.aborted) {
         recursoTipTap.destruir();
         recursoTipTap = null;
+        pararAutoScroll();
         if (handlerFullscreen) {
           document.removeEventListener('fullscreenchange', handlerFullscreen);
         }
@@ -548,11 +641,12 @@ export function criarPaginaEditorAnotacao(opcoes: OpcoesPaginaEditorAnotacao): P
       recursoTipTap.focarEditor();
     },
     async unmount() {
-      document.title = obterTextosConfig(obterLocaleAtual()).appNomeTituloDoc;
+      reporTituloDocumentoSoNomeApp();
       const alvo = alvoFullscreen ?? undefined;
       if (alvo && document.fullscreenElement === alvo) {
         await document.exitFullscreen().catch(() => undefined);
       }
+      pararAutoScroll();
       if (handlerFullscreen) {
         document.removeEventListener('fullscreenchange', handlerFullscreen);
       }

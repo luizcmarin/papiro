@@ -8,8 +8,10 @@ import {
 
 describe('modelos-nota', () => {
   it('mantém lista de ids estável', () => {
-    expect(IDS_MODELO_NOTA.length).toBe(5);
+    expect(IDS_MODELO_NOTA.length).toBe(10);
     expect(IDS_MODELO_NOTA[0]).toBe('livre');
+    expect(IDS_MODELO_NOTA).toContain('designacao');
+    expect(IDS_MODELO_NOTA).toContain('visita_circuito');
   });
 
   it('desconhecido devolve valor cru no rótulo', () => {

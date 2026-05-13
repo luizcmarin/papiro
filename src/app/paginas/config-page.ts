@@ -5,8 +5,12 @@ import {
   obterCodigoIdiomaPreferidoArmazenado,
 } from '../../modules/configuracao/ui/preferencias-ui.js';
 import { obterTextosConfig } from '../../modules/configuracao/ui/textos-config.js';
+import { apagarTodosDadosLocais, exportarBackupPapiro, restaurarBackupPapiro } from '../../modules/backup/dados/repositorio.js';
+import { nomeArquivoBackup } from '../../modules/backup/dominio/pacote-backup.js';
 import type { PaginaMontavel } from '../pagina-montavel.js';
 import { EVENTO_LOCALE_ATUALIZADO, obterLocaleAtual } from '../../modules/shared/ui/locale.js';
+import { criarCardUi, criarGrid, criarPaginaUi } from '../ui/layout.js';
+import { definirTituloDocumentoApp, reporTituloDocumentoSoNomeApp } from '../ui/titulo-documento.js';
 
 export function obterCodigoIdiomaGravado(): string {
   return obterCodigoIdiomaPreferidoArmazenado();
@@ -19,18 +23,11 @@ function montarPainelConfiguracao(container: HTMLElement, sinal: AbortSignal): v
 
   const loc = obterLocaleAtual();
   const s = obterTextosConfig(loc);
-  document.title = `${s.titulo} — ${s.appNomeTituloDoc}`;
+  definirTituloDocumentoApp(s.titulo, loc);
   container.replaceChildren();
 
-  const h1 = document.createElement('h1');
-  h1.className = 'shell__titulo';
-  h1.textContent = s.titulo;
+  const pagina = criarPaginaUi({ titulo: s.titulo });
 
-  const secTema = document.createElement('section');
-  secTema.className = 'shell__secao-config';
-  const h2Tema = document.createElement('h2');
-  h2Tema.className = 'shell__subtitulo';
-  h2Tema.textContent = s.temaSecao;
   const textoTema = document.createElement('p');
   textoTema.className = 'shell__sub';
   function textoTemaAtual(): void {
@@ -47,13 +44,7 @@ function montarPainelConfiguracao(container: HTMLElement, sinal: AbortSignal): v
     alternarTemaBreu();
     textoTemaAtual();
   });
-  secTema.append(h2Tema, textoTema, btnTema);
 
-  const secIdioma = document.createElement('section');
-  secIdioma.className = 'shell__secao-config';
-  const h2Id = document.createElement('h2');
-  h2Id.className = 'shell__subtitulo';
-  h2Id.textContent = s.idiomaSecao;
   const pId = document.createElement('p');
   pId.className = 'shell__sub';
   pId.textContent = s.idiomaDescricao;
@@ -67,8 +58,7 @@ function montarPainelConfiguracao(container: HTMLElement, sinal: AbortSignal): v
   opEn.value = 'en';
   opEn.textContent = s.idiomaEn;
   sel.append(opPt, opEn);
-  sel.value =
-    obterCodigoIdiomaPreferidoArmazenado().toLowerCase().startsWith('en') ? 'en' : 'pt-BR';
+  sel.value = obterCodigoIdiomaPreferidoArmazenado().toLowerCase().startsWith('en') ? 'en' : 'pt-BR';
   const btnId = document.createElement('button');
   btnId.type = 'button';
   btnId.className = 'shell__acao-secundaria-botao';
@@ -88,13 +78,7 @@ function montarPainelConfiguracao(container: HTMLElement, sinal: AbortSignal): v
       document.getElementById(ID_SELECT_IDIOMA_CONFIG)?.focus({ preventScroll: true });
     });
   });
-  secIdioma.append(h2Id, pId, sel, btnId);
 
-  const secPin = document.createElement('section');
-  secPin.className = 'shell__secao-config';
-  const h2Pin = document.createElement('h2');
-  h2Pin.className = 'shell__subtitulo';
-  h2Pin.textContent = s.pinSecao;
   const pPin = document.createElement('p');
   pPin.className = 'shell__sub';
   pPin.textContent = s.pinDescricao;
@@ -104,9 +88,70 @@ function montarPainelConfiguracao(container: HTMLElement, sinal: AbortSignal): v
   inpPin.className = 'shell__input-texto';
   inpPin.setAttribute('aria-label', s.pinCampoEtiqueta);
   inpPin.placeholder = s.pinCampoPlaceholder;
-  secPin.append(h2Pin, pPin, inpPin);
 
-  container.append(h1, secTema, secIdioma, secPin);
+  const backupStatus = document.createElement('p');
+  backupStatus.className = 'shell__sub';
+  backupStatus.setAttribute('role', 'status');
+  backupStatus.textContent = s.backupDescricao;
+  const btnExportar = document.createElement('button');
+  btnExportar.type = 'button';
+  btnExportar.className = 'shell__acao-primaria-botao';
+  btnExportar.textContent = s.exportarBackup;
+  const inputImportar = document.createElement('input');
+  inputImportar.type = 'file';
+  inputImportar.accept = '.papiro,application/json';
+  inputImportar.className = 'shell__input-texto';
+  const btnImportar = document.createElement('button');
+  btnImportar.type = 'button';
+  btnImportar.className = 'shell__acao-secundaria-botao';
+  btnImportar.textContent = s.importarBackup;
+
+  btnExportar.addEventListener('click', async () => {
+    const backup = await exportarBackupPapiro();
+    const blob = new Blob([JSON.stringify(backup)], { type: 'application/json' });
+    const href = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = href;
+    a.download = nomeArquivoBackup(backup.metadados.criadoEm);
+    a.click();
+    URL.revokeObjectURL(href);
+    backupStatus.textContent = s.backupOk;
+  });
+
+  btnImportar.addEventListener('click', async () => {
+    const file = inputImportar.files?.[0];
+    if (!file) return;
+    await restaurarBackupPapiro(JSON.parse(await file.text()));
+    backupStatus.textContent = s.restauracaoOk;
+  });
+
+  const pPanico = document.createElement('p');
+  pPanico.className = 'shell__sub';
+  pPanico.textContent = s.panicoDescricao;
+  const inpPanico = document.createElement('input');
+  inpPanico.className = 'shell__input-texto';
+  inpPanico.placeholder = s.panicoPlaceholder;
+  const btnPanico = document.createElement('button');
+  btnPanico.type = 'button';
+  btnPanico.className = 'shell__botao-perigo';
+  btnPanico.textContent = s.panicoBotao;
+  btnPanico.addEventListener('click', async () => {
+    if (inpPanico.value !== 'APAGAR') return;
+    await apagarTodosDadosLocais();
+    inpPanico.value = '';
+    pPanico.textContent = s.panicoOk;
+  });
+
+  pagina.corpo.append(
+    criarGrid(
+      criarCardUi({ titulo: s.temaSecao, conteudo: [textoTema, btnTema] }).cartao,
+      criarCardUi({ titulo: s.idiomaSecao, conteudo: [pId, sel, btnId] }).cartao,
+      criarCardUi({ titulo: s.pinSecao, conteudo: [pPin, inpPin] }).cartao,
+      criarCardUi({ titulo: s.backupSecao, conteudo: [backupStatus, btnExportar, inputImportar, btnImportar] }).cartao,
+      criarCardUi({ titulo: s.panicoSecao, conteudo: [pPanico, inpPanico, btnPanico] }).cartao,
+    ),
+  );
+  container.append(pagina.raiz);
 }
 
 const configPagina: PaginaMontavel = {
@@ -121,7 +166,7 @@ const configPagina: PaginaMontavel = {
     montarPainelConfiguracao(container, sinal);
   },
   unmount() {
-    document.title = obterTextosConfig(obterLocaleAtual()).appNomeTituloDoc;
+    reporTituloDocumentoSoNomeApp();
   },
 };
 

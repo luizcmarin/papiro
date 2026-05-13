@@ -21,6 +21,13 @@ export interface OpcoesCardUi {
   acoes?: Node[];
 }
 
+export interface CartaoUi {
+  cartao: HTMLElement;
+  titulo: HTMLHeadingElement;
+  /** Só existe quando `descricao` foi definida nas opções. */
+  subtitulo: HTMLParagraphElement | null;
+}
+
 export function criarTituloSecao(texto: string): HTMLHeadingElement {
   const h = document.createElement('h2');
   h.className = 'shell__subtitulo';
@@ -93,7 +100,7 @@ export function criarPaginaUi(opcoes: OpcoesPaginaUi): PaginaUi {
   return { raiz, titulo, subtitulo, acoes, corpo };
 }
 
-export function criarCardUi(opcoes: OpcoesCardUi): HTMLElement {
+export function criarCardUi(opcoes: OpcoesCardUi): CartaoUi {
   const card = document.createElement('wa-card');
   card.className = 'shell__cartao';
   card.setAttribute('appearance', 'filled-outlined');
@@ -104,12 +111,15 @@ export function criarCardUi(opcoes: OpcoesCardUi): HTMLElement {
 
   const blocoTitulo = document.createElement('div');
   blocoTitulo.className = 'shell__stack shell__stack--compacta';
-  blocoTitulo.append(criarTituloSecao(opcoes.titulo));
+  const titulo = criarTituloSecao(opcoes.titulo);
+  blocoTitulo.append(titulo);
 
+  let subtitulo: HTMLParagraphElement | null = null;
   if (opcoes.descricao) {
     const desc = document.createElement('p');
     desc.className = 'shell__sub';
     desc.textContent = opcoes.descricao;
+    subtitulo = desc;
     blocoTitulo.append(desc);
   }
 
@@ -123,5 +133,5 @@ export function criarCardUi(opcoes: OpcoesCardUi): HTMLElement {
 
   const corpo = criarStack(...(opcoes.conteudo ?? []));
   card.append(cabecalho, corpo);
-  return card;
+  return { cartao: card, titulo, subtitulo };
 }

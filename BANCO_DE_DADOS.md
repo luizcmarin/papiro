@@ -2,7 +2,7 @@
 
 > **Projeto novo** — sem retrocompatibilidade. **Esquema:** [`basedados.json`](./basedados.json) na raiz (**`database.version` 37**). **Persistência:** **SQLocal** (SQLite em **Web Worker** + **OPFS**). **Consultas:** SQL parametrizado (`?`) + tipos em `modules/*/dados/types.ts` — **sem ORM**. **Anti‑padrão:** concatenar input da UI na string SQL.
 
-**Ver também:** [PLANEJAMENTO_MESTRE.md](./PLANEJAMENTO_MESTRE.md) · [ARQUITETURA_SOLUCAO.md](./ARQUITETURA_SOLUCAO.md) · [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) · [AGENTS.md](./AGENTS.md) · [`basedados.json`](./basedados.json)
+**Ver também:** [DOCUMENTACAO.md](./DOCUMENTACAO.md) · [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) · [AGENTS.md](./AGENTS.md) · [`basedados.json`](./basedados.json)
 
 ### Acesso à base (boa prática de arquitetura)
 
@@ -30,7 +30,7 @@ Para **restore** pesado partir de cópias externas opcional mais tarde rodar **`
 3. **Datas** no armazenamento: `INTEGER`/`BIGINT` como **epoch em milissegundos** (`number` em TS ao ler/escrever na camada de aplicação — preferir helpers `fromUnixMs` / `toUnixMs` para não misturar `Date` crua no SQL).
 4. **Booleanos**: `INTEGER NOT NULL` **0/1** (em TS: `0 | 1` ou `boolean` após conversão explícita na borda do repositório).
 5. **PKs manuais** (sem autoincrement): conteúdo fornecido pelo remoto (GitHub) ou pelo domínio (`MeuPerfil` id fixo = 1).
-6. Todas as migrações são **aplicadas no cliente** via runner (`_migrations` + ficheiros `.sql` naming `001_xyz.sql`) — inteiro **`version`** monotonicamente **crescente** (inteiro único linha migrações tabela estado) independente cronologia calendário — facilita branching feature flags depois ([ARQUITETURA_SOLUCAO.md](./ARQUITETURA_SOLUCAO.md)).
+6. Todas as migrações são **aplicadas no cliente** via runner (`_migrations` + ficheiros `.sql` naming `001_xyz.sql`) — inteiro **`version`** monotonicamente **crescente** (inteiro único linha migrações tabela estado) independente cronologia calendário — facilita branching feature flags depois (ver [DOCUMENTACAO.md](./DOCUMENTACAO.md), secção **Migrações**).
 
 7. **Busca textual:** usar **`LIKE`** parametrizado (`%termo%` onde fizer sentido) sobre colunas `TEXT` — adequado enquanto a maioria dos registros for **pequena**. **FTS5** fica apenas em **roadmap** se métricas reais (volume + latência) o exigirem; até lá **não** complicar o esquema com tabelas virtuais FTS.
 
@@ -196,4 +196,4 @@ Para o DDL coluna-a-coluna, **fonte única**: [`basedados.json`](./basedados.jso
 
 ## Documentação relacionada
 
-[PLANEJAMENTO_MESTRE.md](./PLANEJAMENTO_MESTRE.md) · [ARQUITETURA_SOLUCAO.md](./ARQUITETURA_SOLUCAO.md) · [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) · [AGENTS.md](./AGENTS.md) · [`basedados.json`](./basedados.json)
+[DOCUMENTACAO.md](./DOCUMENTACAO.md) · [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) · [AGENTS.md](./AGENTS.md) · [`basedados.json`](./basedados.json)

@@ -178,6 +178,63 @@ wa-card.shell__cartao {
 .shell__detalhe-card > summary {
   cursor: pointer;
   font-weight: 700;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.shell__progresso {
+  width: 100%;
+  accent-color: var(--wa-color-brand-fill-normal, Highlight);
+}
+
+.shell__grafico {
+  width: 100%;
+  height: 15rem;
+}
+
+.shell__grafico--compacto {
+  height: 12.5rem;
+}
+
+.shell__cronometro {
+  font-variant-numeric: tabular-nums;
+}
+
+.shell__texto-centro {
+  text-align: center;
+}
+
+.shell__qr-preview {
+  align-items: center;
+}
+
+.shell__pre-wrap {
+  white-space: pre-wrap;
+}
+
+.shell__metricas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+  gap: 0.65rem;
+}
+
+.shell__metrica {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--wa-color-surface-border, #00000022);
+  border-radius: 0.75rem;
+  background: var(--wa-color-surface-raised-subtle, #00000008);
+}
+
+.shell__metrica strong {
+  font-size: 1.05rem;
+}
+
+.shell__metrica span {
+  font-size: 0.78rem;
+  opacity: 0.78;
 }
 
 .shell__dialog-corpo {
@@ -488,6 +545,12 @@ wa-card.shell__cartao {
 
 .shell__corpo-html-san p {
   margin: 0.35rem 0;
+}
+
+.shell__poesia-leitura {
+  max-width: 42rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 .shell__corpo-html-san img {

@@ -1,11 +1,12 @@
 import * as repo from '../../modules/preparacao/dados/repositorio.js';
 import type { GuiaResumoRow } from '../../modules/preparacao/dados/types.js';
-import { obterTextosConfig } from '../../modules/configuracao/ui/textos-config.js';
+import { sanitizarHtmlConteudoUtilizador } from '../../infra/sanitize.js';
 import { obterTextosPreparacao } from '../../modules/preparacao/ui/textos-preparacao.js';
 import { obterLocaleAtual, registarAoLocaleAtualizado } from '../../modules/shared/ui/locale.js';
 import type { PaginaMontavel } from '../pagina-montavel.js';
-import { abrirModal } from '../ui/dialogos.js';
+import { criarDialogoInformativo } from '../ui/dialogos.js';
 import { criarCardUi, criarPaginaUi } from '../ui/layout.js';
+import { definirTituloDocumentoApp, reporTituloDocumentoSoNomeApp } from '../ui/titulo-documento.js';
 import { criarLinhaLista, criarListaCrud } from '../ui/lista.js';
 
 const preparacaoGuiasPagina: PaginaMontavel = {
@@ -14,13 +15,9 @@ const preparacaoGuiasPagina: PaginaMontavel = {
     const t0 = tx();
 
     const pagina = criarPaginaUi({ titulo: t0.guiasTitulo });
-    const preGuia = document.createElement('pre');
-    preGuia.className = 'shell__sub';
-    preGuia.style.whiteSpace = 'pre-wrap';
-
-    const dialogoGuia = document.createElement('wa-dialog');
-    dialogoGuia.setAttribute('label', t0.detalheGuiaTitulo);
-    dialogoGuia.append(preGuia);
+    const corpoGuia = document.createElement('div');
+    corpoGuia.className = 'shell__corpo-html-san shell__pre-wrap';
+    const dialogoGuia = criarDialogoInformativo({ titulo: t0.detalheGuiaTitulo, conteudo: [corpoGuia] });
 
     const listaGuias = criarListaCrud<GuiaResumoRow>({
       vazio: t0.guiasVazio,
@@ -35,9 +32,11 @@ const preparacaoGuiasPagina: PaginaMontavel = {
           async () => {
             const textos = tx();
             const detalhe = await repo.obterGuiaPorId(guia.id);
-            dialogoGuia.setAttribute('label', `${textos.detalheGuiaTitulo}: ${detalhe?.titulo ?? ''}`);
-            preGuia.textContent = detalhe?.texto ?? '-';
-            abrirModal(dialogoGuia);
+            dialogoGuia.definirTitulo(`${textos.detalheGuiaTitulo}: ${detalhe?.titulo ?? ''}`);
+            corpoGuia.innerHTML = sanitizarHtmlConteudoUtilizador(
+              detalhe?.texto.trim().startsWith('<') ? detalhe.texto : `<p>${detalhe?.texto ?? '-'}</p>`,
+            );
+            dialogoGuia.abrir();
           },
           { signal: sinal },
         );
@@ -45,15 +44,15 @@ const preparacaoGuiasPagina: PaginaMontavel = {
       },
     });
 
-    pagina.corpo.append(criarCardUi({ titulo: t0.guiasTitulo, conteudo: [listaGuias.elemento] }));
-    container.replaceChildren(pagina.raiz, dialogoGuia);
+    pagina.corpo.append(criarCardUi({ titulo: t0.guiasTitulo, conteudo: [listaGuias.elemento] }).cartao);
+    container.replaceChildren(pagina.raiz, dialogoGuia.elemento);
 
     async function recarregar(): Promise<void> {
       const textos = tx();
-      document.title = `${textos.guiasTitulo} — ${obterTextosConfig(obterLocaleAtual()).appNomeTituloDoc}`;
+      definirTituloDocumentoApp(textos.guiasTitulo);
       pagina.titulo.textContent = textos.guiasTitulo;
       listaGuias.definirTextoVazio(textos.guiasVazio);
-      dialogoGuia.setAttribute('label', textos.detalheGuiaTitulo);
+      dialogoGuia.definirTitulo(textos.detalheGuiaTitulo);
       listaGuias.renderizar(await repo.listarGuiasResumo());
     }
 
@@ -62,7 +61,7 @@ const preparacaoGuiasPagina: PaginaMontavel = {
   },
 
   unmount() {
-    document.title = obterTextosConfig(obterLocaleAtual()).appNomeTituloDoc;
+    reporTituloDocumentoSoNomeApp();
   },
 };
 

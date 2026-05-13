@@ -1,12 +1,14 @@
-import page from 'page';
+import { navegar } from '../router.js';
 
 import * as repo from '../../modules/receitas/dados/repositorio.js';
 import type { ReceitaDetalheRow, ReceitaFormInput } from '../../modules/receitas/dados/types.js';
 import { obterTextosReceitas } from '../../modules/receitas/ui/textos-receitas.js';
 import { obterLocaleAtual, registarAoLocaleAtualizado } from '../../modules/shared/ui/locale.js';
-import { obterTextosConfig } from '../../modules/configuracao/ui/textos-config.js';
 import { hrefParaRota } from '../menu-rotas.js';
+import { criarDialogoConfirmacao } from '../ui/dialogos.js';
+import { criarCardUi, criarPaginaUi } from '../ui/layout.js';
 import type { PaginaMontavel } from '../pagina-montavel.js';
+import { definirTituloDocumentoApp, reporTituloDocumentoSoNomeApp } from '../ui/titulo-documento.js';
 
 export interface OpcoesPaginaReceitaDetalhe {
   modo: 'novo' | 'editar';
@@ -25,12 +27,11 @@ export function criarPaginaReceitaDetalhe(opcoes: OpcoesPaginaReceitaDetalhe): P
       );
       const loc = obterLocaleAtual();
       const t = obterTextosReceitas(loc);
-      const appNome = obterTextosConfig(loc).appNomeTituloDoc;
 
       let idPersistente: number | null = opcoes.modo === 'editar' ? (opcoes.idExistente ?? null) : null;
 
       if (opcoes.modo === 'editar' && (idPersistente === null || !Number.isFinite(idPersistente))) {
-        document.title = `${t.tituloPaginaDoc} — ${appNome}`;
+        definirTituloDocumentoApp(t.tituloPaginaDoc, loc);
         container.replaceChildren();
         const e = document.createElement('p');
         e.className = 'shell__sub';
@@ -47,7 +48,7 @@ export function criarPaginaReceitaDetalhe(opcoes: OpcoesPaginaReceitaDetalhe): P
       if (idPersistente !== null) {
         detalhe = await repo.obterReceitaCompletaPorId(idPersistente);
         if (!detalhe) {
-          document.title = `${t.tituloPaginaDoc} — ${appNome}`;
+          definirTituloDocumentoApp(t.tituloPaginaDoc, loc);
           container.replaceChildren();
           const e = document.createElement('p');
           e.className = 'shell__sub';
@@ -61,15 +62,10 @@ export function criarPaginaReceitaDetalhe(opcoes: OpcoesPaginaReceitaDetalhe): P
         }
       }
 
-      document.title =
-        detalhe !== null
-          ? `${detalhe.titulo.trim() || t.semTitulo} — ${appNome}`
-          : `${t.novaReceita} — ${appNome}`;
-
-      container.replaceChildren();
-
-      const topo = document.createElement('div');
-      topo.className = 'shell__barra-ficha';
+      definirTituloDocumentoApp(
+        detalhe !== null ? detalhe.titulo.trim() || t.semTitulo : t.novaReceita,
+        loc,
+      );
 
       const linkVoltar = document.createElement('a');
       linkVoltar.href = hrefParaRota('/receitas');
@@ -87,7 +83,10 @@ export function criarPaginaReceitaDetalhe(opcoes: OpcoesPaginaReceitaDetalhe): P
       btnApagar.textContent = t.apagar;
       btnApagar.hidden = idPersistente === null;
 
-      topo.append(linkVoltar, btnSalvar, btnApagar);
+      const pagina = criarPaginaUi({
+        titulo: detalhe !== null ? detalhe.titulo.trim() || t.semTitulo : t.novaReceita,
+        acoes: [linkVoltar, btnSalvar, btnApagar],
+      });
 
       function rotuloTexto(txt: string, idEl: string): HTMLLabelElement {
         const lb = document.createElement('label');
@@ -137,31 +136,47 @@ export function criarPaginaReceitaDetalhe(opcoes: OpcoesPaginaReceitaDetalhe): P
       txPub.textContent = t.publicarLabel;
       rotuloPub.append(ckPublicar, txPub);
 
-      container.append(
-        topo,
-        lbTitulo,
-        inpTitulo,
-        lbCategoria,
-        inpCategoria,
-        lbIngredientes,
-        taIngredientes,
-        lbInstrucoes,
-        taInstrucoes,
-        rotuloPub,
-      );
+      const confirmacao = criarDialogoConfirmacao({
+        titulo: t.confirmarApagar,
+        texto: t.confirmarApagar,
+        cancelar: t.cancelarDialogo,
+        confirmar: t.apagar,
+        signal: sinal,
+      });
+
+      const cardFormulario = criarCardUi({
+        titulo: detalhe !== null ? detalhe.titulo.trim() || t.semTitulo : t.novaReceita,
+        conteudo: [
+          lbTitulo,
+          inpTitulo,
+          lbCategoria,
+          inpCategoria,
+          lbIngredientes,
+          taIngredientes,
+          lbInstrucoes,
+          taInstrucoes,
+          rotuloPub,
+        ],
+      });
+      pagina.corpo.append(cardFormulario.cartao);
+      container.replaceChildren(pagina.raiz, confirmacao.elemento);
 
       function atualizarTituloDocumentoPorForm(): void {
         const tt = obterTextosReceitas(obterLocaleAtual());
-        const nomeAppDoc = obterTextosConfig(obterLocaleAtual()).appNomeTituloDoc;
         const nomeOuVazio = inpTitulo.value.trim();
+        const tituloTela =
+          nomeOuVazio !== ''
+            ? nomeOuVazio
+            : idPersistente === null
+              ? tt.novaReceita
+              : tt.semTitulo;
+        pagina.titulo.textContent = tituloTela;
+        cardFormulario.titulo.textContent = tituloTela;
         if (nomeOuVazio !== '') {
-          document.title = `${nomeOuVazio} — ${nomeAppDoc}`;
+          definirTituloDocumentoApp(nomeOuVazio);
           return;
         }
-        document.title =
-          idPersistente === null
-            ? `${tt.novaReceita} — ${nomeAppDoc}`
-            : `${tt.semTitulo} — ${nomeAppDoc}`;
+        definirTituloDocumentoApp(idPersistente === null ? tt.novaReceita : tt.semTitulo);
       }
 
       function aplicarChromeReceitaDetalhe(): void {
@@ -169,6 +184,13 @@ export function criarPaginaReceitaDetalhe(opcoes: OpcoesPaginaReceitaDetalhe): P
         linkVoltar.textContent = tt.voltar;
         btnSalvar.textContent = tt.salvar;
         btnApagar.textContent = tt.apagar;
+        pagina.titulo.textContent =
+          inpTitulo.value.trim() !== ''
+            ? inpTitulo.value.trim()
+            : idPersistente === null
+              ? tt.novaReceita
+              : tt.semTitulo;
+        cardFormulario.titulo.textContent = pagina.titulo.textContent;
         lbTitulo.textContent = tt.tituloLabel;
         lbCategoria.textContent = tt.categoriaLabel;
         lbIngredientes.textContent = tt.ingredientesLabel;
@@ -176,6 +198,12 @@ export function criarPaginaReceitaDetalhe(opcoes: OpcoesPaginaReceitaDetalhe): P
         inpTitulo.placeholder = tt.tituloLabel;
         inpCategoria.placeholder = tt.categoriaLabel;
         txPub.textContent = tt.publicarLabel;
+        confirmacao.definirTextos({
+          titulo: tt.confirmarApagar,
+          texto: tt.confirmarApagar,
+          cancelar: tt.cancelarDialogo,
+          confirmar: tt.apagar,
+        });
         atualizarTituloDocumentoPorForm();
       }
 
@@ -208,18 +236,25 @@ export function criarPaginaReceitaDetalhe(opcoes: OpcoesPaginaReceitaDetalhe): P
           idPersistente !== null
             ? ((await repo.obterReceitaCompletaPorId(idPersistente)) ?? detalhe)
             : detalhe;
-        document.title = `${dados.titulo} — ${obterTextosConfig(obterLocaleAtual()).appNomeTituloDoc}`;
+        definirTituloDocumentoApp(dados.titulo);
       });
 
       btnApagar.addEventListener('click', async () => {
-        const confirmTxt = obterTextosReceitas(obterLocaleAtual()).confirmarApagar;
-        if (idPersistente === null || !globalThis.confirm?.(confirmTxt)) return;
-        await repo.apagarReceita(idPersistente);
-        page('/receitas');
+        if (idPersistente === null) return;
+        const tt = obterTextosReceitas(obterLocaleAtual());
+        confirmacao.abrir({
+          titulo: tt.confirmarApagar,
+          texto: tt.confirmarApagar,
+          aoConfirmar: async () => {
+            if (idPersistente === null) return;
+            await repo.apagarReceita(idPersistente);
+            navegar('/receitas');
+          },
+        });
       });
     },
     unmount() {
-      document.title = obterTextosConfig(obterLocaleAtual()).appNomeTituloDoc;
+      reporTituloDocumentoSoNomeApp();
     },
   };
 }

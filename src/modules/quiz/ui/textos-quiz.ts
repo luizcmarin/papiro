@@ -6,6 +6,9 @@ export interface TextosQuiz {
   referenciaCampo: string;
   nivelCampo: string;
   responder: string;
+  dica: string;
+  progressoTitulo: string;
+  progressoResumo: string;
   corretoToast: string;
   erradoToast: string;
   semPerguntasTitulo: string;
@@ -26,6 +29,9 @@ const PT: TextosQuiz = {
   referenciaCampo: 'Referência',
   nivelCampo: 'Dificuldade (1=fácil…)',
   responder: 'Verificar escolha',
+  dica: 'Usar dica',
+  progressoTitulo: 'Progresso da sessão',
+  progressoResumo: 'XP {xp} · nível {nivel} · sequência {seq}',
   corretoToast: 'Resposta certa!',
   erradoToast: 'Tenta outra vez.',
   semPerguntasTitulo: 'Sem perguntas na base',
@@ -46,6 +52,9 @@ const EN: TextosQuiz = {
   referenciaCampo: 'Citation',
   nivelCampo: 'Difficulty (numeric)',
   responder: 'Check answer',
+  dica: 'Use hint',
+  progressoTitulo: 'Session progress',
+  progressoResumo: 'XP {xp} · level {nivel} · streak {seq}',
   corretoToast: 'Correct!',
   erradoToast: 'Not quite.',
   semPerguntasTitulo: 'No trivia rows locally',

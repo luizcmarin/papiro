@@ -1,9 +1,11 @@
 import QRCode from 'qrcode';
 
 import { obterTextosQr } from '../../modules/qr/ui/textos-qr.js';
-import { obterTextosConfig } from '../../modules/configuracao/ui/textos-config.js';
 import { obterLocaleAtual, registarAoLocaleAtualizado } from '../../modules/shared/ui/locale.js';
+import { criarCampoTexto } from '../ui/form.js';
+import { criarCardUi, criarGrid, criarPaginaUi, criarStack } from '../ui/layout.js';
 import type { PaginaMontavel } from '../pagina-montavel.js';
+import { definirTituloDocumentoApp, reporTituloDocumentoSoNomeApp } from '../ui/titulo-documento.js';
 
 const opPng = {
   errorCorrectionLevel: 'M' as const,
@@ -20,40 +22,11 @@ const qrPagina: PaginaMontavel = {
   mount(container, sinal) {
     const loc = obterLocaleAtual();
     let tm = obterTextosQr(loc);
-    document.title = `${tm.tituloPagina} — ${obterTextosConfig(loc).appNomeTituloDoc}`;
+    definirTituloDocumentoApp(tm.tituloPagina, loc);
 
-    const barra = document.createElement('div');
-    barra.className = 'shell__barra-ficha';
-    const h1 = document.createElement('h1');
-    h1.className = 'shell__titulo';
-    const desc = document.createElement('p');
-    desc.className = 'shell__sub';
-
-    const grelha = document.createElement('div');
-    grelha.style.display = 'grid';
-    grelha.style.gap = 'var(--wa-space-l, 1.5rem)';
-    grelha.style.gridTemplateColumns = 'minmax(220px, 1fr) auto';
-    grelha.style.alignItems = 'start';
-
-    const colEsq = document.createElement('div');
-    colEsq.style.display = 'flex';
-    colEsq.style.flexDirection = 'column';
-    colEsq.style.gap = 'var(--wa-space-m, 1rem)';
-
-    const rot = document.createElement('label');
-    rot.className = 'shell__campo';
-    const sp = document.createElement('span');
-    sp.className = 'shell__etiqueta';
-    const aria = document.createElement('textarea');
-    aria.rows = 8;
-    aria.className = 'shell__textarea';
-    aria.setAttribute('spellcheck', 'false');
-    rot.append(sp, aria);
-
-    const acoes = document.createElement('div');
-    acoes.style.display = 'flex';
-    acoes.style.flexWrap = 'wrap';
-    acoes.style.gap = 'var(--wa-space-m, 1rem)';
+    const pagina = criarPaginaUi({ titulo: tm.tituloPagina, subtitulo: tm.descricao });
+    const campoConteudo = criarCampoTexto({ rotulo: tm.rotuloEntrada, placeholder: tm.hintEntrada, linhas: 8 });
+    campoConteudo.input.setAttribute('spellcheck', 'false');
 
     const aSvg = document.createElement('a');
     aSvg.className = 'shell__acao-secundaria-botao';
@@ -63,13 +36,9 @@ const qrPagina: PaginaMontavel = {
     const aPng = document.createElement('a');
     aPng.className = 'shell__acao-secundaria-botao';
 
+    const acoes = document.createElement('div');
+    acoes.className = 'shell__acoes';
     acoes.append(aSvg, aPng);
-
-    const colDir = document.createElement('div');
-    colDir.style.display = 'flex';
-    colDir.style.flexDirection = 'column';
-    colDir.style.alignItems = 'center';
-    colDir.style.gap = 'var(--wa-space-m, 1rem)';
 
     const img = document.createElement('img');
     img.width = 280;
@@ -78,24 +47,22 @@ const qrPagina: PaginaMontavel = {
     img.setAttribute('aria-hidden', 'true');
 
     const subImg = document.createElement('p');
-    subImg.className = 'shell__sub';
-    subImg.style.textAlign = 'center';
+    subImg.className = 'shell__sub shell__texto-centro';
 
     const erro = document.createElement('p');
     erro.className = 'shell__sub';
     erro.hidden = true;
     erro.setAttribute('role', 'alert');
 
-    colEsq.append(rot, acoes);
-    colDir.append(img, subImg);
-    grelha.append(colEsq, colDir);
+    const preview = criarStack(img, subImg, acoes);
+    preview.classList.add('shell__qr-preview');
 
-    container.replaceChildren();
-    barra.append(h1);
-    container.append(barra, desc, erro, grelha);
+    const cardEntrada = criarCardUi({ titulo: tm.rotuloEntrada, conteudo: [campoConteudo.elemento] });
+    const cardPreview = criarCardUi({ titulo: tm.tituloPagina, conteudo: [erro, preview] });
+    pagina.corpo.append(criarGrid(cardEntrada.cartao, cardPreview.cartao));
+    container.replaceChildren(pagina.raiz);
 
     let revogacaoSvgUrl: string | null = null;
-
     let debounceTimer: number | undefined;
     sinal.addEventListener(
       'abort',
@@ -117,7 +84,7 @@ const qrPagina: PaginaMontavel = {
         refUrlRevogar(revogacaoSvgUrl);
         revogacaoSvgUrl = null;
       }
-      const texto = aria.value.trim();
+      const texto = campoConteudo.valor();
       const tloc = obterTextosQr(obterLocaleAtual());
       if (texto.length === 0) {
         erro.hidden = true;
@@ -158,13 +125,14 @@ const qrPagina: PaginaMontavel = {
     function aplicarTextos(t: typeof tm): void {
       tm = t;
       const lc = obterLocaleAtual();
-      const cfg = obterTextosConfig(lc);
-      document.title = `${tm.tituloPagina} — ${cfg.appNomeTituloDoc}`;
-      h1.textContent = tm.tituloPagina;
-      desc.textContent = tm.descricao;
-      sp.textContent = tm.rotuloEntrada;
-      aria.placeholder = tm.hintEntrada;
-      subImg.textContent = aria.value.trim().length === 0 ? tm.vazio : tm.gerar;
+      definirTituloDocumentoApp(tm.tituloPagina, lc);
+      pagina.titulo.textContent = tm.tituloPagina;
+      pagina.subtitulo.textContent = tm.descricao;
+      campoConteudo.definirRotulo(tm.rotuloEntrada);
+      campoConteudo.definirPlaceholder(tm.hintEntrada);
+      cardEntrada.titulo.textContent = tm.rotuloEntrada;
+      cardPreview.titulo.textContent = tm.tituloPagina;
+      subImg.textContent = campoConteudo.valor().length === 0 ? tm.vazio : tm.gerar;
       aSvg.textContent = tm.descarregarSvg;
       aPng.textContent = tm.descarregarPng;
       erro.textContent = tm.erroGerar;
@@ -173,7 +141,7 @@ const qrPagina: PaginaMontavel = {
     aplicarTextos(tm);
     void atualizarQr();
 
-    aria.addEventListener('input', agendarAtualizacao, { signal: sinal });
+    campoConteudo.input.addEventListener('input', agendarAtualizacao, { signal: sinal });
 
     registarAoLocaleAtualizado(() => {
       aplicarTextos(obterTextosQr(obterLocaleAtual()));
@@ -182,7 +150,7 @@ const qrPagina: PaginaMontavel = {
   },
 
   unmount() {
-    document.title = obterTextosConfig(obterLocaleAtual()).appNomeTituloDoc;
+    reporTituloDocumentoSoNomeApp();
   },
 };
 

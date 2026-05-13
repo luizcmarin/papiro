@@ -1,37 +1,26 @@
-import '@awesome.me/webawesome/dist/components/button/button.js';
-import '@awesome.me/webawesome/dist/components/dialog/dialog.js';
-
 import * as repo from '../../modules/receitas/dados/repositorio.js';
 import type { ReceitaListaRow } from '../../modules/receitas/dados/types.js';
 import { obterTextosReceitas } from '../../modules/receitas/ui/textos-receitas.js';
 import { obterLocaleAtual, registarAoLocaleAtualizado } from '../../modules/shared/ui/locale.js';
-import { obterTextosConfig } from '../../modules/configuracao/ui/textos-config.js';
 import { hrefParaRota } from '../menu-rotas.js';
+import { criarDialogoConfirmacao } from '../ui/dialogos.js';
+import { criarCardUi, criarPaginaUi } from '../ui/layout.js';
+import { criarBotaoAcao, criarLinhaLista, criarListaCrud } from '../ui/lista.js';
 import type { PaginaMontavel } from '../pagina-montavel.js';
+import { definirTituloDocumentoApp, reporTituloDocumentoSoNomeApp } from '../ui/titulo-documento.js';
 
 const listaReceitasPagina: PaginaMontavel = {
   async mount(container, sinal) {
     const loc = obterLocaleAtual();
     const t = obterTextosReceitas(loc);
-    const appNome = obterTextosConfig(loc).appNomeTituloDoc;
-    document.title = `${t.tituloLista} — ${appNome}`;
-    container.replaceChildren();
-
-    let idApagar: number | null = null;
-
-    const barra = document.createElement('div');
-    barra.className = 'shell__barra-ficha';
-
-    const titulo = document.createElement('h1');
-    titulo.className = 'shell__titulo';
-    titulo.textContent = t.tituloLista;
+    definirTituloDocumentoApp(t.tituloLista, loc);
 
     const linkNova = document.createElement('a');
     linkNova.className = 'shell__acao-primaria';
     linkNova.href = hrefParaRota('/receitas/nova');
     linkNova.textContent = t.novaReceita;
 
-    barra.append(titulo, linkNova);
+    const pagina = criarPaginaUi({ titulo: t.tituloLista, acoes: [linkNova] });
 
     const wrapBusca = document.createElement('div');
     wrapBusca.className = 'shell__campo';
@@ -45,43 +34,64 @@ const listaReceitasPagina: PaginaMontavel = {
     busca.className = 'shell__input-texto';
     wrapBusca.append(rotuloBusca, busca);
 
-    const listaUl = document.createElement('ul');
-    listaUl.className = 'shell__lista';
-
     const vazio = document.createElement('p');
     vazio.className = 'shell__sub';
     vazio.hidden = true;
-    vazio.textContent = t.listaVazia;
 
-    const dialogo = document.createElement('wa-dialog');
-    dialogo.setAttribute('label', t.confirmarApagar);
-    const corpoDlg = document.createElement('p');
-    corpoDlg.textContent = t.confirmarApagar;
-    const acoesDlg = document.createElement('div');
-    acoesDlg.setAttribute('slot', 'footer');
-    const btnCancelarDlg = document.createElement('wa-button');
-    btnCancelarDlg.setAttribute('variant', 'neutral');
-    btnCancelarDlg.textContent = t.cancelarDialogo;
-    const btnConfirmarDlg = document.createElement('wa-button');
-    btnConfirmarDlg.setAttribute('variant', 'danger');
-    btnConfirmarDlg.textContent = t.apagar;
-    acoesDlg.append(btnCancelarDlg, btnConfirmarDlg);
-    dialogo.append(corpoDlg, acoesDlg);
+    const confirmacao = criarDialogoConfirmacao({
+      titulo: t.confirmarApagar,
+      texto: t.confirmarApagar,
+      cancelar: t.cancelarDialogo,
+      confirmar: t.apagar,
+      signal: sinal,
+    });
 
-    container.append(barra, wrapBusca, listaUl, vazio, dialogo);
+    const listaReceitas = criarListaCrud<ReceitaListaRow>({
+      vazio: t.listaVazia,
+      renderItem: (receita) => {
+        const tl = obterTextosReceitas(obterLocaleAtual());
+        const link = document.createElement('a');
+        link.className = 'shell__lista-titulo';
+        link.href = hrefParaRota(`/receitas/${String(receita.id)}`);
+        link.textContent = receita.titulo.trim() !== '' ? receita.titulo : tl.semTitulo;
+        const apagar = criarBotaoAcao(tl.apagar, { variant: 'danger' });
+        apagar.addEventListener(
+          'click',
+          () => {
+            confirmacao.abrir({
+              titulo: tl.confirmarApagar,
+              texto: tl.confirmarApagar,
+              aoConfirmar: async () => {
+                await repo.apagarReceita(receita.id);
+                await recarregar();
+              },
+            });
+          },
+          { signal: sinal },
+        );
+        return criarLinhaLista({ titulo: link, meta: receita.categoria, acoes: [apagar] });
+      },
+    });
+
+    const cardLista = criarCardUi({ titulo: t.tituloLista, conteudo: [wrapBusca, vazio, listaReceitas.elemento] });
+    pagina.corpo.append(cardLista.cartao);
+    container.replaceChildren(pagina.raiz, confirmacao.elemento);
 
     function atualizarCromListaReceitasPorLocale(): void {
       const locUi = obterLocaleAtual();
       const tr = obterTextosReceitas(locUi);
-      const nomeApp = obterTextosConfig(locUi).appNomeTituloDoc;
-      document.title = `${tr.tituloLista} — ${nomeApp}`;
-      titulo.textContent = tr.tituloLista;
+      definirTituloDocumentoApp(tr.tituloLista, locUi);
+      pagina.titulo.textContent = tr.tituloLista;
       linkNova.textContent = tr.novaReceita;
       rotuloBusca.textContent = tr.termoBusca;
-      dialogo.setAttribute('label', tr.confirmarApagar);
-      corpoDlg.textContent = tr.confirmarApagar;
-      btnCancelarDlg.textContent = tr.cancelarDialogo;
-      btnConfirmarDlg.textContent = tr.apagar;
+      cardLista.titulo.textContent = tr.tituloLista;
+      listaReceitas.definirTextoVazio(tr.listaVazia);
+      confirmacao.definirTextos({
+        titulo: tr.confirmarApagar,
+        texto: tr.confirmarApagar,
+        cancelar: tr.cancelarDialogo,
+        confirmar: tr.apagar,
+      });
     }
 
     async function recarregar(): Promise<void> {
@@ -89,59 +99,18 @@ const listaReceitasPagina: PaginaMontavel = {
       const termoBusca = busca.value.trim();
       let linhas: ReceitaListaRow[];
       try {
-        linhas = await repo.listarReceitasParaLista(
-          termoBusca.length > 0 ? { termo: termoBusca } : undefined,
-        );
+        linhas = await repo.listarReceitasParaLista(termoBusca.length > 0 ? { termo: termoBusca } : undefined);
       } catch {
-        listaUl.replaceChildren();
+        listaReceitas.limpar();
         vazio.hidden = false;
         vazio.textContent = tl.erroLista;
         return;
       }
-      listaUl.replaceChildren();
-      vazio.hidden = linhas.length > 0;
-      if (linhas.length === 0) {
-        vazio.textContent = tl.listaVazia;
-      }
-      for (const r of linhas) {
-        const li = document.createElement('li');
-        li.className = 'shell__lista-linha';
-        const link = document.createElement('a');
-        link.className = 'shell__lista-titulo';
-        link.href = hrefParaRota(`/receitas/${String(r.id)}`);
-        link.textContent = r.titulo.trim() !== '' ? r.titulo : tl.semTitulo;
-        const meta = document.createElement('span');
-        meta.className = 'shell__lista-meta';
-        meta.textContent = r.categoria;
-        const btnApagar = document.createElement('button');
-        btnApagar.type = 'button';
-        btnApagar.className = 'shell__botao-perigo';
-        btnApagar.textContent = tl.apagar;
-        btnApagar.addEventListener('click', () => {
-          idApagar = r.id;
-          const dlg = dialogo as unknown as { show?: () => void };
-          dlg.show?.();
-        });
-        li.append(link, meta, btnApagar);
-        listaUl.append(li);
-      }
+      vazio.hidden = true;
+      listaReceitas.renderizar(linhas);
     }
 
-    busca.addEventListener('input', () => void recarregar());
-    btnCancelarDlg.addEventListener('click', () => {
-      const dlg = dialogo as unknown as { hide?: () => void };
-      dlg.hide?.();
-      idApagar = null;
-    });
-    btnConfirmarDlg.addEventListener('click', async () => {
-      if (idApagar !== null) {
-        await repo.apagarReceita(idApagar);
-        idApagar = null;
-        const dlg = dialogo as unknown as { hide?: () => void };
-        dlg.hide?.();
-        await recarregar();
-      }
-    });
+    busca.addEventListener('input', () => void recarregar(), { signal: sinal });
 
     registarAoLocaleAtualizado(() => {
       atualizarCromListaReceitasPorLocale();
@@ -150,13 +119,9 @@ const listaReceitasPagina: PaginaMontavel = {
 
     if (sinal.aborted) return;
     await recarregar();
-    sinal.addEventListener('abort', () => {
-      const dlg = dialogo as unknown as { hide?: () => void };
-      dlg.hide?.();
-    });
   },
   unmount() {
-    document.title = obterTextosConfig(obterLocaleAtual()).appNomeTituloDoc;
+    reporTituloDocumentoSoNomeApp();
   },
 };
 

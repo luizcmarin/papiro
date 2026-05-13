@@ -2,7 +2,7 @@ import type { PaginaMontavel } from './pagina-montavel.js';
 import type { ChaveNav } from '../modules/shared/ui/menu-navegacao.js';
 
 /**
- * Menu lateral + rotas Page.js (Fase 3). Ícones em `public/icons/m3/{icone}.svg`.
+ * Menu lateral + rotas da SPA (`router.ts` + `navegacao/router-spa.ts`). Ícones em `public/icons/m3/{icone}.svg`.
  */
 export interface ItemMenuRota {
   /** Chave estável para i18n (ver `menu-navegacao.ts`). */

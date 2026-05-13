@@ -18,6 +18,9 @@ export interface TextosMinisterio {
   dirigenteNome: string;
   dirigenteTel: string;
   salvarRelatorio: string;
+  compartilharRelatorio: string;
+  relatorioCopiado: string;
+  statusMeta: string;
   graficoBarrasTitulo: string;
   graficoGaugeTitulo: string;
   gaugeDetalhe: string;
@@ -58,6 +61,9 @@ const PT: TextosMinisterio = {
   dirigenteNome: 'Nome dirigente',
   dirigenteTel: 'Telefone dirigente',
   salvarRelatorio: 'Guardar relatório',
+  compartilharRelatorio: 'Copiar relatório',
+  relatorioCopiado: 'Texto do relatório copiado.',
+  statusMeta: 'Meta',
   graficoBarrasTitulo: 'Horas por mês registadas',
   graficoGaugeTitulo: 'Último relatório: horas vs meta',
   gaugeDetalhe: 'Calculado a partir do relatório mais recente.',
@@ -98,6 +104,9 @@ const EN: TextosMinisterio = {
   dirigenteNome: 'Overseer name',
   dirigenteTel: 'Overseer phone',
   salvarRelatorio: 'Save report',
+  compartilharRelatorio: 'Copy report',
+  relatorioCopiado: 'Report text copied.',
+  statusMeta: 'Goal',
   graficoBarrasTitulo: 'Monthly hours reported',
   graficoGaugeTitulo: 'Latest saved report vs goal',
   gaugeDetalhe: 'Shows the chronologically newest report row.',

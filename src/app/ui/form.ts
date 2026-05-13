@@ -126,6 +126,37 @@ export function criarCampoData(opcoes: {
   };
 }
 
+export function criarCampoSelect(opcoes: { rotulo: string; opcoes?: Array<{ valor: string; texto: string }> }): CampoFormulario<string> {
+  const input = document.createElement('select');
+  input.className = 'shell__select';
+  const base = criarBaseCampo(opcoes.rotulo, input);
+
+  for (const opcao of opcoes.opcoes ?? []) {
+    const el = document.createElement('option');
+    el.value = opcao.valor;
+    el.textContent = opcao.texto;
+    input.append(el);
+  }
+
+  return {
+    elemento: base.wrapper,
+    input,
+    valor: () => input.value,
+    definirValor: (valor) => {
+      input.value = valor;
+    },
+    definirRotulo: (rotulo) => {
+      base.rotuloEl.textContent = rotulo;
+    },
+    definirPlaceholder: () => {
+      // Selects do not have placeholders; keep the shared field interface simple.
+    },
+    limpar: () => {
+      input.value = '';
+    },
+  };
+}
+
 export function criarFormGrid(...campos: Node[]): HTMLElement {
   const form = document.createElement('div');
   form.className = 'shell__form-grid';
@@ -133,7 +164,7 @@ export function criarFormGrid(...campos: Node[]): HTMLElement {
   return form;
 }
 
-export function limparCampos(...campos: Array<CampoFormulario<unknown>>): void {
+export function limparCampos(...campos: Array<{ limpar: () => void }>): void {
   for (const campo of campos) {
     campo.limpar();
   }

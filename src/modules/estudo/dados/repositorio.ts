@@ -55,3 +55,14 @@ export async function contarSessoesFocoCompletas(): Promise<number> {
   const r = linhas[0] as { c: number } | undefined;
   return r?.c ?? 0;
 }
+
+export async function contarNotasMeditacao(): Promise<number> {
+  const { sql } = obterClienteSqlocal();
+  const linhas = await sql`
+    SELECT COUNT(*) AS c
+    FROM tbl_sessoes_estudo
+    WHERE TRIM(nota_meditacao) <> ''
+  `;
+  const r = linhas[0] as { c: number } | undefined;
+  return r?.c ?? 0;
+}

@@ -63,3 +63,16 @@ export interface EstoqueAlimentoInput {
   calorias_por_100g: number;
   data_vencimento: number;
 }
+
+export interface DocumentoCofreRow {
+  id: number;
+  rotulo: string;
+  tipo_mime: string;
+  data_criacao: number;
+}
+
+export interface DocumentoCofreInput {
+  rotulo: string;
+  tipo_mime: string;
+  blob_criptografado: Uint8Array;
+}

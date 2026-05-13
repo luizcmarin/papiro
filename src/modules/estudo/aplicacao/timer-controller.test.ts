@@ -26,4 +26,21 @@ describe('TimerPomodoroController', () => {
     expect(ctl.obterEstado()).toBe('paused');
     ctl.dispose();
   });
+
+  it('usa pausa longa após a quantidade configurada de focos', () => {
+    vi.useFakeTimers();
+    const ctl = new TimerPomodoroController({
+      duracaoFocoMs: 300,
+      duracaoPausaMs: 300,
+      duracaoPausaLongaMs: 600,
+      ciclosAntesPausaLonga: 1,
+    });
+
+    ctl.iniciar();
+    vi.advanceTimersByTime(310);
+
+    expect(ctl.obterFase()).toBe('pausa_longa');
+    expect(ctl.obterEstado()).toBe('running');
+    ctl.dispose();
+  });
 });

@@ -2,7 +2,7 @@
 
 > **Projeto novo** — sem retrocompatibilidade. **Componentes e tema:** [Web Awesome](https://webawesome.com) (`<wa-*>`) — variáveis CSS e modo Claro/Breu consumidos **diretamente** da lib (**Shoelace/Web Awesome**), **sem** ficheiro dedicado de tokens paralelos nem pacote tipo `@papiro/ui`.
 
-**Ver também:** [PLANEJAMENTO_MESTRE.md](./PLANEJAMENTO_MESTRE.md) · [ARQUITETURA_SOLUCAO.md](./ARQUITETURA_SOLUCAO.md) · [BANCO_DE_DADOS.md](./BANCO_DE_DADOS.md) · [AGENTS.md](./AGENTS.md) · [`basedados.json`](./basedados.json)
+**Ver também:** [DOCUMENTACAO.md](./DOCUMENTACAO.md) · [BANCO_DE_DADOS.md](./BANCO_DE_DADOS.md) · [AGENTS.md](./AGENTS.md) · [`basedados.json`](./basedados.json)
 
 Guia de identidade visual e composição de UI (**Opção 1**). Stack: **Vite**, **TypeScript**, ícones **SVG** (Material Symbols / M3) **self-host**.
 
@@ -173,7 +173,7 @@ Ler **cores efetivas** das **custom properties** do Web Awesome no `document.doc
 
 Encapsular criação em `infra/charts/` ou `modules/<x>/ui/echarts-theme.ts`.
 
-**Gestão memória SPA:** sempre **`chart.dispose()`** no `unmount()` da página que criou a instância — evita leak WebGL/canvas frequente em apps Vanilla com Page.js.
+**Gestão memória SPA:** sempre **`chart.dispose()`** no `unmount()` da página que criou a instância — evita leak WebGL/canvas frequente em apps Vanilla com rotas por History API.
 
 **Bundle:** importar **só** gráficos necessários (`echarts/core` + componentes register).
 
@@ -201,7 +201,7 @@ Nomes de padrões de UX mais antigos no projeto podem servir só como **referên
 
 ## 10. Layout responsivo
 
-Breakpoints e grid do dashboard: xs/sm/md/lg + comportamento do drawer conforme [PLANEJAMENTO_MESTRE.md](./PLANEJAMENTO_MESTRE.md) (Fase 3).
+Breakpoints e grid do dashboard: xs/sm/md/lg + comportamento do drawer conforme shell e [DOCUMENTACAO.md](./DOCUMENTACAO.md) (secção **Shell e navegação**).
 
 Implementação: shell em `shell.ts` com componentes WA + estado drawer em TS (`matchMedia` opcional).
 
@@ -218,11 +218,11 @@ Delegar comportamentos de foco em **dialogs / drawers WA** sempre que a própria
 ## 12. Conteúdo rich de anotações (TipTap + imagens incorporadas)
 
 - **Àrea editável:** estilos em **`.ProseMirror`** (ou classe raiz TipTap) num **CSS mínimo** do módulo ou shell; herdar **`--fonte-sans`** também nos headings.
-- **Imagens no texto:** `max-width: 100%; height: auto`; formatos em `src`: apenas **`data:image/webp;base64,...`** ou **`data:image/svg+xml;base64,...`** (política alinhada ao plano mestre).
+- **Imagens no texto:** `max-width: 100%; height: auto`; formatos em `src`: apenas **`data:image/webp;base64,...`** ou **`data:image/svg+xml;base64,...`** (política alinhada a [DOCUMENTACAO.md](./DOCUMENTACAO.md) e [BANCO_DE_DADOS.md](./BANCO_DE_DADOS.md)).
 - **Modo apresentação / só leitura:** HTML sempre via **`DOMPurify`** com a mesma política que **`infra/sanitize.ts`** (**espelho do TipTap**) antes de pintar o DOM — evita que o utilizador “perca” markup entre sanitizar e reabrir o editor.
 
 ---
 
 ## Documentação relacionada
 
-[PLANEJAMENTO_MESTRE.md](./PLANEJAMENTO_MESTRE.md) · [ARQUITETURA_SOLUCAO.md](./ARQUITETURA_SOLUCAO.md) · [BANCO_DE_DADOS.md](./BANCO_DE_DADOS.md) · [AGENTS.md](./AGENTS.md) · [`basedados.json`](./basedados.json)
+[DOCUMENTACAO.md](./DOCUMENTACAO.md) · [BANCO_DE_DADOS.md](./BANCO_DE_DADOS.md) · [AGENTS.md](./AGENTS.md) · [`basedados.json`](./basedados.json)

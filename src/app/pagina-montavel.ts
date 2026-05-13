@@ -1,5 +1,5 @@
 /**
- * Contrato de cada ecrã montável pela SPA (Fase 3 — ver PLANEJAMENTO_MESTRE).
+ * Contrato de cada ecrã montável pela SPA (ver DOCUMENTACAO.md §5).
  * `unmount` deve libertar editores, gráficos e referências a strings grandes.
  */
 export interface PaginaMontavel {

@@ -1,10 +1,12 @@
 export type EstadoPomodoro = 'idle' | 'running' | 'paused';
 
-export type FaseTimer = 'foco' | 'pausa_curta';
+export type FaseTimer = 'foco' | 'pausa_curta' | 'pausa_longa';
 
 export interface OpcoesTimerPomodoro {
   duracaoFocoMs: number;
   duracaoPausaMs: number;
+  duracaoPausaLongaMs: number;
+  ciclosAntesPausaLonga: number;
   onTick?: (restanteMs: number, fase: FaseTimer) => void;
   onFaseConcluida?: (fase: FaseTimer) => void;
 }
@@ -16,12 +18,15 @@ export class TimerPomodoroController {
   private faseAtual: FaseTimer = 'foco';
   private restanteMs = 0;
   private timerId: ReturnType<typeof setInterval> | null = null;
+  private focosConcluidos = 0;
   readonly tickPeriodoMs = 300;
 
   constructor(parcial?: Partial<OpcoesTimerPomodoro>) {
     this.opts = {
       duracaoFocoMs: parcial?.duracaoFocoMs ?? 25 * 60_000,
       duracaoPausaMs: parcial?.duracaoPausaMs ?? 5 * 60_000,
+      duracaoPausaLongaMs: parcial?.duracaoPausaLongaMs ?? 15 * 60_000,
+      ciclosAntesPausaLonga: parcial?.ciclosAntesPausaLonga ?? 4,
       onTick: parcial?.onTick,
       onFaseConcluida: parcial?.onFaseConcluida,
     };
@@ -44,7 +49,11 @@ export class TimerPomodoroController {
     if (this.estado === 'running') return;
     if (this.estado === 'idle' && this.restanteMs <= 0) {
       this.restanteMs =
-        this.faseAtual === 'foco' ? this.opts.duracaoFocoMs : this.opts.duracaoPausaMs;
+        this.faseAtual === 'foco'
+          ? this.opts.duracaoFocoMs
+          : this.faseAtual === 'pausa_longa'
+            ? this.opts.duracaoPausaLongaMs
+            : this.opts.duracaoPausaMs;
     }
     this.estado = 'running';
     this.agendarInterval();
@@ -66,6 +75,7 @@ export class TimerPomodoroController {
     this.pararInterval();
     this.estado = 'idle';
     this.faseAtual = 'foco';
+    this.focosConcluidos = 0;
     this.restanteMs = this.opts.duracaoFocoMs;
     this.opts.onTick?.(this.restanteMs, this.faseAtual);
   }
@@ -103,8 +113,11 @@ export class TimerPomodoroController {
     const antes = this.faseAtual;
     this.opts.onFaseConcluida?.(antes);
     if (antes === 'foco') {
-      this.faseAtual = 'pausa_curta';
-      this.restanteMs = this.opts.duracaoPausaMs;
+      this.focosConcluidos += 1;
+      const devePausaLonga =
+        this.opts.ciclosAntesPausaLonga > 0 && this.focosConcluidos % this.opts.ciclosAntesPausaLonga === 0;
+      this.faseAtual = devePausaLonga ? 'pausa_longa' : 'pausa_curta';
+      this.restanteMs = devePausaLonga ? this.opts.duracaoPausaLongaMs : this.opts.duracaoPausaMs;
     } else {
       this.faseAtual = 'foco';
       this.restanteMs = this.opts.duracaoFocoMs;

@@ -1,9 +1,14 @@
-import page from 'page';
-import type { Context } from 'page';
-
-import { ITENS_MENU_ROTAS, prefixoBaseUrl } from './menu-rotas.js';
+import { ITENS_MENU_ROTAS } from './menu-rotas.js';
+import {
+  despacharPathAtual,
+  iniciarHistoricoPopstateEClicks,
+  registarRota,
+} from './navegacao/router-spa.js';
+import type { ParamsRota } from './navegacao/router-spa.js';
 import { navegarPara } from './outlet.js';
 import type { PaginaMontavel } from './pagina-montavel.js';
+
+let routerSpaMontado = false;
 
 function fecharDrawer(raiz: HTMLElement): void {
   const drawer = raiz.querySelector('#drawer-nav');
@@ -22,26 +27,29 @@ function irParaOutlet(
 }
 
 /**
- * Regista rotas Page.js e inicia o router (History + cliques em `<a>` mesma origem).
+ * Regista rotas da SPA (History API + captura de `<a>` mesma origem sob o `base` do Vite).
  */
 export function iniciarRouter(raiz: HTMLElement): void {
+  if (routerSpaMontado) {
+    despacharPathAtual();
+    return;
+  }
+  routerSpaMontado = true;
+
   const outlet = raiz.querySelector<HTMLElement>('#outlet-papiro');
   if (!outlet) {
     throw new Error('Elemento #outlet-papiro não encontrado no shell.');
   }
 
-  const base = prefixoBaseUrl();
-  page.base(base);
-
-  /* Rotas mais específicas antes das parametrizadas (Wave 1). */
-  page('/anotacoes/nova', () => {
+  /* Rotas mais específicas antes das parametrizadas. */
+  registarRota('/anotacoes/nova', () => {
     irParaOutlet(raiz, outlet, async () =>
       (await import('./paginas/editor-anotacao-page.js')).criarPaginaEditorAnotacao({ modo: 'novo' }),
     );
   });
 
-  page('/anotacoes/:id', (ctx: Context) => {
-    const brutoId = typeof ctx.params.id === 'string' ? ctx.params.id : '';
+  registarRota('/anotacoes/:id', (params: ParamsRota) => {
+    const brutoId = params.id ?? '';
     const idNota = Number(brutoId);
     if (!Number.isFinite(idNota) || idNota <= 0) {
       irParaOutlet(raiz, outlet, async () =>
@@ -56,16 +64,14 @@ export function iniciarRouter(raiz: HTMLElement): void {
     );
   });
 
-  page('/receitas/nova', () => {
+  registarRota('/receitas/nova', () => {
     irParaOutlet(raiz, outlet, async () =>
-      (
-        await import('./paginas/receita-detalhe-page.js')
-      ).criarPaginaReceitaDetalhe({ modo: 'novo' }),
+      (await import('./paginas/receita-detalhe-page.js')).criarPaginaReceitaDetalhe({ modo: 'novo' }),
     );
   });
 
-  page('/receitas/:id', (ctx: Context) => {
-    const bruto = typeof ctx.params.id === 'string' ? ctx.params.id : '';
+  registarRota('/receitas/:id', (params: ParamsRota) => {
+    const bruto = params.id ?? '';
     const idReceita = Number(bruto);
     if (!Number.isFinite(idReceita) || idReceita <= 0) {
       irParaOutlet(raiz, outlet, async () =>
@@ -74,27 +80,29 @@ export function iniciarRouter(raiz: HTMLElement): void {
       return;
     }
     irParaOutlet(raiz, outlet, async () =>
-      (
-        await import('./paginas/receita-detalhe-page.js')
-      ).criarPaginaReceitaDetalhe({ modo: 'editar', idExistente: idReceita }),
+      (await import('./paginas/receita-detalhe-page.js')).criarPaginaReceitaDetalhe({
+        modo: 'editar',
+        idExistente: idReceita,
+      }),
     );
   });
 
   for (const item of ITENS_MENU_ROTAS) {
-    const handler = () =>
+    const handler = (): void =>
       irParaOutlet(raiz, outlet, async () => (await item.importPagina()).default);
     for (const caminho of item.caminhos) {
-      page(caminho, handler);
+      registarRota(caminho, handler);
     }
   }
 
-  page(
-    '*',
-    () =>
-      irParaOutlet(raiz, outlet, async () =>
-        (await import('./paginas/rota-nao-encontrada-page.js')).default,
-      ),
+  registarRota('*', () =>
+    irParaOutlet(raiz, outlet, async () =>
+      (await import('./paginas/rota-nao-encontrada-page.js')).default,
+    ),
   );
 
-  page.start();
+  iniciarHistoricoPopstateEClicks();
+  despacharPathAtual();
 }
+
+export { navegar } from './navegacao/router-spa.js';

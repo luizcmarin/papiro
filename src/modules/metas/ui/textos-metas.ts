@@ -19,6 +19,11 @@ export interface TextosMetas {
   apagarBotao: string;
   donutTitulo: string;
   donutDetalhe: string;
+  prazoSemPrazo: string;
+  prazoEmDia: string;
+  prazoEmBreve: string;
+  prazoVencida: string;
+  sugestaoModulo: string;
 }
 
 const PT: TextosMetas = {
@@ -40,6 +45,11 @@ const PT: TextosMetas = {
   apagarBotao: 'Remover',
   donutTitulo: 'Progresso selecionado',
   donutDetalhe: 'Atual sobre o alvo definido.',
+  prazoSemPrazo: 'sem prazo',
+  prazoEmDia: 'em dia',
+  prazoEmBreve: 'vence em breve',
+  prazoVencida: 'vencida',
+  sugestaoModulo: 'Sugestão',
 };
 
 const EN: TextosMetas = {
@@ -61,6 +71,11 @@ const EN: TextosMetas = {
   apagarBotao: 'Remove',
   donutTitulo: 'Selected goal',
   donutDetalhe: 'Current versus target.',
+  prazoSemPrazo: 'no deadline',
+  prazoEmDia: 'on track',
+  prazoEmBreve: 'due soon',
+  prazoVencida: 'overdue',
+  sugestaoModulo: 'Suggestion',
 };
 
 export function obterTextosMetas(locale: LocaleId): TextosMetas {
