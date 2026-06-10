@@ -1,32 +1,32 @@
 {
-    "gerado_em": "2026-06-10T17:39:21+00:00",
+    "gerado_em": "2026-06-10T18:00:54+00:00",
     "modulos": {
         "perguntas": {
-            "versao": 1781113161,
+            "versao": 1781114454,
             "registros": 0
         },
         "poesias": {
-            "versao": 1781113161,
+            "versao": 1781114454,
             "registros": 0
         },
         "receitas": {
-            "versao": 1781113161,
+            "versao": 1781114454,
             "registros": 0
         },
         "kits": {
-            "versao": 1781113161,
+            "versao": 1781114454,
             "registros": 0
         },
         "guias": {
-            "versao": 1781113161,
+            "versao": 1781114454,
             "registros": 1
         },
         "conquistas": {
-            "versao": 1781113161,
+            "versao": 1781114454,
             "registros": 0
         },
         "vibes": {
-            "versao": 1781113161,
+            "versao": 1781114454,
             "registros": 0
         }
     }
