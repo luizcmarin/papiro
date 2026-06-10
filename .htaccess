@@ -1,0 +1,9 @@
+# Servido junto ao PWA estático (copiado para pwa/papiro/ pelo Vite).
+# Garante o tipo MIME correto do manifesto para instalabilidade/Lighthouse
+# quando o app é hospedado em Apache. No GitHub Pages o tipo já é correto.
+<IfModule mod_mime.c>
+    AddType application/manifest+json .webmanifest
+</IfModule>
+<FilesMatch "\.webmanifest$">
+    ForceType application/manifest+json
+</FilesMatch>
