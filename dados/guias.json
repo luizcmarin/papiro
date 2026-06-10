@@ -6,5 +6,13 @@
         "publicar": 1,
         "data_criacao": 1780808265824,
         "data_modificacao": 1780808285028
+    },
+    {
+        "id": 2,
+        "titulo": "xadrez",
+        "texto": "<div style=\"margin: 0px 0px 0.8em;text-align: center\">Safely promote your pawn</div><div style=\"text-align: left\">If the pawn is on the second, third, or fourth rank, there are three key squares – the square two squares in front of the pawn and the squares to the left and right of that square. Reach a key square with your king and win.</div>",
+        "publicar": 1,
+        "data_criacao": 1781114500749,
+        "data_modificacao": 1781114504960
     }
 ]
