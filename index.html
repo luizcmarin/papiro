@@ -147,16 +147,23 @@
                     </button>
                 </div>
 
-                <!-- ações da pasta selecionada -->
-                <div class="d-flex gap-2 mb-3" x-show="pastaId !== null" x-cloak>
-                    <button class="btn btn-sm btn-outline-secondary"
-                            @click="renomearPasta(pastas.find(p => p.id === pastaId))">
-                        <i class="bi bi-pencil me-1"></i>Renomear pasta
-                    </button>
-                    <button class="btn btn-sm btn-outline-danger" @click="excluirPasta(pastaId)">
-                        <i class="bi bi-trash me-1"></i>Excluir pasta
-                    </button>
-                </div>
+                <!-- ações da pasta selecionada (x-if: x-show não oculta .d-flex) -->
+                <template x-if="pastaId !== null">
+                    <div class="d-flex align-items-center gap-2 mb-3 px-1">
+                        <span class="text-muted small me-auto text-truncate">
+                            <i class="bi bi-folder2-open me-1" aria-hidden="true"></i>
+                            <span x-text="pastas.find(p => p.id === pastaId)?.nome || ''"></span>
+                        </span>
+                        <button class="btn btn-sm btn-light rounded-pill px-3"
+                                @click="renomearPasta(pastas.find(p => p.id === pastaId))">
+                            <i class="bi bi-pencil me-1" aria-hidden="true"></i>Renomear
+                        </button>
+                        <button class="btn btn-sm btn-outline-danger rounded-pill px-3"
+                                @click="excluirPasta(pastaId)">
+                            <i class="bi bi-trash me-1" aria-hidden="true"></i>Excluir
+                        </button>
+                    </div>
+                </template>
 
                 <!-- grade de notas -->
                 <div x-show="lista.length === 0" class="text-center text-muted py-5">
@@ -848,17 +855,15 @@
                                  role="button" tabindex="0"
                                  @keydown.enter="abrirReceita(r)">
                                 <div class="card-body py-3 d-flex align-items-center gap-3">
-                                    <span class="papiro-avatar bg-warning-subtle text-warning-emphasis">
-                                        <i class="bi bi-egg-fried" aria-hidden="true"></i>
-                                    </span>
+                                    <span class="papiro-avatar bg-warning-subtle"
+                                          style="font-size:1.35rem;line-height:1"
+                                          x-text="r.categoria || '🍽️'"></span>
                                     <div class="flex-grow-1 min-w-0">
                                         <p class="fw-semibold mb-0 text-truncate">
                                             <span x-text="r.titulo || 'Sem título'"></span>
                                             <span class="badge bg-success-subtle text-success-emphasis ms-1"
                                                   x-show="r._local" x-cloak>Minha</span>
                                         </p>
-                                        <span class="badge rounded-pill bg-secondary-subtle text-secondary-emphasis mt-1"
-                                              x-show="r.categoria" x-cloak x-text="r.categoria"></span>
                                     </div>
                                     <button class="btn btn-sm p-0 border-0 flex-shrink-0"
                                             x-show="!r._local"

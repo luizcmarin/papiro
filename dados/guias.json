@@ -1,10 +1,10 @@
 [
     {
         "id": 2,
-        "titulo": "xadrez",
-        "texto": "<div style=\"margin: 0px 0px 0.8em;text-align: center\">Safely promote your pawn</div><div style=\"text-align: left\">If the pawn is on the <strong>second, third, or fourth rank, there are three key squares </strong>– the square <u>two squares i</u>n front of the <span style=\"background-color: #facc15;\">paw</span>n and the squares to the left and right of that square. R<span style=\"color: #ef4444;\">each a key square w</span>ith your king and win.</div>",
+        "titulo": "xadreiz",
+        "texto": "<h1 style=\"margin: 0px 0px 0.8em;\">Safely promote your pawn</h1><div style=\"text-align: left\">If the pawn is on the <strong>second, third, or fourth rank, there are three key squares </strong>– the square <u>two squares i</u>n front of the <span style=\"background-color: #facc15\">paw</span>n and the squares to the left and right of that square. R<span style=\"color: #ef4444\">each a key square w</span>ith your king and win.</div>",
         "publicar": 1,
         "data_criacao": 1781114500749,
-        "data_modificacao": 1781190966436
+        "data_modificacao": 1781273739834
     }
 ]
