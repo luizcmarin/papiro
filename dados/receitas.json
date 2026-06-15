@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "id": 1,
+        "id_remoto": null,
+        "titulo": "cafe",
+        "categoria": "🍳 Café da manhã",
+        "ingredientes": "<p>agua</p><p>cafe<br></p>",
+        "instrucoes": "<p>1kg cafe</p><p>1 litro agua quente.<br></p>",
+        "publicar": 1,
+        "data_criacao": 1781446787061,
+        "data_atualizacao": 1781446814445,
+        "e_favorito": 1
+    },
+    {
+        "id": 2,
+        "id_remoto": null,
+        "titulo": "ddd dhny bbb",
+        "categoria": "🥪 Lanche",
+        "ingredientes": "<p>wdewf</p>",
+        "instrucoes": "<p>xxxxxxxxxxxxxxxxxxxxx</p>",
+        "publicar": 1,
+        "data_criacao": 1781449595066,
+        "data_atualizacao": 1781537028811,
+        "e_favorito": 0
+    }
+]

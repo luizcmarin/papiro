@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "id": 1,
+        "pergunta": "<div style=\"margin: 0px 0px 0.8em;text-align: center\"><strong>Hold the draw for 20 more moves</strong></div><div style=\"text-align: left\">Take the opposition to prevent <del>black</del> from reaching a key <span style=\"background-color: #fdba74;\">square</span> and hold the draw.</div>",
+        "referencia": "https://lichess.org/practice/pawn-endgames/opposition/A4ujYOer/TUjQitNN",
+        "dificuldade": 1,
+        "resposta1": "ewewew",
+        "resposta2": "fff",
+        "resposta3": "ggggggg",
+        "resposta4": "sdfsdfsd",
+        "correta": 3,
+        "publicar": 1,
+        "data_criacao": 1781446995083,
+        "data_atualizacao": 1781547997392
+    }
+]

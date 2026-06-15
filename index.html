@@ -1119,18 +1119,18 @@
                     <span x-text="todasPerguntas.length === 0 ? 'Sem perguntas — sincronize' : 'Jogar'"></span>
                 </button>
 
-                <!-- conquistas -->
-                <div x-show="todasConquistas.length > 0" x-cloak>
-                    <h2 class="h6 fw-semibold mb-2">Conquistas</h2>
+                <!-- níveis -->
+                <div x-show="todosNiveis.length > 0" x-cloak>
+                    <h2 class="h6 fw-semibold mb-2">Níveis</h2>
                     <div class="row g-2">
-                        <template x-for="c in conquistas" :key="c.id">
+                        <template x-for="n in niveis" :key="n.id">
                             <div class="col-6">
                                 <div class="card py-2 px-2 text-center"
-                                     :class="conquistaDesbloqueada(c) ? '' : 'opacity-50'">
-                                    <div class="fs-3" x-text="c.icone || '🏅'"></div>
-                                    <div class="small fw-semibold" x-text="c.nome"></div>
-                                    <div class="small text-muted" x-text="c.descricao" x-show="c.descricao"></div>
-                                    <div x-show="conquistaDesbloqueada(c)" class="badge bg-success mt-1">Desbloqueada</div>
+                                     :class="nivelAlcancado(n) ? '' : 'opacity-50'">
+                                    <span class="badge bg-primary rounded-pill fs-5 mx-auto mb-1" x-text="n.ordem || 0"></span>
+                                    <div class="small fw-semibold" x-text="n.nome"></div>
+                                    <div class="small text-muted" x-text="n.descricao" x-show="n.descricao"></div>
+                                    <div x-show="nivelAlcancado(n)" class="badge bg-success mt-1">Alcançado</div>
                                 </div>
                             </div>
                         </template>
@@ -1173,10 +1173,10 @@
                 <!-- pergunta -->
                 <template x-if="perguntaAtual">
                     <div class="flex-grow-1">
-                        <p class="fw-semibold mb-1 fs-6" x-text="perguntaAtual.pergunta"></p>
+                        <div class="fw-semibold mb-1 fs-6 sang-apresentacao" x-html="perguntaAtual.pergunta"></div>
                         <p class="small text-muted mb-3"
                            x-show="perguntaAtual.referencia"
-                           x-text="perguntaAtual.referencia"></p>
+                           x-html="referenciaHtml(perguntaAtual.referencia)"></p>
 
                         <div class="d-flex flex-column gap-2 mb-3">
                             <template x-for="(alt, idx) in alternativasAtual" :key="idx">
@@ -1224,16 +1224,16 @@
                     </div>
                 </div>
 
-                <!-- conquistas novas -->
-                <div x-show="conquistasNovas.length > 0" class="mb-4" x-cloak>
-                    <h2 class="h6 fw-semibold mb-2">🏅 Conquistas desbloqueadas!</h2>
-                    <template x-for="c in conquistasNovas" :key="c.id">
+                <!-- níveis novos -->
+                <div x-show="niveisNovos.length > 0" class="mb-4" x-cloak>
+                    <h2 class="h6 fw-semibold mb-2">🎯 Níveis alcançados!</h2>
+                    <template x-for="n in niveisNovos" :key="n.id">
                         <div class="card mb-2 border-success">
                             <div class="card-body py-2 d-flex align-items-center gap-2">
-                                <span class="fs-4" x-text="c.icone || '🏅'"></span>
+                                <span class="badge bg-primary rounded-pill fs-5" x-text="n.ordem || 0"></span>
                                 <div>
-                                    <div class="fw-semibold" x-text="c.nome"></div>
-                                    <div class="small text-muted" x-text="c.descricao"></div>
+                                    <div class="fw-semibold" x-text="n.nome"></div>
+                                    <div class="small text-muted" x-text="n.descricao"></div>
                                 </div>
                             </div>
                         </div>

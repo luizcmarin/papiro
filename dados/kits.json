@@ -1,1 +1,24 @@
-[]
+[
+    {
+        "id": 3,
+        "id_remoto": null,
+        "nome": "ewwweeew",
+        "icone": "🚑",
+        "publicar": 1,
+        "data_criacao": 1781449789083,
+        "data_modificacao": 1781539875283,
+        "itens": [
+            {
+                "id": 5,
+                "id_remoto": null,
+                "kit_id": 3,
+                "rotulo": "qqwdqwd",
+                "quantidade": "3",
+                "esta_marcado": 0,
+                "data_vencimento": 1781395200000,
+                "observacoes": "wqdqwdqwd",
+                "publicar": 1
+            }
+        ]
+    }
+]
