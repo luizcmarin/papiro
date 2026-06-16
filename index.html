@@ -270,11 +270,14 @@
 
                 <div class="papiro-app pt-2">
                     <!-- título -->
-                    <input type="text"
-                           class="form-control form-control-lg border-0 shadow-none fw-bold mb-3 px-0"
-                           placeholder="Título…"
-                           x-model="titulo"
-                           @input="agendarSalvar()">
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Título</label>
+                        <input type="text"
+                               class="form-control form-control-lg fw-bold"
+                               placeholder="Título…"
+                               x-model="titulo"
+                               @input="agendarSalvar()">
+                    </div>
 
                     <!-- pasta -->
                     <div class="d-flex flex-wrap gap-2 mb-3">
@@ -308,6 +311,7 @@
 
                     <!-- SunEditor (simplificado — montado pelo Alpine sobre este elemento) -->
                     <div class="mb-3">
+                        <label class="form-label fw-semibold">Conteúdo</label>
                         <textarea id="pwa-editor"></textarea>
                     </div>
 
@@ -584,12 +588,18 @@
                     <span class="text-muted small" x-text="edStatus" x-cloak></span>
                 </div>
                 <div class="papiro-app pt-2">
-                    <input type="text"
-                           class="form-control form-control-lg border-0 shadow-none fw-bold mb-3 px-0"
-                           placeholder="Título da guia…"
-                           x-model="edTitulo"
-                           @input="agendarSalvar()">
-                    <div class="mb-3"><textarea id="guia-editor"></textarea></div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Título</label>
+                        <input type="text"
+                               class="form-control form-control-lg fw-bold"
+                               placeholder="Título da guia…"
+                               x-model="edTitulo"
+                               @input="agendarSalvar()">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Conteúdo</label>
+                        <textarea id="guia-editor"></textarea>
+                    </div>
                 </div>
             </div>
             </template>
@@ -785,12 +795,18 @@
                     <span class="text-muted small" x-text="edStatus" x-cloak></span>
                 </div>
                 <div class="papiro-app pt-2">
-                    <input type="text"
-                           class="form-control form-control-lg border-0 shadow-none fw-bold font-serif mb-3 px-0"
-                           placeholder="Título da poesia…"
-                           x-model="edTitulo"
-                           @input="agendarSalvar()">
-                    <div class="mb-3"><textarea id="poesia-editor"></textarea></div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Título</label>
+                        <input type="text"
+                               class="form-control form-control-lg fw-bold font-serif"
+                               placeholder="Título da poesia…"
+                               x-model="edTitulo"
+                               @input="agendarSalvar()">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Texto</label>
+                        <textarea id="poesia-editor"></textarea>
+                    </div>
                 </div>
             </div>
             </template>
@@ -1008,13 +1024,17 @@
                     <span class="text-muted small" x-text="edStatus" x-cloak></span>
                 </div>
                 <div class="papiro-app pt-2">
-                    <input type="text"
-                           class="form-control form-control-lg border-0 shadow-none fw-bold mb-3 px-0"
-                           placeholder="Título da receita…"
-                           x-model="edTitulo"
-                           @input="agendarSalvar()">
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Título</label>
+                        <input type="text"
+                               class="form-control form-control-lg fw-bold"
+                               placeholder="Título da receita…"
+                               x-model="edTitulo"
+                               @input="agendarSalvar()">
+                    </div>
 
                     <!-- categoria (emoji) -->
+                    <label class="form-label fw-semibold">Categoria</label>
                     <div class="d-flex flex-wrap gap-2 mb-3">
                         <template x-for="c in categoriasEditor" :key="c">
                             <button class="btn btn-sm"
@@ -1087,12 +1107,12 @@
                     <div class="d-flex gap-2">
                         <button class="btn flex-fill"
                                 :class="modo === 'estudo' ? 'btn-primary' : 'btn-outline-secondary'"
-                                @click="modo = 'estudo'">
+                                @click="modo = 'estudo'; aviso = ''">
                             <i class="bi bi-book me-1"></i> Estudo
                         </button>
                         <button class="btn flex-fill"
                                 :class="modo === 'desafio' ? 'btn-warning' : 'btn-outline-secondary'"
-                                @click="modo = 'desafio'">
+                                @click="modo = 'desafio'; aviso = ''">
                             <i class="bi bi-lightning-charge me-1"></i> Desafio
                         </button>
                     </div>
@@ -1106,18 +1126,19 @@
                         <template x-for="d in [0,1,2,3]" :key="d">
                             <button class="btn btn-sm"
                                     :class="dificuldade === d ? 'btn-secondary' : 'btn-outline-secondary'"
-                                    @click="dificuldade = d"
+                                    @click="definirDificuldade(d)"
                                     x-text="nomeDificuldade(d)"></button>
                         </template>
                     </div>
                 </div>
 
-                <button class="btn btn-primary w-100 mb-4"
+                <button class="btn btn-primary w-100 mb-2"
                         @click="iniciarPartida()"
                         :disabled="todasPerguntas.length === 0">
                     <i class="bi bi-play-fill me-1"></i>
                     <span x-text="todasPerguntas.length === 0 ? 'Sem perguntas — sincronize' : 'Jogar'"></span>
                 </button>
+                <div class="alert alert-warning py-2 mb-4" x-show="aviso" x-cloak x-text="aviso"></div>
 
                 <!-- níveis -->
                 <div x-show="todosNiveis.length > 0" x-cloak>
