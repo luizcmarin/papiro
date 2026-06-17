@@ -1365,13 +1365,29 @@
                     </button>
                 </div>
 
+                <!-- índice de prontidão -->
+                <div class="card mb-3">
+                    <div class="card-body py-3">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <div>
+                                <div class="h6 mb-0 fw-bold">Índice de prontidão</div>
+                                <div class="small text-muted">Checklists + autonomia de alimentos</div>
+                            </div>
+                            <div class="h4 mb-0 fw-bold" :class="`text-${prontidaoCor}`" x-text="`${prontidaoPercent}%`"></div>
+                        </div>
+                        <div class="progress" style="height:8px" role="progressbar">
+                            <div class="progress-bar" :class="`bg-${prontidaoCor}`" :style="`width:${prontidaoPercent}%`"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- atalhos para estoque e cofre -->
                 <div class="row g-2 mb-4">
                     <div class="col-6">
                         <button class="card w-100 text-start border-0 shadow-sm p-3" @click="irEstoque()">
                             <div class="fs-3 mb-1">📦</div>
                             <div class="fw-semibold">Estoque</div>
-                            <div class="small text-muted">Alimentos e calorias</div>
+                            <div class="small text-muted" x-text="`${diasAutonomia} dias de autonomia`"></div>
                         </button>
                     </div>
                     <div class="col-6">
@@ -1395,11 +1411,11 @@
 
                 <div class="d-flex flex-column gap-2">
                     <template x-for="k in todosKits" :key="(k._local ? 'l' : 'c') + k.id">
-                        <div class="card"
-                             role="button" tabindex="0"
-                             @click="abrirKit(k)"
-                             @keydown.enter="abrirKit(k)">
-                            <div class="card-body py-2 px-3">
+                        <div class="card">
+                            <!-- cabeçalho do kit -->
+                            <div class="card-body py-2 px-3" role="button" tabindex="0"
+                                 @click="alternarKit(k)" @keydown.enter="alternarKit(k)"
+                                 :aria-expanded="estaExpandido(k)">
                                 <div class="d-flex align-items-center gap-2">
                                     <span class="fs-4" x-text="k.icone || '📋'"></span>
                                     <div class="flex-grow-1">
@@ -1409,16 +1425,14 @@
                                                   x-show="k._local" x-cloak>Meu</span>
                                         </div>
                                         <div class="small text-muted"
-                                             x-text="`${k.itens?.length ?? 0} itens`"></div>
+                                             x-text="`${marcadosKit(k)}/${k.itens?.length ?? 0} itens`"></div>
                                     </div>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <div class="text-end">
-                                            <div class="small fw-semibold"
-                                                 :class="kitCompleto(k) ? 'text-success' : 'text-muted'"
-                                                 x-text="`${percentKit(k)}%`"></div>
-                                        </div>
-                                        <i class="bi bi-chevron-right text-muted" aria-hidden="true"></i>
-                                    </div>
+                                    <div class="small fw-semibold"
+                                         :class="kitCompleto(k) ? 'text-success' : 'text-muted'"
+                                         x-text="`${percentKit(k)}%`"></div>
+                                    <i class="bi text-muted"
+                                       :class="estaExpandido(k) ? 'bi-chevron-up' : 'bi-chevron-down'"
+                                       aria-hidden="true"></i>
                                 </div>
                                 <div class="progress mt-2" style="height:4px" x-show="k.itens?.length > 0">
                                     <div class="progress-bar"
@@ -1426,76 +1440,51 @@
                                          :style="`width:${percentKit(k)}%`"></div>
                                 </div>
                             </div>
-                        </div>
-                    </template>
-                </div>
 
-            </div>
-            </template>
-
-            <!-- ── Kit detalhe: checklist ──────────────────────────────────── -->
-            <template x-if="subVista === 'kit'">
-            <div class="d-flex flex-column"
-                 style="min-height:100dvh">
-
-                <div class="papiro-topo d-flex align-items-center gap-2 px-3 py-2 flex-shrink-0">
-                    <button class="btn btn-sm btn-outline-secondary" @click="voltarPrep()" aria-label="Voltar">
-                        <i class="bi bi-arrow-left" aria-hidden="true"></i>
-                    </button>
-                    <span class="fw-semibold me-auto" x-text="kitAtual?.nome ?? ''"></span>
-                    <span class="small text-muted" x-text="`${progresso}%`"></span>
-                    <button class="btn btn-sm btn-outline-secondary"
-                            title="Resetar progresso"
-                            @click="resetarKit()"
-                            x-show="kitAtual">
-                        <i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i>
-                    </button>
-                    <button class="btn btn-sm btn-outline-primary" title="Editar"
-                            @click="editarChecklist()" x-show="kitAtualLocal" x-cloak>
-                        <i class="bi bi-pencil" aria-hidden="true"></i>
-                    </button>
-                    <button class="btn btn-sm btn-outline-danger" title="Excluir"
-                            @click="excluirChecklist()" x-show="kitAtualLocal" x-cloak>
-                        <i class="bi bi-trash" aria-hidden="true"></i>
-                    </button>
-                </div>
-
-                <div class="progress flex-shrink-0" style="height:4px">
-                    <div class="progress-bar"
-                         :class="progresso === 100 ? 'bg-success' : ''"
-                         :style="`width:${progresso}%`"></div>
-                </div>
-
-                <div class="flex-grow-1 overflow-auto papiro-app pt-3">
-                    <template x-if="kitAtual && kitAtual.itens?.length === 0">
-                        <p class="text-muted text-center py-4">Kit sem itens publicados.</p>
-                    </template>
-
-                    <template x-if="kitAtual">
-                        <div class="d-flex flex-column gap-2">
-                            <template x-for="it in kitAtual.itens" :key="it.id">
-                                <div class="card"
-                                     :class="itemMarcado(it.id) ? 'border-success' : ''"
-                                     role="button" tabindex="0"
-                                     @click="toggleItem(it.id)"
-                                     @keydown.enter="toggleItem(it.id)">
-                                    <div class="card-body py-2 px-3 d-flex align-items-center gap-3">
-                                        <i class="bi fs-5 flex-shrink-0"
-                                           :class="itemMarcado(it.id) ? 'bi-check-circle-fill text-success' : 'bi-circle text-muted'"
-                                           aria-hidden="true"></i>
-                                        <div class="flex-grow-1"
-                                             :class="itemMarcado(it.id) ? 'text-decoration-line-through text-muted' : ''">
-                                            <div x-text="it.rotulo || it.descricao"></div>
-                                            <div class="small text-muted" x-show="it.quantidade" x-text="`Qtd: ${it.quantidade}`"></div>
-                                            <div class="small text-muted" x-show="it.observacoes" x-text="it.observacoes"></div>
+                            <!-- corpo do kit (itens inline) -->
+                            <div class="border-top px-3 py-2" x-show="estaExpandido(k)" x-cloak>
+                                <p class="text-muted small text-center py-2 mb-0"
+                                   x-show="(k.itens?.length ?? 0) === 0">Kit sem itens.</p>
+                                <div class="d-flex flex-column">
+                                    <template x-for="it in (k.itens || [])" :key="it.id">
+                                        <div class="d-flex align-items-start gap-2 py-2 border-bottom"
+                                             role="button" tabindex="0"
+                                             @click="toggleItem(k, it.id)" @keydown.enter="toggleItem(k, it.id)">
+                                            <i class="bi fs-5 flex-shrink-0"
+                                               :class="itemMarcado(k, it.id) ? 'bi-check-circle-fill text-success' : 'bi-circle text-muted'"
+                                               aria-hidden="true"></i>
+                                            <div class="flex-grow-1"
+                                                 :class="itemMarcado(k, it.id) ? 'text-decoration-line-through text-muted' : ''">
+                                                <div x-text="it.rotulo || it.descricao"></div>
+                                                <div class="small d-flex flex-wrap gap-2">
+                                                    <span class="text-muted" x-show="it.quantidade" x-text="`Qtd: ${it.quantidade}`"></span>
+                                                    <span class="text-danger" x-show="it.data_vencimento > 0"
+                                                          x-text="`Vence: ${vencimentoItem(it)}`"></span>
+                                                </div>
+                                                <div class="small text-muted" x-show="it.observacoes" x-text="it.observacoes"></div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </template>
                                 </div>
-                            </template>
+
+                                <div class="d-flex gap-2 mt-2">
+                                    <button class="btn btn-sm btn-outline-secondary" @click="resetarKit(k)" title="Resetar progresso">
+                                        <i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i>
+                                    </button>
+                                    <template x-if="k._local">
+                                        <button class="btn btn-sm btn-outline-primary" @click="editarChecklist(k)" title="Editar">
+                                            <i class="bi bi-pencil" aria-hidden="true"></i>
+                                        </button>
+                                    </template>
+                                    <template x-if="k._local">
+                                        <button class="btn btn-sm btn-outline-danger" @click="excluirChecklist(k)" title="Excluir">
+                                            <i class="bi bi-trash" aria-hidden="true"></i>
+                                        </button>
+                                    </template>
+                                </div>
+                            </div>
                         </div>
                     </template>
-
-                    <div style="height:4rem"></div>
                 </div>
 
             </div>
@@ -1520,7 +1509,33 @@
                        placeholder="Buscar alimento…"
                        x-model="buscaEstoque">
 
-                <!-- ── Calculadora de alimentos (autonomia do estoque) ───────── -->
+                <!-- ── Alertas de validade (acordeão) ────────────────────────── -->
+                <div class="card mb-3 border-warning-subtle" x-show="!estoqueForm && totalAlertas > 0" x-cloak>
+                    <div class="card-body py-2 px-3" role="button" tabindex="0"
+                         @click="alertasAbertos = !alertasAbertos" @keydown.enter="alertasAbertos = !alertasAbertos">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="bi bi-exclamation-triangle-fill text-warning"></i>
+                            <span class="fw-semibold me-auto" x-text="`${totalAlertas} alerta(s) de validade`"></span>
+                            <i class="bi" :class="alertasAbertos ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+                        </div>
+                    </div>
+                    <div class="border-top px-3 py-2" x-show="alertasAbertos" x-cloak>
+                        <template x-for="e in vencidos" :key="'v'+e.id">
+                            <div class="small text-danger d-flex justify-content-between gap-2">
+                                <span class="text-truncate" x-text="e.item"></span>
+                                <span class="flex-shrink-0" x-text="`vencido em ${formatarData(e.data_vencimento)}`"></span>
+                            </div>
+                        </template>
+                        <template x-for="e in aVencer" :key="'a'+e.id">
+                            <div class="small text-warning-emphasis d-flex justify-content-between gap-2">
+                                <span class="text-truncate" x-text="e.item"></span>
+                                <span class="flex-shrink-0" x-text="`vence em ${formatarData(e.data_vencimento)}`"></span>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- ── Calculadora de autonomia (perfil idade×atividade) ──────── -->
                 <div class="card mb-3" x-show="!estoqueForm" x-cloak>
                     <div class="card-body">
                         <h2 class="h6 fw-semibold mb-3">
@@ -1528,36 +1543,80 @@
                         </h2>
                         <div class="row g-2 mb-3">
                             <div class="col-6">
-                                <label class="form-label small text-muted mb-1">Pessoas</label>
-                                <input type="number" min="1" class="form-control form-control-sm"
-                                       x-model.number="calcPessoas">
+                                <label class="form-label small text-muted mb-1">Perfil (idade)</label>
+                                <select class="form-select form-select-sm" x-model="calcIdade" @change="_persistirCalc()">
+                                    <option value="BEBE">Bebê</option>
+                                    <option value="CRIANCA">Criança</option>
+                                    <option value="ADOLESCENTE">Adolescente</option>
+                                    <option value="ADULTO_M">Adulto (homem)</option>
+                                    <option value="ADULTO_F">Adulto (mulher)</option>
+                                    <option value="IDOSO">Idoso</option>
+                                </select>
                             </div>
                             <div class="col-6">
-                                <label class="form-label small text-muted mb-1">kcal/pessoa/dia</label>
-                                <input type="number" min="0" step="100" class="form-control form-control-sm"
-                                       x-model.number="calcKcalDia">
+                                <label class="form-label small text-muted mb-1">Atividade</label>
+                                <select class="form-select form-select-sm" x-model="calcAtividade" @change="_persistirCalc()">
+                                    <option value="SEDENTARIO">Sedentário</option>
+                                    <option value="LEVE">Leve</option>
+                                    <option value="MODERADO">Moderado</option>
+                                    <option value="INTENSO">Intenso</option>
+                                </select>
                             </div>
                         </div>
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <label class="form-label small text-muted mb-0 me-auto">Pessoas</label>
+                            <button class="btn btn-sm btn-outline-secondary" @click="ajustarPessoas(-1)" aria-label="Menos">−</button>
+                            <span class="fw-bold" style="min-width:2ch;text-align:center" x-text="calcPessoas"></span>
+                            <button class="btn btn-sm btn-outline-secondary" @click="ajustarPessoas(1)" aria-label="Mais">+</button>
+                        </div>
                         <div class="row g-2 text-center">
-                            <div class="col-4">
-                                <div class="fw-bold" x-text="totalKcalEstoque.toLocaleString('pt-BR')"></div>
-                                <div class="small text-muted">kcal no estoque</div>
+                            <div class="col-3">
+                                <div class="fw-bold small" x-text="totalKcalEstoque.toLocaleString('pt-BR')"></div>
+                                <div class="small text-muted">kcal</div>
                             </div>
-                            <div class="col-4">
-                                <div class="fw-bold"
-                                     :class="diasAutonomia > 0 ? 'text-success' : 'text-muted'"
-                                     x-text="diasAutonomia + ' d'"></div>
+                            <div class="col-3">
+                                <div class="fw-bold" :class="`text-${corAutonomia}`" x-text="diasAutonomia + ' d'"></div>
                                 <div class="small text-muted">autonomia</div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-3">
                                 <div class="fw-bold text-primary" x-text="litrosAguaSugeridos + ' L'"></div>
-                                <div class="small text-muted">água sugerida</div>
+                                <div class="small text-muted">água</div>
+                            </div>
+                            <div class="col-3">
+                                <div class="fw-bold" x-text="pesoTotalKg + ' kg'"></div>
+                                <div class="small text-muted">peso</div>
                             </div>
                         </div>
                         <p class="small text-muted mb-0 mt-2">
-                            Necessidade do grupo: <strong x-text="necessidadeDiariaGrupo.toLocaleString('pt-BR') + ' kcal/dia'"></strong>.
-                            Preencha quantidade, peso e kcal/100 g dos itens para alimentar o cálculo.
+                            Necessidade do grupo: <strong x-text="necessidadeDiariaGrupo.toLocaleString('pt-BR') + ' kcal/dia'"></strong>
+                            (<span x-text="necessidadePorPessoa.toLocaleString('pt-BR')"></span>/pessoa).
                         </p>
+                    </div>
+                </div>
+
+                <!-- ── Logística tática ──────────────────────────────────────── -->
+                <div class="card mb-3" x-show="!estoqueForm && listaEstoque.length > 0" x-cloak>
+                    <div class="card-body">
+                        <h2 class="h6 fw-semibold mb-3"><i class="bi bi-shield-check me-1"></i>Logística tática</h2>
+                        <div class="row g-2 text-center mb-2">
+                            <div class="col-4">
+                                <div class="fw-bold" x-text="logistica.friaDias + ' d'"></div>
+                                <div class="small text-muted">autonomia fria</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="fw-bold" x-text="logistica.totalDias + ' d'"></div>
+                                <div class="small text-muted">autonomia total</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="fw-bold" x-text="logistica.fibras"></div>
+                                <div class="small text-muted">fibras/vitaminas</div>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger py-1 small mb-0 d-flex align-items-center gap-2"
+                             x-show="logistica.vulneravel" x-cloak>
+                            <i class="bi bi-exclamation-octagon-fill"></i>
+                            <span>Vulnerabilidade biológica: reforce vitaminas/fibras em conserva.</span>
+                        </div>
                     </div>
                 </div>
 
@@ -1575,9 +1634,8 @@
                         <div class="row g-2 mb-2">
                             <div class="col-6">
                                 <select class="form-select form-select-sm" x-model="estoqueForm.categoria">
-                                    <option value="">Categoria…</option>
-                                    <template x-for="c in categorias" :key="c">
-                                        <option :value="c" x-text="c"></option>
+                                    <template x-for="c in categorias" :key="c.nome">
+                                        <option :value="c.nome" x-text="`${c.emoji} ${c.nome}`"></option>
                                     </template>
                                 </select>
                             </div>
@@ -1630,42 +1688,48 @@
                     <span>Estoque vazio.</span>
                 </div>
 
-                <div class="d-flex flex-column gap-2">
-                    <template x-for="e in estoqueVisivel" :key="e.id">
-                        <div class="card papiro-acento" :class="acentoVenc(e)">
-                            <div class="card-body py-2 px-3 d-flex align-items-center gap-3">
-                                <span class="papiro-avatar"
-                                      :style="`background:${infoCategoria(e).cor}1f;color:${infoCategoria(e).cor}`"
-                                      x-text="infoCategoria(e).emoji"></span>
-
-                                <div class="flex-grow-1">
-                                    <div class="d-flex align-items-center gap-2 flex-wrap">
-                                        <span class="fw-semibold" x-text="e.item || 'Sem nome'"></span>
-                                        <template x-if="vencimentoRel(e)">
-                                            <span class="badge rounded-pill" :class="vencimentoRel(e).cls">
-                                                <i class="bi bi-clock-history"></i> <span x-text="vencimentoRel(e).txt"></span>
-                                            </span>
-                                        </template>
-                                    </div>
-                                    <div class="small text-muted d-flex flex-wrap gap-2">
-                                        <span x-show="e.categoria" x-text="e.categoria"></span>
-                                        <span x-text="`Qtd: ${e.quantidade}`"></span>
-                                        <span x-show="caloriasTotal(e)" x-text="`${caloriasTotal(e)} kcal`"></span>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex flex-column gap-1 flex-shrink-0">
-                                    <button class="btn btn-sm btn-outline-secondary" @click="editarEstoque(e.id)" title="Editar">
-                                        <i class="bi bi-pencil" aria-hidden="true"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-outline-danger" @click="excluirEstoque(e.id)" title="Excluir">
-                                        <i class="bi bi-trash" aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                            </div>
+                <template x-for="grupo in estoquePorCategoria" :key="grupo.nome">
+                    <div class="mb-3">
+                        <div class="small fw-semibold text-muted mb-1 d-flex align-items-center gap-1">
+                            <span x-text="grupo.info.emoji"></span><span x-text="grupo.nome"></span>
                         </div>
-                    </template>
-                </div>
+                        <div class="d-flex flex-column gap-2">
+                            <template x-for="e in grupo.itens" :key="e.id">
+                                <div class="card papiro-acento" :class="acentoVenc(e)">
+                                    <div class="card-body py-2 px-3 d-flex align-items-center gap-3">
+                                        <span class="papiro-avatar"
+                                              :style="`background:${infoCategoria(e).cor}1f;color:${infoCategoria(e).cor}`"
+                                              x-text="infoCategoria(e).emoji"></span>
+
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex align-items-center gap-2 flex-wrap">
+                                                <span class="fw-semibold" x-text="e.item || 'Sem nome'"></span>
+                                                <template x-if="vencimentoRel(e)">
+                                                    <span class="badge rounded-pill" :class="vencimentoRel(e).cls">
+                                                        <i class="bi bi-clock-history"></i> <span x-text="vencimentoRel(e).txt"></span>
+                                                    </span>
+                                                </template>
+                                            </div>
+                                            <div class="small text-muted d-flex flex-wrap gap-2">
+                                                <span x-text="`Qtd: ${e.quantidade}`"></span>
+                                                <span x-show="caloriasTotal(e)" x-text="`${caloriasTotal(e)} kcal`"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-column gap-1 flex-shrink-0">
+                                            <button class="btn btn-sm btn-outline-secondary" @click="editarEstoque(e.id)" title="Editar">
+                                                <i class="bi bi-pencil" aria-hidden="true"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger" @click="excluirEstoque(e.id)" title="Excluir">
+                                                <i class="bi bi-trash" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
 
             </div>
             </template>
