@@ -1073,30 +1073,44 @@
                     <h1 class="h5 mb-0 me-auto">Língua Pura</h1>
                 </div>
 
-                <!-- stats do progresso -->
-                <div class="row g-2 mb-4" x-show="progresso.partidas > 0" x-cloak>
-                    <div class="col-6">
-                        <div class="card text-center py-2">
-                            <div class="h4 mb-0 fw-bold text-primary" x-text="progresso.xpTotal"></div>
-                            <div class="small text-muted">XP total</div>
+                <!-- perfil do jogador -->
+                <div class="card mb-3">
+                    <div class="card-body py-3">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <div>
+                                <div class="h5 mb-0 fw-bold" x-text="`Nível ${nivelAtual}`"></div>
+                                <div class="small text-muted"
+                                     x-text="`Sequência ${progresso.sequenciaAtual} · recorde ${progresso.recordeSequencia}`"></div>
+                            </div>
+                            <div class="text-end">
+                                <div class="h5 mb-0 fw-bold text-warning" x-text="progresso.xpSaldo"></div>
+                                <div class="small text-muted">XP disponível</div>
+                            </div>
+                        </div>
+                        <div class="progress" style="height:8px" role="progressbar">
+                            <div class="progress-bar bg-warning" :style="`width:${nivelPercent}%`"></div>
                         </div>
                     </div>
-                    <div class="col-6">
+                </div>
+
+                <!-- stats do progresso -->
+                <div class="row g-2 mb-4">
+                    <div class="col-4">
+                        <div class="card text-center py-2">
+                            <div class="h4 mb-0 fw-bold text-primary" x-text="restantes"></div>
+                            <div class="small text-muted">Restantes</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
                         <div class="card text-center py-2">
                             <div class="h4 mb-0 fw-bold text-success" x-text="progresso.acertosTotal"></div>
                             <div class="small text-muted">Acertos</div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
                         <div class="card text-center py-2">
                             <div class="h4 mb-0 fw-bold" x-text="progresso.partidas"></div>
                             <div class="small text-muted">Partidas</div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="card text-center py-2">
-                            <div class="h4 mb-0 fw-bold text-danger" x-text="progresso.errosTotal"></div>
-                            <div class="small text-muted">Erros</div>
                         </div>
                     </div>
                 </div>
@@ -1116,7 +1130,7 @@
                             <i class="bi bi-lightning-charge me-1"></i> Desafio
                         </button>
                     </div>
-                    <div class="form-text text-muted" x-show="modo === 'desafio'">30s por pergunta · XP · bônus streak</div>
+                    <div class="form-text text-muted" x-show="modo === 'desafio'" x-cloak>Timer por pergunta · bônus de XP por velocidade e sequência</div>
                 </div>
 
                 <!-- seletor de dificuldade -->
@@ -1138,7 +1152,17 @@
                     <i class="bi bi-play-fill me-1"></i>
                     <span x-text="todasPerguntas.length === 0 ? 'Sem perguntas — sincronize' : 'Jogar'"></span>
                 </button>
-                <div class="alert alert-warning py-2 mb-4" x-show="aviso" x-cloak x-text="aviso"></div>
+                <div class="alert alert-warning py-2 mb-2" x-show="aviso" x-cloak x-text="aviso"></div>
+
+                <!-- tudo concluído -->
+                <div class="alert alert-success d-flex align-items-center gap-2 mb-4"
+                     x-show="tudoConcluido" x-cloak>
+                    <i class="bi bi-trophy-fill" aria-hidden="true"></i>
+                    <span class="me-auto small">Você já respondeu todas as perguntas desta dificuldade!</span>
+                    <button class="btn btn-sm btn-outline-success" @click="reiniciarPerguntas()">
+                        <i class="bi bi-arrow-repeat me-1"></i> Reiniciar
+                    </button>
+                </div>
 
                 <!-- níveis -->
                 <div x-show="todosNiveis.length > 0" x-cloak>
@@ -1168,9 +1192,9 @@
 
                 <!-- cabeçalho quiz -->
                 <div class="d-flex align-items-center gap-2 mb-2">
-                    <button class="btn btn-sm btn-outline-secondary"
-                            @click="voltar()"
-                            aria-label="Sair do quiz">
+                    <button class="btn btn-sm btn-outline-danger"
+                            @click="abandonarPartida()"
+                            aria-label="Encerrar quiz">
                         <i class="bi bi-x-lg" aria-hidden="true"></i>
                     </button>
                     <div class="progress flex-grow-1" style="height:8px">
@@ -1179,17 +1203,21 @@
                              role="progressbar"></div>
                     </div>
                     <span class="small text-muted" x-text="`${indicePergunta+1}/${totalPartida}`"></span>
+                    <span class="badge bg-warning text-dark"
+                          x-show="multiplicadorAtual > 1" x-cloak
+                          x-text="`x${multiplicadorAtual}`"></span>
                     <span x-show="modo === 'desafio'" class="badge"
                           :class="timerRestante <= 10 ? 'bg-danger' : 'bg-secondary'"
-                          x-text="`${timerRestante}s`" x-cloak></span>
+                          x-text="pausado ? '⏸' : `${timerRestante}s`" x-cloak></span>
                 </div>
 
-                <!-- vibe overlay -->
+                <!-- vibe overlay (texto rich + animação curada) -->
                 <div class="alert alert-success text-center py-2 mb-2"
                      x-show="vibeVisivel"
                      x-transition
-                     x-cloak
-                     x-text="vibeAtual?.texto"></div>
+                     x-cloak>
+                    <span :class="classeVibe()" x-html="vibeAtual?.texto"></span>
+                </div>
 
                 <!-- pergunta -->
                 <template x-if="perguntaAtual">
@@ -1201,13 +1229,50 @@
 
                         <div class="d-flex flex-column gap-2 mb-3">
                             <template x-for="(alt, idx) in alternativasAtual" :key="idx">
-                                <button class="btn text-start"
-                                        :class="respondida ? corDaAlternativa(alt, idx) : 'btn-outline-secondary'"
+                                <button class="btn text-start d-flex align-items-center gap-2"
+                                        :class="[corDaAlternativa(alt, idx), ocultada(idx) ? 'opacity-25' : '']"
                                         @click="selecionar(alt, idx)"
-                                        :disabled="respondida"
-                                        x-text="alt.texto"></button>
+                                        :disabled="respondida || ocultada(idx)">
+                                    <span class="badge rounded-circle bg-secondary-subtle text-secondary-emphasis flex-shrink-0"
+                                          x-text="letraAlternativa(idx)"></span>
+                                    <span x-text="alt.texto"></span>
+                                </button>
                             </template>
                         </div>
+
+                        <!-- controles antes de responder -->
+                        <div class="d-flex gap-2 mb-3" x-show="!respondida" x-cloak>
+                            <button class="btn btn-sm btn-outline-primary flex-fill"
+                                    @click="usarDica()"
+                                    :disabled="!podeDica">
+                                <i class="bi bi-lightbulb me-1"></i>
+                                <span x-text="`Dica (${custoDica} XP)`"></span>
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary flex-fill"
+                                    x-show="modo === 'desafio'"
+                                    @click="alternarPausa()">
+                                <i class="bi" :class="pausado ? 'bi-play-fill' : 'bi-pause-fill'"></i>
+                                <span x-text="pausado ? 'Retomar' : 'Pausar'"></span>
+                            </button>
+                        </div>
+
+                        <!-- feedback + explicação -->
+                        <template x-if="respondida">
+                            <div>
+                                <div class="alert py-2 mb-2 fw-semibold"
+                                     :class="ultimoCorreto ? 'alert-success' : 'alert-danger'"
+                                     x-text="mensagemFeedback"></div>
+                                <div class="card mb-3 border-info-subtle"
+                                     x-show="perguntaAtual.explicacao" x-cloak>
+                                    <div class="card-body py-2">
+                                        <div class="small text-info-emphasis fw-semibold mb-1">
+                                            <i class="bi bi-info-circle me-1"></i>Explicação
+                                        </div>
+                                        <div class="small sang-apresentacao" x-html="perguntaAtual.explicacao"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
 
                         <button class="btn btn-primary w-100"
                                 x-show="respondida"
@@ -1230,17 +1295,23 @@
                 <p class="text-center text-muted mb-4"
                    x-text="`${acertosPartida} de ${totalPartida} acertos (${percentualResultado}%)`"></p>
 
-                <div class="row g-2 mb-4" x-show="modo === 'desafio'" x-cloak>
-                    <div class="col-6">
+                <div class="row g-2 mb-4">
+                    <div class="col-4">
                         <div class="card text-center py-2">
-                            <div class="h4 mb-0 fw-bold text-warning" x-text="`+${xpPartida} XP`"></div>
+                            <div class="h4 mb-0 fw-bold text-warning" x-text="`+${xpPartida}`"></div>
                             <div class="small text-muted">XP ganho</div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
                         <div class="card text-center py-2">
-                            <div class="h4 mb-0 fw-bold" x-text="progresso.xpTotal"></div>
-                            <div class="small text-muted">XP total</div>
+                            <div class="h4 mb-0 fw-bold text-primary" x-text="`Nv ${nivelAtual}`"></div>
+                            <div class="small text-muted">Nível</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card text-center py-2">
+                            <div class="h4 mb-0 fw-bold" x-text="progresso.xpSaldo"></div>
+                            <div class="small text-muted">XP saldo</div>
                         </div>
                     </div>
                 </div>
