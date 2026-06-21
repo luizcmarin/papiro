@@ -1,1 +1,802 @@
-[]
+[
+    {
+        "id": 1,
+        "texto": "<span><strong>Confiança:</strong> Confie em Jeová de todo o coração.</span><br><small class=\"text-muted\">— Provérbios 3:5</small>",
+        "animacao": "tada",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 2,
+        "texto": "<span><strong>Tranquilidade:</strong> Lance todas as suas ansiedades sobre Jeová, pois ele se importa com você.</span><br><small class=\"text-muted\">— 1 Pedro 5:7</small>",
+        "animacao": "bounce",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 3,
+        "texto": "<span><strong>Coragem:</strong> Seja corajoso e forte: Jeová está com você.</span><br><small class=\"text-muted\">— Josué 1:9</small>",
+        "animacao": "pulse",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 4,
+        "texto": "<span><strong>Ânimo:</strong> Não tenha medo, pois eu sou o seu Deus.</span><br><small class=\"text-muted\">— Isaías 41:10</small>",
+        "animacao": "zoom",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 5,
+        "texto": "<span><strong>Segurança:</strong> Jeová é o meu Pastor; nada me faltará.</span><br><small class=\"text-muted\">— Salmo 23:1</small>",
+        "animacao": "glow",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 6,
+        "texto": "<span><strong>Força:</strong> A alegria de Jeová é a sua fortaleza.</span><br><small class=\"text-muted\">— Neemias 8:10</small>",
+        "animacao": "heartbeat",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 7,
+        "texto": "<span><strong>Esperança:</strong> Quem espera em Jeová renova as forças.</span><br><small class=\"text-muted\">— Isaías 40:31</small>",
+        "animacao": "rubber",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 8,
+        "texto": "<span><strong>Intimidade:</strong> Achegue-se a Deus, e ele se achegará a você.</span><br><small class=\"text-muted\">— Tiago 4:8</small>",
+        "animacao": "swing",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 9,
+        "texto": "<span><strong>Constância:</strong> O amor nunca falha.</span><br><small class=\"text-muted\">— 1 Coríntios 13:8</small>",
+        "animacao": "jello",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 10,
+        "texto": "<span><strong>Consolo:</strong> Jeová está perto dos que têm o coração quebrantado.</span><br><small class=\"text-muted\">— Salmo 34:18</small>",
+        "animacao": "float",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 11,
+        "texto": "<span><strong>Capacidade:</strong> Para tudo tenho forças graças Àquele que me fortalece.</span><br><small class=\"text-muted\">— Filipenses 4:13</small>",
+        "animacao": "flash",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 12,
+        "texto": "<span><strong>Prioridade:</strong> Busque primeiro o Reino de Deus.</span><br><small class=\"text-muted\">— Mateus 6:33</small>",
+        "animacao": "spin",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 13,
+        "texto": "<span><strong>Felicidade:</strong> Felizes os que têm consciência da sua necessidade espiritual.</span><br><small class=\"text-muted\">— Mateus 5:3</small>",
+        "animacao": "slide",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 14,
+        "texto": "<span><strong>Persistência:</strong> Continue pedindo, e lhe será dado.</span><br><small class=\"text-muted\">— Mateus 7:7</small>",
+        "animacao": "wobble",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 15,
+        "texto": "<span><strong>Bondade:</strong> Jeová é bom para todos.</span><br><small class=\"text-muted\">— Salmo 145:9</small>",
+        "animacao": "shake",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 16,
+        "texto": "<span><strong>Proteção:</strong> O nome de Jeová é uma torre forte.</span><br><small class=\"text-muted\">— Provérbios 18:10</small>",
+        "animacao": "tada",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 17,
+        "texto": "<span><strong>Experiência:</strong> Prove e veja que Jeová é bom.</span><br><small class=\"text-muted\">— Salmo 34:8</small>",
+        "animacao": "bounce",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 18,
+        "texto": "<span><strong>Descanso:</strong> Lance o seu fardo sobre Jeová, e ele o susterá.</span><br><small class=\"text-muted\">— Salmo 55:22</small>",
+        "animacao": "pulse",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 19,
+        "texto": "<span><strong>Amparo:</strong> Jeová guarda todos os que o amam.</span><br><small class=\"text-muted\">— Salmo 145:20</small>",
+        "animacao": "zoom",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 20,
+        "texto": "<span><strong>Paz:</strong> A paz de Deus guardará o seu coração.</span><br><small class=\"text-muted\">— Filipenses 4:7</small>",
+        "animacao": "glow",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 21,
+        "texto": "<span><strong>Calma:</strong> Não se preocupe com o dia de amanhã.</span><br><small class=\"text-muted\">— Mateus 6:34</small>",
+        "animacao": "heartbeat",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 22,
+        "texto": "<span><strong>Promessa:</strong> Jeová enxugará toda lágrima dos olhos.</span><br><small class=\"text-muted\">— Apocalipse 21:4</small>",
+        "animacao": "rubber",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 23,
+        "texto": "<span><strong>Mansidão:</strong> Os mansos herdarão a terra.</span><br><small class=\"text-muted\">— Salmo 37:11</small>",
+        "animacao": "swing",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 24,
+        "texto": "<span><strong>Deleite:</strong> Tenha prazer em Jeová, e ele atenderá os desejos do seu coração.</span><br><small class=\"text-muted\">— Salmo 37:4</small>",
+        "animacao": "jello",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 25,
+        "texto": "<span><strong>Garantia:</strong> A esperança não decepciona.</span><br><small class=\"text-muted\">— Romanos 5:5</small>",
+        "animacao": "float",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 26,
+        "texto": "<span><strong>Gratidão:</strong> Mostre-se agradecido.</span><br><small class=\"text-muted\">— Colossenses 3:15</small>",
+        "animacao": "flash",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 27,
+        "texto": "<span><strong>Oração:</strong> Ore sem cessar.</span><br><small class=\"text-muted\">— 1 Tessalonicenses 5:17</small>",
+        "animacao": "spin",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 28,
+        "texto": "<span><strong>Súplica:</strong> Jeová ouve a oração dos justos.</span><br><small class=\"text-muted\">— Provérbios 15:29</small>",
+        "animacao": "slide",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 29,
+        "texto": "<span><strong>Entrega:</strong> Confie o seu caminho a Jeová.</span><br><small class=\"text-muted\">— Salmo 37:5</small>",
+        "animacao": "wobble",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 30,
+        "texto": "<span><strong>Paciência:</strong> Bom é esperar em silêncio a salvação de Jeová.</span><br><small class=\"text-muted\">— Lamentações 3:26</small>",
+        "animacao": "shake",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 31,
+        "texto": "<span><strong>Destemor:</strong> Jeová é a minha luz e a minha salvação.</span><br><small class=\"text-muted\">— Salmo 27:1</small>",
+        "animacao": "tada",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 32,
+        "texto": "<span><strong>Confiança:</strong> Quem está conosco é maior do que quem está contra nós.</span><br><small class=\"text-muted\">— 2 Reis 6:16</small>",
+        "animacao": "bounce",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 33,
+        "texto": "<span><strong>Resiliência:</strong> O justo cai sete vezes e torna a se levantar.</span><br><small class=\"text-muted\">— Provérbios 24:16</small>",
+        "animacao": "pulse",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 34,
+        "texto": "<span><strong>Apoio:</strong> Jeová ampara todos os que caem.</span><br><small class=\"text-muted\">— Salmo 145:14</small>",
+        "animacao": "zoom",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 35,
+        "texto": "<span><strong>Exemplo:</strong> Seja imitador de Deus, como filho amado.</span><br><small class=\"text-muted\">— Efésios 5:1</small>",
+        "animacao": "glow",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 36,
+        "texto": "<span><strong>Compaixão:</strong> Revista-se de terna compaixão.</span><br><small class=\"text-muted\">— Colossenses 3:12</small>",
+        "animacao": "heartbeat",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 37,
+        "texto": "<span><strong>Perdão:</strong> Continue perdoando uns aos outros.</span><br><small class=\"text-muted\">— Colossenses 3:13</small>",
+        "animacao": "rubber",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 38,
+        "texto": "<span><strong>Edificação:</strong> O amor edifica.</span><br><small class=\"text-muted\">— 1 Coríntios 8:1</small>",
+        "animacao": "swing",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 39,
+        "texto": "<span><strong>Gentileza:</strong> Seja bondoso com os outros.</span><br><small class=\"text-muted\">— Efésios 4:32</small>",
+        "animacao": "jello",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 40,
+        "texto": "<span><strong>Reflexão:</strong> A bondade de Deus o conduz ao arrependimento.</span><br><small class=\"text-muted\">— Romanos 2:4</small>",
+        "animacao": "float",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 41,
+        "texto": "<span><strong>Misericórdia:</strong> Jeová está sempre pronto a perdoar.</span><br><small class=\"text-muted\">— Salmo 86:5</small>",
+        "animacao": "flash",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 42,
+        "texto": "<span><strong>Lealdade:</strong> Jeová não abandona os seus fiéis.</span><br><small class=\"text-muted\">— Salmo 37:28</small>",
+        "animacao": "spin",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 43,
+        "texto": "<span><strong>Expectativa:</strong> Por mais que tarde, espere: certamente se cumprirá.</span><br><small class=\"text-muted\">— Habacuque 2:3</small>",
+        "animacao": "slide",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 44,
+        "texto": "<span><strong>Serenidade:</strong> Jeová lutará por você; fique tranquilo.</span><br><small class=\"text-muted\">— Êxodo 14:14</small>",
+        "animacao": "wobble",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 45,
+        "texto": "<span><strong>Vitória:</strong> Não se deixe vencer pelo mal; vença o mal com o bem.</span><br><small class=\"text-muted\">— Romanos 12:21</small>",
+        "animacao": "shake",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 46,
+        "texto": "<span><strong>Firmeza:</strong> Seja firme e inabalável.</span><br><small class=\"text-muted\">— 1 Coríntios 15:58</small>",
+        "animacao": "tada",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 47,
+        "texto": "<span><strong>Vigilância:</strong> Vigie, fique firme na fé.</span><br><small class=\"text-muted\">— 1 Coríntios 16:13</small>",
+        "animacao": "bounce",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 48,
+        "texto": "<span><strong>Certeza:</strong> A fé é a certeza daquilo que se espera.</span><br><small class=\"text-muted\">— Hebreus 11:1</small>",
+        "animacao": "pulse",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 49,
+        "texto": "<span><strong>Fé:</strong> Sem fé é impossível agradar a Deus.</span><br><small class=\"text-muted\">— Hebreus 11:6</small>",
+        "animacao": "zoom",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 50,
+        "texto": "<span><strong>Confiança:</strong> Aproxime-se do trono de Deus com confiança.</span><br><small class=\"text-muted\">— Hebreus 4:16</small>",
+        "animacao": "glow",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 51,
+        "texto": "<span><strong>Perseverança:</strong> Largue todo peso e corra com perseverança.</span><br><small class=\"text-muted\">— Hebreus 12:1</small>",
+        "animacao": "heartbeat",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 52,
+        "texto": "<span><strong>Persistência:</strong> Não desista de fazer o bem.</span><br><small class=\"text-muted\">— Gálatas 6:9</small>",
+        "animacao": "rubber",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 53,
+        "texto": "<span><strong>Cultivo:</strong> O fruto do espírito é amor, alegria e paz.</span><br><small class=\"text-muted\">— Gálatas 5:22</small>",
+        "animacao": "swing",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 54,
+        "texto": "<span><strong>Espiritualidade:</strong> Continue andando pelo espírito.</span><br><small class=\"text-muted\">— Gálatas 5:16</small>",
+        "animacao": "jello",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 55,
+        "texto": "<span><strong>Alegria:</strong> Alegre-se sempre em Jeová.</span><br><small class=\"text-muted\">— Filipenses 4:4</small>",
+        "animacao": "float",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 56,
+        "texto": "<span><strong>Foco:</strong> Pense nas coisas boas e dignas.</span><br><small class=\"text-muted\">— Filipenses 4:8</small>",
+        "animacao": "flash",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 57,
+        "texto": "<span><strong>Contentamento:</strong> Aprenda a se contentar com o que tem.</span><br><small class=\"text-muted\">— Filipenses 4:11</small>",
+        "animacao": "spin",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 58,
+        "texto": "<span><strong>Palavra:</strong> A palavra de Deus é viva e poderosa.</span><br><small class=\"text-muted\">— Hebreus 4:12</small>",
+        "animacao": "slide",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 59,
+        "texto": "<span><strong>Orientação:</strong> A sua palavra é uma lâmpada para os meus pés.</span><br><small class=\"text-muted\">— Salmo 119:105</small>",
+        "animacao": "wobble",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 60,
+        "texto": "<span><strong>Sabedoria:</strong> É Jeová quem dá sabedoria.</span><br><small class=\"text-muted\">— Provérbios 2:6</small>",
+        "animacao": "shake",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 61,
+        "texto": "<span><strong>Reverência:</strong> O temor de Jeová é o princípio da sabedoria.</span><br><small class=\"text-muted\">— Provérbios 9:10</small>",
+        "animacao": "tada",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 62,
+        "texto": "<span><strong>Devoção:</strong> Honre a Jeová com aquilo que você tem de valioso.</span><br><small class=\"text-muted\">— Provérbios 3:9</small>",
+        "animacao": "bounce",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 63,
+        "texto": "<span><strong>Otimismo:</strong> O coração alegre faz bem como remédio.</span><br><small class=\"text-muted\">— Provérbios 17:22</small>",
+        "animacao": "pulse",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 64,
+        "texto": "<span><strong>Brandura:</strong> A resposta branda desvia o furor.</span><br><small class=\"text-muted\">— Provérbios 15:1</small>",
+        "animacao": "zoom",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 65,
+        "texto": "<span><strong>Amizade:</strong> O verdadeiro amigo ama em todo tempo.</span><br><small class=\"text-muted\">— Provérbios 17:17</small>",
+        "animacao": "glow",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 66,
+        "texto": "<span><strong>Companheirismo:</strong> Assim como o ferro afia o ferro, um amigo aperfeiçoa o outro.</span><br><small class=\"text-muted\">— Provérbios 27:17</small>",
+        "animacao": "heartbeat",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 67,
+        "texto": "<span><strong>Generosidade:</strong> Há mais felicidade em dar do que em receber.</span><br><small class=\"text-muted\">— Atos 20:35</small>",
+        "animacao": "rubber",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 68,
+        "texto": "<span><strong>Doação:</strong> Deus ama quem dá com alegria.</span><br><small class=\"text-muted\">— 2 Coríntios 9:7</small>",
+        "animacao": "swing",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 69,
+        "texto": "<span><strong>Valores:</strong> Onde está o seu tesouro, ali estará o seu coração.</span><br><small class=\"text-muted\">— Mateus 6:21</small>",
+        "animacao": "jello",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 70,
+        "texto": "<span><strong>Alívio:</strong> Venha a mim, e eu o reanimarei.</span><br><small class=\"text-muted\">— Mateus 11:28</small>",
+        "animacao": "float",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 71,
+        "texto": "<span><strong>Leveza:</strong> O meu jugo é suave e o meu fardo é leve.</span><br><small class=\"text-muted\">— Mateus 11:30</small>",
+        "animacao": "flash",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 72,
+        "texto": "<span><strong>Amor:</strong> Ame o seu próximo como a si mesmo.</span><br><small class=\"text-muted\">— Mateus 22:39</small>",
+        "animacao": "spin",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 73,
+        "texto": "<span><strong>Reciprocidade:</strong> Dê, e lhe será dado.</span><br><small class=\"text-muted\">— Lucas 6:38</small>",
+        "animacao": "slide",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 74,
+        "texto": "<span><strong>Compreensão:</strong> Pare de julgar, e não será julgado.</span><br><small class=\"text-muted\">— Lucas 6:37</small>",
+        "animacao": "wobble",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 75,
+        "texto": "<span><strong>Empatia:</strong> Trate os outros como você quer ser tratado.</span><br><small class=\"text-muted\">— Lucas 6:31</small>",
+        "animacao": "shake",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 76,
+        "texto": "<span><strong>Amor:</strong> Deus é amor.</span><br><small class=\"text-muted\">— 1 João 4:8</small>",
+        "animacao": "tada",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 77,
+        "texto": "<span><strong>Segurança:</strong> No amor não há temor.</span><br><small class=\"text-muted\">— 1 João 4:18</small>",
+        "animacao": "bounce",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 78,
+        "texto": "<span><strong>Ação:</strong> Ame não com palavras, mas com ações.</span><br><small class=\"text-muted\">— 1 João 3:18</small>",
+        "animacao": "pulse",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 79,
+        "texto": "<span><strong>Alegria:</strong> Que a minha alegria esteja em você, e a sua alegria seja completa.</span><br><small class=\"text-muted\">— João 15:11</small>",
+        "animacao": "zoom",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 80,
+        "texto": "<span><strong>Permanência:</strong> Permaneça no meu amor.</span><br><small class=\"text-muted\">— João 15:9</small>",
+        "animacao": "glow",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 81,
+        "texto": "<span><strong>Amor:</strong> Não há amor maior do que dar a vida pelos amigos.</span><br><small class=\"text-muted\">— João 15:13</small>",
+        "animacao": "heartbeat",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 82,
+        "texto": "<span><strong>Verdade:</strong> Você conhecerá a verdade, e a verdade o libertará.</span><br><small class=\"text-muted\">— João 8:32</small>",
+        "animacao": "rubber",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 83,
+        "texto": "<span><strong>Conforto:</strong> Jeová é o Deus de todo consolo.</span><br><small class=\"text-muted\">— 2 Coríntios 1:3</small>",
+        "animacao": "swing",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 84,
+        "texto": "<span><strong>Alento:</strong> Ele nos consola em toda a nossa tribulação.</span><br><small class=\"text-muted\">— 2 Coríntios 1:4</small>",
+        "animacao": "jello",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 85,
+        "texto": "<span><strong>Crescimento:</strong> A tribulação produz perseverança.</span><br><small class=\"text-muted\">— Romanos 5:3</small>",
+        "animacao": "float",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 86,
+        "texto": "<span><strong>Confiança:</strong> Tudo coopera para o bem dos que amam a Deus.</span><br><small class=\"text-muted\">— Romanos 8:28</small>",
+        "animacao": "flash",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 87,
+        "texto": "<span><strong>Segurança:</strong> Nada poderá nos separar do amor de Deus.</span><br><small class=\"text-muted\">— Romanos 8:39</small>",
+        "animacao": "glow",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 88,
+        "texto": "<span><strong>Ânimo:</strong> Se Deus é por nós, quem será contra nós?</span><br><small class=\"text-muted\">— Romanos 8:31</small>",
+        "animacao": "slide",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 89,
+        "texto": "<span><strong>Esperança:</strong> Alegre-se na esperança.</span><br><small class=\"text-muted\">— Romanos 12:12</small>",
+        "animacao": "wobble",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 90,
+        "texto": "<span><strong>Hospitalidade:</strong> Seja hospitaleiro, sem reclamar.</span><br><small class=\"text-muted\">— 1 Pedro 4:9</small>",
+        "animacao": "shake",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 91,
+        "texto": "<span><strong>Amor:</strong> Acima de tudo, tenha amor intenso uns pelos outros.</span><br><small class=\"text-muted\">— 1 Pedro 4:8</small>",
+        "animacao": "tada",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 92,
+        "texto": "<span><strong>Humildade:</strong> Humilhe-se sob a poderosa mão de Deus.</span><br><small class=\"text-muted\">— 1 Pedro 5:6</small>",
+        "animacao": "bounce",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 93,
+        "texto": "<span><strong>Esperança:</strong> O Deus de toda bondade o tornará firme e forte.</span><br><small class=\"text-muted\">— 1 Pedro 5:10</small>",
+        "animacao": "pulse",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 94,
+        "texto": "<span><strong>Progresso:</strong> Cresça na bondade imerecida e no conhecimento.</span><br><small class=\"text-muted\">— 2 Pedro 3:18</small>",
+        "animacao": "zoom",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 95,
+        "texto": "<span><strong>Misericórdia:</strong> Jeová não deseja que ninguém seja destruído.</span><br><small class=\"text-muted\">— 2 Pedro 3:9</small>",
+        "animacao": "glow",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 96,
+        "texto": "<span><strong>Salvação:</strong> A paciência de Jeová significa salvação.</span><br><small class=\"text-muted\">— 2 Pedro 3:15</small>",
+        "animacao": "heartbeat",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 97,
+        "texto": "<span><strong>Sabedoria:</strong> A sabedoria que vem de cima é pacífica.</span><br><small class=\"text-muted\">— Tiago 3:17</small>",
+        "animacao": "rubber",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 98,
+        "texto": "<span><strong>Discernimento:</strong> Se lhe falta sabedoria, peça a Deus.</span><br><small class=\"text-muted\">— Tiago 1:5</small>",
+        "animacao": "swing",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 99,
+        "texto": "<span><strong>Gratidão:</strong> Toda boa dádiva vem do alto.</span><br><small class=\"text-muted\">— Tiago 1:17</small>",
+        "animacao": "jello",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    },
+    {
+        "id": 100,
+        "texto": "<span><strong>Prática:</strong> Seja praticante da palavra, e não apenas ouvinte.</span><br><small class=\"text-muted\">— Tiago 1:22</small>",
+        "animacao": "float",
+        "publicar": 1,
+        "data_criacao": 1781966253542,
+        "data_atualizacao": 1781966743997
+    }
+]

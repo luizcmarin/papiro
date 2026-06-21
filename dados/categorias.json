@@ -1,1 +1,130 @@
-[]
+[
+    {
+        "id": 2,
+        "nome": "Alimentação",
+        "icone": "🍔",
+        "hex_cor": "#f97316",
+        "limite_mensal": 0,
+        "publicar": 1
+    },
+    {
+        "id": 11,
+        "nome": "Assinaturas",
+        "icone": "🎵",
+        "hex_cor": "#a855f7",
+        "limite_mensal": 0,
+        "publicar": 1
+    },
+    {
+        "id": 5,
+        "nome": "Contas de casa",
+        "icone": "💡",
+        "hex_cor": "#eab308",
+        "limite_mensal": 0,
+        "publicar": 1
+    },
+    {
+        "id": 8,
+        "nome": "Educação",
+        "icone": "🎓",
+        "hex_cor": "#8b5cf6",
+        "limite_mensal": 0,
+        "publicar": 1
+    },
+    {
+        "id": 15,
+        "nome": "Investimentos",
+        "icone": "📈",
+        "hex_cor": "#0d9488",
+        "limite_mensal": 0,
+        "publicar": 1
+    },
+    {
+        "id": 10,
+        "nome": "Lazer",
+        "icone": "🎬",
+        "hex_cor": "#d946ef",
+        "limite_mensal": 0,
+        "publicar": 1
+    },
+    {
+        "id": 1,
+        "nome": "Mercado",
+        "icone": "🛒",
+        "hex_cor": "#22c55e",
+        "limite_mensal": 0,
+        "publicar": 1
+    },
+    {
+        "id": 3,
+        "nome": "Moradia",
+        "icone": "🏠",
+        "hex_cor": "#0ea5e9",
+        "limite_mensal": 0,
+        "publicar": 1
+    },
+    {
+        "id": 16,
+        "nome": "Outros",
+        "icone": "🏷️",
+        "hex_cor": "#64748b",
+        "limite_mensal": 0,
+        "publicar": 1
+    },
+    {
+        "id": 12,
+        "nome": "Pets",
+        "icone": "🐶",
+        "hex_cor": "#f59e0b",
+        "limite_mensal": 0,
+        "publicar": 1
+    },
+    {
+        "id": 13,
+        "nome": "Presentes e Doações",
+        "icone": "🎁",
+        "hex_cor": "#fb7185",
+        "limite_mensal": 0,
+        "publicar": 1
+    },
+    {
+        "id": 14,
+        "nome": "Salário",
+        "icone": "💼",
+        "hex_cor": "#16a34a",
+        "limite_mensal": 0,
+        "publicar": 1
+    },
+    {
+        "id": 7,
+        "nome": "Saúde",
+        "icone": "💊",
+        "hex_cor": "#ef4444",
+        "limite_mensal": 0,
+        "publicar": 1
+    },
+    {
+        "id": 6,
+        "nome": "Telefone e Internet",
+        "icone": "📱",
+        "hex_cor": "#06b6d4",
+        "limite_mensal": 0,
+        "publicar": 1
+    },
+    {
+        "id": 4,
+        "nome": "Transporte",
+        "icone": "🚗",
+        "hex_cor": "#3b82f6",
+        "limite_mensal": 0,
+        "publicar": 1
+    },
+    {
+        "id": 9,
+        "nome": "Vestuário",
+        "icone": "👕",
+        "hex_cor": "#ec4899",
+        "limite_mensal": 0,
+        "publicar": 1
+    }
+]
