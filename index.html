@@ -789,7 +789,12 @@
                     <template x-if="poesiaAtual">
                         <div>
                             <h1 class="h4 fw-bold mb-4 font-serif" x-text="poesiaAtual.titulo"></h1>
-                            <div class="sang-poesia" x-html="poesiaAtual.conteudo"></div>
+                            <!-- imagem separada do conteúdo (cabeçalho da leitura) -->
+                            <template x-if="imagemDe(poesiaAtual)">
+                                <img :src="imagemDe(poesiaAtual)" alt=""
+                                     class="img-fluid rounded mb-4 d-block mx-auto">
+                            </template>
+                            <div class="sang-poesia" x-html="conteudoSemImagem(poesiaAtual)"></div>
                             <!-- espaço extra para terminar de rolar -->
                             <div style="height:4rem"></div>
                         </div>
