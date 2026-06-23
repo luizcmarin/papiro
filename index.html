@@ -916,15 +916,15 @@
                 <!-- lista vazia -->
                 <div x-show="lista.length === 0" class="text-center text-muted py-5">
                     <i class="bi bi-egg-fried fs-2 d-block mb-2" aria-hidden="true"></i>
-                    <span>Nenhuma receita. Toque em "Nova" para criar.</span>
+                    <span>Nenhuma receita disponível. Sincronize para atualizar.</span>
                 </div>
 
                 <!-- cards -->
                 <div class="row g-3">
-                    <template x-for="r in lista" :key="r.id">
+                    <template x-for="r in lista" :key="(r._local ? 'l' : 'c') + r.id">
                         <div class="col-12">
                             <div class="card papiro-acento"
-                                 :class="eFavorito(r) ? 'papiro-acento--warning' : ''"
+                                 :class="!r._local && eFavorito(r.id) ? 'papiro-acento--warning' : ''"
                                  @click="abrirReceita(r)"
                                  role="button" tabindex="0"
                                  @keydown.enter="abrirReceita(r)">
@@ -933,15 +933,19 @@
                                           style="font-size:1.35rem;line-height:1"
                                           x-text="r.categoria || '🍽️'"></span>
                                     <div class="flex-grow-1 min-w-0">
-                                        <p class="fw-semibold mb-0 text-truncate"
-                                           x-text="r.titulo || 'Sem título'"></p>
+                                        <p class="fw-semibold mb-0 text-truncate">
+                                            <span x-text="r.titulo || 'Sem título'"></span>
+                                            <span class="badge bg-success-subtle text-success-emphasis ms-1"
+                                                  x-show="r._local" x-cloak>Minha</span>
+                                        </p>
                                     </div>
                                     <button class="btn btn-sm p-0 border-0 flex-shrink-0"
-                                            :class="eFavorito(r) ? 'text-warning' : 'text-muted'"
-                                            :title="eFavorito(r) ? 'Remover dos favoritos' : 'Adicionar aos favoritos'"
-                                            @click.stop="toggleFavorito(r)"
+                                            x-show="!r._local"
+                                            :class="eFavorito(r.id) ? 'text-warning' : 'text-muted'"
+                                            :title="eFavorito(r.id) ? 'Remover dos favoritos' : 'Adicionar aos favoritos'"
+                                            @click.stop="toggleFavoritoLocal(r.id)"
                                             aria-label="Favoritar">
-                                        <i class="bi fs-5" :class="eFavorito(r) ? 'bi-star-fill' : 'bi-star'"></i>
+                                        <i class="bi fs-5" :class="eFavorito(r.id) ? 'bi-star-fill' : 'bi-star'"></i>
                                     </button>
                                 </div>
                             </div>
@@ -965,15 +969,15 @@
                     </button>
                     <span class="text-muted small me-auto">Receitas</span>
 
-                    <!-- Favoritar -->
+                    <!-- Favoritar (só receitas curadas) -->
                     <button class="btn btn-sm"
-                            :class="receitaAtual && eFavorito(receitaAtual) ? 'btn-warning' : 'btn-outline-secondary'"
+                            :class="receitaAtual && eFavorito(receitaAtual.id) ? 'btn-warning' : 'btn-outline-secondary'"
                             title="Favoritar"
-                            @click="toggleFavoritoAtual()"
-                            x-show="receitaAtual"
+                            @click="receitaAtual && toggleFavoritoLocal(receitaAtual.id)"
+                            x-show="receitaAtual && !receitaLocal"
                             x-cloak>
                         <i class="bi"
-                           :class="receitaAtual && eFavorito(receitaAtual) ? 'bi-star-fill' : 'bi-star'"
+                           :class="receitaAtual && eFavorito(receitaAtual.id) ? 'bi-star-fill' : 'bi-star'"
                            aria-hidden="true"></i>
                     </button>
 
@@ -1006,13 +1010,22 @@
                         <i class="bi bi-share" aria-hidden="true"></i>
                     </button>
 
-                    <!-- Editar / Excluir (todas as receitas são editáveis) -->
+                    <!-- Converter para local (só receitas curadas) -->
+                    <button class="btn btn-sm btn-outline-secondary"
+                            title="Copiar para acervo local (editável)"
+                            @click="converterParaLocal()"
+                            x-show="receitaAtual && !receitaLocal"
+                            x-cloak>
+                        <i class="bi bi-download" aria-hidden="true"></i>
+                    </button>
+
+                    <!-- Editar / Excluir (só receitas locais) -->
                     <button class="btn btn-sm btn-outline-primary" title="Editar"
-                            @click="editarAtual()" x-show="receitaAtual" x-cloak>
+                            @click="editarAtual()" x-show="receitaAtual && receitaLocal" x-cloak>
                         <i class="bi bi-pencil" aria-hidden="true"></i>
                     </button>
                     <button class="btn btn-sm btn-outline-danger" title="Excluir"
-                            @click="excluirAtual()" x-show="receitaAtual" x-cloak>
+                            @click="excluirAtual()" x-show="receitaAtual && receitaLocal" x-cloak>
                         <i class="bi bi-trash" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -2324,10 +2337,9 @@
 
                 </div>
 
-            </div>
-
-            <!-- Preview de documento descriptografado (overlay próprio: x-show
-                 confiável; o modal .d-block do Bootstrap não some com x-show) -->
+            <!-- Preview de documento descriptografado (overlay próprio, DENTRO do
+                 papiro-app: o <template x-if> do Alpine só renderiza um único nó
+                 raiz — fora do papiro-app, o overlay nunca aparecia). -->
             <div class="papiro-overlay" x-show="docPreview" x-cloak @click.self="fecharPreview()">
                 <div class="papiro-folha">
                     <div class="d-flex align-items-center mb-3">
@@ -2356,6 +2368,7 @@
                     </div>
                 </div>
             </div>
+            </div>
             </template>
 
             <!-- ── Editor de checklist (kits locais) ──────────────────────── -->
@@ -2376,16 +2389,35 @@
                     <input type="text" class="form-control mb-3"
                            placeholder="Nome do checklist…" x-model="checklistForm.nome">
 
-                    <div class="d-flex flex-column gap-2 mb-3">
+                    <div class="d-flex flex-column gap-3 mb-3">
                         <template x-for="(it, i) in checklistForm.itens" :key="it.id">
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-check2-square"></i></span>
-                                <input type="text" class="form-control"
-                                       placeholder="Item…" x-model="it.descricao"
-                                       @keydown.enter.prevent="adicionarItemChecklist()">
-                                <button class="btn btn-outline-danger" @click="removerItemChecklist(i)" title="Remover">
-                                    <i class="bi bi-x-lg"></i>
-                                </button>
+                            <div class="card">
+                                <div class="card-body p-3">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="text-muted small fw-semibold me-auto" x-text="`Item ${i + 1}`"></span>
+                                        <button class="btn btn-sm btn-outline-danger" @click="removerItemChecklist(i)" title="Remover item">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label small mb-1">Descrição</label>
+                                        <input type="text" class="form-control" placeholder="Item…" x-model="it.descricao">
+                                    </div>
+                                    <div class="row g-2 mb-2">
+                                        <div class="col-6">
+                                            <label class="form-label small mb-1">Quantidade</label>
+                                            <input type="text" class="form-control" placeholder="ex.: 2 latas" x-model="it.quantidade">
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="form-label small mb-1">Vencimento</label>
+                                            <input type="date" class="form-control" x-model="it.vencISO">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="form-label small mb-1">Observações</label>
+                                        <input type="text" class="form-control" placeholder="Opcional" x-model="it.observacoes">
+                                    </div>
+                                </div>
                             </div>
                         </template>
                     </div>
@@ -3039,7 +3071,7 @@
                     <button class="btn btn-sm btn-outline-secondary" @click="irHome()" aria-label="Voltar">
                         <i class="bi bi-arrow-left"></i>
                     </button>
-                    <h1 class="h5 mb-0 me-auto">Ministério</h1>
+                    <h1 class="h5 mb-0 me-auto">Vida e Ministério</h1>
                 </div>
 
                 <!-- alerta L7 -->
@@ -3068,6 +3100,18 @@
                             <div class="fs-3 mb-1">📖</div>
                             <div class="fw-semibold">Estudos</div>
                             <div class="small text-muted" x-text="`${estudos.length} ativos`"></div>
+                        </button>
+                    </div>
+                    <div class="col-12">
+                        <button class="card w-100 text-start border-0 shadow-sm p-3" @click="irMetas()">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="fs-3">🎯</div>
+                                <div>
+                                    <div class="fw-semibold">Metas</div>
+                                    <div class="small text-muted">Objetivos espirituais e pessoais</div>
+                                </div>
+                                <i class="bi bi-chevron-right ms-auto text-muted"></i>
+                            </div>
                         </button>
                     </div>
                 </div>
@@ -4137,6 +4181,16 @@
                 </ul>
             </div>
 
+            <!-- Guia do Usuário — link em destaque, logo abaixo do contato -->
+            <div class="d-grid mb-3" x-show="guiaUsuario" x-cloak>
+                <button class="btn btn-primary btn-lg text-start d-flex align-items-center gap-2"
+                        @click="abrirDoc(guiaUsuario)">
+                    <i class="bi bi-book-half" aria-hidden="true"></i>
+                    <span class="fw-semibold" x-text="guiaUsuario?.titulo"></span>
+                    <i class="bi bi-chevron-right ms-auto" aria-hidden="true"></i>
+                </button>
+            </div>
+
             <!-- documentos institucionais (Termos / Privacidade) -->
             <div class="d-grid gap-2 mb-4" x-show="docsModal.length" x-cloak>
                 <template x-for="d in docsModal" :key="d.id">
@@ -4147,14 +4201,6 @@
                         <i class="bi bi-chevron-right ms-auto" aria-hidden="true"></i>
                     </button>
                 </template>
-            </div>
-
-            <!-- Guia do Usuário (conteúdo anexado) -->
-            <div class="card mb-3" x-show="guiaUsuario" x-cloak>
-                <div class="card-body">
-                    <h2 class="h6 fw-bold mb-3" x-text="guiaUsuario?.titulo"></h2>
-                    <div class="sang-guia" x-html="guiaUsuario?.texto"></div>
-                </div>
             </div>
 
             <p class="text-center text-muted small mt-4 mb-0">
