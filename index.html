@@ -1671,18 +1671,46 @@
                                     </div>
                                 </template>
 
-                                <!-- enfeite: anel/elipse da órbita -->
-                                <template x-if="puzzle.extra === 'orbita'">
-                                    <div class="text-center my-2">
-                                        <div class="d-inline-block rounded-circle border border-2"
-                                             :class="puzzleInfo && puzzleInfo.ok ? 'border-success' : 'border-secondary'"
-                                             :style="`width:${120}px;height:${Math.max(20, Math.min(120, puzzle.valores.v))}px;`"></div>
-                                    </div>
-                                </template>
                                 <!-- enfeite: cor refletida (Morfo) -->
                                 <template x-if="puzzle.extra === 'difracao'">
                                     <div class="rounded mb-2" style="height:28px"
                                          :style="`background: hsl(${260 - (puzzle.valores.d - 200) * 0.33}, 80%, 55%)`"></div>
+                                </template>
+
+                                <div class="alert py-2 mb-0"
+                                     :class="puzzleInfo && puzzleInfo.ok ? 'alert-success' : 'alert-secondary'"
+                                     x-text="puzzleInfo && puzzleInfo.leitura"></div>
+                            </div>
+                        </template>
+
+                        <!-- ARQUÉTIPO: solar (sistema solar 3D — Three.js) ───── -->
+                        <template x-if="puzzle.arquetipo === 'solar'">
+                            <div x-init="montarSolar()">
+                                <canvas x-ref="canvasSolar" class="w-100 rounded border d-block"
+                                        style="aspect-ratio:16/10; touch-action:none"></canvas>
+                                <p class="small text-muted mt-1 mb-2">
+                                    <i class="bi bi-arrows-move me-1"></i>Arraste para girar · pinça/scroll para aproximar.
+                                </p>
+
+                                <template x-if="puzzle.solar.modo === 'lancamento'">
+                                    <div class="d-grid mb-3">
+                                        <button type="button" class="btn btn-outline-primary"
+                                                :disabled="resolvido" @click="lancarSolar()">
+                                            <i class="bi bi-rocket-takeoff me-1"></i> Lançar
+                                        </button>
+                                    </div>
+                                </template>
+
+                                <template x-for="c in puzzle.controles" :key="c.prop">
+                                    <div class="mb-3">
+                                        <label class="form-label small d-flex justify-content-between mb-1">
+                                            <span x-text="c.rotulo"></span>
+                                            <span class="fw-semibold" x-text="puzzle.valores[c.prop] + (c.suf || '')"></span>
+                                        </label>
+                                        <input type="range" class="form-range" :min="c.min" :max="c.max" :step="c.step"
+                                               :disabled="resolvido" x-model.number="puzzle.valores[c.prop]"
+                                               @input="aoMudarSolar()">
+                                    </div>
                                 </template>
 
                                 <div class="alert py-2 mb-0"

@@ -7,14 +7,14 @@
         "icone": "bi-globe",
         "ordem": 3,
         "conceito": "<p>Os planetas se mantêm em órbita por um equilíbrio exato entre a gravidade e a velocidade. Pouca velocidade e o corpo cai; velocidade demais e ele escapa para o espaço.</p>",
-        "desafio": "<p>Ajuste a velocidade de impulso até obter uma órbita elíptica estável.</p>",
+        "desafio": "<p>Gire a câmera para observar o sistema. Ajuste a <strong>velocidade de impulso</strong> e toque em <em>Lançar</em>: pouca velocidade e o corpo cai no Sol; demais e ele escapa para o espaço. Encontre a faixa que produz uma órbita elíptica estável.</p>",
         "reflexao": "<p>Se as leis que governam o movimento dos planetas falhassem por um segundo, haveria caos. A estabilidade do sistema solar testifica a sabedoria e a sustentação de Jeová.</p>",
         "referencia": "Jó 38:33",
-        "config": "{\"vMin\":40,\"vMax\":60,\"v0\":20}",
+        "config": "{\"v0\":50}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384
+        "data_atualizacao": 1782323833591
     },
     {
         "id": 4,
@@ -24,13 +24,13 @@
         "icone": "bi-sliders",
         "ordem": 4,
         "conceito": "<p>A vida na Terra depende de constantes físicas ajustadas com precisão impressionante: a força da gravidade, a distância ao Sol e muitas outras.</p>",
-        "desafio": "<p>Tente alterar as constantes. Veja o que acontece quando elas saem do ponto exato.</p>",
+        "desafio": "<p>Gire a câmera e observe a Terra na zona habitável (faixa verde). Altere a <strong>gravidade</strong> e a <strong>distância ao Sol</strong> e veja a Terra sair do ponto exato — só há vida quando tudo está em equilíbrio fino.</p>",
         "reflexao": "<p>Bastam pequenas mudanças para a vida se tornar impossível. A Terra foi \"formada para ser habitada\" — um projeto fino demais para ser obra do acaso.</p>",
         "referencia": "Isaías 45:18",
         "config": "{\"tol\":1,\"controles\":[{\"rotulo\":\"Gravidade\",\"prop\":\"g\"},{\"rotulo\":\"Distância ao Sol\",\"prop\":\"d\"}]}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384
+        "data_atualizacao": 1782323833591
     }
 ]
