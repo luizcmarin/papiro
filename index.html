@@ -68,6 +68,26 @@
                 <div class="progress-bar progress-bar-striped progress-bar-animated w-100"></div>
             </div>
 
+            <!-- KPIs -->
+            <div class="row g-2 mb-4" x-show="kpis.length" x-cloak>
+                <template x-for="k in kpis" :key="k.rotulo">
+                    <div class="col-6 col-lg-3">
+                        <div class="card h-100">
+                            <div class="card-body py-2 px-3 d-flex align-items-center gap-2">
+                                <span class="papiro-modulo__icone flex-shrink-0"
+                                      :style="`width:2.1rem;height:2.1rem;font-size:1.05rem;background:${k.cor}1f;color:${k.cor}`">
+                                    <i class="bi" :class="k.icone" aria-hidden="true"></i>
+                                </span>
+                                <div class="min-w-0">
+                                    <div class="fw-bold lh-1 text-truncate" x-text="k.valor"></div>
+                                    <div class="small text-muted text-truncate" x-text="k.rotulo"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
             <!-- Grade de módulos e hubs -->
             <div class="row g-3">
                 <template x-for="m in itensHome" :key="m.tipo + m.id">
@@ -250,11 +270,11 @@
                         </button>
                     </div>
                     <div class="d-grid gap-2">
-                        <template x-for="[chave, rotulo] in Object.entries(rotulos)" :key="chave">
+                        <template x-for="m in modelos" :key="m.chave">
                             <button class="btn btn-outline-primary text-start d-flex align-items-center gap-2"
-                                    @click="escolherModelo(chave)">
-                                <i class="bi" :class="chave === 'LIVRE' ? 'bi-file-text' : 'bi-layout-text-window'" aria-hidden="true"></i>
-                                <span x-text="rotulo"></span>
+                                    @click="escolherModelo(m.chave)">
+                                <i class="bi" :class="m.chave === 'LIVRE' ? 'bi-file-text' : 'bi-layout-text-window'" aria-hidden="true"></i>
+                                <span x-text="m.rotulo"></span>
                             </button>
                         </template>
                     </div>
@@ -321,6 +341,15 @@
                             x-show="!id"
                             x-cloak>
                         <i class="bi bi-calendar-check" aria-hidden="true"></i>
+                    </button>
+
+                    <!-- Excluir (pede confirmação) -->
+                    <button class="btn btn-sm btn-outline-danger"
+                            title="Excluir anotação"
+                            @click="excluirNota(id)"
+                            x-show="id"
+                            x-cloak>
+                        <i class="bi bi-trash" aria-hidden="true"></i>
                     </button>
                 </div>
 
@@ -692,7 +721,7 @@
                                         <p class="fw-semibold mb-1 font-serif text-truncate"
                                            x-text="p.titulo || 'Sem título'"></p>
                                         <p class="text-muted small mb-0 lh-sm"
-                                           x-text="preview(p.conteudo)"
+                                           x-text="cardTexto(p)"
                                            x-show="p.conteudo"></p>
                                     </div>
                                     <button class="btn btn-sm p-0 border-0 flex-shrink-0 align-self-start"

@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "chave": "LIVRE",
+        "rotulo": "Livre",
+        "conteudo": "",
+        "ordem": 0,
+        "publicar": 1,
+        "data_criacao": 1782319061407,
+        "data_atualizacao": 1782319135318
+    },
+    {
+        "id": 2,
+        "chave": "VIDA_E_MINISTERIO",
+        "rotulo": "Vida e Ministério",
+        "conteudo": "<h2>Tesouros da Palavra</h2><p></p><h2>Faça Seu Melhor</h2><p></p><h2>Vida Cristã</h2><p></p>",
+        "ordem": 1,
+        "publicar": 1,
+        "data_criacao": 1782319061407,
+        "data_atualizacao": 1782319061407
+    },
+    {
+        "id": 3,
+        "chave": "DISCURSO",
+        "rotulo": "Discurso",
+        "conteudo": "<h2>Tema Principal</h2><p><strong>Objetivo:</strong> </p><h3>Introdução</h3><p></p><h3>Corpo</h3><p></p><h3>Conclusão</h3><p></p>",
+        "ordem": 2,
+        "publicar": 1,
+        "data_criacao": 1782319061407,
+        "data_atualizacao": 1782319061407
+    },
+    {
+        "id": 4,
+        "chave": "DESIGNACAO_DISCURSO",
+        "rotulo": "Designação de Discurso",
+        "conteudo": "<h2>Tema Principal</h2><p><strong>Objetivo:</strong> </p><h3>Introdução</h3><p></p><h3>Corpo</h3><p></p><h3>Conclusão</h3><p></p>",
+        "ordem": 3,
+        "publicar": 1,
+        "data_criacao": 1782319061407,
+        "data_atualizacao": 1782319061407
+    },
+    {
+        "id": 5,
+        "chave": "VISITA_PASTOREIO",
+        "rotulo": "Visita de Pastoreio",
+        "conteudo": "<h2>Ponto Forte</h2><p></p><h2>Desafio</h2><p></p><h2>Ajuda Prática</h2><p></p>",
+        "ordem": 4,
+        "publicar": 1,
+        "data_criacao": 1782319061407,
+        "data_atualizacao": 1782319061407
+    },
+    {
+        "id": 6,
+        "chave": "ASSEMBLEIA",
+        "rotulo": "Assembleia",
+        "conteudo": "<h2>Programa</h2><p></p><h2>Lições para a Vida</h2><p></p>",
+        "ordem": 5,
+        "publicar": 1,
+        "data_criacao": 1782319061407,
+        "data_atualizacao": 1782319061407
+    },
+    {
+        "id": 7,
+        "chave": "VISITA_CIRCUITO",
+        "rotulo": "Visita do Circuito",
+        "conteudo": "<h2>Pontos da Visita</h2><p></p><h2>Encorajamento</h2><p></p>",
+        "ordem": 6,
+        "publicar": 1,
+        "data_criacao": 1782319061407,
+        "data_atualizacao": 1782319061407
+    }
+]

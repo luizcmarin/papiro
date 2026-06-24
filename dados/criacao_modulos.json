@@ -1,1 +1,36 @@
-[]
+[
+    {
+        "id": 3,
+        "titulo": "As Leis do Movimento",
+        "categoria": "centrais",
+        "tipo": "orbita",
+        "icone": "bi-globe",
+        "ordem": 3,
+        "conceito": "<p>Os planetas se mantêm em órbita por um equilíbrio exato entre a gravidade e a velocidade. Pouca velocidade e o corpo cai; velocidade demais e ele escapa para o espaço.</p>",
+        "desafio": "<p>Ajuste a velocidade de impulso até obter uma órbita elíptica estável.</p>",
+        "reflexao": "<p>Se as leis que governam o movimento dos planetas falhassem por um segundo, haveria caos. A estabilidade do sistema solar testifica a sabedoria e a sustentação de Jeová.</p>",
+        "referencia": "Jó 38:33",
+        "config": "{\"vMin\":40,\"vMax\":60,\"v0\":20}",
+        "xp": 130,
+        "publicar": 1,
+        "data_criacao": 1781893572384,
+        "data_atualizacao": 1781893572384
+    },
+    {
+        "id": 4,
+        "titulo": "Variáveis da Criação",
+        "categoria": "centrais",
+        "tipo": "sandbox",
+        "icone": "bi-sliders",
+        "ordem": 4,
+        "conceito": "<p>A vida na Terra depende de constantes físicas ajustadas com precisão impressionante: a força da gravidade, a distância ao Sol e muitas outras.</p>",
+        "desafio": "<p>Tente alterar as constantes. Veja o que acontece quando elas saem do ponto exato.</p>",
+        "reflexao": "<p>Bastam pequenas mudanças para a vida se tornar impossível. A Terra foi \"formada para ser habitada\" — um projeto fino demais para ser obra do acaso.</p>",
+        "referencia": "Isaías 45:18",
+        "config": "{\"tol\":1,\"controles\":[{\"rotulo\":\"Gravidade\",\"prop\":\"g\"},{\"rotulo\":\"Distância ao Sol\",\"prop\":\"d\"}]}",
+        "xp": 130,
+        "publicar": 1,
+        "data_criacao": 1781893572384,
+        "data_atualizacao": 1781893572384
+    }
+]
