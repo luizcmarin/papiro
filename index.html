@@ -1600,7 +1600,7 @@
             <template x-if="etapa === 'interativo' && moduloAtual">
             <div class="papiro-app">
                 <div class="d-flex align-items-center gap-2 mb-3">
-                    <button class="btn btn-sm btn-outline-secondary" @click="etapa = 'desafio'" aria-label="Voltar">
+                    <button class="btn btn-sm btn-outline-secondary" @click="_destruirCenas(); etapa = 'desafio'" aria-label="Voltar">
                         <i class="bi bi-arrow-left" aria-hidden="true"></i>
                     </button>
                     <h1 class="h5 mb-0 me-auto" x-text="moduloAtual.titulo"></h1>
@@ -1608,6 +1608,17 @@
 
                 <div class="card">
                     <div class="card-body">
+
+                        <!-- VIZ genérica (canvas 2D/3D por módulo, lê o estado ao vivo) -->
+                        <template x-if="puzzle.viz">
+                            <div class="mb-3" x-init="montarViz()" x-effect="vizSync()">
+                                <canvas x-ref="canvasViz" class="w-100 rounded border d-block"
+                                        style="aspect-ratio:16/10; touch-action:none"></canvas>
+                                <template x-if="puzzle.viz.dica">
+                                    <p class="small text-muted mt-1 mb-0" x-text="puzzle.viz.dica"></p>
+                                </template>
+                            </div>
+                        </template>
 
                         <!-- ARQUÉTIPO: numérico (campos + verificação) ───────── -->
                         <template x-if="puzzle.arquetipo === 'numerico'">
@@ -1639,21 +1650,6 @@
                                     </div>
                                 </template>
 
-                                <template x-if="puzzle.extra === 'sequencia' && resolvido">
-                                    <div class="text-center my-3">
-                                        <div class="position-relative mx-auto" style="width:160px;height:160px">
-                                            <div class="position-absolute start-50 top-50 rounded-circle"
-                                                 style="width:10px;height:10px;background:#198754;transform:translate(-50%,-50%)"></div>
-                                            <template x-for="(ang, i) in ramosAngulos()" :key="i">
-                                                <div class="position-absolute start-50 top-50"
-                                                     :style="`transform: translate(-50%,-50%) rotate(${ang}deg) translateY(-58px);`">
-                                                    <span class="d-block rounded-circle" style="width:13px;height:13px;background:#6610f2"></span>
-                                                </div>
-                                            </template>
-                                        </div>
-                                        <div class="small text-muted mt-1">Cada folha nasce ~<span x-text="puzzle.angulo"></span>° à frente — nenhuma faz sombra na outra.</div>
-                                    </div>
-                                </template>
                             </div>
                         </template>
 
@@ -1669,12 +1665,6 @@
                                         <input type="range" class="form-range" :min="c.min" :max="c.max" :step="c.step"
                                                :disabled="resolvido" x-model.number="puzzle.valores[c.prop]">
                                     </div>
-                                </template>
-
-                                <!-- enfeite: cor refletida (Morfo) -->
-                                <template x-if="puzzle.extra === 'difracao'">
-                                    <div class="rounded mb-2" style="height:28px"
-                                         :style="`background: hsl(${260 - (puzzle.valores.d - 200) * 0.33}, 80%, 55%)`"></div>
                                 </template>
 
                                 <div class="alert py-2 mb-0"
@@ -1732,15 +1722,6 @@
                                         </button>
                                     </template>
                                 </div>
-                                <!-- enfeite: tanque preenchido (frações) -->
-                                <template x-if="puzzle.extra === 'fracoes' && puzzle.escolhido">
-                                    <div class="border rounded mt-3 mx-auto position-relative bg-body-secondary"
-                                         style="width:80px;height:100px;overflow:hidden">
-                                        <div class="position-absolute bottom-0 start-0 w-100"
-                                             style="background:#6610f2"
-                                             :style="`height:${(puzzle.opcoes.find(o => o.id === puzzle.escolhido)?.valor || 0) * 100}%`"></div>
-                                    </div>
-                                </template>
                             </div>
                         </template>
 
@@ -1768,6 +1749,12 @@
                                 <p class="small text-muted mb-2">Toque nas flores na ordem que faz o caminho mais curto.</p>
                                 <div class="position-relative mx-auto border rounded bg-body-secondary"
                                      style="width:100%;max-width:320px;height:220px">
+                                    <svg class="position-absolute top-0 start-0 w-100 h-100" viewBox="0 0 100 100"
+                                         preserveAspectRatio="none" style="pointer-events:none">
+                                        <polyline :points="rotaLinha()" fill="none"
+                                                  :stroke="resolvido ? '#198754' : '#0d6efd'" stroke-width="0.8"
+                                                  stroke-linejoin="round" stroke-linecap="round"></polyline>
+                                    </svg>
                                     <template x-for="(p, i) in puzzle.pontos" :key="i">
                                         <button type="button" class="btn btn-sm position-absolute rounded-circle p-0"
                                                 style="width:30px;height:30px"
