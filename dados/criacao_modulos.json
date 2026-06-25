@@ -389,5 +389,22 @@
         "publicar": 1,
         "data_criacao": 1781893572384,
         "data_atualizacao": 1782341749664
+    },
+    {
+        "id": 24,
+        "titulo": "O Bico do Martim-Pescador",
+        "categoria": "fluidos",
+        "tipo": "martim",
+        "icone": "bi-droplet",
+        "ordem": 24,
+        "conceito": "<p>O martim-pescador mergulha na água para pegar peixes quase <strong>sem fazer respingo</strong>. O segredo está no formato do bico: longo, fino e afilado, ele fende a água sem empurrar uma \"parede\" de líquido à frente.</p>",
+        "desafio": "<p>Afine o bico até o mergulho entrar na água sem turbulência nem respingo.</p>",
+        "reflexao": "<p>Engenheiros japoneses copiaram esse bico para o nariz do trem-bala Shinkansen, acabando com o estrondo ao sair dos túneis e economizando energia. O projeto veio primeiro da criação de Jeová.</p>",
+        "referencia": "Jó 12:7-9",
+        "config": "{\"alvo\":80,\"tol\":6,\"f0\":15}",
+        "xp": 120,
+        "publicar": 1,
+        "data_criacao": 1782414487368,
+        "data_atualizacao": 1782414487368
     }
 ]

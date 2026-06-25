@@ -720,7 +720,7 @@
                                     <div class="flex-grow-1 min-w-0">
                                         <p class="fw-semibold mb-1 font-serif text-truncate"
                                            x-text="p.titulo || 'Sem título'"></p>
-                                        <p class="text-muted small mb-0 lh-sm"
+                                        <p class="text-muted small mb-0 lh-sm papiro-poesia-resumo"
                                            x-text="cardTexto(p)"
                                            x-show="p.conteudo"></p>
                                     </div>
@@ -1450,7 +1450,7 @@
                     <button class="btn btn-sm btn-outline-secondary" @click="irHome()" aria-label="Voltar">
                         <i class="bi bi-arrow-left" aria-hidden="true"></i>
                     </button>
-                    <h1 class="h5 mb-0 me-auto">Há um Projeto?</h1>
+                    <h1 class="h5 mb-0 me-auto">Teve um Projeto?</h1>
                     <template x-if="totalConcluidos > 0">
                         <button class="btn btn-sm btn-outline-secondary" @click="abrirResumo()" title="Meu caderno de estudo">
                             <i class="bi bi-journal-bookmark" aria-hidden="true"></i>
@@ -1610,7 +1610,11 @@
                                         <template x-for="(n, i) in puzzle.sequencia" :key="i">
                                             <span class="badge text-bg-light border px-3 py-2" x-text="n"></span>
                                         </template>
-                                        <span class="text-muted">, ?</span>
+                                        <span class="text-muted">,</span>
+                                        <input type="number" class="form-control fs-5 fw-semibold text-center p-2"
+                                               style="width:5rem" :disabled="resolvido" placeholder="?"
+                                               aria-label="Próximo número da sequência"
+                                               x-model.number="puzzle.valores.n" @keydown.enter="verificar()">
                                     </div>
                                 </template>
                                 <template x-if="puzzle.extra === 'combinatoria'">
@@ -1624,11 +1628,17 @@
                                     </ul>
                                 </template>
 
-                                <template x-for="c in puzzle.campos" :key="c.prop">
-                                    <div class="mb-2">
-                                        <label class="form-label small mb-1" x-text="c.rotulo"></label>
-                                        <input type="number" class="form-control" :disabled="resolvido"
-                                               x-model.number="puzzle.valores[c.prop]" @keydown.enter="verificar()">
+                                <!-- Sequência usa o input inline acima (ao lado do "?"); os demais
+                                     numéricos mostram os campos rotulados aqui. -->
+                                <template x-if="puzzle.extra !== 'sequencia'">
+                                    <div>
+                                        <template x-for="c in puzzle.campos" :key="c.prop">
+                                            <div class="mb-2">
+                                                <label class="form-label small mb-1" x-text="c.rotulo"></label>
+                                                <input type="number" class="form-control" :disabled="resolvido"
+                                                       x-model.number="puzzle.valores[c.prop]" @keydown.enter="verificar()">
+                                            </div>
+                                        </template>
                                     </div>
                                 </template>
 
@@ -1667,8 +1677,9 @@
                                 <template x-if="puzzle.solar.modo === 'lancamento'">
                                     <div class="d-grid mb-3">
                                         <button type="button" class="btn btn-outline-primary"
-                                                :disabled="resolvido" @click="lancarSolar()">
-                                            <i class="bi bi-rocket-takeoff me-1"></i> Lançar
+                                                :disabled="resolvido || emVoo" @click="lancarSolar()">
+                                            <i class="bi me-1" :class="emVoo ? 'bi-hourglass-split' : 'bi-rocket-takeoff'"></i>
+                                            <span x-text="emVoo ? 'Em trajetória…' : 'Lançar'"></span>
                                         </button>
                                     </div>
                                 </template>
@@ -1680,7 +1691,7 @@
                                             <span class="fw-semibold" x-text="puzzle.valores[c.prop] + (c.suf || '')"></span>
                                         </label>
                                         <input type="range" class="form-range" :min="c.min" :max="c.max" :step="c.step"
-                                               :disabled="resolvido" x-model.number="puzzle.valores[c.prop]"
+                                               :disabled="resolvido || emVoo" x-model.number="puzzle.valores[c.prop]"
                                                @input="aoMudarSolar()">
                                     </div>
                                 </template>
@@ -1783,7 +1794,7 @@
                             <div class="alert mt-3 mb-0" :class="feedbackTipo === 'ok' ? 'alert-success' : 'alert-danger'" x-text="feedback"></div>
                         </template>
                         <template x-if="!resolvido && puzzle.arquetipo !== 'pronto'">
-                            <div class="d-grid mt-3"><button class="btn btn-primary" @click="verificar()">Verificar</button></div>
+                            <div class="d-grid mt-3"><button class="btn btn-primary" :disabled="!podeVerificar" @click="verificar()">Verificar</button></div>
                         </template>
                         <template x-if="resolvido || puzzle.arquetipo === 'pronto'">
                             <div class="d-grid mt-3">
@@ -1814,7 +1825,7 @@
 
                 <div class="card mb-3 border-success-subtle">
                     <div class="card-body">
-                        <div class="text-uppercase small fw-semibold text-success mb-2">Há um Projeto?</div>
+                        <div class="text-uppercase small fw-semibold text-success mb-2">Teve um Projeto?</div>
                         <div class="papiro-prosa" x-html="moduloAtual.reflexao"></div>
                         <template x-if="moduloAtual.referencia">
                             <p class="fst-italic text-muted mt-3 mb-0">
@@ -3112,35 +3123,142 @@
                 </div>
                 </template>
 
+                <!-- lembrete do relatório (fim/início do mês, pendente) -->
+                <template x-if="lembreteRelatorio">
+                <div class="alert alert-warning d-flex align-items-center gap-2">
+                    <i class="bi bi-bell-fill fs-5"></i>
+                    <div class="small flex-grow-1">
+                        Relatório de <strong x-text="`${meses[lembreteRelatorio.mes]}/${lembreteRelatorio.ano}`"></strong>
+                        ainda <span x-text="lembreteRelatorio.existe ? 'não foi enviado' : 'não foi feito'"></span>.
+                    </div>
+                    <button class="btn btn-sm btn-warning flex-shrink-0" @click="abrirLembrete()">Preencher</button>
+                </div>
+                </template>
+
                 <!-- atalhos -->
                 <div class="row g-2 mb-3">
-                    <div class="col-6">
-                        <button class="card w-100 text-start border-0 shadow-sm p-3" @click="irRelatorios()">
+                    <div class="col-4">
+                        <button class="card w-100 h-100 text-start border-0 shadow-sm p-3" @click="irRelatorios()">
                             <div class="fs-3 mb-1">📋</div>
                             <div class="fw-semibold">Relatórios</div>
                             <div class="small text-muted" x-text="`${relatorios.length} no total`"></div>
                         </button>
                     </div>
-                    <div class="col-6">
-                        <button class="card w-100 text-start border-0 shadow-sm p-3" @click="irEstudos()">
+                    <div class="col-4">
+                        <button class="card w-100 h-100 text-start border-0 shadow-sm p-3" @click="irEstudos()">
                             <div class="fs-3 mb-1">📖</div>
                             <div class="fw-semibold">Estudos</div>
                             <div class="small text-muted" x-text="`${estudos.length} ativos`"></div>
                         </button>
                     </div>
-                    <div class="col-12">
-                        <button class="card w-100 text-start border-0 shadow-sm p-3" @click="irMetas()">
-                            <div class="d-flex align-items-center gap-2">
-                                <div class="fs-3">🎯</div>
-                                <div>
-                                    <div class="fw-semibold">Metas</div>
-                                    <div class="small text-muted">Objetivos espirituais e pessoais</div>
-                                </div>
-                                <i class="bi bi-chevron-right ms-auto text-muted"></i>
-                            </div>
+                    <div class="col-4">
+                        <button class="card w-100 h-100 text-start border-0 shadow-sm p-3" @click="irMetas()">
+                            <div class="fs-3 mb-1">🎯</div>
+                            <div class="fw-semibold">Metas</div>
+                            <div class="small text-muted">Objetivos</div>
                         </button>
                     </div>
                 </div>
+
+                <!-- Leitura da Bíblia (atalho com progresso) -->
+                <button class="card w-100 text-start border-0 shadow-sm p-3 mb-3" @click="irLeitura()">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="fs-3">📕</div>
+                        <div class="flex-grow-1">
+                            <div class="fw-semibold">Leitura da Bíblia</div>
+                            <div class="progress mt-1" style="height:6px">
+                                <div class="progress-bar bg-success" :style="`width:${leituraPercent}%`"></div>
+                            </div>
+                            <div class="small text-muted mt-1"
+                                 x-text="`${totalLidos} de ${totalCapitulos} capítulos · ${leituraPercent}%`"></div>
+                        </div>
+                        <i class="bi bi-chevron-right text-muted"></i>
+                    </div>
+                </button>
+
+                <!-- contadores do mês (tally pessoal → gera o relatório) -->
+                <template x-if="contador">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <i class="bi bi-stopwatch text-info fs-5"></i>
+                            <div class="me-auto">
+                                <div class="fw-semibold">Contadores do mês</div>
+                                <div class="small text-muted" x-text="`${meses[contador.mes]} ${contador.ano}`"></div>
+                            </div>
+                            <button class="btn btn-sm btn-outline-warning" @click="zerarContador()"
+                                    x-show="contadorTemAtividade" x-cloak title="Zerar contadores">
+                                <i class="bi bi-arrow-counterclockwise"></i>
+                            </button>
+                        </div>
+
+                        <!-- tempo -->
+                        <div class="d-flex align-items-center gap-2 py-1 border-top">
+                            <span class="me-auto small"><i class="bi bi-clock me-1"></i>Tempo</span>
+                            <button class="btn btn-sm btn-outline-secondary" @click="ajustarContador('minutos', -15)" aria-label="−15 min">
+                                <i class="bi bi-dash-lg"></i>
+                            </button>
+                            <span class="fw-semibold text-center" style="min-width:4.5rem" x-text="contadorTempo"></span>
+                            <button class="btn btn-sm btn-outline-secondary" @click="ajustarContador('minutos', 15)" aria-label="+15 min">
+                                <i class="bi bi-plus-lg"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary" @click="ajustarContador('minutos', 60)">+1h</button>
+                        </div>
+
+                        <!-- estudos -->
+                        <div class="d-flex align-items-center gap-2 py-1 border-top">
+                            <span class="me-auto small"><i class="bi bi-book me-1"></i>Estudos</span>
+                            <button class="btn btn-sm btn-outline-secondary" @click="ajustarContador('estudos', -1)" aria-label="−1 estudo">
+                                <i class="bi bi-dash-lg"></i>
+                            </button>
+                            <span class="fw-semibold text-center" style="min-width:2rem" x-text="contador.estudos"></span>
+                            <button class="btn btn-sm btn-outline-secondary" @click="ajustarContador('estudos', 1)" aria-label="+1 estudo">
+                                <i class="bi bi-plus-lg"></i>
+                            </button>
+                        </div>
+
+                        <!-- revisitas -->
+                        <div class="d-flex align-items-center gap-2 py-1 border-top">
+                            <span class="me-auto small"><i class="bi bi-arrow-repeat me-1"></i>Revisitas</span>
+                            <button class="btn btn-sm btn-outline-secondary" @click="ajustarContador('revisitas', -1)" aria-label="−1 revisita">
+                                <i class="bi bi-dash-lg"></i>
+                            </button>
+                            <span class="fw-semibold text-center" style="min-width:2rem" x-text="contador.revisitas"></span>
+                            <button class="btn btn-sm btn-outline-secondary" @click="ajustarContador('revisitas', 1)" aria-label="+1 revisita">
+                                <i class="bi bi-plus-lg"></i>
+                            </button>
+                        </div>
+
+                        <!-- publicações -->
+                        <div class="d-flex align-items-center gap-2 py-1 border-top">
+                            <span class="me-auto small"><i class="bi bi-journals me-1"></i>Publicações</span>
+                            <button class="btn btn-sm btn-outline-secondary" @click="ajustarContador('publicacoes', -1)" aria-label="−1 publicação">
+                                <i class="bi bi-dash-lg"></i>
+                            </button>
+                            <span class="fw-semibold text-center" style="min-width:2rem" x-text="contador.publicacoes"></span>
+                            <button class="btn btn-sm btn-outline-secondary" @click="ajustarContador('publicacoes', 1)" aria-label="+1 publicação">
+                                <i class="bi bi-plus-lg"></i>
+                            </button>
+                        </div>
+
+                        <!-- vídeos -->
+                        <div class="d-flex align-items-center gap-2 py-1 border-top mb-3">
+                            <span class="me-auto small"><i class="bi bi-play-btn me-1"></i>Vídeos</span>
+                            <button class="btn btn-sm btn-outline-secondary" @click="ajustarContador('videos', -1)" aria-label="−1 vídeo">
+                                <i class="bi bi-dash-lg"></i>
+                            </button>
+                            <span class="fw-semibold text-center" style="min-width:2rem" x-text="contador.videos"></span>
+                            <button class="btn btn-sm btn-outline-secondary" @click="ajustarContador('videos', 1)" aria-label="+1 vídeo">
+                                <i class="bi bi-plus-lg"></i>
+                            </button>
+                        </div>
+
+                        <button class="btn btn-primary w-100" @click="gerarRelatorioDoContador()">
+                            <i class="bi bi-file-earmark-text me-1"></i>Gerar relatório do mês
+                        </button>
+                    </div>
+                </div>
+                </template>
 
                 <!-- último relatório -->
                 <div class="card" x-show="ultimoRelatorio" x-cloak>
@@ -3400,6 +3518,75 @@
                                         </button>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+            </div>
+            </template>
+
+            <!-- ── Leitura da Bíblia ───────────────────────────────────────── -->
+            <template x-if="subVista === 'leitura'">
+            <div class="papiro-app">
+
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <button class="btn btn-sm btn-outline-secondary" @click="irMin()" aria-label="Voltar">
+                        <i class="bi bi-arrow-left"></i>
+                    </button>
+                    <h1 class="h5 mb-0 me-auto">Leitura da Bíblia</h1>
+                </div>
+
+                <!-- progresso geral -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                            <span class="fw-semibold">Progresso geral</span>
+                            <span class="fs-5 fw-bold text-success" x-text="`${leituraPercent}%`"></span>
+                        </div>
+                        <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar bg-success" :style="`width:${leituraPercent}%`"></div>
+                        </div>
+                        <div class="small text-muted"
+                             x-text="`${totalLidos} de ${totalCapitulos} capítulos · ${livrosConcluidos} de 66 livros`"></div>
+                    </div>
+                </div>
+
+                <!-- lista de livros -->
+                <div class="d-flex flex-column gap-2">
+                    <template x-for="(livro, li) in livrosBiblia" :key="li">
+                        <div class="card">
+                            <div class="card-body py-2 px-3">
+                                <div class="d-flex align-items-center gap-2" role="button" @click="abrirLivro(li)">
+                                    <i class="bi" :class="livroCompleto(li) ? 'bi-check-circle-fill text-success' : 'bi-book text-muted'"></i>
+                                    <span class="fw-semibold flex-grow-1" x-text="livro[0]"></span>
+                                    <span class="small text-muted" x-text="`${livroLidos(li)}/${livro[1]}`"></span>
+                                    <i class="bi text-muted" :class="livroAberto === li ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+                                </div>
+                                <div class="progress mt-1" style="height:4px">
+                                    <div class="progress-bar bg-success" :style="`width:${livroPercent(li)}%`"></div>
+                                </div>
+
+                                <!-- grade de capítulos -->
+                                <template x-if="livroAberto === li">
+                                    <div class="mt-2">
+                                        <div class="d-flex flex-wrap gap-1 mb-2">
+                                            <template x-for="cap in livro[1]" :key="cap">
+                                                <button type="button" class="btn btn-sm px-2 py-1 lh-1"
+                                                        :class="capLido(li, cap) ? 'btn-success' : 'btn-outline-secondary'"
+                                                        @click="toggleCap(li, cap)" x-text="cap"></button>
+                                            </template>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button type="button" class="btn btn-sm btn-outline-success flex-fill" @click="marcarLivro(li, true)">
+                                                <i class="bi bi-check-all me-1"></i>Livro inteiro
+                                            </button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary flex-fill" @click="marcarLivro(li, false)">
+                                                <i class="bi bi-eraser me-1"></i>Limpar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </template>
                             </div>
                         </div>
                     </template>
