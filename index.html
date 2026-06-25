@@ -1544,7 +1544,7 @@
             </div>
             </template>
 
-            <!-- ── Conceito ────────────────────────────────────────────────── -->
+            <!-- ── Conceito + Desafio (tela única) ─────────────────────────── -->
             <template x-if="etapa === 'conceito' && moduloAtual">
             <div class="papiro-app">
                 <div class="d-flex align-items-center gap-2 mb-3">
@@ -1561,32 +1561,14 @@
                     </div>
                 </div>
 
-                <p class="text-muted small"><i class="bi bi-mortarboard me-1"></i>Leia com atenção antes de resolver para ganhar o selo de Estudo Diligente.</p>
-
-                <div class="d-grid">
-                    <button class="btn btn-primary" @click="irDesafio()">
-                        Ver o desafio <i class="bi bi-arrow-right ms-1"></i>
-                    </button>
-                </div>
-            </div>
-            </template>
-
-            <!-- ── Desafio ─────────────────────────────────────────────────── -->
-            <template x-if="etapa === 'desafio' && moduloAtual">
-            <div class="papiro-app">
-                <div class="d-flex align-items-center gap-2 mb-3">
-                    <button class="btn btn-sm btn-outline-secondary" @click="etapa = 'conceito'" aria-label="Voltar">
-                        <i class="bi bi-arrow-left" aria-hidden="true"></i>
-                    </button>
-                    <h1 class="h5 mb-0 me-auto" x-text="moduloAtual.titulo"></h1>
-                </div>
-
                 <div class="card mb-3 border-primary-subtle">
                     <div class="card-body">
                         <div class="text-uppercase small fw-semibold text-primary mb-2">Desafio</div>
                         <div class="papiro-prosa" x-html="moduloAtual.desafio"></div>
                     </div>
                 </div>
+
+                <p class="text-muted small"><i class="bi bi-mortarboard me-1"></i>Leia com atenção antes de resolver para ganhar o selo de Estudo Diligente.</p>
 
                 <div class="d-grid">
                     <button class="btn btn-primary" @click="irInterativo()">
@@ -1600,7 +1582,7 @@
             <template x-if="etapa === 'interativo' && moduloAtual">
             <div class="papiro-app">
                 <div class="d-flex align-items-center gap-2 mb-3">
-                    <button class="btn btn-sm btn-outline-secondary" @click="_destruirCenas(); etapa = 'desafio'" aria-label="Voltar">
+                    <button class="btn btn-sm btn-outline-secondary" @click="_destruirCenas(); etapa = 'conceito'" aria-label="Voltar">
                         <i class="bi bi-arrow-left" aria-hidden="true"></i>
                     </button>
                     <h1 class="h5 mb-0 me-auto" x-text="moduloAtual.titulo"></h1>
