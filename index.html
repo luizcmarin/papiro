@@ -1617,16 +1617,6 @@
                                                x-model.number="puzzle.valores.n" @keydown.enter="verificar()">
                                     </div>
                                 </template>
-                                <template x-if="puzzle.extra === 'combinatoria'">
-                                    <p class="small text-muted mb-3" x-text="`Cadeia de ${puzzle.n} elementos, ${puzzle.base} bases possíveis em cada posição.`"></p>
-                                </template>
-                                <template x-if="puzzle.extra === 'vetores' || puzzle.extra === 'vetores3d'">
-                                    <ul class="small text-muted">
-                                        <template x-for="(v, i) in puzzle.vetores" :key="i">
-                                            <li x-text="`Vetor ${i + 1}: (${v.join(', ')})`"></li>
-                                        </template>
-                                    </ul>
-                                </template>
 
                                 <!-- Sequência usa o input inline acima (ao lado do "?"); os demais
                                      numéricos mostram os campos rotulados aqui. -->
@@ -1739,47 +1729,36 @@
                         <!-- ARQUÉTIPO: rota (caixeiro-viajante das abelhas) ──── -->
                         <template x-if="puzzle.arquetipo === 'rota'">
                             <div>
-                                <p class="small text-muted mb-2">Toque nas flores na ordem que faz o caminho mais curto.</p>
+                                <p class="small text-muted mb-2">A abelha sai da colmeia 🍯, visita todas as flores 🌸 e volta. Toque nas flores na ordem que faz o caminho mais curto (toque de novo para desfazer).</p>
                                 <div class="position-relative mx-auto border rounded bg-body-secondary"
-                                     style="width:100%;max-width:320px;height:220px">
+                                     style="width:100%;max-width:340px;height:240px">
                                     <svg class="position-absolute top-0 start-0 w-100 h-100" viewBox="0 0 100 100"
                                          preserveAspectRatio="none" style="pointer-events:none">
                                         <polyline :points="rotaLinha()" fill="none"
-                                                  :stroke="resolvido ? '#198754' : '#0d6efd'" stroke-width="0.8"
-                                                  stroke-linejoin="round" stroke-linecap="round"></polyline>
+                                                  :stroke="resolvido ? '#198754' : '#0d6efd'" stroke-width="0.7"
+                                                  stroke-dasharray="2 1.5" stroke-linejoin="round" stroke-linecap="round"></polyline>
                                     </svg>
+                                    <!-- colmeia (partida/chegada) -->
+                                    <div class="position-absolute d-flex align-items-center justify-content-center"
+                                         style="width:34px;height:34px;font-size:1.4rem"
+                                         :style="`left:${puzzle.colmeia[0]}%;top:${puzzle.colmeia[1]}%;transform:translate(-50%,-50%)`"
+                                         title="Colmeia">🍯</div>
+                                    <!-- flores -->
                                     <template x-for="(p, i) in puzzle.pontos" :key="i">
-                                        <button type="button" class="btn btn-sm position-absolute rounded-circle p-0"
-                                                style="width:30px;height:30px"
+                                        <button type="button" class="btn p-0 position-absolute rounded-circle d-flex align-items-center justify-content-center"
+                                                style="width:34px;height:34px;font-size:1.1rem"
                                                 :style="`left:${p[0]}%;top:${p[1]}%;transform:translate(-50%,-50%)`"
-                                                :class="puzzle.ordem.includes(i) ? 'btn-primary' : 'btn-outline-primary'"
+                                                :class="puzzle.ordem.includes(i) ? 'btn-primary' : 'btn-light border'"
                                                 :disabled="resolvido" @click="visitarPonto(i)">
-                                            <span x-text="puzzle.ordem.indexOf(i) >= 0 ? puzzle.ordem.indexOf(i) + 1 : ''"></span>
+                                            <span x-show="puzzle.ordem.includes(i)" class="fw-bold"
+                                                  x-text="puzzle.ordem.indexOf(i) + 1"></span>
+                                            <span x-show="!puzzle.ordem.includes(i)">🌸</span>
                                         </button>
                                     </template>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-2">
-                                    <span class="small" x-text="`Distância: ${Math.round(puzzle.dist)}  ·  ótima: ${Math.round(puzzle.otima)}`"></span>
+                                    <span class="small" x-text="`Seu caminho: ${Math.round(puzzle.dist)}  ·  menor possível: ${Math.round(puzzle.otima)}`"></span>
                                     <button type="button" class="btn btn-sm btn-outline-secondary" :disabled="resolvido" @click="resetRota()">Recomeçar</button>
-                                </div>
-                            </div>
-                        </template>
-
-                        <!-- ARQUÉTIPO: grade (treliça de reforço) ────────────── -->
-                        <template x-if="puzzle.arquetipo === 'grade'">
-                            <div>
-                                <p class="small text-muted mb-2">Toque nas células para adicionar diagonais de reforço onde a estrutura precisa.</p>
-                                <div class="d-grid gap-1 mx-auto" style="max-width:240px"
-                                     :style="`grid-template-columns: repeat(${puzzle.colunas}, 1fr)`">
-                                    <template x-for="i in puzzle.total" :key="i">
-                                        <button type="button" class="btn ratio ratio-1x1 p-0"
-                                                :class="puzzle.ativas.includes(i - 1) ? 'btn-primary' : 'btn-outline-secondary'"
-                                                :disabled="resolvido" @click="alternarCelula(i - 1)">
-                                            <span class="d-flex align-items-center justify-content-center">
-                                                <i class="bi" :class="puzzle.ativas.includes(i - 1) ? 'bi-slash-lg' : ''"></i>
-                                            </span>
-                                        </button>
-                                    </template>
                                 </div>
                             </div>
                         </template>
@@ -1789,23 +1768,32 @@
                             <p class="text-center text-muted py-3 mb-0">Leia a reflexão a seguir.</p>
                         </template>
 
-                        <!-- feedback + ações (compartilhados) -->
+                        <!-- feedback + Verificar (dentro do card do puzzle) -->
                         <template x-if="feedback">
                             <div class="alert mt-3 mb-0" :class="feedbackTipo === 'ok' ? 'alert-success' : 'alert-danger'" x-text="feedback"></div>
                         </template>
-                        <template x-if="!resolvido && puzzle.arquetipo !== 'pronto'">
-                            <div class="d-grid mt-3"><button class="btn btn-primary" :disabled="!podeVerificar" @click="verificar()">Verificar</button></div>
-                        </template>
-                        <template x-if="resolvido || puzzle.arquetipo === 'pronto'">
+                        <template x-if="puzzle.arquetipo !== 'pronto'">
                             <div class="d-grid mt-3">
-                                <button class="btn btn-success" @click="resolvido = true; concluir()">
-                                    Concluir <i class="bi bi-arrow-right ms-1"></i>
-                                </button>
+                                <button class="btn btn-primary" :disabled="!podeVerificar || resolvido" @click="verificar()">Verificar</button>
                             </div>
                         </template>
 
                     </div>
                 </div>
+
+                <!-- Ao acertar (ou no tipo 'pronto'): card separado com o "Concluir" -->
+                <template x-if="resolvido || puzzle.arquetipo === 'pronto'">
+                    <div class="card mt-3 papiro-acento papiro-acento--success">
+                        <div class="card-body d-grid gap-2">
+                            <div class="text-success fw-semibold" x-show="resolvido" x-cloak>
+                                <i class="bi bi-check-circle-fill me-1"></i>Resposta correta!
+                            </div>
+                            <button class="btn btn-success" @click="resolvido = true; concluir()">
+                                Concluir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </template>
             </div>
             </template>
 
@@ -3160,22 +3148,6 @@
                     </div>
                 </div>
 
-                <!-- Leitura da Bíblia (atalho com progresso) -->
-                <button class="card w-100 text-start border-0 shadow-sm p-3 mb-3" @click="irLeitura()">
-                    <div class="d-flex align-items-center gap-3">
-                        <div class="fs-3">📕</div>
-                        <div class="flex-grow-1">
-                            <div class="fw-semibold">Leitura da Bíblia</div>
-                            <div class="progress mt-1" style="height:6px">
-                                <div class="progress-bar bg-success" :style="`width:${leituraPercent}%`"></div>
-                            </div>
-                            <div class="small text-muted mt-1"
-                                 x-text="`${totalLidos} de ${totalCapitulos} capítulos · ${leituraPercent}%`"></div>
-                        </div>
-                        <i class="bi bi-chevron-right text-muted"></i>
-                    </div>
-                </button>
-
                 <!-- contadores do mês (tally pessoal → gera o relatório) -->
                 <template x-if="contador">
                 <div class="card mb-3">
@@ -3526,12 +3498,16 @@
             </div>
             </template>
 
-            <!-- ── Leitura da Bíblia ───────────────────────────────────────── -->
-            <template x-if="subVista === 'leitura'">
+        </section>
+
+        <!-- ══ LEITURA DA BÍBLIA (módulo do hub Estudo) ════════════════════════ -->
+        <section x-show="rota.modulo === 'leitura'"
+                 x-data="leitura()"
+                 x-init="init()">
             <div class="papiro-app">
 
                 <div class="d-flex align-items-center gap-2 mb-3">
-                    <button class="btn btn-sm btn-outline-secondary" @click="irMin()" aria-label="Voltar">
+                    <button class="btn btn-sm btn-outline-secondary" @click="voltar()" aria-label="Voltar">
                         <i class="bi bi-arrow-left"></i>
                     </button>
                     <h1 class="h5 mb-0 me-auto">Leitura da Bíblia</h1>
@@ -3593,8 +3569,6 @@
                 </div>
 
             </div>
-            </template>
-
         </section>
 
         <!-- ══ ESTUDO ══════════════════════════════════════════════════════════ -->
@@ -4435,7 +4409,7 @@
         </section>
 
         <!-- ══ FALLBACK — módulos Em breve ══════════════════════════════════ -->
-        <section x-show="rota.modulo !== 'home' && rota.modulo !== 'hub' && rota.modulo !== 'sobre' && rota.modulo !== 'cartao' && rota.modulo !== 'ice' && rota.modulo !== 'anotacoes' && rota.modulo !== 'guias' && rota.modulo !== 'poesia' && rota.modulo !== 'receitas' && rota.modulo !== 'jogo' && rota.modulo !== 'criacao' && rota.modulo !== 'prep' && rota.modulo !== 'financeiro' && rota.modulo !== 'metas' && rota.modulo !== 'ministerio' && rota.modulo !== 'estudo' && rota.modulo !== 'calendario' && rota.modulo !== 'perfil'"
+        <section x-show="rota.modulo !== 'home' && rota.modulo !== 'hub' && rota.modulo !== 'sobre' && rota.modulo !== 'cartao' && rota.modulo !== 'ice' && rota.modulo !== 'anotacoes' && rota.modulo !== 'guias' && rota.modulo !== 'poesia' && rota.modulo !== 'receitas' && rota.modulo !== 'jogo' && rota.modulo !== 'criacao' && rota.modulo !== 'prep' && rota.modulo !== 'financeiro' && rota.modulo !== 'metas' && rota.modulo !== 'ministerio' && rota.modulo !== 'estudo' && rota.modulo !== 'leitura' && rota.modulo !== 'calendario' && rota.modulo !== 'perfil'"
                  class="papiro-app">
             <div class="d-flex align-items-center gap-2 mb-4">
                 <button class="btn btn-sm btn-outline-secondary" @click="irHome()">
