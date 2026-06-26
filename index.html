@@ -1568,6 +1568,13 @@
                     </div>
                 </div>
 
+                <template x-if="moduloAtual.link_jw">
+                    <p class="small mb-2">
+                        <i class="bi bi-box-arrow-up-right me-1"></i>
+                        <a :href="moduloAtual.link_jw" target="_blank" rel="noopener" class="link-secondary">Fonte: jw.org — “Teve um Projeto?”</a>
+                    </p>
+                </template>
+
                 <p class="text-muted small"><i class="bi bi-mortarboard me-1"></i>Leia com atenção antes de resolver para ganhar o selo de Estudo Diligente.</p>
 
                 <div class="d-grid">
@@ -1606,15 +1613,21 @@
                         <template x-if="puzzle.arquetipo === 'numerico'">
                             <div>
                                 <template x-if="puzzle.extra === 'sequencia'">
-                                    <div class="d-flex flex-wrap align-items-center gap-2 mb-3 fs-5 fw-semibold">
-                                        <template x-for="(n, i) in puzzle.sequencia" :key="i">
-                                            <span class="badge text-bg-light border px-3 py-2" x-text="n"></span>
-                                        </template>
-                                        <span class="text-muted">,</span>
-                                        <input type="number" class="form-control fs-5 fw-semibold text-center p-2"
-                                               style="width:5rem" :disabled="resolvido" placeholder="?"
-                                               aria-label="Próximo número da sequência"
-                                               x-model.number="puzzle.valores.n" @keydown.enter="verificar()">
+                                    <div>
+                                        <div class="d-flex flex-wrap align-items-center gap-2 mb-3 fs-5 fw-semibold">
+                                            <template x-for="(n, i) in puzzle.sequencia" :key="i">
+                                                <span class="badge text-bg-light border px-3 py-2" x-text="n"></span>
+                                            </template>
+                                            <span class="text-muted">,</span>
+                                            <span class="badge text-bg-primary px-3 py-2 fs-5 fw-bold"
+                                                  x-text="puzzle.valores.n > 0 ? puzzle.valores.n : '?'"></span>
+                                        </div>
+                                        <label class="form-label small d-flex justify-content-between mb-1">
+                                            <span>Escolha o próximo número</span>
+                                            <span class="fw-semibold" x-text="puzzle.valores.n"></span>
+                                        </label>
+                                        <input type="range" class="form-range" min="0" max="50" step="1"
+                                               :disabled="resolvido" x-model.number="puzzle.valores.n">
                                     </div>
                                 </template>
 
@@ -1818,6 +1831,12 @@
                         <template x-if="moduloAtual.referencia">
                             <p class="fst-italic text-muted mt-3 mb-0">
                                 <i class="bi bi-book me-1"></i><span x-text="moduloAtual.referencia"></span>
+                            </p>
+                        </template>
+                        <template x-if="moduloAtual.link_jw">
+                            <p class="small mt-2 mb-0">
+                                <i class="bi bi-box-arrow-up-right me-1"></i>
+                                <a :href="moduloAtual.link_jw" target="_blank" rel="noopener" class="link-secondary">Ler no jw.org — “Teve um Projeto?”</a>
                             </p>
                         </template>
                     </div>

@@ -14,7 +14,8 @@
         "xp": 100,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384
+        "data_atualizacao": 1781893572384,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 2,
@@ -31,7 +32,8 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384
+        "data_atualizacao": 1781893572384,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 3,
@@ -40,15 +42,16 @@
         "tipo": "orbita",
         "icone": "bi-globe",
         "ordem": 3,
-        "conceito": "<p>Os planetas se mantêm em órbita por um equilíbrio exato entre a gravidade e a velocidade. Pouca velocidade e o corpo cai; velocidade demais e ele escapa para o espaço.</p>",
+        "conceito": "<p>Para um corpo entrar numa <strong>órbita solar circular e estável</strong> a 1 UA do Sol (a distância da Terra), ele precisa da velocidade orbital certa: cerca de <strong>29,78 km/s</strong> — a mesma com que a própria Terra já corre ao redor do Sol.</p><p>Pouca velocidade e a órbita vira uma elipse que mergulha para o Sol; velocidade demais (a partir de ~<strong>42,1 km/s</strong> = 29,78 × √2, a velocidade de escape) e o corpo foge do Sistema Solar. A equação da vis-viva, v = √(GM(2/r − 1/a)), descreve cada caso.</p>",
         "desafio": "<p>Gire a câmera para observar o sistema. Ajuste a <strong>velocidade de impulso</strong> e toque em <em>Lançar</em>: pouca velocidade e o corpo cai no Sol; demais e ele escapa para o espaço. Encontre a faixa que produz uma órbita elíptica estável.</p>",
-        "reflexao": "<p>Se as leis que governam o movimento dos planetas falhassem por um segundo, haveria caos. A estabilidade do sistema solar testifica a sabedoria e a sustentação de Jeová.</p>",
+        "reflexao": "<p>A janela para uma órbita estável é estreitíssima — um equilíbrio fino entre cair e escapar. Que os planetas se mantenham nesse ponto exato, ano após ano, dá louvor à sabedoria e ao poder de Jeová, que \"a tudo isso faz sair por número\" (Isaías 40:26).</p>",
         "referencia": "Jó 38:33",
-        "config": "{\"v0\":50}",
+        "config": "{\"v0\":18,\"vCirc\":29.78,\"vEsc\":42.1,\"tolV\":1.5}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782323833591
+        "data_atualizacao": 1782323833591,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 4,
@@ -65,7 +68,8 @@
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782323833591
+        "data_atualizacao": 1782323833591,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 5,
@@ -82,7 +86,8 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384
+        "data_atualizacao": 1781893572384,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 6,
@@ -99,7 +104,8 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384
+        "data_atualizacao": 1781893572384,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 7,
@@ -116,7 +122,8 @@
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384
+        "data_atualizacao": 1781893572384,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 9,
@@ -133,7 +140,8 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384
+        "data_atualizacao": 1781893572384,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 12,
@@ -150,7 +158,8 @@
         "xp": 110,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384
+        "data_atualizacao": 1781893572384,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 13,
@@ -167,7 +176,8 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384
+        "data_atualizacao": 1781893572384,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 14,
@@ -184,7 +194,8 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384
+        "data_atualizacao": 1781893572384,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 15,
@@ -201,7 +212,8 @@
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384
+        "data_atualizacao": 1781893572384,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 17,
@@ -218,7 +230,8 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384
+        "data_atualizacao": 1781893572384,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 18,
@@ -235,7 +248,8 @@
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384
+        "data_atualizacao": 1781893572384,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 20,
@@ -252,7 +266,8 @@
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384
+        "data_atualizacao": 1781893572384,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 21,
@@ -269,7 +284,8 @@
         "xp": 140,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384
+        "data_atualizacao": 1781893572384,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 22,
@@ -286,7 +302,8 @@
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384
+        "data_atualizacao": 1781893572384,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 23,
@@ -303,7 +320,8 @@
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782341749664
+        "data_atualizacao": 1782341749664,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 24,
@@ -320,7 +338,8 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1782414487368,
-        "data_atualizacao": 1782414487368
+        "data_atualizacao": 1782414487368,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 25,
@@ -337,7 +356,8 @@
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1782433697969,
-        "data_atualizacao": 1782433697969
+        "data_atualizacao": 1782433697969,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
         "id": 26,
@@ -354,7 +374,8 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1782433966548,
-        "data_atualizacao": 1782433966548
+        "data_atualizacao": 1782433966548,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/Show-de-luzes-da-natureza-Teve-um-Projeto/"
     },
     {
         "id": 27,
@@ -371,6 +392,7 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1782433966548,
-        "data_atualizacao": 1782433966548
+        "data_atualizacao": 1782433966548,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/ecolocalizacao/"
     }
 ]
