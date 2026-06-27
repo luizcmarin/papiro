@@ -3,70 +3,70 @@
         "id": 1,
         "chave": "LIVRE",
         "rotulo": "Livre",
-        "conteudo": "",
+        "conteudo": "<p></p>",
         "ordem": 0,
         "publicar": 1,
         "data_criacao": 1782319061407,
-        "data_atualizacao": 1782319135318
+        "data_atualizacao": 1782582864990
     },
     {
         "id": 2,
         "chave": "VIDA_E_MINISTERIO",
         "rotulo": "Vida e Ministério",
-        "conteudo": "<h2>Tesouros da Palavra</h2><p></p><h2>Faça Seu Melhor</h2><p></p><h2>Vida Cristã</h2><p></p>",
+        "conteudo": "<h3>Tesouros da Palavra de Deus: </h3><p></p><p></p><h3>Faça Seu Melhor no Ministério: </h3><p></p><p></p><h3>Nossa Vida Cristã: </h3><p></p><p></p>",
         "ordem": 1,
         "publicar": 1,
         "data_criacao": 1782319061407,
-        "data_atualizacao": 1782319061407
+        "data_atualizacao": 1782582866855
     },
     {
         "id": 3,
         "chave": "DISCURSO",
         "rotulo": "Discurso",
-        "conteudo": "<h2>Tema Principal</h2><p><strong>Objetivo:</strong> </p><h3>Introdução</h3><p></p><h3>Corpo</h3><p></p><h3>Conclusão</h3><p></p>",
+        "conteudo": "<h3>Tema do Discurso: </h3><p><strong>Orador: </strong> </p><p><strong>Objetivo: </strong> </p><h3>Introdução: </h3><p></p><p></p><p></p><h3>Pontos que eu destaco: </h3><p></p><p></p><p></p><h3>Conclusão: </h3><p></p><p></p><p></p>",
         "ordem": 2,
         "publicar": 1,
         "data_criacao": 1782319061407,
-        "data_atualizacao": 1782319061407
+        "data_atualizacao": 1782582869656
     },
     {
         "id": 4,
         "chave": "DESIGNACAO_DISCURSO",
         "rotulo": "Designação de Discurso",
-        "conteudo": "<h2>Tema Principal</h2><p><strong>Objetivo:</strong> </p><h3>Introdução</h3><p></p><h3>Corpo</h3><p></p><h3>Conclusão</h3><p></p>",
+        "conteudo": "<h3>Tema:</h3><p><strong>Objetivo:</strong> </p><p></p><h3>Introdução: </h3><p></p><p></p><p></p><h3>Corpo: </h3><p></p><p></p><p></p><h3>Conclusão: </h3><p></p><p></p><p></p>",
         "ordem": 3,
         "publicar": 1,
         "data_criacao": 1782319061407,
-        "data_atualizacao": 1782319061407
+        "data_atualizacao": 1782582904158
     },
     {
         "id": 5,
         "chave": "VISITA_PASTOREIO",
         "rotulo": "Visita de Pastoreio",
-        "conteudo": "<h2>Ponto Forte</h2><p></p><h2>Desafio</h2><p></p><h2>Ajuda Prática</h2><p></p>",
+        "conteudo": "<h3>Ponto Forte: </h3><p></p><p></p><p></p><h3>Desafio: </h3><p></p><p></p><p></p><h3>Ajuda Prática: </h3><p></p><p></p><p></p>",
         "ordem": 4,
         "publicar": 1,
         "data_criacao": 1782319061407,
-        "data_atualizacao": 1782319061407
+        "data_atualizacao": 1782582957199
     },
     {
         "id": 6,
         "chave": "ASSEMBLEIA",
         "rotulo": "Assembleia",
-        "conteudo": "<h2>Programa</h2><p></p><h2>Lições para a Vida</h2><p></p>",
+        "conteudo": "<h3>Programa: </h3><p></p><p></p><p></p><h3>Lições para a Vida: </h3><p></p><p></p><p></p>",
         "ordem": 5,
         "publicar": 1,
         "data_criacao": 1782319061407,
-        "data_atualizacao": 1782319061407
+        "data_atualizacao": 1782583051312
     },
     {
         "id": 7,
         "chave": "VISITA_CIRCUITO",
         "rotulo": "Visita do Circuito",
-        "conteudo": "<h2>Pontos da Visita</h2><p></p><h2>Encorajamento</h2><p></p>",
+        "conteudo": "<h3>Pontos da Visita: </h3><p></p><p></p><p></p><h3>Encorajamento: </h3><p></p><p></p><p></p>",
         "ordem": 6,
         "publicar": 1,
         "data_criacao": 1782319061407,
-        "data_atualizacao": 1782319061407
+        "data_atualizacao": 1782583047436
     }
 ]
