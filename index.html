@@ -570,7 +570,7 @@
                     <template x-if="guiaAtual">
                         <div>
                             <h1 class="h4 fw-bold mb-3" x-text="guiaAtual.titulo"></h1>
-                            <div class="sang-apresentacao" x-html="guiaAtual.texto"></div>
+                            <div class="sang-apresentacao" x-html="corpoGuia"></div>
                         </div>
                     </template>
                 </div>
@@ -621,7 +621,7 @@
                         <template x-if="guiaAtual">
                             <div>
                                 <h1 class="h3 fw-bold mb-4" x-text="guiaAtual.titulo"></h1>
-                                <div x-html="guiaAtual.texto"></div>
+                                <div x-html="corpoGuia"></div>
                                 <!-- espaço extra para o conteúdo rolar até o final -->
                                 <div style="height:60vh"></div>
                             </div>
@@ -1381,6 +1381,10 @@
                     </div>
                 </div>
 
+                <button class="btn btn-outline-primary w-100 mb-2" @click="anotarNoCaderno()">
+                    <i class="bi bi-journal-bookmark me-1"></i> Anotar no Caderno de Estudo
+                </button>
+
                 <div class="d-flex gap-2">
                     <button class="btn btn-outline-secondary flex-fill" @click="jogarNovamente()">
                         <i class="bi bi-arrow-repeat me-1"></i> Jogar de novo
@@ -1533,7 +1537,7 @@
                     </p>
                 </template>
 
-                <p class="text-muted small"><i class="bi bi-mortarboard me-1"></i>Leia com atenção antes de resolver para ganhar o selo de Estudo Diligente.</p>
+                <p class="text-muted small"><i class="bi bi-mortarboard me-1"></i>Ao concluir, escreva no Caderno o que você aprendeu para ganhar o selo de Estudo Diligente.</p>
 
                 <div class="d-grid">
                     <button class="btn btn-primary" @click="irInterativo()">
@@ -1728,7 +1732,7 @@
                                     </template>
                                     <!-- abelha: voa para a última flor visitada (ou a colmeia), bem visível -->
                                     <div class="position-absolute" aria-hidden="true"
-                                         style="font-size:1.9rem;pointer-events:none;z-index:2;transition:left .4s ease,top .4s ease"
+                                         style="font-size:3rem;pointer-events:none;z-index:2;transition:left .4s ease,top .4s ease"
                                          :style="`left:${(puzzle.ordem.length ? puzzle.pontos[puzzle.ordem[puzzle.ordem.length-1]][0] : puzzle.colmeia[0])}%;top:${(puzzle.ordem.length ? puzzle.pontos[puzzle.ordem[puzzle.ordem.length-1]][1] : puzzle.colmeia[1])}%;transform:translate(-50%,-115%)`">🐝</div>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-2">
@@ -1803,7 +1807,10 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label fw-semibold"><i class="bi bi-journal-text me-1"></i>Caderno do Investigador</label>
+                            <div class="d-flex align-items-center mb-1">
+                                <label class="form-label fw-semibold mb-0"><i class="bi bi-journal-text me-1"></i>Caderno do Investigador</label>
+                                <a class="small ms-auto" href="#/caderno"><i class="bi bi-journal-bookmark me-1"></i>Ver no Caderno de Estudo</a>
+                            </div>
                             <textarea class="form-control" rows="4"
                                       placeholder="Escreva, com suas palavras, o que este módulo lhe ensinou sobre a sabedoria do Criador…"
                                       x-model="cadernoRascunho"
@@ -1820,6 +1827,132 @@
                         </div>
                     </div>
                 </template>
+            </div>
+            </template>
+
+        </section>
+
+        <!-- ══ CADERNO DE ESTUDO ══════════════════════════════════════════════ -->
+        <section x-show="rota.modulo === 'caderno'"
+                 x-data="caderno()"
+                 x-init="init()">
+
+            <!-- ── Lista ───────────────────────────────────────────────────── -->
+            <template x-if="vista === 'lista'">
+            <div class="papiro-app">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <button class="btn btn-sm btn-outline-secondary" @click="irEstudo()" aria-label="Voltar">
+                        <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                    </button>
+                    <h1 class="h5 mb-0 me-auto">Caderno de Estudo</h1>
+                    <button class="btn btn-sm btn-primary" @click="novo()">
+                        <i class="bi bi-plus-lg me-1" aria-hidden="true"></i>Anotar
+                    </button>
+                </div>
+
+                <p class="text-muted small mb-3">
+                    <i class="bi bi-journal-bookmark me-1"></i>Reúne o que você escreve em
+                    <strong>Teve um Projeto?</strong>, <strong>Modo Estudo</strong> e
+                    <strong>Língua Pura</strong> — e suas anotações avulsas.
+                </p>
+
+                <!-- filtro + busca -->
+                <div class="d-flex gap-2 mb-3">
+                    <select class="form-select form-select-sm" style="max-width:12rem" x-model="filtroOrigem">
+                        <option value="todas">Todas as origens</option>
+                        <template x-for="(o, chave) in origens" :key="chave">
+                            <option :value="chave" x-text="o.rotulo"></option>
+                        </template>
+                    </select>
+                    <input type="search" class="form-control form-control-sm" placeholder="Buscar…" x-model="busca">
+                </div>
+
+                <!-- vazio -->
+                <template x-if="total === 0">
+                    <div class="alert alert-secondary">
+                        Seu Caderno de Estudo está vazio. Anote o que aprender nos estudos.
+                    </div>
+                </template>
+                <template x-if="total > 0 && registrosFiltrados.length === 0">
+                    <div class="alert alert-secondary">Nenhuma anotação para este filtro.</div>
+                </template>
+
+                <!-- registros -->
+                <div class="row g-3">
+                    <template x-for="reg in registrosFiltrados" :key="reg.id">
+                        <div class="col-12 col-lg-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start gap-2 mb-1">
+                                        <span class="badge rounded-pill"
+                                              :style="`background:${corOrigem(reg.origem)}1f;color:${corOrigem(reg.origem)}`">
+                                            <i class="bi me-1" :class="iconeOrigem(reg.origem)"></i><span x-text="rotuloOrigem(reg.origem)"></span>
+                                        </span>
+                                        <span class="small text-muted ms-auto" x-text="fmtData(reg.atualizado)"></span>
+                                    </div>
+                                    <div class="fw-semibold lh-sm" x-text="reg.titulo"></div>
+                                    <div class="small text-muted" x-show="reg.referencia" x-text="reg.referencia"></div>
+                                    <p class="mb-2 mt-2 small" style="white-space:pre-wrap" x-text="reg.conteudo"></p>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-sm btn-outline-secondary" @click="editar(reg)">
+                                            <i class="bi bi-pencil me-1"></i>Editar
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger" @click="excluir(reg)">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            </template>
+
+            <!-- ── Editor ──────────────────────────────────────────────────── -->
+            <template x-if="vista === 'editor' && edit">
+            <div class="papiro-app">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <button class="btn btn-sm btn-outline-secondary" @click="cancelar()" aria-label="Voltar">
+                        <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                    </button>
+                    <h1 class="h5 mb-0" x-text="edit.id ? 'Editar anotação' : 'Nova anotação'"></h1>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Origem</label>
+                            <select class="form-select" x-model="edit.origem">
+                                <template x-for="(o, chave) in origens" :key="chave">
+                                    <option :value="chave" x-text="o.rotulo"></option>
+                                </template>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Título</label>
+                            <input type="text" class="form-control" x-model="edit.titulo" placeholder="Um título curto (opcional)">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Referência</label>
+                            <input type="text" class="form-control" x-model="edit.referencia" placeholder="Módulo, texto bíblico, assunto… (opcional)">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">O que você aprendeu</label>
+                            <textarea class="form-control" rows="6" x-model="edit.conteudo"
+                                      placeholder="Escreva, com suas palavras, o que este estudo lhe ensinou…"></textarea>
+                        </div>
+                        <template x-if="feedback">
+                            <div class="alert alert-warning py-2" x-text="feedback"></div>
+                        </template>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-primary flex-fill" @click="salvar()">
+                                <i class="bi bi-check-lg me-1"></i>Salvar
+                            </button>
+                            <button class="btn btn-outline-secondary" @click="cancelar()">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             </template>
 
@@ -3696,6 +3829,13 @@
                           placeholder="Anote a reflexão, um versículo, um pensamento que tocou seu coração…"
                           x-model="notaMeditacao"></textarea>
 
+                <!-- atalho: marcar a Leitura da Bíblia (só no ciclo de leitura) -->
+                <template x-if="tipoSel === 'leitura'">
+                    <button class="btn btn-outline-primary w-100 mb-3" @click="irLeituraBiblia()">
+                        <i class="bi bi-book me-1"></i> Marcar o que li em Leitura da Bíblia
+                    </button>
+                </template>
+
                 <!-- pérola → anotação -->
                 <button class="btn btn-outline-info w-100 mb-3"
                         x-show="notaMeditacao.trim() && !anotacaoCriada"
@@ -3704,6 +3844,16 @@
                 </button>
                 <div class="alert alert-info py-2 text-center" x-show="anotacaoCriada" x-cloak>
                     <i class="bi bi-check-circle me-1"></i> Pérola guardada nas Anotações
+                </div>
+
+                <!-- pérola → Caderno de Estudo unificado -->
+                <button class="btn btn-outline-primary w-100 mb-3"
+                        x-show="notaMeditacao.trim() && !cadernoSalvo"
+                        @click="salvarNoCaderno()" x-cloak>
+                    <i class="bi bi-journal-bookmark me-1"></i> Salvar no Caderno de Estudo
+                </button>
+                <div class="alert alert-primary py-2 text-center" x-show="cadernoSalvo" x-cloak>
+                    <i class="bi bi-check-circle me-1"></i> Salvo no Caderno de Estudo
                 </div>
 
                 <div class="d-flex gap-2">
@@ -3838,6 +3988,20 @@
                             :class="vistaAtual === v.id ? 'btn-primary' : 'btn-outline-secondary'"
                             @click="trocarVista(v.id)" x-text="v.rotulo"></button>
                 </template>
+            </div>
+
+            <!-- Pular para mês/ano -->
+            <div class="d-flex gap-2 mb-2">
+                <select class="form-select form-select-sm" x-model.number="mesSel" @change="irParaMesAno()" aria-label="Mês">
+                    <template x-for="(nome, i) in meses" :key="i">
+                        <option :value="i" x-text="nome"></option>
+                    </template>
+                </select>
+                <select class="form-select form-select-sm" style="max-width:7rem" x-model.number="anoSel" @change="irParaMesAno()" aria-label="Ano">
+                    <template x-for="a in anos" :key="a">
+                        <option :value="a" x-text="a"></option>
+                    </template>
+                </select>
             </div>
 
             <!-- Navegação -->
@@ -4390,7 +4554,7 @@
         </section>
 
         <!-- ══ FALLBACK — módulos Em breve ══════════════════════════════════ -->
-        <section x-show="rota.modulo !== 'home' && rota.modulo !== 'hub' && rota.modulo !== 'sobre' && rota.modulo !== 'cartao' && rota.modulo !== 'ice' && rota.modulo !== 'anotacoes' && rota.modulo !== 'guias' && rota.modulo !== 'poesia' && rota.modulo !== 'receitas' && rota.modulo !== 'jogo' && rota.modulo !== 'criacao' && rota.modulo !== 'prep' && rota.modulo !== 'financeiro' && rota.modulo !== 'metas' && rota.modulo !== 'ministerio' && rota.modulo !== 'estudo' && rota.modulo !== 'leitura' && rota.modulo !== 'calendario' && rota.modulo !== 'perfil'"
+        <section x-show="rota.modulo !== 'home' && rota.modulo !== 'hub' && rota.modulo !== 'sobre' && rota.modulo !== 'cartao' && rota.modulo !== 'ice' && rota.modulo !== 'anotacoes' && rota.modulo !== 'guias' && rota.modulo !== 'poesia' && rota.modulo !== 'receitas' && rota.modulo !== 'jogo' && rota.modulo !== 'criacao' && rota.modulo !== 'caderno' && rota.modulo !== 'prep' && rota.modulo !== 'financeiro' && rota.modulo !== 'metas' && rota.modulo !== 'ministerio' && rota.modulo !== 'estudo' && rota.modulo !== 'leitura' && rota.modulo !== 'calendario' && rota.modulo !== 'perfil'"
                  class="papiro-app">
             <div class="d-flex align-items-center gap-2 mb-4">
                 <button class="btn btn-sm btn-outline-secondary" @click="irHome()">
