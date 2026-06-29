@@ -1,40 +1,40 @@
 {
-    "gerado_em": "2026-06-28T19:17:49+00:00",
+    "gerado_em": "2026-06-29T16:46:40+00:00",
     "modulos": {
         "perguntas": {
-            "versao": 1782674269,
+            "versao": 1782751600,
             "registros": 1000
         },
         "poesias": {
-            "versao": 1782674269,
+            "versao": 1782751600,
             "registros": 3
         },
         "receitas": {
-            "versao": 1782674269,
+            "versao": 1782751600,
             "registros": 12
         },
         "kits": {
-            "versao": 1782674269,
+            "versao": 1782751600,
             "registros": 12
         },
         "guias": {
-            "versao": 1782674269,
-            "registros": 18
+            "versao": 1782751600,
+            "registros": 17
         },
         "vibes": {
-            "versao": 1782674269,
+            "versao": 1782751600,
             "registros": 100
         },
         "criacao_modulos": {
-            "versao": 1782674269,
+            "versao": 1782751600,
             "registros": 33
         },
         "categorias": {
-            "versao": 1782674269,
+            "versao": 1782751600,
             "registros": 16
         },
         "anotacao_modelos": {
-            "versao": 1782674269,
+            "versao": 1782751600,
             "registros": 7
         }
     }
