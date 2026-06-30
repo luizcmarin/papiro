@@ -78,15 +78,15 @@
         "tipo": "vetores",
         "icone": "bi-bug",
         "ordem": 5,
-        "conceito": "<p>A formiga <em>Cataglyphis</em> sai do formigueiro em ziguezague à procura de comida, mas volta em <strong>linha reta</strong>. Ela soma \"de cabeça\" todos os trechos do trajeto.</p>",
-        "desafio": "<p>Some os vetores do trajeto para descobrir as coordenadas do caminho de volta reto.</p>",
-        "reflexao": "<p>O que para nós exige cálculo vetorial, a formiga faz instintivamente. Mesmo as menores criaturas revelam a sabedoria do Criador.</p>",
+        "conceito": "<p>A formiga <em>Cataglyphis</em> sai do formigueiro em ziguezague pelo deserto escaldante à procura de comida — e, ao achá-la, volta para casa em <strong>linha reta</strong>. Para isso ela usa a <em>integração de caminho</em>: junta duas medidas o tempo todo.</p><p><strong>Direção</strong> — uma \"bússola celeste\": seus olhos leem o padrão de <strong>luz polarizada</strong> do céu (que nós nem enxergamos, mas ela percebe no ultravioleta) para saber o rumo (Wehner &amp; Müller, 1988).</p><p><strong>Distância</strong> — um \"podômetro interno\" que conta cada passo (Wittlinger, Wehner &amp; Wolf, 2006).</p><p>Somando \"de cabeça\" todos os trechos do trajeto, ela calcula a seta exata de volta ao ninho.</p>",
+        "desafio": "<p>Some os vetores do trajeto e mire a seta da volta até a ponta pousar no ninho — essa reta é a soma de todos os passos da formiga.</p>",
+        "reflexao": "<p>O que para nós exige cálculo vetorial e instrumentos, a formiga faz por instinto, com um cérebro menor que a cabeça de um alfinete. Mesmo as menores criaturas revelam a sabedoria do Criador, Jeová.</p>",
         "referencia": "Provérbios 30:24, 25",
         "config": "{\"vetores\":[[3,4],[-2,5],[1,-3]]}",
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384,
+        "data_atualizacao": 1782838750983,
         "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
@@ -592,5 +592,23 @@
         "data_criacao": 1782598711406,
         "data_atualizacao": 1782598711406,
         "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/sonar-golfinho/"
+    },
+    {
+        "id": 39,
+        "titulo": "O Podômetro da Formiga",
+        "categoria": "vetores",
+        "tipo": "podometro",
+        "icone": "bi-speedometer2",
+        "ordem": 39,
+        "conceito": "<p>Como a formiga <em>Cataglyphis</em> sabe a distância que andou? Ela tem um <strong>podômetro interno</strong>: conta os próprios passos. Num experimento famoso (Wittlinger, Wehner &amp; Wolf, 2006), cientistas colaram <strong>pernas-de-pau</strong> em umas formigas e encurtaram as pernas de outras (<strong>cotos</strong>) depois que elas já tinham achado a comida.</p><p>Resultado: as de pernas longas <strong>passaram</strong> do ninho e as de pernas curtas <strong>pararam antes</strong> — porque continuaram contando o mesmo número de passos, só que agora cada passo era maior ou menor. Ou seja: <strong>distância = passos × tamanho do passo</strong>.</p>",
+        "desafio": "<p>Ajuste o tamanho do passo e o número de passos até a formiga cravar exatamente o ninho.</p>",
+        "reflexao": "<p>Uma calculadora viva que mede distância multiplicando passos, sem régua nem GPS, dentro de um inseto minúsculo. Essa engenharia de precisão dá louvor à sabedoria de Jeová.</p>",
+        "referencia": "Provérbios 30:24, 25",
+        "config": "{\"alvo\":100,\"tol\":4,\"passo0\":5,\"passos0\":12,\"passoMin\":2,\"passoMax\":9,\"passosMax\":60}",
+        "xp": 120,
+        "publicar": 1,
+        "data_criacao": 1782838750983,
+        "data_atualizacao": 1782838750983,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     }
 ]

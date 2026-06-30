@@ -7,7 +7,7 @@
 // - dados/*.json (conteúdo curado): NETWORK-FIRST.
 // Incremente CACHE_VERSAO ao publicar mudanças no shell.
 
-const CACHE_VERSAO = 'papiro-v59';
+const CACHE_VERSAO = 'papiro-v60';
 // Nomes estáveis (sem hash) emitidos pelo build a partir de index.html.
 const SHELL = [
     './',
