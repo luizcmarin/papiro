@@ -32,8 +32,8 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1782931683533,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102006328&srcid=share"
     },
     {
         "id": 3,
@@ -50,8 +50,8 @@
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782323833591,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1782931999418,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=1102010231&srctype=wol&srcid=share"
     },
     {
         "id": 4,
@@ -86,17 +86,17 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782838750983,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1782921763559,
+        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/despertai-n1-2017-fevereiro/formiga-prateada-do-saara/"
     },
     {
         "id": 6,
-        "titulo": "A Baleia-Jubarte",
+        "titulo": "A Baleia Corcunda",
         "categoria": "vetores",
         "tipo": "sustentacao",
         "icone": "bi-water",
         "ordem": 6,
-        "conceito": "<p>As nadadeiras da baleia-jubarte têm protuberâncias (tubérculos) na borda. Elas permitem que a baleia faça curvas fechadas, em ângulos acentuados, sem \"perder a sustentação\".</p>",
+        "conceito": "<p>As nadadeiras da baleia-corcunda têm protuberâncias (tubérculos) na borda. Elas permitem que a baleia faça curvas fechadas, em ângulos acentuados, sem \"perder a sustentação\".</p>",
         "desafio": "<p>Ajuste o ângulo de ataque da nadadeira para obter a máxima sustentação.</p>",
         "reflexao": "<p>Engenheiros aeronáuticos copiam esse desenho para melhorar asas e turbinas. O modelo veio primeiro da criação de Jeová.</p>",
         "referencia": "Jó 12:7-9",
@@ -104,12 +104,12 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1782932845462,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102013210&srcid=share"
     },
     {
         "id": 7,
-        "titulo": "O Voo do Albatroz",
+        "titulo": "O Voo do Albatroz-Gigante",
         "categoria": "vetores",
         "tipo": "equacao",
         "icone": "bi-airplane",
@@ -122,8 +122,8 @@
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1782933100028,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102013290&srcid=share"
     },
     {
         "id": 9,
@@ -158,8 +158,8 @@
         "xp": 110,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1782933378942,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102008091&srcid=share"
     },
     {
         "id": 13,
@@ -176,8 +176,8 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1782933473360,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102010013&srcid=share"
     },
     {
         "id": 14,
@@ -194,12 +194,12 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1782933672270,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=502200111&srcid=share"
     },
     {
         "id": 15,
-        "titulo": "A Borboleta Morfo",
+        "titulo": "A Asa da Borboleta",
         "categoria": "fluidos",
         "tipo": "difracao",
         "icone": "bi-palette",
@@ -212,8 +212,8 @@
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1782933776651,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102014129&srcid=share"
     },
     {
         "id": 17,
@@ -230,8 +230,8 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1782933836656,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=502019454&srcid=share"
     },
     {
         "id": 18,
@@ -248,8 +248,8 @@
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1782934621691,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102015282&srcid=share"
     },
     {
         "id": 20,
@@ -266,8 +266,8 @@
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1782934814753,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102013364&srcid=share"
     },
     {
         "id": 21,
@@ -284,8 +284,8 @@
         "xp": 140,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1782935502654,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=101995090&srctype=wol&srcid=share"
     },
     {
         "id": 22,
@@ -302,8 +302,8 @@
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1782935966287,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102004286&srcid=share"
     },
     {
         "id": 23,
@@ -320,8 +320,8 @@
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782341749664,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1782936054107,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102009043&srcid=share"
     },
     {
         "id": 24,
@@ -338,8 +338,8 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1782414487368,
-        "data_atualizacao": 1782414487368,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1782933971080,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102010132&srcid=share"
     },
     {
         "id": 25,
@@ -356,8 +356,8 @@
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1782433697969,
-        "data_atualizacao": 1782433697969,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1782936259328,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=2004522&srcid=share"
     },
     {
         "id": 26,
@@ -608,7 +608,115 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1782838750983,
-        "data_atualizacao": 1782838750983,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1782933274904,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102017010&srcid=share"
+    },
+    {
+        "id": 40,
+        "titulo": "A Formiga Prateada do Saara",
+        "categoria": "fluidos",
+        "tipo": "formiga_prata",
+        "icone": "bi-thermometer-sun",
+        "ordem": 40,
+        "conceito": "<p>A <strong>formiga-prateada do Saara</strong> (<em>Cataglyphis bombycina</em>) sai para caçar no horário mais quente do dia — quando a areia passa de <strong>60 °C</strong> e até os predadores se escondem. Só que o corpo dela morre acima de cerca de <strong>53 °C</strong>. Como ela aguenta?</p><p>O segredo é uma \"armadura\" de <strong>pelos com secção triangular</strong> no dorso, que faz DUAS coisas ao mesmo tempo:</p><p><strong>1. Refletem a luz do Sol</strong> — o brilho prateado devolve a luz visível e o infravermelho próximo (onde vem a maior parte do calor do Sol), para o corpo não absorver.</p><p><strong>2. Irradiam o próprio calor</strong> — os mesmos pelos ajudam o corpo a emitir o calor interno como radiação (infravermelho médio) para o céu, esfriando a formiga.</p>",
+        "desafio": "<p>Ajuste a reflexão da luz do sol e a emissão do próprio calor até a temperatura do corpo ficar abaixo do limite letal. É preciso os dois — só um não basta.</p>",
+        "reflexao": "<p>Engenheiros copiam esses pelos para criar revestimentos que se mantêm frios sob o sol sem gastar nenhuma energia. Um \"ar-condicionado\" passivo embutido numa formiga do deserto dá louvor à sabedoria do Criador, Jeová.</p>",
+        "referencia": "Jó 12:7-9",
+        "config": "{\"ambiente\":62,\"ganho\":0.18,\"perda\":0.14,\"limite\":53,\"refl0\":55,\"emis0\":55}",
+        "xp": 130,
+        "publicar": 1,
+        "data_criacao": 1782933074791,
+        "data_atualizacao": 1782933074791,
+        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/despertai-n1-2017-fevereiro/formiga-prateada-do-saara/"
+    },
+    {
+        "id": 41,
+        "titulo": "O Transporte de Oxigênio",
+        "categoria": "algoritmos",
+        "tipo": "hemoglobina",
+        "icone": "bi-heart-pulse",
+        "ordem": 41,
+        "conceito": "<p>Cada glóbulo vermelho do seu sangue carrega milhões de moléculas de <strong>hemoglobina</strong>, e cada uma agarra até <strong>quatro moléculas de oxigênio</strong>. Nos pulmões, onde há muito O₂, a hemoglobina o <strong>captura</strong>; nos tecidos, onde falta O₂, ela o <strong>solta</strong>.</p><p>O segredo é a força certa dessa \"pegada\": forte o bastante para carregar no pulmão, fraca o bastante para largar no tecido. Fora desse ponto, o transporte falha.</p>",
+        "desafio": "<p>Ajuste a força de ligação (afinidade) da hemoglobina até a entrega de oxigênio ficar máxima.</p>",
+        "reflexao": "<p>Uma molécula que sabe a hora exata de segurar e de soltar o oxigênio, bilhões de vezes ao dia, sem falhar. \"A vida da carne está no sangue\" — e esse projeto tão fino dá louvor à sabedoria de Jeová.</p>",
+        "referencia": "Levítico 17:11",
+        "config": "{\"alvo\":50,\"tol\":8,\"a0\":20}",
+        "xp": 130,
+        "publicar": 1,
+        "data_criacao": 1782940024723,
+        "data_atualizacao": 1782940024723,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/transporte-oxigenio/"
+    },
+    {
+        "id": 42,
+        "titulo": "A Língua do Beija-Flor",
+        "categoria": "fluidos",
+        "tipo": "beija_flor",
+        "icone": "bi-flower2",
+        "ordem": 42,
+        "conceito": "<p>O beija-flor precisa de muita energia para pairar no ar. Para isso, ele lambe o néctar das flores <strong>dezenas de vezes por segundo</strong>! A ponta da língua se abre em duas e <strong>aprisiona o néctar</strong> como uma armadilha elástica, sem depender de sucção.</p><p>Existe um ritmo ótimo de lambidas: devagar demais desperdiça tempo; rápido demais não deixa a língua se encher.</p>",
+        "desafio": "<p>Ajuste o ritmo de lambidas por segundo até o beija-flor coletar o máximo de néctar.</p>",
+        "reflexao": "<p>Uma bombinha viva, rápida e eficiente, num pássaro que pesa menos que uma moeda. Esse projeto delicado dá louvor à sabedoria do Criador, Jeová.</p>",
+        "referencia": "Salmo 104:24",
+        "config": "{\"alvo\":15,\"tol\":2,\"f0\":4}",
+        "xp": 130,
+        "publicar": 1,
+        "data_criacao": 1782940024723,
+        "data_atualizacao": 1782940024723,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/lingua-beija-flor/"
+    },
+    {
+        "id": 43,
+        "titulo": "A Audição do Grilo",
+        "categoria": "fluidos",
+        "tipo": "grilo",
+        "icone": "bi-ear",
+        "ordem": 43,
+        "conceito": "<p>O grilo tem \"ouvidos\" nas <strong>patas dianteiras</strong>: uma finíssima membrana (tímpano) que vibra com o som. E ela é <strong>sintonizada</strong> para responder mais forte justamente na frequência do canto do parceiro — como um rádio ajustado numa estação.</p><p>Fora dessa frequência, o som quase não é ouvido; no ponto certo, a resposta dispara (ressonância).</p>",
+        "desafio": "<p>Sintonize a frequência do ouvido do grilo até bater com o canto do parceiro (pico de ressonância).</p>",
+        "reflexao": "<p>\"Aquele que formou o ouvido, será que não ouve?\" Um sintonizador de precisão dentro da perna de um inseto dá louvor à sabedoria de Jeová.</p>",
+        "referencia": "Salmo 94:9",
+        "config": "{\"alvo\":4.5,\"tol\":0.35,\"f0\":1.5}",
+        "xp": 130,
+        "publicar": 1,
+        "data_criacao": 1782940024723,
+        "data_atualizacao": 1782940024723,
+        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201310/audicao-do-grilo/"
+    },
+    {
+        "id": 44,
+        "titulo": "A Lanterna do Vaga-Lume",
+        "categoria": "fluidos",
+        "tipo": "vaga_lume",
+        "icone": "bi-lightbulb",
+        "ordem": 44,
+        "conceito": "<p>O vaga-lume <em>Photuris</em> produz luz fria no abdômen. Mas parte dessa luz ficaria presa dentro do corpo, refletida de volta. A solução: a superfície da lanterna é coberta de <strong>escaminhas inclinadas e desalinhadas</strong> que deixam <strong>mais luz escapar</strong>.</p><p>Há uma inclinação ótima: nela, o brilho para fora é máximo. Engenheiros copiaram a ideia para deixar os LEDs mais eficientes.</p>",
+        "desafio": "<p>Ajuste a inclinação das escamas da lanterna até o brilho que escapa ficar máximo.</p>",
+        "reflexao": "<p>Um truque de óptica que a indústria levou muito tempo para descobrir já estava pronto num besouro. Essa luz bem projetada dá louvor à sabedoria de Jeová.</p>",
+        "referencia": "Salmo 104:24",
+        "config": "{\"alvo\":60,\"tol\":6,\"i0\":12}",
+        "xp": 130,
+        "publicar": 1,
+        "data_criacao": 1782940024723,
+        "data_atualizacao": 1782940024723,
+        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201402/lanterna-vaga-lume-photuris/"
+    },
+    {
+        "id": 45,
+        "titulo": "A Casca do Pomelo",
+        "categoria": "geometria",
+        "tipo": "pomelo",
+        "icone": "bi-shield-shaded",
+        "ordem": 45,
+        "conceito": "<p>O pomelo é a maior das frutas cítricas e cresce bem no alto das árvores. Mesmo caindo de <strong>mais de 10 metros</strong>, sua casca quase nunca racha. O segredo é uma <strong>espuma de densidade gradual</strong>: firme por fora, macia por dentro, dissipando a energia do impacto camada por camada.</p><p>Com a graduação certa, a força que chega à polpa cai o suficiente para a fruta sobreviver. Engenheiros copiam isso em capacetes e embalagens.</p>",
+        "desafio": "<p>Ajuste a graduação da espuma da casca até a força que chega à polpa ficar abaixo do limite — e a fruta sobreviver à queda.</p>",
+        "reflexao": "<p>Um \"capacete\" natural, feito de espuma inteligente, protegendo a semente da vida. Esse projeto de absorção de impacto dá louvor à sabedoria de Jeová.</p>",
+        "referencia": "Provérbios 3:19",
+        "config": "{\"alvo\":65,\"limite\":25,\"g0\":15}",
+        "xp": 130,
+        "publicar": 1,
+        "data_criacao": 1782940024723,
+        "data_atualizacao": 1782940024723,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/casca-resistente-impacto-pomelo/"
     }
 ]

@@ -7,7 +7,7 @@
 // - dados/*.json (conteúdo curado): NETWORK-FIRST.
 // Incremente CACHE_VERSAO ao publicar mudanças no shell.
 
-const CACHE_VERSAO = 'papiro-v60';
+const CACHE_VERSAO = 'papiro-v63';
 // Nomes estáveis (sem hash) emitidos pelo build a partir de index.html.
 const SHELL = [
     './',
@@ -19,6 +19,10 @@ const SHELL = [
     './assets/index.js',
     './assets/index.css',
 ];
+// O worker do SQLite (assets/sqlite-worker-*.js) e o wasm (assets/sqlite3-*.wasm)
+// têm nome com hash — não dá para precachear por nome fixo. São baixados no boot
+// (1º acesso online) e ficam em cache pelas estratégias abaixo (js=network-first,
+// wasm=cache-first), garantindo o armazenamento offline a partir do 2º acesso.
 
 self.addEventListener('install', (event) => {
     event.waitUntil(

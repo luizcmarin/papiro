@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Papiro</title>
-    <meta name="description" content="Papiro — notas, estudo, finanças e preparo, offline-first.">
+    <meta name="description" content="Papiro — notas, estudo, finanças e preparo c.">
     <meta name="theme-color" content="#0d6efd">
     <link rel="manifest" href="./manifest.webmanifest">
     <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
@@ -38,7 +38,7 @@
                 <img src="./icons/icon.svg" alt="" width="44" height="44" class="rounded-3 flex-shrink-0">
                 <div class="me-auto">
                     <h1 class="h4 mb-0 fw-bold">Papiro</h1>
-                    <div class="small text-muted">Seu companheiro espiritual, offline</div>
+                    <div class="small text-muted">Seu companheiro diário</div>
                 </div>
                 <!-- acesso rápido ao cartão de contato -->
                 <button class="btn btn-sm btn-outline-primary" @click="irCartao()"
@@ -1039,22 +1039,13 @@
                         <i class="bi bi-share" aria-hidden="true"></i>
                     </button>
 
-                    <!-- Converter para local (só receitas curadas) -->
-                    <button class="btn btn-sm btn-outline-secondary"
-                            title="Copiar para acervo local (editável)"
-                            @click="converterParaLocal()"
-                            x-show="receitaAtual && !receitaLocal"
-                            x-cloak>
-                        <i class="bi bi-download" aria-hidden="true"></i>
-                    </button>
-
-                    <!-- Editar / Excluir (só receitas locais) -->
+                    <!-- Editar / Excluir (qualquer receita) -->
                     <button class="btn btn-sm btn-outline-primary" title="Editar"
-                            @click="editarAtual()" x-show="receitaAtual && receitaLocal" x-cloak>
+                            @click="editarAtual()" x-show="receitaAtual" x-cloak>
                         <i class="bi bi-pencil" aria-hidden="true"></i>
                     </button>
                     <button class="btn btn-sm btn-outline-danger" title="Excluir"
-                            @click="excluirAtual()" x-show="receitaAtual && receitaLocal" x-cloak>
+                            @click="excluirAtual()" x-show="receitaAtual" x-cloak>
                         <i class="bi bi-trash" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -1399,7 +1390,7 @@
 
         </section>
 
-        <!-- ══ HÁ UM PROJETO? (Arquitetura da Criação) ═══════════════════════ -->
+        <!-- ══ Teve um projeto? (Arquitetura da Criação) ═══════════════════════ -->
         <section x-show="rota.modulo === 'criacao'"
                  x-data="criacao()"
                  x-init="init()">

@@ -23,11 +23,11 @@
         "id": 3,
         "chave": "DISCURSO",
         "rotulo": "Discurso",
-        "conteudo": "<h3>Tema do Discurso: </h3><p><strong>Orador: </strong> </p><p><strong>Objetivo: </strong> </p><h3>Introdução: </h3><p></p><p></p><p></p><h3>Pontos que eu destaco: </h3><p></p><p></p><p></p><h3>Conclusão: </h3><p></p><p></p><p></p>",
+        "conteudo": "<h3>Tema do Discurso: </h3><p><strong>Orador: </strong> </p><p><strong>Objetivo: </strong> </p><p></p><p></p><h3>Pontos de Destaque: </h3><p></p><p></p><p></p>",
         "ordem": 2,
         "publicar": 1,
         "data_criacao": 1782319061407,
-        "data_atualizacao": 1782582869656
+        "data_atualizacao": 1782919518526
     },
     {
         "id": 4,

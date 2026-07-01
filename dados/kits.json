@@ -383,17 +383,6 @@
                 "publicar": 1
             },
             {
-                "id": 191,
-                "id_remoto": null,
-                "kit_id": 2,
-                "rotulo": "Pá dobrável",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Saneamento de emergência",
-                "publicar": 1
-            },
-            {
                 "id": 192,
                 "id_remoto": null,
                 "kit_id": 2,
@@ -684,28 +673,6 @@
                 "id_remoto": null,
                 "kit_id": 4,
                 "rotulo": "Analgésico (paracetamol/dipirona)",
-                "quantidade": "1 cartela",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 217,
-                "id_remoto": null,
-                "kit_id": 4,
-                "rotulo": "Anti-inflamatório",
-                "quantidade": "1 cartela",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 218,
-                "id_remoto": null,
-                "kit_id": 4,
-                "rotulo": "Antitérmico",
                 "quantidade": "1 cartela",
                 "esta_marcado": 0,
                 "data_vencimento": 0,
@@ -1142,17 +1109,6 @@
                 "publicar": 1
             },
             {
-                "id": 255,
-                "id_remoto": null,
-                "kit_id": 13,
-                "rotulo": "Detector de fumaça",
-                "quantidade": "1 por dormitório",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Testar todo mês; trocar a pilha 1x/ano",
-                "publicar": 1
-            },
-            {
                 "id": 256,
                 "id_remoto": null,
                 "kit_id": 13,
@@ -1161,61 +1117,6 @@
                 "esta_marcado": 0,
                 "data_vencimento": 0,
                 "observacoes": "Manter perto da cozinha",
-                "publicar": 1
-            },
-            {
-                "id": 257,
-                "id_remoto": null,
-                "kit_id": 13,
-                "rotulo": "Máscara contra fumaça",
-                "quantidade": "1 por pessoa",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 258,
-                "id_remoto": null,
-                "kit_id": 13,
-                "rotulo": "Escada de fuga",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Para sobrados e andares altos",
-                "publicar": 1
-            },
-            {
-                "id": 259,
-                "id_remoto": null,
-                "kit_id": 13,
-                "rotulo": "Balde de areia ou mangueira",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Combate a princípio de incêndio",
-                "publicar": 1
-            },
-            {
-                "id": 260,
-                "id_remoto": null,
-                "kit_id": 13,
-                "rotulo": "Telefone dos Bombeiros (193)",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Visível e memorizado",
-                "publicar": 1
-            },
-            {
-                "id": 261,
-                "id_remoto": null,
-                "kit_id": 13,
-                "rotulo": "Revisar e treinar o plano",
-                "quantidade": "A cada 6 meses",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Simular com toda a família",
                 "publicar": 1
             }
         ]
