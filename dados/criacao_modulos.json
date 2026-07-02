@@ -82,11 +82,11 @@
         "desafio": "<p>Some os vetores do trajeto e mire a seta da volta até a ponta pousar no ninho — essa reta é a soma de todos os passos da formiga.</p>",
         "reflexao": "<p>O que para nós exige cálculo vetorial e instrumentos, a formiga faz por instinto, com um cérebro menor que a cabeça de um alfinete. Mesmo as menores criaturas revelam a sabedoria do Criador, Jeová.</p>",
         "referencia": "Provérbios 30:24, 25",
-        "config": "{\"vetores\":[[3,4],[-2,5],[1,-3]]}",
+        "config": "{\"vetores\":[[3,4],[-4,1],[1,3]]}",
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782921763559,
+        "data_atualizacao": 1783027682508,
         "link_jw": "https://www.jw.org/pt/biblioteca/revistas/despertai-n1-2017-fevereiro/formiga-prateada-do-saara/"
     },
     {
