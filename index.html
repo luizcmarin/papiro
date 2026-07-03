@@ -1963,9 +1963,6 @@
                         <i class="bi bi-arrow-left" aria-hidden="true"></i>
                     </button>
                     <h1 class="h5 mb-0 me-auto">Esteja Preparado</h1>
-                    <button class="btn btn-sm btn-primary" @click="novoChecklist()">
-                        <i class="bi bi-plus-lg me-1" aria-hidden="true"></i>Checklist
-                    </button>
                 </div>
 
                 <!-- índice de prontidão -->
@@ -1984,23 +1981,30 @@
                     </div>
                 </div>
 
-                <!-- atalhos para estoque, cofre e guias -->
+                <!-- atalhos para kits, estoque, cofre e guias -->
                 <div class="row g-2 mb-4">
-                    <div class="col-6 col-lg-4">
+                    <div class="col-6 col-lg-3">
+                        <button class="card w-100 text-start border-0 shadow-sm p-3" @click="irKits()">
+                            <div class="fs-3 mb-1">📋</div>
+                            <div class="fw-semibold">Kits de Checklist</div>
+                            <div class="small text-muted" x-text="`${todosKits.length} ${todosKits.length === 1 ? 'kit' : 'kits'}`"></div>
+                        </button>
+                    </div>
+                    <div class="col-6 col-lg-3">
                         <button class="card w-100 text-start border-0 shadow-sm p-3" @click="irEstoque()">
                             <div class="fs-3 mb-1">📦</div>
                             <div class="fw-semibold">Estoque</div>
                             <div class="small text-muted" x-text="`${diasAutonomia} dias de autonomia`"></div>
                         </button>
                     </div>
-                    <div class="col-6 col-lg-4">
+                    <div class="col-6 col-lg-3">
                         <button class="card w-100 text-start border-0 shadow-sm p-3" @click="irCofre()">
                             <div class="fs-3 mb-1">🔐</div>
                             <div class="fw-semibold">Cofre</div>
                             <div class="small text-muted">Documentos criptografados</div>
                         </button>
                     </div>
-                    <div class="col-6 col-lg-4">
+                    <div class="col-6 col-lg-3">
                         <button class="card w-100 text-start border-0 shadow-sm p-3" @click="irGuias()">
                             <div class="fs-3 mb-1">🧭</div>
                             <div class="fw-semibold">Guias</div>
@@ -2009,8 +2013,22 @@
                     </div>
                 </div>
 
-                <!-- kits curados -->
-                <h2 class="h6 fw-semibold text-uppercase text-muted mb-2">Kits de Checklist</h2>
+            </div>
+            </template>
+
+            <!-- ── Kits de Checklist ───────────────────────────────────────── -->
+            <template x-if="subVista === 'kits'">
+            <div class="papiro-app">
+
+                <div class="d-flex align-items-center gap-2 mb-4">
+                    <button class="btn btn-sm btn-outline-secondary" @click="voltarPrep()" aria-label="Voltar">
+                        <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                    </button>
+                    <h1 class="h5 mb-0 me-auto">Kits de Checklist</h1>
+                    <button class="btn btn-sm btn-primary" @click="novoChecklist()">
+                        <i class="bi bi-plus-lg me-1" aria-hidden="true"></i>Checklist
+                    </button>
+                </div>
 
                 <div class="text-center text-muted py-4"
                      x-show="todosKits.length === 0"
