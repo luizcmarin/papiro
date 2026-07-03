@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guia do Usuário — Papiro</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg: #f7f7f5;
+            --card: #ffffff;
+            --texto: #1f2430;
+            --suave: #5b6473;
+            --borda: #e6e6e0;
+            --acento: #7a5cff;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #14161c;
+                --card: #1c1f27;
+                --texto: #e8eaf0;
+                --suave: #9aa3b2;
+                --borda: #2a2e38;
+                --acento: #a993ff;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 2rem 1rem 4rem;
+            background: var(--bg);
+            color: var(--texto);
+            font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        }
+        main {
+            max-width: 44rem;
+            margin: 0 auto;
+            background: var(--card);
+            border: 1px solid var(--borda);
+            border-radius: 18px;
+            padding: 2rem clamp(1.1rem, 4vw, 2.4rem);
+        }
+        .voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            margin-bottom: 1.4rem;
+            color: var(--acento);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: .95rem;
+        }
+        .voltar:hover { text-decoration: underline; }
+        h1 { font-size: 1.6rem; margin: 0 0 .3rem; }
+        .sub { color: var(--suave); font-size: .95rem; margin: 0 0 2rem; }
+        h2 {
+            font-size: 1.15rem;
+            margin: 2rem 0 .6rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--borda);
+        }
+        h2:first-of-type { border-top: 0; padding-top: 0; }
+        h3 { font-size: 1rem; margin: 1.2rem 0 .3rem; }
+        p { margin: .6rem 0; }
+        ul { margin: .6rem 0; padding-left: 1.3rem; }
+        li { margin: .35rem 0; }
+        strong { color: var(--texto); }
+        a { color: var(--acento); }
+        .mod { margin: .5rem 0; padding-left: 1.3rem; }
+        .mod b { color: var(--texto); }
+        .nota {
+            font-size: .92rem;
+            color: var(--suave);
+            padding: .8rem 1rem;
+            background: color-mix(in srgb, var(--acento) 10%, transparent);
+            border-radius: 12px;
+            margin: 1rem 0;
+        }
+        footer {
+            max-width: 44rem;
+            margin: 1.6rem auto 0;
+            text-align: center;
+            color: var(--suave);
+            font-size: .82rem;
+        }
+        footer a { font-weight: 600; }
+    </style>
+</head>
+<body>
+    <main>
+        <a class="voltar" href="./">&larr; Voltar ao app</a>
+
+        <h1>Guia do Usuário</h1>
+        <p class="sub">Como aproveitar o Papiro, seu companheiro pessoal offline-first.</p>
+
+        <h2>1. O que é o Papiro</h2>
+        <p>O Papiro é um aplicativo pessoal que reúne, num só lugar, ferramentas de estudo, organização e preparo — funcionando <strong>inteiramente no seu dispositivo</strong>, mesmo sem internet. Tudo o que você cria fica guardado localmente e é só seu.</p>
+
+        <h2>2. Instalar no dispositivo</h2>
+        <p>O Papiro é um app instalável. Instalar deixa tudo mais rápido e disponível offline:</p>
+        <ul>
+            <li><strong>Celular (Android/Chrome):</strong> abra o menu do navegador e toque em <em>"Instalar app"</em> ou <em>"Adicionar à tela inicial"</em>.</li>
+            <li><strong>iPhone/iPad (Safari):</strong> toque em <em>Compartilhar</em> e depois em <em>"Adicionar à Tela de Início"</em>.</li>
+            <li><strong>Computador (Chrome/Edge):</strong> clique no ícone de instalar na barra de endereço.</li>
+        </ul>
+        <p class="nota">Na primeira vez, abra o app <strong>com internet</strong> por alguns segundos: ele baixa o conteúdo de estudo e guarda tudo para uso offline. Depois disso, funciona sem rede.</p>
+
+        <h2>3. Navegando pelo app</h2>
+        <ul>
+            <li><strong>Tela inicial:</strong> mostra os módulos em uma grade e um resumo (leitura, metas, índice de prontidão). Toque em um card para abrir.</li>
+            <li><strong>Grupos:</strong> alguns cards reúnem módulos relacionados (ex.: <em>Meu Estudo Pessoal</em> e <em>Pessoal</em>) — toque para ver o que há dentro.</li>
+            <li><strong>Voltar:</strong> use a seta no topo de cada tela para retornar.</li>
+            <li><strong>Sobre:</strong> o botão de informações abre a tela "Sobre", com este guia, os documentos legais e o contato.</li>
+        </ul>
+
+        <h2>4. Os módulos</h2>
+        <div class="mod"><b>Anotações</b> — escreva e organize suas notas pessoais.</div>
+        <div class="mod"><b>Guias</b> — checklists e guias práticos, com os conteúdos básicos e os que você mesmo criar.</div>
+        <div class="mod"><b>Poesia</b> — uma coletânea de poesias para leitura e meditação.</div>
+        <div class="mod"><b>Receitas</b> — guarde e consulte suas receitas.</div>
+        <div class="mod"><b>Língua Pura</b> — um jogo de perguntas para aprender e fixar, com base no estudo das Escrituras.</div>
+        <div class="mod"><b>Teve um Projeto?</b> — desafios interativos que mostram o "design" na criação por meio da matemática (sequências, geometria dos favos, órbitas, DNA e mais).</div>
+        <div class="mod"><b>Caderno de Estudo</b> — registre, com suas palavras, o que cada estudo lhe ensinou.</div>
+        <div class="mod"><b>Esteja Preparado</b> — preparo pessoal e familiar (detalhado abaixo).</div>
+        <div class="mod"><b>Financeiro</b> — acompanhe receitas e despesas por categoria, com uma visão geral do seu orçamento.</div>
+        <div class="mod"><b>Metas</b> — defina objetivos e acompanhe o progresso.</div>
+        <div class="mod"><b>Vida e Ministério</b> — organize suas atividades e designações.</div>
+        <div class="mod"><b>Modo Estudo</b> — sessões de estudo com foco e tempo, para se concentrar.</div>
+        <div class="mod"><b>Leitura da Bíblia</b> — acompanhe seu progresso de leitura da Bíblia.</div>
+        <div class="mod"><b>Calendário</b> — registre eventos e compromissos.</div>
+        <div class="mod"><b>Perfil / ICE</b> — seus dados de perfil e as informações de emergência (ICE — <em>In Case of Emergency</em>), úteis a quem precisar ajudá-lo.</div>
+
+        <h2>5. Esteja Preparado</h2>
+        <p>O módulo de preparo tem sub-telas próprias:</p>
+        <ul>
+            <li><strong>Kits</strong> — checklists de itens (mochila de emergência, primeiros socorros, documentos…). Marque cada item conforme reúne, e acompanhe o percentual de cada kit. Você pode editar, criar e apagar seus próprios kits; se apagar todos, os kits padrão retornam.</li>
+            <li><strong>Estoque</strong> — controle de alimentos e itens, com validade.</li>
+            <li><strong>Cofre</strong> — um espaço protegido por senha para guardar documentos e informações sensíveis, sempre no seu dispositivo.</li>
+        </ul>
+        <p>A tela inicial mostra um <strong>índice de prontidão</strong> que resume o quanto você está preparado.</p>
+
+        <h2>6. Conteúdo e atualizações</h2>
+        <p>Os conteúdos básicos (guias, poesias, receitas, perguntas, etc.) são baixados quando você abre o app com internet e ficam guardados para uso offline. Quando houver novidades, elas chegam automaticamente na próxima vez que você abrir o app conectado.</p>
+
+        <h2>7. Seus dados</h2>
+        <p>Tudo o que você cria fica <strong>somente no seu dispositivo</strong> — nada é enviado para servidores. Isso significa que:</p>
+        <ul>
+            <li>Você tem privacidade total: ninguém além de você acessa seus dados.</li>
+            <li>A responsabilidade pela preservação é sua: como não há backup em nuvem, desinstalar o app, limpar os dados do navegador ou perder o dispositivo apaga tudo de forma definitiva.</li>
+            <li>Para apagar seus dados, limpe o armazenamento do app (ver a <a href="./politica-privacidade.html">Política de Privacidade</a>).</li>
+        </ul>
+
+        <h2>8. Documentos</h2>
+        <p>Na tela "Sobre" você também encontra os <a href="./termos-de-uso.html">Termos de Uso</a>, a <a href="./politica-privacidade.html">Política de Privacidade</a>, os <a href="./direitos-de-terceiros.html">Direitos de Terceiros</a> e a <a href="./licenca.html">Licença</a>.</p>
+    </main>
+    <footer>Feito para edificar. Bom proveito! 🕊️</footer>
+</body>
+</html>

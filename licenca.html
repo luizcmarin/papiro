@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Licença — Papiro</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg: #f7f7f5;
+            --card: #ffffff;
+            --texto: #1f2430;
+            --suave: #5b6473;
+            --borda: #e6e6e0;
+            --acento: #7a5cff;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #14161c;
+                --card: #1c1f27;
+                --texto: #e8eaf0;
+                --suave: #9aa3b2;
+                --borda: #2a2e38;
+                --acento: #a993ff;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 2rem 1rem 4rem;
+            background: var(--bg);
+            color: var(--texto);
+            font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        }
+        main {
+            max-width: 44rem;
+            margin: 0 auto;
+            background: var(--card);
+            border: 1px solid var(--borda);
+            border-radius: 18px;
+            padding: 2rem clamp(1.1rem, 4vw, 2.4rem);
+        }
+        .voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            margin-bottom: 1.4rem;
+            color: var(--acento);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: .95rem;
+        }
+        .voltar:hover { text-decoration: underline; }
+        h1 { font-size: 1.6rem; margin: 0 0 .3rem; }
+        .atualizacao { color: var(--suave); font-size: .9rem; margin: 0 0 1.4rem; }
+        .copyright {
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: .9rem 1.1rem;
+            margin: 0 0 1.6rem;
+            background: color-mix(in srgb, var(--acento) 12%, transparent);
+            border-radius: 12px;
+        }
+        h2 {
+            font-size: 1.12rem;
+            margin: 2rem 0 .6rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--borda);
+        }
+        p { margin: .6rem 0; }
+        ul { margin: .6rem 0; padding-left: 1.3rem; }
+        li { margin: .3rem 0; }
+        strong { color: var(--texto); }
+        a { color: var(--acento); }
+        footer {
+            max-width: 44rem;
+            margin: 1.6rem auto 0;
+            text-align: center;
+            color: var(--suave);
+            font-size: .82rem;
+        }
+        footer a { font-weight: 600; }
+    </style>
+</head>
+<body>
+    <main>
+        <a class="voltar" href="./">&larr; Voltar ao app</a>
+
+        <h1>Licença</h1>
+        <p class="atualizacao">Última atualização: Julho de 2026</p>
+
+        <p class="copyright">© 2026 Luiz Marin. Todos os direitos reservados.</p>
+
+        <p>O aplicativo <strong>Papiro</strong> — incluindo seu código-fonte, design, identidade visual, logotipos, textos originais e demais recursos autorais — é <strong>software proprietário</strong>, de titularidade exclusiva de Luiz Marin.</p>
+
+        <h2>1. Uso Permitido</h2>
+        <p>É concedida ao usuário final uma licença <strong>pessoal, intransferível e não comercial</strong> para instalar e utilizar o aplicativo, nos termos dos <a href="./termos-de-uso.html">Termos de Uso</a>. Nenhuma licença de código aberto é concedida.</p>
+
+        <h2>2. Restrições</h2>
+        <p>Salvo autorização expressa e por escrito do titular, é vedado:</p>
+        <ul>
+            <li>Copiar, reproduzir ou redistribuir o aplicativo ou partes dele;</li>
+            <li>Vender, sublicenciar, alugar ou comercializar o aplicativo;</li>
+            <li>Modificar, adaptar ou criar obras derivadas;</li>
+            <li>Remover ou alterar avisos de direitos autorais e de titularidade.</li>
+        </ul>
+
+        <h2>3. Conteúdo do Usuário</h2>
+        <p>Os dados e o conteúdo que você cria no aplicativo (anotações, metas, registros, etc.) permanecem de <strong>sua propriedade exclusiva</strong> e não são abrangidos por esta licença.</p>
+
+        <h2>4. Materiais de Terceiros</h2>
+        <p>Bibliotecas de código aberto e conteúdos referenciados de terceiros possuem seus próprios direitos e licenças, descritos em <a href="./direitos-de-terceiros.html">Direitos de Terceiros</a>.</p>
+
+        <h2>5. Isenção de Garantias</h2>
+        <p>O aplicativo é fornecido <strong>"no estado em que se encontra"</strong>, sem garantias de qualquer natureza. O titular não se responsabiliza por danos decorrentes do uso, conforme os Termos de Uso.</p>
+
+        <h2>6. Contato</h2>
+        <p>Para solicitar autorizações ou esclarecer dúvidas sobre esta licença, utilize o contato indicado na tela <strong>"Sobre"</strong> do aplicativo.</p>
+    </main>
+    <footer>Veja também os <a href="./direitos-de-terceiros.html">Direitos de Terceiros</a>.</footer>
+</body>
+</html>

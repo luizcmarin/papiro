@@ -718,5 +718,41 @@
         "data_criacao": 1782940024723,
         "data_atualizacao": 1782940024723,
         "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/casca-resistente-impacto-pomelo/"
+    },
+    {
+        "id": 46,
+        "titulo": "A Beleza das Equações",
+        "categoria": "algoritmos",
+        "tipo": "harmonia",
+        "icone": "bi-infinity",
+        "ordem": 46,
+        "conceito": "<p>Você já reparou que toda equação tem um sinal de <strong>igual</strong> (=) no meio? Ele funciona como o <strong>fiel de uma balança</strong>: os dois lados precisam valer exatamente o mesmo. Quando isso acontece, dizemos que a equação está em <strong>equilíbrio</strong> — em harmonia.</p><p>Os matemáticos usam palavras como <em>beleza</em> e <em>harmonia</em> para descrever as equações que explicam o mundo. Não é só \"conta\": há uma ordem elegante por trás dos números.</p>",
+        "desafio": "<p>Uma equação está em harmonia quando os dois lados se equilibram, como uma balança. <strong>Qual destas está em equilíbrio?</strong></p>",
+        "reflexao": "<p>A mesma harmonia das equações simples aparece — de forma muito mais profunda — nas fórmulas que descrevem o universo: a gravidade, a luz, o movimento dos planetas. Tudo obedece a equações precisas e equilibradas.</p><p>Na revista <em>Despertai!</em> de novembro de 2015, o artigo <strong>\"Um matemático fala de sua fé\"</strong> conta como um professor de matemática enxerga \"beleza e harmonia\" nas equações — e como isso o convenceu de que por trás delas há um <strong>projeto inteligente</strong>. Uma equação não se escreve sozinha; a harmonia do universo aponta para um Autor. Será acaso — ou teve um Projeto?</p>",
+        "referencia": "Salmo 104:24; Isaías 40:26",
+        "config": "{\"correta\":\"b\",\"opcoes\":[{\"id\":\"a\",\"rotulo\":\"3 + 4 = 5 + 3\",\"nota\":\"lados: 7 e 8\",\"esq\":7,\"dir\":8},{\"id\":\"b\",\"rotulo\":\"6 × 2 = 15 − 3\",\"nota\":\"lados: 12 e 12\",\"esq\":12,\"dir\":12},{\"id\":\"c\",\"rotulo\":\"10 − 2 = 3 × 3\",\"nota\":\"lados: 8 e 9\",\"esq\":8,\"dir\":9},{\"id\":\"d\",\"rotulo\":\"2 × 5 = 4 + 4\",\"nota\":\"lados: 10 e 8\",\"esq\":10,\"dir\":8}]}",
+        "xp": 100,
+        "publicar": 1,
+        "data_criacao": 1783117771784,
+        "data_atualizacao": 1783118785182,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102015405&srcid=share"
+    },
+    {
+        "id": 47,
+        "titulo": "A Área do Piso",
+        "categoria": "geometria",
+        "tipo": "area",
+        "icone": "bi-grid-3x3",
+        "ordem": 47,
+        "conceito": "<p>Não é preciso ser gênio para usar a matemática — ela é <strong>para todos</strong> e aparece o tempo todo: nas compras, na cozinha, ao ver as horas… e quando queremos saber <strong>quanto material</strong> comprar para uma reforma.</p><p>Imagine azulejar o chão de um cômodo. Se cada azulejo mede <strong>1 metro por 1 metro</strong> (1 m²), quantos azulejos cobrem o piso? Basta contar! E há um atalho: numa fileira de <em>comprimento</em> azulejos, repetida por <em>largura</em> fileiras, o total é</p><p class=\"text-center fw-bold\">Área = comprimento × largura</p><p>Por exemplo, um piso de 4 m por 3 m tem 4 × 3 = <strong>12 m²</strong> — 12 azulejos.</p>",
+        "desafio": "<p>Você vai azulejar um piso, e cada azulejo é <strong>1 m²</strong>. Ajuste o <strong>comprimento</strong> e a <strong>largura</strong> para cobrir exatamente <strong>12 m²</strong>. Repare: existe mais de um jeito de conseguir!</p>",
+        "reflexao": "<p>Você acabou de usar geometria — e nem precisou de fórmulas complicadas. Descobriu também que <strong>12 m² podem ser 3 × 4, 4 × 3, 2 × 6 ou 6 × 2</strong>: caminhos diferentes chegam ao mesmo resultado. É por isso que se diz que a matemática é <strong>uma língua universal</strong> — todos podem aprendê-la e usá-la.</p><p>Essa ordem simples e confiável, que funciona sempre e em toda parte, aumenta o nosso apreço pela sabedoria do <strong>Grande Matemático</strong>, o Criador, Jeová Deus, que deu ao universo medidas e proporções exatas. Será acaso — ou teve um Projeto?</p>",
+        "referencia": "Jó 38:4, 5; Provérbios 3:19",
+        "config": "{\"alvo\":12,\"lmax\":8}",
+        "xp": 100,
+        "publicar": 1,
+        "data_criacao": 1783120029308,
+        "data_atualizacao": 1783120029308,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     }
 ]

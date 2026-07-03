@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Direitos de Terceiros — Papiro</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg: #f7f7f5;
+            --card: #ffffff;
+            --texto: #1f2430;
+            --suave: #5b6473;
+            --borda: #e6e6e0;
+            --acento: #7a5cff;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #14161c;
+                --card: #1c1f27;
+                --texto: #e8eaf0;
+                --suave: #9aa3b2;
+                --borda: #2a2e38;
+                --acento: #a993ff;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 2rem 1rem 4rem;
+            background: var(--bg);
+            color: var(--texto);
+            font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        }
+        main {
+            max-width: 44rem;
+            margin: 0 auto;
+            background: var(--card);
+            border: 1px solid var(--borda);
+            border-radius: 18px;
+            padding: 2rem clamp(1.1rem, 4vw, 2.4rem);
+        }
+        .voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            margin-bottom: 1.4rem;
+            color: var(--acento);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: .95rem;
+        }
+        .voltar:hover { text-decoration: underline; }
+        h1 { font-size: 1.6rem; margin: 0 0 .3rem; }
+        .atualizacao { color: var(--suave); font-size: .9rem; margin: 0 0 2rem; }
+        h2 {
+            font-size: 1.12rem;
+            margin: 2rem 0 .6rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--borda);
+        }
+        h2:first-of-type { border-top: 0; padding-top: 0; }
+        p { margin: .6rem 0; }
+        ul { margin: .6rem 0; padding-left: 1.3rem; }
+        li { margin: .3rem 0; }
+        strong { color: var(--texto); }
+        a { color: var(--acento); }
+        .libs { width: 100%; border-collapse: collapse; font-size: .92rem; margin: .8rem 0; }
+        .libs th, .libs td { text-align: left; padding: .4rem .6rem; border-bottom: 1px solid var(--borda); }
+        .libs th { color: var(--suave); font-weight: 600; }
+        .libs td:last-child { color: var(--suave); white-space: nowrap; }
+        footer {
+            max-width: 44rem;
+            margin: 1.6rem auto 0;
+            text-align: center;
+            color: var(--suave);
+            font-size: .82rem;
+        }
+        footer a { font-weight: 600; }
+    </style>
+</head>
+<body>
+    <main>
+        <a class="voltar" href="./">&larr; Voltar ao app</a>
+
+        <h1>Direitos de Terceiros</h1>
+        <p class="atualizacao">Última atualização: Julho de 2026</p>
+
+        <p>O Papiro respeita a propriedade intelectual de terceiros. Esta página reconhece os materiais e softwares de terceiros utilizados ou referenciados no aplicativo.</p>
+
+        <h2>1. Conteúdo de Estudo Referenciado</h2>
+        <p>Parte do conteúdo educativo do Papiro faz referência a publicações e textos bíblicos de terceiros, incluindo a <strong>Tradução do Novo Mundo das Escrituras Sagradas</strong> e materiais dos sites <strong>jw.org</strong> e <strong>wol.jw.org</strong>.</p>
+        <p>Esses textos, publicações e materiais são de <strong>propriedade e direitos autorais de Watch Tower Bible and Tract Society of Pennsylvania</strong> e das entidades associadas às Testemunhas de Jeová. Marcas como <em>"jw.org"</em>, <em>"JW.ORG"</em>, <em>"Tradução do Novo Mundo"</em> e <em>"Testemunhas de Jeová"</em> pertencem aos seus respectivos titulares.</p>
+        <p>Eventuais trechos são citados <strong>exclusivamente para fins de estudo pessoal e não comercial</strong>. O Papiro é um <strong>projeto independente e pessoal</strong>, <strong>sem qualquer afiliação, patrocínio, autorização ou endosso oficial</strong> dessas organizações. Para o conteúdo oficial e completo, consulte diretamente as fontes de seus titulares.</p>
+        <p>Se você é titular de direitos e identificar uso indevido, utilize o contato indicado na tela "Sobre" para solicitarmos a correção ou remoção.</p>
+
+        <h2>2. Software de Código Aberto</h2>
+        <p>O Papiro é construído sobre bibliotecas de código aberto, cada uma sob sua própria licença, à qual agradecemos:</p>
+        <table class="libs">
+            <thead><tr><th>Biblioteca</th><th>Licença</th></tr></thead>
+            <tbody>
+                <tr><td>Alpine.js</td><td>MIT</td></tr>
+                <tr><td>Bootstrap</td><td>MIT</td></tr>
+                <tr><td>Bootstrap Icons</td><td>MIT</td></tr>
+                <tr><td>Chart.js</td><td>MIT</td></tr>
+                <tr><td>FullCalendar (pacotes padrão)</td><td>MIT</td></tr>
+                <tr><td>SunEditor</td><td>MIT</td></tr>
+                <tr><td>Three.js</td><td>MIT</td></tr>
+                <tr><td>qrcode-generator</td><td>MIT</td></tr>
+                <tr><td>SQLite (build WebAssembly)</td><td>Domínio público / Apache-2.0</td></tr>
+                <tr><td>Vite (ferramenta de build)</td><td>MIT</td></tr>
+            </tbody>
+        </table>
+        <p>Os textos completos das licenças estão disponíveis nos repositórios oficiais de cada projeto.</p>
+
+        <h2>3. Ícones e Fontes</h2>
+        <p>Os ícones de interface são do conjunto <strong>Bootstrap Icons</strong> (MIT). O aplicativo utiliza as fontes do próprio sistema do dispositivo, sem incorporar fontes de terceiros.</p>
+    </main>
+    <footer>Veja também a <a href="./licenca.html">Licença</a> e os <a href="./termos-de-uso.html">Termos de Uso</a>.</footer>
+</body>
+</html>

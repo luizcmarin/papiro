@@ -7,11 +7,16 @@
 // - dados/*.json (conteúdo curado): NETWORK-FIRST.
 // Incremente CACHE_VERSAO ao publicar mudanças no shell.
 
-const CACHE_VERSAO = 'papiro-v70';
+const CACHE_VERSAO = 'papiro-v88';
 // Nomes estáveis (sem hash) emitidos pelo build a partir de index.html.
 const SHELL = [
     './',
     './index.html',
+    './guia-do-usuario.html',
+    './politica-privacidade.html',
+    './termos-de-uso.html',
+    './direitos-de-terceiros.html',
+    './licenca.html',
     './manifest.webmanifest',
     './icons/icon.svg',
     './icons/icon-192.png',

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Política de Privacidade — Papiro</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg: #f7f7f5;
+            --card: #ffffff;
+            --texto: #1f2430;
+            --suave: #5b6473;
+            --borda: #e6e6e0;
+            --acento: #7a5cff;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #14161c;
+                --card: #1c1f27;
+                --texto: #e8eaf0;
+                --suave: #9aa3b2;
+                --borda: #2a2e38;
+                --acento: #a993ff;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 2rem 1rem 4rem;
+            background: var(--bg);
+            color: var(--texto);
+            font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        }
+        main {
+            max-width: 44rem;
+            margin: 0 auto;
+            background: var(--card);
+            border: 1px solid var(--borda);
+            border-radius: 18px;
+            padding: 2rem clamp(1.1rem, 4vw, 2.4rem);
+        }
+        .voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            margin-bottom: 1.4rem;
+            color: var(--acento);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: .95rem;
+        }
+        .voltar:hover { text-decoration: underline; }
+        h1 { font-size: 1.6rem; margin: 0 0 .3rem; }
+        .atualizacao { color: var(--suave); font-size: .9rem; margin: 0 0 2rem; }
+        h2 {
+            font-size: 1.12rem;
+            margin: 2rem 0 .6rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--borda);
+        }
+        h2:first-of-type { border-top: 0; padding-top: 0; }
+        p { margin: .6rem 0; }
+        ul { margin: .6rem 0; padding-left: 1.3rem; }
+        li { margin: .3rem 0; }
+        strong { color: var(--texto); }
+        code {
+            background: color-mix(in srgb, var(--acento) 14%, transparent);
+            padding: .1rem .35rem;
+            border-radius: 5px;
+            font-size: .9em;
+        }
+        footer {
+            max-width: 44rem;
+            margin: 1.6rem auto 0;
+            text-align: center;
+            color: var(--suave);
+            font-size: .82rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <a class="voltar" href="./">&larr; Voltar ao app</a>
+
+        <h1>Política de Privacidade — Papiro</h1>
+        <p class="atualizacao">Última atualização: Julho de 2026</p>
+
+        <h2>1. Filosofia Local-First</h2>
+        <p>O Papiro foi concebido sob o princípio de <em>Privacy by Design</em>. Todos os dados que você insere — textos, registros, configurações, documentos e histórico — são armazenados <strong>exclusivamente no banco de dados local do seu dispositivo</strong>. Nenhuma informação pessoal é transmitida para servidores externos, nem para o desenvolvedor.</p>
+
+        <h2>2. Dados Que Coletamos</h2>
+        <p><strong>Nenhum.</strong> O desenvolvedor não coleta, não recebe e não armazena qualquer dado seu. Tudo o que você registra permanece somente no seu dispositivo, sob seu controle.</p>
+
+        <h2>3. Transmissão de Dados</h2>
+        <p>O aplicativo <strong>não transmite para fora do seu dispositivo</strong> nenhuma informação, incluindo:</p>
+        <ul>
+            <li>Nome, endereço, e-mail ou qualquer dado de identificação pessoal;</li>
+            <li>Dados de localização geográfica;</li>
+            <li>Contatos, agenda ou arquivos do dispositivo;</li>
+            <li>Dados biométricos;</li>
+            <li>Dados de saúde, financeiros, itens de estoque ou documentos do Cofre.</li>
+        </ul>
+        <p>Recursos como <strong>Financeiro</strong>, <strong>Estoque</strong> e <strong>Cofre</strong> funcionam inteiramente no seu aparelho: os dados que você digita neles são armazenados e processados <strong>apenas localmente</strong> e nunca saem do dispositivo.</p>
+
+        <h2>4. Telemetria e Logs</h2>
+        <p>O Papiro <strong>não envia telemetria a servidores externos</strong>. Eventuais registros técnicos de depuração existem apenas em memória durante o uso e são descartados ao encerrar o aplicativo.</p>
+
+        <h2>5. Segurança dos Dados</h2>
+        <p>O banco de dados local é protegido pelos mecanismos de segurança do próprio dispositivo. O desenvolvedor não tem acesso a ele. Recomendamos:</p>
+        <ul>
+            <li>Utilizar bloqueio de tela no dispositivo;</li>
+            <li>Manter o sistema operacional e o navegador atualizados;</li>
+            <li>Estar ciente de que, por serem locais, os dados dependem inteiramente do seu dispositivo (ver Seção 8).</li>
+        </ul>
+
+        <h2>6. Direitos do Usuário (LGPD)</h2>
+        <p>O Papiro foi projetado de modo que <strong>não realizamos tratamento dos seus dados em servidores próprios</strong> — não há um controlador externo retendo suas informações. Por isso, você exerce seus direitos previstos na Lei nº 13.709/2018 <strong>diretamente, sem intermediários</strong>:</p>
+        <ul>
+            <li><strong>Acesso:</strong> todos os dados ficam visíveis na própria interface do app, a qualquer momento;</li>
+            <li><strong>Correção:</strong> edite ou remova qualquer registro diretamente nas telas do aplicativo;</li>
+            <li><strong>Exclusão:</strong> apague os dados locais conforme a Seção 7;</li>
+            <li><strong>Portabilidade:</strong> como não mantemos dados sob nossa guarda, não há informação a transferir a terceiros — os dados estão inteiramente sob seu controle, no dispositivo.</li>
+        </ul>
+
+        <h2>7. Exclusão de Dados</h2>
+        <p>Para apagar permanentemente seus dados, <strong>limpe o armazenamento do aplicativo</strong> no seu dispositivo (em um navegador: apagar os dados do site do Papiro; em um app instalado: limpar o armazenamento do app nas configurações do sistema). Isso destrói de forma definitiva o banco de dados local e todas as preferências. <strong>A operação é irreversível e não existe mecanismo de recuperação.</strong></p>
+
+        <h2>8. Responsabilidade pelos Dados</h2>
+        <p>Como os dados são exclusivamente locais e o aplicativo <strong>não oferece backup em nuvem</strong>, a preservação das informações é de inteira responsabilidade do usuário. A perda do dispositivo, a desinstalação do aplicativo, a limpeza do armazenamento pelo navegador/sistema ou uma redefinição de fábrica resultará na <strong>perda definitiva e irrecuperável</strong> de todos os dados.</p>
+
+        <h2>9. Menores de Idade</h2>
+        <p>O Papiro não transmite nem armazena fora do dispositivo dados de nenhum usuário, inclusive menores de idade. Se você é responsável por uma criança que utiliza o aplicativo, saiba que nenhum dado pessoal deixa o dispositivo.</p>
+
+        <h2>10. Alterações nesta Política</h2>
+        <p>Esta política pode ser atualizada periodicamente. Recomendamos revisitar este documento a cada atualização do aplicativo. O uso continuado após alterações constitui aceitação da nova versão.</p>
+
+        <h2>11. Contato</h2>
+        <p>Para exercer seus direitos ou relatar problemas de privacidade, utilize a seção de contato disponível na tela <strong>"Sobre"</strong> do aplicativo ou no repositório oficial do projeto.</p>
+    </main>
+    <footer>Veja também os <a href="./termos-de-uso.html" style="color:var(--acento);font-weight:600">Termos de Uso</a>.</footer>
+</body>
+</html>
