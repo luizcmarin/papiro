@@ -790,5 +790,41 @@
         "data_criacao": 1783173587455,
         "data_atualizacao": 1783174868304,
         "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102003366&srcid=share"
+    },
+    {
+        "id": 50,
+        "titulo": "A Matemática dos Esportes",
+        "categoria": "geometria",
+        "tipo": "bilhar",
+        "icone": "bi-trophy",
+        "ordem": 50,
+        "conceito": "<p>A matemática é <strong>para todos</strong> e está na nossa rotina até onde a gente menos espera: na diversão e nos esportes! Quase todos os jogos são disputados em áreas <strong>geométricas</strong> cuidadosamente calculadas — a matemática garante que o jogo funcione.</p><ul><li><strong>Futebol:</strong> um grande <em>retângulo</em>, com linhas simétricas e ângulos de 90°.</li><li><strong>Basquete:</strong> <em>esferas</em>, <em>círculos</em> (garrafão e aro) e retângulos (a tabela).</li><li><strong>Beisebol:</strong> o campo é um <em>losango</em> exato.</li><li><strong>Amarelinha:</strong> uma sequência de <em>quadrados</em> que ensina proporção e contagem.</li></ul><p>No <strong>bilhar</strong>, não basta força: é preciso dominar os <strong>ângulos</strong>. A esfera desvia nas tabelas seguindo uma regra exata — o <strong>ângulo de incidência é igual ao ângulo de reflexão</strong> —, o que permite prever exatamente onde ela vai parar.</p>",
+        "desafio": "<p>Mire a tacada: gire o <strong>ângulo</strong> e acompanhe a <strong>linha de previsão</strong> calcular os rebotes nas tabelas antes de você disparar. Encontre o ângulo que faz a esfera <strong>bater na tabela e encaçapar o alvo vermelho</strong>.</p>",
+        "reflexao": "<p>A geometria deixou você <strong>prever o futuro</strong>: sabendo que o ângulo de saída é igual ao de entrada, dá para calcular a jogada de antemão. A mesma lei da reflexão governa a luz num espelho, o eco do som e o sinal que chega à sua casa.</p><p>Uma ordem tão exata, que se repete do salão de bilhar às estrelas, aumenta o nosso apreço pela sabedoria do <strong>Grande Instrutor</strong>, Jeová Deus, que fez do universo um lugar de medidas e proporções confiáveis. Será acaso — ou teve um Projeto?</p>",
+        "referencia": "Salmo 19:1; Isaías 40:26",
+        "config": "{\"W\":20,\"H\":12,\"R\":1.25,\"maxB\":4,\"start\":[8,-3.5],\"target\":[-7,-2],\"angMin\":12,\"angMax\":80,\"ang0\":30}",
+        "xp": 100,
+        "publicar": 1,
+        "data_criacao": 1783175666883,
+        "data_atualizacao": 1783176478125,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102003366&srcid=share"
+    },
+    {
+        "id": 51,
+        "titulo": "A Harmonia Oculta na Música",
+        "categoria": "centrais",
+        "tipo": "musica",
+        "icone": "bi-music-note-beamed",
+        "ordem": 55,
+        "conceito": "<p>Você já parou para pensar por que algumas notas musicais soam tão bem juntas, enquanto outras parecem <em>arranhar</em> os ouvidos? A resposta não está na emoção, mas nas <strong>frações matemáticas</strong>. Sem a matemática, não existiria música!</p><p>Pegue a corda de um violão e toque-a: ela produz um som. Agora divida essa mesma corda <strong>exatamente pela metade (1/2)</strong> e toque de novo — você ouvirá a <strong>mesma nota</strong>, só que mais aguda (uma <strong>oitava</strong> acima). A altura do som é <strong>inversamente proporcional</strong> ao comprimento que vibra.</p><p>Foi assim que Pitágoras, há 2.500 anos, descobriu no <em>monocórdio</em> que os intervalos bonitos correspondem a <strong>frações simples</strong> do comprimento da corda:</p><ul><li><strong>1/2</strong> → a <em>Oitava</em> (razão <strong>2 : 1</strong>);</li><li><strong>2/3</strong> → a <em>Quinta perfeita</em> (razão <strong>3 : 2</strong>);</li><li><strong>3/4</strong> → a <em>Quarta</em> (razão <strong>4 : 3</strong>);</li><li><strong>4/5</strong> → a <em>Terça maior</em> (razão <strong>5 : 4</strong>).</li></ul><p>Quanto mais simples a fração, mais as ondas se encaixam e mais o acorde agrada. A beleza da música é, literalmente, <strong>matemática pura em forma de som</strong>.</p>",
+        "desafio": "<p>Diante de você há um <strong>monocórdio</strong>: em cima, a corda inteira (o Dó fundamental); embaixo, a corda com uma <strong>ponte móvel</strong>. Deslize o controle para mudar o <strong>comprimento que vibra</strong> e repare na <em>onda combinada</em>: nas frações simples (marcadas) ela fica ordenada e as notas <strong>casam</strong>; fora delas, ela <em>arranha</em>.</p><p>Seu alvo: <strong>divida a corda exatamente pela metade (1/2)</strong> para fazê-la soar a <strong>mesma nota, uma oitava acima</strong>.</p>",
+        "reflexao": "<p>Você acabou de transformar <strong>fração em melodia</strong>. A oitava não é bonita por gosto: ela é a razão exata <strong>2 : 1</strong>, e nossos ouvidos foram projetados para reconhecer e apreciar essas proporções precisas.</p><p>Uma coincidência tão fina — o mesmo número que divide a corda também organiza o que sentimos como beleza — fala alto da sabedoria do <strong>Grande Instrutor</strong>, Jeová Deus. Ele projetou o som, o ouvido e o coração para se alegrarem com o cântico (Salmo 98:4-6). Será acaso — ou teve um Projeto?</p>",
+        "referencia": "Salmo 98:4-6; Efésios 5:19",
+        "config": "{\"compMin\":40,\"compMax\":100,\"comp0\":88,\"alvo\":50,\"tol\":1.5,\"tolNota\":1.2}",
+        "xp": 100,
+        "publicar": 1,
+        "data_criacao": 1783176902428,
+        "data_atualizacao": 1783176902428,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     }
 ]
