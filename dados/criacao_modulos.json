@@ -754,5 +754,41 @@
         "data_criacao": 1783120029308,
         "data_atualizacao": 1783121564187,
         "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102003366&srcid=share"
+    },
+    {
+        "id": 48,
+        "titulo": "A Assinatura do Criador na Natureza",
+        "categoria": "geometria",
+        "tipo": "girassol",
+        "icone": "bi-flower2",
+        "ordem": 48,
+        "conceito": "<p>O mundo natural está repleto de um padrão geométrico tão perfeito que os arquitetos humanos tentam copiá-lo há séculos: uma <strong>proporção contínua</strong> (a chamada Regra de Ouro) que permite o crescimento equilibrado das coisas.</p><p>Em vez de retas aleatórias, a natureza usa formas que se reproduzem de maneira ordenada. Se você olhar de perto a criação, encontrará um show de geometria:</p><ul><li><strong>O jasmim-estrela e as flores de cera:</strong> pétalas em simetria perfeita.</li><li><strong>O girassol:</strong> as sementes crescem em espirais matemáticas exatas que aproveitam ao máximo o espaço.</li><li><strong>A concha do caracol:</strong> cresce numa espiral logarítmica que mantém a mesma forma à medida que aumenta.</li></ul><p>Para acomodar o <strong>máximo de sementes</strong> sem desperdiçar espaço, o Criador programou a planta para girar o <strong>ângulo áureo</strong> (cerca de <strong>137,5°</strong>) de uma semente para a seguinte.</p>",
+        "desafio": "<p>Gire o <strong>ângulo de crescimento</strong> entre uma semente e a próxima. Repare: qualquer alteração, mesmo de <strong>1°</strong>, abre espirais vazias (buracos) no disco. Ajuste até <strong>137,5°</strong> e veja as sementes se empacotarem sem sobra.</p>",
+        "reflexao": "<p>Só o ângulo áureo otimiza o empacotamento — a um grau de distância a perfeição se desfaz. Esse padrão não é fruto do acaso matemático; ele revela a mente organizada do <strong>Supremo Arquiteto</strong> do universo.</p><p>A mesma proporção aparece na concha, na flor e na folha. Uma ordem tão precisa, repetida por toda a criação, aumenta o nosso apreço pela sabedoria de <strong>Jeová Deus</strong>. Será acaso — ou teve um Projeto?</p>",
+        "referencia": "Salmo 104:24; Romanos 1:20",
+        "config": "{\"alvo\":137.5,\"tol\":0.3,\"ang0\":132}",
+        "xp": 100,
+        "publicar": 1,
+        "data_criacao": 1783172243283,
+        "data_atualizacao": 1783172915027,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102003366&srcid=share"
+    },
+    {
+        "id": 49,
+        "titulo": "A Matemática das Compras",
+        "categoria": "geometria",
+        "tipo": "desconto",
+        "icone": "bi-tags",
+        "ordem": 49,
+        "conceito": "<p>Não é preciso ser gênio para usar a matemática — ela é <strong>para todos</strong> e aparece o tempo todo, inclusive nas compras. Uma das contas mais úteis é a <strong>porcentagem</strong>.</p><p>Imagine que uma loja oferece um <strong>desconto de 25%</strong> (25% significa 25 em cada 100 partes, ou seja, <em>25/100 = 0,25</em> do preço) num artigo cujo preço original é <strong>R$ 35</strong>. Quanto você vai pagar?</p><p>Há um atalho simples: em vez de calcular o desconto e depois subtrair, tire a porcentagem do desconto de 100% e multiplique pelo preço:</p><p class=\"text-center fw-bold\">Preço final = Preço × (100 − desconto) ÷ 100</p><p>Ou seja: 100% − 25% = 75%, e 35 × 0,75 = <strong>R$ 26,25</strong>. Você economiza R$ 8,75.</p><p>A mesma conta serve para <strong>acréscimos</strong> (uma taxa ou juro): basta o ajuste ficar <em>negativo</em>. Um acréscimo de 20% num artigo de R$ 35 dá 35 × 1,20 = R$ 42,00.</p>",
+        "desafio": "<p>Reproduza o exemplo da loja: um artigo de <strong>R$ 35</strong> com <strong>25% de desconto</strong>. Mova o controle — que vai de −100% (acréscimo) a +100% (desconto) — até o <strong>preço final ficar em R$ 26,25</strong>. Acompanhe a fórmula e o cálculo mudarem ao vivo.</p>",
+        "reflexao": "<p>Você acabou de usar porcentagem — a mesma conta que aparece em descontos, juros, gorjetas e impostos. Repare que descontos empilhados não somam: dois descontos de 40% <strong>não</strong> dão 80%, e sim 64%, porque o segundo incide sobre o preço já reduzido.</p><p>Essa ordem simples e confiável, que funciona sempre e em toda parte, aumenta o nosso apreço pela sabedoria do <strong>Grande Instrutor</strong>, Jeová Deus, que fez do universo um lugar de medidas e proporções exatas — e nos deu a mente para entendê-las. Será acaso — ou teve um Projeto?</p>",
+        "referencia": "Provérbios 2:6; Eclesiastes 7:12",
+        "config": "{\"preco\":35,\"alvo\":26.25,\"tol\":0.3,\"aj0\":0}",
+        "xp": 100,
+        "publicar": 1,
+        "data_criacao": 1783173587455,
+        "data_atualizacao": 1783174868304,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102003366&srcid=share"
     }
 ]
