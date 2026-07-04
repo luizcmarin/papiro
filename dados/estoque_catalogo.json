@@ -140,20 +140,6 @@
         "data_atualizacao": 1782932620834
     },
     {
-        "id": 11,
-        "item": "Suco em Pó com Vitamina C",
-        "categoria": "Hidratação Estratégica e Bebidas Isotônicas",
-        "quantidade": 20,
-        "peso_unitario": 30,
-        "calorias_por_100g": 360,
-        "data_vencimento": 0,
-        "validade_meses": 18,
-        "ordem": 11,
-        "publicar": 1,
-        "data_criacao": 1782932620834,
-        "data_atualizacao": 1782932620834
-    },
-    {
         "id": 12,
         "item": "Arroz Agulhinha (PET Selada)",
         "categoria": "Estoque Calórico de Longo Prazo (Exige Água/Fogo)",
@@ -331,20 +317,6 @@
         "data_vencimento": 0,
         "validade_meses": 24,
         "ordem": 24,
-        "publicar": 1,
-        "data_criacao": 1782932620834,
-        "data_atualizacao": 1782932620834
-    },
-    {
-        "id": 25,
-        "item": "Extrato de Tomate Concentrado",
-        "categoria": "Vitaminas, Fibras e Hortifrúti em Conserva",
-        "quantidade": 6,
-        "peso_unitario": 300,
-        "calorias_por_100g": 80,
-        "data_vencimento": 0,
-        "validade_meses": 24,
-        "ordem": 25,
         "publicar": 1,
         "data_criacao": 1782932620834,
         "data_atualizacao": 1782932620834

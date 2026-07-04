@@ -2,7 +2,7 @@
     {
         "id": 1,
         "titulo": "A Eficiência do Hexágono",
-        "categoria": "centrais",
+        "categoria": "geometria",
         "tipo": "tesselacao",
         "icone": "bi-hexagon",
         "ordem": 1,
@@ -14,13 +14,13 @@
         "xp": 100,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384,
+        "data_atualizacao": 1783178056069,
         "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201501/estrutura-do-favo-de-mel/"
     },
     {
         "id": 2,
         "titulo": "O Código do Crescimento",
-        "categoria": "centrais",
+        "categoria": "geometria",
         "tipo": "sequencia",
         "icone": "bi-flower1",
         "ordem": 2,
@@ -32,13 +32,13 @@
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782931683533,
+        "data_atualizacao": 1783178026453,
         "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102006328&srcid=share"
     },
     {
         "id": 3,
         "titulo": "As Leis do Movimento",
-        "categoria": "centrais",
+        "categoria": "universo",
         "tipo": "orbita",
         "icone": "bi-globe",
         "ordem": 3,
@@ -50,13 +50,13 @@
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782931999418,
+        "data_atualizacao": 1783178076012,
         "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=1102010231&srctype=wol&srcid=share"
     },
     {
         "id": 4,
         "titulo": "Variáveis da Criação",
-        "categoria": "centrais",
+        "categoria": "universo",
         "tipo": "sandbox",
         "icone": "bi-sliders",
         "ordem": 4,
@@ -68,7 +68,7 @@
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782323833591,
+        "data_atualizacao": 1783178092800,
         "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     },
     {
@@ -727,14 +727,14 @@
         "icone": "bi-infinity",
         "ordem": 46,
         "conceito": "<p>Você já reparou que toda equação tem um sinal de <strong>igual</strong> (=) no meio? Ele funciona como o <strong>fiel de uma balança</strong>: os dois lados precisam valer exatamente o mesmo. Quando isso acontece, dizemos que a equação está em <strong>equilíbrio</strong> — em harmonia.</p><p>Os matemáticos usam palavras como <em>beleza</em> e <em>harmonia</em> para descrever as equações que explicam o mundo. Não é só \"conta\": há uma ordem elegante por trás dos números.</p>",
-        "desafio": "<p>Uma equação está em harmonia quando os dois lados se equilibram, como uma balança. <strong>Qual destas está em equilíbrio?</strong></p>",
+        "desafio": "<p>Toda equação é uma balança: o sinal de <strong>=</strong> é o fiel, e resolver a equação é achar o <strong>valor de x</strong> que deixa os dois lados com o mesmo peso. <strong>Deslize o x</strong> e observe a balança pender — pare quando ela <em>nivelar</em>.</p>",
         "reflexao": "<p>A mesma harmonia das equações simples aparece — de forma muito mais profunda — nas fórmulas que descrevem o universo: a gravidade, a luz, o movimento dos planetas. Tudo obedece a equações precisas e equilibradas.</p><p>Na revista <em>Despertai!</em> de novembro de 2015, o artigo <strong>\"Um matemático fala de sua fé\"</strong> conta como um professor de matemática enxerga \"beleza e harmonia\" nas equações — e como isso o convenceu de que por trás delas há um <strong>projeto inteligente</strong>. Uma equação não se escreve sozinha; a harmonia do universo aponta para um Autor. Será acaso — ou teve um Projeto?</p>",
         "referencia": "Salmo 104:24; Isaías 40:26",
-        "config": "{\"correta\":\"b\",\"opcoes\":[{\"id\":\"a\",\"rotulo\":\"3 + 4 = 5 + 3\",\"nota\":\"lados: 7 e 8\",\"esq\":7,\"dir\":8},{\"id\":\"b\",\"rotulo\":\"6 × 2 = 15 − 3\",\"nota\":\"lados: 12 e 12\",\"esq\":12,\"dir\":12},{\"id\":\"c\",\"rotulo\":\"10 − 2 = 3 × 3\",\"nota\":\"lados: 8 e 9\",\"esq\":8,\"dir\":9},{\"id\":\"d\",\"rotulo\":\"2 × 5 = 4 + 4\",\"nota\":\"lados: 10 e 8\",\"esq\":10,\"dir\":8}]}",
+        "config": "{\"a\": 2, \"b\": 3, \"c\": 11, \"xMax\": 10}",
         "xp": 100,
         "publicar": 1,
         "data_criacao": 1783117771784,
-        "data_atualizacao": 1783118785182,
+        "data_atualizacao": 1783178209537,
         "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102015405&srcid=share"
     },
     {
@@ -812,7 +812,7 @@
     {
         "id": 51,
         "titulo": "A Harmonia Oculta na Música",
-        "categoria": "centrais",
+        "categoria": "algoritmos",
         "tipo": "musica",
         "icone": "bi-music-note-beamed",
         "ordem": 55,
@@ -824,7 +824,7 @@
         "xp": 100,
         "publicar": 1,
         "data_criacao": 1783176902428,
-        "data_atualizacao": 1783176902428,
+        "data_atualizacao": 1783178137396,
         "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     }
 ]
