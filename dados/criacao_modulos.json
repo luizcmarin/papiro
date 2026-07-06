@@ -164,7 +164,7 @@
     {
         "id": 13,
         "titulo": "O Osso Humano",
-        "categoria": "geometria",
+        "categoria": "corpo",
         "tipo": "osso",
         "icone": "bi-person-arms-up",
         "ordem": 13,
@@ -236,7 +236,7 @@
     {
         "id": 18,
         "titulo": "A Revisão do DNA",
-        "categoria": "algoritmos",
+        "categoria": "corpo",
         "tipo": "pareamento",
         "icone": "bi-bezier2",
         "ordem": 18,
@@ -542,7 +542,7 @@
     {
         "id": 36,
         "titulo": "A Memória do DNA",
-        "categoria": "algoritmos",
+        "categoria": "corpo",
         "tipo": "dna_dados",
         "icone": "bi-hdd-stack",
         "ordem": 36,
@@ -632,7 +632,7 @@
     {
         "id": 41,
         "titulo": "O Transporte de Oxigênio",
-        "categoria": "algoritmos",
+        "categoria": "corpo",
         "tipo": "hemoglobina",
         "icone": "bi-heart-pulse",
         "ordem": 41,
@@ -824,7 +824,25 @@
         "xp": 100,
         "publicar": 1,
         "data_criacao": 1783176902428,
-        "data_atualizacao": 1783178137396,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1783354831334,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=1984204&srcid=share"
+    },
+    {
+        "id": 52,
+        "titulo": "A Cicatrização de Feridas",
+        "categoria": "corpo",
+        "tipo": "cicatrizacao",
+        "icone": "bi-bandaid",
+        "ordem": 60,
+        "conceito": "<p>Você já reparou como um simples corte na pele se fecha sozinho em poucos dias? Por trás disso há um dos processos mais bem coordenados do corpo humano.</p><p>O cirurgião <strong>Dr. Guillermo Pérez</strong>, que já acreditou na evolução, mudou de ideia ao estudar de perto a cicatrização. Para ele, tamanha coordenação é prova de projeto. O corpo tem cerca de <strong>100 mil quilômetros de vasos sanguíneos</strong> — e eles conseguem, sozinhos, estancar os próprios vazamentos e se consertar.</p><p>O reparo acontece em quatro fases, numa sequência exata:</p><ul><li><strong>Hemostasia</strong> (segundos): os vasos se contraem e as plaquetas formam um coágulo que sela a ferida.</li><li><strong>Inflamação</strong> (horas): os vasos dilatam; um fluido rico em proteínas incha a área para combater infecções e remover o tecido danificado.</li><li><strong>Proliferação</strong> (2 dias a 2 semanas): células migram e se multiplicam, formam fibras, e vasinhos brotam para nutrir a região, aproximando as bordas.</li><li><strong>Remodelação</strong> (semanas a meses): as fibras são substituídas por materiais mais fortes — fica a cicatriz.</li></ul>",
+        "desafio": "<p>Diante de você há um <strong>corte transversal da pele</strong> (epiderme, derme e hipoderme) com um ferimento em “V”. Arraste o controle <strong>“Tempo de cicatrização”</strong> e observe o corpo se reparar em tempo real: o coágulo, a chegada dos glóbulos de defesa, o tecido novo com seus vasinhos e, por fim, a cicatriz. Gire com o dedo para ver o corte em 3D.</p><p>Seu alvo: leve a ferida até <strong>100% — a cicatrização completa</strong> (fase de remodelação).</p>",
+        "reflexao": "<p>Você acabou de percorrer, em segundos, um processo que no corpo leva de dias a meses — e que envolve milhões de células agindo na ordem certa, na hora certa.</p><p>Como disse o Dr. Guillermo Pérez, “a cicatrização é um excelente exemplo de um processo coordenado de alto nível”, que o convenceu de que “fomos projetados por Deus”. O salmista já dizia que somos feitos “de modo maravilhoso e assombroso” (Salmo 139:14).</p><p>Um reparo tão engenhoso — que se ativa sozinho e sabe quando parar — teria surgido por acaso, ou teve um Projeto?</p>",
+        "referencia": "Salmo 139:14 · Despertai! 2014 (jw.org) — Dr. Guillermo Pérez",
+        "config": "{\"alvoMin\":96,\"t0\":0}",
+        "xp": 100,
+        "publicar": 1,
+        "data_criacao": 1783350083755,
+        "data_atualizacao": 1783354571128,
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102014165&srcid=share"
     }
 ]

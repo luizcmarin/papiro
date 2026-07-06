@@ -4697,86 +4697,8 @@
             </p>
         </section>
 
-        <!-- ══ CICATRIZAÇÃO — linha do tempo 3D (Three.js) ═══════════════════ -->
-        <section x-show="rota.modulo === 'cicatrizacao'"
-                 x-data="cicatrizacao()"
-                 x-init="init()"
-                 class="papiro-app">
-
-            <!-- cabeçalho -->
-            <div class="d-flex align-items-center gap-2 mb-3">
-                <button class="btn btn-sm btn-outline-secondary" @click="irHome()" aria-label="Voltar">
-                    <i class="bi bi-arrow-left" aria-hidden="true"></i>
-                </button>
-                <h1 class="h5 mb-0 me-auto">Cicatrização</h1>
-                <span class="badge text-bg-danger-subtle text-danger-emphasis">
-                    <i class="bi bi-bandaid me-1"></i>Corpo humano
-                </span>
-            </div>
-
-            <p class="text-muted small mb-3">
-                Uma linha do tempo do reparo de uma ferida — o processo que convenceu o
-                cirurgião <strong>Dr.&nbsp;Guillermo&nbsp;Pérez</strong> de que o corpo foi projetado.
-            </p>
-
-            <!-- palco 3D -->
-            <div class="cic-palco mb-2">
-                <canvas x-ref="palco" class="w-100 rounded d-block"
-                        style="aspect-ratio:16/10; touch-action:none; background:#090d18"></canvas>
-                <span class="cic-dica"><i class="bi bi-arrows-move me-1"></i>arraste para girar</span>
-            </div>
-
-            <!-- linha do tempo (passos) -->
-            <div class="d-flex align-items-stretch gap-1 mb-3">
-                <template x-for="(f, i) in fases" :key="i">
-                    <button class="cic-passo flex-fill btn btn-sm text-center px-1"
-                            :class="i === idx ? 'btn-danger' : (i < idx ? 'btn-danger-subtle text-danger-emphasis' : 'btn-outline-secondary')"
-                            @click="_parar(); ir(i)">
-                        <i class="bi d-block" :class="f.icone" aria-hidden="true"></i>
-                        <span class="cic-passo-nome" x-text="f.nome"></span>
-                    </button>
-                </template>
-            </div>
-
-            <!-- controles -->
-            <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
-                <button class="btn btn-outline-secondary" @click="anterior()" :disabled="idx === 0" aria-label="Anterior">
-                    <i class="bi bi-chevron-left"></i>
-                </button>
-                <button class="btn btn-danger px-4" @click="alternarPlay()">
-                    <i class="bi" :class="reproduzindo ? 'bi-pause-fill' : 'bi-play-fill'"></i>
-                    <span x-text="reproduzindo ? 'Pausar' : 'Reproduzir'"></span>
-                </button>
-                <button class="btn btn-outline-secondary" @click="proxima()" :disabled="idx === fases.length - 1" aria-label="Próxima">
-                    <i class="bi bi-chevron-right"></i>
-                </button>
-            </div>
-
-            <!-- fase atual -->
-            <div class="card papiro-acento papiro-acento--danger mb-3">
-                <div class="card-body">
-                    <div class="d-flex align-items-center gap-2 mb-1">
-                        <span class="badge text-bg-secondary" x-text="'Fase ' + (idx + 1) + ' de ' + fases.length"></span>
-                        <h2 class="h5 mb-0 me-auto" x-text="faseAtual.nome"></h2>
-                        <span class="badge text-bg-light border" x-text="faseAtual.tempo"></span>
-                    </div>
-                    <p class="fw-semibold mb-1" x-text="faseAtual.resumo"></p>
-                    <p class="mb-0 text-body-secondary" x-text="faseAtual.detalhe"></p>
-                </div>
-            </div>
-
-            <div class="alert alert-secondary small mb-2">
-                <i class="bi bi-quote me-1"></i>
-                “A cicatrização é um excelente exemplo de um processo coordenado de alto nível.
-                Fomos projetados por Deus.” — Dr.&nbsp;Guillermo&nbsp;Pérez
-            </div>
-            <p class="text-center small text-muted mb-4">
-                Fonte: entrevista em <em>Despertai!</em> (jw.org)
-            </p>
-        </section>
-
         <!-- ══ FALLBACK — módulos Em breve ══════════════════════════════════ -->
-        <section x-show="rota.modulo !== 'home' && rota.modulo !== 'hub' && rota.modulo !== 'sobre' && rota.modulo !== 'cartao' && rota.modulo !== 'ice' && rota.modulo !== 'anotacoes' && rota.modulo !== 'guias' && rota.modulo !== 'poesia' && rota.modulo !== 'receitas' && rota.modulo !== 'jogo' && rota.modulo !== 'criacao' && rota.modulo !== 'caderno' && rota.modulo !== 'prep' && rota.modulo !== 'financeiro' && rota.modulo !== 'metas' && rota.modulo !== 'ministerio' && rota.modulo !== 'estudo' && rota.modulo !== 'leitura' && rota.modulo !== 'calendario' && rota.modulo !== 'perfil' && rota.modulo !== 'cicatrizacao'"
+        <section x-show="rota.modulo !== 'home' && rota.modulo !== 'hub' && rota.modulo !== 'sobre' && rota.modulo !== 'cartao' && rota.modulo !== 'ice' && rota.modulo !== 'anotacoes' && rota.modulo !== 'guias' && rota.modulo !== 'poesia' && rota.modulo !== 'receitas' && rota.modulo !== 'jogo' && rota.modulo !== 'criacao' && rota.modulo !== 'caderno' && rota.modulo !== 'prep' && rota.modulo !== 'financeiro' && rota.modulo !== 'metas' && rota.modulo !== 'ministerio' && rota.modulo !== 'estudo' && rota.modulo !== 'leitura' && rota.modulo !== 'calendario' && rota.modulo !== 'perfil'"
                  class="papiro-app">
             <div class="d-flex align-items-center gap-2 mb-4">
                 <button class="btn btn-sm btn-outline-secondary" @click="irHome()">
