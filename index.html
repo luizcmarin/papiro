@@ -38,7 +38,7 @@
                 <img src="./icons/icon.svg" alt="" width="44" height="44" class="rounded-3 flex-shrink-0">
                 <div class="me-auto">
                     <h1 class="h4 mb-0 fw-bold">Papiro</h1>
-                    <div class="small text-muted">Seu companheiro diário</div>
+                    <div class="small text-muted">Seu amigo digital</div>
                 </div>
                 <!-- acesso rápido ao cartão de contato -->
                 <button class="btn btn-sm btn-outline-primary" @click="irCartao()"
@@ -1555,7 +1555,7 @@
                         <template x-if="puzzle.viz">
                             <div class="mb-3" x-init="montarViz()" x-effect="vizSync()">
                                 <canvas x-ref="canvasViz" class="w-100 rounded border d-block"
-                                        style="aspect-ratio:16/10; touch-action:none"></canvas>
+                                        :style="`aspect-ratio:${puzzle.viz.aspecto || '16/10'}; touch-action:none`"></canvas>
                                 <template x-if="puzzle.viz.dica">
                                     <p class="small text-muted mt-1 mb-0" x-text="puzzle.viz.dica"></p>
                                 </template>
@@ -3070,7 +3070,7 @@
                                 <div class="d-flex align-items-start gap-3 mb-2">
                                     <div class="flex-grow-1" role="button" @click="editar(m)">
                                         <div class="d-flex align-items-center gap-2 flex-wrap">
-                                            <span class="fw-semibold" :class="m.esta_concluida ? 'text-decoration-line-through text-muted' : ''"
+                                            <span class="fw-semibold" :class="estaConcluida(m) ? 'text-decoration-line-through text-muted' : ''"
                                                   x-text="m.titulo || 'Sem título'"></span>
                                             <span class="badge rounded-pill"
                                                   :class="{
@@ -3083,6 +3083,8 @@
                                         </div>
                                         <div class="small text-muted">
                                             <i class="bi bi-link-45deg"></i> <span x-text="rotuloCategoria(m)"></span>
+                                            <span class="badge rounded-pill text-bg-light border ms-1" x-show="ehAutomatica(m)"
+                                                  title="Progresso calculado automaticamente a partir do módulo vinculado"><i class="bi bi-arrow-repeat"></i> auto</span>
                                         </div>
                                     </div>
                                 </div>
@@ -3100,14 +3102,15 @@
                                     <small class="text-muted"><i class="bi bi-flag"></i> <span x-text="fmtData(m.prazo_final)"></span></small>
                                     <div class="d-flex gap-1">
                                         <button class="btn btn-sm btn-outline-secondary" @click="ajustarProgresso(m, -1)"
-                                                :disabled="m.esta_concluida" title="Diminuir progresso">
+                                                x-show="!ehAutomatica(m)" :disabled="estaConcluida(m)" title="Diminuir progresso">
                                             <i class="bi bi-dash-lg"></i>
                                         </button>
                                         <button class="btn btn-sm btn-outline-secondary" @click="ajustarProgresso(m, 1)"
-                                                :disabled="m.esta_concluida" title="Aumentar progresso">
+                                                x-show="!ehAutomatica(m)" :disabled="estaConcluida(m)" title="Aumentar progresso">
                                             <i class="bi bi-plus-lg"></i>
                                         </button>
                                         <button class="btn btn-sm"
+                                                x-show="!ehAutomatica(m)"
                                                 :class="m.esta_concluida ? 'btn-success' : 'btn-outline-success'"
                                                 @click="toggleConcluir(m)"
                                                 :title="m.esta_concluida ? 'Reabrir' : 'Concluir'">
@@ -3166,11 +3169,22 @@
                                    placeholder="Ex: nome da categoria / kit" x-model="form.ativo_nome">
                         </div>
 
+                        <p class="small text-muted mb-2" x-show="formEhAutomatica" x-cloak>
+                            <i class="bi bi-arrow-repeat me-1"></i>O progresso desta meta é calculado
+                            automaticamente pelo módulo vinculado. Basta definir o alvo e o prazo.
+                        </p>
+
                         <div class="row g-2 mb-2">
                             <div class="col-6">
                                 <label class="form-label small text-muted">Progresso atual (<span x-text="formUnidade"></span>)</label>
-                                <input type="number" step="0.01" min="0" class="form-control form-control-sm"
-                                       x-model.number="form.progresso_atual">
+                                <template x-if="!formEhAutomatica">
+                                    <input type="number" step="0.01" min="0" class="form-control form-control-sm"
+                                           x-model.number="form.progresso_atual">
+                                </template>
+                                <template x-if="formEhAutomatica">
+                                    <input type="text" class="form-control form-control-sm" :value="formValorAtual" readonly
+                                           title="Calculado automaticamente pelo módulo vinculado">
+                                </template>
                             </div>
                             <div class="col-6">
                                 <label class="form-label small text-muted">Meta / alvo (<span x-text="formUnidade"></span>)</label>
@@ -3190,7 +3204,7 @@
                             </div>
                         </div>
 
-                        <div class="form-check form-switch mb-3">
+                        <div class="form-check form-switch mb-3" x-show="!formEhAutomatica" x-cloak>
                             <input class="form-check-input" type="checkbox" id="meta-concl"
                                    :checked="form.esta_concluida"
                                    @change="form.esta_concluida = $event.target.checked ? 1 : 0">
@@ -4188,55 +4202,9 @@
                 <span class="text-muted small" x-text="statusSalvo" x-cloak></span>
             </div>
 
-            <!-- Sub-navegação -->
-            <div class="btn-group btn-group-sm w-100 mb-3" role="group">
-                <button class="btn" :class="subVista === 'cartao' ? 'btn-primary' : 'btn-outline-secondary'" @click="irPara('cartao')">
-                    <i class="bi bi-qr-code me-1"></i>Cartão
-                </button>
-                <button class="btn" :class="subVista === 'editar' ? 'btn-primary' : 'btn-outline-secondary'" @click="irPara('editar')">
-                    <i class="bi bi-pencil me-1"></i>Editar
-                </button>
-                <button class="btn" :class="subVista === 'ice' ? 'btn-primary' : 'btn-outline-secondary'" @click="irPara('ice')">
-                    <i class="bi bi-heart-pulse me-1"></i>Ficha ICE
-                </button>
-            </div>
-
-            <!-- ── Cartão de visita (QR) ──────────────────────────────────── -->
-            <template x-if="subVista === 'cartao'">
-            <div>
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h2 class="h5 mb-1" x-text="perfil.nome || 'Sem nome'"></h2>
-                        <div class="text-muted small mb-3" x-text="perfil.telefone"></div>
-                        <template x-if="qrDataUrl">
-                            <img :src="qrDataUrl" alt="QR vCard" class="img-fluid" style="max-width:260px">
-                        </template>
-                        <div class="text-muted small py-5" x-show="!qrDataUrl" x-cloak>
-                            <i class="bi bi-qr-code fs-1 d-block mb-2"></i>
-                            Preencha nome e telefone em <strong>Editar</strong> para gerar o cartão.
-                        </div>
-                        <p class="text-muted small mt-2 mb-0" x-show="perfil.comentario" x-cloak x-text="perfil.comentario"></p>
-                    </div>
-                    <template x-if="qrDataUrl">
-                    <div class="card-footer d-flex flex-wrap gap-2 justify-content-center">
-                        <button class="btn btn-sm btn-success" @click="abrirWhatsApp()" x-show="linkWhatsApp">
-                            <i class="bi bi-whatsapp me-1"></i>WhatsApp
-                        </button>
-                        <button class="btn btn-sm btn-outline-primary" @click="compartilhar()">
-                            <i class="bi bi-share me-1"></i>Compartilhar
-                        </button>
-                        <button class="btn btn-sm btn-outline-secondary" @click="baixarVcard()">
-                            <i class="bi bi-download me-1"></i>.vcf
-                        </button>
-                    </div>
-                    </template>
-                </div>
-            </div>
-            </template>
-
             <!-- ── Editar perfil ──────────────────────────────────────────── -->
             <template x-if="subVista === 'editar'">
-            <div x-cloak style="max-width:640px">
+            <div style="max-width:640px">
 
                 <h2 class="h6 text-muted mb-2">Cartão de visita</h2>
                 <input type="text" class="form-control mb-2" placeholder="Nome completo" x-model="perfil.nome" @input="aoMudar()">
@@ -4324,95 +4292,6 @@
             </div>
             </template>
 
-            <!-- ── Ficha ICE (resumo de emergência) ───────────────────────── -->
-            <template x-if="subVista === 'ice'">
-            <div x-cloak>
-                <template x-if="perfil.recusaTransfusao">
-                <div class="alert alert-danger d-flex align-items-center gap-2">
-                    <i class="bi bi-exclamation-octagon-fill fs-3"></i>
-                    <div><strong class="d-block">NÃO APLIQUE SANGUE</strong><span class="small">Portador de diretriz de recusa de transfusão.</span></div>
-                </div>
-                </template>
-                <template x-if="perfil.gravida">
-                <div class="alert alert-warning d-flex align-items-center gap-2">
-                    <i class="bi bi-gender-female fs-3"></i>
-                    <div><strong class="d-block">GESTANTE</strong><span class="small">
-                        <span x-show="perfil.gravidezMeses" x-text="perfil.gravidezMeses + (perfil.gravidezMeses == 1 ? ' mês' : ' meses')"></span><span x-show="perfil.dataPrevistaParto"> · parto previsto <span x-text="partoPrevisto"></span></span>
-                    </span></div>
-                </div>
-                </template>
-
-                <div class="text-center text-muted py-5" x-show="!temFichaIce" x-cloak>
-                    <i class="bi bi-heart-pulse fs-1 d-block mb-2"></i>
-                    Sem dados de emergência. Preencha em <strong>Editar</strong>.
-                </div>
-
-                <div class="card mb-2" x-show="temFichaIce" x-cloak>
-                    <div class="card-body">
-                        <div class="h5 mb-1" x-text="perfil.nome || '—'"></div>
-                        <div class="row g-2 small">
-                            <template x-if="perfil.tipoSanguineo">
-                                <div class="col-6"><span class="text-muted">Tipo sanguíneo</span><div class="fw-semibold" x-text="perfil.tipoSanguineo"></div></div>
-                            </template>
-                            <template x-if="perfil.doadorOrgaos">
-                                <div class="col-6"><span class="text-muted">Doador de órgãos</span><div class="fw-semibold text-success">Sim</div></div>
-                            </template>
-                            <template x-if="perfil.alergias">
-                                <div class="col-6"><span class="text-muted">Alergias</span><div class="fw-semibold" x-text="perfil.alergias"></div></div>
-                            </template>
-                        </div>
-                        <template x-if="perfil.gravida">
-                            <div class="small mt-2"><span class="text-muted">Gestante</span><div class="fw-semibold">
-                                <span x-show="perfil.gravidezMeses" x-text="perfil.gravidezMeses + (perfil.gravidezMeses == 1 ? ' mês de gestação' : ' meses de gestação')"></span>
-                                <span x-show="perfil.dataPrevistaParto"> · parto previsto <span x-text="partoPrevisto"></span></span>
-                            </div></div>
-                        </template>
-                        <template x-if="perfil.medicamentosEmUso">
-                            <div class="small mt-2"><span class="text-muted">Medicamentos</span><div x-text="perfil.medicamentosEmUso"></div></div>
-                        </template>
-                        <template x-if="perfil.observacoesMedicas">
-                            <div class="small mt-2"><span class="text-muted">Observações</span><div x-text="perfil.observacoesMedicas"></div></div>
-                        </template>
-                        <template x-if="perfil.fracoesAceitas">
-                            <div class="small mt-2"><span class="text-muted">Frações aceitas</span><div x-text="perfil.fracoesAceitas"></div></div>
-                        </template>
-                    </div>
-                </div>
-
-                <div class="card mb-2" x-show="perfil.contatoEmergencia || perfil.nomeColih" x-cloak>
-                    <div class="card-body small">
-                        <template x-if="perfil.contatoEmergencia">
-                            <div class="d-flex justify-content-between align-items-center mb-1">
-                                <span><i class="bi bi-person-fill-exclamation me-1 text-danger"></i><span x-text="perfil.contatoEmergencia"></span></span>
-                                <a class="btn btn-sm btn-outline-success" :href="`tel:${perfil.contatoEmergenciaTelefone}`" x-show="perfil.contatoEmergenciaTelefone"><i class="bi bi-telephone"></i></a>
-                            </div>
-                        </template>
-                        <template x-if="perfil.nomeColih">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span><i class="bi bi-hospital me-1 text-primary"></i>CoLiH: <span x-text="perfil.nomeColih"></span></span>
-                                <a class="btn btn-sm btn-outline-success" :href="`tel:${perfil.telefoneColih}`" x-show="perfil.telefoneColih"><i class="bi bi-telephone"></i></a>
-                            </div>
-                        </template>
-                    </div>
-                </div>
-
-                <div class="card" x-show="perfil.cartaoSusNumero || perfil.cpfTitular || perfil.upaReferencia || dpaRenovacao" x-cloak>
-                    <div class="card-body small">
-                        <div x-show="perfil.cartaoSusNumero"><span class="text-muted">SUS:</span> <span x-text="perfil.cartaoSusNumero"></span></div>
-                        <div x-show="perfil.cpfTitular"><span class="text-muted">CPF:</span> <span x-text="perfil.cpfTitular"></span></div>
-                        <div x-show="perfil.upaReferencia"><span class="text-muted">UPA:</span> <span x-text="perfil.upaReferencia"></span></div>
-                        <template x-if="dpaRenovacao">
-                            <div :class="dpaRenovacao.dias < 0 ? 'text-danger' : 'text-muted'">
-                                <i class="bi bi-calendar-check me-1"></i>DPA assinado em <span x-text="dpaRenovacao.data"></span>
-                                <span x-show="dpaRenovacao.dias >= 0">· renovar em <span x-text="dpaRenovacao.dias"></span> dias</span>
-                                <span x-show="dpaRenovacao.dias < 0">· vencido</span>
-                            </div>
-                        </template>
-                    </div>
-                </div>
-            </div>
-            </template>
-
         </section>
 
         <!-- ══ CARTÃO DE CONTATO (tela dedicada) ════════════════════════════ -->
@@ -4424,10 +4303,6 @@
                     <i class="bi bi-arrow-left"></i>
                 </button>
                 <h1 class="h5 mb-0 me-auto">Cartão de contato</h1>
-                <button class="btn btn-sm btn-outline-secondary"
-                        onclick="location.hash='#/perfil/editar'" title="Editar">
-                    <i class="bi bi-pencil"></i>
-                </button>
             </div>
 
             <div class="card text-center">
@@ -4451,9 +4326,6 @@
                     <button class="btn btn-sm btn-outline-primary" @click="compartilhar()">
                         <i class="bi bi-share me-1"></i>Compartilhar
                     </button>
-                    <button class="btn btn-sm btn-outline-secondary" @click="baixarVcard()">
-                        <i class="bi bi-download me-1"></i>.vcf
-                    </button>
                 </div>
                 </template>
             </div>
@@ -4468,10 +4340,6 @@
                     <i class="bi bi-arrow-left"></i>
                 </button>
                 <h1 class="h5 mb-0 me-auto"><i class="bi bi-heart-pulse text-danger me-1"></i>Ficha de emergência</h1>
-                <button class="btn btn-sm btn-outline-secondary"
-                        onclick="location.hash='#/perfil/editar'" title="Editar">
-                    <i class="bi bi-pencil"></i>
-                </button>
             </div>
 
             <template x-if="perfil.recusaTransfusao">
@@ -4550,7 +4418,7 @@
                     <div x-show="perfil.upaReferencia"><span class="text-muted">UPA:</span> <span x-text="perfil.upaReferencia"></span></div>
                     <template x-if="dpaRenovacao">
                         <div :class="dpaRenovacao.dias < 0 ? 'text-danger' : 'text-muted'">
-                            <i class="bi bi-calendar-check me-1"></i>DPA assinado em <span x-text="dpaRenovacao.data"></span>
+                            <i class="bi bi-calendar-check me-1"></i>DPA assinado
                             <span x-show="dpaRenovacao.dias >= 0">· renovar em <span x-text="dpaRenovacao.dias"></span> dias</span>
                             <span x-show="dpaRenovacao.dias < 0">· vencido</span>
                         </div>
@@ -4577,7 +4445,7 @@
                     <i class="bi bi-stars me-1" aria-hidden="true"></i>Versão <span x-text="versao"></span>
                 </span>
                 <p class="mt-3 mb-0 fw-medium lh-base">
-                    Seu companheiro diário para organizar a vida — estudo, criatividade,
+                    Seu amigo digital para organizar a vida — estudo, criatividade,
                     finanças e preparo reunidos em um só lugar, no seu ritmo.
                 </p>
             </div>

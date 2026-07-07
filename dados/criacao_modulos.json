@@ -844,5 +844,23 @@
         "data_criacao": 1783350083755,
         "data_atualizacao": 1783354571128,
         "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102014165&srcid=share"
+    },
+    {
+        "id": 53,
+        "titulo": "Uma Proteína por Acaso?",
+        "categoria": "corpo",
+        "tipo": "proteina",
+        "icone": "bi-diagram-3",
+        "ordem": 70,
+        "conceito": "<p>As proteínas são as “máquinas” da vida: uma célula pode ter milhares de tipos delas, trabalhando juntas com precisão. Cada proteína é uma <strong>cadeia de aminoácidos numa ordem exata</strong> — troque a ordem e a máquina não funciona.</p><p>Um <strong>engenheiro de software</strong>, que já foi ateu e acreditava na evolução, conta que mudou de ideia justamente ao fazer as contas: “Como matemático, aprendi a calcular probabilidades. Para a vida surgir sozinha, as proteínas já teriam de existir” — e formá-las por acaso, concluiu, é “praticamente impossível”.</p><p>Por quê? Para montar UMA proteína ao acaso seria preciso acertar, em cada posição:</p><ul><li>o <strong>aminoácido certo</strong> entre os <strong>20</strong> tipos que a vida usa;</li><li>e ainda na <strong>forma “canhota” (L)</strong> — na natureza aparecem as duas formas, mas as proteínas só aceitam uma.</li></ul><p>Uma proteína pequena tem cerca de <strong>150 aminoácidos</strong>. A chance de acertar todos de uma vez fica em torno de <strong>1 em 10²⁴⁰</strong> — um número maior do que a quantidade de átomos do universo (≈ 10⁸⁰).</p>",
+        "desafio": "<p>Diante de você há uma proteína como uma <strong>hélice em 3D</strong>. O <strong>acaso</strong> sorteia a cadeia inteira muitas vezes por segundo e acende só as contas que, por sorte, caíram no aminoácido certo. Gire com o dedo e repare: a cadeia <strong>nunca se completa</strong>.</p><p>Sua missão: fazer o acaso <strong>vencer</strong> — que ele consiga, em média, montar a proteína ao menos uma vez. Use os controles a favor do acaso:</p><ul><li>encurte a <strong>cadeia de aminoácidos</strong>;</li><li>reduza os <strong>tipos de aminoácidos</strong> no sorteio;</li><li>aumente as <strong>tentativas (10ˣ)</strong> — até mais do que o universo inteiro daria desde o Big Bang.</li></ul><p>Mas atenção à meta: uma proteína funcional <em>de verdade</em> precisa dos <strong>20 tipos</strong> e de cerca de <strong>150 aminoácidos</strong>. Veja se dá para o acaso vencer <em>sem</em> deixar de ser uma proteína real.</p>",
+        "reflexao": "<p>Conseguiu? Só se você <strong>encurtou demais a cadeia</strong> ou <strong>cortou os tipos de aminoácidos</strong> — ou seja, deixando de ser uma proteína funcional de verdade. Com uma proteína real (150 aminoácidos, 20 tipos), nem dando ao acaso <strong>mais tentativas do que há átomos no universo</strong> a conta fecha.</p><p>O astrônomo Fred Hoyle comparou a chance de a vida surgir por acaso a um <strong>tornado que, ao varrer um ferro-velho, montasse sozinho um avião</strong>. E isto é só UMA proteína — uma célula precisa de milhares, todas na hora certa.</p><p>Como concluiu aquele engenheiro, tamanha informação e ordem apontam para uma mente. “Toda casa é construída por alguém, mas quem construiu todas as coisas é Deus.” (Hebreus 3:4) — Uma proteína surgiu por acaso, ou teve um Projeto?</p>",
+        "referencia": "Hebreus 3:4 · jw.org — entrevista com um engenheiro de software; “A Origem da Vida”",
+        "config": "{\"aa0\":150,\"tipos0\":20,\"exp0\":60,\"aaMax\":300,\"expMax\":150,\"aaFunc\":100,\"expUniverso\":110}",
+        "xp": 120,
+        "publicar": 1,
+        "data_criacao": 1783355835532,
+        "data_atualizacao": 1783355835532,
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
     }
 ]

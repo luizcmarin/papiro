@@ -3,10 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        // Espelha o tema escolhido no app Papiro (sang-theme); sem preferência, segue o sistema.
+        (function () {
+            var t = localStorage.getItem('sang-theme');
+            if (t !== 'dark' && t !== 'light') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-tema', t);
+        })();
+    </script>
     <title>Licença — Papiro</title>
     <style>
         :root {
-            color-scheme: light dark;
+            color-scheme: light;
             --bg: #f7f7f5;
             --card: #ffffff;
             --texto: #1f2430;
@@ -14,15 +22,15 @@
             --borda: #e6e6e0;
             --acento: #7a5cff;
         }
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #14161c;
-                --card: #1c1f27;
-                --texto: #e8eaf0;
-                --suave: #9aa3b2;
-                --borda: #2a2e38;
-                --acento: #a993ff;
-            }
+        /* Segue o tema escolhido no app (data-tema no <html>, definido pelo script do head). */
+        :root[data-tema="dark"] {
+            color-scheme: dark;
+            --bg: #14161c;
+            --card: #1c1f27;
+            --texto: #e8eaf0;
+            --suave: #9aa3b2;
+            --borda: #2a2e38;
+            --acento: #a993ff;
         }
         * { box-sizing: border-box; }
         body {
