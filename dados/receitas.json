@@ -1,7 +1,6 @@
 [
     {
         "id": 13,
-        "id_remoto": null,
         "titulo": "Soro Caseiro de Reidratação",
         "categoria": "🎂 Especial",
         "ingredientes": "<ul><li>1 litro de água potável (fervida ou tratada)</li><li>1 colher (chá) rasa de sal</li><li>4 colheres (chá) de açúcar</li></ul>",
@@ -13,7 +12,6 @@
     },
     {
         "id": 15,
-        "id_remoto": null,
         "titulo": "Mingau de Aveia sem Fogo",
         "categoria": "🎂 Especial",
         "ingredientes": "<ul><li>4 colheres (sopa) de aveia em flocos</li><li>1 xícara de leite (ou água com leite em pó)</li><li>1 colher (sopa) de açúcar, mel ou passas</li><li>Canela em pó a gosto (opcional)</li></ul>",
@@ -25,7 +23,6 @@
     },
     {
         "id": 25,
-        "id_remoto": null,
         "titulo": "Pão Bannock de Emergência",
         "categoria": "🎂 Especial",
         "ingredientes": "<p>- 1 xícara de farinha de trigo</p><p>- 1 colher de chá de fermento em pó (opcional)</p><p>- 1 pitada de sal</p><p>- Água limpa (aproximadamente 1/3 de xícara)</p>",
@@ -37,7 +34,6 @@
     },
     {
         "id": 28,
-        "id_remoto": null,
         "titulo": "Arroz Abafado (Economia de Combustível)",
         "categoria": "🎂 Especial",
         "ingredientes": "<p>- 1 xícara de arroz branco</p><p>- 2 xícaras de água</p><p>- 1 pitada de sal ou 1/2 cubo de caldo concentrado</p>",
