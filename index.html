@@ -1407,11 +1407,6 @@
                         <i class="bi bi-arrow-left" aria-hidden="true"></i>
                     </button>
                     <h1 class="h5 mb-0 me-auto">Teve um Projeto?</h1>
-                    <template x-if="totalConcluidos > 0">
-                        <button class="btn btn-sm btn-outline-secondary" @click="abrirResumo()" title="Meu caderno de estudo">
-                            <i class="bi bi-journal-bookmark" aria-hidden="true"></i>
-                        </button>
-                    </template>
                     <span class="badge text-bg-light border" x-text="`${totalConcluidos}/${total}`"></span>
                 </div>
 
@@ -1465,38 +1460,6 @@
                     </div>
                 </template>
 
-            </div>
-            </template>
-
-            <!-- ── Resumo de estudo (Caderno do Investigador) ──────────────── -->
-            <template x-if="etapa === 'resumo'">
-            <div class="papiro-app">
-                <div class="d-flex align-items-center gap-2 mb-3">
-                    <button class="btn btn-sm btn-outline-secondary" @click="voltarLista()" aria-label="Voltar">
-                        <i class="bi bi-arrow-left" aria-hidden="true"></i>
-                    </button>
-                    <h1 class="h5 mb-0 me-auto">Meu caderno de estudo</h1>
-                </div>
-                <p class="text-muted small mb-3">O que aprendi sobre a sabedoria do Criador através da matemática na criação.</p>
-
-                <template x-for="item in resumoEstudo" :key="item.titulo">
-                    <div class="card mb-2">
-                        <div class="card-body py-2">
-                            <div class="d-flex align-items-center gap-2">
-                                <span class="fw-semibold me-auto" x-text="item.titulo"></span>
-                                <template x-if="item.diligente">
-                                    <span class="badge text-bg-warning" title="Estudo Diligente"><i class="bi bi-mortarboard-fill"></i></span>
-                                </template>
-                            </div>
-                            <template x-if="item.referencia">
-                                <div class="small text-muted fst-italic"><i class="bi bi-book me-1"></i><span x-text="item.referencia"></span></div>
-                            </template>
-                            <template x-if="item.nota">
-                                <p class="small mb-0 mt-1" x-text="item.nota"></p>
-                            </template>
-                        </div>
-                    </div>
-                </template>
             </div>
             </template>
 
@@ -3466,9 +3429,14 @@
 
                         <div class="row g-2 mb-2">
                             <div class="col-7">
-                                <select class="form-select form-select-sm" x-model.number="relForm.mes">
+                                <!-- Sem x-model: as <option> nascem de x-for e o x-model aplicaria
+                                     o valor antes de elas existirem (select preso no 1º mês). O
+                                     :selected por opção reflete relForm.mes de forma reativa. -->
+                                <select class="form-select form-select-sm"
+                                        @change="relForm.mes = Number($event.target.value)">
                                     <template x-for="(nome, i) in meses" :key="i">
-                                        <option :value="i" x-text="nome" x-show="i > 0"></option>
+                                        <option :value="i" x-text="nome" x-show="i > 0"
+                                                :selected="relForm.mes === i"></option>
                                     </template>
                                 </select>
                             </div>
@@ -3478,9 +3446,11 @@
                             </div>
                         </div>
 
-                        <select class="form-select form-select-sm mb-2" x-model="relForm.tipo_publicador">
+                        <select class="form-select form-select-sm mb-2"
+                                @change="relForm.tipo_publicador = $event.target.value">
                             <template x-for="(rotulo, val) in tiposPub" :key="val">
-                                <option :value="val" x-text="rotulo"></option>
+                                <option :value="val" x-text="rotulo"
+                                        :selected="relForm.tipo_publicador === val"></option>
                             </template>
                         </select>
 
