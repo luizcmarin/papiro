@@ -43,11 +43,11 @@
         "id": 5,
         "chave": "VISITA_PASTOREIO",
         "rotulo": "Visita de Pastoreio",
-        "conteudo": "<h3>Ponto Forte: </h3><p></p><p></p><p></p><h3>Desafio: </h3><p></p><p></p><p></p><h3>Ajuda Prática: </h3><p></p><p></p><p></p>",
+        "conteudo": "<h3>Participantes: </h3><p></p><p></p><p></p><h3>Ponto Forte: </h3><p></p><p></p><p></p><h3>Desafio: </h3><p></p><p></p><p></p><h3>Ajuda Prática: </h3><p></p><p></p><p></p>",
         "ordem": 4,
         "publicar": 1,
         "data_criacao": 1782319061407,
-        "data_atualizacao": 1782582957199
+        "data_atualizacao": 1783624703667
     },
     {
         "id": 6,

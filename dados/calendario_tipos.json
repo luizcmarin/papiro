@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "nome": "Reunião",
+        "cor_chave": "primary",
+        "icone": "grupo",
+        "ordem": 0,
+        "marca_especial": 0,
+        "publicar": 1
+    },
+    {
+        "id": 2,
+        "nome": "Compromisso",
+        "cor_chave": "secondary",
+        "icone": "evento",
+        "ordem": 1,
+        "marca_especial": 0,
+        "publicar": 1
+    },
+    {
+        "id": 3,
+        "nome": "Bloco de tempo",
+        "cor_chave": "tertiary",
+        "icone": "relogio",
+        "ordem": 2,
+        "marca_especial": 0,
+        "publicar": 1
+    },
+    {
+        "id": 4,
+        "nome": "Especial",
+        "cor_chave": "positive",
+        "icone": "estrela",
+        "ordem": 3,
+        "marca_especial": 1,
+        "publicar": 1
+    },
+    {
+        "id": 5,
+        "nome": "Pessoal",
+        "cor_chave": "aviso",
+        "icone": "pessoa",
+        "ordem": 4,
+        "marca_especial": 0,
+        "publicar": 1
+    },
+    {
+        "id": 6,
+        "nome": "Lembrete",
+        "cor_chave": "perigo",
+        "icone": "notificacao",
+        "ordem": 5,
+        "marca_especial": 0,
+        "publicar": 1
+    }
+]

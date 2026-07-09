@@ -10,12 +10,12 @@
         "desafio": "<p>Qual forma preenche toda a área sem desperdício e com o menor perímetro (menos cera)?</p>",
         "reflexao": "<p>A engenharia aeronáutica copia a estrutura de favo para fazer aviões mais fortes e leves, que gastam menos combustível. Mas a abelha já constrói esse favo perfeito desde que nasce, sem aprender geometria. Será que isso é fruto do acaso — ou teve um projeto? A precisão do favo dá louvor à sabedoria de Jeová.</p>",
         "referencia": "Provérbios 6:6-8; Salmo 104:24",
+        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201501/estrutura-do-favo-de-mel/",
         "config": "{\"correta\":\"hexagono\"}",
         "xp": 100,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1783178056069,
-        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201501/estrutura-do-favo-de-mel/"
+        "data_atualizacao": 1783178056069
     },
     {
         "id": 2,
@@ -28,12 +28,12 @@
         "desafio": "<p>Descubra o próximo número da sequência e veja a planta crescer de forma saudável.</p>",
         "reflexao": "<p>A distribuição das folhas não é por acaso: segue uma lei matemática exata para que todas recebam luz. É a ordem divina expressa em números.</p>",
         "referencia": "Salmo 104:24",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102006328&srcid=share",
         "config": "{\"sequencia\":[3,5,8,13],\"resposta\":21,\"angulo\":137.5}",
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1783178026453,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102006328&srcid=share"
+        "data_atualizacao": 1783178026453
     },
     {
         "id": 3,
@@ -46,12 +46,12 @@
         "desafio": "<p>Gire a câmera para observar o sistema. Ajuste a <strong>velocidade de impulso</strong> e toque em <em>Lançar</em>: pouca velocidade e o corpo cai no Sol; demais e ele escapa para o espaço. Encontre a faixa que produz uma órbita elíptica estável.</p>",
         "reflexao": "<p>A janela para uma órbita estável é estreitíssima — um equilíbrio fino entre cair e escapar. Que os planetas se mantenham nesse ponto exato, ano após ano, dá louvor à sabedoria e ao poder de Jeová, que \"a tudo isso faz sair por número\" (Isaías 40:26).</p>",
         "referencia": "Jó 38:33",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=1102010231&srctype=wol&srcid=share",
         "config": "{\"v0\":18,\"vCirc\":29.78,\"vEsc\":42.1,\"tolV\":1.5}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1783178076012,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=1102010231&srctype=wol&srcid=share"
+        "data_atualizacao": 1783178076012
     },
     {
         "id": 4,
@@ -64,12 +64,12 @@
         "desafio": "<p>Gire a câmera e observe a Terra na zona habitável (faixa verde). Altere a <strong>gravidade</strong> e a <strong>distância ao Sol</strong> e veja a Terra sair do ponto exato — só há vida quando tudo está em equilíbrio fino.</p>",
         "reflexao": "<p>Bastam pequenas mudanças para a vida se tornar impossível. A Terra foi \"formada para ser habitada\" — um projeto fino demais para ser obra do acaso.</p>",
         "referencia": "Isaías 45:18",
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/",
         "config": "{\"tol\":1,\"controles\":[{\"rotulo\":\"Gravidade\",\"prop\":\"g\"},{\"rotulo\":\"Distância ao Sol\",\"prop\":\"d\"}]}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1783178092800,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1783178092800
     },
     {
         "id": 5,
@@ -82,12 +82,12 @@
         "desafio": "<p>Some os vetores do trajeto e mire a seta da volta até a ponta pousar no ninho — essa reta é a soma de todos os passos da formiga.</p>",
         "reflexao": "<p>O que para nós exige cálculo vetorial e instrumentos, a formiga faz por instinto, com um cérebro menor que a cabeça de um alfinete. Mesmo as menores criaturas revelam a sabedoria do Criador, Jeová.</p><p><strong>Se ela caminhou em ziguezague 5 passos, 4 passos e 3 passos, qual seria o número de passos para o retorno em linha reta?</strong></p><p>A confusão acontece porque o cérebro da formiga não faz uma soma aritmética simples (5 + 4 + 3 = 12). Se ela andasse 12 passos em linha reta, passaria muito longe do formigueiro.</p><p>O que ela faz é uma <strong>soma vetorial</strong> (geometria). Ela calcula a distância real em linha reta usando o conceito que conhecemos na matemática como o <strong>Teorema de Pitágoras</strong> e triângulos.</p><p>Para ficar fácil de entender, vamos imaginar que esses passos formaram um \"L\" no deserto (um triângulo retângulo):</p><ol><li>Ela sai do formigueiro e anda <strong>3 passos</strong> para o Norte.</li><li>Depois, ela vira e anda <strong>4 passos</strong> para o Leste (onde ela acha a comida).</li></ol><p>Se somarmos os passos que ela deu para ir, foram 3 + 4 = 7 passos no total.</p><p><strong>O cálculo de retorno</strong></p><p>Para voltar em linha reta (fechando a diagonal do triângulo), o \"computador\" interno dela calcula a hipotenusa desse triângulo:</p><p class=\"fst-italic\">Distância de volta² = 3² + 4²<br>Distância de volta² = 9 + 16<br>Distância de volta² = 25<br>Distância de volta = √25 = <strong>5 passos</strong></p><p>Então, em vez de caminhar os 7 passos de volta pelo ziguezague, ela vira exatamente na direção correta e caminha apenas <strong>5 passos em linha reta</strong> para chegar ao formigueiro.</p><p>Se os passos fossem em vários ziguezagues malucos (como os 5, 4 e 3 citados), o cálculo interno dela junta todos os pedacinhos que foram para o Norte/Sul e todos os que foram para o Leste/Oeste, transformando tudo em um único triângulo virtual para achar a linha reta perfeita.</p><p>Ficou mais claro como essa \"soma\" funciona?</p>",
         "referencia": "Provérbios 30:24, 25",
+        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/despertai-n1-2017-fevereiro/formiga-prateada-do-saara/",
         "config": "{\"vetores\":[[3,4],[-4,1],[1,3]]}",
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1783100592233,
-        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/despertai-n1-2017-fevereiro/formiga-prateada-do-saara/"
+        "data_atualizacao": 1783100592233
     },
     {
         "id": 6,
@@ -100,12 +100,12 @@
         "desafio": "<p>Ajuste o ângulo de ataque da nadadeira para obter a máxima sustentação.</p>",
         "reflexao": "<p>Engenheiros aeronáuticos copiam esse desenho para melhorar asas e turbinas. O modelo veio primeiro da criação de Jeová.</p>",
         "referencia": "Jó 12:7-9",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102013210&srcid=share",
         "config": "{\"alvoMin\":16,\"alvoMax\":22,\"a0\":4}",
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782932845462,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102013210&srcid=share"
+        "data_atualizacao": 1782932845462
     },
     {
         "id": 7,
@@ -118,12 +118,12 @@
         "desafio": "<p>Ajuste a envergadura (b) e a área (S) até alcançar a razão de aspecto ideal.</p>",
         "reflexao": "<p>A proporção exata da asa, criada por Jeová, dá ao albatroz um planeio que a engenharia humana ainda admira.</p>",
         "referencia": "Jó 39:26",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102013290&srcid=share",
         "config": "{\"alvo\":25,\"tol\":0.5,\"b0\":5,\"s0\":3}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782933100028,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102013290&srcid=share"
+        "data_atualizacao": 1782933100028
     },
     {
         "id": 9,
@@ -136,12 +136,12 @@
         "desafio": "<p>Ajuste a captação da antena de clorofila até a folha aproveitar quase toda a luz e produzir açúcar e oxigênio.</p>",
         "reflexao": "<p>Cientistas tentam imitar a fotossíntese para criar combustíveis limpos a partir da luz do Sol — e admitem estar longe da eficiência da folha. Esse \"painel solar vivo\", presente em cada planta verde, dá louvor à sabedoria de Jeová, \"a fonte da vida\".</p>",
         "referencia": "Salmo 36:9",
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/fotossintese/",
         "config": "{\"alvo\":85,\"c0\":12}",
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1781893572384,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/fotossintese/"
+        "data_atualizacao": 1781893572384
     },
     {
         "id": 12,
@@ -154,12 +154,12 @@
         "desafio": "<p>Qual forma cobre a superfície curva sem lacunas e sem distorcer a visão?</p>",
         "reflexao": "<p>A tesselação perfeita do olho composto revela a precisão geométrica do Criador.</p>",
         "referencia": "Jó 39:26",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102008091&srcid=share",
         "config": "{\"alvo\":70,\"f0\":8}",
         "xp": 110,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782933378942,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102008091&srcid=share"
+        "data_atualizacao": 1782933378942
     },
     {
         "id": 13,
@@ -172,12 +172,12 @@
         "desafio": "<p>Adicione reforços ao longo da diagonal por onde passa a força do peso do corpo.</p>",
         "reflexao": "<p>O corpo humano foi \"feito de modo tremendo e maravilhoso\". Até a estrutura interna dos ossos louva a sabedoria de Jeová.</p>",
         "referencia": "Salmo 139:14",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102010013&srcid=share",
         "config": "{\"alvoMin\":45,\"alvoMax\":65,\"d0\":8}",
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782933473360,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102010013&srcid=share"
+        "data_atualizacao": 1782933473360
     },
     {
         "id": 14,
@@ -190,12 +190,12 @@
         "desafio": "<p>Ajuste o espaçamento das ranhuras até a turbulência cair ao mínimo.</p>",
         "reflexao": "<p>Esse desenho inspira trajes de natação e cascos de navio. O original veio da sabedoria de Jeová.</p>",
         "referencia": "Jó 12:8",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=502200111&srcid=share",
         "config": "{\"alvo\":35,\"tol\":3,\"e0\":80}",
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782933672270,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=502200111&srcid=share"
+        "data_atualizacao": 1782933672270
     },
     {
         "id": 15,
@@ -208,12 +208,12 @@
         "desafio": "<p>Ajuste a distância entre as fendas até refletir exatamente a cor azul.</p>",
         "reflexao": "<p>Cor sem tinta, apenas com geometria e luz: um projeto óptico que dá glória ao Criador.</p>",
         "referencia": "Salmo 104:24",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102014129&srcid=share",
         "config": "{\"lambdaAlvo\":470,\"tol\":12,\"d0\":600}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782933776651,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102014129&srcid=share"
+        "data_atualizacao": 1782933776651
     },
     {
         "id": 17,
@@ -226,12 +226,12 @@
         "desafio": "<p>Ajuste a defasagem das franjas até o ruído ser cancelado (amplitude próxima de zero).</p>",
         "reflexao": "<p>O cancelamento de fase que a coruja usa é estudado pela acústica moderna. O Projetista veio antes.</p>",
         "referencia": "Jó 39:26",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=502019454&srcid=share",
         "config": "{\"tol\":4,\"fase0\":30}",
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782933836656,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=502019454&srcid=share"
+        "data_atualizacao": 1782933836656
     },
     {
         "id": 18,
@@ -244,12 +244,12 @@
         "desafio": "<p>Atue como a enzima revisora: marque as colunas em que o pareamento está errado.</p>",
         "reflexao": "<p>Um sistema de correção de erros melhor que o de qualquer computador humano aponta para a sabedoria de Jeová.</p>",
         "referencia": "Salmo 139:16",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102015282&srcid=share",
         "config": "{\"fitaA\":[\"A\",\"T\",\"C\",\"G\",\"A\",\"C\",\"G\",\"T\"],\"fitaB\":[\"T\",\"A\",\"T\",\"C\",\"T\",\"A\",\"C\",\"A\"]}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782934621691,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102015282&srcid=share"
+        "data_atualizacao": 1782934621691
     },
     {
         "id": 20,
@@ -262,12 +262,12 @@
         "desafio": "<p>Ajuste a amplitude (A) e a fase (φ) até sincronizar o organismo com o ciclo do dia.</p>",
         "reflexao": "<p>Relógios biológicos precisos, presentes desde os menores seres, refletem a ordem que Jeová estabeleceu para marcar tempos e estações.</p>",
         "referencia": "Gênesis 1:14",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102013364&srcid=share",
         "config": "{\"ampAlvo\":3,\"faseAlvo\":90,\"tol\":0.2,\"tolFase\":6,\"a0\":1,\"fase0\":0}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782934814753,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102013364&srcid=share"
+        "data_atualizacao": 1782934814753
     },
     {
         "id": 21,
@@ -280,12 +280,12 @@
         "desafio": "<p>Visite todas as flores na ordem que forma o caminho mais curto possível.</p>",
         "reflexao": "<p>O que exige supercomputadores, a abelha faz com um cérebro minúsculo. Isso dá louvor à sabedoria de Jeová.</p>",
         "referencia": "Provérbios 6:6-8",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=101995090&srctype=wol&srcid=share",
         "config": "{\"pontos\":[[15,25],[80,15],[50,50],[20,80],[85,75],[55,90]],\"tol\":1.05}",
         "xp": 140,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782935502654,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=101995090&srctype=wol&srcid=share"
+        "data_atualizacao": 1782935502654
     },
     {
         "id": 22,
@@ -298,12 +298,12 @@
         "desafio": "<p>Ajuste a curvatura da lente até todos os raios focarem num só ponto.</p>",
         "reflexao": "<p>\"Aquele que formou o olho, não vê?\" A óptica perfeita do olho aponta para o Projetista que o criou.</p>",
         "referencia": "Salmo 94:9",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102004286&srcid=share",
         "config": "{\"alvo\":50,\"tol\":3,\"c0\":10}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782935966287,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102004286&srcid=share"
+        "data_atualizacao": 1782935966287
     },
     {
         "id": 23,
@@ -316,12 +316,12 @@
         "desafio": "<p>Gire a câmera ao redor da Terra e aumente a <strong>intensidade do campo magnético</strong> até que o vento solar (as partículas vindas do Sol) seja desviado para os polos — formando as auroras — em vez de atingir o planeta.</p>",
         "reflexao": "<p>Um escudo invisível, desenhado com precisão geométrica, mantém a vida possível. Quem o projetou senão Jeová?</p>",
         "referencia": "Jó 38:33",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102009043&srcid=share",
         "config": "{\"limiar\":60,\"b0\":15}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1781893572384,
-        "data_atualizacao": 1782936054107,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102009043&srcid=share"
+        "data_atualizacao": 1782936054107
     },
     {
         "id": 24,
@@ -334,12 +334,12 @@
         "desafio": "<p>Afine o bico até o mergulho entrar na água sem turbulência nem respingo.</p>",
         "reflexao": "<p>Engenheiros japoneses copiaram esse bico para o nariz do trem-bala Shinkansen, acabando com o estrondo ao sair dos túneis e economizando energia. O projeto veio primeiro da criação de Jeová.</p>",
         "referencia": "Jó 12:7-9",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102010132&srcid=share",
         "config": "{\"alvo\":80,\"tol\":6,\"f0\":15}",
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1782414487368,
-        "data_atualizacao": 1782933971080,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102010132&srcid=share"
+        "data_atualizacao": 1782933971080
     },
     {
         "id": 25,
@@ -352,12 +352,12 @@
         "desafio": "<p>Ajuste a inclinação do eixo. Veja o que dá estações equilibradas — e o que torna o clima extremo.</p>",
         "reflexao": "<p>Eixo muito reto ou muito inclinado tornaria boa parte da Terra inóspita. O ajuste fino que permite a vida dá louvor à sabedoria de Jeová, que formou a Terra \"para ser habitada\".</p>",
         "referencia": "Isaías 45:18",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=2004522&srcid=share",
         "config": "{\"alvo\":23.5,\"tol\":3,\"t0\":0}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1782433697969,
-        "data_atualizacao": 1782936259328,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=2004522&srcid=share"
+        "data_atualizacao": 1782936259328
     },
     {
         "id": 26,
@@ -370,12 +370,12 @@
         "desafio": "<p>Ajuste o brilho da água-viva até atrair o plâncton — nem fraco demais, nem forte demais.</p>",
         "reflexao": "<p>Engenheiros sonham com uma luz tão eficiente quanto a \"luz fria\" dos seres vivos. Esse projeto, presente nos menores animais, dá louvor à sabedoria de Jeová.</p>",
         "referencia": "Salmo 104:25",
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/Show-de-luzes-da-natureza-Teve-um-Projeto/",
         "config": "{\"alvoMin\":55,\"alvoMax\":78,\"b0\":15}",
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1782433966548,
-        "data_atualizacao": 1782433966548,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/Show-de-luzes-da-natureza-Teve-um-Projeto/"
+        "data_atualizacao": 1782433966548
     },
     {
         "id": 27,
@@ -388,12 +388,12 @@
         "desafio": "<p>Use o eco para descobrir a que distância está a presa e mire o sonar nela.</p>",
         "reflexao": "<p>Esse \"sonar vivo\" é tão preciso que inspirou aparelhos humanos. A criação revela o cuidado e a sabedoria de Jeová.</p>",
         "referencia": "Jó 12:7-9",
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/ecolocalizacao/",
         "config": "{\"alvo\":65,\"tol\":4,\"d0\":10}",
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1782433966548,
-        "data_atualizacao": 1782433966548,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/ecolocalizacao/"
+        "data_atualizacao": 1782433966548
     },
     {
         "id": 28,
@@ -406,12 +406,12 @@
         "desafio": "<p>Ajuste a porosidade do papo até o anel de vórtice se formar e a semente planar.</p>",
         "reflexao": "<p>Engenheiros estudam esse \"paraquedas poroso\" para criar sensores e drones que flutuam no ar. O voo perfeito de uma simples semente, que \"não trabalha nem fia\", dá louvor à sabedoria de Jeová.</p>",
         "referencia": "Mateus 6:28-30",
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/semente-dente-de-leao/",
         "config": "{\"alvo\":91,\"tol\":4,\"p0\":55}",
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1782597826112,
-        "data_atualizacao": 1782597826112,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/semente-dente-de-leao/"
+        "data_atualizacao": 1782597826112
     },
     {
         "id": 29,
@@ -424,12 +424,12 @@
         "desafio": "<p>Ajuste o fator de crescimento até obter a espiral elegante e eficiente da concha.</p>",
         "reflexao": "<p>A mesma espiral aparece em galáxias, furacões e girassóis — uma assinatura matemática que se repete do menor ao maior. Essa ordem que atravessa toda a criação dá louvor à sabedoria de Jeová.</p>",
         "referencia": "Salmo 104:24, 25",
+        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/despertai-n5-outubro-2017/formato-das-conchas/",
         "config": "{\"alvo\":18,\"tol\":1.2,\"b0\":4}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1782597826112,
-        "data_atualizacao": 1782597826112,
-        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/despertai-n5-outubro-2017/formato-das-conchas/"
+        "data_atualizacao": 1782597826112
     },
     {
         "id": 30,
@@ -442,12 +442,12 @@
         "desafio": "<p>Defina o ritmo de consumo (amido ÷ horas) para a reserva durar exatamente até o amanhecer.</p>",
         "reflexao": "<p>Uma planta sem cérebro resolvendo uma conta de divisão toda noite? Essa matemática embutida na criação dá louvor à sabedoria do Projetista, Jeová.</p>",
         "referencia": "Salmo 104:24",
+        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201511/pesquisas-noite-plantas-habilidade-matematica/",
         "config": "{\"amido\":100,\"horas\":10,\"tol\":0.6,\"r0\":4}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1782597826112,
-        "data_atualizacao": 1782597826112,
-        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201511/pesquisas-noite-plantas-habilidade-matematica/"
+        "data_atualizacao": 1782597826112
     },
     {
         "id": 31,
@@ -460,12 +460,12 @@
         "desafio": "<p>Ajuste a curvatura do arco até a represa segurar a água sem arrombar.</p>",
         "reflexao": "<p>Sem nunca estudar engenharia, o castor aplica um princípio que os humanos levaram séculos para dominar. Esse instinto de construtor dá louvor à sabedoria de Jeová.</p>",
         "referencia": "Provérbios 3:19, 20",
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/a-habilidade-de-construcao-do-castor/",
         "config": "{\"alvoMin\":45,\"alvoMax\":72,\"c0\":8}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1782598159724,
-        "data_atualizacao": 1782598159724,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/a-habilidade-de-construcao-do-castor/"
+        "data_atualizacao": 1782598159724
     },
     {
         "id": 32,
@@ -478,12 +478,12 @@
         "desafio": "<p>Ajuste a inclinação das espículas até elas penetrarem no pelo, desembaraçarem e espalharem a saliva.</p>",
         "reflexao": "<p>Engenheiros copiaram essa língua para criar escovas e até curativos que limpam melhor. O projeto, porém, já estava pronto no gato — obra da sabedoria de Jeová.</p>",
         "referencia": "Salmo 104:24",
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/lingua-do-gato/",
         "config": "{\"alvoMin\":55,\"alvoMax\":80,\"a0\":12}",
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1782598159724,
-        "data_atualizacao": 1782598159724,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/lingua-do-gato/"
+        "data_atualizacao": 1782598159724
     },
     {
         "id": 33,
@@ -496,12 +496,12 @@
         "desafio": "<p>Ajuste a largura da passagem até os bigodes tocarem as duas bordas — o limite exato do \"cabe / não cabe\".</p>",
         "reflexao": "<p>Medir o próprio corpo com precisão, no escuro, sem régua nem trena: esse instrumento embutido no gato dá louvor à sabedoria do Criador, Jeová.</p>",
         "referencia": "Jó 12:7-9",
+        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201504/bigode-do-gato/",
         "config": "{\"alvo\":50,\"tol\":5,\"g0\":92}",
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1782598159724,
-        "data_atualizacao": 1782598159724,
-        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201504/bigode-do-gato/"
+        "data_atualizacao": 1782598159724
     },
     {
         "id": 34,
@@ -514,12 +514,12 @@
         "desafio": "<p>Posicione a dobra no ponto certo para a ventosa da ponta alcançar a presa.</p>",
         "reflexao": "<p>Robôs \"moles\" copiam essa solução para braços flexíveis. A engenharia do polvo, que simplifica o impossível, dá louvor à sabedoria de Jeová.</p>",
         "referencia": "Salmo 104:24",
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/braco-polvo/",
         "config": "{\"alvo\":60,\"tol\":6,\"d0\":14}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1782598461135,
-        "data_atualizacao": 1782598461135,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/braco-polvo/"
+        "data_atualizacao": 1782598461135
     },
     {
         "id": 35,
@@ -532,12 +532,12 @@
         "desafio": "<p>Ajuste a distância de segurança até o cardume fluir junto, sem colisões e sem se desfazer.</p>",
         "reflexao": "<p>Engenheiros usam essas regras em enxames de drones e em carros que se evitam sozinhos. A coordenação dos cardumes, sem ninguém comandando, dá louvor à sabedoria de Jeová.</p>",
         "referencia": "Provérbios 30:24-27",
+        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201209/comportamento-anticolisao-dos-peixes/",
         "config": "{\"alvoMin\":40,\"alvoMax\":70,\"s0\":8}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1782598461135,
-        "data_atualizacao": 1782598461135,
-        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201209/comportamento-anticolisao-dos-peixes/"
+        "data_atualizacao": 1782598461135
     },
     {
         "id": 36,
@@ -550,12 +550,12 @@
         "desafio": "<p>Aumente a compactação até os dados de imensos data centers caberem num punhado de DNA.</p>",
         "reflexao": "<p>A tecnologia humana corre atrás de uma densidade que a célula viva já usa há milênios para guardar a \"receita\" da vida. Essa biblioteca microscópica dá louvor à sabedoria de Jeová.</p>",
         "referencia": "Salmo 139:16",
+        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201312/capacidade-armazenamento-dna/",
         "config": "{\"alvo\":85,\"k0\":8}",
         "xp": 140,
         "publicar": 1,
         "data_criacao": 1782598461135,
-        "data_atualizacao": 1782598461135,
-        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201312/capacidade-armazenamento-dna/"
+        "data_atualizacao": 1782598461135
     },
     {
         "id": 37,
@@ -568,12 +568,12 @@
         "desafio": "<p>Ajuste os tubérculos no bordo da pá até a turbina render o máximo, com o fluxo colado.</p>",
         "reflexao": "<p>Uma baleia de 30 toneladas faz curvas fechadas graças a esse detalhe — que a engenharia só entendeu há pouco. O modelo veio primeiro da criação de Jeová.</p>",
         "referencia": "Jó 12:7-9",
+        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201306/nadadeira-da-baleia-corcunda/",
         "config": "{\"alvoMin\":50,\"alvoMax\":80,\"b0\":10}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1782598711406,
-        "data_atualizacao": 1782598711406,
-        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201306/nadadeira-da-baleia-corcunda/"
+        "data_atualizacao": 1782598711406
     },
     {
         "id": 38,
@@ -586,12 +586,12 @@
         "desafio": "<p>Ajuste o foco do melão até o feixe de som convergir exatamente sobre a presa.</p>",
         "reflexao": "<p>Esse sonar vivo supera, em muitos aspectos, os melhores aparelhos humanos. A precisão embutida no golfinho dá louvor à sabedoria de Jeová.</p>",
         "referencia": "Salmo 104:24, 25",
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/sonar-golfinho/",
         "config": "{\"alvo\":62,\"tol\":5,\"f0\":12}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1782598711406,
-        "data_atualizacao": 1782598711406,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/sonar-golfinho/"
+        "data_atualizacao": 1782598711406
     },
     {
         "id": 39,
@@ -604,12 +604,12 @@
         "desafio": "<p>Ajuste o tamanho do passo e o número de passos até a formiga cravar exatamente o ninho.</p>",
         "reflexao": "<p>Uma calculadora viva que mede distância multiplicando passos, sem régua nem GPS, dentro de um inseto minúsculo. Essa engenharia de precisão dá louvor à sabedoria de Jeová.</p>",
         "referencia": "Provérbios 30:24, 25",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102017010&srcid=share",
         "config": "{\"alvo\":100,\"tol\":4,\"passo0\":5,\"passos0\":12,\"passoMin\":2,\"passoMax\":9,\"passosMax\":60}",
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1782838750983,
-        "data_atualizacao": 1782933274904,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102017010&srcid=share"
+        "data_atualizacao": 1782933274904
     },
     {
         "id": 40,
@@ -622,12 +622,12 @@
         "desafio": "<p>Ajuste a reflexão da luz do sol e a emissão do próprio calor até a temperatura do corpo ficar abaixo do limite letal. É preciso os dois — só um não basta.</p>",
         "reflexao": "<p>Engenheiros copiam esses pelos para criar revestimentos que se mantêm frios sob o sol sem gastar nenhuma energia. Um \"ar-condicionado\" passivo embutido numa formiga do deserto dá louvor à sabedoria do Criador, Jeová.</p>",
         "referencia": "Jó 12:7-9",
+        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/despertai-n1-2017-fevereiro/formiga-prateada-do-saara/",
         "config": "{\"ambiente\":62,\"ganho\":0.18,\"perda\":0.14,\"limite\":53,\"refl0\":55,\"emis0\":55}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1782933074791,
-        "data_atualizacao": 1782933074791,
-        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/despertai-n1-2017-fevereiro/formiga-prateada-do-saara/"
+        "data_atualizacao": 1782933074791
     },
     {
         "id": 41,
@@ -640,12 +640,12 @@
         "desafio": "<p>Ajuste a força de ligação (afinidade) da hemoglobina até a entrega de oxigênio ficar máxima.</p>",
         "reflexao": "<p>Uma molécula que sabe a hora exata de segurar e de soltar o oxigênio, bilhões de vezes ao dia, sem falhar. \"A vida da carne está no sangue\" — e esse projeto tão fino dá louvor à sabedoria de Jeová.</p>",
         "referencia": "Levítico 17:11",
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/transporte-oxigenio/",
         "config": "{\"alvo\":50,\"tol\":8,\"a0\":20}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1782940024723,
-        "data_atualizacao": 1782940024723,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/transporte-oxigenio/"
+        "data_atualizacao": 1782940024723
     },
     {
         "id": 42,
@@ -658,12 +658,12 @@
         "desafio": "<p>Ajuste o ritmo de lambidas por segundo até o beija-flor coletar o máximo de néctar.</p>",
         "reflexao": "<p>Uma bombinha viva, rápida e eficiente, num pássaro que pesa menos que uma moeda. Esse projeto delicado dá louvor à sabedoria do Criador, Jeová.</p>",
         "referencia": "Salmo 104:24",
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/lingua-beija-flor/",
         "config": "{\"alvo\":15,\"tol\":2,\"f0\":4}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1782940024723,
-        "data_atualizacao": 1782940024723,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/lingua-beija-flor/"
+        "data_atualizacao": 1782940024723
     },
     {
         "id": 43,
@@ -676,12 +676,12 @@
         "desafio": "<p>Sintonize a frequência do ouvido do grilo até bater com o canto do parceiro (pico de ressonância).</p>",
         "reflexao": "<p>\"Aquele que formou o ouvido, será que não ouve?\" Um sintonizador de precisão dentro da perna de um inseto dá louvor à sabedoria de Jeová.</p>",
         "referencia": "Salmo 94:9",
+        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201310/audicao-do-grilo/",
         "config": "{\"alvo\":4.5,\"tol\":0.35,\"f0\":1.5}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1782940024723,
-        "data_atualizacao": 1782940024723,
-        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201310/audicao-do-grilo/"
+        "data_atualizacao": 1782940024723
     },
     {
         "id": 44,
@@ -694,12 +694,12 @@
         "desafio": "<p>Ajuste a inclinação das escamas da lanterna até o brilho que escapa ficar máximo.</p>",
         "reflexao": "<p>Um truque de óptica que a indústria levou muito tempo para descobrir já estava pronto num besouro. Essa luz bem projetada dá louvor à sabedoria de Jeová.</p>",
         "referencia": "Salmo 104:24",
+        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201402/lanterna-vaga-lume-photuris/",
         "config": "{\"alvo\":60,\"tol\":6,\"i0\":12}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1782940024723,
-        "data_atualizacao": 1782940024723,
-        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201402/lanterna-vaga-lume-photuris/"
+        "data_atualizacao": 1782940024723
     },
     {
         "id": 45,
@@ -712,12 +712,12 @@
         "desafio": "<p>Ajuste a graduação da espuma da casca até a força que chega à polpa ficar abaixo do limite — e a fruta sobreviver à queda.</p>",
         "reflexao": "<p>Um \"capacete\" natural, feito de espuma inteligente, protegendo a semente da vida. Esse projeto de absorção de impacto dá louvor à sabedoria de Jeová.</p>",
         "referencia": "Provérbios 3:19",
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/casca-resistente-impacto-pomelo/",
         "config": "{\"alvo\":65,\"limite\":25,\"g0\":15}",
         "xp": 130,
         "publicar": 1,
         "data_criacao": 1782940024723,
-        "data_atualizacao": 1782940024723,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/casca-resistente-impacto-pomelo/"
+        "data_atualizacao": 1782940024723
     },
     {
         "id": 46,
@@ -730,12 +730,12 @@
         "desafio": "<p>Toda equação é uma balança: o sinal de <strong>=</strong> é o fiel, e resolver a equação é achar o <strong>valor de x</strong> que deixa os dois lados com o mesmo peso. <strong>Deslize o x</strong> e observe a balança pender — pare quando ela <em>nivelar</em>.</p>",
         "reflexao": "<p>A mesma harmonia das equações simples aparece — de forma muito mais profunda — nas fórmulas que descrevem o universo: a gravidade, a luz, o movimento dos planetas. Tudo obedece a equações precisas e equilibradas.</p><p>Na revista <em>Despertai!</em> de novembro de 2015, o artigo <strong>\"Um matemático fala de sua fé\"</strong> conta como um professor de matemática enxerga \"beleza e harmonia\" nas equações — e como isso o convenceu de que por trás delas há um <strong>projeto inteligente</strong>. Uma equação não se escreve sozinha; a harmonia do universo aponta para um Autor. Será acaso — ou teve um Projeto?</p>",
         "referencia": "Salmo 104:24; Isaías 40:26",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102015405&srcid=share",
         "config": "{\"a\": 2, \"b\": 3, \"c\": 11, \"xMax\": 10}",
         "xp": 100,
         "publicar": 1,
         "data_criacao": 1783117771784,
-        "data_atualizacao": 1783178209537,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102015405&srcid=share"
+        "data_atualizacao": 1783178209537
     },
     {
         "id": 47,
@@ -748,12 +748,12 @@
         "desafio": "<p>Você vai azulejar um piso, e cada azulejo é <strong>1 m²</strong>. Ajuste o <strong>comprimento</strong> e a <strong>largura</strong> para cobrir exatamente <strong>12 m²</strong>. Repare: existe mais de um jeito de conseguir!</p>",
         "reflexao": "<p>Você acabou de usar geometria — e nem precisou de fórmulas complicadas. Descobriu também que <strong>12 m² podem ser 3 × 4, 4 × 3, 2 × 6 ou 6 × 2</strong>: caminhos diferentes chegam ao mesmo resultado. É por isso que se diz que a matemática é <strong>uma língua universal</strong> — todos podem aprendê-la e usá-la.</p><p>Essa ordem simples e confiável, que funciona sempre e em toda parte, aumenta o nosso apreço pela sabedoria do <strong>Grande Matemático</strong>, o Criador, Jeová Deus, que deu ao universo medidas e proporções exatas. Será acaso — ou teve um Projeto?</p>",
         "referencia": "Jó 38:4, 5; Provérbios 3:19",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102003366&srcid=share",
         "config": "{\"alvo\":12,\"lmax\":8}",
         "xp": 100,
         "publicar": 1,
         "data_criacao": 1783120029308,
-        "data_atualizacao": 1783121564187,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102003366&srcid=share"
+        "data_atualizacao": 1783121564187
     },
     {
         "id": 48,
@@ -766,12 +766,12 @@
         "desafio": "<p>Gire o <strong>ângulo de crescimento</strong> entre uma semente e a próxima. Repare: qualquer alteração, mesmo de <strong>1°</strong>, abre espirais vazias (buracos) no disco. Ajuste até <strong>137,5°</strong> e veja as sementes se empacotarem sem sobra.</p>",
         "reflexao": "<p>Só o ângulo áureo otimiza o empacotamento — a um grau de distância a perfeição se desfaz. Esse padrão não é fruto do acaso matemático; ele revela a mente organizada do <strong>Supremo Arquiteto</strong> do universo.</p><p>A mesma proporção aparece na concha, na flor e na folha. Uma ordem tão precisa, repetida por toda a criação, aumenta o nosso apreço pela sabedoria de <strong>Jeová Deus</strong>. Será acaso — ou teve um Projeto?</p>",
         "referencia": "Salmo 104:24; Romanos 1:20",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102003366&srcid=share",
         "config": "{\"alvo\":137.5,\"tol\":0.3,\"ang0\":132}",
         "xp": 100,
         "publicar": 1,
         "data_criacao": 1783172243283,
-        "data_atualizacao": 1783172915027,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102003366&srcid=share"
+        "data_atualizacao": 1783172915027
     },
     {
         "id": 49,
@@ -784,12 +784,12 @@
         "desafio": "<p>Reproduza o exemplo da loja: um artigo de <strong>R$ 35</strong> com <strong>25% de desconto</strong>. Mova o controle — que vai de −100% (acréscimo) a +100% (desconto) — até o <strong>preço final ficar em R$ 26,25</strong>. Acompanhe a fórmula e o cálculo mudarem ao vivo.</p>",
         "reflexao": "<p>Você acabou de usar porcentagem — a mesma conta que aparece em descontos, juros, gorjetas e impostos. Repare que descontos empilhados não somam: dois descontos de 40% <strong>não</strong> dão 80%, e sim 64%, porque o segundo incide sobre o preço já reduzido.</p><p>Essa ordem simples e confiável, que funciona sempre e em toda parte, aumenta o nosso apreço pela sabedoria do <strong>Grande Instrutor</strong>, Jeová Deus, que fez do universo um lugar de medidas e proporções exatas — e nos deu a mente para entendê-las. Será acaso — ou teve um Projeto?</p>",
         "referencia": "Provérbios 2:6; Eclesiastes 7:12",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102003366&srcid=share",
         "config": "{\"preco\":35,\"alvo\":26.25,\"tol\":0.3,\"aj0\":0}",
         "xp": 100,
         "publicar": 1,
         "data_criacao": 1783173587455,
-        "data_atualizacao": 1783174868304,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102003366&srcid=share"
+        "data_atualizacao": 1783174868304
     },
     {
         "id": 50,
@@ -802,12 +802,12 @@
         "desafio": "<p>Mire a tacada: gire o <strong>ângulo</strong> e acompanhe a <strong>linha de previsão</strong> calcular os rebotes nas tabelas antes de você disparar. Encontre o ângulo que faz a esfera <strong>bater na tabela e encaçapar o alvo vermelho</strong>.</p>",
         "reflexao": "<p>A geometria deixou você <strong>prever o futuro</strong>: sabendo que o ângulo de saída é igual ao de entrada, dá para calcular a jogada de antemão. A mesma lei da reflexão governa a luz num espelho, o eco do som e o sinal que chega à sua casa.</p><p>Uma ordem tão exata, que se repete do salão de bilhar às estrelas, aumenta o nosso apreço pela sabedoria do <strong>Grande Instrutor</strong>, Jeová Deus, que fez do universo um lugar de medidas e proporções confiáveis. Será acaso — ou teve um Projeto?</p>",
         "referencia": "Salmo 19:1; Isaías 40:26",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102003366&srcid=share",
         "config": "{\"W\":20,\"H\":12,\"R\":1.25,\"maxB\":4,\"start\":[8,-3.5],\"target\":[-7,-2],\"angMin\":12,\"angMax\":80,\"ang0\":30}",
         "xp": 100,
         "publicar": 1,
         "data_criacao": 1783175666883,
-        "data_atualizacao": 1783176478125,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102003366&srcid=share"
+        "data_atualizacao": 1783176478125
     },
     {
         "id": 51,
@@ -820,12 +820,12 @@
         "desafio": "<p>Diante de você há um <strong>monocórdio</strong>: em cima, a corda inteira (o Dó fundamental); embaixo, a corda com uma <strong>ponte móvel</strong>. Deslize o controle para mudar o <strong>comprimento que vibra</strong> e repare na <em>onda combinada</em>: nas frações simples (marcadas) ela fica ordenada e as notas <strong>casam</strong>; fora delas, ela <em>arranha</em>.</p><p>Seu alvo: <strong>divida a corda exatamente pela metade (1/2)</strong> para fazê-la soar a <strong>mesma nota, uma oitava acima</strong>.</p>",
         "reflexao": "<p>Você acabou de transformar <strong>fração em melodia</strong>. A oitava não é bonita por gosto: ela é a razão exata <strong>2 : 1</strong>, e nossos ouvidos foram projetados para reconhecer e apreciar essas proporções precisas.</p><p>Uma coincidência tão fina — o mesmo número que divide a corda também organiza o que sentimos como beleza — fala alto da sabedoria do <strong>Grande Instrutor</strong>, Jeová Deus. Ele projetou o som, o ouvido e o coração para se alegrarem com o cântico (Salmo 98:4-6). Será acaso — ou teve um Projeto?</p>",
         "referencia": "Salmo 98:4-6; Efésios 5:19",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=1984204&srcid=share",
         "config": "{\"compMin\":40,\"compMax\":100,\"comp0\":88,\"alvo\":50,\"tol\":1.5,\"tolNota\":1.2}",
         "xp": 100,
         "publicar": 1,
         "data_criacao": 1783176902428,
-        "data_atualizacao": 1783354831334,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=1984204&srcid=share"
+        "data_atualizacao": 1783354831334
     },
     {
         "id": 52,
@@ -838,12 +838,12 @@
         "desafio": "<p>Diante de você há um <strong>corte transversal da pele</strong> (epiderme, derme e hipoderme) com um ferimento em “V”. Arraste o controle <strong>“Tempo de cicatrização”</strong> e observe o corpo se reparar em tempo real: o coágulo, a chegada dos glóbulos de defesa, o tecido novo com seus vasinhos e, por fim, a cicatriz. Gire com o dedo para ver o corte em 3D.</p><p>Seu alvo: leve a ferida até <strong>100% — a cicatrização completa</strong> (fase de remodelação).</p>",
         "reflexao": "<p>Você acabou de percorrer, em segundos, um processo que no corpo leva de dias a meses — e que envolve milhões de células agindo na ordem certa, na hora certa.</p><p>Como disse o Dr. Guillermo Pérez, “a cicatrização é um excelente exemplo de um processo coordenado de alto nível”, que o convenceu de que “fomos projetados por Deus”. O salmista já dizia que somos feitos “de modo maravilhoso e assombroso” (Salmo 139:14).</p><p>Um reparo tão engenhoso — que se ativa sozinho e sabe quando parar — teria surgido por acaso, ou teve um Projeto?</p>",
         "referencia": "Salmo 139:14 · Despertai! 2014 (jw.org) — Dr. Guillermo Pérez",
+        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102014165&srcid=share",
         "config": "{\"alvoMin\":96,\"t0\":0}",
         "xp": 100,
         "publicar": 1,
         "data_criacao": 1783350083755,
-        "data_atualizacao": 1783354571128,
-        "link_jw": "https://www.jw.org/finder?wtlocale=T&docid=102014165&srcid=share"
+        "data_atualizacao": 1783354571128
     },
     {
         "id": 53,
@@ -856,11 +856,11 @@
         "desafio": "<p>Diante de você há uma proteína como uma <strong>hélice em 3D</strong>. O <strong>acaso</strong> sorteia a cadeia inteira muitas vezes por segundo e acende só as contas que, por sorte, caíram no aminoácido certo. Gire com o dedo e repare: a cadeia <strong>nunca se completa</strong>.</p><p>Sua missão: fazer o acaso <strong>vencer</strong> — que ele consiga, em média, montar a proteína ao menos uma vez. Use os controles a favor do acaso:</p><ul><li>encurte a <strong>cadeia de aminoácidos</strong>;</li><li>reduza os <strong>tipos de aminoácidos</strong> no sorteio;</li><li>aumente as <strong>tentativas (10ˣ)</strong> — até mais do que o universo inteiro daria desde o Big Bang.</li></ul><p>Mas atenção à meta: uma proteína funcional <em>de verdade</em> precisa dos <strong>20 tipos</strong> e de cerca de <strong>150 aminoácidos</strong>. Veja se dá para o acaso vencer <em>sem</em> deixar de ser uma proteína real.</p>",
         "reflexao": "<p>Conseguiu? Só se você <strong>encurtou demais a cadeia</strong> ou <strong>cortou os tipos de aminoácidos</strong> — ou seja, deixando de ser uma proteína funcional de verdade. Com uma proteína real (150 aminoácidos, 20 tipos), nem dando ao acaso <strong>mais tentativas do que há átomos no universo</strong> a conta fecha.</p><p>O astrônomo Fred Hoyle comparou a chance de a vida surgir por acaso a um <strong>tornado que, ao varrer um ferro-velho, montasse sozinho um avião</strong>. E isto é só UMA proteína — uma célula precisa de milhares, todas na hora certa.</p><p>Como concluiu aquele engenheiro, tamanha informação e ordem apontam para uma mente. “Toda casa é construída por alguém, mas quem construiu todas as coisas é Deus.” (Hebreus 3:4) — Uma proteína surgiu por acaso, ou teve um Projeto?</p>",
         "referencia": "Hebreus 3:4 · jw.org — entrevista com um engenheiro de software; “A Origem da Vida”",
+        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/",
         "config": "{\"aa0\":150,\"tipos0\":20,\"exp0\":60,\"aaMax\":300,\"expMax\":150,\"aaFunc\":100,\"expUniverso\":110}",
         "xp": 120,
         "publicar": 1,
         "data_criacao": 1783355835532,
-        "data_atualizacao": 1783355835532,
-        "link_jw": "https://www.jw.org/pt/ensinos-biblicos/ciencia/teve-um-projeto/"
+        "data_atualizacao": 1783355835532
     }
 ]
