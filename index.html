@@ -3886,60 +3886,148 @@
                     <h1 class="h5 mb-0 me-auto">Leitura da Bíblia</h1>
                 </div>
 
-                <!-- progresso geral -->
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center justify-content-between mb-1">
-                            <span class="fw-semibold">Progresso geral</span>
-                            <span class="fs-5 fw-bold text-success" x-text="`${leituraPercent}%`"></span>
-                        </div>
-                        <div class="progress mb-2" style="height:10px">
-                            <div class="progress-bar bg-success" :style="`width:${leituraPercent}%`"></div>
-                        </div>
-                        <div class="small text-muted"
-                             x-text="`${totalLidos} de ${totalCapitulos} capítulos · ${livrosConcluidos} de 66 livros`"></div>
-                    </div>
+                <!-- seletor de visualização (como um calendário: dia/semana/mês) -->
+                <div class="btn-group w-100 mb-3" role="group" aria-label="Visualização">
+                    <button type="button" class="btn btn-sm"
+                            :class="visao === 'canonica' ? 'btn-success' : 'btn-outline-secondary'"
+                            @click="trocarVisao('canonica')" title="Ordem canônica: Gênesis a Apocalipse">
+                        <i class="bi bi-list-ol d-sm-none"></i><span class="d-none d-sm-inline">Canônica</span>
+                    </button>
+                    <button type="button" class="btn btn-sm"
+                            :class="visao === 'cronologica' ? 'btn-success' : 'btn-outline-secondary'"
+                            @click="trocarVisao('cronologica')" title="Pela estimativa de quando cada livro foi escrito">
+                        <i class="bi bi-hourglass-split d-sm-none"></i><span class="d-none d-sm-inline">Cronológica</span>
+                    </button>
+                    <button type="button" class="btn btn-sm"
+                            :class="visao === 'escritor' ? 'btn-success' : 'btn-outline-secondary'"
+                            @click="trocarVisao('escritor')" title="Agrupada por escritor">
+                        <i class="bi bi-pen d-sm-none"></i><span class="d-none d-sm-inline">Escritor</span>
+                    </button>
+                    <button type="button" class="btn btn-sm"
+                            :class="visao === 'celebracao' ? 'btn-success' : 'btn-outline-secondary'"
+                            @click="trocarVisao('celebracao')" title="Roteiro para a época da Celebração da morte de Cristo">
+                        <i class="bi bi-cup d-sm-none"></i><span class="d-none d-sm-inline">Celebração</span>
+                    </button>
                 </div>
 
-                <!-- lista de livros -->
-                <div class="d-flex flex-column gap-2">
-                    <template x-for="(livro, li) in livrosBiblia" :key="li">
-                        <div class="card">
-                            <div class="card-body py-2 px-3">
-                                <div class="d-flex align-items-center gap-2" role="button" @click="abrirLivro(li)">
-                                    <i class="bi" :class="livroCompleto(li) ? 'bi-check-circle-fill text-success' : 'bi-book text-muted'"></i>
-                                    <span class="fw-semibold flex-grow-1" x-text="livro[0]"></span>
-                                    <span class="small text-muted" x-text="`${livroLidos(li)}/${livro[1]}`"></span>
-                                    <i class="bi text-muted" :class="livroAberto === li ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
-                                </div>
-                                <div class="progress mt-1" style="height:4px">
-                                    <div class="progress-bar bg-success" :style="`width:${livroPercent(li)}%`"></div>
-                                </div>
+                <!-- progresso geral (visões de livros) -->
+                <template x-if="visao !== 'celebracao'">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span class="fw-semibold">Progresso geral</span>
+                                <span class="fs-5 fw-bold text-success" x-text="`${leituraPercent}%`"></span>
+                            </div>
+                            <div class="progress mb-2" style="height:10px">
+                                <div class="progress-bar bg-success" :style="`width:${leituraPercent}%`"></div>
+                            </div>
+                            <div class="small text-muted"
+                                 x-text="`${totalLidos} de ${totalCapitulos} capítulos · ${livrosConcluidos} de 66 livros`"></div>
+                        </div>
+                    </div>
+                </template>
 
-                                <!-- grade de capítulos -->
-                                <template x-if="livroAberto === li">
-                                    <div class="mt-2">
-                                        <div class="d-flex flex-wrap gap-1 mb-2">
-                                            <template x-for="cap in livro[1]" :key="cap">
-                                                <button type="button" class="btn btn-sm px-2 py-1 lh-1"
-                                                        :class="capLido(li, cap) ? 'btn-success' : 'btn-outline-secondary'"
-                                                        @click="toggleCap(li, cap)" x-text="cap"></button>
+                <!-- lista de livros (canônica, cronológica e por escritor) -->
+                <template x-if="visao !== 'celebracao'">
+                    <div class="d-flex flex-column gap-2">
+                        <template x-for="item in itens" :key="item.grupo ? `g:${item.grupo}` : item.li">
+                            <div>
+                                <!-- cabeçalho de grupo (visão por escritor) -->
+                                <template x-if="item.grupo !== undefined">
+                                    <div class="d-flex align-items-center gap-2 mt-2 px-1">
+                                        <i class="bi bi-pen text-success"></i>
+                                        <span class="fw-bold flex-grow-1" x-text="item.grupo"></span>
+                                        <span class="small text-muted"
+                                              x-text="`${grupoLidos(item.livros)}/${grupoCapitulos(item.livros)} cap.`"></span>
+                                    </div>
+                                </template>
+
+                                <template x-if="item.li !== undefined">
+                                    <div class="card">
+                                        <div class="card-body py-2 px-3">
+                                            <div class="d-flex align-items-center gap-2" role="button" @click="abrirLivro(item.li)">
+                                                <i class="bi" :class="livroCompleto(item.li) ? 'bi-check-circle-fill text-success' : 'bi-book text-muted'"></i>
+                                                <span class="fw-semibold flex-grow-1" x-text="livrosBiblia[item.li][0]"></span>
+                                                <span class="small text-muted" x-text="`${livroLidos(item.li)}/${livrosBiblia[item.li][1]}`"></span>
+                                                <i class="bi text-muted" :class="livroAberto === item.li ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+                                            </div>
+                                            <div class="small text-muted" x-show="visao !== 'canonica'"
+                                                 x-text="metaLivro(item.li)"></div>
+                                            <div class="progress mt-1" style="height:4px">
+                                                <div class="progress-bar bg-success" :style="`width:${livroPercent(item.li)}%`"></div>
+                                            </div>
+
+                                            <!-- grade de capítulos -->
+                                            <template x-if="livroAberto === item.li">
+                                                <div class="mt-2">
+                                                    <div class="d-flex flex-wrap gap-1 mb-2">
+                                                        <template x-for="cap in livrosBiblia[item.li][1]" :key="cap">
+                                                            <button type="button" class="btn btn-sm px-2 py-1 lh-1"
+                                                                    :class="capLido(item.li, cap) ? 'btn-success' : 'btn-outline-secondary'"
+                                                                    @click="toggleCap(item.li, cap)" x-text="cap"></button>
+                                                        </template>
+                                                    </div>
+                                                    <div class="d-flex gap-2">
+                                                        <button type="button" class="btn btn-sm btn-outline-success flex-fill" @click="marcarLivro(item.li, true)">
+                                                            <i class="bi bi-check-all me-1"></i>Livro inteiro
+                                                        </button>
+                                                        <button type="button" class="btn btn-sm btn-outline-secondary flex-fill" @click="marcarLivro(item.li, false)">
+                                                            <i class="bi bi-eraser me-1"></i>Limpar
+                                                        </button>
+                                                    </div>
+                                                </div>
                                             </template>
-                                        </div>
-                                        <div class="d-flex gap-2">
-                                            <button type="button" class="btn btn-sm btn-outline-success flex-fill" @click="marcarLivro(li, true)">
-                                                <i class="bi bi-check-all me-1"></i>Livro inteiro
-                                            </button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary flex-fill" @click="marcarLivro(li, false)">
-                                                <i class="bi bi-eraser me-1"></i>Limpar
-                                            </button>
                                         </div>
                                     </div>
                                 </template>
                             </div>
+                        </template>
+                    </div>
+                </template>
+
+                <!-- roteiro da Celebração (última semana de Jesus, Nisã 8–16) -->
+                <template x-if="visao === 'celebracao'">
+                    <div>
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between mb-1">
+                                    <span class="fw-semibold">Roteiro da Celebração</span>
+                                    <span class="fs-5 fw-bold text-success" x-text="`${celebracaoPercent}%`"></span>
+                                </div>
+                                <div class="progress mb-2" style="height:10px">
+                                    <div class="progress-bar bg-success" :style="`width:${celebracaoPercent}%`"></div>
+                                </div>
+                                <div class="small text-muted"
+                                     x-text="`${diasLidos} de ${totalDias} trechos lidos`"></div>
+                                <div class="small text-muted mt-2">
+                                    Acontecimentos da última semana de Jesus na Terra (Nisã 8 a 16) —
+                                    leitura para a época da Celebração da morte de Cristo.
+                                </div>
+                            </div>
                         </div>
-                    </template>
-                </div>
+
+                        <div class="d-flex flex-column gap-2">
+                            <template x-for="d in roteiro" :key="d.id">
+                                <div class="card">
+                                    <div class="card-body py-2 px-3">
+                                        <div class="d-flex align-items-start gap-2" role="button" @click="toggleDia(d.id)">
+                                            <i class="bi fs-5" :class="diaLido(d.id) ? 'bi-check-circle-fill text-success' : 'bi-circle text-muted'"></i>
+                                            <div class="flex-grow-1">
+                                                <div class="fw-semibold" x-text="d.dia"></div>
+                                                <div class="small text-muted" x-text="d.evento"></div>
+                                                <div class="d-flex flex-wrap gap-1 mt-1">
+                                                    <template x-for="ref in d.leituras" :key="ref">
+                                                        <span class="badge bg-success-subtle text-success-emphasis border border-success-subtle" x-text="ref"></span>
+                                                    </template>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
 
             </div>
         </section>
