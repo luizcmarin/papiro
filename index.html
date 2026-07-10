@@ -30,6 +30,24 @@
             <div class="progress-bar progress-bar-striped progress-bar-animated w-100"></div>
         </div>
 
+        <!-- Aviso de app atualizado (SW novo instalado) -->
+        <template x-if="appAtualizado">
+        <div class="position-fixed bottom-0 start-50 translate-middle-x mb-3 px-3 w-100"
+             style="z-index:2100;max-width:26rem">
+            <div class="card shadow-lg border-0 papiro-acento papiro-acento--primary">
+                <div class="card-body py-2 px-3 d-flex align-items-center gap-2">
+                    <i class="bi bi-stars text-primary fs-5" aria-hidden="true"></i>
+                    <div class="small me-auto">O Papiro foi atualizado. Recarregue para usar a nova versão.</div>
+                    <button class="btn btn-sm btn-primary flex-shrink-0" @click="recarregarApp()">Recarregar</button>
+                    <button class="btn btn-sm btn-outline-secondary flex-shrink-0 border-0"
+                            @click="appAtualizado = false" aria-label="Fechar">
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        </template>
+
         <!-- ══ HOME — grade de módulos ══════════════════════════════════════ -->
         <section x-show="rota.modulo === 'home'" class="papiro-app">
 
@@ -1120,7 +1138,7 @@
                     <div class="d-flex flex-wrap gap-2 mb-3">
                         <template x-for="c in categoriasEditor" :key="c">
                             <button class="btn btn-sm"
-                                    :class="edCategoria === c ? 'btn-primary' : 'btn-outline-secondary'"
+                                    :class="(edCategoria === c || soIcone(edCategoria) === c) ? 'btn-primary' : 'btn-outline-secondary'"
                                     @click="edCategoria = c; agendarSalvar()"
                                     x-text="c"></button>
                         </template>
@@ -2155,11 +2173,27 @@
                 </div>
 
                 <!-- ── Calculadora de autonomia (perfil idade×atividade) ──────── -->
-                <div class="card mb-3" x-show="!estoqueForm" x-cloak>
+                <div class="card mb-3 shadow border-primary-subtle papiro-acento papiro-acento--primary"
+                     x-show="!estoqueForm" x-cloak>
                     <div class="card-body">
-                        <h2 class="h6 fw-semibold mb-3">
-                            <i class="bi bi-calculator me-1"></i>Calculadora de autonomia
+                        <h2 class="h6 fw-bold mb-3 text-primary">
+                            <i class="bi bi-calculator-fill me-1" aria-hidden="true"></i>Calculadora de autonomia
                         </h2>
+
+                        <!-- KPI: dias de autonomia com o estoque atual + meta de 30 dias -->
+                        <div class="text-center mb-3">
+                            <div class="display-5 fw-bold lh-1" :class="`text-${corAutonomia}`"
+                                 x-text="diasAutonomia"></div>
+                            <div class="small text-muted">dias de autonomia com o estoque atual</div>
+                            <div class="progress mt-2 mx-auto" style="height:8px;max-width:22rem">
+                                <div class="progress-bar" :class="`bg-${corAutonomia}`"
+                                     :style="`width:${metaAutonomiaPct}%`"></div>
+                            </div>
+                            <div class="small text-muted mt-1">
+                                Meta: 30 dias (<span x-text="metaAutonomiaPct + '%'"></span>)
+                            </div>
+                        </div>
+
                         <div class="row g-2 mb-3">
                             <div class="col-6">
                                 <label class="form-label small text-muted mb-1">Perfil (idade)</label>
@@ -2189,35 +2223,71 @@
                             <span class="fw-bold" style="min-width:2ch;text-align:center" x-text="calcPessoas"></span>
                             <button class="btn btn-sm btn-outline-secondary" @click="ajustarPessoas(1)" aria-label="Mais">+</button>
                         </div>
-                        <div class="row g-2 text-center">
-                            <div class="col-3">
-                                <div class="fw-bold small" x-text="totalKcalEstoque.toLocaleString('pt-BR')"></div>
-                                <div class="small text-muted">kcal</div>
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <div class="border rounded-3 py-2 px-2 h-100 d-flex align-items-center gap-2">
+                                    <span class="papiro-modulo__icone flex-shrink-0"
+                                          style="width:2rem;height:2rem;font-size:1rem;background:#fd7e141f;color:#fd7e14">
+                                        <i class="bi bi-fire" aria-hidden="true"></i>
+                                    </span>
+                                    <div class="min-w-0">
+                                        <div class="fw-bold small text-truncate" x-text="totalKcalEstoque.toLocaleString('pt-BR') + ' kcal'"></div>
+                                        <div class="small text-muted text-truncate">energia no estoque</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-3">
-                                <div class="fw-bold" :class="`text-${corAutonomia}`" x-text="diasAutonomia + ' d'"></div>
-                                <div class="small text-muted">autonomia</div>
+                            <div class="col-6">
+                                <div class="border rounded-3 py-2 px-2 h-100 d-flex align-items-center gap-2">
+                                    <span class="papiro-modulo__icone flex-shrink-0"
+                                          style="width:2rem;height:2rem;font-size:1rem;background:#0d6efd1f;color:#0d6efd">
+                                        <i class="bi bi-droplet-fill" aria-hidden="true"></i>
+                                    </span>
+                                    <div class="min-w-0">
+                                        <div class="fw-bold small text-truncate" x-text="litrosAguaSugeridos + ' L'"></div>
+                                        <div class="small text-muted text-truncate">água sugerida</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-3">
-                                <div class="fw-bold text-primary" x-text="litrosAguaSugeridos + ' L'"></div>
-                                <div class="small text-muted">água</div>
+                            <div class="col-6">
+                                <div class="border rounded-3 py-2 px-2 h-100 d-flex align-items-center gap-2">
+                                    <span class="papiro-modulo__icone flex-shrink-0"
+                                          style="width:2rem;height:2rem;font-size:1rem;background:#6c757d1f;color:#6c757d">
+                                        <i class="bi bi-box-seam" aria-hidden="true"></i>
+                                    </span>
+                                    <div class="min-w-0">
+                                        <div class="fw-bold small text-truncate" x-text="pesoTotalKg + ' kg'"></div>
+                                        <div class="small text-muted text-truncate">peso a carregar</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-3">
-                                <div class="fw-bold" x-text="pesoTotalKg + ' kg'"></div>
-                                <div class="small text-muted">peso</div>
+                            <div class="col-6">
+                                <div class="border rounded-3 py-2 px-2 h-100 d-flex align-items-center gap-2">
+                                    <span class="papiro-modulo__icone flex-shrink-0"
+                                          style="width:2rem;height:2rem;font-size:1rem;background:#1987541f;color:#198754">
+                                        <i class="bi bi-people-fill" aria-hidden="true"></i>
+                                    </span>
+                                    <div class="min-w-0">
+                                        <div class="fw-bold small text-truncate" x-text="necessidadeDiariaGrupo.toLocaleString('pt-BR') + ' kcal/dia'"></div>
+                                        <div class="small text-muted text-truncate"
+                                             x-text="`grupo (${necessidadePorPessoa.toLocaleString('pt-BR')}/pessoa)`"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <p class="small text-muted mb-0 mt-2">
-                            Necessidade do grupo: <strong x-text="necessidadeDiariaGrupo.toLocaleString('pt-BR') + ' kcal/dia'"></strong>
-                            (<span x-text="necessidadePorPessoa.toLocaleString('pt-BR')"></span>/pessoa).
-                        </p>
                     </div>
                 </div>
 
                 <!-- ── Logística tática ──────────────────────────────────────── -->
                 <div class="card mb-3" x-show="!estoqueForm && listaEstoque.length > 0" x-cloak>
                     <div class="card-body">
-                        <h2 class="h6 fw-semibold mb-3"><i class="bi bi-shield-check me-1"></i>Logística tática</h2>
+                        <h2 class="h6 fw-semibold mb-2"><i class="bi bi-shield-check me-1"></i>Logística tática</h2>
+                        <p class="small text-muted mb-3">
+                            Autonomia <strong>fria</strong>: quanto tempo o grupo se sustenta só com
+                            alimentos prontos para consumo, sem fogo nem preparo (cenário de evacuação
+                            ou falta de energia). Autonomia <strong>total</strong> soma também os que
+                            exigem cozimento. <strong>Fibras/vitaminas</strong> conta as conservas de
+                            vegetais e frutas que evitam carência nutricional em crises longas.
+                        </p>
                         <div class="row g-2 text-center mb-2">
                             <div class="col-4">
                                 <div class="fw-bold" x-text="logistica.friaDias + ' d'"></div>
@@ -2639,6 +2709,13 @@
                         <div class="mt-2 small text-muted" x-show="aPagar > 0" x-cloak>
                             A pagar: <span class="fw-semibold text-warning" x-text="saldoOculto ? '•••' : fmt(aPagar)"></span>
                         </div>
+                        <hr class="my-2">
+                        <div class="d-flex justify-content-between align-items-center px-2">
+                            <span class="small text-muted"><i class="bi bi-wallet2 me-1" aria-hidden="true"></i>Saldo atual</span>
+                            <span class="fw-bold"
+                                  :class="saldoAtual >= 0 ? 'text-success' : 'text-danger'"
+                                  x-text="saldoOculto ? '•••••' : fmt(saldoAtual)"></span>
+                        </div>
                     </div>
                 </div>
 
@@ -2720,9 +2797,11 @@
                     </button>
                 </div>
 
-                <!-- formulário inline -->
+                <!-- formulário (modal) -->
                 <template x-if="transacaoForm">
-                <div class="card mb-3">
+                <div class="papiro-form-modal" @click.self="cancelarTransacao()"
+                     @keydown.escape.window="cancelarTransacao()">
+                <div class="card">
                     <div class="card-body">
                         <h2 class="h6 fw-semibold mb-3" x-text="transacaoForm?.id > 0 ? 'Editar transação' : 'Nova transação'"></h2>
 
@@ -2740,9 +2819,12 @@
                                x-model="transacaoForm.descricao">
                         <div class="row g-2 mb-2">
                             <div class="col-6">
-                                <label class="form-label small mb-1">Valor</label>
-                                <input type="number" step="0.01" min="0" class="form-control form-control-sm"
-                                       placeholder="Valor" x-model.number="transacaoForm.valor">
+                                <label class="form-label small mb-1">Valor (R$)</label>
+                                <!-- :value + escrita direta no elemento: com x-model o valor cru
+                                     voltaria por cima da máscara (os dois listeners disputam) -->
+                                <input type="text" inputmode="numeric" class="form-control form-control-sm"
+                                       placeholder="0,00" :value="transacaoForm.valor"
+                                       @input="transacaoForm.valor = mascaraMoeda($event.target.value); $event.target.value = transacaoForm.valor">
                             </div>
                             <div class="col-6">
                                 <label class="form-label small mb-1">Vencimento</label>
@@ -2770,6 +2852,7 @@
                             <button class="btn btn-sm btn-primary flex-fill" @click="salvarTransacao()">Salvar</button>
                         </div>
                     </div>
+                </div>
                 </div>
                 </template>
 
@@ -2800,12 +2883,12 @@
                                 <div class="text-end flex-shrink-0">
                                     <div class="fw-semibold" :class="t.tipo === 0 ? 'text-success' : 'text-danger'"
                                          x-text="saldoOculto ? '•••' : (t.tipo === 0 ? '+ ' : '− ') + fmt(t.valor)"></div>
-                                    <div class="d-flex gap-2 justify-content-end mt-1">
-                                        <button class="btn btn-sm p-0 border-0"
-                                                :class="t.esta_pago ? 'text-success' : 'text-muted'"
+                                    <div class="d-flex gap-2 justify-content-end align-items-center mt-1">
+                                        <button class="btn btn-sm py-0 px-2"
+                                                :class="t.esta_pago ? 'btn-success' : 'btn-outline-warning'"
                                                 @click="togglePago(t)"
-                                                :title="t.esta_pago ? 'Pago' : 'Marcar como pago'">
-                                            <i class="bi" :class="t.esta_pago ? 'bi-check-circle-fill' : 'bi-circle'"></i>
+                                                :title="t.esta_pago ? 'Pago — toque para desfazer a baixa' : 'Dar baixa (marcar como pago)'">
+                                            <i class="bi me-1" :class="t.esta_pago ? 'bi-check2-circle' : 'bi-cash-coin'" aria-hidden="true"></i><span class="small" x-text="t.esta_pago ? 'Pago' : 'Dar baixa'"></span>
                                         </button>
                                         <button class="btn btn-sm p-0 border-0 text-danger"
                                                 @click="excluirTransacao(t.id)" title="Excluir">
@@ -2841,8 +2924,13 @@
                     <div class="card-body">
                         <h2 class="h6 fw-semibold mb-3" x-text="categoriaForm?.id > 0 ? 'Editar categoria' : 'Nova categoria'"></h2>
 
-                        <input type="text" class="form-control mb-3" placeholder="Nome da categoria"
-                               x-model="categoriaForm.nome">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Nome da categoria"
+                                   :class="categoriaForm.erroNome ? 'is-invalid' : ''"
+                                   x-model="categoriaForm.nome"
+                                   @input="categoriaForm.erroNome = false">
+                            <div class="invalid-feedback">Informe o nome da categoria.</div>
+                        </div>
 
                         <label class="form-label small text-muted d-flex align-items-center gap-2">
                             Ícone
@@ -2866,10 +2954,11 @@
                                        x-model="categoriaForm.hex_cor">
                             </div>
                             <div class="col-8">
-                                <label class="form-label small text-muted">Limite mensal</label>
-                                <input type="number" step="0.01" min="0" class="form-control"
-                                       placeholder="0 = sem limite"
-                                       x-model.number="categoriaForm.limite_mensal">
+                                <label class="form-label small text-muted">Limite mensal (R$)</label>
+                                <input type="text" inputmode="numeric" class="form-control"
+                                       placeholder="Vazio = sem limite"
+                                       :value="categoriaForm.limite_mensal"
+                                       @input="categoriaForm.limite_mensal = mascaraMoeda($event.target.value); $event.target.value = categoriaForm.limite_mensal">
                             </div>
                         </div>
                         <div class="d-flex gap-2">
@@ -2925,9 +3014,11 @@
                     </button>
                 </div>
 
-                <!-- formulário inline -->
+                <!-- formulário (modal) -->
                 <template x-if="recorrenciaForm">
-                <div class="card mb-3">
+                <div class="papiro-form-modal" @click.self="cancelarRecorrencia()"
+                     @keydown.escape.window="cancelarRecorrencia()">
+                <div class="card">
                     <div class="card-body">
                         <h2 class="h6 fw-semibold mb-3" x-text="recorrenciaForm?.id > 0 ? 'Editar recorrência' : 'Nova recorrência'"></h2>
 
@@ -2940,14 +3031,22 @@
                                     @click="recorrenciaForm.tipo = 1">Despesa</button>
                         </div>
 
-                        <label class="form-label small mb-1">Descrição</label>
-                        <input type="text" class="form-control mb-2" placeholder="Descrição"
-                               x-model="recorrenciaForm.descricao">
+                        <label class="form-label small mb-1">Descrição *</label>
+                        <div class="mb-2">
+                            <input type="text" class="form-control" placeholder="Descrição"
+                                   :class="recorrenciaForm.erros?.descricao ? 'is-invalid' : ''"
+                                   x-model="recorrenciaForm.descricao"
+                                   @input="recorrenciaForm.erros.descricao = false">
+                            <div class="invalid-feedback">Informe a descrição.</div>
+                        </div>
                         <div class="row g-2 mb-2">
                             <div class="col-6">
-                                <label class="form-label small mb-1">Valor</label>
-                                <input type="number" step="0.01" min="0" class="form-control form-control-sm"
-                                       placeholder="Valor" x-model.number="recorrenciaForm.valor">
+                                <label class="form-label small mb-1">Valor (R$) *</label>
+                                <input type="text" inputmode="numeric" class="form-control form-control-sm"
+                                       :class="recorrenciaForm.erros?.valor ? 'is-invalid' : ''"
+                                       placeholder="0,00" :value="recorrenciaForm.valor"
+                                       @input="recorrenciaForm.valor = mascaraMoeda($event.target.value); $event.target.value = recorrenciaForm.valor; recorrenciaForm.erros.valor = false">
+                                <div class="invalid-feedback">Informe um valor maior que zero.</div>
                             </div>
                             <div class="col-6">
                                 <label class="form-label small mb-1">Categoria</label>
@@ -2961,17 +3060,21 @@
                                 </select>
                             </div>
                         </div>
-                        <label class="form-label small mb-1">Periodicidade</label>
+                        <label class="form-label small mb-1">Periodicidade *</label>
                         <select class="form-select form-select-sm mb-2"
-                                @change="recorrenciaForm.periodicidade = $event.target.value">
+                                :class="recorrenciaForm.erros?.periodicidade ? 'is-invalid' : ''"
+                                @change="recorrenciaForm.periodicidade = $event.target.value; recorrenciaForm.erros.periodicidade = false">
                             <template x-for="(rotulo, val) in periodicidades" :key="val">
                                 <option :value="val" :selected="recorrenciaForm.periodicidade === val" x-text="rotulo"></option>
                             </template>
                         </select>
                         <div class="mb-2" x-show="recorrenciaForm.periodicidade === 'mensal'" x-cloak>
-                            <label class="form-label small mb-1">Dia do mês</label>
+                            <label class="form-label small mb-1">Dia do mês *</label>
                             <input type="number" min="1" max="31" class="form-control form-control-sm"
-                                   placeholder="Dia do mês" x-model.number="recorrenciaForm.dia_mes">
+                                   :class="recorrenciaForm.erros?.dia_mes ? 'is-invalid' : ''"
+                                   placeholder="Dia do mês" x-model.number="recorrenciaForm.dia_mes"
+                                   @input="recorrenciaForm.erros.dia_mes = false">
+                            <div class="invalid-feedback">Informe um dia entre 1 e 31.</div>
                         </div>
                         <div class="mb-2" x-show="recorrenciaForm.periodicidade === 'semanal'" x-cloak>
                             <label class="form-label small mb-1">Dia da semana</label>
@@ -3000,6 +3103,7 @@
                         </div>
                     </div>
                 </div>
+                </div>
                 </template>
 
                 <div class="text-center text-muted py-4"
@@ -3012,15 +3116,22 @@
                     <template x-for="r in recorrencias" :key="r.id">
                         <div class="card" :class="r.ativo ? '' : 'opacity-50'">
                             <div class="card-body py-2 px-3 d-flex align-items-center gap-2">
-                                <button class="btn btn-sm p-0 border-0 flex-shrink-0"
+                                <button class="btn btn-sm p-0 border-0 flex-shrink-0 lh-1"
                                         :class="r.ativo ? 'text-success' : 'text-muted'"
                                         @click="toggleAtivo(r)"
-                                        :title="r.ativo ? 'Pausar' : 'Ativar'">
-                                    <i class="bi fs-5" :class="r.ativo ? 'bi-play-circle-fill' : 'bi-pause-circle'"></i>
+                                        :title="r.ativo ? 'Ativa — toque para desativar' : 'Inativa — toque para ativar'">
+                                    <i class="bi fs-3" :class="r.ativo ? 'bi-toggle-on' : 'bi-toggle-off'" aria-hidden="true"></i>
                                 </button>
                                 <div class="flex-grow-1" @click="editarRecorrencia(r)" role="button">
                                     <div class="fw-semibold" x-text="r.descricao || 'Sem descrição'"></div>
                                     <div class="small text-muted" x-text="descrevePeriodo(r)"></div>
+                                    <div class="d-flex flex-wrap gap-1 mt-1">
+                                        <span class="badge text-bg-secondary" x-show="!r.ativo" x-cloak>Inativa</span>
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle"
+                                              x-show="r.gerar_como_pago" x-cloak>
+                                            <i class="bi bi-check2-circle me-1" aria-hidden="true"></i>Gera já como pago
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="text-end flex-shrink-0">
                                     <div class="fw-semibold" :class="r.tipo === 0 ? 'text-success' : 'text-danger'"
@@ -3174,16 +3285,26 @@
                                x-model="form.titulo">
 
                         <label class="form-label small text-muted">Categoria</label>
-                        <select class="form-select form-select-sm mb-2" x-model="form.item">
+                        <!-- x-model em select com options por x-for dessincroniza na edição;
+                             usa-se @change + :selected (mesmo padrão do Financeiro) -->
+                        <select class="form-select form-select-sm mb-2"
+                                @change="form.item = $event.target.value">
                             <template x-for="c in categorias" :key="c.chave">
-                                <option :value="c.chave" x-text="`${c.modulo}: ${c.ativo}`"></option>
+                                <option :value="c.chave" :selected="form.item === c.chave"
+                                        x-text="`${c.modulo}: ${c.ativo}`"></option>
                             </template>
                         </select>
 
                         <div class="mb-2" x-show="formPrecisaAtivo" x-cloak>
-                            <label class="form-label small text-muted">Ativo vinculado</label>
-                            <input type="text" class="form-control form-control-sm"
-                                   placeholder="Ex: nome da categoria / kit" x-model="form.ativo_nome">
+                            <label class="form-label small text-muted">Categoria do Financeiro</label>
+                            <select class="form-select form-select-sm"
+                                    @change="form.ativo_nome = $event.target.value">
+                                <option value="" :selected="!form.ativo_nome">Escolha a categoria…</option>
+                                <template x-for="c in categoriasFinanceiro" :key="c.id">
+                                    <option :value="c.nome" :selected="form.ativo_nome === c.nome"
+                                            x-text="`${c.icone || ''} ${c.nome}`"></option>
+                                </template>
+                            </select>
                         </div>
 
                         <p class="small text-muted mb-2" x-show="formEhAutomatica" x-cloak>
@@ -3194,14 +3315,10 @@
                         <div class="row g-2 mb-2">
                             <div class="col-6">
                                 <label class="form-label small text-muted">Progresso atual (<span x-text="formUnidade"></span>)</label>
-                                <template x-if="!formEhAutomatica">
-                                    <input type="number" step="0.01" min="0" class="form-control form-control-sm"
-                                           x-model.number="form.progresso_atual">
-                                </template>
-                                <template x-if="formEhAutomatica">
-                                    <input type="text" class="form-control form-control-sm" :value="formValorAtual" readonly
-                                           title="Calculado automaticamente pelo módulo vinculado">
-                                </template>
+                                <input type="text" class="form-control form-control-sm" :value="formValorAtual" readonly
+                                       :title="formEhAutomatica
+                                           ? 'Calculado automaticamente pelo módulo vinculado'
+                                           : 'Ajustado pelos botões +/− na lista de metas'">
                             </div>
                             <div class="col-6">
                                 <label class="form-label small text-muted">Meta / alvo (<span x-text="formUnidade"></span>)</label>
@@ -3555,38 +3672,38 @@
                     <div class="card-body">
                         <h2 class="h6 fw-semibold mb-3" x-text="estForm?.id > 0 ? 'Editar estudo' : 'Novo estudo'"></h2>
 
+                        <label class="form-label small text-muted mb-1">Nome</label>
                         <input type="text" class="form-control mb-2" placeholder="Nome" x-model="estForm.nome">
                         <div class="row g-2 mb-2">
                             <div class="col-6">
-                                <input type="text" class="form-control form-control-sm" placeholder="Contato" x-model="estForm.contato">
+                                <label class="form-label small text-muted mb-1">Contato</label>
+                                <input type="text" class="form-control form-control-sm" placeholder="Telefone, e-mail…" x-model="estForm.contato">
                             </div>
                             <div class="col-6">
+                                <label class="form-label small text-muted mb-1">Endereço</label>
                                 <input type="text" class="form-control form-control-sm" placeholder="Endereço" x-model="estForm.endereco">
                             </div>
                         </div>
-                        <div class="row g-2 mb-2">
-                            <div class="col-8">
-                                <input type="text" class="form-control form-control-sm" placeholder="Publicação atual" x-model="estForm.publicacao_atual">
-                            </div>
-                            <div class="col-4">
-                                <input type="number" min="0" class="form-control form-control-sm" placeholder="Lição" x-model.number="estForm.licao_atual">
-                            </div>
-                        </div>
+                        <label class="form-label small text-muted mb-1">Publicação atual</label>
+                        <input type="text" class="form-control form-control-sm mb-2" placeholder="Publicação usada no estudo" x-model="estForm.publicacao_atual">
                         <div class="row g-2 mb-2">
                             <div class="col-7">
-                                <select class="form-select form-select-sm" x-model="estForm.dia_semana">
-                                    <option value="">Dia da semana</option>
+                                <label class="form-label small text-muted mb-1">Dia da semana</label>
+                                <!-- @change + :selected: x-model em select com x-for não carrega o valor na edição -->
+                                <select class="form-select form-select-sm"
+                                        @change="estForm.dia_semana = $event.target.value">
+                                    <option value="" :selected="!estForm.dia_semana">Escolha o dia…</option>
                                     <template x-for="d in dias" :key="d">
-                                        <option :value="d" x-text="d"></option>
+                                        <option :value="d" :selected="estForm.dia_semana === d" x-text="d"></option>
                                     </template>
                                 </select>
                             </div>
                             <div class="col-5">
+                                <label class="form-label small text-muted mb-1">Horário</label>
                                 <input type="time" class="form-control form-control-sm" x-model="estForm.horario">
                             </div>
                         </div>
-                        <label class="form-label small text-muted mb-1">Próximo estudo</label>
-                        <input type="date" class="form-control form-control-sm mb-2" x-model="estForm.proximo_estudo_em">
+                        <label class="form-label small text-muted mb-1">Notas</label>
                         <textarea class="form-control form-control-sm mb-2" rows="2" placeholder="Notas" x-model="estForm.notas"></textarea>
 
                         <div class="d-flex gap-2">
@@ -3626,22 +3743,26 @@
                                         <div class="small text-muted" x-show="e.publicacao_atual" x-cloak>
                                             <i class="bi bi-book"></i>
                                             <span x-text="e.publicacao_atual"></span>
-                                            <span x-show="e.licao_atual > 0" x-text="`· lição ${e.licao_atual}`"></span>
                                         </div>
                                         <div class="small text-muted" x-show="e.dia_semana" x-cloak>
                                             <i class="bi bi-calendar-week"></i>
                                             <span x-text="`${e.dia_semana} · ${fmtHorario(e.horario_minutos)}`"></span>
                                         </div>
-                                        <div class="small mt-1" :class="proximoRelativo(e).cls">
-                                            <i class="bi bi-arrow-right-circle"></i>
-                                            Próximo: <span x-text="proximoRelativo(e).txt"></span>
+                                        <div class="small mt-1" :class="ultimoRelativo(e).cls">
+                                            <i class="bi bi-clock-history"></i>
+                                            Último estudo: <span x-text="ultimoRelativo(e).txt"></span>
+                                        </div>
+                                        <div class="small text-muted fst-italic text-truncate"
+                                             x-show="registrosDe(e.id)[0]?.onde_parou" x-cloak>
+                                            <i class="bi bi-bookmark"></i>
+                                            Parou em: <span x-text="registrosDe(e.id)[0]?.onde_parou"></span>
                                         </div>
                                     </div>
 
                                     <div class="d-flex flex-column gap-1 flex-shrink-0">
-                                        <button class="btn btn-sm btn-outline-success" @click="marcarRealizado(e)"
-                                                title="Marcar realizado (avança lição, agenda +7 dias)">
-                                            <i class="bi bi-check2-circle"></i>
+                                        <button class="btn btn-sm btn-outline-success" @click="abrirTimeline(e)"
+                                                title="Linha do tempo (registrar o estudo)">
+                                            <i class="bi bi-clock-history"></i>
                                         </button>
                                         <button class="btn btn-sm btn-outline-primary" @click="compartilharEstudo(e)" title="Compartilhar">
                                             <i class="bi bi-share"></i>
@@ -3655,6 +3776,90 @@
                         </div>
                     </template>
                 </div>
+
+                <!-- ── Linha do tempo do estudo (modal, CRUD) ─────────────── -->
+                <template x-if="timelineEstudo">
+                <div class="papiro-form-modal" @click.self="fecharTimeline()"
+                     @keydown.escape.window="fecharTimeline()">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <i class="bi bi-clock-history text-primary fs-5" aria-hidden="true"></i>
+                            <div class="me-auto">
+                                <h2 class="h6 fw-semibold mb-0">Linha do tempo</h2>
+                                <div class="small text-muted" x-text="timelineEstudo.nome"></div>
+                            </div>
+                            <button class="btn btn-sm btn-primary" x-show="!regForm"
+                                    @click="novoRegistro()" title="Registrar estudo">
+                                <i class="bi bi-plus-lg" aria-hidden="true"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary" @click="fecharTimeline()" aria-label="Fechar">
+                                <i class="bi bi-x-lg" aria-hidden="true"></i>
+                            </button>
+                        </div>
+
+                        <!-- formulário do registro -->
+                        <template x-if="regForm">
+                        <div class="border rounded-3 p-3 mb-3">
+                            <h3 class="h6 fw-semibold mb-2 small text-uppercase text-muted"
+                                x-text="regForm.id > 0 ? 'Editar registro' : 'Registrar estudo'"></h3>
+                            <label class="form-label small text-muted mb-1">Data</label>
+                            <input type="date" class="form-control form-control-sm mb-2" x-model="regForm.data">
+                            <label class="form-label small text-muted mb-1">Onde parou</label>
+                            <div class="mb-2">
+                                <input type="text" class="form-control form-control-sm"
+                                       :class="regForm.erroOnde ? 'is-invalid' : ''"
+                                       placeholder="Ex: lição 12, parágrafo 5"
+                                       x-model="regForm.onde_parou"
+                                       @input="regForm.erroOnde = false">
+                                <div class="invalid-feedback">Informe onde o estudo parou.</div>
+                            </div>
+                            <label class="form-label small text-muted mb-1">Comentário</label>
+                            <textarea class="form-control form-control-sm mb-2" rows="2"
+                                      placeholder="Como foi o estudo, dúvidas, próximos passos…"
+                                      x-model="regForm.comentario"></textarea>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-secondary flex-fill" @click="cancelarRegistro()">Cancelar</button>
+                                <button class="btn btn-sm btn-primary flex-fill" @click="salvarRegistro()">Salvar</button>
+                            </div>
+                        </div>
+                        </template>
+
+                        <div class="text-center text-muted py-3" x-show="registrosTimeline.length === 0 && !regForm" x-cloak>
+                            <i class="bi bi-clock-history fs-3 d-block mb-1"></i>
+                            <span class="small">Nenhum registro ainda. Toque em + após cada estudo.</span>
+                        </div>
+
+                        <!-- lista da linha do tempo (mais recente primeiro) -->
+                        <div class="d-flex flex-column gap-2" style="max-height:45vh;overflow-y:auto">
+                            <template x-for="r in registrosTimeline" :key="r.id">
+                                <div class="border rounded-3 py-2 px-3 d-flex align-items-start gap-2">
+                                    <div class="flex-grow-1 min-w-0">
+                                        <div class="small fw-semibold" x-text="fmtData(r.registrado_em)"></div>
+                                        <div class="small">
+                                            <i class="bi bi-bookmark text-primary" aria-hidden="true"></i>
+                                            <span x-text="r.onde_parou"></span>
+                                        </div>
+                                        <div class="small text-muted fst-italic" x-show="r.comentario" x-cloak
+                                             x-text="r.comentario"></div>
+                                    </div>
+                                    <div class="d-flex gap-1 flex-shrink-0">
+                                        <button class="btn btn-sm p-0 px-1 border-0 text-secondary"
+                                                @click="editarRegistro(r)" title="Editar">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm p-0 px-1 border-0 text-danger"
+                                                @click="excluirRegistro(r.id)" title="Excluir">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </template>
 
             </div>
             </template>
@@ -3965,11 +4170,13 @@
                                         </div>
                                     </div>
                                     <div class="d-flex flex-column gap-1 flex-shrink-0">
-                                        <button class="btn btn-sm btn-outline-info"
+                                        <button class="btn btn-sm"
+                                                :class="s.anotacao_criada ? 'btn-success' : 'btn-outline-info'"
+                                                :disabled="s.anotacao_criada"
                                                 x-show="s.nota_meditacao"
                                                 @click="perolaParaAnotacao(s)"
-                                                title="Salvar pérola nas Anotações">
-                                            <i class="bi bi-journal-plus"></i>
+                                                :title="s.anotacao_criada ? 'Pérola já guardada nas Anotações (pasta Pérolas)' : 'Salvar pérola nas Anotações (pasta Pérolas)'">
+                                            <i class="bi" :class="s.anotacao_criada ? 'bi-journal-check' : 'bi-journal-plus'"></i>
                                         </button>
                                         <button class="btn btn-sm btn-outline-danger"
                                                 @click="excluirSessao(s.id)" title="Excluir">
