@@ -9,6 +9,10 @@
     <link rel="manifest" href="./manifest.webmanifest">
     <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="./icons/icon.svg">
+    <!-- Ligadas como <link> (não import JS) para existirem como stylesheet real
+         em dev e prod — o iframe do SunEditor (editor.js) copia todo <link
+         rel="stylesheet"> do documento para dentro de si (iframe_cssFileName:
+         ['*']), o que exige que não sejam <style> injetados via JS. -->
     <script>
         (function () {
             var t = localStorage.getItem('sang-theme') || 'light';
@@ -2918,9 +2922,11 @@
                     </button>
                 </div>
 
-                <!-- formulário inline -->
+                <!-- formulário (modal) -->
                 <template x-if="categoriaForm">
-                <div class="card mb-3">
+                <div class="papiro-form-modal" @click.self="cancelarCategoria()"
+                     @keydown.escape.window="cancelarCategoria()">
+                <div class="card">
                     <div class="card-body">
                         <h2 class="h6 fw-semibold mb-3" x-text="categoriaForm?.id > 0 ? 'Editar categoria' : 'Nova categoria'"></h2>
 
@@ -2966,6 +2972,7 @@
                             <button class="btn btn-sm btn-primary flex-fill" @click="salvarCategoria()">Salvar</button>
                         </div>
                     </div>
+                </div>
                 </div>
                 </template>
 
