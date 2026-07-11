@@ -1084,10 +1084,10 @@
                             <p class="fs-4 mb-4" x-text="soIcone(receitaAtual.categoria)" x-show="receitaAtual.categoria"></p>
 
                             <h2 class="h6 fw-semibold text-uppercase text-muted mb-2">Ingredientes</h2>
-                            <div class="mb-4" x-html="receitaAtual.ingredientes"></div>
+                            <div class="mb-4 papiro-texto-simples" x-html="receitaAtual.ingredientes"></div>
 
                             <h2 class="h6 fw-semibold text-uppercase text-muted mb-2">Modo de Preparo</h2>
-                            <div x-html="receitaAtual.instrucoes"></div>
+                            <div class="papiro-texto-simples" x-html="receitaAtual.instrucoes"></div>
 
                             <div style="height:4rem"></div>
                         </div>
@@ -1148,11 +1148,20 @@
                         </template>
                     </div>
 
+                    <!-- Texto puro (um item/passo por linha): sem editor rico -->
                     <h2 class="h6 fw-semibold text-uppercase text-muted mb-2">Ingredientes</h2>
-                    <div class="mb-3"><textarea id="receita-editor-ing"></textarea></div>
+                    <div class="mb-3">
+                        <textarea id="receita-editor-ing" class="form-control" rows="8"
+                                  placeholder="Um ingrediente por linha…"
+                                  x-model="edIngredientes" @input="agendarSalvar()"></textarea>
+                    </div>
 
                     <h2 class="h6 fw-semibold text-uppercase text-muted mb-2">Modo de Preparo</h2>
-                    <div class="mb-3"><textarea id="receita-editor-instr"></textarea></div>
+                    <div class="mb-3">
+                        <textarea id="receita-editor-instr" class="form-control" rows="10"
+                                  placeholder="Um passo por linha…"
+                                  x-model="edInstrucoes" @input="agendarSalvar()"></textarea>
+                    </div>
                 </div>
             </div>
             </template>
@@ -2102,7 +2111,7 @@
                                                :class="itemMarcado(k, it.id) ? 'bi-check-circle-fill text-success' : 'bi-circle text-muted'"
                                                aria-hidden="true"></i>
                                             <div class="flex-grow-1"
-                                                 :class="itemMarcado(k, it.id) ? 'text-decoration-line-through text-muted' : ''">
+                                                 :class="itemMarcado(k, it.id) ? 'text-muted' : ''">
                                                 <div x-text="it.rotulo || it.descricao"></div>
                                                 <div class="small d-flex flex-wrap gap-2">
                                                     <span class="text-muted" x-show="it.quantidade" x-text="`Qtd: ${it.quantidade}`"></span>
@@ -3205,7 +3214,7 @@
                                 <div class="d-flex align-items-start gap-3 mb-2">
                                     <div class="flex-grow-1" role="button" @click="editar(m)">
                                         <div class="d-flex align-items-center gap-2 flex-wrap">
-                                            <span class="fw-semibold" :class="estaConcluida(m) ? 'text-decoration-line-through text-muted' : ''"
+                                            <span class="fw-semibold" :class="estaConcluida(m) ? 'text-muted' : ''"
                                                   x-text="m.titulo || 'Sem título'"></span>
                                             <span class="badge rounded-pill"
                                                   :class="{
@@ -3737,7 +3746,9 @@
                                           :style="`background:${corEstudo(e)}1f;color:${corEstudo(e)}`"
                                           x-text="inicial(e)"></span>
 
-                                    <div class="flex-grow-1" role="button" @click="editarEstudo(e)">
+                                    <!-- O corpo do card abre a linha do tempo (a ação do dia a dia);
+                                         editar o cadastro fica no botão do lápis, ao lado. -->
+                                    <div class="flex-grow-1" role="button" @click="abrirTimeline(e)">
                                         <div class="d-flex align-items-center gap-2 flex-wrap">
                                             <span class="fw-semibold" x-text="e.nome || 'Sem nome'"></span>
                                             <span class="badge rounded-pill"
@@ -3767,9 +3778,9 @@
                                     </div>
 
                                     <div class="d-flex flex-column gap-1 flex-shrink-0">
-                                        <button class="btn btn-sm btn-outline-success" @click="abrirTimeline(e)"
-                                                title="Linha do tempo (registrar o estudo)">
-                                            <i class="bi bi-clock-history"></i>
+                                        <button class="btn btn-sm btn-outline-secondary" @click="editarEstudo(e)"
+                                                title="Editar estudo">
+                                            <i class="bi bi-pencil"></i>
                                         </button>
                                         <button class="btn btn-sm btn-outline-primary" @click="compartilharEstudo(e)" title="Compartilhar">
                                             <i class="bi bi-share"></i>
