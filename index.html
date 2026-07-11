@@ -1508,6 +1508,20 @@
                     <div class="card-body">
                         <div class="text-uppercase small fw-semibold text-muted mb-2">Conceito</div>
                         <div class="papiro-prosa" x-html="moduloAtual.conceito"></div>
+
+                        <!-- Ilustração (opcional): toque abre em tela cheia com zoom -->
+                        <template x-if="moduloAtual.imagem">
+                            <figure class="mt-3 mb-0">
+                                <img class="img-fluid rounded papiro-imagem-zoom"
+                                     :src="`imagens/${moduloAtual.imagem}`"
+                                     :alt="moduloAtual.titulo"
+                                     loading="lazy"
+                                     @click="abrirZoom(moduloAtual.imagem)">
+                                <figcaption class="text-muted small mt-1">
+                                    <i class="bi bi-zoom-in me-1" aria-hidden="true"></i>Toque para ampliar
+                                </figcaption>
+                            </figure>
+                        </template>
                     </div>
                 </div>
 
@@ -1849,6 +1863,19 @@
                         </div>
                     </div>
                 </template>
+            </div>
+            </template>
+
+            <!-- ── Zoom da ilustração (tela cheia; pinça/duplo-toque ampliam) ── -->
+            <template x-if="zoomImagem">
+            <div class="papiro-zoom" @click.self="fecharZoom()" @keydown.escape.window="fecharZoom()">
+                <button class="btn btn-light btn-sm papiro-zoom__fechar" @click="fecharZoom()" aria-label="Fechar">
+                    <i class="bi bi-x-lg" aria-hidden="true"></i>
+                </button>
+                <img :src="`imagens/${zoomImagem}`"
+                     :alt="moduloAtual?.titulo || ''"
+                     :class="zoomAmpliado ? 'papiro-zoom__img papiro-zoom__img--ampliada' : 'papiro-zoom__img'"
+                     @click="zoomAmpliado = !zoomAmpliado">
             </div>
             </template>
 
