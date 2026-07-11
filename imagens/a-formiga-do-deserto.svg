@@ -26,18 +26,6 @@
         </linearGradient>
 
         <!-- pontas de seta com tamanho fixo (não escalam com a espessura do traço) -->
-        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="14" markerHeight="14"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
-        </marker>
-        <marker id="sp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
-        </marker>
-        <marker id="si" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M10 0 L0 5 L10 10 z" fill="context-stroke"/>
-        </marker>
 
         <!-- a formiga, desenhada uma vez e reusada -->
         <g id="formiga">
@@ -50,6 +38,18 @@
             <ellipse cx="9" cy="-1" rx="6" ry="5" fill="#8c3b18"/>
             <circle cx="12" cy="-3" r="1.6" fill="#2b1206"/>
         </g>
+        <marker id="s-d63f2a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="14" markerHeight="14"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#d63f2a"/>
+        </marker>
+        <marker id="sp-2f7fd0" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#2f7fd0"/>
+        </marker>
+        <marker id="sp-7a4a26" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#7a4a26"/>
+        </marker>
     </defs>
 
     <style>
@@ -96,11 +96,11 @@
 
     <!-- ══ Ida: ziguezague à procura de comida ════════════════════════════ -->
     <g fill="none" stroke="#2f7fd0" stroke-width="5" stroke-dasharray="16 11" stroke-linecap="round">
-        <path d="M150 420 C 210 392, 250 448, 312 430" marker-end="url(#sp)"/>
-        <path d="M320 444 C 372 486, 300 520, 268 560" marker-end="url(#sp)"/>
-        <path d="M276 578 C 340 606, 420 566, 470 596" marker-end="url(#sp)"/>
-        <path d="M486 610 C 540 646, 470 686, 520 712" marker-end="url(#sp)"/>
-        <path d="M540 722 C 600 742, 660 706, 706 700" marker-end="url(#sp)"/>
+        <path d="M150 420 C 210 392, 250 448, 312 430" marker-end="url(#sp-2f7fd0)"/>
+        <path d="M320 444 C 372 486, 300 520, 268 560" marker-end="url(#sp-2f7fd0)"/>
+        <path d="M276 578 C 340 606, 420 566, 470 596" marker-end="url(#sp-2f7fd0)"/>
+        <path d="M486 610 C 540 646, 470 686, 520 712" marker-end="url(#sp-2f7fd0)"/>
+        <path d="M540 722 C 600 742, 660 706, 706 700" marker-end="url(#sp-2f7fd0)"/>
     </g>
 
     <use href="#formiga" transform="translate(238,404) rotate(-8)"/>
@@ -121,7 +121,7 @@
     <!-- ══ Volta: o vetor de casa ═════════════════════════════════════════ -->
     <!-- Reta de (726,668) a (190,452): inclinação de -22°. Os rótulos seguem essa
          mesma inclinação, encostados na seta, e a formiga viaja EM CIMA dela. -->
-    <path d="M726 668 L 190 452" stroke="#d63f2a" stroke-width="9" marker-end="url(#s)"/>
+    <path d="M726 668 L 190 452" stroke="#d63f2a" stroke-width="9" marker-end="url(#s-d63f2a)"/>
     <!-- Rótulo no trecho LIVRE da seta (x≈560): mais à esquerda ele atravessava o
          pontilhado da ida. A reta CAI para a direita (dy/dx = +0,40 com o y para
          baixo do SVG), então o giro é +22° — com −22° o texto subia e cruzava a seta. -->
@@ -189,11 +189,11 @@
 
         <!-- A soma.  Bloco 410→560: 40px de respiro até a base do painel. -->
         <g transform="translate(24,410)">
-            <path d="M146 0 L 146 24" stroke="#7a4a26" stroke-width="3" marker-end="url(#sp)"/>
+            <path d="M146 0 L 146 24" stroke="#7a4a26" stroke-width="3" marker-end="url(#sp-7a4a26)"/>
             <rect x="0" y="32" width="292" height="118" rx="12" fill="#ffdfd8" stroke="#d63f2a" stroke-width="2"/>
             <text class="rot" x="146" y="64" text-anchor="middle" style="fill:#b0301f">VETOR PARA CASA</text>
 
-            <path d="M46 100 L 246 100" stroke="#d63f2a" stroke-width="7" marker-end="url(#s)"/>
+            <path d="M46 100 L 246 100" stroke="#d63f2a" stroke-width="7" marker-end="url(#s-d63f2a)"/>
             <text class="rotp" x="146" y="136" text-anchor="middle" style="fill:#b0301f" font-size="14">
                 direção + distância = a seta exata
             </text>

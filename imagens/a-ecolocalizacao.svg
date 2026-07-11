@@ -17,19 +17,6 @@
             <stop offset="1" stop-color="#e8b84b" stop-opacity="0.6"/>
         </radialGradient>
 
-        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
-        </marker>
-        <marker id="sp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
-        </marker>
-        <marker id="ini" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M10 0 L0 5 L10 10 z" fill="context-stroke"/>
-        </marker>
-
         <!-- o golfinho, de perfil, virado para a direita -->
         <g id="golfinho">
             <path d="M-120 0 C -110 -34, -50 -54, 0 -50 C 54 -46, 96 -22, 120 -2
@@ -42,6 +29,30 @@
             <circle cx="88" cy="-8" r="5" fill="#0b2438"/>
             <path d="M112 4 C 128 6, 138 12, 142 18 C 128 18, 116 14, 108 10 Z" fill="#0b2438" opacity="0.5"/>
         </g>
+        <marker id="ini-8fb4cd" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M10 0 L0 5 L10 10 z" fill="#8fb4cd"/>
+        </marker>
+        <marker id="s-7bd389" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#7bd389"/>
+        </marker>
+        <marker id="s-ffe680" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#ffe680"/>
+        </marker>
+        <marker id="sp-8fb4cd" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#8fb4cd"/>
+        </marker>
+        <marker id="sp-ff8f6b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#ff8f6b"/>
+        </marker>
+        <marker id="sp-ffe680" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#ffe680"/>
+        </marker>
     </defs>
 
     <style>
@@ -73,7 +84,7 @@
                 <path d="M330 92 A 100 100 0 0 1 330 208"/>
                 <path d="M370 78 A 124 124 0 0 1 370 222"/>
             </g>
-            <path d="M300 60 L 470 60" stroke="#ffe680" stroke-width="2.5" fill="none" marker-end="url(#s)"/>
+            <path d="M300 60 L 470 60" stroke="#ffe680" stroke-width="2.5" fill="none" marker-end="url(#s-ffe680)"/>
             <text class="rotp" x="300" y="46" style="fill:#ffe680">o clique vai…</text>
 
             <!-- volta: frentes de onda voltando (mais fracas) -->
@@ -82,7 +93,7 @@
                 <path d="M520 100 A 92 92 0 0 0 520 200"/>
                 <path d="M480 86 A 116 116 0 0 0 480 214"/>
             </g>
-            <path d="M470 250 L 300 250" stroke="#7bd389" stroke-width="2.5" fill="none" marker-end="url(#s)"/>
+            <path d="M470 250 L 300 250" stroke="#7bd389" stroke-width="2.5" fill="none" marker-end="url(#s-7bd389)"/>
             <text class="rotp" x="300" y="272" style="fill:#7bd389">…e o eco volta</text>
 
             <!-- a presa -->
@@ -96,7 +107,7 @@
 
             <!-- a régua da distância -->
             <path d="M180 306 H 650" stroke="#8fb4cd" stroke-width="2" fill="none"
-                  marker-start="url(#ini)" marker-end="url(#sp)"/>
+                  marker-start="url(#ini-8fb4cd)" marker-end="url(#sp-8fb4cd)"/>
             <text class="rot" x="415" y="298" text-anchor="middle" font-size="16">d = ?</text>
         </g>
     </g>
@@ -114,11 +125,11 @@
             <g transform="translate(50,72)">
                 <circle cx="0" cy="0" r="14" fill="#1b5a80" stroke="#63c7e8" stroke-width="2"/>
                 <g stroke="#ff8f6b" stroke-width="2" fill="none">
-                    <path d="M16 -6 L 120 -40" marker-end="url(#sp)"/>
-                    <path d="M18 0 L 130 0" marker-end="url(#sp)"/>
-                    <path d="M16 6 L 120 40" marker-end="url(#sp)"/>
-                    <path d="M12 -12 L 80 -56" marker-end="url(#sp)"/>
-                    <path d="M12 12 L 80 56" marker-end="url(#sp)"/>
+                    <path d="M16 -6 L 120 -40" marker-end="url(#sp-ff8f6b)"/>
+                    <path d="M18 0 L 130 0" marker-end="url(#sp-ff8f6b)"/>
+                    <path d="M16 6 L 120 40" marker-end="url(#sp-ff8f6b)"/>
+                    <path d="M12 -12 L 80 -56" marker-end="url(#sp-ff8f6b)"/>
+                    <path d="M12 12 L 80 56" marker-end="url(#sp-ff8f6b)"/>
                 </g>
                 <ellipse cx="290" cy="0" rx="26" ry="16" fill="#e8955f" opacity="0.45"/>
                 <text class="rotp" x="300" y="-30" text-anchor="middle" font-size="13" style="fill:#ff8f6b">
@@ -136,9 +147,9 @@
                 <ellipse cx="22" cy="0" rx="20" ry="26" fill="url(#melao)"/>
                 <path d="M44 -22 L 300 -12 L 300 12 L 44 22 Z" fill="#ffe680" opacity="0.28"/>
                 <g stroke="#ffe680" stroke-width="2" fill="none">
-                    <path d="M46 -10 L 286 -6" marker-end="url(#sp)"/>
-                    <path d="M46 0 L 286 0" marker-end="url(#sp)"/>
-                    <path d="M46 10 L 286 6" marker-end="url(#sp)"/>
+                    <path d="M46 -10 L 286 -6" marker-end="url(#sp-ffe680)"/>
+                    <path d="M46 0 L 286 0" marker-end="url(#sp-ffe680)"/>
+                    <path d="M46 10 L 286 6" marker-end="url(#sp-ffe680)"/>
                 </g>
                 <ellipse cx="316" cy="0" rx="26" ry="16" fill="#e8955f"/>
                 <text class="rotp" x="316" y="-32" text-anchor="middle" font-size="13" style="fill:#7bd389">

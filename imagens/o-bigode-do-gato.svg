@@ -16,19 +16,6 @@
             <stop offset="1" stop-color="#5d4f42"/>
         </linearGradient>
 
-        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
-        </marker>
-        <marker id="sp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
-        </marker>
-        <marker id="ini" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="8" markerHeight="8"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M10 0 L0 5 L10 10 z" fill="context-stroke"/>
-        </marker>
-
         <!-- o gato, visto de cima: corpo, cabeça e orelhas -->
         <g id="gato">
             <ellipse cx="0" cy="58" rx="56" ry="80" fill="url(#pelo)" stroke="#c2ab90" stroke-width="2"/>
@@ -39,6 +26,30 @@
             <circle cx="16" cy="-52" r="5" fill="#1a1d24"/>
             <path d="M-5 -34 L 5 -34 L 0 -26 Z" fill="#e0918f"/>
         </g>
+        <marker id="ini-7bd389" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="8" markerHeight="8"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M10 0 L0 5 L10 10 z" fill="#7bd389"/>
+        </marker>
+        <marker id="ini-ff8f6b" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="8" markerHeight="8"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M10 0 L0 5 L10 10 z" fill="#ff8f6b"/>
+        </marker>
+        <marker id="ini-ffd24d" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="8" markerHeight="8"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M10 0 L0 5 L10 10 z" fill="#ffd24d"/>
+        </marker>
+        <marker id="sp-7bd389" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#7bd389"/>
+        </marker>
+        <marker id="sp-ff8f6b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#ff8f6b"/>
+        </marker>
+        <marker id="sp-ffd24d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#ffd24d"/>
+        </marker>
     </defs>
 
     <style>
@@ -84,7 +95,7 @@
 
             <!-- cota: a fresta é maior que o bigode -->
             <path d="M86 232 H 290" stroke="#7bd389" stroke-width="2" fill="none"
-                  marker-start="url(#ini)" marker-end="url(#sp)"/>
+                  marker-start="url(#ini-7bd389)" marker-end="url(#sp-7bd389)"/>
             <text class="rotp" x="188" y="256" text-anchor="middle" style="fill:#7bd389">a fresta é maior — o corpo passa</text>
         </g>
 
@@ -111,7 +122,7 @@
             <rect class="parede" x="218" y="46" width="148" height="164" rx="6"/>
 
             <path d="M158 232 H 218" stroke="#ff8f6b" stroke-width="2" fill="none"
-                  marker-start="url(#ini)" marker-end="url(#sp)"/>
+                  marker-start="url(#ini-ff8f6b)" marker-end="url(#sp-ff8f6b)"/>
             <text class="rotp" x="188" y="256" text-anchor="middle" style="fill:#ff8f6b">dobrou: ele nem tenta entrar</text>
         </g>
     </g>
@@ -151,9 +162,9 @@
 
             <!-- o fio, saindo e sendo tocado -->
             <path d="M0 -14 C 4 -60, 40 -96, 96 -110" stroke="#f2f5fa" stroke-width="3" fill="none"/>
-            <path d="M150 -126 L 112 -114" stroke="#ffd24d" stroke-width="2.5" fill="none" marker-end="url(#sp)"/>
-            <text class="rotp" x="222" y="-130" text-anchor="end" font-size="13" style="fill:#ffd24d">um roçar de nada…</text>
-            <path d="M-14 -6 C -30 -20, -34 -34, -30 -46" stroke="#ffd24d" stroke-width="2" fill="none" marker-end="url(#sp)"/>
+            <path d="M148 -122 L 112 -113" stroke="#ffd24d" stroke-width="2.5" fill="none" marker-end="url(#sp-ffd24d)"/>
+            <text class="rotp" x="186" y="-134" text-anchor="end" font-size="13" style="fill:#ffd24d">um roçar de nada…</text>
+            <path d="M-14 -6 C -30 -20, -34 -34, -30 -46" stroke="#ffd24d" stroke-width="2" fill="none" marker-end="url(#sp-ffd24d)"/>
             <text class="rotp" x="-196" y="-90" font-size="13" style="fill:#ffd24d">…vira um tranco aqui dentro</text>
         </g>
     </g>
@@ -165,21 +176,21 @@
 
         <g transform="translate(30,72)">
             <rect x="0" y="0" width="186" height="112" rx="10" fill="#141821" stroke="#7bd389" stroke-width="1.5"/>
-            <path d="M28 44 H 158" stroke="#7bd389" stroke-width="3" marker-start="url(#ini)" marker-end="url(#sp)"/>
+            <path d="M28 44 H 158" stroke="#7bd389" stroke-width="3" marker-start="url(#ini-7bd389)" marker-end="url(#sp-7bd389)"/>
             <path d="M56 30 H 130" stroke="#f2f5fa" stroke-width="2.5"/>
             <text class="rotp" x="93" y="82" text-anchor="middle" style="fill:#7bd389">sobra folga: passa</text>
         </g>
 
         <g transform="translate(226,72)">
             <rect x="0" y="0" width="186" height="112" rx="10" fill="#141821" stroke="#ffd24d" stroke-width="1.5"/>
-            <path d="M28 44 H 158" stroke="#ffd24d" stroke-width="3" marker-start="url(#ini)" marker-end="url(#sp)"/>
+            <path d="M28 44 H 158" stroke="#ffd24d" stroke-width="3" marker-start="url(#ini-ffd24d)" marker-end="url(#sp-ffd24d)"/>
             <path d="M28 30 H 158" stroke="#f2f5fa" stroke-width="2.5"/>
             <text class="rotp" x="93" y="82" text-anchor="middle" style="fill:#ffd24d">encosta nas duas: é o limite</text>
         </g>
 
         <g transform="translate(422,72)">
             <rect x="0" y="0" width="186" height="112" rx="10" fill="#141821" stroke="#ff8f6b" stroke-width="1.5"/>
-            <path d="M56 44 H 130" stroke="#ff8f6b" stroke-width="3" marker-start="url(#ini)" marker-end="url(#sp)"/>
+            <path d="M56 44 H 130" stroke="#ff8f6b" stroke-width="3" marker-start="url(#ini-ff8f6b)" marker-end="url(#sp-ff8f6b)"/>
             <path d="M30 30 C 60 30, 60 22, 93 22 C 126 22, 126 30, 156 30" stroke="#f2f5fa" stroke-width="2.5" fill="none"/>
             <text class="rotp" x="93" y="82" text-anchor="middle" style="fill:#ff8f6b">dobrou: não passa</text>
         </g>

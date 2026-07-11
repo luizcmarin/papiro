@@ -37,14 +37,17 @@
             <rect x="1030" y="266" width="54" height="80" rx="12"/>
             <rect x="1022" y="300" width="58" height="400" rx="10"/>
         </clipPath>
-
-        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="13" markerHeight="13"
+        <marker id="s-d63f2a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="13" markerHeight="13"
                 markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+            <path d="M0 0 L10 5 L0 10 z" fill="#d63f2a"/>
         </marker>
-        <marker id="sp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+        <marker id="sp-2f7fd0" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
                 markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+            <path d="M0 0 L10 5 L0 10 z" fill="#2f7fd0"/>
+        </marker>
+        <marker id="sp-7b6244" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#7b6244"/>
         </marker>
     </defs>
 
@@ -92,19 +95,19 @@
         </g>
 
         <!-- A carga do peso do corpo entra pela cabeça do fêmur -->
-        <path d="M152 202 L 216 240" stroke="#d63f2a" stroke-width="7" marker-end="url(#s)"/>
+        <path d="M152 202 L 216 240" stroke="#d63f2a" stroke-width="7" marker-end="url(#s-d63f2a)"/>
         <text class="rot" x="30" y="196" font-size="16" style="fill:#b0301f">PESO DO CORPO</text>
 
         <!-- As linhas de força que as vigas copiam -->
         <g stroke="#2f7fd0" stroke-width="2.5" fill="none" stroke-dasharray="9 7">
-            <path d="M240 200 C 288 254, 336 322, 356 470" marker-end="url(#sp)"/>
+            <path d="M240 200 C 288 254, 336 322, 356 470" marker-end="url(#sp-2f7fd0)"/>
         </g>
         <text class="rotp" x="418" y="330" style="fill:#2f7fd0" font-weight="700" font-size="15">
             linha de força
         </text>
         <text class="rotp" x="418" y="350" style="fill:#2f7fd0">as vigas seguem exatamente ela</text>
 
-        <path d="M410 470 L 372 470" stroke="#7b6244" stroke-width="2" marker-end="url(#sp)"/>
+        <path d="M410 470 L 372 470" stroke="#7b6244" stroke-width="2" marker-end="url(#sp-7b6244)"/>
         <text class="rotp" x="418" y="466">a haste é um tubo:</text>
         <text class="rotp" x="418" y="486">no miolo não há esforço</text>
     </g>
@@ -117,7 +120,7 @@
         <use href="#femur" fill="none" stroke="#9c8154" stroke-width="12" stroke-linejoin="round"/>
         <use href="#femur" fill="#d9c49b"/>
 
-        <path d="M152 202 L 216 240" stroke="#d63f2a" stroke-width="7" marker-end="url(#s)"/>
+        <path d="M152 202 L 216 240" stroke="#d63f2a" stroke-width="7" marker-end="url(#s-d63f2a)"/>
     </g>
 
     <!-- Hachura uniforme do maciço (recortada pela silhueta deslocada) -->

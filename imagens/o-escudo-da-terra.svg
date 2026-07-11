@@ -21,9 +21,9 @@
             <stop offset="1" stop-color="#ff9d3c" stop-opacity="0"/>
         </radialGradient>
 
-        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12"
+        <marker id="s-ffd166" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12"
                 markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+            <path d="M0 0 L10 5 L0 10 z" fill="#ffd166"/>
         </marker>
     </defs>
 
@@ -51,12 +51,12 @@
 
     <!-- as partículas do vento solar -->
     <g stroke="#ffd166" stroke-width="3.5" fill="none" opacity="0.95">
-        <path d="M150 250 L 330 250" marker-end="url(#s)"/>
-        <path d="M150 320 L 350 320" marker-end="url(#s)"/>
-        <path d="M150 390 L 360 390" marker-end="url(#s)"/>
-        <path d="M150 460 L 360 460" marker-end="url(#s)"/>
-        <path d="M150 530 L 350 530" marker-end="url(#s)"/>
-        <path d="M150 600 L 330 600" marker-end="url(#s)"/>
+        <path d="M150 250 L 330 250" marker-end="url(#s-ffd166)"/>
+        <path d="M150 320 L 350 320" marker-end="url(#s-ffd166)"/>
+        <path d="M150 390 L 360 390" marker-end="url(#s-ffd166)"/>
+        <path d="M150 460 L 360 460" marker-end="url(#s-ffd166)"/>
+        <path d="M150 530 L 350 530" marker-end="url(#s-ffd166)"/>
+        <path d="M150 600 L 330 600" marker-end="url(#s-ffd166)"/>
     </g>
 
     <!-- ══ A magnetosfera: comprimida na frente, esticada atrás ═══════════ -->
@@ -76,7 +76,7 @@
         <path d="M880 474 C 1020 510, 1180 516, 1340 512"/>
         <path d="M880 504 C 1020 560, 1180 568, 1340 560"/>
     </g>
-    <text class="rotp" x="1180" y="270" style="fill:#7fd4ff" font-size="13">cauda magnética (lado da noite)</text>
+    <text class="rotp" x="1100" y="270" style="fill:#7fd4ff" font-size="13">cauda magnética (lado da noite)</text>
 
     <!-- ══ A Terra ════════════════════════════════════════════════════════ -->
     <g transform="translate(860,430)">
@@ -93,25 +93,25 @@
             <path d="M-26 56 C -14 74, 14 74, 26 56"/>
             <path d="M-20 66 C -10 84, 10 84, 20 66"/>
         </g>
-        <text class="rot" x="0" y="-104" text-anchor="middle" font-size="16" style="fill:#7bd389">AURORA</text>
-        <text class="rot" x="0" y="122" text-anchor="middle" font-size="16" style="fill:#7bd389">AURORA</text>
+        <text class="rot" x="8" y="-102" text-anchor="middle" font-size="16" style="fill:#7bd389">AURORA</text>
+        <text class="rot" x="14" y="120" text-anchor="middle" font-size="16" style="fill:#7bd389">AURORA</text>
     </g>
 
     <!-- as partículas escorrendo pelas linhas do campo até os polos -->
     <g stroke="#ffd166" stroke-width="3" fill="none" opacity="0.9">
-        <path d="M560 300 C 660 250, 760 280, 836 356" marker-end="url(#s)"/>
-        <path d="M560 560 C 660 610, 760 580, 836 504" marker-end="url(#s)"/>
+        <path d="M560 300 C 660 250, 760 280, 836 356" marker-end="url(#s-ffd166)"/>
+        <path d="M560 560 C 660 610, 760 580, 836 504" marker-end="url(#s-ffd166)"/>
     </g>
-    <text class="rotp" x="640" y="240" style="fill:#ffd166" font-size="13">
+    <text class="rotp" x="596" y="212" style="fill:#ffd166" font-size="13">
         as que passam escorrem pelas linhas até os polos
     </text>
 
     <!-- as que batem no escudo e são desviadas -->
     <g stroke="#ffd166" stroke-width="3" fill="none" opacity="0.9">
-        <path d="M400 430 C 470 430, 500 350, 520 250" marker-end="url(#s)"/>
-        <path d="M400 466 C 470 470, 500 560, 520 650" marker-end="url(#s)"/>
+        <path d="M400 430 C 470 430, 500 350, 520 250" marker-end="url(#s-ffd166)"/>
+        <path d="M400 466 C 470 470, 500 560, 520 650" marker-end="url(#s-ffd166)"/>
     </g>
-    <text class="rot" x="470" y="700" font-size="16" style="fill:#ffd166" text-anchor="middle">DESVIADAS</text>
+    <text class="rot" x="516" y="684" font-size="16" style="fill:#ffd166" text-anchor="middle">DESVIADAS</text>
 
     <!-- ══ Painel: sem o campo ════════════════════════════════════════════ -->
     <g transform="translate(1040,600)">

@@ -25,9 +25,13 @@
             <stop offset="1" stop-color="#6f4622"/>
         </linearGradient>
 
-        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12"
+        <marker id="s-1f7a3d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12"
                 markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+            <path d="M0 0 L10 5 L0 10 z" fill="#1f7a3d"/>
+        </marker>
+        <marker id="s-d63f2a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#d63f2a"/>
         </marker>
     </defs>
 
@@ -70,9 +74,9 @@
         <rect x="396" y="120" width="20" height="140" fill="#8a5a2b"/>
 
         <g stroke="#d63f2a" stroke-width="5" fill="none">
-            <path d="M300 168 L 384 168" marker-end="url(#s)"/>
-            <path d="M300 190 L 384 190" marker-end="url(#s)"/>
-            <path d="M300 212 L 384 212" marker-end="url(#s)"/>
+            <path d="M300 168 L 384 168" marker-end="url(#s-d63f2a)"/>
+            <path d="M300 190 L 384 190" marker-end="url(#s-d63f2a)"/>
+            <path d="M300 212 L 384 212" marker-end="url(#s-d63f2a)"/>
         </g>
 
         <!-- a parede cede no meio, onde nada a apoia -->
@@ -105,20 +109,20 @@
               stroke="#8a5a2b" stroke-width="18" stroke-linecap="butt"/>
 
         <g stroke="#d63f2a" stroke-width="5" fill="none">
-            <path d="M290 168 L 358 172" marker-end="url(#s)"/>
-            <path d="M290 190 L 352 190" marker-end="url(#s)"/>
-            <path d="M290 212 L 358 208" marker-end="url(#s)"/>
+            <path d="M290 168 L 358 172" marker-end="url(#s-d63f2a)"/>
+            <path d="M290 190 L 352 190" marker-end="url(#s-d63f2a)"/>
+            <path d="M290 212 L 358 208" marker-end="url(#s-d63f2a)"/>
         </g>
 
         <!-- a força corre POR DENTRO do arco até os apoios… -->
         <g stroke="#1f7a3d" stroke-width="5" fill="none" stroke-linecap="round">
-            <path d="M366 186 C 368 162, 384 138, 404 124" marker-end="url(#s)"/>
-            <path d="M366 194 C 368 218, 384 242, 404 256" marker-end="url(#s)"/>
+            <path d="M366 186 C 368 162, 384 138, 404 124" marker-end="url(#s-1f7a3d)"/>
+            <path d="M366 194 C 368 218, 384 242, 404 256" marker-end="url(#s-1f7a3d)"/>
         </g>
         <!-- …e é despejada dentro da margem, logo ali ao lado da ponta -->
         <g stroke="#1f7a3d" stroke-width="6" fill="none">
-            <path d="M412 116 L 424 104" marker-end="url(#s)"/>
-            <path d="M412 264 L 424 276" marker-end="url(#s)"/>
+            <path d="M412 116 L 424 104" marker-end="url(#s-1f7a3d)"/>
+            <path d="M412 264 L 424 276" marker-end="url(#s-1f7a3d)"/>
         </g>
         <text class="naMargem" x="434" y="112">a margem segura</text>
         <text class="naMargem" x="434" y="280">a margem segura</text>
@@ -200,12 +204,12 @@
               stroke="#c3cbd1" stroke-width="16" stroke-linecap="butt"/>
 
         <g stroke="#d63f2a" stroke-width="4" fill="none">
-            <path d="M304 132 L 356 136" marker-end="url(#s)"/>
-            <path d="M304 158 L 356 154" marker-end="url(#s)"/>
+            <path d="M304 132 L 356 136" marker-end="url(#s-d63f2a)"/>
+            <path d="M304 158 L 356 154" marker-end="url(#s-d63f2a)"/>
         </g>
         <g stroke="#1f7a3d" stroke-width="5" fill="none">
-            <path d="M406 106 L 418 94" marker-end="url(#s)"/>
-            <path d="M406 184 L 418 196" marker-end="url(#s)"/>
+            <path d="M406 106 L 418 94" marker-end="url(#s-1f7a3d)"/>
+            <path d="M406 184 L 418 196" marker-end="url(#s-1f7a3d)"/>
         </g>
 
         <text class="rotp" x="24" y="228" font-size="13">

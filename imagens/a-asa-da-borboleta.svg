@@ -29,17 +29,37 @@
         </radialGradient>
 
         <!-- markerUnits fixo: a ponta não engorda junto com a espessura do traço -->
-        <marker id="p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="13" markerHeight="13"
+        <marker id="p-branca" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="13" markerHeight="13"
                 markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+            <path d="M0 0 L10 5 L0 10 z" fill="#ffffff"/>
         </marker>
-        <marker id="pp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+        <marker id="p-4dc3ff" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="13" markerHeight="13"
                 markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+            <path d="M0 0 L10 5 L0 10 z" fill="#4dc3ff"/>
         </marker>
-        <marker id="pi" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9"
+        <marker id="p-79d68b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="13" markerHeight="13"
                 markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M10 0 L0 5 L10 10 z" fill="context-stroke"/>
+            <path d="M0 0 L10 5 L0 10 z" fill="#79d68b"/>
+        </marker>
+        <marker id="p-ff8f6b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="13" markerHeight="13"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#ff8f6b"/>
+        </marker>
+        <marker id="pi-ffce5c" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M10 0 L0 5 L10 10 z" fill="#ffce5c"/>
+        </marker>
+        <marker id="pp-4dc3ff" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#4dc3ff"/>
+        </marker>
+        <marker id="pp-7fd4ff" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#7fd4ff"/>
+        </marker>
+        <marker id="pp-ffce5c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#ffce5c"/>
         </marker>
     </defs>
 
@@ -101,7 +121,7 @@
     <!-- lupa sobre a asa + trilha até o painel 1 -->
     <circle cx="255" cy="220" r="30" fill="none" stroke="#7fd4ff" stroke-width="2.5"/>
     <path d="M276 241 C 320 280, 340 250, 396 232" stroke="#7fd4ff" stroke-width="2"
-          stroke-dasharray="7 6" fill="none" marker-end="url(#pp)"/>
+          stroke-dasharray="7 6" fill="none" marker-end="url(#pp-7fd4ff)"/>
 
     <!-- ══ Painel 1 — escamas ═════════════════════════════════════════════ -->
     <g transform="translate(410,130)">
@@ -127,7 +147,7 @@
         <text class="rotp" x="140" y="204" text-anchor="middle">sobrepostas como telhas</text>
     </g>
 
-    <path d="M700 245 H 748" stroke="#7fd4ff" stroke-width="2.5" marker-end="url(#pp)"/>
+    <path d="M700 245 H 748" stroke="#7fd4ff" stroke-width="2.5" marker-end="url(#pp-7fd4ff)"/>
 
     <!-- ══ Painel 2 — lamelas ═════════════════════════════════════════════ -->
     <g transform="translate(760,130)">
@@ -152,7 +172,7 @@
 
             <!-- d: o degrau entre lamelas — é o que o desafio ajusta -->
             <path d="M84 4 L 84 23" stroke="#ffce5c" stroke-width="2.5"
-                  marker-start="url(#pi)" marker-end="url(#pp)"/>
+                  marker-start="url(#pi-ffce5c)" marker-end="url(#pp-ffce5c)"/>
             <text x="93" y="20" fill="#ffce5c" font-size="19" font-weight="800">d</text>
         </g>
 
@@ -168,7 +188,7 @@
         <text class="rot" x="56" y="35">A LUZ BATE, VOLTA E SE ENCONTRA</text>
 
         <!-- luz branca entra pela esquerda -->
-        <path d="M44 92 L 180 178" stroke="url(#branca)" stroke-width="7" marker-end="url(#p)"/>
+        <path d="M44 92 L 180 178" stroke="url(#branca)" stroke-width="7" marker-end="url(#p-branca)"/>
         <text class="rotp" x="42" y="80" style="fill:#fff3c4">LUZ BRANCA (todas as cores)</text>
 
         <!-- as lamelas: dois espelhos separados por d -->
@@ -176,21 +196,21 @@
             <path d="M170 190 H 330" stroke="#9beeff" stroke-width="6"/>
             <path d="M170 224 H 330" stroke="#9beeff" stroke-width="6"/>
             <path d="M348 193 L 348 221" stroke="#ffce5c" stroke-width="2.5"
-                  marker-start="url(#pi)" marker-end="url(#pp)"/>
+                  marker-start="url(#pi-ffce5c)" marker-end="url(#pp-ffce5c)"/>
             <text x="358" y="215" fill="#ffce5c" font-size="19" font-weight="800">d</text>
             <text class="rotp" x="44" y="256">o raio de baixo anda um pouquinho mais</text>
         </g>
 
         <!-- azul sai reforçado, para cima -->
-        <path d="M240 184 L 372 112" stroke="#4dc3ff" stroke-width="7" marker-end="url(#p)"/>
+        <path d="M240 184 L 372 112" stroke="#4dc3ff" stroke-width="7" marker-end="url(#p-4dc3ff)"/>
         <text class="rot" x="398" y="106" style="fill:#4dc3ff">AZUL: SOMA</text>
         <text class="rotp" x="398" y="130">volta em fase — uma onda</text>
         <text class="rotp" x="398" y="150">reforça a outra e a cor acende</text>
 
         <!-- verde e vermelho se cancelam -->
         <g opacity="0.4">
-            <path d="M240 206 L 372 198" stroke="#79d68b" stroke-width="5" marker-end="url(#p)"/>
-            <path d="M240 216 L 372 232" stroke="#ff8f6b" stroke-width="5" marker-end="url(#p)"/>
+            <path d="M240 206 L 372 198" stroke="#79d68b" stroke-width="5" marker-end="url(#p-79d68b)"/>
+            <path d="M240 216 L 372 232" stroke="#ff8f6b" stroke-width="5" marker-end="url(#p-ff8f6b)"/>
         </g>
         <text class="rot" x="398" y="196" style="fill:#9dc2e4" font-size="18">VERDE E VERMELHO:</text>
         <text class="rot" x="398" y="218" style="fill:#9dc2e4" font-size="18">SE ANULAM</text>
@@ -233,7 +253,7 @@
         <!-- régua do visível: onde cai o azul da Morfo -->
         <g transform="translate(28,352)">
             <text x="72" y="-22" text-anchor="middle" fill="#4dc3ff" font-size="17" font-weight="800">470 nm</text>
-            <path d="M72 -14 L 72 -2" stroke="#4dc3ff" stroke-width="3" marker-end="url(#pp)"/>
+            <path d="M72 -14 L 72 -2" stroke="#4dc3ff" stroke-width="3" marker-end="url(#pp-4dc3ff)"/>
             <g>
                 <path d="M0 0 h 40 v 18 h -40 z" fill="#6b3ce0"/>
                 <path d="M40 0 h 55 v 18 h -55 z" fill="#3f9cf2"/>

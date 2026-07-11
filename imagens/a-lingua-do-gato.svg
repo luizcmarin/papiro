@@ -20,21 +20,36 @@
             <stop offset="1" stop-color="#d3b489"/>
         </linearGradient>
 
-        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
-        </marker>
-        <marker id="sp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
-        </marker>
-
         <!-- uma espícula vista de lado: base larga, corpo curvo, ponta em concha -->
         <g id="espicula">
             <path d="M-9 0 C -7 -26, -4 -44, 6 -56 C 10 -60, 14 -62, 16 -62
                      L 16 -52 C 10 -50, 4 -40, 2 -26 C 1 -16, 2 -8, 4 0 Z"
                   fill="url(#quer)" stroke="#a98a5f" stroke-width="1.2"/>
         </g>
+        <marker id="s-efd6e0" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#efd6e0"/>
+        </marker>
+        <marker id="s-ffd24d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#ffd24d"/>
+        </marker>
+        <marker id="sp-7bd389" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#7bd389"/>
+        </marker>
+        <marker id="sp-7fd0e8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#7fd0e8"/>
+        </marker>
+        <marker id="sp-b092a3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#b092a3"/>
+        </marker>
+        <marker id="sp-ff8f6b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#ff8f6b"/>
+        </marker>
     </defs>
 
     <style>
@@ -55,11 +70,14 @@
         <text class="rot" x="24" y="38">A LÍNGUA NO PELO</text>
         <text class="rotp" x="24" y="60">as espículas apontam todas para trás, na direção da garganta</text>
 
+        <!-- o desenho inteiro, afastado do subtítulo -->
+        <g transform="translate(0,20)">
+
         <!-- a língua, passando por cima do pelo -->
         <g>
             <path d="M20 88 C 180 74, 420 74, 600 88 L 600 132 C 420 118, 180 118, 20 132 Z"
                   fill="url(#lingua)" stroke="#8f4a60" stroke-width="2"/>
-            <path d="M472 68 L 570 68" stroke="#efd6e0" stroke-width="2.5" fill="none" marker-end="url(#s)"/>
+            <path d="M472 68 L 570 68" stroke="#efd6e0" stroke-width="2.5" fill="none" marker-end="url(#s-efd6e0)"/>
             <text class="rotp" x="472" y="56">a língua corre para trás</text>
         </g>
 
@@ -94,16 +112,17 @@
         <!-- o nó, que a espícula vai desfazer -->
         <path d="M282 232 C 314 212, 342 242, 314 256 C 288 268, 278 250, 300 240"
               fill="none" stroke="#ff8f6b" stroke-width="3.5"/>
-        <path d="M400 214 L 344 236" stroke="#ff8f6b" stroke-width="2" fill="none" marker-end="url(#sp)"/>
+        <path d="M400 214 L 344 236" stroke="#ff8f6b" stroke-width="2" fill="none" marker-end="url(#sp-ff8f6b)"/>
         <text class="rotp" x="408" y="212" style="fill:#ff8f6b">um nó — a espícula desfaz</text>
 
         <!-- a pele -->
-        <rect x="24" y="300" width="572" height="56" rx="8" fill="#3a2a33"/>
-        <text class="rotp" x="40" y="334" style="fill:#e0c4a0">a pele — é até aqui que a saliva desce</text>
+        <rect x="24" y="300" width="572" height="44" rx="8" fill="#3a2a33"/>
+        <text class="rotp" x="40" y="328" style="fill:#e0c4a0">a pele — é até aqui que a saliva desce</text>
 
         <!-- círculo de zoom sobre uma espícula, mirando o painel ao lado -->
         <circle cx="520" cy="152" r="42" fill="none" stroke="#ffd24d" stroke-width="3"/>
-        <path d="M550 182 L 600 224" stroke="#ffd24d" stroke-width="3" fill="none" marker-end="url(#s)"/>
+        <path d="M550 182 L 600 224" stroke="#ffd24d" stroke-width="3" fill="none" marker-end="url(#s-ffd24d)"/>
+        </g>
     </g>
 
     <!-- ══ Direita: a ponta em concha ═════════════════════════════════════ -->
@@ -122,7 +141,7 @@
                 <!-- gota escorrendo: nada fica preso -->
                 <path d="M2 -70 C 12 -58, 12 -44, 2 -40 C -8 -44, -8 -58, 2 -70 Z"
                       fill="#7fd0e8" opacity="0.85"/>
-                <path d="M40 -60 L 40 -6" stroke="#ff8f6b" stroke-width="2.5" fill="none" marker-end="url(#sp)"/>
+                <path d="M40 -60 L 40 -6" stroke="#ff8f6b" stroke-width="2.5" fill="none" marker-end="url(#sp-ff8f6b)"/>
                 <text class="rotp" x="50" y="-30" font-size="13" style="fill:#ff8f6b">a saliva</text>
                 <text class="rotp" x="50" y="-12" font-size="13" style="fill:#ff8f6b">escorre</text>
             </g>
@@ -133,7 +152,8 @@
             <rect x="0" y="0" width="290" height="228" rx="12" fill="#1c1220" stroke="#7bd389" stroke-width="2"/>
             <text class="rotp" x="16" y="28" style="fill:#7bd389">a concha de verdade</text>
 
-            <g transform="translate(132,152)">
+            <!-- a espícula, um pouco menor, para os rótulos caberem ao redor -->
+            <g transform="translate(122,158) scale(0.82)">
                 <!-- corpo da espícula, em corte: as duas paredes e o vale entre elas -->
                 <path d="M-30 0 C -24 -62, -14 -98, -12 -120 L -4 -120 C -6 -96, -8 -60, -6 0 Z"
                       fill="url(#quer)" stroke="#a98a5f" stroke-width="1.5"/>
@@ -143,21 +163,22 @@
                 <path d="M-11 -118 C -6 -104, 6 -104, 11 -118 C 8 -76, 6 -40, 5 0 L -5 0 C -6 -40, -8 -76, -11 -118 Z"
                       fill="#7fd0e8" opacity="0.9"/>
                 <path d="M-11 -118 C -5 -108, 5 -108, 11 -118" fill="none" stroke="#bdeaf7" stroke-width="2"/>
-
-                <path d="M52 -112 L 26 -112" stroke="#7fd0e8" stroke-width="2" fill="none" marker-end="url(#sp)"/>
-                <text class="rotp" x="60" y="-114" font-size="13" style="fill:#7fd0e8">a saliva fica</text>
-                <text class="rotp" x="60" y="-96" font-size="13" style="fill:#7fd0e8">presa no vale</text>
-
-                <path d="M-58 -40 L -34 -40" stroke="#b092a3" stroke-width="2" fill="none" marker-end="url(#sp)"/>
-                <text class="rotp" x="-112" y="-44" font-size="13">as duas</text>
-                <text class="rotp" x="-112" y="-26" font-size="13">paredes</text>
-
-                <!-- e solta no fundo do pelo -->
-                <path d="M0 12 L 0 38" stroke="#7bd389" stroke-width="2.5" fill="none" marker-end="url(#sp)"/>
-                <text class="rotp" x="4" y="60" text-anchor="middle" font-size="13" style="fill:#7bd389">
-                    e solta lá embaixo, na pele
-                </text>
             </g>
+
+            <!-- os rótulos, fora do desenho -->
+            <path d="M172 62 L 138 62" stroke="#7fd0e8" stroke-width="2" fill="none" marker-end="url(#sp-7fd0e8)"/>
+            <text class="rotp" x="178" y="58" font-size="13" style="fill:#7fd0e8">a saliva fica</text>
+            <text class="rotp" x="178" y="76" font-size="13" style="fill:#7fd0e8">presa no vale</text>
+
+            <path d="M72 122 L 98 122" stroke="#b092a3" stroke-width="2" fill="none" marker-end="url(#sp-b092a3)"/>
+            <text class="rotp" x="16" y="112" font-size="13">as duas</text>
+            <text class="rotp" x="16" y="130" font-size="13">paredes</text>
+
+            <!-- e solta no fundo do pelo -->
+            <path d="M122 168 L 122 190" stroke="#7bd389" stroke-width="2.5" fill="none" marker-end="url(#sp-7bd389)"/>
+            <text class="rotp" x="145" y="212" text-anchor="middle" font-size="13" style="fill:#7bd389">
+                e solta lá embaixo, na pele
+            </text>
         </g>
     </g>
 

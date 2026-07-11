@@ -15,15 +15,6 @@
             <stop offset="1" stop-color="#7bd389" stop-opacity="0"/>
         </radialGradient>
 
-        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
-        </marker>
-        <marker id="sp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
-        </marker>
-
         <!-- A semente: haste + coroa de cerdas (o "papo") -->
         <g id="papo">
             <g stroke="#8a9a5b" stroke-width="2" stroke-linecap="round">
@@ -42,6 +33,14 @@
             <ellipse cx="0" cy="10" rx="7" ry="14" fill="#8a5a2b"/>
             <path d="M0 24 L -4 34 M0 24 L 4 34" stroke="#8a5a2b" stroke-width="2"/>
         </g>
+        <marker id="sp-1f7a3d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#1f7a3d"/>
+        </marker>
+        <marker id="sp-2f7fd0" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#2f7fd0"/>
+        </marker>
     </defs>
 
     <style>
@@ -64,11 +63,11 @@
 
         <!-- o ar que sobe, passando ENTRE as cerdas -->
         <g stroke="#2f7fd0" stroke-width="3" fill="none">
-            <path d="M-120 130 L -120 -30" marker-end="url(#sp)"/>
-            <path d="M-60 140 L -60 -20" marker-end="url(#sp)"/>
-            <path d="M0 150 L 0 40" marker-end="url(#sp)"/>
-            <path d="M60 140 L 60 -20" marker-end="url(#sp)"/>
-            <path d="M120 130 L 120 -30" marker-end="url(#sp)"/>
+            <path d="M-120 130 L -120 -30" marker-end="url(#sp-2f7fd0)"/>
+            <path d="M-60 140 L -60 -20" marker-end="url(#sp-2f7fd0)"/>
+            <path d="M0 150 L 0 40" marker-end="url(#sp-2f7fd0)"/>
+            <path d="M60 140 L 60 -20" marker-end="url(#sp-2f7fd0)"/>
+            <path d="M120 130 L 120 -30" marker-end="url(#sp-2f7fd0)"/>
         </g>
         <text class="rotp" x="0" y="182" text-anchor="middle" style="fill:#2f7fd0">
             o ar sobe e atravessa o papo
@@ -77,9 +76,9 @@
         <!-- o anel de vórtice: parado logo ACIMA da semente -->
         <g stroke="#1f7a3d" stroke-width="3.5" fill="none">
             <path d="M-56 -168 C -86 -196, -74 -236, -36 -232 C -8 -228, -4 -196, -30 -186
-                     C -50 -178, -60 -190, -48 -202" marker-end="url(#sp)"/>
+                     C -50 -178, -60 -190, -48 -202" marker-end="url(#sp-1f7a3d)"/>
             <path d="M56 -168 C 86 -196, 74 -236, 36 -232 C 8 -228, 4 -196, 30 -186
-                     C 50 -178, 60 -190, 48 -202" marker-end="url(#sp)"/>
+                     C 50 -178, 60 -190, 48 -202" marker-end="url(#sp-1f7a3d)"/>
         </g>
         <ellipse cx="0" cy="-206" rx="76" ry="16" fill="none" stroke="#1f7a3d"
                  stroke-width="2" stroke-dasharray="7 6"/>

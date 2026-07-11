@@ -16,9 +16,9 @@
             <stop offset="1" stop-color="#e8ff7a" stop-opacity="0"/>
         </radialGradient>
 
-        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12"
+        <marker id="s-e8ff7a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12"
                 markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+            <path d="M0 0 L10 5 L0 10 z" fill="#e8ff7a"/>
         </marker>
     </defs>
 
@@ -54,7 +54,7 @@
     <!-- lupa na lanterna -->
     <circle cx="264" cy="316" r="40" fill="none" stroke="#e8ff7a" stroke-width="2.5"/>
     <path d="M292 344 C 360 400, 420 408, 470 404" stroke="#e8ff7a" stroke-width="2"
-          stroke-dasharray="7 6" fill="none" marker-end="url(#s)"/>
+          stroke-dasharray="7 6" fill="none" marker-end="url(#s-e8ff7a)"/>
 
     <!-- ══ Painel: superfície LISA — a luz volta para dentro ══════════════ -->
     <g transform="translate(500,130)">
@@ -70,13 +70,13 @@
         <!-- raios que batem e voltam (reflexão interna total) -->
         <g stroke="#e8ff7a" stroke-width="3" fill="none">
             <path d="M70 250 L 140 158"/>
-            <path d="M140 158 L 210 250" marker-end="url(#s)"/>
+            <path d="M140 158 L 210 250" marker-end="url(#s-e8ff7a)"/>
             <path d="M200 250 L 268 158"/>
-            <path d="M268 158 L 336 250" marker-end="url(#s)"/>
+            <path d="M268 158 L 336 250" marker-end="url(#s-e8ff7a)"/>
         </g>
         <!-- só um raio raro consegue sair -->
         <g stroke="#e8ff7a" stroke-width="3" fill="none" opacity="0.9">
-            <path d="M310 250 L 348 154 L 360 96" marker-end="url(#s)"/>
+            <path d="M310 250 L 348 154 L 360 96" marker-end="url(#s-e8ff7a)"/>
         </g>
 
         <text class="rot" x="24" y="284" font-size="16" style="fill:#ff8f6b">
@@ -104,9 +104,9 @@
 
         <!-- os mesmos raios de antes — agora escapam -->
         <g stroke="#e8ff7a" stroke-width="3" fill="none">
-            <path d="M70 250 L 140 142 L 168 96" marker-end="url(#s)"/>
-            <path d="M200 250 L 268 140 L 296 98" marker-end="url(#s)"/>
-            <path d="M320 250 L 352 146 L 372 104" marker-end="url(#s)"/>
+            <path d="M70 250 L 140 142 L 168 96" marker-end="url(#s-e8ff7a)"/>
+            <path d="M200 250 L 268 140 L 296 98" marker-end="url(#s-e8ff7a)"/>
+            <path d="M320 250 L 352 146 L 372 104" marker-end="url(#s-e8ff7a)"/>
         </g>
 
         <text class="rot" x="24" y="284" font-size="16" style="fill:#7bd389">
@@ -159,9 +159,9 @@
             </g>
             <path d="M-20 40 L -20 66 M20 40 L 20 66" stroke="#8fa0bd" stroke-width="4"/>
             <g stroke="#e8ff7a" stroke-width="2.5" fill="none">
-                <path d="M-30 -40 L -46 -70" marker-end="url(#s)"/>
-                <path d="M0 -46 L 0 -78" marker-end="url(#s)"/>
-                <path d="M30 -40 L 46 -70" marker-end="url(#s)"/>
+                <path d="M-30 -40 L -46 -70" marker-end="url(#s-e8ff7a)"/>
+                <path d="M0 -46 L 0 -78" marker-end="url(#s-e8ff7a)"/>
+                <path d="M30 -40 L 46 -70" marker-end="url(#s-e8ff7a)"/>
             </g>
         </g>
 

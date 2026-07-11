@@ -24,9 +24,13 @@
             <stop offset="1" stop-color="#ffe680" stop-opacity="0.35"/>
         </linearGradient>
 
-        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+        <marker id="s-7bd389" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
                 markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+            <path d="M0 0 L10 5 L0 10 z" fill="#7bd389"/>
+        </marker>
+        <marker id="s-ffe680" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#ffe680"/>
         </marker>
     </defs>
 
@@ -50,11 +54,11 @@
 
         <!-- fótons chegando -->
         <g stroke="#ffe680" stroke-width="3" fill="none" opacity="0.9">
-            <path d="M70 86 L 100 128" marker-end="url(#s)"/>
-            <path d="M150 86 L 180 128" marker-end="url(#s)"/>
-            <path d="M230 86 L 260 128" marker-end="url(#s)"/>
-            <path d="M310 86 L 340 128" marker-end="url(#s)"/>
-            <path d="M390 86 L 420 128" marker-end="url(#s)"/>
+            <path d="M70 86 L 100 128" marker-end="url(#s-ffe680)"/>
+            <path d="M150 86 L 180 128" marker-end="url(#s-ffe680)"/>
+            <path d="M230 86 L 260 128" marker-end="url(#s-ffe680)"/>
+            <path d="M310 86 L 340 128" marker-end="url(#s-ffe680)"/>
+            <path d="M390 86 L 420 128" marker-end="url(#s-ffe680)"/>
         </g>
         <text class="rotp" x="446" y="104" style="fill:#ffe680">fótons do Sol</text>
 
@@ -75,14 +79,14 @@
             </g>
             <!-- o salto de energia, de vizinho em vizinho -->
             <g stroke="#ffe680" stroke-width="2.5" fill="none">
-                <path d="M119 163 L 155 168" marker-end="url(#s)"/>
-                <path d="M195 173 L 231 178" marker-end="url(#s)"/>
-                <path d="M271 184 L 307 189" marker-end="url(#s)"/>
-                <path d="M347 195 L 383 201" marker-end="url(#s)"/>
-                <path d="M423 207 L 459 213" marker-end="url(#s)"/>
-                <path d="M499 219 L 535 225" marker-end="url(#s)"/>
-                <path d="M575 231 L 611 237" marker-end="url(#s)"/>
-                <path d="M651 243 L 700 252" marker-end="url(#s)"/>
+                <path d="M119 163 L 155 168" marker-end="url(#s-ffe680)"/>
+                <path d="M195 173 L 231 178" marker-end="url(#s-ffe680)"/>
+                <path d="M271 184 L 307 189" marker-end="url(#s-ffe680)"/>
+                <path d="M347 195 L 383 201" marker-end="url(#s-ffe680)"/>
+                <path d="M423 207 L 459 213" marker-end="url(#s-ffe680)"/>
+                <path d="M499 219 L 535 225" marker-end="url(#s-ffe680)"/>
+                <path d="M575 231 L 611 237" marker-end="url(#s-ffe680)"/>
+                <path d="M651 243 L 700 252" marker-end="url(#s-ffe680)"/>
             </g>
         </g>
 
@@ -117,7 +121,7 @@
             <text class="rotp" x="65" y="224" text-anchor="middle">captados</text>
         </g>
 
-        <path d="M206 196 L 250 196" stroke="#7bd389" stroke-width="3" fill="none" marker-end="url(#s)"/>
+        <path d="M206 196 L 250 196" stroke="#7bd389" stroke-width="3" fill="none" marker-end="url(#s-7bd389)"/>
 
         <!-- quase todos chegam -->
         <g transform="translate(266,96)">
@@ -154,7 +158,7 @@
                 <text class="rotp" x="62" y="62">vinda da antena, intacta</text>
                 <text class="rotp" x="62" y="90" style="fill:#ffd24d">luz do Sol</text>
             </g>
-            <path d="M292 56 L 316 56" stroke="#7bd389" stroke-width="3" fill="none" marker-end="url(#s)"/>
+            <path d="M292 56 L 316 56" stroke="#7bd389" stroke-width="3" fill="none" marker-end="url(#s-7bd389)"/>
 
             <!-- etapa 2 -->
             <g transform="translate(330,0)">
@@ -165,7 +169,7 @@
                 <text class="rotp" x="62" y="62">e sobra oxigênio</text>
                 <text class="rotp" x="62" y="90" style="fill:#8fd6f2">H₂O → O₂</text>
             </g>
-            <path d="M622 56 L 646 56" stroke="#7bd389" stroke-width="3" fill="none" marker-end="url(#s)"/>
+            <path d="M622 56 L 646 56" stroke="#7bd389" stroke-width="3" fill="none" marker-end="url(#s-7bd389)"/>
 
             <!-- etapa 3 -->
             <g transform="translate(660,0)">
@@ -176,7 +180,7 @@
                 <text class="rotp" x="62" y="62">capturado do ar</text>
                 <text class="rotp" x="62" y="90" style="fill:#c9b9a6">CO₂</text>
             </g>
-            <path d="M952 56 L 976 56" stroke="#7bd389" stroke-width="3" fill="none" marker-end="url(#s)"/>
+            <path d="M952 56 L 976 56" stroke="#7bd389" stroke-width="3" fill="none" marker-end="url(#s-7bd389)"/>
 
             <!-- etapa 4 -->
             <g transform="translate(990,0)">

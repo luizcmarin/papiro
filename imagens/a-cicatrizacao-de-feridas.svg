@@ -13,17 +13,24 @@
             <stop offset="1" stop-color="#f2dbd3"/>
         </linearGradient>
 
-        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
-        </marker>
-
         <!-- o corte da pele, sem a ferida: as três camadas -->
         <g id="pele">
             <rect x="0" y="0" width="300" height="24" fill="#f2c4ad" stroke="#c88f78" stroke-width="1.5"/>
             <rect x="0" y="24" width="300" height="92" fill="#e6a094" stroke="#c88f78" stroke-width="1.5"/>
             <rect x="0" y="116" width="300" height="52" fill="#f3dda6" stroke="#c9b276" stroke-width="1.5"/>
         </g>
+        <marker id="s-1f7a3d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#1f7a3d"/>
+        </marker>
+        <marker id="s-7a5aa8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#7a5aa8"/>
+        </marker>
+        <marker id="s-8c3a45" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#8c3a45"/>
+        </marker>
     </defs>
 
     <style>
@@ -68,7 +75,7 @@
                     <circle cx="150" cy="14" r="5"/><circle cx="136" cy="24" r="5"/><circle cx="164" cy="24" r="5"/>
                     <circle cx="146" cy="40" r="5"/><circle cx="158" cy="52" r="5"/><circle cx="142" cy="64" r="4"/>
                 </g>
-                <path d="M212 14 L 180 14" stroke="#8c3a45" stroke-width="1.5" fill="none" marker-end="url(#s)"/>
+                <path d="M212 14 L 180 14" stroke="#8c3a45" stroke-width="1.5" fill="none" marker-end="url(#s-8c3a45)"/>
                 <text class="rotp" x="218" y="18" font-size="12" style="fill:#5a2530">o coágulo</text>
             </g>
 
@@ -102,8 +109,8 @@
                     <circle cx="118" cy="80" r="9"/><circle cx="186" cy="76" r="9"/>
                 </g>
                 <g stroke="#7a5aa8" stroke-width="2" fill="none">
-                    <path d="M76 60 L 96 50" marker-end="url(#s)"/>
-                    <path d="M224 52 L 206 42" marker-end="url(#s)"/>
+                    <path d="M76 60 L 96 50" marker-end="url(#s-7a5aa8)"/>
+                    <path d="M224 52 L 206 42" marker-end="url(#s-7a5aa8)"/>
                 </g>
             </g>
 
@@ -141,8 +148,8 @@
                     <path d="M196 12 H 170"/>
                 </g>
                 <g stroke="#1f7a3d" stroke-width="2.5" fill="none">
-                    <path d="M92 -14 L 118 -14" marker-end="url(#s)"/>
-                    <path d="M208 -14 L 182 -14" marker-end="url(#s)"/>
+                    <path d="M92 -14 L 118 -14" marker-end="url(#s-1f7a3d)"/>
+                    <path d="M208 -14 L 182 -14" marker-end="url(#s-1f7a3d)"/>
                 </g>
             </g>
 

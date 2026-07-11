@@ -17,9 +17,9 @@
             <stop offset="1" stop-color="#f2f7fa"/>
         </linearGradient>
 
-        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12"
+        <marker id="s-7fd4ff" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12"
                 markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+            <path d="M0 0 L10 5 L0 10 z" fill="#7fd4ff"/>
         </marker>
     </defs>
 
@@ -59,7 +59,7 @@
     <!-- lupa sobre o flanco + trilha até os painéis -->
     <circle cx="290" cy="300" r="34" fill="none" stroke="#7fd4ff" stroke-width="2.5"/>
     <path d="M316 322 C 380 372, 420 400, 470 412" stroke="#7fd4ff" stroke-width="2"
-          stroke-dasharray="7 6" fill="none" marker-end="url(#s)"/>
+          stroke-dasharray="7 6" fill="none" marker-end="url(#s-7fd4ff)"/>
 
     <!-- ══ Painel: superfície LISA — os redemoinhos arrastam ══════════════ -->
     <g transform="translate(500,150)">
@@ -72,7 +72,7 @@
 
         <!-- fluxo: começa reto e vira turbilhão junto da parede -->
         <g fill="none" stroke="#7fd4ff" stroke-width="3">
-            <path d="M30 100 C 120 92, 240 96, 384 100" marker-end="url(#s)"/>
+            <path d="M30 100 C 120 92, 240 96, 384 100" marker-end="url(#s-7fd4ff)"/>
         </g>
         <g fill="none" stroke="#ff8f6b" stroke-width="3">
             <path d="M60 176 C 92 150, 132 168, 112 190 C 96 208, 68 198, 74 178"/>
@@ -104,9 +104,9 @@
 
         <!-- fluxo: segue reto, sem se embolar -->
         <g fill="none" stroke="#7fd4ff" stroke-width="3">
-            <path d="M24 100 C 120 96, 260 96, 384 100" marker-end="url(#s)"/>
-            <path d="M24 132 C 120 128, 260 128, 384 132" marker-end="url(#s)"/>
-            <path d="M24 164 C 120 160, 260 160, 384 164" marker-end="url(#s)"/>
+            <path d="M24 100 C 120 96, 260 96, 384 100" marker-end="url(#s-7fd4ff)"/>
+            <path d="M24 132 C 120 128, 260 128, 384 132" marker-end="url(#s-7fd4ff)"/>
+            <path d="M24 164 C 120 160, 260 160, 384 164" marker-end="url(#s-7fd4ff)"/>
         </g>
         <!-- os redemoinhos, agora pequenos e presos no vale entre as cristas -->
         <g fill="none" stroke="#7bd389" stroke-width="2">

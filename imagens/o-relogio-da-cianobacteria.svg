@@ -11,18 +11,21 @@
             <stop offset="0" stop-color="#132a3c"/>
             <stop offset="1" stop-color="#070f18"/>
         </linearGradient>
-
-        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+        <marker id="ini-7bd389" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="8" markerHeight="8"
                 markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+            <path d="M10 0 L0 5 L10 10 z" fill="#7bd389"/>
         </marker>
-        <marker id="sp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
+        <marker id="ini-ffd24d" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="8" markerHeight="8"
                 markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+            <path d="M10 0 L0 5 L10 10 z" fill="#ffd24d"/>
         </marker>
-        <marker id="ini" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="8" markerHeight="8"
+        <marker id="sp-7bd389" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
                 markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M10 0 L0 5 L10 10 z" fill="context-stroke"/>
+            <path d="M0 0 L10 5 L0 10 z" fill="#7bd389"/>
+        </marker>
+        <marker id="sp-ffd24d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#ffd24d"/>
         </marker>
     </defs>
 
@@ -84,7 +87,7 @@
             <path d="M120 30 V 100" stroke="#ffd24d" stroke-width="2" stroke-dasharray="6 5"/>
             <path d="M240 0 V 220" stroke="#ffd24d" stroke-width="2" stroke-dasharray="6 5"/>
             <path d="M132 46 H 228" stroke="#ffd24d" stroke-width="2"
-                  marker-start="url(#ini)" marker-end="url(#sp)"/>
+                  marker-start="url(#ini-ffd24d)" marker-end="url(#sp-ffd24d)"/>
             <text class="rot" x="20" y="152" font-size="16" style="fill:#ffd24d">
                 horas de antecedência
             </text>
@@ -95,7 +98,7 @@
             <!-- a amplitude -->
             <path d="M840 12 V 208" stroke="#7bd389" stroke-width="1.5" stroke-dasharray="5 5"/>
             <path d="M866 12 V 208" stroke="#7bd389" stroke-width="2"
-                  marker-start="url(#ini)" marker-end="url(#sp)"/>
+                  marker-start="url(#ini-7bd389)" marker-end="url(#sp-7bd389)"/>
             <text class="rot" x="826" y="100" text-anchor="end" font-size="16" style="fill:#7bd389">A — a amplitude</text>
             <text class="rotp" x="826" y="122" text-anchor="end">o tamanho da onda</text>
         </g>

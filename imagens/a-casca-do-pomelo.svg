@@ -15,18 +15,17 @@
             <stop offset="0" stop-color="#cddc5c"/>
             <stop offset="1" stop-color="#a8bc3c"/>
         </linearGradient>
-
-        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+        <marker id="ini-5c6420" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="8" markerHeight="8"
                 markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+            <path d="M10 0 L0 5 L10 10 z" fill="#5c6420"/>
         </marker>
-        <marker id="sp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
+        <marker id="s-c0392b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
                 markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+            <path d="M0 0 L10 5 L0 10 z" fill="#c0392b"/>
         </marker>
-        <marker id="ini" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="8" markerHeight="8"
+        <marker id="sp-5c6420" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
                 markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M10 0 L0 5 L10 10 z" fill="context-stroke"/>
+            <path d="M0 0 L10 5 L0 10 z" fill="#5c6420"/>
         </marker>
     </defs>
 
@@ -56,7 +55,7 @@
 
         <!-- a régua dos 10 m -->
         <path d="M182 92 V 300" stroke="#5c6420" stroke-width="2"
-              marker-start="url(#ini)" marker-end="url(#sp)"/>
+              marker-start="url(#ini-5c6420)" marker-end="url(#sp-5c6420)"/>
         <text class="rot" x="196" y="200" font-size="17">10 m</text>
         <text class="rotp" x="196" y="222">de queda livre</text>
 
@@ -84,7 +83,7 @@
         <text class="rotp" x="24" y="60">os poros vão crescendo de fora para dentro</text>
 
         <!-- a batida chegando -->
-        <path d="M250 82 V 108" stroke="#c0392b" stroke-width="5" fill="none" marker-end="url(#s)"/>
+        <path d="M250 82 V 108" stroke="#c0392b" stroke-width="5" fill="none" marker-end="url(#s-c0392b)"/>
         <text class="rot" x="266" y="98" font-size="15" style="fill:#c0392b">o impacto</text>
 
         <!-- camada 1: casca externa, fina e dura -->
@@ -127,7 +126,7 @@
         </g>
 
         <!-- a seta da graduação, à direita -->
-        <path d="M484 122 V 352" stroke="#5c6420" stroke-width="2" fill="none" marker-end="url(#sp)"/>
+        <path d="M484 122 V 352" stroke="#5c6420" stroke-width="2" fill="none" marker-end="url(#sp-5c6420)"/>
         <text class="rotp" x="466" y="238" transform="rotate(-90,466,238)" text-anchor="middle" font-size="13">
             cada vez mais macia
         </text>

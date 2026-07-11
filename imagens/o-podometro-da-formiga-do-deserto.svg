@@ -20,19 +20,6 @@
             <stop offset="1" stop-color="#dfa563"/>
         </linearGradient>
 
-        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="13" markerHeight="13"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
-        </marker>
-        <marker id="sp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
-        </marker>
-        <marker id="si" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M10 0 L0 5 L10 10 z" fill="context-stroke"/>
-        </marker>
-
         <!-- Corpo (sem pernas): o que muda entre os grupos são só as pernas. -->
         <g id="corpo">
             <ellipse cx="-11" cy="0" rx="8" ry="6" fill="#8c3b18"/>
@@ -75,6 +62,14 @@
             <ellipse cx="0" cy="-5" rx="4" ry="6.5" fill="#8c3b18" opacity="0.7"/>
             <ellipse cx="0" cy="7" rx="4" ry="6.5" fill="#8c3b18" opacity="0.45"/>
         </g>
+        <marker id="si-2f7fd0" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M10 0 L0 5 L10 10 z" fill="#2f7fd0"/>
+        </marker>
+        <marker id="sp-2f7fd0" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#2f7fd0"/>
+        </marker>
     </defs>
 
     <style>
@@ -127,7 +122,7 @@
         <use href="#perna-alta" transform="translate(1064,300) scale(1.35)"/>
 
         <path d="M218 334 L 312 334" stroke="#2f7fd0" stroke-width="2"
-              marker-start="url(#si)" marker-end="url(#sp)"/>
+              marker-start="url(#si-2f7fd0)" marker-end="url(#sp-2f7fd0)"/>
         <text class="rotp" x="265" y="352" text-anchor="middle" style="fill:#2f7fd0">1 passo</text>
 
         <text class="rot" x="1100" y="296" font-size="16" style="fill:#b0301f">PASSOU DIRETO</text>
@@ -155,7 +150,7 @@
         <use href="#perna-normal" transform="translate(880,470) scale(1.35)"/>
 
         <path d="M200 504 L 275 504" stroke="#2f7fd0" stroke-width="2"
-              marker-start="url(#si)" marker-end="url(#sp)"/>
+              marker-start="url(#si-2f7fd0)" marker-end="url(#sp-2f7fd0)"/>
         <text class="rotp" x="237" y="522" text-anchor="middle" style="fill:#2f7fd0">1 passo</text>
 
         <text class="rot" x="924" y="466" font-size="16" style="fill:#1f7a3d">CRAVOU A ENTRADA</text>
@@ -183,7 +178,7 @@
         <use href="#perna-curta" transform="translate(684,640) scale(1.35)"/>
 
         <path d="M180 674 L 236 674" stroke="#2f7fd0" stroke-width="2"
-              marker-start="url(#si)" marker-end="url(#sp)"/>
+              marker-start="url(#si-2f7fd0)" marker-end="url(#sp-2f7fd0)"/>
         <text class="rotp" x="208" y="692" text-anchor="middle" style="fill:#2f7fd0">1 passo</text>
 
         <!-- Cabe nos 154px até a linha do ninho (x=880): sem invadir a chegada. -->

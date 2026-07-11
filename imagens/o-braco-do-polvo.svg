@@ -13,20 +13,19 @@
             <stop offset="1" stop-color="#06131d"/>
         </linearGradient>
 
-        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
-        </marker>
-        <marker id="sp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
-                markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
-        </marker>
-
         <!-- a presa -->
         <g id="presa">
             <circle cx="0" cy="0" r="16" fill="#e8955f" stroke="#ffd0a8" stroke-width="2"/>
             <circle cx="-5" cy="-4" r="3" fill="#0b2438"/>
         </g>
+        <marker id="sp-63c7e8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#63c7e8"/>
+        </marker>
+        <marker id="sp-ffd24d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#ffd24d"/>
+        </marker>
     </defs>
 
     <style>
@@ -67,7 +66,7 @@
 
         <g transform="translate(320,162)"><use href="#presa"/></g>
 
-        <text class="rotp" x="24" y="344" style="fill:#ff8f6b">qual deles? Escolher já seria o trabalho mais difícil.</text>
+        <text class="rotp" x="24" y="356" style="fill:#ff8f6b">qual deles? Escolher já seria o trabalho mais difícil.</text>
     </g>
 
     <!-- ══ Meio: a solução ════════════════════════════════════════════════ -->
@@ -97,9 +96,9 @@
 
         <!-- o cotovelo improvisado -->
         <circle cx="196" cy="190" r="20" fill="none" stroke="#ffd24d" stroke-width="3"/>
-        <path d="M240 116 L 208 168" stroke="#ffd24d" stroke-width="2" fill="none" marker-end="url(#sp)"/>
-        <text class="rotp" x="216" y="104" style="fill:#ffd24d">o cotovelo — que não existe</text>
-        <text class="rotp" x="216" y="122" style="fill:#ffd24d">até ele precisar</text>
+        <path d="M214 118 L 202 166" stroke="#ffd24d" stroke-width="2" fill="none" marker-end="url(#sp-ffd24d)"/>
+        <text class="rotp" x="188" y="92" style="fill:#ffd24d">o cotovelo — que não existe</text>
+        <text class="rotp" x="188" y="110" style="fill:#ffd24d">até ele precisar</text>
 
         <g transform="translate(320,162)"><use href="#presa"/></g>
 
@@ -107,7 +106,7 @@
         <text class="rotp" x="104" y="240" transform="rotate(-48,104,240)" style="fill:#7bd389">trecho 1</text>
         <text class="rotp" x="222" y="212" style="fill:#7bd389">trecho 2</text>
 
-        <text class="rotp" x="24" y="344" style="fill:#7bd389">um só caminho, e a ventosa da ponta chega certa.</text>
+        <text class="rotp" x="24" y="356" style="fill:#7bd389">um só caminho, e a ventosa da ponta chega certa.</text>
     </g>
 
     <!-- ══ Direita: como a dobra nasce ════════════════════════════════════ -->
@@ -120,7 +119,7 @@
         <g transform="translate(24,86)">
             <rect x="0" y="0" width="408" height="84" rx="10" fill="#0a1f2e" stroke="#3a7096" stroke-width="1.5"/>
             <path class="braco" d="M30 56 L 380 56" stroke-width="12"/>
-            <path d="M30 30 L 96 30" stroke="#ffd24d" stroke-width="2.5" fill="none" marker-end="url(#sp)"/>
+            <path d="M30 30 L 96 30" stroke="#ffd24d" stroke-width="2.5" fill="none" marker-end="url(#sp-ffd24d)"/>
             <text class="rotp" x="106" y="35" font-size="13" style="fill:#ffd24d">uma onda sai da base…</text>
             <circle cx="60" cy="56" r="12" fill="#ffd24d" opacity="0.35"/>
         </g>
@@ -129,7 +128,7 @@
         <g transform="translate(24,182)">
             <rect x="0" y="0" width="408" height="84" rx="10" fill="#0a1f2e" stroke="#3a7096" stroke-width="1.5"/>
             <path class="braco" d="M30 56 L 380 56" stroke-width="12"/>
-            <path d="M380 30 L 314 30" stroke="#63c7e8" stroke-width="2.5" fill="none" marker-end="url(#sp)"/>
+            <path d="M380 30 L 314 30" stroke="#63c7e8" stroke-width="2.5" fill="none" marker-end="url(#sp-63c7e8)"/>
             <text class="rotp" x="304" y="35" font-size="13" text-anchor="end" style="fill:#63c7e8">…e outra sai da ponta</text>
             <circle cx="350" cy="56" r="12" fill="#63c7e8" opacity="0.4"/>
         </g>
@@ -137,8 +136,8 @@
         <!-- quadro 3 -->
         <g transform="translate(24,278)">
             <rect x="0" y="0" width="408" height="84" rx="10" fill="#0a1f2e" stroke="#7bd389" stroke-width="2"/>
-            <path class="braco" d="M30 62 L 200 40 L 380 62" stroke-width="12"/>
-            <circle cx="200" cy="40" r="14" fill="none" stroke="#7bd389" stroke-width="3"/>
+            <path class="braco" d="M30 66 L 200 50 L 380 66" stroke-width="12"/>
+            <circle cx="200" cy="50" r="14" fill="none" stroke="#7bd389" stroke-width="3"/>
             <text class="rotp" x="200" y="26" text-anchor="middle" font-size="13" style="fill:#7bd389">
                 onde se encontram, o braço dobra
             </text>

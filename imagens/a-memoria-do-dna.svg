@@ -16,9 +16,9 @@
             <stop offset="1" stop-color="#63c7e8" stop-opacity="0.05"/>
         </linearGradient>
 
-        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+        <marker id="s-8d95b8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
                 markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+            <path d="M0 0 L10 5 L0 10 z" fill="#8d95b8"/>
         </marker>
     </defs>
 
@@ -76,7 +76,7 @@
             </text>
         </g>
 
-        <path d="M424 212 L 462 212" stroke="#8d95b8" stroke-width="3" fill="none" marker-end="url(#s)"/>
+        <path d="M424 212 L 462 212" stroke="#8d95b8" stroke-width="3" fill="none" marker-end="url(#s-8d95b8)"/>
 
         <!-- o tubo de DNA -->
         <g transform="translate(478,74)">

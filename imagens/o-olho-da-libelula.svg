@@ -43,9 +43,21 @@
             </g>
         </pattern>
 
-        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+        <marker id="s-7bd389" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
                 markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+            <path d="M0 0 L10 5 L0 10 z" fill="#7bd389"/>
+        </marker>
+        <marker id="s-87a9bd" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#87a9bd"/>
+        </marker>
+        <marker id="s-ffd24d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#ffd24d"/>
+        </marker>
+        <marker id="s-ffe680" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#ffe680"/>
         </marker>
     </defs>
 
@@ -90,7 +102,7 @@
 
         <!-- o círculo de zoom, apontando para o painel ao lado -->
         <circle cx="380" cy="180" r="46" fill="none" stroke="#ffd24d" stroke-width="3"/>
-        <path d="M414 214 L 470 262" stroke="#ffd24d" stroke-width="3" fill="none" marker-end="url(#s)"/>
+        <path d="M414 214 L 470 262" stroke="#ffd24d" stroke-width="3" fill="none" marker-end="url(#s-ffd24d)"/>
 
         <text class="rotp" x="24" y="344">até 30 000 facetas em cada cúpula</text>
     </g>
@@ -105,9 +117,9 @@
         <g transform="translate(120,256)">
             <!-- feixes de luz, cada um de uma direção -->
             <g stroke="#ffe680" stroke-width="2.5" fill="none">
-                <path d="M-42 -152 L -14 -108" marker-end="url(#s)"/>
-                <path d="M120 -160 L 120 -112" marker-end="url(#s)"/>
-                <path d="M286 -152 L 256 -108" marker-end="url(#s)"/>
+                <path d="M-42 -152 L -14 -108" marker-end="url(#s-ffe680)"/>
+                <path d="M120 -160 L 120 -112" marker-end="url(#s-ffe680)"/>
+                <path d="M286 -152 L 256 -108" marker-end="url(#s-ffe680)"/>
             </g>
 
             <!-- tubo 1 -->
@@ -134,19 +146,19 @@
 
             <!-- o nervo, juntando os pontos -->
             <path d="M-20 84 L 120 84 L 260 84" stroke="#7bd389" stroke-width="3" fill="none"/>
-            <path d="M120 84 L 120 104" stroke="#7bd389" stroke-width="3" fill="none" marker-end="url(#s)"/>
+            <path d="M120 84 L 120 104" stroke="#7bd389" stroke-width="3" fill="none" marker-end="url(#s-7bd389)"/>
         </g>
 
         <!-- legendas do corte -->
         <g>
-            <path d="M448 160 L 402 160" stroke="#87a9bd" stroke-width="1.5" fill="none" marker-end="url(#s)"/>
+            <path d="M448 160 L 402 160" stroke="#87a9bd" stroke-width="1.5" fill="none" marker-end="url(#s-87a9bd)"/>
             <text class="rotp" x="458" y="165">a lente hexagonal, na superfície</text>
 
-            <path d="M448 228 L 402 228" stroke="#87a9bd" stroke-width="1.5" fill="none" marker-end="url(#s)"/>
+            <path d="M448 228 L 402 228" stroke="#87a9bd" stroke-width="1.5" fill="none" marker-end="url(#s-87a9bd)"/>
             <text class="rotp" x="458" y="223">o tubo, que só deixa passar a luz</text>
             <text class="rotp" x="458" y="245">que vem de frente</text>
 
-            <path d="M448 328 L 402 328" stroke="#87a9bd" stroke-width="1.5" fill="none" marker-end="url(#s)"/>
+            <path d="M448 328 L 402 328" stroke="#87a9bd" stroke-width="1.5" fill="none" marker-end="url(#s-87a9bd)"/>
             <text class="rotp" x="458" y="323" style="fill:#7bd389">a célula que devolve UM ponto</text>
             <text class="rotp" x="458" y="345" style="fill:#7bd389">da imagem — um pixel</text>
         </g>
@@ -157,15 +169,15 @@
         <rect class="painel" x="0" y="0" width="640" height="212" rx="16"/>
         <text class="rot" x="24" y="38">QUANTAS FACETAS?</text>
 
-        <g transform="translate(150,126)">
+        <g transform="translate(150,118)">
             <circle cx="0" cy="0" r="52" fill="url(#cupula)"/>
             <circle cx="0" cy="0" r="52" fill="url(#hexGrosso)"/>
             <text class="rotp" x="0" y="80" text-anchor="middle" style="fill:#ff8f6b">poucas: a presa é um borrão</text>
         </g>
 
-        <path d="M236 126 L 292 126" stroke="#87a9bd" stroke-width="3" fill="none" marker-end="url(#s)"/>
+        <path d="M236 118 L 292 118" stroke="#87a9bd" stroke-width="3" fill="none" marker-end="url(#s-87a9bd)"/>
 
-        <g transform="translate(410,126)">
+        <g transform="translate(410,118)">
             <circle cx="0" cy="0" r="52" fill="url(#cupula)"/>
             <circle cx="0" cy="0" r="52" fill="url(#hexFino)"/>
             <text class="rotp" x="0" y="80" text-anchor="middle" style="fill:#7bd389">30 mil: a presa tem contorno</text>
@@ -179,7 +191,7 @@
         <text class="rotp" x="24" y="60">as duas cúpulas juntas quase não deixam ponto cego</text>
 
         <!-- humano: um cone estreito à frente; o resto é cego -->
-        <g transform="translate(160,132)">
+        <g transform="translate(160,124)">
             <circle cx="0" cy="0" r="52" fill="none" stroke="#33627f" stroke-width="1.5" stroke-dasharray="5 5"/>
             <path d="M0 0 L 26 -45 A 52 52 0 0 1 26 45 Z" fill="#ff8f6b" opacity="0.45"/>
             <circle cx="0" cy="0" r="8" fill="#87a9bd"/>
@@ -187,15 +199,15 @@
         </g>
 
         <!-- libélula: quase 360° -->
-        <g transform="translate(430,132)">
+        <g transform="translate(430,124)">
             <path d="M0 -52 A 52 52 0 1 1 -15 -49 L 0 0 Z" fill="#7bd389" opacity="0.4"/>
             <circle cx="0" cy="0" r="52" fill="none" stroke="#7bd389" stroke-width="1.5"/>
             <circle cx="0" cy="0" r="8" fill="#7bd389"/>
             <text class="rotp" x="0" y="76" text-anchor="middle" style="fill:#7bd389">a libélula: quase 360°</text>
         </g>
 
-        <text class="rotp" x="540" y="126">ela vê você</text>
-        <text class="rotp" x="540" y="148">chegar por trás</text>
+        <text class="rotp" x="512" y="118">ela vê você</text>
+        <text class="rotp" x="512" y="140">chegar por trás</text>
     </g>
 
     <text class="rotp" x="46" y="768" font-size="15">
