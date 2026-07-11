@@ -83,55 +83,52 @@
         <text class="rotp" x="24" y="60">os poros vão crescendo de fora para dentro</text>
 
         <!-- a batida chegando -->
-        <path d="M250 82 V 108" stroke="#c0392b" stroke-width="5" fill="none" marker-end="url(#s-c0392b)"/>
-        <text class="rot" x="266" y="98" font-size="15" style="fill:#c0392b">o impacto</text>
+        <path d="M228 80 V 104" stroke="#c0392b" stroke-width="5" fill="none" marker-end="url(#s-c0392b)"/>
+        <text class="rot" x="244" y="96" font-size="15" style="fill:#c0392b">o impacto</text>
 
         <!-- camada 1: casca externa, fina e dura -->
-        <g transform="translate(40,116)">
-            <rect x="0" y="0" width="420" height="34" rx="4" fill="#a8bc3c" stroke="#7d8f28" stroke-width="1.5"/>
-            <text class="rotp" x="14" y="22" font-size="13" style="fill:#3f4415" font-weight="700">
+        <g transform="translate(36,112)">
+            <rect x="0" y="0" width="384" height="30" rx="4" fill="#a8bc3c" stroke="#7d8f28" stroke-width="1.5"/>
+            <text class="rotp" x="12" y="20" font-size="13" style="fill:#3f4415" font-weight="700">
                 a superfície: dura e fina
             </text>
         </g>
 
         <!-- camada 2 a 4: espuma com poros crescentes -->
-        <g transform="translate(40,152)">
-            <rect x="0" y="0" width="420" height="52" fill="#e5efb8" stroke="#c3c98a" stroke-width="1.5"/>
+        <g transform="translate(36,144)">
+            <rect x="0" y="0" width="384" height="46" fill="#e5efb8" stroke="#c3c98a" stroke-width="1.5"/>
             <g fill="#fffdf3" stroke="#c3c98a" stroke-width="1">
-                <circle cx="30" cy="26" r="8"/><circle cx="72" cy="26" r="8"/><circle cx="114" cy="26" r="8"/>
-                <circle cx="156" cy="26" r="8"/><circle cx="198" cy="26" r="8"/><circle cx="240" cy="26" r="8"/>
-                <circle cx="282" cy="26" r="8"/><circle cx="324" cy="26" r="8"/><circle cx="366" cy="26" r="8"/>
-                <circle cx="404" cy="26" r="8"/>
+                <circle cx="28" cy="23" r="7"/><circle cx="66" cy="23" r="7"/><circle cx="104" cy="23" r="7"/>
+                <circle cx="142" cy="23" r="7"/><circle cx="180" cy="23" r="7"/><circle cx="218" cy="23" r="7"/>
+                <circle cx="256" cy="23" r="7"/><circle cx="294" cy="23" r="7"/><circle cx="332" cy="23" r="7"/>
+                <circle cx="366" cy="23" r="7"/>
             </g>
         </g>
-        <g transform="translate(40,206)">
-            <rect x="0" y="0" width="420" height="68" fill="#eef4cd" stroke="#c3c98a" stroke-width="1.5"/>
+        <g transform="translate(36,192)">
+            <rect x="0" y="0" width="384" height="60" fill="#eef4cd" stroke="#c3c98a" stroke-width="1.5"/>
             <g fill="#fffdf3" stroke="#c3c98a" stroke-width="1">
-                <circle cx="38" cy="34" r="15"/><circle cx="94" cy="34" r="15"/><circle cx="150" cy="34" r="15"/>
-                <circle cx="206" cy="34" r="15"/><circle cx="262" cy="34" r="15"/><circle cx="318" cy="34" r="15"/>
-                <circle cx="374" cy="34" r="15"/>
+                <circle cx="34" cy="30" r="13"/><circle cx="86" cy="30" r="13"/><circle cx="138" cy="30" r="13"/>
+                <circle cx="190" cy="30" r="13"/><circle cx="242" cy="30" r="13"/><circle cx="294" cy="30" r="13"/>
+                <circle cx="346" cy="30" r="13"/>
             </g>
         </g>
-        <g transform="translate(40,276)">
-            <rect x="0" y="0" width="420" height="84" fill="#f6f9e4" stroke="#c3c98a" stroke-width="1.5"/>
+        <g transform="translate(36,254)">
+            <rect x="0" y="0" width="384" height="76" fill="#f6f9e4" stroke="#c3c98a" stroke-width="1.5"/>
             <g fill="#fffdf3" stroke="#c3c98a" stroke-width="1">
-                <circle cx="52" cy="42" r="24"/><circle cx="130" cy="42" r="24"/><circle cx="208" cy="42" r="24"/>
-                <circle cx="286" cy="42" r="24"/><circle cx="364" cy="42" r="24"/>
+                <circle cx="48" cy="38" r="22"/><circle cx="120" cy="38" r="22"/><circle cx="192" cy="38" r="22"/>
+                <circle cx="264" cy="38" r="22"/><circle cx="336" cy="38" r="22"/>
             </g>
         </g>
 
         <!-- a polpa, embaixo -->
-        <g transform="translate(40,360)">
-            <rect x="0" y="-2" width="420" height="6" fill="#e88fa0"/>
-        </g>
+        <rect x="36" y="332" width="384" height="7" fill="#e88fa0"/>
+        <text class="rotp" x="36" y="362" style="fill:#c25a72">a polpa</text>
 
         <!-- a seta da graduação, à direita -->
-        <path d="M484 122 V 352" stroke="#5c6420" stroke-width="2" fill="none" marker-end="url(#sp-5c6420)"/>
-        <text class="rotp" x="466" y="238" transform="rotate(-90,466,238)" text-anchor="middle" font-size="13">
+        <path d="M442 118 V 324" stroke="#5c6420" stroke-width="2" fill="none" marker-end="url(#sp-5c6420)"/>
+        <text class="rotp" x="470" y="222" transform="rotate(-90,470,222)" text-anchor="middle" font-size="13">
             cada vez mais macia
         </text>
-
-        <text class="rotp" x="24" y="374" style="fill:#c25a72">a polpa</text>
     </g>
 
     <!-- ══ Direita: o pico da força ═══════════════════════════════════════ -->
@@ -155,17 +152,17 @@
             <!-- sem espuma: um pico altíssimo e curto -->
             <path d="M0 216 L 60 214 L 84 8 L 108 214 L 320 214"
                   fill="none" stroke="#c0392b" stroke-width="3"/>
-            <text class="rotp" x="92" y="-4" text-anchor="middle" font-size="13" style="fill:#c0392b">
+            <text class="rotp" x="104" y="-4" text-anchor="middle" font-size="13" style="fill:#c0392b">
                 sem a espuma: racha
             </text>
 
             <!-- com a espuma graduada: uma colina baixa e longa -->
             <path d="M0 216 C 60 214, 80 190, 120 176 C 170 158, 200 172, 250 200 C 280 212, 300 214, 320 214"
                   fill="none" stroke="#2f8f5c" stroke-width="3.5"/>
-            <text class="rotp" x="168" y="196" font-size="13" style="fill:#1f7a3d">com a espuma: baixa e espalhada</text>
+            <text class="rotp" x="316" y="16" text-anchor="end" font-size="13" style="fill:#1f7a3d">com a espuma: baixa e espalhada</text>
         </g>
 
-        <text class="rotp" x="24" y="352">A casca não devolve a força: ela a gasta ao longo do tempo.</text>
+        <text class="rotp" x="24" y="352" font-size="13">A casca não devolve a força: gasta-a ao longo do tempo.</text>
     </g>
 
     <!-- ══ Rodapé ═════════════════════════════════════════════════════════ -->

@@ -138,8 +138,8 @@
                 brilho máximo
             </text>
 
-            <text class="rotp" x="30" y="104" font-size="12" style="fill:#ff8f6b">quase lisa</text>
-            <text class="rotp" x="530" y="100" font-size="12" text-anchor="end" style="fill:#ff8f6b">
+            <text class="rotp" x="8" y="72" font-size="12" style="fill:#ff8f6b">quase lisa</text>
+            <text class="rotp" x="540" y="114" font-size="12" text-anchor="end" style="fill:#ff8f6b">
                 inclinada demais
             </text>
         </g>

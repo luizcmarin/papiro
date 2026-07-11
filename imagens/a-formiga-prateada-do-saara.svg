@@ -79,19 +79,19 @@
         </g>
         <!-- reflexos saindo -->
         <g stroke="#e8942e" stroke-width="3" fill="none">
-            <path d="M266 206 L 356 118" marker-end="url(#s-e8942e)"/>
-            <path d="M338 206 L 440 122" marker-end="url(#s-e8942e)"/>
+            <path d="M266 206 L 340 142" marker-end="url(#s-e8942e)"/>
+            <path d="M338 206 L 416 156" marker-end="url(#s-e8942e)"/>
         </g>
-        <text class="rot" x="380" y="102" font-size="16" style="fill:#c06a1f">A LUZ VOLTA</text>
-        <text class="rotp" x="380" y="124" style="fill:#c06a1f">daí o brilho de prata</text>
+        <text class="rot" x="358" y="106" font-size="16" style="fill:#c06a1f">A LUZ VOLTA</text>
+        <text class="rotp" x="358" y="128" style="fill:#c06a1f">daí o brilho de prata</text>
 
         <!-- 2) o calor de dentro, saindo para o céu -->
         <g stroke="#4a90c4" stroke-width="3" fill="none">
-            <path d="M560 210 C 552 190, 574 178, 566 158 C 558 138, 578 128, 570 108" marker-end="url(#s-4a90c4)"/>
-            <path d="M640 210 C 632 190, 654 178, 646 158 C 638 138, 658 128, 650 108" marker-end="url(#s-4a90c4)"/>
+            <path d="M560 210 C 552 196, 574 188, 566 174 C 558 160, 578 154, 570 140" marker-end="url(#s-4a90c4)"/>
+            <path d="M640 210 C 632 196, 654 188, 646 174 C 638 160, 658 154, 650 140" marker-end="url(#s-4a90c4)"/>
         </g>
-        <text class="rot" x="676" y="130" font-size="16" style="fill:#2f6f9e">O CALOR SAI</text>
-        <text class="rotp" x="676" y="152" style="fill:#2f6f9e">o corpo irradia para o céu</text>
+        <text class="rot" x="608" y="88" font-size="16" style="fill:#2f6f9e">O CALOR SAI</text>
+        <text class="rotp" x="608" y="110" style="fill:#2f6f9e">o corpo irradia para o céu</text>
 
         <!-- a fileira de pelos triangulares sobre a cutícula -->
         <g transform="translate(0,244)">
@@ -125,7 +125,7 @@
         <!-- a linha do limite letal (53 °C) -->
         <g>
             <path d="M40 232 H 440" stroke="#c0392b" stroke-width="2" stroke-dasharray="7 6"/>
-            <text class="rotp" x="440" y="224" text-anchor="end" style="fill:#c0392b" font-weight="700">
+            <text class="rotp" x="440" y="222" text-anchor="end" style="fill:#c0392b" font-weight="700">
                 53 °C — o limite letal
             </text>
         </g>
@@ -135,7 +135,7 @@
             <!-- sem nada: 66 -->
             <g transform="translate(84,0)">
                 <rect x="-26" y="154" width="52" height="156" rx="8" fill="#c0392b"/>
-                <text class="rot" x="0" y="142" text-anchor="middle" font-size="16" style="fill:#c0392b">66 °C</text>
+                <text class="rot" x="0" y="180" text-anchor="middle" font-size="16" style="fill:#fff3ee">66 °C</text>
                 <text class="rotp" x="0" y="332" text-anchor="middle">sem os pelos</text>
                 <text class="rotp" x="0" y="352" text-anchor="middle" style="fill:#c0392b">morre</text>
             </g>
@@ -143,7 +143,7 @@
             <!-- só reflete: 56 -->
             <g transform="translate(234,0)">
                 <rect x="-26" y="214" width="52" height="96" rx="8" fill="#e8942e"/>
-                <text class="rot" x="0" y="202" text-anchor="middle" font-size="16" style="fill:#c06a1f">56 °C</text>
+                <text class="rot" x="0" y="248" text-anchor="middle" font-size="16" style="fill:#3f2a08">56 °C</text>
                 <text class="rotp" x="0" y="332" text-anchor="middle">só refletindo</text>
                 <text class="rotp" x="0" y="352" text-anchor="middle" style="fill:#c06a1f">ainda morre</text>
             </g>
@@ -151,7 +151,7 @@
             <!-- reflete e irradia: 49 -->
             <g transform="translate(384,0)">
                 <rect x="-26" y="256" width="52" height="54" rx="8" fill="#2f8f5c"/>
-                <text class="rot" x="0" y="244" text-anchor="middle" font-size="16" style="fill:#1f7a3d">49 °C</text>
+                <text class="rot" x="0" y="290" text-anchor="middle" font-size="16" style="fill:#eafaf0">49 °C</text>
                 <text class="rotp" x="0" y="332" text-anchor="middle">refletindo</text>
                 <text class="rotp" x="0" y="352" text-anchor="middle" style="fill:#1f7a3d">e irradiando: vive</text>
             </g>
