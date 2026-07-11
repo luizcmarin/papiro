@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">O Osso Humano — vigas alinhadas às linhas de força</title>
+    <desc id="desc">Corte do fêmur: as trabéculas (vigas internas) seguem exatamente as linhas de maior
+        força que atravessam o osso, da cabeça femoral até a haste. Ao lado, o mesmo osso maciço:
+        mais pesado, com material espalhado onde não há esforço — e não mais forte.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f7f2e9"/>
+            <stop offset="1" stop-color="#e7dcc9"/>
+        </linearGradient>
+
+        <!-- Silhueta do fêmur, montada de peças simples (cabeça, colo, trocânter,
+             haste). Sem contorno: as peças se fundem numa forma só. -->
+        <g id="femur">
+            <circle cx="250" cy="240" r="54"/>
+            <rect x="-60" y="-25" width="120" height="50" rx="12"
+                  transform="translate(292,280) rotate(43)"/>
+            <rect x="330" y="266" width="54" height="80" rx="12"/>
+            <rect x="322" y="300" width="58" height="400" rx="10"/>
+        </g>
+
+        <!-- As formas são REPETIDAS aqui: um clipPath cujo filho é <use> de um <g>
+             não recorta nada (o Chrome só aceita formas diretas). -->
+        <clipPath id="dentro">
+            <circle cx="250" cy="240" r="54"/>
+            <rect x="-60" y="-25" width="120" height="50" rx="12"
+                  transform="translate(292,280) rotate(43)"/>
+            <rect x="330" y="266" width="54" height="80" rx="12"/>
+            <rect x="322" y="300" width="58" height="400" rx="10"/>
+        </clipPath>
+        <clipPath id="dentroMacico">
+            <circle cx="950" cy="240" r="54"/>
+            <rect x="-60" y="-25" width="120" height="50" rx="12"
+                  transform="translate(992,280) rotate(43)"/>
+            <rect x="1030" y="266" width="54" height="80" rx="12"/>
+            <rect x="1022" y="300" width="58" height="400" rx="10"/>
+        </clipPath>
+
+        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="13" markerHeight="13"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+        <marker id="sp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#3a2c18; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#54402a; font-size:18px; font-weight:700; }
+        .rotp { fill:#7b6244; font-size:14px; }
+        .painel { fill:#fffdf7; stroke:#c9b48d; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">O OSSO HUMANO</text>
+    <text class="rotp" x="46" y="84" font-size="17">Leve porque é vazado — forte porque é vazado no lugar certo.</text>
+
+    <!-- ══ Esquerda: o fêmur de verdade, em corte ═════════════════════════ -->
+    <g>
+        <text class="rot" x="120" y="140" font-size="20" style="fill:#1f7a3d">O OSSO DE VERDADE</text>
+        <text class="rotp" x="120" y="162">vigas só onde a força passa</text>
+
+        <!-- Contorno da UNIÃO: traço grosso embaixo, preenchimento por cima. As
+             costuras entre cabeça, colo e haste ficam cobertas; sobra só a borda. -->
+        <use href="#femur" fill="none" stroke="#9c8154" stroke-width="12" stroke-linejoin="round"/>
+        <use href="#femur" fill="#f7efdc"/>
+
+        <!-- As trabéculas: duas famílias cruzadas, seguindo as linhas de compressão
+             (da cabeça para a haste) e de tração (arqueadas). Recortadas pelo osso. -->
+        <g clip-path="url(#dentro)" fill="none" stroke="#c19c5e" stroke-linecap="round">
+            <g stroke-width="2.6">
+                <path d="M212 210 C 258 262, 306 322, 330 430"/>
+                <path d="M232 198 C 278 250, 322 316, 344 430"/>
+                <path d="M252 192 C 296 244, 338 312, 356 430"/>
+                <path d="M196 232 C 244 284, 292 340, 318 430"/>
+            </g>
+            <g stroke-width="2">
+                <path d="M300 196 C 276 250, 240 288, 198 306"/>
+                <path d="M330 232 C 306 288, 268 326, 214 344"/>
+                <path d="M352 274 C 330 330, 296 362, 246 380"/>
+                <path d="M372 316 C 352 366, 322 396, 286 410"/>
+            </g>
+            <!-- haste: parede grossa por fora, oco no miolo -->
+            <g stroke-width="2.4" opacity="0.9">
+                <path d="M332 360 V 700 M370 360 V 700"/>
+            </g>
+        </g>
+
+        <!-- A carga do peso do corpo entra pela cabeça do fêmur -->
+        <path d="M152 202 L 216 240" stroke="#d63f2a" stroke-width="7" marker-end="url(#s)"/>
+        <text class="rot" x="30" y="196" font-size="16" style="fill:#b0301f">PESO DO CORPO</text>
+
+        <!-- As linhas de força que as vigas copiam -->
+        <g stroke="#2f7fd0" stroke-width="2.5" fill="none" stroke-dasharray="9 7">
+            <path d="M240 200 C 288 254, 336 322, 356 470" marker-end="url(#sp)"/>
+        </g>
+        <text class="rotp" x="418" y="330" style="fill:#2f7fd0" font-weight="700" font-size="15">
+            linha de força
+        </text>
+        <text class="rotp" x="418" y="350" style="fill:#2f7fd0">as vigas seguem exatamente ela</text>
+
+        <path d="M410 470 L 372 470" stroke="#7b6244" stroke-width="2" marker-end="url(#sp)"/>
+        <text class="rotp" x="418" y="466">a haste é um tubo:</text>
+        <text class="rotp" x="418" y="486">no miolo não há esforço</text>
+    </g>
+
+    <!-- ══ Direita: o mesmo osso, maciço — o jeito "óbvio" e pior ═════════ -->
+    <g transform="translate(700,0)">
+        <text class="rot" x="120" y="140" font-size="20" style="fill:#b0301f">O MESMO, MACIÇO</text>
+        <text class="rotp" x="120" y="162">material espalhado por toda parte</text>
+
+        <use href="#femur" fill="none" stroke="#9c8154" stroke-width="12" stroke-linejoin="round"/>
+        <use href="#femur" fill="#d9c49b"/>
+
+        <path d="M152 202 L 216 240" stroke="#d63f2a" stroke-width="7" marker-end="url(#s)"/>
+    </g>
+
+    <!-- Hachura uniforme do maciço (recortada pela silhueta deslocada) -->
+    <g clip-path="url(#dentroMacico)" stroke="#b39a6d" stroke-width="1.4" opacity="0.55">
+        <path d="M860 180 L 1120 180 M860 210 L 1120 210 M860 240 L 1120 240 M860 270 L 1120 270
+                 M860 300 L 1120 300 M860 330 L 1120 330 M860 360 L 1120 360 M860 390 L 1120 390
+                 M860 420 L 1120 420 M860 450 L 1120 450 M860 480 L 1120 480 M860 510 L 1120 510
+                 M860 540 L 1120 540 M860 570 L 1120 570 M860 600 L 1120 600 M860 630 L 1120 630
+                 M860 660 L 1120 660 M860 690 L 1120 690"/>
+    </g>
+    <text class="rotp" x="1110" y="330">nada aponta para lugar nenhum:</text>
+    <text class="rotp" x="1110" y="350">a massa é igual em toda parte</text>
+
+    <!-- ══ O veredito ═════════════════════════════════════════════════════ -->
+    <g transform="translate(1090,430)">
+        <rect class="painel" x="0" y="0" width="270" height="286" rx="14"/>
+
+        <text class="rot" x="135" y="42" text-anchor="middle" font-size="17">O QUE MUDA</text>
+
+        <text class="rot" x="24" y="86" font-size="16" style="fill:#1f7a3d">Osso trabecular</text>
+        <text class="rotp" x="24" y="110">mais leve</text>
+        <text class="rotp" x="24" y="130">forte na direção da carga</text>
+
+        <path d="M24 154 H 246" stroke="#c9b48d" stroke-width="1.5"/>
+
+        <text class="rot" x="24" y="186" font-size="16" style="fill:#b0301f">Osso maciço</text>
+        <text class="rotp" x="24" y="210">mais pesado</text>
+        <text class="rotp" x="24" y="230">e NÃO mais forte</text>
+
+        <path d="M24 252 H 246" stroke="#c9b48d" stroke-width="1.5"/>
+        <text class="rotp" x="135" y="274" text-anchor="middle" font-style="italic">
+            material vale onde a força passa
+        </text>
+    </g>
+
+    <text class="rotp" x="46" y="775" font-size="15">
+        As trabéculas se refazem ao longo da vida, acompanhando as forças a que o osso é submetido.
+    </text>
+</svg>

@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Ecolocalização — enxergar com som</title>
+    <desc id="desc">O golfinho solta um clique, o som vai até a presa e volta. Como o som faz o caminho
+        de ida e de volta, a distância é a velocidade do som multiplicada pelo tempo do eco e
+        dividida por dois. E o clique não sai espalhado: o melão, um órgão gorduroso na testa,
+        funciona como lente acústica e concentra o som num feixe estreito, que varre a presa
+        como uma lanterna.</desc>
+
+    <defs>
+        <linearGradient id="agua" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0f3b5c"/>
+            <stop offset="1" stop-color="#061a2c"/>
+        </linearGradient>
+        <radialGradient id="melao" cx="0.4" cy="0.35" r="0.7">
+            <stop offset="0" stop-color="#ffe680" stop-opacity="0.95"/>
+            <stop offset="1" stop-color="#e8b84b" stop-opacity="0.6"/>
+        </radialGradient>
+
+        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+        <marker id="sp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+        <marker id="ini" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M10 0 L0 5 L10 10 z" fill="context-stroke"/>
+        </marker>
+
+        <!-- o golfinho, de perfil, virado para a direita -->
+        <g id="golfinho">
+            <path d="M-120 0 C -110 -34, -50 -54, 0 -50 C 54 -46, 96 -22, 120 -2
+                     C 96 20, 54 40, 0 44 C -50 48, -110 34, -120 0 Z"
+                  fill="#1b5a80" stroke="#63c7e8" stroke-width="2"/>
+            <path d="M-6 -50 C 10 -84, 40 -92, 52 -84 C 30 -74, 14 -60, 6 -46 Z"
+                  fill="#1b5a80" stroke="#63c7e8" stroke-width="2"/>
+            <path d="M-120 0 C -152 -26, -166 -6, -160 12 C -150 34, -132 22, -120 0 Z"
+                  fill="#1b5a80" stroke="#63c7e8" stroke-width="2"/>
+            <circle cx="88" cy="-8" r="5" fill="#0b2438"/>
+            <path d="M112 4 C 128 6, 138 12, 142 18 C 128 18, 116 14, 108 10 Z" fill="#0b2438" opacity="0.5"/>
+        </g>
+    </defs>
+
+    <style>
+        .cab  { fill:#eaf6ff; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#d6ecfa; font-size:18px; font-weight:700; }
+        .rotp { fill:#8fb4cd; font-size:14px; }
+        .painel { fill:#0d2c46; stroke:#3a7096; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#agua)"/>
+
+    <text class="cab" x="46" y="54">A ECOLOCALIZAÇÃO</text>
+    <text class="rotp" x="46" y="84" font-size="17">No escuro total, o som volta e desenha o que os olhos não veem.</text>
+
+    <!-- ══ Esquerda: o clique, o eco e o cronômetro ═══════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="812" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">O CLIQUE VAI — E O ECO VOLTA</text>
+
+        <g transform="translate(0,42)">
+            <!-- o golfinho -->
+            <g transform="translate(180,150) scale(0.62)">
+                <use href="#golfinho"/>
+            </g>
+
+            <!-- ida: frentes de onda saindo -->
+            <g fill="none" stroke="#ffe680" stroke-width="2.5" opacity="0.9">
+                <path d="M290 108 A 74 74 0 0 1 290 192"/>
+                <path d="M330 92 A 100 100 0 0 1 330 208"/>
+                <path d="M370 78 A 124 124 0 0 1 370 222"/>
+            </g>
+            <path d="M300 60 L 470 60" stroke="#ffe680" stroke-width="2.5" fill="none" marker-end="url(#s)"/>
+            <text class="rotp" x="300" y="46" style="fill:#ffe680">o clique vai…</text>
+
+            <!-- volta: frentes de onda voltando (mais fracas) -->
+            <g fill="none" stroke="#7bd389" stroke-width="2.5" opacity="0.85">
+                <path d="M560 116 A 66 66 0 0 0 560 184"/>
+                <path d="M520 100 A 92 92 0 0 0 520 200"/>
+                <path d="M480 86 A 116 116 0 0 0 480 214"/>
+            </g>
+            <path d="M470 250 L 300 250" stroke="#7bd389" stroke-width="2.5" fill="none" marker-end="url(#s)"/>
+            <text class="rotp" x="300" y="272" style="fill:#7bd389">…e o eco volta</text>
+
+            <!-- a presa -->
+            <g transform="translate(650,150)">
+                <path d="M-46 0 C -30 -24, 18 -30, 44 -2 C 18 26, -30 24, -46 0 Z"
+                      fill="#e8955f" stroke="#ffd0a8" stroke-width="2"/>
+                <path d="M44 -2 L 68 -18 L 62 0 L 68 18 Z" fill="#e8955f" stroke="#ffd0a8" stroke-width="2"/>
+                <circle cx="-28" cy="-4" r="3.5" fill="#0b2438"/>
+            </g>
+            <text class="rotp" x="650" y="222" text-anchor="middle" style="fill:#e8955f">a presa</text>
+
+            <!-- a régua da distância -->
+            <path d="M180 306 H 650" stroke="#8fb4cd" stroke-width="2" fill="none"
+                  marker-start="url(#ini)" marker-end="url(#sp)"/>
+            <text class="rot" x="415" y="298" text-anchor="middle" font-size="16">d = ?</text>
+        </g>
+    </g>
+
+    <!-- ══ Direita: o melão, a lente do som ══════════════════════════════ -->
+    <g transform="translate(886,112)">
+        <rect class="painel" x="0" y="0" width="468" height="380" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#ffd24d">O MELÃO: A LENTE DO SOM</text>
+        <text class="rotp" x="24" y="60">a testa gorda do golfinho junta o clique num feixe só</text>
+
+        <!-- sem lente: o som se espalha -->
+        <g transform="translate(24,88)">
+            <rect x="0" y="0" width="420" height="118" rx="10" fill="#0b2438" stroke="#3a7096" stroke-width="1.5"/>
+            <text class="rotp" x="14" y="24" style="fill:#ff8f6b">sem lente — o som se espalha</text>
+            <g transform="translate(50,72)">
+                <circle cx="0" cy="0" r="14" fill="#1b5a80" stroke="#63c7e8" stroke-width="2"/>
+                <g stroke="#ff8f6b" stroke-width="2" fill="none">
+                    <path d="M16 -6 L 120 -40" marker-end="url(#sp)"/>
+                    <path d="M18 0 L 130 0" marker-end="url(#sp)"/>
+                    <path d="M16 6 L 120 40" marker-end="url(#sp)"/>
+                    <path d="M12 -12 L 80 -56" marker-end="url(#sp)"/>
+                    <path d="M12 12 L 80 56" marker-end="url(#sp)"/>
+                </g>
+                <ellipse cx="290" cy="0" rx="26" ry="16" fill="#e8955f" opacity="0.45"/>
+                <text class="rotp" x="300" y="-30" text-anchor="middle" font-size="13" style="fill:#ff8f6b">
+                    quase nada chega
+                </text>
+            </g>
+        </g>
+
+        <!-- com o melão: feixe estreito -->
+        <g transform="translate(24,226)">
+            <rect x="0" y="0" width="420" height="118" rx="10" fill="#0b2438" stroke="#7bd389" stroke-width="1.5"/>
+            <text class="rotp" x="14" y="24" style="fill:#7bd389">com o melão — um feixe estreito</text>
+            <g transform="translate(50,72)">
+                <circle cx="0" cy="0" r="14" fill="#1b5a80" stroke="#63c7e8" stroke-width="2"/>
+                <ellipse cx="22" cy="0" rx="20" ry="26" fill="url(#melao)"/>
+                <path d="M44 -22 L 300 -12 L 300 12 L 44 22 Z" fill="#ffe680" opacity="0.28"/>
+                <g stroke="#ffe680" stroke-width="2" fill="none">
+                    <path d="M46 -10 L 286 -6" marker-end="url(#sp)"/>
+                    <path d="M46 0 L 286 0" marker-end="url(#sp)"/>
+                    <path d="M46 10 L 286 6" marker-end="url(#sp)"/>
+                </g>
+                <ellipse cx="316" cy="0" rx="26" ry="16" fill="#e8955f"/>
+                <text class="rotp" x="316" y="-32" text-anchor="middle" font-size="13" style="fill:#7bd389">
+                    o eco volta forte
+                </text>
+            </g>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé: a conta ════════════════════════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">A CONTA DO ECO</text>
+
+        <!-- a fórmula -->
+        <g transform="translate(30,64)">
+            <rect x="0" y="0" width="380" height="112" rx="12" fill="#0b2438" stroke="#3a7096" stroke-width="1.5"/>
+            <text class="cab" x="24" y="52" font-size="28" style="fill:#ffd24d">d = v × t ÷ 2</text>
+            <text class="rotp" x="24" y="82">divide por 2 porque o som faz o caminho</text>
+            <text class="rotp" x="24" y="102">duas vezes: a ida e a volta</text>
+        </g>
+
+        <!-- exemplo -->
+        <g transform="translate(438,64)">
+            <rect x="0" y="0" width="420" height="112" rx="12" fill="#0b2438" stroke="#3a7096" stroke-width="1.5"/>
+            <text class="rot" x="24" y="34" font-size="16">O eco voltou em 0,08 s</text>
+            <text class="rotp" x="24" y="62">1500 m/s × 0,08 s = 120 m (ida e volta)</text>
+            <text class="rot" x="24" y="94" font-size="17" style="fill:#7bd389">a presa está a 60 metros</text>
+        </g>
+
+        <!-- o mesmo truque, em dois meios -->
+        <g transform="translate(886,64)">
+            <rect x="0" y="0" width="392" height="112" rx="12" fill="#0b2438" stroke="#3a7096" stroke-width="1.5"/>
+            <text class="rot" x="24" y="34" font-size="16">O MESMO TRUQUE, EM DOIS MEIOS</text>
+            <text class="rotp" x="24" y="62">o morcego, no ar: o som corre a 340 m/s</text>
+            <text class="rotp" x="24" y="88">a baleia, na água: corre a 1500 m/s</text>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        O golfinho não só mede a distância: pelo eco ele distingue o peixe da pedra — e enxerga até o que está dentro deles.
+    </text>
+</svg>

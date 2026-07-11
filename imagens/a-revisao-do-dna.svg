@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Revisão do DNA — copiar, conferir e corrigir</title>
+    <desc id="desc">A enzima que copia o DNA escreve a fita nova base por base, seguindo a regra do
+        encaixe: A só com T, C só com G. Quando entra a base errada, o par fica torto, a enzima
+        recua, corta a letra errada e põe a certa. Três filtros em sequência levam o erro de um
+        em cem mil para menos de um em um bilhão.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1d1740"/>
+            <stop offset="1" stop-color="#0a0818"/>
+        </linearGradient>
+        <linearGradient id="fita" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#6e5fd0"/>
+            <stop offset="1" stop-color="#4b3ea3"/>
+        </linearGradient>
+
+        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#efeafd; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#d6cff2; font-size:18px; font-weight:700; }
+        .rotp { fill:#9a92bd; font-size:14px; }
+        .painel { fill:#171233; stroke:#4b3ea3; stroke-width:2; }
+        .base { font-size:17px; font-weight:800; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">A REVISÃO DO DNA</text>
+    <text class="rotp" x="46" y="84" font-size="17">Copiar três bilhões de letras é fácil. Copiar sem errar é que é o problema.</text>
+
+    <!-- ══ Esquerda: a cópia, o erro e o conserto ═════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="812" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">A ENZIMA COPIA — E CONFERE O QUE ESCREVEU</text>
+
+        <!-- ETAPA 1: copiando certo -->
+        <g transform="translate(30,72)">
+            <circle cx="16" cy="16" r="15" fill="#6e5fd0"/>
+            <text x="16" y="22" text-anchor="middle" font-size="16" font-weight="800" fill="#0a0818">1</text>
+            <text class="rot" x="42" y="22" font-size="16">Escreve, base por base</text>
+
+            <!-- fita molde (em cima) e fita nova (embaixo) -->
+            <g transform="translate(20,48)">
+                <rect x="0" y="0" width="360" height="12" rx="6" fill="url(#fita)"/>
+                <rect x="0" y="76" width="270" height="12" rx="6" fill="url(#fita)"/>
+
+                <!-- pares corretos -->
+                <g>
+                    <g transform="translate(24,12)">
+                        <rect x="0" y="4" width="34" height="26" rx="5" fill="#7bd389"/>
+                        <text class="base" x="17" y="24" text-anchor="middle" fill="#0a0818">A</text>
+                        <g stroke="#c9c2e6" stroke-width="2"><path d="M6 36 H 28 M6 44 H 28"/></g>
+                        <rect x="0" y="50" width="34" height="26" rx="5" fill="#ffd24d"/>
+                        <text class="base" x="17" y="70" text-anchor="middle" fill="#0a0818">T</text>
+                    </g>
+                    <g transform="translate(74,12)">
+                        <rect x="0" y="4" width="34" height="26" rx="5" fill="#63c7e8"/>
+                        <text class="base" x="17" y="24" text-anchor="middle" fill="#0a0818">C</text>
+                        <g stroke="#c9c2e6" stroke-width="2"><path d="M6 34 H 28 M6 41 H 28 M6 48 H 28"/></g>
+                        <rect x="0" y="50" width="34" height="26" rx="5" fill="#ef7ba8"/>
+                        <text class="base" x="17" y="70" text-anchor="middle" fill="#0a0818">G</text>
+                    </g>
+                    <g transform="translate(124,12)">
+                        <rect x="0" y="4" width="34" height="26" rx="5" fill="#ffd24d"/>
+                        <text class="base" x="17" y="24" text-anchor="middle" fill="#0a0818">T</text>
+                        <g stroke="#c9c2e6" stroke-width="2"><path d="M6 36 H 28 M6 44 H 28"/></g>
+                        <rect x="0" y="50" width="34" height="26" rx="5" fill="#7bd389"/>
+                        <text class="base" x="17" y="70" text-anchor="middle" fill="#0a0818">A</text>
+                    </g>
+                    <g transform="translate(174,12)">
+                        <rect x="0" y="4" width="34" height="26" rx="5" fill="#ef7ba8"/>
+                        <text class="base" x="17" y="24" text-anchor="middle" fill="#0a0818">G</text>
+                        <g stroke="#c9c2e6" stroke-width="2"><path d="M6 34 H 28 M6 41 H 28 M6 48 H 28"/></g>
+                        <rect x="0" y="50" width="34" height="26" rx="5" fill="#63c7e8"/>
+                        <text class="base" x="17" y="70" text-anchor="middle" fill="#0a0818">C</text>
+                    </g>
+
+                    <!-- o par ERRADO: G tentando encaixar com T -->
+                    <g transform="translate(224,12)">
+                        <rect x="0" y="4" width="34" height="26" rx="5" fill="#ef7ba8"/>
+                        <text class="base" x="17" y="24" text-anchor="middle" fill="#0a0818">G</text>
+                        <g stroke="#ff6b6b" stroke-width="2"><path d="M8 37 L 26 43"/></g>
+                        <rect x="4" y="52" width="34" height="26" rx="5" fill="#ffd24d" transform="rotate(9,21,65)"/>
+                        <text class="base" x="21" y="72" text-anchor="middle" fill="#0a0818" transform="rotate(9,21,65)">T</text>
+                        <circle cx="17" cy="43" r="19" fill="none" stroke="#ff6b6b" stroke-width="2.5"/>
+                    </g>
+                </g>
+
+                <!-- a enzima, deslizando (parada em cima do erro que acabou de achar) -->
+                <g transform="translate(336,44)">
+                    <path d="M-20 -44 C 36 -58, 60 -8, 38 32 C 16 72, -30 62, -40 20 Z"
+                          fill="#2b2360" stroke="#8f7fe8" stroke-width="2.5"/>
+                    <text class="rotp" x="0" y="6" text-anchor="middle" style="fill:#d6cff2" font-weight="700" font-size="13">
+                        enzima
+                    </text>
+                </g>
+            </g>
+        </g>
+
+        <!-- ETAPA 2 e 3 -->
+        <g transform="translate(30,238)">
+            <circle cx="16" cy="16" r="15" fill="#ff6b6b"/>
+            <text x="16" y="22" text-anchor="middle" font-size="16" font-weight="800" fill="#0a0818">2</text>
+            <text class="rot" x="42" y="22" font-size="16" style="fill:#ff6b6b">O par errado fica torto</text>
+            <text class="rotp" x="42" y="44">a enzima SENTE a deformação — e trava</text>
+
+            <path d="M330 26 L 372 26" stroke="#9a92bd" stroke-width="3" fill="none" marker-end="url(#s)"/>
+
+            <g transform="translate(400,0)">
+                <circle cx="16" cy="16" r="15" fill="#7bd389"/>
+                <text x="16" y="22" text-anchor="middle" font-size="16" font-weight="800" fill="#0a0818">3</text>
+                <text class="rot" x="42" y="22" font-size="16" style="fill:#7bd389">Recua, corta e reescreve</text>
+                <text class="rotp" x="42" y="44">a letra errada sai; a certa entra no lugar</text>
+            </g>
+        </g>
+
+        <g transform="translate(30,318)">
+            <rect x="0" y="0" width="752" height="42" rx="10" fill="#221a4d" stroke="#4b3ea3" stroke-width="1.5"/>
+            <text class="rotp" x="16" y="27" font-size="15">
+                A regra nunca muda: <tspan style="fill:#7bd389" font-weight="700">A</tspan> só com
+                <tspan style="fill:#ffd24d" font-weight="700">T</tspan>,
+                <tspan style="fill:#63c7e8" font-weight="700">C</tspan> só com
+                <tspan style="fill:#ef7ba8" font-weight="700">G</tspan> — é o encaixe que denuncia o erro.
+            </text>
+        </g>
+    </g>
+
+    <!-- ══ Direita: por que o encaixe denuncia ════════════════════════════ -->
+    <g transform="translate(886,112)">
+        <rect class="painel" x="0" y="0" width="468" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">POR QUE O ERRO APARECE</text>
+        <text class="rotp" x="24" y="60">cada par certo tem o seu número de pontes</text>
+
+        <!-- A–T: duas pontes -->
+        <g transform="translate(40,92)">
+            <rect x="0" y="0" width="44" height="34" rx="6" fill="#7bd389"/>
+            <text class="base" x="22" y="24" text-anchor="middle" fill="#0a0818">A</text>
+            <g stroke="#c9c2e6" stroke-width="2.5"><path d="M50 12 H 106 M50 24 H 106"/></g>
+            <rect x="112" y="0" width="44" height="34" rx="6" fill="#ffd24d"/>
+            <text class="base" x="134" y="24" text-anchor="middle" fill="#0a0818">T</text>
+            <text class="rotp" x="176" y="22" style="fill:#7bd389">2 pontes — encaixa</text>
+        </g>
+
+        <!-- C–G: três pontes -->
+        <g transform="translate(40,152)">
+            <rect x="0" y="0" width="44" height="34" rx="6" fill="#63c7e8"/>
+            <text class="base" x="22" y="24" text-anchor="middle" fill="#0a0818">C</text>
+            <g stroke="#c9c2e6" stroke-width="2.5"><path d="M50 8 H 106 M50 18 H 106 M50 28 H 106"/></g>
+            <rect x="112" y="0" width="44" height="34" rx="6" fill="#ef7ba8"/>
+            <text class="base" x="134" y="24" text-anchor="middle" fill="#0a0818">G</text>
+            <text class="rotp" x="176" y="22" style="fill:#7bd389">3 pontes — encaixa</text>
+        </g>
+
+        <path d="M40 214 H 428" stroke="#4b3ea3" stroke-width="1.5"/>
+
+        <!-- A–G: não encaixa -->
+        <g transform="translate(40,244)">
+            <rect x="0" y="0" width="44" height="34" rx="6" fill="#7bd389"/>
+            <text class="base" x="22" y="24" text-anchor="middle" fill="#0a0818">A</text>
+            <g stroke="#ff6b6b" stroke-width="2.5"><path d="M56 10 L 100 26"/></g>
+            <rect x="106" y="6" width="44" height="34" rx="6" fill="#ef7ba8" transform="rotate(10,128,23)"/>
+            <text class="base" x="128" y="30" text-anchor="middle" fill="#0a0818" transform="rotate(10,128,23)">G</text>
+            <text class="rotp" x="176" y="22" style="fill:#ff6b6b">largo demais: entorta a fita</text>
+        </g>
+
+        <g transform="translate(40,312)">
+            <text class="rotp" x="0" y="0">Duas letras grandes não cabem no vão;</text>
+            <text class="rotp" x="0" y="22">duas pequenas deixam folga. Só o par</text>
+            <text class="rotp" x="0" y="44">certo mantém a largura da escada.</text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé: os três filtros ════════════════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">TRÊS FILTROS, UM DEPOIS DO OUTRO</text>
+
+        <g transform="translate(30,64)">
+            <g>
+                <rect x="0" y="0" width="330" height="112" rx="12" fill="#221a4d" stroke="#4b3ea3" stroke-width="1.5"/>
+                <text class="rot" x="20" y="34" font-size="16">1 · Só o encaixe certo entra</text>
+                <text class="rotp" x="20" y="60">a forma da base já barra quase tudo</text>
+                <text class="cab" x="20" y="96" font-size="22" style="fill:#ff8f6b">1 erro em 100 mil</text>
+            </g>
+            <path d="M342 56 L 372 56" stroke="#9a92bd" stroke-width="3" fill="none" marker-end="url(#s)"/>
+
+            <g transform="translate(388,0)">
+                <rect x="0" y="0" width="330" height="112" rx="12" fill="#221a4d" stroke="#4b3ea3" stroke-width="1.5"/>
+                <text class="rot" x="20" y="34" font-size="16">2 · A enzima relê o que escreveu</text>
+                <text class="rotp" x="20" y="60">recua, corta a letra torta e refaz</text>
+                <text class="cab" x="20" y="96" font-size="22" style="fill:#ffd24d">1 erro em 10 milhões</text>
+            </g>
+            <path d="M730 56 L 760 56" stroke="#9a92bd" stroke-width="3" fill="none" marker-end="url(#s)"/>
+
+            <g transform="translate(776,0)">
+                <rect x="0" y="0" width="472" height="112" rx="12" fill="#1b3a2b" stroke="#7bd389" stroke-width="2"/>
+                <text class="rot" x="20" y="34" font-size="16" style="fill:#7bd389">3 · Um time de reparo passa depois</text>
+                <text class="rotp" x="20" y="60">acha o que escapou e conserta a fita nova</text>
+                <text class="cab" x="20" y="96" font-size="22" style="fill:#7bd389">menos de 1 erro em 1 bilhão</text>
+            </g>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        É copiar à mão uma biblioteca inteira — e errar menos de uma letra em todos os livros.
+    </text>
+</svg>

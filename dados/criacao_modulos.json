@@ -92,7 +92,7 @@
         "publicar": 1,
         "data_criacao": 1781893572384,
         "data_atualizacao": 1783100592233,
-        "imagem": "a-formiga-do-deserto.webp"
+        "imagem": "a-formiga-do-deserto.svg"
     },
     {
         "id": 6,
@@ -111,7 +111,7 @@
         "publicar": 1,
         "data_criacao": 1781893572384,
         "data_atualizacao": 1782932845462,
-        "imagem": ""
+        "imagem": "a-baleia-corcunda.svg"
     },
     {
         "id": 7,
@@ -187,7 +187,7 @@
         "publicar": 1,
         "data_criacao": 1781893572384,
         "data_atualizacao": 1782933473360,
-        "imagem": ""
+        "imagem": "o-osso-humano.svg"
     },
     {
         "id": 14,
@@ -206,7 +206,7 @@
         "publicar": 1,
         "data_criacao": 1781893572384,
         "data_atualizacao": 1782933672270,
-        "imagem": ""
+        "imagem": "a-pele-do-tubarao.svg"
     },
     {
         "id": 15,
@@ -225,7 +225,7 @@
         "publicar": 1,
         "data_criacao": 1781893572384,
         "data_atualizacao": 1782933776651,
-        "imagem": ""
+        "imagem": "a-asa-da-borboleta.svg"
     },
     {
         "id": 17,
@@ -244,7 +244,7 @@
         "publicar": 1,
         "data_criacao": 1781893572384,
         "data_atualizacao": 1782933836656,
-        "imagem": ""
+        "imagem": "a-penugem-da-coruja.svg"
     },
     {
         "id": 18,
@@ -320,7 +320,7 @@
         "publicar": 1,
         "data_criacao": 1781893572384,
         "data_atualizacao": 1782935966287,
-        "imagem": ""
+        "imagem": "a-lente-perfeita.svg"
     },
     {
         "id": 23,
@@ -339,7 +339,7 @@
         "publicar": 1,
         "data_criacao": 1781893572384,
         "data_atualizacao": 1782936054107,
-        "imagem": ""
+        "imagem": "o-escudo-da-terra.svg"
     },
     {
         "id": 24,
@@ -358,7 +358,7 @@
         "publicar": 1,
         "data_criacao": 1782414487368,
         "data_atualizacao": 1782933971080,
-        "imagem": ""
+        "imagem": "o-bico-do-martim-pescador.svg"
     },
     {
         "id": 25,
@@ -377,7 +377,7 @@
         "publicar": 1,
         "data_criacao": 1782433697969,
         "data_atualizacao": 1782936259328,
-        "imagem": ""
+        "imagem": "a-inclinacao-da-terra.svg"
     },
     {
         "id": 26,
@@ -434,7 +434,7 @@
         "publicar": 1,
         "data_criacao": 1782597826112,
         "data_atualizacao": 1782597826112,
-        "imagem": ""
+        "imagem": "a-semente-do-dente-de-leao.svg"
     },
     {
         "id": 29,
@@ -491,7 +491,7 @@
         "publicar": 1,
         "data_criacao": 1782598159724,
         "data_atualizacao": 1782598159724,
-        "imagem": ""
+        "imagem": "a-represa-do-castor.svg"
     },
     {
         "id": 32,
@@ -605,7 +605,7 @@
         "publicar": 1,
         "data_criacao": 1782598711406,
         "data_atualizacao": 1782598711406,
-        "imagem": ""
+        "imagem": "a-baleia-corcunda.svg"
     },
     {
         "id": 38,
@@ -643,7 +643,7 @@
         "publicar": 1,
         "data_criacao": 1782838750983,
         "data_atualizacao": 1782933274904,
-        "imagem": "o-podometro-da-formiga-do-deserto.webp"
+        "imagem": "o-podometro-da-formiga-do-deserto.svg"
     },
     {
         "id": 40,
@@ -738,7 +738,7 @@
         "publicar": 1,
         "data_criacao": 1782940024723,
         "data_atualizacao": 1782940024723,
-        "imagem": ""
+        "imagem": "a-lanterna-do-vaga-lume.svg"
     },
     {
         "id": 45,

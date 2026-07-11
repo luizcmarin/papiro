@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Pele do Tubarão — ranhuras que domam a turbulência</title>
+    <desc id="desc">Do tubarão ao microscópio: a pele é coberta de dentículos com ranhuras alinhadas ao
+        fluxo. Numa superfície lisa a água se embola em redemoinhos que arrastam; entre as ranhuras,
+        os redemoinhos ficam presos e o fluxo desliza reto. O espaçamento tem um valor ótimo.</desc>
+
+    <defs>
+        <linearGradient id="mar" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2b6f9e"/>
+            <stop offset="1" stop-color="#123a5c"/>
+        </linearGradient>
+        <linearGradient id="pele" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#7f97a9"/>
+            <stop offset="0.6" stop-color="#4a6478"/>
+            <stop offset="0.62" stop-color="#dfe8ee"/>
+            <stop offset="1" stop-color="#f2f7fa"/>
+        </linearGradient>
+
+        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#eaf6ff; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#eaf6ff; font-size:18px; font-weight:700; }
+        .rotp { fill:#a9cbe2; font-size:14px; }
+        .num  { fill:#123a5c; font-size:17px; font-weight:800; }
+        .painel { fill:#0f2f4c; stroke:#3d7ba8; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#mar)"/>
+
+    <text class="cab" x="46" y="54">A PELE DO TUBARÃO</text>
+    <text class="rotp" x="46" y="84" font-size="17">A água desliza melhor sobre ranhuras do que sobre o liso.</text>
+
+    <!-- ══ O tubarão ══════════════════════════════════════════════════════ -->
+    <g transform="translate(70,180)">
+        <g transform="translate(0,120)">
+            <path d="M0 40 C 60 -10, 190 -34, 300 -20 C 350 -14, 390 0, 420 20
+                     C 392 46, 340 62, 280 66 C 180 74, 60 70, 0 40 Z" fill="url(#pele)"/>
+            <path d="M150 -28 L 176 -84 L 214 -22 Z" fill="#6b8598"/>
+            <path d="M120 60 L 132 96 L 176 62 Z" fill="#6b8598"/>
+            <path d="M300 -20 L 330 -46 L 336 -12 Z" fill="#6b8598"/>
+            <path d="M0 40 L -46 6 L -34 40 L -46 74 Z" fill="#6b8598"/>
+            <circle cx="392" cy="10" r="5" fill="#0d2338"/>
+            <path d="M356 34 C 376 30, 400 30, 416 34" stroke="#0d2338" stroke-width="3" fill="none"/>
+            <g stroke="#4a6478" stroke-width="2" opacity="0.6">
+                <path d="M250 30 L 244 56 M270 28 L 264 56 M290 28 L 284 54"/>
+            </g>
+        </g>
+
+        <text class="rot" x="210" y="270" text-anchor="middle">O NADO MAIS EFICIENTE DO MAR</text>
+        <text class="rotp" x="210" y="292" text-anchor="middle">a pele não é lisa — é riscada</text>
+    </g>
+
+    <!-- lupa sobre o flanco + trilha até os painéis -->
+    <circle cx="290" cy="300" r="34" fill="none" stroke="#7fd4ff" stroke-width="2.5"/>
+    <path d="M316 322 C 380 372, 420 400, 470 412" stroke="#7fd4ff" stroke-width="2"
+          stroke-dasharray="7 6" fill="none" marker-end="url(#s)"/>
+
+    <!-- ══ Painel: superfície LISA — os redemoinhos arrastam ══════════════ -->
+    <g transform="translate(500,150)">
+        <rect class="painel" x="0" y="0" width="420" height="270" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#ff8f6b">SUPERFÍCIE LISA</text>
+        <text class="rotp" x="24" y="60">a água se embola e freia o nado</text>
+
+        <!-- a parede -->
+        <rect x="24" y="200" width="372" height="18" rx="4" fill="#7f97a9"/>
+
+        <!-- fluxo: começa reto e vira turbilhão junto da parede -->
+        <g fill="none" stroke="#7fd4ff" stroke-width="3">
+            <path d="M30 100 C 120 92, 240 96, 384 100" marker-end="url(#s)"/>
+        </g>
+        <g fill="none" stroke="#ff8f6b" stroke-width="3">
+            <path d="M60 176 C 92 150, 132 168, 112 190 C 96 208, 68 198, 74 178"/>
+            <path d="M150 180 C 182 154, 222 172, 202 194 C 186 212, 158 202, 164 182"/>
+            <path d="M240 176 C 272 150, 312 168, 292 190 C 276 208, 248 198, 254 178"/>
+            <path d="M330 180 C 362 154, 396 172, 376 194"/>
+        </g>
+        <text class="rotp" x="24" y="248" style="fill:#ff8f6b">redemoinhos soltos = arrasto</text>
+    </g>
+
+    <!-- ══ Painel: com RANHURAS — os redemoinhos ficam presos ═════════════ -->
+    <g transform="translate(950,150)">
+        <rect class="painel" x="0" y="0" width="410" height="270" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#7bd389">COM RANHURAS</text>
+        <text class="rotp" x="24" y="60">os redemoinhos ficam presos nos sulcos</text>
+
+        <!-- as ranhuras (riblets), alinhadas ao fluxo -->
+        <g fill="#7f97a9">
+            <path d="M24 218 L 44 182 L 64 218 Z"/>
+            <path d="M64 218 L 84 182 L 104 218 Z"/>
+            <path d="M104 218 L 124 182 L 144 218 Z"/>
+            <path d="M144 218 L 164 182 L 184 218 Z"/>
+            <path d="M184 218 L 204 182 L 224 218 Z"/>
+            <path d="M224 218 L 244 182 L 264 218 Z"/>
+            <path d="M264 218 L 284 182 L 304 218 Z"/>
+            <path d="M304 218 L 324 182 L 344 218 Z"/>
+            <path d="M344 218 L 364 182 L 384 218 Z"/>
+        </g>
+
+        <!-- fluxo: segue reto, sem se embolar -->
+        <g fill="none" stroke="#7fd4ff" stroke-width="3">
+            <path d="M24 100 C 120 96, 260 96, 384 100" marker-end="url(#s)"/>
+            <path d="M24 132 C 120 128, 260 128, 384 132" marker-end="url(#s)"/>
+            <path d="M24 164 C 120 160, 260 160, 384 164" marker-end="url(#s)"/>
+        </g>
+        <!-- os redemoinhos, agora pequenos e presos no vale entre as cristas -->
+        <g fill="none" stroke="#7bd389" stroke-width="2">
+            <circle cx="64" cy="206" r="7"/><circle cx="144" cy="206" r="7"/>
+            <circle cx="224" cy="206" r="7"/><circle cx="304" cy="206" r="7"/>
+        </g>
+        <text class="rotp" x="24" y="248" style="fill:#7bd389">fluxo reto = menos arrasto</text>
+    </g>
+
+    <!-- ══ O espaçamento: existe um valor ótimo ═══════════════════════════ -->
+    <g transform="translate(500,470)">
+        <rect class="painel" x="0" y="0" width="860" height="270" rx="16"/>
+        <text class="rot" x="24" y="38">O ESPAÇAMENTO É QUE MANDA</text>
+        <text class="rotp" x="24" y="60">nem largo demais, nem apertado demais — há um ponto certo</text>
+
+        <!-- três amostras lado a lado -->
+        <g transform="translate(40,110)">
+            <text class="rotp" x="90" y="-4" text-anchor="middle" style="fill:#ff8f6b">largo demais</text>
+            <g fill="#7f97a9">
+                <path d="M0 90 L 30 30 L 60 90 Z"/>
+                <path d="M60 90 L 90 30 L 120 90 Z"/>
+                <path d="M120 90 L 150 30 L 180 90 Z"/>
+            </g>
+            <g fill="none" stroke="#ff8f6b" stroke-width="2.5">
+                <path d="M20 78 C 44 44, 76 62, 56 82 C 42 96, 22 90, 26 76"/>
+                <path d="M140 78 C 164 44, 196 62, 176 82 C 162 96, 142 90, 146 76"/>
+            </g>
+            <text class="rotp" x="90" y="118" text-anchor="middle">o redemoinho cabe no vale</text>
+        </g>
+
+        <g transform="translate(340,110)">
+            <text class="rotp" x="90" y="-4" text-anchor="middle" style="fill:#7bd389">no ponto</text>
+            <g fill="#7f97a9">
+                <path d="M0 90 L 15 30 L 30 90 Z"/><path d="M30 90 L 45 30 L 60 90 Z"/>
+                <path d="M60 90 L 75 30 L 90 90 Z"/><path d="M90 90 L 105 30 L 120 90 Z"/>
+                <path d="M120 90 L 135 30 L 150 90 Z"/><path d="M150 90 L 165 30 L 180 90 Z"/>
+            </g>
+            <g fill="none" stroke="#7bd389" stroke-width="2.5">
+                <circle cx="30" cy="76" r="6"/><circle cx="90" cy="76" r="6"/><circle cx="150" cy="76" r="6"/>
+            </g>
+            <text class="rotp" x="90" y="118" text-anchor="middle" style="fill:#7bd389">os redemoinhos ficam presos</text>
+        </g>
+
+        <g transform="translate(640,110)">
+            <text class="rotp" x="90" y="-4" text-anchor="middle" style="fill:#ff8f6b">apertado demais</text>
+            <g fill="#7f97a9">
+                <path d="M0 90 L 8 30 L 16 90 Z"/><path d="M16 90 L 24 30 L 32 90 Z"/>
+                <path d="M32 90 L 40 30 L 48 90 Z"/><path d="M48 90 L 56 30 L 64 90 Z"/>
+                <path d="M64 90 L 72 30 L 80 90 Z"/><path d="M80 90 L 88 30 L 96 90 Z"/>
+                <path d="M96 90 L 104 30 L 112 90 Z"/><path d="M112 90 L 120 30 L 128 90 Z"/>
+                <path d="M128 90 L 136 30 L 144 90 Z"/><path d="M144 90 L 152 30 L 160 90 Z"/>
+                <path d="M160 90 L 168 30 L 176 90 Z"/>
+            </g>
+            <text class="rotp" x="90" y="118" text-anchor="middle">vira parede lisa outra vez</text>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="775" font-size="15">
+        Trajes de natação e fuselagens de avião já usam o mesmo truque de sulcos alinhados ao fluxo.
+    </text>
+</svg>

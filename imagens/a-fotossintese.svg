@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Fotossíntese — a antena, o funil e o centro de reação</title>
+    <desc id="desc">Dezenas de moléculas de clorofila formam uma antena que captura os fótons do Sol.
+        A energia desce de pigmento em pigmento, sempre para o vizinho de energia um pouco menor,
+        como uma bola rolando por um funil — e quase nada se perde no caminho até o centro de
+        reação, onde a água e o gás carbônico viram açúcar e oxigênio.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0e3021"/>
+            <stop offset="1" stop-color="#05160f"/>
+        </linearGradient>
+        <linearGradient id="raio" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffe680" stop-opacity="0.95"/>
+            <stop offset="1" stop-color="#ffe680" stop-opacity="0.15"/>
+        </linearGradient>
+        <radialGradient id="centro" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#ffe680" stop-opacity="0.9"/>
+            <stop offset="1" stop-color="#ffe680" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="funil" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#7bd389" stop-opacity="0.12"/>
+            <stop offset="1" stop-color="#ffe680" stop-opacity="0.35"/>
+        </linearGradient>
+
+        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#e8fbef; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#cfeeda; font-size:18px; font-weight:700; }
+        .rotp { fill:#8ab79c; font-size:14px; }
+        .painel { fill:#0b2418; stroke:#356b4d; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">A FOTOSSÍNTESE</text>
+    <text class="rotp" x="46" y="84" font-size="17">A luz é captada num ponto e usada em outro — e quase nada se perde no caminho.</text>
+
+    <!-- ══ Esquerda: a antena de clorofila e o funil de energia ═══════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="840" height="368" rx="16"/>
+        <text class="rot" x="24" y="38">A ANTENA DE CLOROFILA</text>
+        <text class="rotp" x="24" y="60">centenas de pigmentos captam o fóton — um só não daria conta</text>
+
+        <!-- fótons chegando -->
+        <g stroke="#ffe680" stroke-width="3" fill="none" opacity="0.9">
+            <path d="M70 86 L 100 128" marker-end="url(#s)"/>
+            <path d="M150 86 L 180 128" marker-end="url(#s)"/>
+            <path d="M230 86 L 260 128" marker-end="url(#s)"/>
+            <path d="M310 86 L 340 128" marker-end="url(#s)"/>
+            <path d="M390 86 L 420 128" marker-end="url(#s)"/>
+        </g>
+        <text class="rotp" x="446" y="104" style="fill:#ffe680">fótons do Sol</text>
+
+        <!-- o funil: energia decaindo de pigmento em pigmento -->
+        <path d="M60 150 L 700 150 L 700 300 L 60 240 Z" fill="url(#funil)"/>
+
+        <!-- os pigmentos: cada um um pouco "mais baixo" em energia que o anterior -->
+        <g>
+            <g fill="#2f8f5c" stroke="#7bd389" stroke-width="2">
+                <circle cx="100" cy="160" r="17"/>
+                <circle cx="176" cy="170" r="17"/>
+                <circle cx="252" cy="180" r="17"/>
+                <circle cx="328" cy="192" r="17"/>
+                <circle cx="404" cy="204" r="17"/>
+                <circle cx="480" cy="216" r="17"/>
+                <circle cx="556" cy="228" r="17"/>
+                <circle cx="632" cy="240" r="17"/>
+            </g>
+            <!-- o salto de energia, de vizinho em vizinho -->
+            <g stroke="#ffe680" stroke-width="2.5" fill="none">
+                <path d="M119 163 L 155 168" marker-end="url(#s)"/>
+                <path d="M195 173 L 231 178" marker-end="url(#s)"/>
+                <path d="M271 184 L 307 189" marker-end="url(#s)"/>
+                <path d="M347 195 L 383 201" marker-end="url(#s)"/>
+                <path d="M423 207 L 459 213" marker-end="url(#s)"/>
+                <path d="M499 219 L 535 225" marker-end="url(#s)"/>
+                <path d="M575 231 L 611 237" marker-end="url(#s)"/>
+                <path d="M651 243 L 700 252" marker-end="url(#s)"/>
+            </g>
+        </g>
+
+        <!-- o centro de reação -->
+        <circle cx="745" cy="262" r="46" fill="url(#centro)"/>
+        <circle cx="745" cy="262" r="24" fill="#ffd24d" stroke="#fff3c4" stroke-width="3"/>
+        <text class="rot" x="745" y="336" text-anchor="middle" font-size="16" style="fill:#ffd24d">
+            CENTRO DE REAÇÃO
+        </text>
+
+        <text class="rotp" x="60" y="286">cada pigmento entrega ao vizinho de energia</text>
+        <text class="rotp" x="60" y="306">um pouco menor: a energia só desce, nunca se</text>
+        <text class="rotp" x="60" y="326">perde de vista o destino</text>
+    </g>
+
+    <!-- ══ Direita: o placar da eficiência ════════════════════════════════ -->
+    <g transform="translate(918,112)">
+        <rect class="painel" x="0" y="0" width="436" height="368" rx="16"/>
+        <text class="rot" x="24" y="38">O QUE CHEGA AO DESTINO</text>
+        <text class="rotp" x="24" y="60">de cada 100 fótons captados pela antena…</text>
+
+        <!-- 100 fótons entram -->
+        <g transform="translate(60,96)">
+            <rect x="0" y="0" width="130" height="200" rx="10" fill="#123a28" stroke="#356b4d" stroke-width="2"/>
+            <g fill="#ffe680">
+                <circle cx="26" cy="28" r="6"/><circle cx="52" cy="28" r="6"/><circle cx="78" cy="28" r="6"/><circle cx="104" cy="28" r="6"/>
+                <circle cx="26" cy="62" r="6"/><circle cx="52" cy="62" r="6"/><circle cx="78" cy="62" r="6"/><circle cx="104" cy="62" r="6"/>
+                <circle cx="26" cy="96" r="6"/><circle cx="52" cy="96" r="6"/><circle cx="78" cy="96" r="6"/><circle cx="104" cy="96" r="6"/>
+                <circle cx="26" cy="130" r="6"/><circle cx="52" cy="130" r="6"/><circle cx="78" cy="130" r="6"/><circle cx="104" cy="130" r="6"/>
+                <circle cx="26" cy="164" r="6"/><circle cx="52" cy="164" r="6"/><circle cx="78" cy="164" r="6"/><circle cx="104" cy="164" r="6"/>
+            </g>
+            <text class="rotp" x="65" y="224" text-anchor="middle">captados</text>
+        </g>
+
+        <path d="M206 196 L 250 196" stroke="#7bd389" stroke-width="3" fill="none" marker-end="url(#s)"/>
+
+        <!-- quase todos chegam -->
+        <g transform="translate(266,96)">
+            <rect x="0" y="0" width="130" height="200" rx="10" fill="#123a28" stroke="#7bd389" stroke-width="2"/>
+            <g fill="#ffe680">
+                <circle cx="26" cy="28" r="6"/><circle cx="52" cy="28" r="6"/><circle cx="78" cy="28" r="6"/><circle cx="104" cy="28" r="6"/>
+                <circle cx="26" cy="62" r="6"/><circle cx="52" cy="62" r="6"/><circle cx="78" cy="62" r="6"/><circle cx="104" cy="62" r="6"/>
+                <circle cx="26" cy="96" r="6"/><circle cx="52" cy="96" r="6"/><circle cx="78" cy="96" r="6"/><circle cx="104" cy="96" r="6"/>
+                <circle cx="26" cy="130" r="6"/><circle cx="52" cy="130" r="6"/><circle cx="78" cy="130" r="6"/><circle cx="104" cy="130" r="6"/>
+                <circle cx="26" cy="164" r="6"/><circle cx="52" cy="164" r="6"/><circle cx="78" cy="164" r="6"/>
+                <circle cx="104" cy="164" r="6" fill="#5c7a68"/>
+            </g>
+            <text class="rotp" x="65" y="224" text-anchor="middle" style="fill:#7bd389">chegam ao centro</text>
+        </g>
+
+        <path d="M60 330 H 396" stroke="#356b4d" stroke-width="1.5"/>
+        <text class="rot" x="218" y="358" text-anchor="middle" font-size="17" style="fill:#7bd389">
+            quase 100% chegam inteiros
+        </text>
+    </g>
+
+    <!-- ══ Rodapé: as quatro etapas, em ordem ═════════════════════════════ -->
+    <g transform="translate(46,510)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">E ENTÃO, NO CENTRO DE REAÇÃO</text>
+
+        <g transform="translate(30,66)">
+            <!-- etapa 1 -->
+            <g>
+                <rect x="0" y="0" width="280" height="112" rx="12" fill="#123a28" stroke="#356b4d" stroke-width="1.5"/>
+                <circle cx="34" cy="40" r="16" fill="#ffd24d"/>
+                <text x="34" y="46" text-anchor="middle" font-size="17" font-weight="800" fill="#0b2418">1</text>
+                <text class="rot" x="62" y="38" font-size="16">A energia chega</text>
+                <text class="rotp" x="62" y="62">vinda da antena, intacta</text>
+                <text class="rotp" x="62" y="90" style="fill:#ffd24d">luz do Sol</text>
+            </g>
+            <path d="M292 56 L 316 56" stroke="#7bd389" stroke-width="3" fill="none" marker-end="url(#s)"/>
+
+            <!-- etapa 2 -->
+            <g transform="translate(330,0)">
+                <rect x="0" y="0" width="280" height="112" rx="12" fill="#123a28" stroke="#356b4d" stroke-width="1.5"/>
+                <circle cx="34" cy="40" r="16" fill="#ffd24d"/>
+                <text x="34" y="46" text-anchor="middle" font-size="17" font-weight="800" fill="#0b2418">2</text>
+                <text class="rot" x="62" y="38" font-size="16">A água se quebra</text>
+                <text class="rotp" x="62" y="62">e sobra oxigênio</text>
+                <text class="rotp" x="62" y="90" style="fill:#8fd6f2">H₂O → O₂</text>
+            </g>
+            <path d="M622 56 L 646 56" stroke="#7bd389" stroke-width="3" fill="none" marker-end="url(#s)"/>
+
+            <!-- etapa 3 -->
+            <g transform="translate(660,0)">
+                <rect x="0" y="0" width="280" height="112" rx="12" fill="#123a28" stroke="#356b4d" stroke-width="1.5"/>
+                <circle cx="34" cy="40" r="16" fill="#ffd24d"/>
+                <text x="34" y="46" text-anchor="middle" font-size="17" font-weight="800" fill="#0b2418">3</text>
+                <text class="rot" x="62" y="38" font-size="16">O carbono entra</text>
+                <text class="rotp" x="62" y="62">capturado do ar</text>
+                <text class="rotp" x="62" y="90" style="fill:#c9b9a6">CO₂</text>
+            </g>
+            <path d="M952 56 L 976 56" stroke="#7bd389" stroke-width="3" fill="none" marker-end="url(#s)"/>
+
+            <!-- etapa 4 -->
+            <g transform="translate(990,0)">
+                <rect x="0" y="0" width="258" height="112" rx="12" fill="#14432c" stroke="#7bd389" stroke-width="2"/>
+                <circle cx="34" cy="40" r="16" fill="#7bd389"/>
+                <text x="34" y="46" text-anchor="middle" font-size="17" font-weight="800" fill="#0b2418">4</text>
+                <text class="rot" x="62" y="38" font-size="16" style="fill:#7bd389">Nasce o açúcar</text>
+                <text class="rotp" x="62" y="62">o alimento de toda a vida</text>
+                <text class="rotp" x="62" y="90" style="fill:#7bd389">C₆H₁₂O₆ + O₂</text>
+            </g>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="756" font-size="15">
+        Toda a comida do planeta e todo o oxigênio que você respira saem desta reação — que a folha faz em silêncio, de graça.
+    </text>
+</svg>

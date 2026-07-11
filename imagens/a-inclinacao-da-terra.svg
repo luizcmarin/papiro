@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Inclinação da Terra — 23,5° que criam as estações</title>
+    <desc id="desc">O eixo da Terra é inclinado 23,5°. Ao longo da órbita, ora um hemisfério recebe a luz
+        do Sol mais de frente (verão), ora o outro (inverno) — e o mesmo lugar passa por primavera e
+        outono no meio do caminho. Sem inclinação não haveria estações; com inclinação demais, o clima
+        viraria extremo.</desc>
+
+    <defs>
+        <radialGradient id="espaco" cx="0.5" cy="0.4" r="0.75">
+            <stop offset="0" stop-color="#16305a"/>
+            <stop offset="1" stop-color="#070f23"/>
+        </radialGradient>
+        <radialGradient id="solG" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#fffbe8"/>
+            <stop offset="0.4" stop-color="#ffd166" stop-opacity="0.95"/>
+            <stop offset="1" stop-color="#ff9d3c" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="terraG" x1="0.2" y1="0" x2="0.8" y2="1">
+            <stop offset="0" stop-color="#4aa8f5"/>
+            <stop offset="1" stop-color="#14508c"/>
+        </linearGradient>
+
+        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+
+        <!-- A Terra com o eixo inclinado (o eixo aponta sempre para o MESMO lado) -->
+        <g id="terra">
+            <circle cx="0" cy="0" r="46" fill="url(#terraG)"/>
+            <path d="M-40 -18 C -20 -26, 0 -10, 22 -20 C 34 -26, 42 -18, 44 -12
+                     C 30 -4, 10 4, -12 0 C -26 -2, -34 -8, -40 -18 Z" fill="#4ec07a" opacity="0.85"/>
+            <path d="M-30 22 C -12 14, 10 22, 30 16" stroke="#4ec07a" stroke-width="8"
+                  fill="none" opacity="0.8" stroke-linecap="round"/>
+            <!-- eixo: 23,5° fora da vertical -->
+            <g transform="rotate(23.5)">
+                <path d="M0 -70 L 0 70" stroke="#ffd166" stroke-width="3"/>
+                <circle cx="0" cy="-70" r="4" fill="#ffd166"/>
+                <circle cx="0" cy="70" r="4" fill="#ffd166"/>
+            </g>
+        </g>
+    </defs>
+
+    <style>
+        .cab  { fill:#eaf2ff; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#dce8ff; font-size:18px; font-weight:700; }
+        .rotp { fill:#93aacd; font-size:14px; }
+        .painel { fill:#10203f; stroke:#3a5c92; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#espaco)"/>
+    <g fill="#ffffff" opacity="0.55">
+        <circle cx="120" cy="150" r="1.6"/><circle cx="300" cy="90" r="1.2"/>
+        <circle cx="520" cy="130" r="1.6"/><circle cx="760" cy="70" r="1.2"/>
+        <circle cx="980" cy="140" r="1.6"/><circle cx="1180" cy="90" r="1.2"/>
+        <circle cx="180" cy="700" r="1.4"/><circle cx="640" cy="740" r="1.2"/>
+        <circle cx="1290" cy="690" r="1.6"/><circle cx="60" cy="420" r="1.2"/>
+    </g>
+
+    <text class="cab" x="46" y="54">A INCLINAÇÃO DA TERRA</text>
+    <text class="rotp" x="46" y="84" font-size="17">23,5° — o ângulo que reparte o ano em estações.</text>
+
+    <!-- ══ A órbita ═══════════════════════════════════════════════════════ -->
+    <ellipse cx="640" cy="470" rx="440" ry="200" fill="none"
+             stroke="#3a5c92" stroke-width="2" stroke-dasharray="10 9"/>
+
+    <!-- O Sol, no centro -->
+    <circle cx="640" cy="470" r="130" fill="url(#solG)"/>
+    <circle cx="640" cy="470" r="46" fill="#fff3c4"/>
+    <text class="rot" x="640" y="478" text-anchor="middle" style="fill:#8a5a12">SOL</text>
+
+    <!-- ══ Quatro posições da órbita: o eixo aponta SEMPRE para o mesmo lado ══ -->
+    <!-- Esquerda: verão no hemisfério NORTE (o polo norte pende para o Sol) -->
+    <g transform="translate(200,470)">
+        <use href="#terra"/>
+        <text class="rot" x="0" y="-96" text-anchor="middle" font-size="16" style="fill:#ffd166">VERÃO NO NORTE</text>
+        <text class="rotp" x="0" y="112" text-anchor="middle">o norte pende PARA o Sol</text>
+        <text class="rotp" x="0" y="132" text-anchor="middle">luz mais de frente, dias longos</text>
+    </g>
+
+    <!-- Direita: verão no hemisfério SUL -->
+    <g transform="translate(1080,470)">
+        <use href="#terra"/>
+        <text class="rot" x="0" y="-96" text-anchor="middle" font-size="16" style="fill:#ffd166">VERÃO NO SUL</text>
+        <text class="rotp" x="0" y="112" text-anchor="middle">o norte pende PARA LONGE do Sol</text>
+        <text class="rotp" x="0" y="132" text-anchor="middle">luz de raspão, dias curtos</text>
+    </g>
+
+    <!-- Topo e base: os meios-termos -->
+    <g transform="translate(640,278)">
+        <use href="#terra" transform="scale(0.8)"/>
+        <text class="rotp" x="0" y="-58" text-anchor="middle">meio do caminho: primavera / outono</text>
+    </g>
+    <g transform="translate(640,662)">
+        <use href="#terra" transform="scale(0.8)"/>
+        <text class="rotp" x="0" y="72" text-anchor="middle">meio do caminho: outono / primavera</text>
+    </g>
+
+    <!-- Raios do Sol chegando às duas Terras extremas -->
+    <g stroke="#ffd166" stroke-width="2" opacity="0.75">
+        <path d="M540 440 L 268 440" marker-end="url(#s)"/>
+        <path d="M540 470 L 268 470" marker-end="url(#s)"/>
+        <path d="M540 500 L 268 500" marker-end="url(#s)"/>
+        <path d="M740 440 L 1012 440" marker-end="url(#s)"/>
+        <path d="M740 470 L 1012 470" marker-end="url(#s)"/>
+        <path d="M740 500 L 1012 500" marker-end="url(#s)"/>
+    </g>
+
+    <!-- ══ Painel: o ângulo importa ═══════════════════════════════════════ -->
+    <g transform="translate(46,120)">
+        <rect class="painel" x="0" y="0" width="300" height="230" rx="14"/>
+        <text class="rot" x="20" y="36" font-size="17">O ÂNGULO CERTO</text>
+
+        <!-- o ângulo, medido -->
+        <g transform="translate(150,120)">
+            <path d="M0 60 L 0 -46" stroke="#3a5c92" stroke-width="2" stroke-dasharray="6 5"/>
+            <path d="M0 60 L -42 -36" stroke="#ffd166" stroke-width="3"/>
+            <path d="M0 -20 A 20 20 0 0 0 -9 -18" fill="none" stroke="#ffd166" stroke-width="2"/>
+            <text class="rotp" x="10" y="-24" style="fill:#ffd166" font-size="15" font-weight="700">23,5°</text>
+            <text class="rotp" x="8" y="54" font-size="12">vertical</text>
+        </g>
+
+        <text class="rotp" x="20" y="196">0° → sem estações. Muito → clima extremo.</text>
+    </g>
+
+    <!-- ══ Painel: por que o eixo não "acompanha" o Sol ═══════════════════ -->
+    <g transform="translate(1054,120)">
+        <rect class="painel" x="0" y="0" width="300" height="230" rx="14"/>
+        <text class="rot" x="20" y="36" font-size="17">O EIXO NÃO GIRA</text>
+        <text class="rotp" x="20" y="62" font-size="13">aponta sempre para o mesmo ponto do céu</text>
+
+        <g transform="translate(150,150)">
+            <g stroke="#ffd166" stroke-width="3">
+                <path d="M-96 34 L -96 -34" transform="rotate(23.5 -96 0)"/>
+                <path d="M-32 34 L -32 -34" transform="rotate(23.5 -32 0)"/>
+                <path d="M32 34 L 32 -34" transform="rotate(23.5 32 0)"/>
+                <path d="M96 34 L 96 -34" transform="rotate(23.5 96 0)"/>
+            </g>
+            <text class="rotp" x="0" y="66" text-anchor="middle" font-size="13">
+                por isso a estação muda ao longo da volta
+            </text>
+        </g>
+    </g>
+
+    <text class="rotp" x="700" y="775" text-anchor="middle" font-size="15">
+        A mesma inclinação, a volta inteira: é a posição na órbita que decide quem recebe a luz de frente.
+    </text>
+</svg>

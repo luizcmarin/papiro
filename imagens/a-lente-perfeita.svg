@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Lente Perfeita — todos os raios num único ponto</title>
+    <desc id="desc">Uma lente de curvatura errada espalha o foco: os raios da borda cruzam antes dos raios
+        do centro e a imagem sai borrada (aberração esférica). O olho dos predadores marinhos tem a
+        curvatura exata — traçada por seções cônicas — que faz todos os raios convergirem num ponto só.</desc>
+
+    <defs>
+        <linearGradient id="agua" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0f3b5c"/>
+            <stop offset="1" stop-color="#071e33"/>
+        </linearGradient>
+        <radialGradient id="cristal" cx="0.4" cy="0.35" r="0.7">
+            <stop offset="0" stop-color="#d6f2ff" stop-opacity="0.95"/>
+            <stop offset="1" stop-color="#79c8ee" stop-opacity="0.6"/>
+        </radialGradient>
+        <radialGradient id="foco" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#ffe680" stop-opacity="0.95"/>
+            <stop offset="1" stop-color="#ffe680" stop-opacity="0"/>
+        </radialGradient>
+
+        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#eaf6ff; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#d6ecfa; font-size:18px; font-weight:700; }
+        .rotp { fill:#8fb4cd; font-size:14px; }
+        .painel { fill:#0d2c46; stroke:#3a7096; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#agua)"/>
+
+    <text class="cab" x="46" y="54">A LENTE PERFEITA</text>
+    <text class="rotp" x="46" y="84" font-size="17">Um milímetro de curvatura separa a imagem nítida do borrão.</text>
+
+    <!-- ══ Esquerda: curvatura errada — o foco se espalha ═════════════════ -->
+    <g transform="translate(60,140)">
+        <rect class="painel" x="0" y="0" width="620" height="330" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#ff8f6b">CURVATURA ERRADA</text>
+        <text class="rotp" x="24" y="60">cada raio cruza num ponto diferente</text>
+
+        <!-- lente esférica simples -->
+        <ellipse cx="230" cy="190" rx="34" ry="96" fill="url(#cristal)"/>
+
+        <!-- raios paralelos chegando -->
+        <g stroke="#ffe680" stroke-width="2.5" fill="none">
+            <path d="M40 110 H 208"/>
+            <path d="M40 150 H 214"/>
+            <path d="M40 190 H 218"/>
+            <path d="M40 230 H 214"/>
+            <path d="M40 270 H 208"/>
+        </g>
+        <!-- saindo: os da borda cruzam ANTES (aberração) -->
+        <g stroke="#ffe680" stroke-width="2.5" fill="none">
+            <path d="M252 112 L 392 190 L 470 232" marker-end="url(#s)"/>
+            <path d="M256 152 L 428 190 L 512 208" marker-end="url(#s)"/>
+            <path d="M264 190 H 540" marker-end="url(#s)"/>
+            <path d="M256 228 L 428 190 L 512 172" marker-end="url(#s)"/>
+            <path d="M252 268 L 392 190 L 470 148" marker-end="url(#s)"/>
+        </g>
+
+        <!-- a mancha de foco: borrada -->
+        <ellipse cx="430" cy="190" rx="70" ry="12" fill="#ff8f6b" opacity="0.35"/>
+        <text class="rotp" x="430" y="130" text-anchor="middle" style="fill:#ff8f6b">
+            os focos se espalham
+        </text>
+
+        <text class="rot" x="24" y="306" font-size="16" style="fill:#ff8f6b">IMAGEM BORRADA</text>
+    </g>
+
+    <!-- ══ Direita: a curvatura exata — um ponto só ═══════════════════════ -->
+    <g transform="translate(720,140)">
+        <rect class="painel" x="0" y="0" width="620" height="330" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#7bd389">A CURVATURA EXATA</text>
+        <text class="rotp" x="24" y="60">a lente do olho do peixe: cônica, não esférica</text>
+
+        <!-- lente de gradiente: mais "puxada" nas bordas -->
+        <path d="M230 94 C 268 128, 268 252, 230 286 C 192 252, 192 128, 230 94 Z"
+              fill="url(#cristal)"/>
+        <g fill="none" stroke="#a9dcf2" stroke-width="1.5" opacity="0.75">
+            <ellipse cx="230" cy="190" rx="20" ry="60"/>
+            <ellipse cx="230" cy="190" rx="10" ry="34"/>
+        </g>
+
+        <g stroke="#ffe680" stroke-width="2.5" fill="none">
+            <path d="M40 110 H 206"/>
+            <path d="M40 150 H 214"/>
+            <path d="M40 190 H 218"/>
+            <path d="M40 230 H 214"/>
+            <path d="M40 270 H 206"/>
+        </g>
+        <!-- todos convergem exatamente no MESMO ponto -->
+        <g stroke="#ffe680" stroke-width="2.5" fill="none">
+            <path d="M252 112 L 470 190 L 546 216" marker-end="url(#s)"/>
+            <path d="M256 152 L 470 190 L 552 205" marker-end="url(#s)"/>
+            <path d="M264 190 H 556" marker-end="url(#s)"/>
+            <path d="M256 228 L 470 190 L 552 175" marker-end="url(#s)"/>
+            <path d="M252 268 L 470 190 L 546 164" marker-end="url(#s)"/>
+        </g>
+
+        <circle cx="470" cy="190" r="34" fill="url(#foco)"/>
+        <circle cx="470" cy="190" r="6" fill="#7bd389"/>
+        <text class="rotp" x="470" y="130" text-anchor="middle" style="fill:#7bd389">
+            um único ponto de foco
+        </text>
+
+        <text class="rot" x="24" y="306" font-size="16" style="fill:#7bd389">IMAGEM NÍTIDA</text>
+    </g>
+
+    <!-- ══ Baixo: o olho e a cônica ═══════════════════════════════════════ -->
+    <g transform="translate(60,510)">
+        <rect class="painel" x="0" y="0" width="620" height="230" rx="16"/>
+        <text class="rot" x="24" y="40">O OLHO DO PREDADOR</text>
+
+        <g transform="translate(160,130)">
+            <circle cx="0" cy="0" r="76" fill="#0b2438" stroke="#3a7096" stroke-width="2"/>
+            <circle cx="-14" cy="0" r="44" fill="url(#cristal)"/>
+            <circle cx="60" cy="0" r="8" fill="#7bd389"/>
+            <g stroke="#ffe680" stroke-width="2" fill="none">
+                <path d="M-96 -34 L -58 -18 L 52 -4" marker-end="url(#s)"/>
+                <path d="M-96 0 L -58 0 L 52 0" marker-end="url(#s)"/>
+                <path d="M-96 34 L -58 18 L 52 4" marker-end="url(#s)"/>
+            </g>
+            <text class="rotp" x="96" y="4" font-size="13" style="fill:#7bd389">retina</text>
+        </g>
+
+        <text class="rotp" x="300" y="120">A lente é mais densa no</text>
+        <text class="rotp" x="300" y="142">centro que na borda: a luz</text>
+        <text class="rotp" x="300" y="164">entorta mais onde precisa</text>
+        <text class="rotp" x="300" y="186">entortar mais.</text>
+    </g>
+
+    <!-- ══ Baixo-direita: as cônicas ══════════════════════════════════════ -->
+    <g transform="translate(720,510)">
+        <rect class="painel" x="0" y="0" width="620" height="230" rx="16"/>
+        <text class="rot" x="24" y="40">A FAMÍLIA DAS CÔNICAS</text>
+        <text class="rotp" x="24" y="62">o corte de um cone dá a curva certa para cada foco</text>
+
+        <g transform="translate(120,150)">
+            <path d="M0 0 L -56 -84 L 56 -84 Z" fill="none" stroke="#3a7096" stroke-width="2.5"/>
+            <ellipse cx="0" cy="-56" rx="18" ry="6" fill="none" stroke="#7bd389" stroke-width="2.5"/>
+            <path d="M-40 -20 L 44 -74" stroke="#ffe680" stroke-width="2.5"/>
+        </g>
+        <text class="rotp" x="220" y="120">Um plano corta o cone e</text>
+        <text class="rotp" x="220" y="142">nasce a elipse, a parábola,</text>
+        <text class="rotp" x="220" y="164">a hipérbole — as curvas que</text>
+        <text class="rotp" x="220" y="186">focam a luz sem borrar.</text>
+    </g>
+</svg>

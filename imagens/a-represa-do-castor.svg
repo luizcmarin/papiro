@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Represa do Castor — o arco que empurra a carga para as margens</title>
+    <desc id="desc">Uma parede reta recebe todo o empuxo da água de frente e tende a romper no meio. O
+        castor constrói em arco, com a barriga da curva voltada contra a correnteza: a força corre por
+        dentro da curva até as pontas, cravadas nas margens, que seguram tudo. É a mesma ideia das
+        barragens de concreto em arco. As quatro cenas são vistas DE CIMA, com o rio correndo da
+        esquerda (água represada) para a direita (rio abaixo).</desc>
+
+    <defs>
+        <linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#cfe8f5"/>
+            <stop offset="1" stop-color="#a9d4ea"/>
+        </linearGradient>
+        <linearGradient id="lago" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#5fa8d8"/>
+            <stop offset="1" stop-color="#2f6f9e"/>
+        </linearGradient>
+        <linearGradient id="terra" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#8fa860"/>
+            <stop offset="1" stop-color="#5f7a3c"/>
+        </linearGradient>
+        <linearGradient id="pelo" x1="0" y1="0" x2="0.3" y2="1">
+            <stop offset="0" stop-color="#a6703c"/>
+            <stop offset="1" stop-color="#6f4622"/>
+        </linearGradient>
+
+        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#25402a; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#2f5136; font-size:18px; font-weight:700; }
+        .rotp { fill:#5b7a62; font-size:14px; }
+        /* rótulo escrito SOBRE a faixa verde/cinza da margem: precisa de contraste próprio */
+        .naMargem { fill:#ffffff; font-size:13px; font-weight:700; }
+        .painel { fill:#f7fdf8; stroke:#a9c9b0; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#ceu)"/>
+
+    <text class="cab" x="46" y="54">A REPRESA DO CASTOR</text>
+    <text class="rotp" x="46" y="84" font-size="17">
+        Ele não levanta uma parede: ele arma um arco. (As quatro cenas são vistas de cima.)
+    </text>
+
+    <!-- Faixas de cada cena, de cima para baixo:
+         margem 88–150 · rio 150–230 (o fio d'água de jusante em 176–204) · margem 230–292.
+         Os textos do rio só ocupam as tiras livres 150–176 e 204–230 — nunca as margens. -->
+
+    <!-- ══ Esquerda: a parede RETA — a força bate de frente ═══════════════ -->
+    <g transform="translate(60,130)">
+        <rect class="painel" x="0" y="0" width="620" height="330" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#b0301f">PAREDE RETA</text>
+        <text class="rotp" x="24" y="60">a água bate de frente e a força se junta toda no meio</text>
+
+        <rect x="24" y="88" width="572" height="62" rx="6" fill="url(#terra)"/>
+        <rect x="24" y="230" width="572" height="62" rx="6" fill="url(#terra)"/>
+        <text class="naMargem" x="44" y="124">margem</text>
+        <text class="naMargem" x="44" y="268">margem</text>
+
+        <rect x="24" y="150" width="372" height="80" fill="url(#lago)"/>
+        <text class="naMargem" x="60" y="196">água represada</text>
+        <rect x="416" y="176" width="180" height="28" fill="#7fbfe0" opacity="0.7"/>
+        <text class="rotp" x="504" y="222" font-size="12">rio abaixo</text>
+
+        <rect x="396" y="120" width="20" height="140" fill="#8a5a2b"/>
+
+        <g stroke="#d63f2a" stroke-width="5" fill="none">
+            <path d="M300 168 L 384 168" marker-end="url(#s)"/>
+            <path d="M300 190 L 384 190" marker-end="url(#s)"/>
+            <path d="M300 212 L 384 212" marker-end="url(#s)"/>
+        </g>
+
+        <!-- a parede cede no meio, onde nada a apoia -->
+        <path d="M406 172 L 398 186 L 414 196 L 404 210" stroke="#ffe0d8"
+              stroke-width="3.5" fill="none"/>
+        <text class="rot" x="432" y="170" font-size="15" style="fill:#b0301f">ROMPE AQUI</text>
+
+        <text class="rotp" x="24" y="316">o meio da parede não tem em que se apoiar</text>
+    </g>
+
+    <!-- ══ Direita: o ARCO — a força corre pela curva até as margens ══════ -->
+    <g transform="translate(720,130)">
+        <rect class="painel" x="0" y="0" width="620" height="330" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#1f7a3d">O ARCO DO CASTOR</text>
+        <text class="rotp" x="24" y="60">a barriga da curva vira contra a água — e a força escorre pela curva</text>
+
+        <rect x="24" y="88" width="572" height="62" rx="6" fill="url(#terra)"/>
+        <rect x="24" y="230" width="572" height="62" rx="6" fill="url(#terra)"/>
+        <text class="naMargem" x="44" y="124">margem</text>
+        <text class="naMargem" x="44" y="268">margem</text>
+
+        <rect x="24" y="150" width="372" height="80" fill="url(#lago)"/>
+        <text class="naMargem" x="60" y="196">água represada</text>
+        <rect x="424" y="176" width="172" height="28" fill="#7fbfe0" opacity="0.7"/>
+        <text class="rotp" x="510" y="222" font-size="12">rio abaixo</text>
+
+        <!-- As PONTAS entram na margem (y=120 e y=260): é nelas que a carga é
+             despejada. A barriga (x menor) aponta para a água, a montante. -->
+        <path d="M410 120 C 356 160, 356 220, 410 260" fill="none"
+              stroke="#8a5a2b" stroke-width="18" stroke-linecap="butt"/>
+
+        <g stroke="#d63f2a" stroke-width="5" fill="none">
+            <path d="M290 168 L 358 172" marker-end="url(#s)"/>
+            <path d="M290 190 L 352 190" marker-end="url(#s)"/>
+            <path d="M290 212 L 358 208" marker-end="url(#s)"/>
+        </g>
+
+        <!-- a força corre POR DENTRO do arco até os apoios… -->
+        <g stroke="#1f7a3d" stroke-width="5" fill="none" stroke-linecap="round">
+            <path d="M366 186 C 368 162, 384 138, 404 124" marker-end="url(#s)"/>
+            <path d="M366 194 C 368 218, 384 242, 404 256" marker-end="url(#s)"/>
+        </g>
+        <!-- …e é despejada dentro da margem, logo ali ao lado da ponta -->
+        <g stroke="#1f7a3d" stroke-width="6" fill="none">
+            <path d="M412 116 L 424 104" marker-end="url(#s)"/>
+            <path d="M412 264 L 424 276" marker-end="url(#s)"/>
+        </g>
+        <text class="naMargem" x="434" y="112">a margem segura</text>
+        <text class="naMargem" x="434" y="280">a margem segura</text>
+
+        <text class="rotp" x="24" y="316">o arco não enfrenta a força: ele a entrega para as margens</text>
+    </g>
+
+    <!-- ══ Baixo-esquerda: o castor ═══════════════════════════════════════ -->
+    <g transform="translate(60,500)">
+        <rect class="painel" x="0" y="0" width="620" height="240" rx="16"/>
+        <text class="rot" x="24" y="40">O ENGENHEIRO</text>
+
+        <g transform="translate(190,150)">
+            <!-- a cauda: um remo achatado e escamado (não uma flecha) -->
+            <g transform="rotate(20 -100 30)">
+                <ellipse cx="-100" cy="30" rx="48" ry="22" fill="#5b3a1e"/>
+                <g stroke="#3f2713" stroke-width="1.2" opacity="0.55" fill="none">
+                    <path d="M-140 22 h 76 M-142 30 h 82 M-138 38 h 72"/>
+                    <path d="M-124 12 v 36 M-108 10 v 40 M-92 10 v 40 M-76 14 v 32 M-60 20 v 20"/>
+                </g>
+            </g>
+
+            <!-- corpo roliço, sentado -->
+            <ellipse cx="-16" cy="10" rx="58" ry="46" fill="url(#pelo)"/>
+            <ellipse cx="-34" cy="50" rx="22" ry="11" fill="#5b3a1e"/>
+
+            <!-- cabeça -->
+            <circle cx="46" cy="-20" r="33" fill="#a6703c"/>
+            <circle cx="30" cy="-48" r="9" fill="#6f4622"/>
+            <circle cx="62" cy="-48" r="9" fill="#6f4622"/>
+            <circle cx="58" cy="-28" r="3.6" fill="#2b1206"/>
+            <ellipse cx="76" cy="-14" rx="8" ry="6" fill="#5b3a1e"/>
+            <!-- os dentes de roedor, que derrubam a árvore -->
+            <path d="M70 -6 h 11 v 13 h -11 Z" fill="#f6efd8" stroke="#c9b48d" stroke-width="1"/>
+            <path d="M75.5 -6 v 13" stroke="#c9b48d" stroke-width="1"/>
+            <g stroke="#5b3a1e" stroke-width="1.4" opacity="0.75">
+                <path d="M84 -16 l 22 -6 M84 -12 l 24 0 M84 -8 l 22 6"/>
+            </g>
+
+            <!-- patas da frente segurando o tronco roído -->
+            <ellipse cx="24" cy="34" rx="12" ry="9" fill="#5b3a1e"/>
+            <ellipse cx="-4" cy="40" rx="12" ry="9" fill="#5b3a1e"/>
+            <g transform="rotate(-10 10 34)">
+                <rect x="-44" y="26" width="126" height="16" rx="7" fill="#b07b42"/>
+                <ellipse cx="82" cy="34" rx="5" ry="8" fill="#d9b57e"/>
+                <g stroke="#7d4f21" stroke-width="1.4" opacity="0.65">
+                    <path d="M-28 28 v 12 M-8 28 v 12 M12 28 v 12 M32 28 v 12 M52 28 v 12"/>
+                </g>
+            </g>
+        </g>
+
+        <text class="rotp" x="336" y="118">Ele derruba a árvore com os</text>
+        <text class="rotp" x="336" y="140">dentes e empilha troncos e lama</text>
+        <text class="rotp" x="336" y="162">até a curva ficar voltada contra</text>
+        <text class="rotp" x="336" y="184">a correnteza — e aí o rio passa</text>
+        <text class="rotp" x="336" y="206">a trabalhar a favor dela.</text>
+    </g>
+
+    <!-- ══ Baixo-direita: a barragem humana (mesma vista de cima) ═════════ -->
+    <g transform="translate(720,500)">
+        <rect class="painel" x="0" y="0" width="620" height="240" rx="16"/>
+        <text class="rot" x="24" y="40">A ENGENHARIA CHEGOU DEPOIS</text>
+        <text class="rotp" x="24" y="62">barragem em arco: a mesma ideia, em concreto</text>
+
+        <!-- encostas de pedra (as "margens" do vale) -->
+        <rect x="24" y="82" width="572" height="32" rx="5" fill="#9aa3a8"/>
+        <rect x="24" y="176" width="572" height="32" rx="5" fill="#9aa3a8"/>
+        <text class="naMargem" x="40" y="103" font-size="12">encosta de pedra</text>
+        <text class="naMargem" x="40" y="197" font-size="12">encosta de pedra</text>
+
+        <!-- o lago (montante) e o fio de rio (jusante) -->
+        <rect x="24" y="114" width="366" height="62" fill="url(#lago)"/>
+        <text class="naMargem" x="56" y="150" font-size="12">lago</text>
+        <rect x="418" y="132" width="178" height="26" fill="#7fbfe0" opacity="0.7"/>
+        <text class="rotp" x="504" y="170" font-size="12">rio abaixo</text>
+
+        <!-- a barragem: mesmo arco, barriga contra a água, pontas na pedra -->
+        <path d="M404 108 C 360 128, 360 162, 404 182" fill="none"
+              stroke="#c3cbd1" stroke-width="16" stroke-linecap="butt"/>
+
+        <g stroke="#d63f2a" stroke-width="4" fill="none">
+            <path d="M304 132 L 356 136" marker-end="url(#s)"/>
+            <path d="M304 158 L 356 154" marker-end="url(#s)"/>
+        </g>
+        <g stroke="#1f7a3d" stroke-width="5" fill="none">
+            <path d="M406 106 L 418 94" marker-end="url(#s)"/>
+            <path d="M406 184 L 418 196" marker-end="url(#s)"/>
+        </g>
+
+        <text class="rotp" x="24" y="228" font-size="13">
+            Quanto mais a água empurra, mais o arco crava nas encostas: a carga vira aperto.
+        </text>
+    </g>
+</svg>

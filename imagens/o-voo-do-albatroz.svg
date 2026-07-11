@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">O Voo do Albatroz — a razão de aspecto da asa</title>
+    <desc id="desc">Duas asas com a mesma área, vistas de cima. A asa curta e larga tem razão de aspecto
+        baixa: a ponta gera um redemoinho grande, que puxa a ave para trás, e o planeio cai rápido.
+        A asa longa e estreita do albatroz tem razão de aspecto alta (AR = b² dividido por S): o
+        redemoinho de ponta é pequeno e cada metro de queda rende muitos metros à frente.</desc>
+
+    <defs>
+        <linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#e3f2fc"/>
+            <stop offset="1" stop-color="#b7d9ee"/>
+        </linearGradient>
+        <linearGradient id="asa" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#fdfdfd"/>
+            <stop offset="1" stop-color="#cfdde7"/>
+        </linearGradient>
+
+        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+        <marker id="s2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+        <marker id="ini" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M10 0 L0 5 L10 10 z" fill="context-stroke"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#0f3350; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#1d5a86; font-size:18px; font-weight:700; }
+        .rotp { fill:#527f9d; font-size:14px; }
+        .painel { fill:#ffffff; stroke:#9cc4dd; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#ceu)"/>
+
+    <text class="cab" x="46" y="54">O VOO DO ALBATROZ</text>
+    <text class="rotp" x="46" y="84" font-size="17">A mesma área de asa, esticada de outro jeito — e o pássaro cruza o oceano sem bater as asas.</text>
+
+    <!-- ══ Esquerda: asa curta e larga ════════════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="640" height="380" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#c04a2e">ASA CURTA E LARGA</text>
+        <text class="rotp" x="24" y="60">vista de cima — razão de aspecto baixa</text>
+
+        <!-- planta da asa: envergadura pequena, corda grande -->
+        <g transform="translate(320,190)">
+            <!-- as duas metades da asa: a de baixo é a mesma, espelhada -->
+            <g fill="url(#asa)" stroke="#5b8bab" stroke-width="2.5">
+                <path id="asaLarga" d="M14 -60 C 86 -70, 166 -60, 222 -40
+                         C 242 -33, 244 -6, 224 2
+                         C 166 22, 86 46, 16 56 Z"/>
+                <use href="#asaLarga" transform="scale(-1,1)"/>
+            </g>
+            <!-- corpo, cabeça e bico, vistos de cima -->
+            <ellipse cx="0" cy="4" rx="24" ry="68" fill="#dfe9f0" stroke="#5b8bab" stroke-width="2"/>
+            <circle cx="0" cy="-76" r="19" fill="#dfe9f0" stroke="#5b8bab" stroke-width="2"/>
+            <path d="M-8 -90 L 0 -114 L 8 -90 Z" fill="#e8c27a" stroke="#b08c46" stroke-width="1.5"/>
+
+            <!-- redemoinhos de ponta: grandes -->
+            <g fill="none" stroke="#c04a2e" stroke-width="3">
+                <path d="M236 -20 C 292 -44, 312 26, 258 34 C 224 39, 222 -2, 250 -6"/>
+                <path d="M-236 -20 C -292 -44, -312 26, -258 34 C -224 39, -222 -2, -250 -6"/>
+            </g>
+        </g>
+
+        <!-- cotas -->
+        <g stroke="#1d5a86" stroke-width="2" fill="none">
+            <path d="M90 300 H 550" marker-start="url(#ini)" marker-end="url(#s2)"/>
+        </g>
+        <text class="rot" x="320" y="326" text-anchor="middle" font-size="16">b = envergadura (curta)</text>
+
+        <text class="rotp" x="320" y="358" text-anchor="middle" style="fill:#c04a2e" font-weight="700">
+            redemoinho grande na ponta: a asa é freada o tempo todo
+        </text>
+    </g>
+
+    <!-- ══ Direita: asa longa e estreita ══════════════════════════════════ -->
+    <g transform="translate(714,112)">
+        <rect class="painel" x="0" y="0" width="640" height="380" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#1f7a3d">ASA LONGA E ESTREITA</text>
+        <text class="rotp" x="24" y="60">a asa do albatroz — razão de aspecto alta</text>
+
+        <g transform="translate(320,190)">
+            <g fill="url(#asa)" stroke="#5b8bab" stroke-width="2.5">
+                <path id="asaFina" d="M14 -26 C 110 -34, 220 -30, 288 -18
+                         C 304 -15, 304 -3, 288 0
+                         C 216 8, 108 14, 16 18 Z"/>
+                <use href="#asaFina" transform="scale(-1,1)"/>
+            </g>
+            <ellipse cx="0" cy="4" rx="22" ry="62" fill="#dfe9f0" stroke="#5b8bab" stroke-width="2"/>
+            <circle cx="0" cy="-70" r="18" fill="#dfe9f0" stroke="#5b8bab" stroke-width="2"/>
+            <path d="M-8 -84 L 0 -108 L 8 -84 Z" fill="#e8c27a" stroke="#b08c46" stroke-width="1.5"/>
+
+            <!-- redemoinhos de ponta: pequenos -->
+            <g fill="none" stroke="#1f7a3d" stroke-width="2.5">
+                <path d="M300 -12 C 324 -22, 330 12, 308 12"/>
+                <path d="M-300 -12 C -324 -22, -330 12, -308 12"/>
+            </g>
+        </g>
+
+        <g stroke="#1d5a86" stroke-width="2" fill="none">
+            <path d="M24 300 H 616" marker-start="url(#ini)" marker-end="url(#s2)"/>
+        </g>
+        <text class="rot" x="320" y="326" text-anchor="middle" font-size="16">b = envergadura (longa)</text>
+
+        <text class="rotp" x="320" y="358" text-anchor="middle" style="fill:#1f7a3d" font-weight="700">
+            redemoinho quase nenhum: a asa desliza limpa pelo ar
+        </text>
+    </g>
+
+    <!-- ══ Baixo-esquerda: a conta ════════════════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="640" height="212" rx="16"/>
+        <text class="rot" x="24" y="40">A CONTA QUE SEPARA AS DUAS</text>
+
+        <text class="cab" x="24" y="98" font-size="30" style="fill:#1d5a86">AR = b² ÷ S</text>
+        <text class="rotp" x="24" y="126">envergadura ao quadrado, dividida pela área da asa</text>
+
+        <g transform="translate(24,148)">
+            <rect x="0" y="0" width="270" height="46" rx="8" fill="#fdeae4" stroke="#c04a2e" stroke-width="1.5"/>
+            <text class="rot" x="16" y="30" font-size="16" style="fill:#c04a2e">asa larga:  AR ≈ 6</text>
+
+            <rect x="300" y="0" width="270" height="46" rx="8" fill="#e6f6ea" stroke="#1f7a3d" stroke-width="1.5"/>
+            <text class="rot" x="316" y="30" font-size="16" style="fill:#1f7a3d">albatroz:  AR ≈ 25</text>
+        </g>
+    </g>
+
+    <!-- ══ Baixo-direita: o planeio ═══════════════════════════════════════ -->
+    <g transform="translate(714,520)">
+        <rect class="painel" x="0" y="0" width="640" height="212" rx="16"/>
+        <text class="rot" x="24" y="40">O QUE ISSO DÁ NO AR</text>
+        <text class="rotp" x="24" y="62">para cada 1 metro que a ave cai, quanto ela avança à frente</text>
+
+        <!-- eixos do planeio -->
+        <g transform="translate(40,84)">
+            <path d="M0 0 V 96" stroke="#9cc4dd" stroke-width="2"/>
+            <path d="M0 96 H 560" stroke="#9cc4dd" stroke-width="2"/>
+
+            <!-- planeio íngreme (asa larga) -->
+            <path d="M0 6 L 160 96" stroke="#c04a2e" stroke-width="3.5" fill="none" marker-end="url(#s2)"/>
+            <text class="rotp" x="66" y="42" style="fill:#c04a2e" font-weight="700">cai rápido</text>
+            <text class="rot" x="172" y="90" font-size="15" style="fill:#c04a2e">≈ 7 m</text>
+
+            <!-- planeio raso (albatroz) -->
+            <path d="M0 6 L 520 96" stroke="#1f7a3d" stroke-width="3.5" fill="none" marker-end="url(#s2)"/>
+            <text class="rotp" x="300" y="58" style="fill:#1f7a3d" font-weight="700">desce quase de lado</text>
+            <text class="rot" x="500" y="66" font-size="15" style="fill:#1f7a3d">≈ 22 m</text>
+
+            <text class="rotp" x="-30" y="4" transform="rotate(-90,-30,4)" text-anchor="end">1 m de queda</text>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        O albatroz-gigante cruza milhares de quilômetros de oceano e passa horas no ar sem dar uma única batida de asa.
+    </text>
+</svg>

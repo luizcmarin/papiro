@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">O Braço do Polvo — o cotovelo que ele inventa na hora</title>
+    <desc id="desc">Um braço sem osso pode dobrar em qualquer ponto: há infinitos jeitos de alcançar a
+        mesma presa, e escolher entre eles seria um problema sem fim. O polvo resolve criando uma
+        dobra temporária: duas ondas de contração correm, uma da base e outra da ponta, e onde se
+        encontram nasce um cotovelo. O braço vira dois trechos rígidos — e o movimento fica simples
+        como o do nosso braço.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#123043"/>
+            <stop offset="1" stop-color="#06131d"/>
+        </linearGradient>
+
+        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+        <marker id="sp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+
+        <!-- a presa -->
+        <g id="presa">
+            <circle cx="0" cy="0" r="16" fill="#e8955f" stroke="#ffd0a8" stroke-width="2"/>
+            <circle cx="-5" cy="-4" r="3" fill="#0b2438"/>
+        </g>
+    </defs>
+
+    <style>
+        .cab  { fill:#eaf6ff; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#d6ecfa; font-size:18px; font-weight:700; }
+        .rotp { fill:#8fb4cd; font-size:14px; }
+        .painel { fill:#0e2637; stroke:#3a7096; stroke-width:2; }
+        .braco  { fill:none; stroke:#d9614a; stroke-linecap:round; stroke-linejoin:round; }
+        .ventosa{ fill:#f6c9a8; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">O BRAÇO DO POLVO</text>
+    <text class="rotp" x="46" y="84" font-size="17">Um braço sem osso pode dobrar em qualquer lugar. O polvo escolhe um — e inventa um cotovelo ali.</text>
+
+    <!-- ══ Esquerda: o problema ═══════════════════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="406" height="380" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#ff8f6b">O PROBLEMA</text>
+        <text class="rotp" x="24" y="60">sem osso, há infinitos caminhos até a presa</text>
+
+        <!-- corpo do polvo, no canto -->
+        <g transform="translate(70,300)">
+            <ellipse cx="0" cy="0" rx="42" ry="34" fill="#c2503c" stroke="#f0a58e" stroke-width="2"/>
+            <circle cx="-14" cy="-6" r="5" fill="#0b2438"/>
+            <circle cx="14" cy="-6" r="5" fill="#0b2438"/>
+        </g>
+
+        <!-- muitas soluções possíveis, todas válidas -->
+        <g class="braco" stroke-width="8" opacity="0.35">
+            <path d="M104 288 C 150 200, 130 130, 240 120 C 300 114, 320 140, 316 160"/>
+            <path d="M104 292 C 190 300, 210 200, 250 150 C 280 114, 306 130, 312 158"/>
+            <path d="M104 296 C 160 280, 130 210, 200 178 C 270 146, 300 150, 312 162"/>
+            <path d="M104 300 C 210 320, 300 260, 300 200 C 300 172, 306 164, 312 164"/>
+            <path d="M104 304 C 140 340, 250 330, 290 250 C 306 216, 306 180, 312 166"/>
+        </g>
+
+        <g transform="translate(320,162)"><use href="#presa"/></g>
+
+        <text class="rotp" x="24" y="344" style="fill:#ff8f6b">qual deles? Escolher já seria o trabalho mais difícil.</text>
+    </g>
+
+    <!-- ══ Meio: a solução ════════════════════════════════════════════════ -->
+    <g transform="translate(472,112)">
+        <rect class="painel" x="0" y="0" width="406" height="380" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#7bd389">A SOLUÇÃO</text>
+        <text class="rotp" x="24" y="60">uma dobra parte o braço em dois trechos</text>
+
+        <g transform="translate(70,300)">
+            <ellipse cx="0" cy="0" rx="42" ry="34" fill="#c2503c" stroke="#f0a58e" stroke-width="2"/>
+            <circle cx="-14" cy="-6" r="5" fill="#0b2438"/>
+            <circle cx="14" cy="-6" r="5" fill="#0b2438"/>
+        </g>
+
+        <!-- o braço, agora com um "cotovelo" -->
+        <g class="braco">
+            <path d="M104 292 L 196 190" stroke-width="20"/>
+            <path d="M196 190 L 302 166" stroke-width="13"/>
+        </g>
+        <!-- ventosas -->
+        <g class="ventosa">
+            <circle cx="122" cy="278" r="4.5"/><circle cx="142" cy="256" r="4.5"/>
+            <circle cx="162" cy="234" r="4.5"/><circle cx="182" cy="212" r="4.5"/>
+            <circle cx="216" cy="185" r="4"/><circle cx="242" cy="179" r="4"/>
+            <circle cx="268" cy="173" r="4"/><circle cx="292" cy="168" r="4"/>
+        </g>
+
+        <!-- o cotovelo improvisado -->
+        <circle cx="196" cy="190" r="20" fill="none" stroke="#ffd24d" stroke-width="3"/>
+        <path d="M240 116 L 208 168" stroke="#ffd24d" stroke-width="2" fill="none" marker-end="url(#sp)"/>
+        <text class="rotp" x="216" y="104" style="fill:#ffd24d">o cotovelo — que não existe</text>
+        <text class="rotp" x="216" y="122" style="fill:#ffd24d">até ele precisar</text>
+
+        <g transform="translate(320,162)"><use href="#presa"/></g>
+
+        <!-- os dois trechos, nomeados -->
+        <text class="rotp" x="104" y="240" transform="rotate(-48,104,240)" style="fill:#7bd389">trecho 1</text>
+        <text class="rotp" x="222" y="212" style="fill:#7bd389">trecho 2</text>
+
+        <text class="rotp" x="24" y="344" style="fill:#7bd389">um só caminho, e a ventosa da ponta chega certa.</text>
+    </g>
+
+    <!-- ══ Direita: como a dobra nasce ════════════════════════════════════ -->
+    <g transform="translate(898,112)">
+        <rect class="painel" x="0" y="0" width="456" height="380" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#ffd24d">COMO A DOBRA NASCE</text>
+        <text class="rotp" x="24" y="60">duas ondas de contração correm pelo braço</text>
+
+        <!-- quadro 1 -->
+        <g transform="translate(24,86)">
+            <rect x="0" y="0" width="408" height="84" rx="10" fill="#0a1f2e" stroke="#3a7096" stroke-width="1.5"/>
+            <path class="braco" d="M30 56 L 380 56" stroke-width="12"/>
+            <path d="M30 30 L 96 30" stroke="#ffd24d" stroke-width="2.5" fill="none" marker-end="url(#sp)"/>
+            <text class="rotp" x="106" y="35" font-size="13" style="fill:#ffd24d">uma onda sai da base…</text>
+            <circle cx="60" cy="56" r="12" fill="#ffd24d" opacity="0.35"/>
+        </g>
+
+        <!-- quadro 2 -->
+        <g transform="translate(24,182)">
+            <rect x="0" y="0" width="408" height="84" rx="10" fill="#0a1f2e" stroke="#3a7096" stroke-width="1.5"/>
+            <path class="braco" d="M30 56 L 380 56" stroke-width="12"/>
+            <path d="M380 30 L 314 30" stroke="#63c7e8" stroke-width="2.5" fill="none" marker-end="url(#sp)"/>
+            <text class="rotp" x="304" y="35" font-size="13" text-anchor="end" style="fill:#63c7e8">…e outra sai da ponta</text>
+            <circle cx="350" cy="56" r="12" fill="#63c7e8" opacity="0.4"/>
+        </g>
+
+        <!-- quadro 3 -->
+        <g transform="translate(24,278)">
+            <rect x="0" y="0" width="408" height="84" rx="10" fill="#0a1f2e" stroke="#7bd389" stroke-width="2"/>
+            <path class="braco" d="M30 62 L 200 40 L 380 62" stroke-width="12"/>
+            <circle cx="200" cy="40" r="14" fill="none" stroke="#7bd389" stroke-width="3"/>
+            <text class="rotp" x="200" y="26" text-anchor="middle" font-size="13" style="fill:#7bd389">
+                onde se encontram, o braço dobra
+            </text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé: o cotovelo que não existe ══════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">DUAS MANEIRAS DE ALCANÇAR ALGUMA COISA</text>
+
+        <g transform="translate(30,64)">
+            <rect x="0" y="0" width="620" height="118" rx="12" fill="#0a1f2e" stroke="#3a7096" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16">O nosso braço</text>
+            <text class="rotp" x="20" y="60">tem três juntas, sempre nos mesmos lugares:</text>
+            <text class="rotp" x="20" y="84">ombro, cotovelo e punho. Simples de comandar —</text>
+            <text class="rotp" x="20" y="104">mas ele só dobra onde o osso deixa.</text>
+        </g>
+
+        <g transform="translate(674,64)">
+            <rect x="0" y="0" width="604" height="118" rx="12" fill="#12362a" stroke="#7bd389" stroke-width="2"/>
+            <text class="rot" x="20" y="32" font-size="16" style="fill:#7bd389">O braço do polvo</text>
+            <text class="rotp" x="20" y="60">cria a junta no ponto exato de que precisa,</text>
+            <text class="rotp" x="20" y="84">usa e desmancha. É um braço que se remonta</text>
+            <text class="rotp" x="20" y="104">a cada movimento — e nunca se atrapalha.</text>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        A robótica mole ainda corre atrás desse truque: braços flexíveis que se comandam sem se enrolar em cálculos infinitos.
+    </text>
+</svg>

@@ -1,0 +1,258 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Asa da Borboleta — azul por difração, não por pigmento</title>
+    <desc id="desc">Da borboleta Morfo ao corte microscópico da escama: as lamelas empilhadas separam a
+        luz e só o azul volta reforçado; as outras cores se cancelam. A cor depende da distância d
+        entre as lamelas, pela relação d · sen θ = m · λ.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0a1c38"/>
+            <stop offset="1" stop-color="#123a63"/>
+        </linearGradient>
+        <linearGradient id="asaCima" x1="0.15" y1="0" x2="0.85" y2="1">
+            <stop offset="0" stop-color="#9beeff"/>
+            <stop offset="0.4" stop-color="#3f9cf2"/>
+            <stop offset="1" stop-color="#1e3ea8"/>
+        </linearGradient>
+        <linearGradient id="asaBaixo" x1="0.2" y1="0" x2="0.8" y2="1">
+            <stop offset="0" stop-color="#5fc2f7"/>
+            <stop offset="1" stop-color="#17307f"/>
+        </linearGradient>
+        <linearGradient id="branca" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#fff3c4"/>
+            <stop offset="1" stop-color="#ffffff"/>
+        </linearGradient>
+        <radialGradient id="brilho" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#7fd4ff" stop-opacity="0.5"/>
+            <stop offset="1" stop-color="#7fd4ff" stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- markerUnits fixo: a ponta não engorda junto com a espessura do traço -->
+        <marker id="p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="13" markerHeight="13"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+        <marker id="pp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+        <marker id="pi" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M10 0 L0 5 L10 10 z" fill="context-stroke"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab   { fill:#ffffff; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot   { fill:#eaf4ff; font-size:19px; font-weight:700; }
+        .rotp  { fill:#9dc2e4; font-size:15px; }
+        .num   { fill:#0a1c38; font-size:19px; font-weight:800; }
+        .painel{ fill:#0e2a4e; stroke:#356299; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="56">A ASA DA BORBOLETA</text>
+    <text class="rotp" x="46" y="84" font-size="17">O azul da Morfo não é tinta — é geometria.</text>
+    <text class="cab" x="1354" y="56" text-anchor="end" style="fill:#7fd4ff">AZUL SEM PIGMENTO</text>
+    <path d="M46 100 H 1354" stroke="#2b537f" stroke-width="1.5"/>
+
+    <!-- ══ Coluna esquerda: a borboleta ═══════════════════════════════════ -->
+    <g transform="translate(40,130)">
+        <circle cx="175" cy="185" r="180" fill="url(#brilho)"/>
+
+        <g stroke="#081428" stroke-width="3.5" stroke-linejoin="round">
+            <!-- asas superiores: recorte anguloso, ponta caída (perfil da Morpho) -->
+            <path d="M175 150 C 140 70, 70 22, 28 34 C 4 42, 8 100, 40 140
+                     C 72 180, 130 190, 175 186 Z" fill="url(#asaCima)"/>
+            <path d="M175 150 C 210 70, 280 22, 322 34 C 346 42, 342 100, 310 140
+                     C 278 180, 220 190, 175 186 Z" fill="url(#asaCima)"/>
+            <!-- asas inferiores: menores, borda ondulada -->
+            <path d="M175 196 C 130 200, 78 226, 66 272 C 58 306, 92 322, 122 306
+                     C 152 290, 170 250, 175 214 Z" fill="url(#asaBaixo)"/>
+            <path d="M175 196 C 220 200, 272 226, 284 272 C 292 306, 258 322, 228 306
+                     C 198 290, 180 250, 175 214 Z" fill="url(#asaBaixo)"/>
+        </g>
+
+        <!-- nervuras -->
+        <g stroke="#cdefff" stroke-width="1.5" fill="none" opacity="0.5">
+            <path d="M170 172 L 46 74 M170 178 L 34 108 M170 184 L 44 140"/>
+            <path d="M180 172 L 304 74 M180 178 L 316 108 M180 184 L 306 140"/>
+            <path d="M172 214 L 96 288 M172 226 L 118 300"/>
+            <path d="M178 214 L 254 288 M178 226 L 232 300"/>
+        </g>
+        <!-- margem escura com pontinhos claros (marca da Morpho) -->
+        <g fill="#eaf4ff" opacity="0.75">
+            <circle cx="52" cy="52" r="3.5"/><circle cx="30" cy="82" r="3.5"/><circle cx="30" cy="116" r="3.5"/>
+            <circle cx="298" cy="52" r="3.5"/><circle cx="320" cy="82" r="3.5"/><circle cx="320" cy="116" r="3.5"/>
+        </g>
+
+        <ellipse cx="175" cy="200" rx="11" ry="76" fill="#101f3a" stroke="#081428" stroke-width="3"/>
+        <path d="M170 134 C 156 100, 132 84, 116 80 M180 134 C 194 100, 218 84, 234 80"
+              stroke="#101f3a" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <circle cx="114" cy="78" r="6" fill="#101f3a"/>
+        <circle cx="236" cy="78" r="6" fill="#101f3a"/>
+
+        <text class="rot" x="175" y="390" text-anchor="middle">BORBOLETA MORFO</text>
+        <text class="rotp" x="175" y="414" text-anchor="middle">vire a asa e o azul muda de tom</text>
+    </g>
+
+    <!-- lupa sobre a asa + trilha até o painel 1 -->
+    <circle cx="255" cy="220" r="30" fill="none" stroke="#7fd4ff" stroke-width="2.5"/>
+    <path d="M276 241 C 320 280, 340 250, 396 232" stroke="#7fd4ff" stroke-width="2"
+          stroke-dasharray="7 6" fill="none" marker-end="url(#pp)"/>
+
+    <!-- ══ Painel 1 — escamas ═════════════════════════════════════════════ -->
+    <g transform="translate(410,130)">
+        <rect class="painel" x="0" y="0" width="280" height="230" rx="14"/>
+        <circle cx="28" cy="28" r="14" fill="#7fd4ff"/>
+        <text class="num" x="28" y="35" text-anchor="middle">1</text>
+
+        <g transform="translate(38,62)" fill="#3f9cf2" stroke="#081428" stroke-width="1.4">
+            <rect x="0"   y="0"  width="48" height="21" rx="7"/>
+            <rect x="54"  y="0"  width="48" height="21" rx="7"/>
+            <rect x="108" y="0"  width="48" height="21" rx="7"/>
+            <rect x="162" y="0"  width="42" height="21" rx="7"/>
+            <rect x="27"  y="26" width="48" height="21" rx="7" fill="#59b3f7"/>
+            <rect x="81"  y="26" width="48" height="21" rx="7" fill="#59b3f7"/>
+            <rect x="135" y="26" width="48" height="21" rx="7" fill="#59b3f7"/>
+            <rect x="0"   y="52" width="48" height="21" rx="7"/>
+            <rect x="54"  y="52" width="48" height="21" rx="7"/>
+            <rect x="108" y="52" width="48" height="21" rx="7"/>
+            <rect x="162" y="52" width="42" height="21" rx="7"/>
+        </g>
+
+        <text class="rot" x="140" y="180" text-anchor="middle">ESCAMAS</text>
+        <text class="rotp" x="140" y="204" text-anchor="middle">sobrepostas como telhas</text>
+    </g>
+
+    <path d="M700 245 H 748" stroke="#7fd4ff" stroke-width="2.5" marker-end="url(#pp)"/>
+
+    <!-- ══ Painel 2 — lamelas ═════════════════════════════════════════════ -->
+    <g transform="translate(760,130)">
+        <rect class="painel" x="0" y="0" width="280" height="230" rx="14"/>
+        <circle cx="28" cy="28" r="14" fill="#7fd4ff"/>
+        <text class="num" x="28" y="35" text-anchor="middle">2</text>
+
+        <!-- duas cristas em "árvore de Natal", vistas de perfil -->
+        <g transform="translate(52,58)">
+            <g fill="#9beeff" stroke="#081428" stroke-width="1.2">
+                <rect x="0"   y="0"  width="62" height="8" rx="2"/>
+                <rect x="9"   y="19" width="53" height="8" rx="2"/>
+                <rect x="18"  y="38" width="44" height="8" rx="2"/>
+                <rect x="27"  y="57" width="35" height="8" rx="2"/>
+                <rect x="114" y="0"  width="62" height="8" rx="2"/>
+                <rect x="114" y="19" width="53" height="8" rx="2"/>
+                <rect x="114" y="38" width="44" height="8" rx="2"/>
+                <rect x="114" y="57" width="35" height="8" rx="2"/>
+            </g>
+            <rect x="58" y="0" width="7" height="65" fill="#3f9cf2"/>
+            <rect x="110" y="0" width="7" height="65" fill="#3f9cf2"/>
+
+            <!-- d: o degrau entre lamelas — é o que o desafio ajusta -->
+            <path d="M84 4 L 84 23" stroke="#ffce5c" stroke-width="2.5"
+                  marker-start="url(#pi)" marker-end="url(#pp)"/>
+            <text x="93" y="20" fill="#ffce5c" font-size="19" font-weight="800">d</text>
+        </g>
+
+        <text class="rot" x="140" y="180" text-anchor="middle">LAMELAS EMPILHADAS</text>
+        <text class="rotp" x="140" y="204" text-anchor="middle">degraus de ~200 nanômetros</text>
+    </g>
+
+    <!-- ══ Painel 3 — interferência ═══════════════════════════════════════ -->
+    <g transform="translate(410,390)">
+        <rect class="painel" x="0" y="0" width="630" height="370" rx="14"/>
+        <circle cx="28" cy="28" r="14" fill="#7fd4ff"/>
+        <text class="num" x="28" y="35" text-anchor="middle">3</text>
+        <text class="rot" x="56" y="35">A LUZ BATE, VOLTA E SE ENCONTRA</text>
+
+        <!-- luz branca entra pela esquerda -->
+        <path d="M44 92 L 180 178" stroke="url(#branca)" stroke-width="7" marker-end="url(#p)"/>
+        <text class="rotp" x="42" y="80" style="fill:#fff3c4">LUZ BRANCA (todas as cores)</text>
+
+        <!-- as lamelas: dois espelhos separados por d -->
+        <g>
+            <path d="M170 190 H 330" stroke="#9beeff" stroke-width="6"/>
+            <path d="M170 224 H 330" stroke="#9beeff" stroke-width="6"/>
+            <path d="M348 193 L 348 221" stroke="#ffce5c" stroke-width="2.5"
+                  marker-start="url(#pi)" marker-end="url(#pp)"/>
+            <text x="358" y="215" fill="#ffce5c" font-size="19" font-weight="800">d</text>
+            <text class="rotp" x="44" y="256">o raio de baixo anda um pouquinho mais</text>
+        </g>
+
+        <!-- azul sai reforçado, para cima -->
+        <path d="M240 184 L 372 112" stroke="#4dc3ff" stroke-width="7" marker-end="url(#p)"/>
+        <text class="rot" x="398" y="106" style="fill:#4dc3ff">AZUL: SOMA</text>
+        <text class="rotp" x="398" y="130">volta em fase — uma onda</text>
+        <text class="rotp" x="398" y="150">reforça a outra e a cor acende</text>
+
+        <!-- verde e vermelho se cancelam -->
+        <g opacity="0.4">
+            <path d="M240 206 L 372 198" stroke="#79d68b" stroke-width="5" marker-end="url(#p)"/>
+            <path d="M240 216 L 372 232" stroke="#ff8f6b" stroke-width="5" marker-end="url(#p)"/>
+        </g>
+        <text class="rot" x="398" y="196" style="fill:#9dc2e4" font-size="18">VERDE E VERMELHO:</text>
+        <text class="rot" x="398" y="218" style="fill:#9dc2e4" font-size="18">SE ANULAM</text>
+        <text class="rotp" x="398" y="242">chegam fora de fase</text>
+        <text class="rotp" x="398" y="262">e se apagam</text>
+
+        <!-- onda em fase x fora de fase (o miolo da ideia) -->
+        <g transform="translate(44,300)">
+            <path d="M0 20 q 15 -20 30 0 t 30 0 t 30 0 t 30 0" fill="none" stroke="#4dc3ff" stroke-width="3"/>
+            <path d="M0 20 q 15 -20 30 0 t 30 0 t 30 0 t 30 0" fill="none" stroke="#4dc3ff"
+                  stroke-width="3" opacity="0.55" transform="translate(0,4)"/>
+            <text class="rotp" x="134" y="26" style="fill:#4dc3ff">em fase → brilha</text>
+
+            <path d="M290 20 q 15 -20 30 0 t 30 0 t 30 0 t 30 0" fill="none" stroke="#ff8f6b" stroke-width="3"/>
+            <path d="M290 20 q 15 20 30 0 t 30 0 t 30 0 t 30 0" fill="none" stroke="#79d68b" stroke-width="3"/>
+            <text class="rotp" x="424" y="26" style="fill:#9dc2e4">fora de fase → apaga</text>
+        </g>
+    </g>
+
+    <!-- ══ Coluna direita — a conta da cor ════════════════════════════════ -->
+    <g transform="translate(1070,130)">
+        <rect class="painel" x="0" y="0" width="290" height="630" rx="14" fill="#0d3157"/>
+
+        <text class="rot" x="145" y="50" text-anchor="middle">A CONTA DA COR</text>
+
+        <text x="145" y="120" text-anchor="middle" fill="#ffce5c" font-size="33" font-weight="800"
+              font-family="Georgia, 'Times New Roman', serif">d · sen θ = m · λ</text>
+
+        <g font-size="16">
+            <text x="28" y="176"><tspan fill="#ffce5c" font-size="20" font-weight="800">d</tspan><tspan
+                fill="#9dc2e4" dx="10">distância entre as lamelas</tspan></text>
+            <text x="28" y="214"><tspan fill="#eaf4ff" font-size="20" font-weight="800">θ</tspan><tspan
+                fill="#9dc2e4" dx="10">ângulo do olhar</tspan></text>
+            <text x="28" y="252"><tspan fill="#4dc3ff" font-size="20" font-weight="800">λ</tspan><tspan
+                fill="#9dc2e4" dx="10">cor que volta reforçada</tspan></text>
+        </g>
+
+        <path d="M28 284 H 262" stroke="#356299" stroke-width="1.5"/>
+
+        <!-- régua do visível: onde cai o azul da Morfo -->
+        <g transform="translate(28,352)">
+            <text x="72" y="-22" text-anchor="middle" fill="#4dc3ff" font-size="17" font-weight="800">470 nm</text>
+            <path d="M72 -14 L 72 -2" stroke="#4dc3ff" stroke-width="3" marker-end="url(#pp)"/>
+            <g>
+                <path d="M0 0 h 40 v 18 h -40 z" fill="#6b3ce0"/>
+                <path d="M40 0 h 55 v 18 h -55 z" fill="#3f9cf2"/>
+                <path d="M95 0 h 50 v 18 h -50 z" fill="#4ec07a"/>
+                <path d="M145 0 h 45 v 18 h -45 z" fill="#ffce5c"/>
+                <path d="M190 0 h 44 v 18 h -44 z" fill="#ff6b5e"/>
+            </g>
+            <text x="0" y="38" fill="#9dc2e4" font-size="13">400 nm</text>
+            <text x="234" y="38" text-anchor="end" fill="#9dc2e4" font-size="13">700 nm</text>
+            <text class="rotp" x="117" y="66" text-anchor="middle">o visível, de ponta a ponta</text>
+        </g>
+
+        <path d="M28 448 H 262" stroke="#356299" stroke-width="1.5"/>
+
+        <text class="rot" x="28" y="490" font-size="18">Mude d, muda a cor.</text>
+        <text class="rotp" x="28" y="518">Lamelas mais juntas puxam</text>
+        <text class="rotp" x="28" y="540">para o violeta; mais afastadas,</text>
+        <text class="rotp" x="28" y="562">para o vermelho.</text>
+
+        <text class="rot" x="28" y="600" font-size="17" style="fill:#7fd4ff">Seu desafio: acertar o azul.</text>
+    </g>
+</svg>

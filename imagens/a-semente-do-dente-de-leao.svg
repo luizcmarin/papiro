@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Semente do Dente-de-Leão — o anel de vórtice que a segura no ar</title>
+    <desc id="desc">O papo do dente-de-leão é 90% vazio. O ar que passa entre as cerdas forma, logo acima
+        da semente, um anel de vórtice que fica parado ali — algo que a engenharia nunca tinha visto.
+        Ele multiplica o arrasto e a queda fica lenta. Denso demais ou ralo demais, o anel não se forma.</desc>
+
+    <defs>
+        <linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#eaf6ff"/>
+            <stop offset="1" stop-color="#cfe6f7"/>
+        </linearGradient>
+        <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#7bd389" stop-opacity="0.35"/>
+            <stop offset="1" stop-color="#7bd389" stop-opacity="0"/>
+        </radialGradient>
+
+        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+        <marker id="sp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+
+        <!-- A semente: haste + coroa de cerdas (o "papo") -->
+        <g id="papo">
+            <g stroke="#8a9a5b" stroke-width="2" stroke-linecap="round">
+                <path d="M0 0 L 0 -58"/>
+                <path d="M0 -58 L -76 -104 M0 -58 L -58 -116 M0 -58 L -34 -124 M0 -58 L -10 -128
+                         M0 -58 L 14 -128 M0 -58 L 38 -124 M0 -58 L 62 -116 M0 -58 L 78 -102
+                         M0 -58 L -84 -84 M0 -58 L 86 -84"/>
+            </g>
+            <g fill="#c9d6a8">
+                <circle cx="-76" cy="-104" r="4"/><circle cx="-58" cy="-116" r="4"/>
+                <circle cx="-34" cy="-124" r="4"/><circle cx="-10" cy="-128" r="4"/>
+                <circle cx="14" cy="-128" r="4"/><circle cx="38" cy="-124" r="4"/>
+                <circle cx="62" cy="-116" r="4"/><circle cx="78" cy="-102" r="4"/>
+                <circle cx="-84" cy="-84" r="4"/><circle cx="86" cy="-84" r="4"/>
+            </g>
+            <ellipse cx="0" cy="10" rx="7" ry="14" fill="#8a5a2b"/>
+            <path d="M0 24 L -4 34 M0 24 L 4 34" stroke="#8a5a2b" stroke-width="2"/>
+        </g>
+    </defs>
+
+    <style>
+        .cab  { fill:#25402a; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#2f5136; font-size:18px; font-weight:700; }
+        .rotp { fill:#5b7a62; font-size:14px; }
+        .painel { fill:#f7fdf8; stroke:#a9c9b0; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#ceu)"/>
+
+    <text class="cab" x="46" y="54">A SEMENTE DO DENTE-DE-LEÃO</text>
+    <text class="rotp" x="46" y="84" font-size="17">Um papo 90% vazio — e é justamente o vazio que a segura no ar.</text>
+
+    <!-- ══ Centro-esquerda: o voo e o anel de vórtice ═════════════════════ -->
+    <g transform="translate(330,430)">
+        <circle cx="0" cy="-170" r="150" fill="url(#halo)"/>
+
+        <use href="#papo"/>
+
+        <!-- o ar que sobe, passando ENTRE as cerdas -->
+        <g stroke="#2f7fd0" stroke-width="3" fill="none">
+            <path d="M-120 130 L -120 -30" marker-end="url(#sp)"/>
+            <path d="M-60 140 L -60 -20" marker-end="url(#sp)"/>
+            <path d="M0 150 L 0 40" marker-end="url(#sp)"/>
+            <path d="M60 140 L 60 -20" marker-end="url(#sp)"/>
+            <path d="M120 130 L 120 -30" marker-end="url(#sp)"/>
+        </g>
+        <text class="rotp" x="0" y="182" text-anchor="middle" style="fill:#2f7fd0">
+            o ar sobe e atravessa o papo
+        </text>
+
+        <!-- o anel de vórtice: parado logo ACIMA da semente -->
+        <g stroke="#1f7a3d" stroke-width="3.5" fill="none">
+            <path d="M-56 -168 C -86 -196, -74 -236, -36 -232 C -8 -228, -4 -196, -30 -186
+                     C -50 -178, -60 -190, -48 -202" marker-end="url(#sp)"/>
+            <path d="M56 -168 C 86 -196, 74 -236, 36 -232 C 8 -228, 4 -196, 30 -186
+                     C 50 -178, 60 -190, 48 -202" marker-end="url(#sp)"/>
+        </g>
+        <ellipse cx="0" cy="-206" rx="76" ry="16" fill="none" stroke="#1f7a3d"
+                 stroke-width="2" stroke-dasharray="7 6"/>
+
+        <text class="rot" x="0" y="-260" text-anchor="middle" style="fill:#1f7a3d">ANEL DE VÓRTICE</text>
+        <text class="rotp" x="0" y="-238" text-anchor="middle" style="fill:#1f7a3d">
+            fica parado ali, sem se soltar
+        </text>
+    </g>
+
+    <!-- ══ Direita: a porosidade decide ═══════════════════════════════════ -->
+    <g transform="translate(700,150)">
+        <rect class="painel" x="0" y="0" width="640" height="330" rx="16"/>
+        <text class="rot" x="24" y="40">É A POROSIDADE QUE FORMA O ANEL</text>
+        <text class="rotp" x="24" y="62">o papo tem de deixar passar quase todo o ar — mas não todo</text>
+
+        <!-- três papos, com porosidades diferentes -->
+        <g transform="translate(110,190) scale(0.62)">
+            <g stroke="#8a9a5b" stroke-width="3" stroke-linecap="round">
+                <path d="M0 -58 L -80 -100 M0 -58 L -40 -124 M0 -58 L 0 -132
+                         M0 -58 L 40 -124 M0 -58 L 80 -100 M0 -58 L -60 -114
+                         M0 -58 L -20 -130 M0 -58 L 20 -130 M0 -58 L 60 -114
+                         M0 -58 L -88 -80 M0 -58 L 88 -80 M0 -58 L -74 -108
+                         M0 -58 L 74 -108 M0 -58 L -10 -132 M0 -58 L 10 -132
+                         M0 -58 L -30 -128 M0 -58 L 30 -128 M0 -58 L -50 -120
+                         M0 -58 L 50 -120 M0 -58 L -68 -110 M0 -58 L 68 -110"/>
+                <path d="M0 0 L 0 -58"/>
+            </g>
+        </g>
+        <text class="rotp" x="110" y="240" text-anchor="middle" style="fill:#b0301f">DENSO DEMAIS</text>
+        <text class="rotp" x="110" y="262" text-anchor="middle" font-size="13">o ar quase não passa</text>
+        <text class="rotp" x="110" y="282" text-anchor="middle" font-size="13">e o anel não se forma</text>
+
+        <g transform="translate(320,190) scale(0.62)">
+            <g stroke="#8a9a5b" stroke-width="3" stroke-linecap="round">
+                <path d="M0 -58 L -80 -100 M0 -58 L -40 -124 M0 -58 L 0 -132
+                         M0 -58 L 40 -124 M0 -58 L 80 -100 M0 -58 L -60 -116
+                         M0 -58 L 60 -116 M0 -58 L -20 -130 M0 -58 L 20 -130
+                         M0 -58 L -88 -80 M0 -58 L 88 -80"/>
+                <path d="M0 0 L 0 -58"/>
+            </g>
+            <ellipse cx="0" cy="-160" rx="80" ry="18" fill="none" stroke="#1f7a3d"
+                     stroke-width="4" stroke-dasharray="8 7"/>
+        </g>
+        <text class="rotp" x="320" y="240" text-anchor="middle" style="fill:#1f7a3d">≈ 90% VAZIO</text>
+        <text class="rotp" x="320" y="262" text-anchor="middle" font-size="13" style="fill:#1f7a3d">o anel se forma e fica</text>
+        <text class="rotp" x="320" y="282" text-anchor="middle" font-size="13" style="fill:#1f7a3d">a queda fica lenta</text>
+
+        <g transform="translate(530,190) scale(0.62)">
+            <g stroke="#8a9a5b" stroke-width="3" stroke-linecap="round">
+                <path d="M0 -58 L -80 -100 M0 -58 L 0 -132 M0 -58 L 80 -100"/>
+                <path d="M0 0 L 0 -58"/>
+            </g>
+        </g>
+        <text class="rotp" x="530" y="240" text-anchor="middle" style="fill:#b0301f">RALO DEMAIS</text>
+        <text class="rotp" x="530" y="262" text-anchor="middle" font-size="13">o ar passa direto</text>
+        <text class="rotp" x="530" y="282" text-anchor="middle" font-size="13">e a semente despenca</text>
+    </g>
+
+    <!-- ══ Direita-baixo: o resultado ═════════════════════════════════════ -->
+    <g transform="translate(700,520)">
+        <rect class="painel" x="0" y="0" width="640" height="220" rx="16"/>
+        <text class="rot" x="24" y="40">O QUE O ANEL FAZ</text>
+
+        <!-- barra: arrasto multiplicado -->
+        <g transform="translate(24,80)">
+            <text class="rotp" x="0" y="-4">arrasto de um disco liso do mesmo tamanho</text>
+            <rect x="0" y="6" width="90" height="20" rx="6" fill="#a9c9b0"/>
+
+            <text class="rotp" x="0" y="56" style="fill:#1f7a3d">arrasto do papo, com o anel</text>
+            <rect x="0" y="66" width="480" height="20" rx="6" fill="#1f7a3d"/>
+            <text class="rot" x="496" y="83" font-size="16" style="fill:#1f7a3d">muito maior</text>
+        </g>
+
+        <text class="rotp" x="24" y="196">
+            Resultado: a semente cai devagar e o vento a leva quilômetros longe da planta-mãe.
+        </text>
+    </g>
+
+    <text class="rotp" x="46" y="775" font-size="15">
+        Descoberto em 2018 (Cummins et al., Nature): nenhum aparelho humano voava assim.
+    </text>
+</svg>

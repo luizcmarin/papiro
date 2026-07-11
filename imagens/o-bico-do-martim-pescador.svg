@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">O Bico do Martim-Pescador — entrar na água sem empurrar a água</title>
+    <desc id="desc">Um bico rombudo empurra uma parede de água à frente: respingo, onda de choque e o
+        peixe foge. O bico longo e afilado do martim-pescador fende a água, abrindo-a aos poucos para
+        os lados — mergulho quase sem respingo. O trem-bala japonês copiou esse nariz.</desc>
+
+    <defs>
+        <linearGradient id="ar" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#eaf6ff"/>
+            <stop offset="1" stop-color="#cfe9fb"/>
+        </linearGradient>
+        <linearGradient id="agua" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#6fb7e8"/>
+            <stop offset="1" stop-color="#2a6ea8"/>
+        </linearGradient>
+        <linearGradient id="penas" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3fb2e6"/>
+            <stop offset="1" stop-color="#1a5fa8"/>
+        </linearGradient>
+
+        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="13" markerHeight="13"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+        <marker id="sp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+
+        <!-- Corpo do martim (sem bico): mergulha na diagonal -->
+        <g id="passaro">
+            <ellipse cx="0" cy="0" rx="46" ry="26" fill="url(#penas)"/>
+            <path d="M-40 -6 C -22 -30, 12 -30, 26 -10 C 6 2, -20 6, -40 -6 Z" fill="#7fd4f7" opacity="0.8"/>
+            <path d="M-44 4 L -84 22 L -74 -6 Z" fill="#1a5fa8"/>
+            <circle cx="30" cy="-8" r="4" fill="#0e2a44"/>
+            <ellipse cx="-8" cy="14" rx="30" ry="10" fill="#e98a3c" opacity="0.85"/>
+        </g>
+    </defs>
+
+    <style>
+        .cab  { fill:#123a5c; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#123a5c; font-size:18px; font-weight:700; }
+        .rotp { fill:#3d6b90; font-size:14px; }
+        .painel { fill:#f4fbff; stroke:#8fc4e6; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#ar)"/>
+    <rect x="0" y="430" width="1400" height="370" fill="url(#agua)"/>
+    <path d="M0 430 H 1400" stroke="#e8f6ff" stroke-width="3" opacity="0.8"/>
+
+    <text class="cab" x="46" y="54">O BICO DO MARTIM-PESCADOR</text>
+    <text class="rotp" x="46" y="84" font-size="17">Entrar na água sem empurrar a água à frente.</text>
+
+    <!-- ══ Esquerda: bico rombudo — empurra uma parede de água ════════════ -->
+    <g>
+        <text class="rot" x="60" y="140" font-size="20" style="fill:#b0301f">BICO ROMBUDO</text>
+        <text class="rotp" x="60" y="162">empurra uma parede de água à frente</text>
+
+        <g transform="translate(285,367) rotate(38)">
+            <use href="#passaro"/>
+            <!-- bico curto e grosso, ponta cega -->
+            <rect x="36" y="-13" width="66" height="26" rx="10" fill="#2b2b2b"/>
+        </g>
+
+        <!-- a parede de água: o bico chega e a coluna sobe -->
+        <g stroke="#eaf7ff" stroke-width="5" fill="none" stroke-linecap="round">
+            <path d="M300 430 C 292 386, 268 366, 240 356"/>
+            <path d="M430 430 C 442 386, 468 366, 496 356"/>
+            <path d="M330 430 C 330 396, 322 372, 306 348"/>
+            <path d="M404 430 C 406 396, 416 372, 432 348"/>
+        </g>
+        <g fill="#eaf7ff">
+            <circle cx="228" cy="344" r="9"/><circle cx="252" cy="316" r="6"/>
+            <circle cx="508" cy="344" r="9"/><circle cx="486" cy="314" r="6"/>
+            <circle cx="298" cy="332" r="7"/><circle cx="440" cy="330" r="7"/>
+            <circle cx="366" cy="308" r="5"/>
+        </g>
+
+        <!-- ondas de choque debaixo d'água + peixe fugindo -->
+        <g stroke="#bfe4fb" stroke-width="3" fill="none" opacity="0.85">
+            <path d="M296 470 A 90 60 0 0 0 476 470"/>
+            <path d="M272 510 A 120 84 0 0 0 500 510"/>
+            <path d="M248 552 A 150 108 0 0 0 524 552"/>
+        </g>
+        <text class="rot" x="520" y="322" font-size="17" style="fill:#e8a33a">RESPINGO</text>
+
+        <g transform="translate(560,600)">
+            <path d="M0 0 C 14 -14, 44 -14, 58 0 C 44 14, 14 14, 0 0 Z" fill="#ffd166"/>
+            <path d="M58 0 L 76 -12 L 76 12 Z" fill="#ffd166"/>
+            <circle cx="14" cy="-4" r="2.5" fill="#123a5c"/>
+        </g>
+        <text class="rotp" x="598" y="654" style="fill:#ffd166" text-anchor="middle">o peixe sente e foge</text>
+    </g>
+
+    <!-- ══ Direita: bico afilado — fende a água ═══════════════════════════ -->
+    <g>
+        <text class="rot" x="760" y="140" font-size="20" style="fill:#1f7a3d">BICO AFILADO</text>
+        <text class="rotp" x="760" y="162">fende a água, abrindo-a devagar para os lados</text>
+
+        <g transform="translate(955,338) rotate(38)">
+            <use href="#passaro"/>
+            <!-- bico longo, fino, em cunha -->
+            <path d="M36 -11 L 150 0 L 36 11 Z" fill="#2b2b2b"/>
+        </g>
+
+        <!-- entrada limpa: só um V fino na superfície -->
+        <g stroke="#eaf7ff" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.9">
+            <path d="M1054 430 C 1050 414, 1046 406, 1040 398"/>
+            <path d="M1092 430 C 1096 414, 1100 406, 1106 398"/>
+        </g>
+
+        <!-- a cunha empurra a água só para os lados, sem onda de choque -->
+        <g stroke="#bfe4fb" stroke-width="3" fill="none" opacity="0.75">
+            <path d="M1064 460 C 1030 500, 1010 560, 1004 640"/>
+            <path d="M1084 460 C 1118 500, 1138 560, 1144 640"/>
+        </g>
+        <text class="rot" x="1150" y="336" font-size="17" style="fill:#1f7a3d">SEM RESPINGO</text>
+
+        <g transform="translate(1180,620)">
+            <path d="M0 0 C 14 -14, 44 -14, 58 0 C 44 14, 14 14, 0 0 Z" fill="#ffd166"/>
+            <path d="M58 0 L 76 -12 L 76 12 Z" fill="#ffd166"/>
+            <circle cx="14" cy="-4" r="2.5" fill="#123a5c"/>
+        </g>
+        <text class="rotp" x="1218" y="672" style="fill:#ffd166" text-anchor="middle">o peixe nem percebe</text>
+    </g>
+
+    <!-- ══ O desfecho: o trem-bala ════════════════════════════════════════ -->
+    <g transform="translate(60,600)">
+        <rect class="painel" x="0" y="0" width="330" height="150" rx="14"/>
+
+        <text class="rot" x="20" y="34" font-size="16">O TREM-BALA COPIOU</text>
+
+        <!-- nariz longo do Shinkansen, o mesmo perfil do bico -->
+        <g transform="translate(22,86)">
+            <path d="M0 0 C 44 -30, 96 -34, 150 -34 L 250 -34 L 250 12 L 0 12 Z"
+                  fill="#dceefb" stroke="#2a6ea8" stroke-width="2.5"/>
+            <path d="M150 -34 L 250 -34 L 250 -18 L 150 -18 Z" fill="#2a6ea8" opacity="0.25"/>
+            <circle cx="80" cy="12" r="7" fill="#2a6ea8"/>
+            <circle cx="210" cy="12" r="7" fill="#2a6ea8"/>
+        </g>
+        <text class="rotp" x="20" y="130">o mesmo perfil, contra o estrondo nos túneis</text>
+    </g>
+
+    <text class="rotp" x="1354" y="775" text-anchor="end" font-size="15" style="fill:#eaf7ff">
+        A cunha longa abre o caminho aos poucos: menos onda, menos ruído, menos energia perdida.
+    </text>
+</svg>
