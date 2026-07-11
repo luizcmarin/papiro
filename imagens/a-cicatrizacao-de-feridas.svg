@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Cicatrização de Feridas — quatro fases, em ordem</title>
+    <desc id="desc">Corte da pele com um ferimento em V. Em segundos, os vasos se contraem e as
+        plaquetas selam o corte com um coágulo. Em horas, os vasos dilatam e os glóbulos de defesa
+        chegam para limpar a área. Em dias, células novas preenchem o vão, vasinhos brotam e as
+        bordas se aproximam. Em semanas, as fibras são trocadas por outras mais fortes — e fica a
+        cicatriz.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#fdf1ec"/>
+            <stop offset="1" stop-color="#f2dbd3"/>
+        </linearGradient>
+
+        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+
+        <!-- o corte da pele, sem a ferida: as três camadas -->
+        <g id="pele">
+            <rect x="0" y="0" width="300" height="24" fill="#f2c4ad" stroke="#c88f78" stroke-width="1.5"/>
+            <rect x="0" y="24" width="300" height="92" fill="#e6a094" stroke="#c88f78" stroke-width="1.5"/>
+            <rect x="0" y="116" width="300" height="52" fill="#f3dda6" stroke="#c9b276" stroke-width="1.5"/>
+        </g>
+    </defs>
+
+    <style>
+        .cab  { fill:#5a2530; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#8c3a45; font-size:18px; font-weight:700; }
+        .rotp { fill:#a4746f; font-size:14px; }
+        .painel { fill:#fffaf8; stroke:#dda99e; stroke-width:2; }
+        .quadro { fill:#fff5f1; stroke:#dda99e; stroke-width:1.5; }
+        .num  { font-size:15px; font-weight:800; fill:#ffffff; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">A CICATRIZAÇÃO DE FERIDAS</text>
+    <text class="rotp" x="46" y="84" font-size="17">Um corte se fecha sozinho — e as quatro fases acontecem sempre na mesma ordem, sem ninguém mandar.</text>
+
+    <!-- ══ As quatro fases ════════════════════════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="1308" height="380" rx="16"/>
+
+        <!-- FASE 1 — HEMOSTASIA -->
+        <g transform="translate(24,24)">
+            <rect class="quadro" x="0" y="0" width="300" height="332" rx="12"/>
+            <circle cx="26" cy="28" r="14" fill="#c0392b"/>
+            <text class="num" x="26" y="34" text-anchor="middle">1</text>
+            <text class="rot" x="50" y="34" font-size="16" style="fill:#c0392b">Hemostasia</text>
+            <text class="rotp" x="50" y="54" font-size="13">em segundos</text>
+
+            <g transform="translate(0,84)">
+                <use href="#pele"/>
+                <!-- os vasos, contraídos -->
+                <g stroke="#c0392b" stroke-width="2.5" fill="none">
+                    <path d="M18 74 H 108"/>
+                    <path d="M192 74 H 282"/>
+                    <path d="M40 100 H 110"/>
+                    <path d="M190 100 H 260"/>
+                </g>
+                <!-- a ferida em V, selada pelo coágulo -->
+                <path d="M120 0 L 180 0 L 150 96 Z" fill="#8e2130" stroke="#5a2530" stroke-width="2"/>
+                <!-- as plaquetas, formando a rolha -->
+                <g fill="#f0c34a">
+                    <circle cx="150" cy="14" r="5"/><circle cx="136" cy="24" r="5"/><circle cx="164" cy="24" r="5"/>
+                    <circle cx="146" cy="40" r="5"/><circle cx="158" cy="52" r="5"/><circle cx="142" cy="64" r="4"/>
+                </g>
+                <path d="M212 14 L 180 14" stroke="#8c3a45" stroke-width="1.5" fill="none" marker-end="url(#s)"/>
+                <text class="rotp" x="218" y="18" font-size="12" style="fill:#5a2530">o coágulo</text>
+            </g>
+
+            <text class="rotp" x="18" y="308" font-size="13">Os vasos se apertam e as plaquetas</text>
+            <text class="rotp" x="18" y="326" font-size="13">selam o rombo. O sangue para.</text>
+        </g>
+
+        <!-- FASE 2 — INFLAMAÇÃO -->
+        <g transform="translate(344,24)">
+            <rect class="quadro" x="0" y="0" width="300" height="332" rx="12"/>
+            <circle cx="26" cy="28" r="14" fill="#e07a2f"/>
+            <text class="num" x="26" y="34" text-anchor="middle">2</text>
+            <text class="rot" x="50" y="34" font-size="16" style="fill:#c26a20">Inflamação</text>
+            <text class="rotp" x="50" y="54" font-size="13">em horas</text>
+
+            <g transform="translate(0,84)">
+                <use href="#pele"/>
+                <!-- os vasos, agora dilatados -->
+                <g stroke="#c0392b" stroke-width="6" fill="none">
+                    <path d="M18 74 H 108"/>
+                    <path d="M192 74 H 282"/>
+                    <path d="M40 100 H 110"/>
+                    <path d="M190 100 H 260"/>
+                </g>
+                <!-- o inchaço em volta da ferida -->
+                <path d="M96 0 L 204 0 L 150 108 Z" fill="#f6b98f" opacity="0.55"/>
+                <path d="M120 0 L 180 0 L 150 96 Z" fill="#8e2130" stroke="#5a2530" stroke-width="2"/>
+                <!-- os glóbulos de defesa, chegando -->
+                <g fill="#ffffff" stroke="#7a5aa8" stroke-width="2">
+                    <circle cx="104" cy="46" r="9"/><circle cx="196" cy="38" r="9"/>
+                    <circle cx="118" cy="80" r="9"/><circle cx="186" cy="76" r="9"/>
+                </g>
+                <g stroke="#7a5aa8" stroke-width="2" fill="none">
+                    <path d="M76 60 L 96 50" marker-end="url(#s)"/>
+                    <path d="M224 52 L 206 42" marker-end="url(#s)"/>
+                </g>
+            </g>
+
+            <text class="rotp" x="18" y="308" font-size="13">Os vasos abrem, a área incha e os</text>
+            <text class="rotp" x="18" y="326" font-size="13">glóbulos de defesa limpam tudo.</text>
+        </g>
+
+        <!-- FASE 3 — PROLIFERAÇÃO -->
+        <g transform="translate(664,24)">
+            <rect class="quadro" x="0" y="0" width="300" height="332" rx="12"/>
+            <circle cx="26" cy="28" r="14" fill="#2f8f5c"/>
+            <text class="num" x="26" y="34" text-anchor="middle">3</text>
+            <text class="rot" x="50" y="34" font-size="16" style="fill:#1f7a3d">Proliferação</text>
+            <text class="rotp" x="50" y="54" font-size="13">de 2 dias a 2 semanas</text>
+
+            <g transform="translate(0,84)">
+                <use href="#pele"/>
+                <g stroke="#c0392b" stroke-width="3.5" fill="none">
+                    <path d="M18 74 H 118"/>
+                    <path d="M182 74 H 282"/>
+                    <path d="M40 100 H 120"/>
+                    <path d="M180 100 H 260"/>
+                </g>
+                <!-- a ferida, mais estreita, cheia de tecido novo -->
+                <path d="M132 0 L 168 0 L 150 78 Z" fill="#e8798c" stroke="#b8506a" stroke-width="2"/>
+                <!-- os vasinhos novos, brotando para dentro -->
+                <g stroke="#c0392b" stroke-width="2" fill="none">
+                    <path d="M118 70 C 132 62, 140 50, 144 38"/>
+                    <path d="M182 70 C 168 62, 160 50, 156 38"/>
+                    <path d="M124 96 C 138 84, 146 70, 148 58"/>
+                </g>
+                <!-- as fibras novas, puxando as bordas -->
+                <g stroke="#8c3a45" stroke-width="2" fill="none" stroke-dasharray="4 4">
+                    <path d="M104 12 H 130"/>
+                    <path d="M196 12 H 170"/>
+                </g>
+                <g stroke="#1f7a3d" stroke-width="2.5" fill="none">
+                    <path d="M92 -14 L 118 -14" marker-end="url(#s)"/>
+                    <path d="M208 -14 L 182 -14" marker-end="url(#s)"/>
+                </g>
+            </g>
+
+            <text class="rotp" x="18" y="308" font-size="13">Tecido novo enche o vão, vasinhos</text>
+            <text class="rotp" x="18" y="326" font-size="13">brotam e as bordas se aproximam.</text>
+        </g>
+
+        <!-- FASE 4 — REMODELAÇÃO -->
+        <g transform="translate(984,24)">
+            <rect class="quadro" x="0" y="0" width="300" height="332" rx="12" stroke="#2f8f5c" stroke-width="2"/>
+            <circle cx="26" cy="28" r="14" fill="#5d7fa8"/>
+            <text class="num" x="26" y="34" text-anchor="middle">4</text>
+            <text class="rot" x="50" y="34" font-size="16" style="fill:#40618a">Remodelação</text>
+            <text class="rotp" x="50" y="54" font-size="13">de semanas a meses</text>
+
+            <g transform="translate(0,84)">
+                <use href="#pele"/>
+                <g stroke="#c0392b" stroke-width="2.5" fill="none">
+                    <path d="M18 74 H 128"/>
+                    <path d="M172 74 H 282"/>
+                    <path d="M40 100 H 130"/>
+                    <path d="M170 100 H 260"/>
+                </g>
+                <!-- a cicatriz: a pele fechada, com a marca -->
+                <path d="M144 0 L 156 0 L 150 60 Z" fill="#f7ded2" stroke="#d3a08f" stroke-width="2"/>
+                <path d="M150 -2 V 22" stroke="#d3a08f" stroke-width="3"/>
+                <!-- as fibras, agora alinhadas e fortes -->
+                <g stroke="#b8846f" stroke-width="2" fill="none">
+                    <path d="M112 40 H 188"/>
+                    <path d="M108 56 H 192"/>
+                    <path d="M112 72 H 188"/>
+                </g>
+                <text class="rotp" x="196" y="14" font-size="12" style="fill:#40618a">a cicatriz</text>
+            </g>
+
+            <text class="rotp" x="18" y="308" font-size="13">As fibras são trocadas por outras</text>
+            <text class="rotp" x="18" y="326" font-size="13">mais fortes. Fica a marca.</text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé: a linha do tempo e o número ════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">A ORDEM NUNCA SE INVERTE</text>
+
+        <!-- a linha do tempo -->
+        <g transform="translate(30,74)">
+            <path d="M0 20 H 860" stroke="#dda99e" stroke-width="4"/>
+            <g>
+                <circle cx="40" cy="20" r="10" fill="#c0392b"/>
+                <text class="rotp" x="40" y="52" text-anchor="middle" font-size="13">segundos</text>
+                <text class="rotp" x="40" y="0" text-anchor="middle" font-size="13" style="fill:#c0392b">coágulo</text>
+
+                <circle cx="240" cy="20" r="10" fill="#e07a2f"/>
+                <text class="rotp" x="240" y="52" text-anchor="middle" font-size="13">horas</text>
+                <text class="rotp" x="240" y="0" text-anchor="middle" font-size="13" style="fill:#c26a20">limpeza</text>
+
+                <circle cx="520" cy="20" r="10" fill="#2f8f5c"/>
+                <text class="rotp" x="520" y="52" text-anchor="middle" font-size="13">dias a semanas</text>
+                <text class="rotp" x="520" y="0" text-anchor="middle" font-size="13" style="fill:#1f7a3d">tecido novo</text>
+
+                <circle cx="820" cy="20" r="10" fill="#5d7fa8"/>
+                <text class="rotp" x="820" y="52" text-anchor="middle" font-size="13">meses</text>
+                <text class="rotp" x="820" y="0" text-anchor="middle" font-size="13" style="fill:#40618a">reforço</text>
+            </g>
+            <text class="rotp" x="0" y="96" font-size="13" font-style="italic">
+                Pule uma fase, ou troque a ordem, e a ferida não fecha: infecciona, ou nunca cria pele nova.
+            </text>
+        </g>
+
+        <!-- o número -->
+        <g transform="translate(946,64)">
+            <rect x="0" y="0" width="332" height="118" rx="12" fill="#fdeae4" stroke="#c0392b" stroke-width="1.5"/>
+            <text class="cab" x="20" y="46" font-size="26" style="fill:#c0392b">100 000 km</text>
+            <text class="rotp" x="20" y="74">de vasos sanguíneos em você —</text>
+            <text class="rotp" x="20" y="98">e eles estancam e consertam sozinhos</text>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        Duas voltas e meia na Terra em canos que se remendam por conta própria, sem nenhum encanador.
+    </text>
+</svg>

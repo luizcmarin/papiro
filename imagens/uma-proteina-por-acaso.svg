@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">Uma Proteína por Acaso? — a conta que não fecha</title>
+    <desc id="desc">Uma proteína é uma cadeia de aminoácidos numa ordem exata: troque a ordem e a
+        máquina não funciona. Para o acaso montar uma proteína pequena, de cerca de 150
+        aminoácidos, ele teria de acertar, em cada posição, o aminoácido certo entre 20 tipos e
+        ainda na forma canhota. Isso dá cerca de uma chance em dez elevado a 240 — enquanto o
+        universo inteiro, com todos os seus átomos desde o Big Bang, mal chegaria a dez elevado
+        a 100 tentativas.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#161d3a"/>
+            <stop offset="1" stop-color="#05070f"/>
+        </linearGradient>
+        <linearGradient id="conta" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffe9a8"/>
+            <stop offset="1" stop-color="#e8b84b"/>
+        </linearGradient>
+
+        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#eef2ff; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#d3daf2; font-size:18px; font-weight:700; }
+        .rotp { fill:#8f97b8; font-size:14px; }
+        .painel { fill:#111731; stroke:#3d4a80; stroke-width:2; }
+        .aa   { font-size:14px; font-weight:800; fill:#2a1f00; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+    <!-- umas estrelas, ao fundo -->
+    <g fill="#8f97b8" opacity="0.5">
+        <circle cx="1180" cy="70" r="1.6"/><circle cx="1290" cy="150" r="1.2"/><circle cx="1340" cy="60" r="1.8"/>
+        <circle cx="240" cy="742" r="1.4"/><circle cx="700" cy="756" r="1.2"/><circle cx="1120" cy="762" r="1.6"/>
+        <circle cx="60" cy="640" r="1.2"/><circle cx="1360" cy="700" r="1.4"/>
+    </g>
+
+    <text class="cab" x="46" y="54">UMA PROTEÍNA POR ACASO?</text>
+    <text class="rotp" x="46" y="84" font-size="17">Não basta ter as peças: é preciso acertar a ordem — e a ordem é longa.</text>
+
+    <!-- ══ Esquerda: a ordem exata ════════════════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="640" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">A ORDEM É A MÁQUINA</text>
+        <text class="rotp" x="24" y="60">uma proteína pequena tem cerca de 150 aminoácidos, nesta ordem e em nenhuma outra</text>
+
+        <!-- a cadeia certa -->
+        <g transform="translate(30,98)">
+            <path d="M20 0 H 540" stroke="#3d4a80" stroke-width="4"/>
+            <g>
+                <g transform="translate(20,0)"><circle r="17" fill="url(#conta)"/><text class="aa" y="5" text-anchor="middle">M</text></g>
+                <g transform="translate(64,0)"><circle r="17" fill="url(#conta)"/><text class="aa" y="5" text-anchor="middle">A</text></g>
+                <g transform="translate(108,0)"><circle r="17" fill="url(#conta)"/><text class="aa" y="5" text-anchor="middle">K</text></g>
+                <g transform="translate(152,0)"><circle r="17" fill="url(#conta)"/><text class="aa" y="5" text-anchor="middle">V</text></g>
+                <g transform="translate(196,0)"><circle r="17" fill="url(#conta)"/><text class="aa" y="5" text-anchor="middle">L</text></g>
+                <g transform="translate(240,0)"><circle r="17" fill="url(#conta)"/><text class="aa" y="5" text-anchor="middle">S</text></g>
+                <g transform="translate(284,0)"><circle r="17" fill="url(#conta)"/><text class="aa" y="5" text-anchor="middle">G</text></g>
+                <g transform="translate(328,0)"><circle r="17" fill="url(#conta)"/><text class="aa" y="5" text-anchor="middle">I</text></g>
+                <g transform="translate(372,0)"><circle r="17" fill="url(#conta)"/><text class="aa" y="5" text-anchor="middle">T</text></g>
+                <g transform="translate(416,0)"><circle r="17" fill="url(#conta)"/><text class="aa" y="5" text-anchor="middle">P</text></g>
+                <g transform="translate(460,0)"><circle r="17" fill="url(#conta)"/><text class="aa" y="5" text-anchor="middle">D</text></g>
+                <g transform="translate(504,0)"><circle r="17" fill="url(#conta)"/><text class="aa" y="5" text-anchor="middle">E</text></g>
+                <text class="rotp" x="540" y="6">…</text>
+            </g>
+            <text class="rotp" x="20" y="42" style="fill:#7bd389">a ordem certa → a proteína se dobra e funciona</text>
+        </g>
+
+        <!-- as duas versões, lado a lado -->
+        <g transform="translate(24,170)">
+            <rect x="0" y="0" width="296" height="192" rx="12" fill="#0c1226" stroke="#7bd389" stroke-width="2"/>
+            <text class="rot" x="18" y="30" font-size="16" style="fill:#7bd389">a ordem certa</text>
+
+            <g transform="translate(148,110) scale(0.86)">
+                <path d="M-56 0 C -60 -44, -20 -66, 12 -52 C 44 -38, 56 -4, 40 26
+                         C 24 56, -16 60, -40 40 C -52 30, -54 16, -56 0 Z"
+                      fill="#2b3a72" stroke="#7bd389" stroke-width="2.5"/>
+                <path d="M6 -50 C 14 -30, -2 -22, 6 -2" fill="none" stroke="#7bd389" stroke-width="3"/>
+                <circle cx="-6" cy="-26" r="9" fill="#7bd389"/>
+            </g>
+            <text class="rotp" x="148" y="176" text-anchor="middle" style="fill:#7bd389" font-weight="700">
+                dobra certo e funciona
+            </text>
+        </g>
+
+        <g transform="translate(330,170)">
+            <rect x="0" y="0" width="286" height="192" rx="12" fill="#0c1226" stroke="#ff6b6b" stroke-width="2"/>
+            <text class="rot" x="18" y="30" font-size="16" style="fill:#ff6b6b">duas letras trocadas</text>
+
+            <!-- a cadeia, com as duas fora do lugar -->
+            <g transform="translate(24,58)">
+                <path d="M12 0 H 238" stroke="#3d4a80" stroke-width="3"/>
+                <g transform="translate(16,0)"><circle r="13" fill="url(#conta)"/><text class="aa" y="5" text-anchor="middle">M</text></g>
+                <g transform="translate(60,0)"><circle r="13" fill="#c0392b"/><text class="aa" y="5" text-anchor="middle" fill="#ffffff">V</text></g>
+                <g transform="translate(104,0)"><circle r="13" fill="url(#conta)"/><text class="aa" y="5" text-anchor="middle">K</text></g>
+                <g transform="translate(148,0)"><circle r="13" fill="#c0392b"/><text class="aa" y="5" text-anchor="middle" fill="#ffffff">A</text></g>
+                <g transform="translate(192,0)"><circle r="13" fill="url(#conta)"/><text class="aa" y="5" text-anchor="middle">L</text></g>
+                <g transform="translate(232,0)"><circle r="13" fill="url(#conta)"/><text class="aa" y="5" text-anchor="middle">S</text></g>
+            </g>
+
+            <g transform="translate(143,128) scale(0.68)">
+                <path d="M-58 6 C -46 -36, -6 -60, 26 -40 C 58 -20, 34 8, 48 32
+                         C 62 56, -6 66, -34 46 C -50 34, -62 24, -58 6 Z"
+                      fill="#3a1f2c" stroke="#ff6b6b" stroke-width="2.5"/>
+            </g>
+            <text class="rotp" x="143" y="176" text-anchor="middle" style="fill:#ff6b6b" font-weight="700">
+                não encaixa em nada
+            </text>
+        </g>
+    </g>
+
+    <!-- ══ Direita: o que o acaso precisa acertar ═════════════════════════ -->
+    <g transform="translate(706,112)">
+        <rect class="painel" x="0" y="0" width="648" height="380" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#ffd24d">O QUE O ACASO PRECISA ACERTAR — EM CADA POSIÇÃO</text>
+
+        <!-- 1: o aminoácido certo entre 20 -->
+        <g transform="translate(24,66)">
+            <rect x="0" y="0" width="290" height="168" rx="12" fill="#0c1226" stroke="#3d4a80" stroke-width="1.5"/>
+            <text class="rot" x="18" y="30" font-size="16">1 · o aminoácido certo</text>
+            <text class="rotp" x="18" y="52" font-size="13">a vida usa 20 tipos; só um serve ali</text>
+            <g transform="translate(24,80)">
+                <g fill="#2b3a72" stroke="#3d4a80" stroke-width="1">
+                    <circle cx="0" cy="0" r="9"/><circle cx="24" cy="0" r="9"/><circle cx="48" cy="0" r="9"/>
+                    <circle cx="72" cy="0" r="9"/><circle cx="96" cy="0" r="9"/><circle cx="120" cy="0" r="9"/>
+                    <circle cx="144" cy="0" r="9"/><circle cx="168" cy="0" r="9"/><circle cx="192" cy="0" r="9"/>
+                    <circle cx="216" cy="0" r="9"/>
+                    <circle cx="0" cy="26" r="9"/><circle cx="24" cy="26" r="9"/><circle cx="48" cy="26" r="9"/>
+                    <circle cx="96" cy="26" r="9"/><circle cx="120" cy="26" r="9"/><circle cx="144" cy="26" r="9"/>
+                    <circle cx="168" cy="26" r="9"/><circle cx="192" cy="26" r="9"/><circle cx="216" cy="26" r="9"/>
+                </g>
+                <circle cx="72" cy="26" r="11" fill="url(#conta)"/>
+            </g>
+            <text class="rot" x="18" y="152" font-size="17" style="fill:#ffd24d">1 chance em 20</text>
+        </g>
+
+        <!-- 2: a forma canhota -->
+        <g transform="translate(334,66)">
+            <rect x="0" y="0" width="290" height="168" rx="12" fill="#0c1226" stroke="#3d4a80" stroke-width="1.5"/>
+            <text class="rot" x="18" y="30" font-size="16">2 · e na forma canhota</text>
+            <text class="rotp" x="18" y="52" font-size="13">nascem as duas; a vida só aceita uma</text>
+
+            <!-- as duas mãos, espelhadas -->
+            <g transform="translate(74,110)">
+                <path d="M-18 20 L -18 -10 C -18 -22, 0 -22, 0 -10 L 0 -26 C 0 -38, 16 -38, 16 -26 L 16 4
+                         C 16 18, 6 24, -4 24 Z" fill="#7bd389" stroke="#a8e8b8" stroke-width="1.5"/>
+                <text class="rotp" x="0" y="44" text-anchor="middle" font-size="13" style="fill:#7bd389">canhota (L)</text>
+            </g>
+            <g transform="translate(180,110) scale(-1,1)">
+                <path d="M-18 20 L -18 -10 C -18 -22, 0 -22, 0 -10 L 0 -26 C 0 -38, 16 -38, 16 -26 L 16 4
+                         C 16 18, 6 24, -4 24 Z" fill="#3a1f2c" stroke="#ff6b6b" stroke-width="1.5"/>
+            </g>
+            <text class="rotp" x="180" y="154" text-anchor="middle" font-size="13" style="fill:#ff6b6b">destra (D)</text>
+
+            <text class="rot" x="272" y="112" font-size="17" style="fill:#ffd24d" text-anchor="end">1 em 2</text>
+        </g>
+
+        <!-- a conta -->
+        <g transform="translate(24,254)">
+            <rect x="0" y="0" width="600" height="106" rx="12" fill="#0c1226" stroke="#ffd24d" stroke-width="2"/>
+            <text class="rotp" x="20" y="30">Por posição: 1 em 20 × 1 em 2 =</text>
+            <text class="rot" x="292" y="30" font-size="16" style="fill:#ffd24d">1 em 40</text>
+
+            <text class="rotp" x="20" y="56">Agora repita isso 150 vezes seguidas, sem errar nenhuma:</text>
+
+            <text class="cab" x="20" y="94" font-size="24" style="fill:#ffd24d">
+                1 em 10<tspan font-size="0.6em" dy="-9">240</tspan><tspan dy="9">  —  um 1 com 240 zeros</tspan>
+            </text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé: o tamanho do número ════════════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">E SE O UNIVERSO INTEIRO TENTASSE?</text>
+        <text class="rotp" x="24" y="60">dando ao acaso tudo o que existe: cada átomo, sorteando mil vezes por segundo, desde o Big Bang</text>
+
+        <g transform="translate(30,86)">
+            <!-- as três parcelas -->
+            <g>
+                <rect x="0" y="0" width="230" height="86" rx="10" fill="#0c1226" stroke="#3d4a80" stroke-width="1.5"/>
+                <text class="rot" x="18" y="34" font-size="19">10<tspan font-size="0.62em" dy="-8">80</tspan></text>
+                <text class="rotp" x="18" y="60" font-size="13">átomos no universo</text>
+                <text class="rotp" x="18" y="78" font-size="13">observável</text>
+            </g>
+            <text class="rot" x="248" y="52" font-size="20">×</text>
+
+            <g transform="translate(272,0)">
+                <rect x="0" y="0" width="230" height="86" rx="10" fill="#0c1226" stroke="#3d4a80" stroke-width="1.5"/>
+                <text class="rot" x="18" y="34" font-size="19">10<tspan font-size="0.62em" dy="-8">17</tspan></text>
+                <text class="rotp" x="18" y="60" font-size="13">segundos desde</text>
+                <text class="rotp" x="18" y="78" font-size="13">o Big Bang</text>
+            </g>
+            <text class="rot" x="520" y="52" font-size="20">×</text>
+
+            <g transform="translate(544,0)">
+                <rect x="0" y="0" width="230" height="86" rx="10" fill="#0c1226" stroke="#3d4a80" stroke-width="1.5"/>
+                <text class="rot" x="18" y="34" font-size="19">10<tspan font-size="0.62em" dy="-8">3</tspan></text>
+                <text class="rotp" x="18" y="60" font-size="13">sorteios por</text>
+                <text class="rotp" x="18" y="78" font-size="13">segundo, cada um</text>
+            </g>
+            <text class="rot" x="792" y="52" font-size="20">=</text>
+
+            <g transform="translate(816,0)">
+                <rect x="0" y="0" width="230" height="86" rx="10" fill="#12261c" stroke="#7bd389" stroke-width="2"/>
+                <text class="rot" x="18" y="34" font-size="19" style="fill:#7bd389">10<tspan font-size="0.62em" dy="-8">100</tspan></text>
+                <text class="rotp" x="18" y="60" font-size="13" style="fill:#7bd389">tentativas — tudo o</text>
+                <text class="rotp" x="18" y="78" font-size="13" style="fill:#7bd389">que o acaso teria</text>
+            </g>
+
+            <g transform="translate(1064,0)">
+                <rect x="0" y="0" width="214" height="86" rx="10" fill="#2c1220" stroke="#ff6b6b" stroke-width="2"/>
+                <text class="rot" x="18" y="34" font-size="17" style="fill:#ff6b6b">faltam 10<tspan font-size="0.62em" dy="-8">140</tspan></text>
+                <text class="rotp" x="18" y="60" font-size="13" style="fill:#ff6b6b">e ainda seria preciso</text>
+                <text class="rotp" x="18" y="78" font-size="13" style="fill:#ff6b6b">acertar de primeira</text>
+            </g>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        E uma proteína sozinha não é vida: a célula mais simples precisa de centenas delas, todas certas, ao mesmo tempo.
+    </text>
+</svg>

@@ -1,0 +1,199 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Língua do Beija-Flor — uma armadilha elástica, não um canudo</title>
+    <desc id="desc">A ponta da língua do beija-flor é dividida em duas lâminas. Ela entra fechada na
+        flor, abre-se dentro do néctar e, ao ser puxada, as lâminas se fecham sozinhas sobre o
+        líquido e o prendem. Não há sucção: a captura é elástica, de graça. E existe um ritmo
+        ótimo de lambidas por segundo: devagar demais desperdiça tempo, rápido demais não deixa
+        a língua encher.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f4f8ed"/>
+            <stop offset="1" stop-color="#dcead1"/>
+        </linearGradient>
+        <linearGradient id="nectar" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#8fd6f2"/>
+            <stop offset="1" stop-color="#4aa8d8"/>
+        </linearGradient>
+
+        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+        <marker id="sp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#20401f; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#376b34; font-size:18px; font-weight:700; }
+        .rotp { fill:#6a8a68; font-size:14px; }
+        .painel { fill:#ffffff; stroke:#a9c9a4; stroke-width:2; }
+        .quadro { fill:#f2f8ee; stroke:#a9c9a4; stroke-width:1.5; }
+        .lamina { fill:#f0a8bd; stroke:#c26383; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">A LÍNGUA DO BEIJA-FLOR</text>
+    <text class="rotp" x="46" y="84" font-size="17">Ele lambe o néctar quinze vezes por segundo — e não suga nada: a língua fecha sozinha.</text>
+
+    <!-- ══ Esquerda: os três quadros ══════════════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="900" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">O QUE ACONTECE EM UM CENTÉSIMO DE SEGUNDO</text>
+        <text class="rotp" x="24" y="60">a ponta da língua é dividida em duas lâminas</text>
+
+        <!-- QUADRO 1: entra fechada -->
+        <g transform="translate(24,82)">
+            <rect class="quadro" x="0" y="0" width="276" height="270" rx="12"/>
+            <circle cx="26" cy="26" r="14" fill="#376b34"/>
+            <text x="26" y="32" text-anchor="middle" font-size="15" font-weight="800" fill="#ffffff">1</text>
+            <text class="rot" x="50" y="32" font-size="16">Entra fechada</text>
+
+            <!-- o néctar, no fundo da flor -->
+            <path d="M40 190 H 236 V 244 H 40 Z" fill="url(#nectar)" opacity="0.55"/>
+            <path d="M40 190 H 236" stroke="#4aa8d8" stroke-width="2"/>
+            <text class="rotp" x="228" y="234" text-anchor="end" style="fill:#2b7fa8">o néctar</text>
+
+            <!-- a língua: as duas lâminas coladas, achatadas -->
+            <g transform="translate(138,60)">
+                <rect x="-6" y="0" width="12" height="96" rx="5" fill="#e8919f" stroke="#c26383" stroke-width="2"/>
+                <path d="M-6 96 L -5 158 L 5 158 L 6 96 Z" class="lamina"/>
+                <path d="M0 96 V 158" stroke="#c26383" stroke-width="1.5"/>
+            </g>
+            <text class="rotp" x="138" y="264" text-anchor="middle">nem toca no líquido ainda</text>
+        </g>
+
+        <!-- QUADRO 2: abre dentro do néctar -->
+        <g transform="translate(312,82)">
+            <rect class="quadro" x="0" y="0" width="276" height="270" rx="12"/>
+            <circle cx="26" cy="26" r="14" fill="#376b34"/>
+            <text x="26" y="32" text-anchor="middle" font-size="15" font-weight="800" fill="#ffffff">2</text>
+            <text class="rot" x="50" y="32" font-size="16">Abre no néctar</text>
+
+            <path d="M40 190 H 236 V 244 H 40 Z" fill="url(#nectar)" opacity="0.55"/>
+            <path d="M40 190 H 236" stroke="#4aa8d8" stroke-width="2"/>
+
+            <g transform="translate(138,60)">
+                <rect x="-6" y="0" width="12" height="96" rx="5" fill="#e8919f" stroke="#c26383" stroke-width="2"/>
+                <!-- as duas lâminas, abertas em V -->
+                <path d="M-4 98 C -20 120, -34 140, -38 164 L -22 168 C -18 144, -8 124, 0 108 Z" class="lamina"/>
+                <path d="M4 98 C 20 120, 34 140, 38 164 L 22 168 C 18 144, 8 124, 0 108 Z" class="lamina"/>
+                <!-- o néctar entrando entre elas -->
+                <path d="M-20 150 L 0 132 L 20 150" fill="none" stroke="#2b7fa8" stroke-width="2.5"
+                      marker-end="url(#sp)"/>
+                <path d="M-20 168 L -2 148" fill="none" stroke="#2b7fa8" stroke-width="2.5" marker-end="url(#sp)"/>
+                <path d="M20 168 L 2 148" fill="none" stroke="#2b7fa8" stroke-width="2.5" marker-end="url(#sp)"/>
+            </g>
+            <text class="rotp" x="138" y="264" text-anchor="middle" style="fill:#2b7fa8">o líquido entra entre as lâminas</text>
+        </g>
+
+        <!-- QUADRO 3: fecha e prende -->
+        <g transform="translate(600,82)">
+            <rect class="quadro" x="0" y="0" width="276" height="270" rx="12" stroke="#2f8f5c" stroke-width="2"/>
+            <circle cx="26" cy="26" r="14" fill="#2f8f5c"/>
+            <text x="26" y="32" text-anchor="middle" font-size="15" font-weight="800" fill="#ffffff">3</text>
+            <text class="rot" x="50" y="32" font-size="16" style="fill:#1f7a3d">Fecha e prende</text>
+
+            <path d="M40 190 H 236 V 244 H 40 Z" fill="url(#nectar)" opacity="0.35"/>
+            <path d="M40 190 H 236" stroke="#4aa8d8" stroke-width="2"/>
+
+            <g transform="translate(138,44)">
+                <rect x="-6" y="0" width="12" height="96" rx="5" fill="#e8919f" stroke="#c26383" stroke-width="2"/>
+                <!-- as lâminas fechadas, com o néctar preso dentro -->
+                <path d="M-5 96 C -18 112, -22 140, -14 160 L -4 152 C -10 134, -8 116, -1 102 Z" class="lamina"/>
+                <path d="M5 96 C 18 112, 22 140, 14 160 L 4 152 C 10 134, 8 116, 1 102 Z" class="lamina"/>
+                <path d="M-4 110 C -12 130, -10 148, -2 158 C 6 148, 8 130, 0 110 Z" fill="url(#nectar)"/>
+            </g>
+
+            <!-- a língua sobe, levando o néctar -->
+            <path d="M196 176 L 196 96" stroke="#2f8f5c" stroke-width="3" fill="none" marker-end="url(#s)"/>
+            <text class="rotp" x="206" y="140" style="fill:#1f7a3d">e sobe cheia</text>
+
+            <text class="rotp" x="138" y="264" text-anchor="middle" style="fill:#1f7a3d">sem sugar: a lâmina fecha sozinha</text>
+        </g>
+    </g>
+
+    <!-- ══ Direita: canudo × armadilha ════════════════════════════════════ -->
+    <g transform="translate(966,112)">
+        <rect class="painel" x="0" y="0" width="388" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">POR QUE NÃO UM CANUDO?</text>
+
+        <g transform="translate(24,64)">
+            <rect x="0" y="0" width="340" height="140" rx="12" fill="#fdeee9" stroke="#c04a2e" stroke-width="1.5"/>
+            <text class="rot" x="18" y="30" font-size="16" style="fill:#c04a2e">O canudo</text>
+            <g transform="translate(56,96)">
+                <rect x="-14" y="-40" width="28" height="60" rx="4" fill="#e6ded6" stroke="#a08f80" stroke-width="2"/>
+                <path d="M0 20 V -34" stroke="#4aa8d8" stroke-width="6"/>
+                <path d="M0 -46 V -70" stroke="#c04a2e" stroke-width="3" fill="none" marker-end="url(#sp)"/>
+            </g>
+            <text class="rotp" x="110" y="80" style="fill:#c04a2e">precisa de sucção — e sugar</text>
+            <text class="rotp" x="110" y="102" style="fill:#c04a2e">custa energia a cada gole</text>
+            <text class="rotp" x="110" y="124" style="fill:#c04a2e">(quinze vezes por segundo!)</text>
+        </g>
+
+        <g transform="translate(24,224)">
+            <rect x="0" y="0" width="340" height="132" rx="12" fill="#eef7f0" stroke="#2f8f5c" stroke-width="2"/>
+            <text class="rot" x="18" y="30" font-size="16" style="fill:#1f7a3d">A armadilha elástica</text>
+            <g transform="translate(56,90)">
+                <path d="M-5 -40 C -18 -24, -22 4, -14 24 L -4 16 C -10 -2, -8 -20, -1 -34 Z" class="lamina"/>
+                <path d="M5 -40 C 18 -24, 22 4, 14 24 L 4 16 C 10 -2, 8 -20, 1 -34 Z" class="lamina"/>
+                <path d="M-4 -26 C -12 -6, -10 12, -2 22 C 6 12, 8 -6, 0 -26 Z" fill="url(#nectar)"/>
+            </g>
+            <text class="rotp" x="110" y="70" style="fill:#1f7a3d">a lâmina, que estava esticada,</text>
+            <text class="rotp" x="110" y="92" style="fill:#1f7a3d">volta à forma sozinha e captura</text>
+            <text class="rotp" x="110" y="114" style="fill:#1f7a3d">o néctar de graça</text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé: o ritmo certo ══════════════════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">EXISTE UM RITMO CERTO DE LAMBIDAS</text>
+
+        <!-- gráfico: néctar coletado × lambidas por segundo -->
+        <g transform="translate(80,76)">
+            <!-- eixos -->
+            <path d="M0 0 V 96 H 700" fill="none" stroke="#a9c9a4" stroke-width="2"/>
+            <text class="rotp" x="-14" y="8" text-anchor="end">muito</text>
+            <text class="rotp" x="-14" y="94" text-anchor="end">pouco</text>
+            <text class="rotp" x="-56" y="50" transform="rotate(-90,-56,50)" text-anchor="middle" font-weight="700">
+                néctar por minuto
+            </text>
+            <text class="rotp" x="350" y="120" text-anchor="middle" font-weight="700">lambidas por segundo</text>
+
+            <!-- a curva: sobe, tem um pico, e desce -->
+            <path d="M0 92 C 90 82, 170 34, 300 14 C 380 2, 420 2, 470 18 C 560 44, 620 80, 700 92"
+                  fill="none" stroke="#376b34" stroke-width="3.5"/>
+
+            <!-- o pico -->
+            <g>
+                <path d="M386 8 V 96" stroke="#2f8f5c" stroke-width="2" stroke-dasharray="6 5"/>
+                <circle cx="386" cy="8" r="8" fill="#2f8f5c"/>
+                <text class="rot" x="386" y="-14" text-anchor="middle" font-size="16" style="fill:#1f7a3d">
+                    cerca de 15 por segundo — o ponto certo
+                </text>
+            </g>
+
+            <text class="rotp" x="60" y="120" text-anchor="middle" style="fill:#c04a2e">devagar</text>
+            <text class="rotp" x="662" y="120" text-anchor="middle" style="fill:#c04a2e">rápido demais</text>
+        </g>
+
+        <!-- as duas beiradas explicadas -->
+        <g transform="translate(846,64)">
+            <rect x="0" y="0" width="432" height="56" rx="10" fill="#fdeee9" stroke="#c04a2e" stroke-width="1.5"/>
+            <text class="rotp" x="18" y="34" style="fill:#c04a2e">Devagar demais: perde tempo entre um gole e outro.</text>
+
+            <rect x="0" y="68" width="432" height="56" rx="10" fill="#fdeee9" stroke="#c04a2e" stroke-width="1.5"/>
+            <text class="rotp" x="18" y="102" style="fill:#c04a2e">Rápido demais: a lâmina não chega a encher.</text>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        Pairar no ar é o voo mais caro que existe: o beija-flor precisa comer o dia inteiro só para não cair.
+    </text>
+</svg>

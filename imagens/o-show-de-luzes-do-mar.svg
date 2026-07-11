@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">O Show de Luzes do Mar — a luz fria</title>
+    <desc id="desc">Na lâmpada de filamento, quase toda a energia vira calor e só uma pequena parte
+        vira luz. Na bioluminescência acontece o contrário: a reação química entrega quase tudo em
+        luz e quase nada em calor — é a luz fria. E o brilho tem de ser o certo: fraco demais não
+        atrai o plâncton; forte demais entrega a criatura ao predador.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#08243a"/>
+            <stop offset="1" stop-color="#02090f"/>
+        </linearGradient>
+        <radialGradient id="brilho" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#7ef0d8" stop-opacity="0.95"/>
+            <stop offset="1" stop-color="#7ef0d8" stop-opacity="0"/>
+        </radialGradient>
+
+        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#e6fbff; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#cfeef5; font-size:18px; font-weight:700; }
+        .rotp { fill:#84aebd; font-size:14px; }
+        .painel { fill:#0a2032; stroke:#2f6f8a; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">O SHOW DE LUZES DO MAR</text>
+    <text class="rotp" x="46" y="84" font-size="17">A lâmpada esquenta e ilumina de sobra. A água-viva ilumina — e não esquenta nada.</text>
+
+    <!-- ══ Esquerda: para onde vai a energia ══════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="812" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">DE CADA 100 DE ENERGIA, QUANTO VIRA LUZ</text>
+        <text class="rotp" x="24" y="60">a luz fria não queima — por isso a água-viva brilha colada na própria pele</text>
+
+        <!-- lâmpada de filamento -->
+        <g transform="translate(30,82)">
+            <text class="rot" x="0" y="16" font-size="16" style="fill:#ff8f6b">Lâmpada de filamento</text>
+            <rect x="0" y="30" width="740" height="38" rx="8" fill="#0a1622" stroke="#2f6f8a" stroke-width="1.5"/>
+            <rect x="2" y="32" width="35" height="34" rx="6" fill="#ffd24d"/>
+            <rect x="37" y="32" width="701" height="34" rx="6" fill="#c0392b" opacity="0.75"/>
+            <text class="rotp" x="0" y="90" style="fill:#ffd24d">5 de luz</text>
+            <text class="rotp" x="388" y="90" text-anchor="middle" style="fill:#ff8f6b">95 de calor — energia jogada fora</text>
+        </g>
+
+        <!-- LED -->
+        <g transform="translate(30,178)">
+            <text class="rot" x="0" y="16" font-size="16" style="fill:#ffd24d">LED moderno</text>
+            <rect x="0" y="30" width="740" height="38" rx="8" fill="#0a1622" stroke="#2f6f8a" stroke-width="1.5"/>
+            <rect x="2" y="32" width="294" height="34" rx="6" fill="#ffd24d"/>
+            <rect x="296" y="32" width="442" height="34" rx="6" fill="#c0392b" opacity="0.75"/>
+            <text class="rotp" x="0" y="90" style="fill:#ffd24d">40 de luz</text>
+            <text class="rotp" x="516" y="90" text-anchor="middle" style="fill:#ff8f6b">60 de calor</text>
+        </g>
+
+        <!-- bioluminescência -->
+        <g transform="translate(30,274)">
+            <text class="rot" x="0" y="16" font-size="16" style="fill:#7ef0d8">A água-viva — luz fria</text>
+            <rect x="0" y="30" width="740" height="38" rx="8" fill="#0a1622" stroke="#7ef0d8" stroke-width="2"/>
+            <rect x="2" y="32" width="707" height="34" rx="6" fill="#7ef0d8"/>
+            <rect x="709" y="32" width="29" height="34" rx="6" fill="#c0392b" opacity="0.75"/>
+            <text class="rotp" x="0" y="90" style="fill:#7ef0d8" font-weight="700">quase tudo vira luz — e quase nada vira calor</text>
+        </g>
+    </g>
+
+    <!-- ══ Direita: a reação ══════════════════════════════════════════════ -->
+    <g transform="translate(886,112)">
+        <rect class="painel" x="0" y="0" width="468" height="380" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#7ef0d8">DE ONDE VEM A LUZ</text>
+        <text class="rotp" x="24" y="60">não há filamento, nem fio, nem tomada</text>
+
+        <!-- a água-viva -->
+        <g transform="translate(234,166)">
+            <circle cx="0" cy="0" r="96" fill="url(#brilho)"/>
+            <path d="M-58 10 C -58 -34, -30 -58, 0 -58 C 30 -58, 58 -34, 58 10
+                     C 30 22, -30 22, -58 10 Z"
+                  fill="#1b5470" stroke="#7ef0d8" stroke-width="2.5"/>
+            <g stroke="#7ef0d8" stroke-width="2.5" fill="none" opacity="0.9">
+                <path d="M-40 16 C -44 40, -34 58, -44 76"/>
+                <path d="M-16 20 C -20 46, -8 62, -18 82"/>
+                <path d="M16 20 C 20 46, 8 62, 18 82"/>
+                <path d="M40 16 C 44 40, 34 58, 44 76"/>
+            </g>
+            <g fill="#bafaf0">
+                <circle cx="-30" cy="-20" r="4"/><circle cx="0" cy="-30" r="4"/><circle cx="30" cy="-20" r="4"/>
+            </g>
+        </g>
+
+        <!-- a receita -->
+        <g transform="translate(24,278)">
+            <rect x="0" y="0" width="420" height="82" rx="10" fill="#08182a" stroke="#2f6f8a" stroke-width="1.5"/>
+            <text class="rotp" x="18" y="30" style="fill:#cfeef5">
+                luciferina + oxigênio
+            </text>
+            <text class="rotp" x="180" y="30">— com a luciferase —</text>
+            <text class="rot" x="402" y="30" text-anchor="end" font-size="16" style="fill:#7ef0d8">luz</text>
+            <text class="rotp" x="18" y="56" font-size="13">
+                Uma reação química entrega a energia direto como luz:
+            </text>
+            <text class="rotp" x="18" y="74" font-size="13">
+                ela não passa pelo calor em nenhum momento.
+            </text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé: o brilho certo ═════════════════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">E O BRILHO TEM DE SER O CERTO</text>
+
+        <g transform="translate(30,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#08182a" stroke="#3d5a6b" stroke-width="1.5"/>
+            <circle cx="60" cy="60" r="22" fill="#7ef0d8" opacity="0.2"/>
+            <text class="rot" x="102" y="46" font-size="16" style="fill:#8aa8bd">Fraco demais</text>
+            <text class="rotp" x="102" y="74">o plâncton nem enxerga o brilho</text>
+            <text class="rotp" x="102" y="96">— e ninguém vem</text>
+        </g>
+
+        <g transform="translate(452,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#08182a" stroke="#7ef0d8" stroke-width="2"/>
+            <circle cx="60" cy="60" r="26" fill="url(#brilho)"/>
+            <circle cx="60" cy="60" r="12" fill="#7ef0d8"/>
+            <text class="rot" x="102" y="46" font-size="16" style="fill:#7ef0d8">O ponto certo</text>
+            <text class="rotp" x="102" y="74" style="fill:#7ef0d8">atrai o plâncton para perto</text>
+            <text class="rotp" x="102" y="96" style="fill:#7ef0d8">da boca — e só ele</text>
+        </g>
+
+        <g transform="translate(874,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#08182a" stroke="#ff8f6b" stroke-width="1.5"/>
+            <circle cx="60" cy="60" r="40" fill="#ff8f6b" opacity="0.25"/>
+            <circle cx="60" cy="60" r="18" fill="#ffd24d"/>
+            <text class="rot" x="122" y="46" font-size="16" style="fill:#ff8f6b">Forte demais</text>
+            <text class="rotp" x="122" y="74" style="fill:#ff8f6b">vira um letreiro no escuro:</text>
+            <text class="rotp" x="122" y="96" style="fill:#ff8f6b">o predador acha ela primeiro</text>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        No fundo do mar, onde o sol nunca chega, a maioria das criaturas acende a própria luz — e cada uma sabe a dose.
+    </text>
+</svg>

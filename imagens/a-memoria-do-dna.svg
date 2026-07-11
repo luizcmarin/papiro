@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Memória do DNA — o disco mais denso que se conhece</title>
+    <desc id="desc">Um disco rígido guarda algumas dezenas de gigabytes por grama de peso. Um grama de
+        DNA guarda centenas de milhões de gigabytes: milhões de vezes mais no mesmo peso. A
+        diferença é que o disco escreve em superfícies e o DNA escreve em moléculas — a informação
+        ocupa o volume inteiro, não só a casca. E o DNA ainda dura milhares de anos sem energia.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#131a36"/>
+            <stop offset="1" stop-color="#070a16"/>
+        </linearGradient>
+        <linearGradient id="tubo" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#63c7e8" stop-opacity="0.25"/>
+            <stop offset="1" stop-color="#63c7e8" stop-opacity="0.05"/>
+        </linearGradient>
+
+        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#eef1ff; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#d2d8f2; font-size:18px; font-weight:700; }
+        .rotp { fill:#8d95b8; font-size:14px; }
+        .painel { fill:#111731; stroke:#3c4880; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">A MEMÓRIA DO DNA</text>
+    <text class="rotp" x="46" y="84" font-size="17">Tudo o que a humanidade já escreveu, filmou e fotografou caberia num punhado de pó.</text>
+
+    <!-- ══ Esquerda: os dois jeitos de guardar ════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="812" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">A MESMA INFORMAÇÃO, GUARDADA DE DOIS JEITOS</text>
+
+        <!-- o data center -->
+        <g transform="translate(30,74)">
+            <rect x="0" y="0" width="376" height="276" rx="12" fill="#0b1026" stroke="#3c4880" stroke-width="1.5"/>
+            <text class="rot" x="18" y="32" font-size="16" style="fill:#ff8f6b">EM DISCOS</text>
+            <text class="rotp" x="18" y="54" font-size="13">a informação mora na superfície de um prato</text>
+
+            <!-- os racks -->
+            <g transform="translate(30,76)">
+                <g fill="#1c2450" stroke="#3c4880" stroke-width="1.5">
+                    <rect x="0" y="0" width="60" height="164" rx="4"/>
+                    <rect x="72" y="0" width="60" height="164" rx="4"/>
+                    <rect x="144" y="0" width="60" height="164" rx="4"/>
+                    <rect x="216" y="0" width="60" height="164" rx="4"/>
+                    <rect x="288" y="0" width="28" height="164" rx="4"/>
+                </g>
+                <g fill="#ff8f6b" opacity="0.75">
+                    <rect x="8" y="12" width="44" height="6" rx="3"/><rect x="8" y="30" width="44" height="6" rx="3"/>
+                    <rect x="8" y="48" width="44" height="6" rx="3"/><rect x="8" y="66" width="44" height="6" rx="3"/>
+                    <rect x="80" y="12" width="44" height="6" rx="3"/><rect x="80" y="30" width="44" height="6" rx="3"/>
+                    <rect x="80" y="48" width="44" height="6" rx="3"/><rect x="80" y="66" width="44" height="6" rx="3"/>
+                    <rect x="152" y="12" width="44" height="6" rx="3"/><rect x="152" y="30" width="44" height="6" rx="3"/>
+                    <rect x="152" y="48" width="44" height="6" rx="3"/><rect x="152" y="66" width="44" height="6" rx="3"/>
+                    <rect x="224" y="12" width="44" height="6" rx="3"/><rect x="224" y="30" width="44" height="6" rx="3"/>
+                    <rect x="224" y="48" width="44" height="6" rx="3"/><rect x="224" y="66" width="44" height="6" rx="3"/>
+                </g>
+                <g fill="#3c4880">
+                    <rect x="8" y="92" width="44" height="6" rx="3"/><rect x="8" y="110" width="44" height="6" rx="3"/>
+                    <rect x="80" y="92" width="44" height="6" rx="3"/><rect x="80" y="110" width="44" height="6" rx="3"/>
+                    <rect x="152" y="92" width="44" height="6" rx="3"/><rect x="152" y="110" width="44" height="6" rx="3"/>
+                    <rect x="224" y="92" width="44" height="6" rx="3"/><rect x="224" y="110" width="44" height="6" rx="3"/>
+                </g>
+            </g>
+            <text class="rotp" x="188" y="264" text-anchor="middle" style="fill:#ff8f6b" font-weight="700">
+                prédios inteiros, ligados na tomada
+            </text>
+        </g>
+
+        <path d="M424 212 L 462 212" stroke="#8d95b8" stroke-width="3" fill="none" marker-end="url(#s)"/>
+
+        <!-- o tubo de DNA -->
+        <g transform="translate(478,74)">
+            <rect x="0" y="0" width="304" height="276" rx="12" fill="#0b1026" stroke="#7bd389" stroke-width="2"/>
+            <text class="rot" x="18" y="32" font-size="16" style="fill:#7bd389">EM DNA</text>
+            <text class="rotp" x="18" y="54" font-size="13">a informação mora dentro da molécula</text>
+
+            <!-- o tubinho com o pó -->
+            <g transform="translate(152,166)">
+                <path d="M-26 -96 H 26 V 44 C 26 62, 12 74, 0 74 C -12 74, -26 62, -26 44 Z"
+                      fill="url(#tubo)" stroke="#63c7e8" stroke-width="2.5"/>
+                <path d="M-32 -102 H 32" stroke="#63c7e8" stroke-width="4"/>
+                <path d="M-24 22 C -14 12, 14 12, 24 22 L 24 44 C 24 60, 12 72, 0 72
+                         C -12 72, -24 60, -24 44 Z" fill="#e8d6a8"/>
+                <text class="rotp" x="0" y="98" text-anchor="middle" style="fill:#7bd389" font-weight="700">
+                    1 grama de pó
+                </text>
+            </g>
+        </g>
+    </g>
+
+    <!-- ══ Direita: a densidade ═══════════════════════════════════════════ -->
+    <g transform="translate(886,112)">
+        <rect class="painel" x="0" y="0" width="468" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">QUANTO CABE EM UM GRAMA</text>
+        <text class="rotp" x="24" y="60">a barra do disco existe — ela é só fina demais para se ver</text>
+
+        <g transform="translate(24,96)">
+            <!-- disco -->
+            <text class="rot" x="0" y="18" font-size="16" style="fill:#ff8f6b">Disco rígido</text>
+            <rect x="0" y="30" width="420" height="30" rx="6" fill="#0b1026" stroke="#3c4880" stroke-width="1.5"/>
+            <rect x="0" y="30" width="3" height="30" rx="1.5" fill="#ff8f6b"/>
+            <text class="rotp" x="14" y="80">algumas dezenas de gigabytes por grama</text>
+
+            <!-- DNA -->
+            <text class="rot" x="0" y="140" font-size="16" style="fill:#7bd389">DNA</text>
+            <rect x="0" y="152" width="420" height="30" rx="6" fill="#0b1026" stroke="#7bd389" stroke-width="1.5"/>
+            <rect x="0" y="152" width="420" height="30" rx="6" fill="#7bd389"/>
+            <text class="rotp" x="0" y="202" style="fill:#7bd389">centenas de milhões de gigabytes por grama</text>
+
+            <rect x="0" y="228" width="420" height="46" rx="8" fill="#12261c" stroke="#7bd389" stroke-width="1.5"/>
+            <text class="rot" x="210" y="258" text-anchor="middle" font-size="17" style="fill:#7bd389">
+                milhões de vezes mais denso
+            </text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé: por que cabe tanto ═════════════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">POR QUE CABE TANTO?</text>
+
+        <g transform="translate(30,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#0b1026" stroke="#3c4880" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16">1 · Escreve no volume, não na casca</text>
+            <text class="rotp" x="20" y="60">O disco só usa a superfície do prato. O DNA</text>
+            <text class="rotp" x="20" y="84">usa o espaço todo: a informação está na</text>
+            <text class="rotp" x="20" y="104">própria molécula, empilhada em três dimensões.</text>
+        </g>
+
+        <g transform="translate(452,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#0b1026" stroke="#3c4880" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16">2 · A letra é do tamanho de um átomo</text>
+            <text class="rotp" x="20" y="60">Cada par de bases é uma "letra" com um punhado</text>
+            <text class="rotp" x="20" y="84">de átomos — não há como escrever menor do</text>
+            <text class="rotp" x="20" y="104">que isso com a matéria que existe.</text>
+        </g>
+
+        <g transform="translate(874,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#12261c" stroke="#7bd389" stroke-width="2"/>
+            <text class="rot" x="20" y="32" font-size="16" style="fill:#7bd389">3 · E dura sem tomada</text>
+            <text class="rotp" x="20" y="60">Já se leu DNA de ossos com dezenas de milhares</text>
+            <text class="rotp" x="20" y="84">de anos. Nenhum HD, pendrive ou nuvem sobrevive</text>
+            <text class="rotp" x="20" y="104">a um século sem alguém copiando tudo de novo.</text>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        Cientistas já gravam livros, fotos e vídeos em DNA sintético — copiando o formato de arquivo que a vida usa desde sempre.
+    </text>
+</svg>

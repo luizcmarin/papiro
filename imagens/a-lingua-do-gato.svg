@@ -55,54 +55,55 @@
         <text class="rot" x="24" y="38">A LÍNGUA NO PELO</text>
         <text class="rotp" x="24" y="60">as espículas apontam todas para trás, na direção da garganta</text>
 
-        <!-- o pelo: fios densos -->
-        <g transform="translate(0,96)">
-            <rect x="24" y="150" width="572" height="72" rx="8" fill="#3a2a33"/>
-            <text class="rotp" x="40" y="196" style="fill:#e0c4a0">a pele</text>
-            <g stroke="#8a7466" stroke-width="3" fill="none" opacity="0.9">
-                <path d="M60 150 C 56 110, 68 84, 62 52"/>
-                <path d="M96 150 C 92 112, 104 88, 98 56"/>
-                <path d="M132 150 C 128 110, 140 84, 134 52"/>
-                <path d="M168 150 C 164 112, 176 88, 170 56"/>
-                <path d="M204 150 C 200 110, 212 84, 206 52"/>
-                <path d="M240 150 C 236 112, 248 88, 242 56"/>
-                <path d="M276 150 C 272 110, 284 84, 278 52"/>
-                <path d="M312 150 C 308 112, 320 88, 314 56"/>
-                <path d="M348 150 C 344 110, 356 84, 350 52"/>
-                <path d="M384 150 C 380 112, 392 88, 386 56"/>
-                <path d="M420 150 C 416 110, 428 84, 422 52"/>
-                <path d="M456 150 C 452 112, 464 88, 458 56"/>
-                <path d="M492 150 C 488 110, 500 84, 494 52"/>
-                <path d="M528 150 C 524 112, 536 88, 530 56"/>
-                <path d="M564 150 C 560 110, 572 88, 566 56"/>
-            </g>
-            <!-- o nó, que a espícula vai desfazer -->
-            <path d="M300 96 C 330 78, 356 106, 330 118 C 306 128, 296 112, 316 104"
-                  fill="none" stroke="#ff8f6b" stroke-width="3.5"/>
-            <text class="rotp" x="352" y="86" style="fill:#ff8f6b">um nó</text>
-        </g>
-
-        <!-- a língua passando por cima, com as espículas mergulhando no pelo -->
-        <g transform="translate(0,110)">
-            <path d="M20 -18 C 180 -46, 420 -46, 600 -18 L 600 24 C 420 -4, 180 -4, 20 24 Z"
+        <!-- a língua, passando por cima do pelo -->
+        <g>
+            <path d="M20 88 C 180 74, 420 74, 600 88 L 600 132 C 420 118, 180 118, 20 132 Z"
                   fill="url(#lingua)" stroke="#8f4a60" stroke-width="2"/>
-            <g>
-                <g transform="translate(80,26) rotate(-22) scale(1.15)"><use href="#espicula"/></g>
-                <g transform="translate(150,20) rotate(-22) scale(1.15)"><use href="#espicula"/></g>
-                <g transform="translate(220,16) rotate(-22) scale(1.15)"><use href="#espicula"/></g>
-                <g transform="translate(290,14) rotate(-22) scale(1.15)"><use href="#espicula"/></g>
-                <g transform="translate(360,14) rotate(-22) scale(1.15)"><use href="#espicula"/></g>
-                <g transform="translate(430,16) rotate(-22) scale(1.15)"><use href="#espicula"/></g>
-                <g transform="translate(500,20) rotate(-22) scale(1.15)"><use href="#espicula"/></g>
-                <g transform="translate(560,26) rotate(-22) scale(1.15)"><use href="#espicula"/></g>
-            </g>
-            <path d="M470 -46 L 560 -46" stroke="#efd6e0" stroke-width="2.5" fill="none" marker-end="url(#s)"/>
-            <text class="rotp" x="470" y="-56">a língua corre para trás</text>
+            <path d="M472 68 L 570 68" stroke="#efd6e0" stroke-width="2.5" fill="none" marker-end="url(#s)"/>
+            <text class="rotp" x="472" y="56">a língua corre para trás</text>
         </g>
 
-        <!-- círculo de zoom, mirando o painel ao lado -->
-        <circle cx="292" cy="150" r="44" fill="none" stroke="#ffd24d" stroke-width="3"/>
-        <path d="M324 182 L 380 226" stroke="#ffd24d" stroke-width="3" fill="none" marker-end="url(#s)"/>
+        <!-- as espículas, penduradas da língua e mergulhadas no pelo -->
+        <g>
+            <g transform="translate(74,128) rotate(160) scale(1.25)"><use href="#espicula"/></g>
+            <g transform="translate(148,124) rotate(160) scale(1.25)"><use href="#espicula"/></g>
+            <g transform="translate(222,121) rotate(160) scale(1.25)"><use href="#espicula"/></g>
+            <g transform="translate(296,120) rotate(160) scale(1.25)"><use href="#espicula"/></g>
+            <g transform="translate(370,120) rotate(160) scale(1.25)"><use href="#espicula"/></g>
+            <g transform="translate(444,121) rotate(160) scale(1.25)"><use href="#espicula"/></g>
+            <g transform="translate(518,124) rotate(160) scale(1.25)"><use href="#espicula"/></g>
+        </g>
+
+        <!-- o pelo: fios densos, da pele até a língua -->
+        <g stroke="#8a7466" stroke-width="3" fill="none" opacity="0.9">
+            <path d="M62 300 C 58 262, 70 214, 64 148"/>
+            <path d="M100 300 C 96 264, 108 216, 102 150"/>
+            <path d="M138 300 C 134 262, 146 214, 140 148"/>
+            <path d="M176 300 C 172 264, 184 216, 178 150"/>
+            <path d="M214 300 C 210 262, 222 214, 216 148"/>
+            <path d="M252 300 C 248 264, 260 216, 254 150"/>
+            <path d="M328 300 C 324 264, 336 216, 330 150"/>
+            <path d="M366 300 C 362 262, 374 214, 368 148"/>
+            <path d="M404 300 C 400 264, 412 216, 406 150"/>
+            <path d="M442 300 C 438 262, 450 214, 444 148"/>
+            <path d="M480 300 C 476 264, 488 216, 482 150"/>
+            <path d="M518 300 C 514 262, 526 214, 520 148"/>
+            <path d="M556 300 C 552 264, 564 216, 558 150"/>
+        </g>
+
+        <!-- o nó, que a espícula vai desfazer -->
+        <path d="M282 232 C 314 212, 342 242, 314 256 C 288 268, 278 250, 300 240"
+              fill="none" stroke="#ff8f6b" stroke-width="3.5"/>
+        <path d="M400 214 L 344 236" stroke="#ff8f6b" stroke-width="2" fill="none" marker-end="url(#sp)"/>
+        <text class="rotp" x="408" y="212" style="fill:#ff8f6b">um nó — a espícula desfaz</text>
+
+        <!-- a pele -->
+        <rect x="24" y="300" width="572" height="56" rx="8" fill="#3a2a33"/>
+        <text class="rotp" x="40" y="334" style="fill:#e0c4a0">a pele — é até aqui que a saliva desce</text>
+
+        <!-- círculo de zoom sobre uma espícula, mirando o painel ao lado -->
+        <circle cx="520" cy="152" r="42" fill="none" stroke="#ffd24d" stroke-width="3"/>
+        <path d="M550 182 L 600 224" stroke="#ffd24d" stroke-width="3" fill="none" marker-end="url(#s)"/>
     </g>
 
     <!-- ══ Direita: a ponta em concha ═════════════════════════════════════ -->
@@ -132,7 +133,7 @@
             <rect x="0" y="0" width="290" height="228" rx="12" fill="#1c1220" stroke="#7bd389" stroke-width="2"/>
             <text class="rotp" x="16" y="28" style="fill:#7bd389">a concha de verdade</text>
 
-            <g transform="translate(120,170)">
+            <g transform="translate(132,152)">
                 <!-- corpo da espícula, em corte: as duas paredes e o vale entre elas -->
                 <path d="M-30 0 C -24 -62, -14 -98, -12 -120 L -4 -120 C -6 -96, -8 -60, -6 0 Z"
                       fill="url(#quer)" stroke="#a98a5f" stroke-width="1.5"/>
@@ -143,17 +144,17 @@
                       fill="#7fd0e8" opacity="0.9"/>
                 <path d="M-11 -118 C -5 -108, 5 -108, 11 -118" fill="none" stroke="#bdeaf7" stroke-width="2"/>
 
-                <path d="M60 -110 L 26 -110" stroke="#7fd0e8" stroke-width="2" fill="none" marker-end="url(#sp)"/>
-                <text class="rotp" x="68" y="-106" font-size="13" style="fill:#7fd0e8">a saliva fica</text>
-                <text class="rotp" x="68" y="-88" font-size="13" style="fill:#7fd0e8">presa no vale</text>
+                <path d="M52 -112 L 26 -112" stroke="#7fd0e8" stroke-width="2" fill="none" marker-end="url(#sp)"/>
+                <text class="rotp" x="60" y="-114" font-size="13" style="fill:#7fd0e8">a saliva fica</text>
+                <text class="rotp" x="60" y="-96" font-size="13" style="fill:#7fd0e8">presa no vale</text>
 
-                <path d="M-60 -30 L -34 -30" stroke="#b092a3" stroke-width="2" fill="none" marker-end="url(#sp)"/>
-                <text class="rotp" x="-124" y="-26" font-size="13">as duas</text>
-                <text class="rotp" x="-124" y="-8" font-size="13">paredes</text>
+                <path d="M-58 -40 L -34 -40" stroke="#b092a3" stroke-width="2" fill="none" marker-end="url(#sp)"/>
+                <text class="rotp" x="-112" y="-44" font-size="13">as duas</text>
+                <text class="rotp" x="-112" y="-26" font-size="13">paredes</text>
 
                 <!-- e solta no fundo do pelo -->
-                <path d="M0 16 L 0 44" stroke="#7bd389" stroke-width="2.5" fill="none" marker-end="url(#sp)"/>
-                <text class="rotp" x="0" y="66" text-anchor="middle" font-size="13" style="fill:#7bd389">
+                <path d="M0 12 L 0 38" stroke="#7bd389" stroke-width="2.5" fill="none" marker-end="url(#sp)"/>
+                <text class="rotp" x="4" y="60" text-anchor="middle" font-size="13" style="fill:#7bd389">
                     e solta lá embaixo, na pele
                 </text>
             </g>

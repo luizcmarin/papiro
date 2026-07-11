@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">O Relógio da Cianobactéria — a senoide de 24 horas</title>
+    <desc id="desc">A atividade da cianobactéria sobe e desce numa onda de 24 horas, descrita por
+        f(t) = A · sen(ωt + φ). O que impressiona é a fase: o pico da preparação vem ANTES do sol
+        nascer — ela não reage à luz, ela a prevê. E se a deixarmos no escuro constante, o relógio
+        continua batendo no mesmo compasso, sem nenhuma pista de fora.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#132a3c"/>
+            <stop offset="1" stop-color="#070f18"/>
+        </linearGradient>
+
+        <marker id="s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+        <marker id="sp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="context-stroke"/>
+        </marker>
+        <marker id="ini" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="8" markerHeight="8"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M10 0 L0 5 L10 10 z" fill="context-stroke"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#e9f4fb; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#cfe4f0; font-size:18px; font-weight:700; }
+        .rotp { fill:#8aa8bd; font-size:14px; }
+        .painel { fill:#0e2231; stroke:#3a6b8a; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">O RELÓGIO DA CIANOBACTÉRIA</text>
+    <text class="rotp" x="46" y="84" font-size="17">Um ser de uma célula só que sabe a hora — e se prepara para um sol que ainda não nasceu.</text>
+
+    <!-- ══ Cima: a senoide de 24 h ════════════════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="1308" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">A ATIVIDADE DA CÉLULA, AO LONGO DE UM DIA</text>
+
+        <g transform="translate(90,80)">
+            <!-- noite / dia / noite, ao fundo -->
+            <rect x="0" y="0" width="240" height="220" fill="#0a1622"/>
+            <rect x="240" y="0" width="480" height="220" fill="#1c4059" opacity="0.55"/>
+            <rect x="720" y="0" width="440" height="220" fill="#0a1622"/>
+            <text class="rotp" x="120" y="-14" text-anchor="middle">noite</text>
+            <text class="rotp" x="480" y="-14" text-anchor="middle" style="fill:#ffd24d">dia</text>
+            <text class="rotp" x="940" y="-14" text-anchor="middle">noite</text>
+
+            <!-- eixos -->
+            <path d="M0 110 H 1160" stroke="#3a6b8a" stroke-width="2"/>
+            <path d="M0 0 V 220" stroke="#3a6b8a" stroke-width="2"/>
+            <text class="rotp" x="-14" y="14" text-anchor="end">alta</text>
+            <text class="rotp" x="-14" y="216" text-anchor="end">baixa</text>
+            <text class="rotp" x="-64" y="110" transform="rotate(-90,-64,110)" text-anchor="middle" font-weight="700">
+                atividade
+            </text>
+
+            <!-- marcas de hora -->
+            <g stroke="#3a6b8a" stroke-width="1.5">
+                <path d="M240 104 V 116"/><path d="M480 104 V 116"/>
+                <path d="M720 104 V 116"/><path d="M960 104 V 116"/>
+            </g>
+            <text class="rotp" x="240" y="240" text-anchor="middle" style="fill:#ffd24d">6 h — o sol nasce</text>
+            <text class="rotp" x="480" y="240" text-anchor="middle">12 h</text>
+            <text class="rotp" x="720" y="240" text-anchor="middle">18 h</text>
+            <text class="rotp" x="960" y="240" text-anchor="middle">0 h</text>
+            <text class="rotp" x="1150" y="240" text-anchor="end" font-weight="700">24 horas — e recomeça</text>
+
+            <!-- a senoide -->
+            <path d="M0 84 C 40 40, 80 12, 120 12 C 200 12, 220 60, 300 110
+                     C 380 160, 400 208, 480 208 C 560 208, 580 160, 660 110
+                     C 740 60, 760 12, 840 12 C 920 12, 940 60, 1020 110
+                     C 1100 160, 1120 200, 1160 208"
+                  fill="none" stroke="#7bd389" stroke-width="4"/>
+
+            <!-- o pico, ANTES do amanhecer -->
+            <circle cx="120" cy="12" r="8" fill="#ffd24d"/>
+            <path d="M120 30 V 100" stroke="#ffd24d" stroke-width="2" stroke-dasharray="6 5"/>
+            <path d="M240 0 V 220" stroke="#ffd24d" stroke-width="2" stroke-dasharray="6 5"/>
+            <path d="M132 46 H 228" stroke="#ffd24d" stroke-width="2"
+                  marker-start="url(#ini)" marker-end="url(#sp)"/>
+            <text class="rot" x="20" y="152" font-size="16" style="fill:#ffd24d">
+                horas de antecedência
+            </text>
+            <text class="rotp" x="20" y="176" style="fill:#ffd24d">
+                ela já está pronta quando o sol chega
+            </text>
+
+            <!-- a amplitude -->
+            <path d="M840 12 V 208" stroke="#7bd389" stroke-width="1.5" stroke-dasharray="5 5"/>
+            <path d="M866 12 V 208" stroke="#7bd389" stroke-width="2"
+                  marker-start="url(#ini)" marker-end="url(#sp)"/>
+            <text class="rot" x="826" y="100" text-anchor="end" font-size="16" style="fill:#7bd389">A — a amplitude</text>
+            <text class="rotp" x="826" y="122" text-anchor="end">o tamanho da onda</text>
+        </g>
+    </g>
+
+    <!-- ══ Baixo: a fórmula, a fase e o escuro ════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="404" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">A ONDA TEM NOME</text>
+        <text class="cab" x="24" y="96" font-size="30" style="fill:#7bd389">f(t) = A · sen(ωt + φ)</text>
+        <text class="rotp" x="24" y="132">A = a amplitude (o tamanho)</text>
+        <text class="rotp" x="24" y="156">ω = o compasso (uma volta a cada 24 h)</text>
+        <text class="rotp" x="24" y="180">φ = a fase (a que horas o pico cai)</text>
+    </g>
+
+    <g transform="translate(472,520)">
+        <rect class="painel" x="0" y="0" width="424" height="212" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#ffd24d">A FASE É O SEGREDO</text>
+        <text class="rotp" x="24" y="70">Reagir à luz seria fácil: bastaria um sensor.</text>
+        <text class="rotp" x="24" y="98">O que a cianobactéria faz é outra coisa —</text>
+        <text class="rotp" x="24" y="126">ela liga as enzimas ANTES de a luz chegar,</text>
+        <text class="rotp" x="24" y="154">para não perder um minuto de sol.</text>
+        <text class="rotp" x="24" y="188" style="fill:#ffd24d" font-weight="700">Isso não é reagir. É prever.</text>
+    </g>
+
+    <g transform="translate(918,520)">
+        <rect class="painel" x="0" y="0" width="436" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">E NO ESCURO CONSTANTE?</text>
+        <text class="rotp" x="24" y="62">sem sol, sem pistas, sem nada</text>
+
+        <g transform="translate(24,84)">
+            <rect x="0" y="0" width="388" height="76" rx="8" fill="#0a1622"/>
+            <path d="M0 38 H 388" stroke="#3a6b8a" stroke-width="1.5"/>
+            <path d="M0 60 C 24 8, 48 8, 72 38 C 96 68, 120 68, 144 38
+                     C 168 8, 192 8, 216 38 C 240 68, 264 68, 288 38
+                     C 312 8, 336 8, 360 38 C 372 52, 380 58, 388 62"
+                  fill="none" stroke="#7bd389" stroke-width="3"/>
+        </g>
+        <text class="rotp" x="24" y="184">O relógio continua batendo, no mesmo compasso.</text>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        Três proteínas, num tubo de ensaio, mantêm esse ciclo de 24 horas sozinhas — o relógio mais simples que se conhece.
+    </text>
+</svg>
