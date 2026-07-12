@@ -52,6 +52,60 @@
         </div>
         </template>
 
+        <!-- ══ BOAS-VINDAS — onboarding (1ª abertura; reabre pelo Sobre) ═════ -->
+        <template x-if="boasVindas.aberto">
+        <div class="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center p-3"
+             style="z-index:2200; background: rgba(0,0,0,.55); backdrop-filter: blur(2px);"
+             role="dialog" aria-modal="true" aria-labelledby="bv-titulo">
+            <div class="card shadow-lg border-0 w-100" style="max-width:26rem">
+                <div class="card-body p-4 text-center">
+
+                    <!-- fechar -->
+                    <button class="btn btn-sm btn-outline-secondary border-0 position-absolute top-0 end-0 m-2"
+                            @click="fecharBoasVindas()" aria-label="Fechar">
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
+                    </button>
+
+                    <!-- ícone do passo -->
+                    <span class="papiro-modulo__icone mx-auto mb-3"
+                          :style="`width:4rem;height:4rem;font-size:2rem;background:${passoBoasVindas.cor}1f;color:${passoBoasVindas.cor}`">
+                        <i class="bi" :class="passoBoasVindas.icone" aria-hidden="true"></i>
+                    </span>
+
+                    <h2 class="h5 fw-bold mb-2" id="bv-titulo" x-text="passoBoasVindas.titulo"></h2>
+                    <p class="text-body-secondary mb-3" x-text="passoBoasVindas.texto"></p>
+
+                    <p class="small text-muted fst-italic mb-4">
+                        <i class="bi bi-lightbulb me-1" aria-hidden="true"></i><span x-text="passoBoasVindas.dica"></span>
+                    </p>
+
+                    <!-- indicador de passos -->
+                    <div class="d-flex justify-content-center gap-2 mb-4">
+                        <template x-for="(p, i) in passosBoasVindas" :key="i">
+                            <span class="rounded-pill"
+                                  :style="`width:${i === boasVindas.passo ? '1.4rem' : '.5rem'};height:.5rem;background:${i === boasVindas.passo ? passoBoasVindas.cor : 'var(--bs-border-color)'};transition:width .2s`"></span>
+                        </template>
+                    </div>
+
+                    <!-- navegação -->
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-secondary flex-shrink-0"
+                                x-show="boasVindas.passo > 0" @click="voltarBoasVindas()">
+                            <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-link text-muted flex-shrink-0 text-decoration-none"
+                                x-show="!ultimoPassoBoasVindas" @click="fecharBoasVindas()">Pular</button>
+                        <button class="btn btn-primary flex-grow-1" @click="avancarBoasVindas()">
+                            <span x-text="ultimoPassoBoasVindas ? 'Começar a usar' : 'Próximo'"></span>
+                            <i class="bi ms-1" aria-hidden="true"
+                               :class="ultimoPassoBoasVindas ? 'bi-check-lg' : 'bi-arrow-right'"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </template>
+
         <!-- ══ HOME — grade de módulos ══════════════════════════════════════ -->
         <section x-show="rota.modulo === 'home'" class="papiro-app">
 
@@ -4904,6 +4958,16 @@
                     <span class="fw-semibold">Guia do Usuário</span>
                     <i class="bi bi-chevron-right ms-auto" aria-hidden="true"></i>
                 </a>
+            </div>
+
+            <!-- Rever o onboarding (mostrado sozinho só na primeira abertura) -->
+            <div class="d-grid mb-3">
+                <button class="btn btn-outline-primary text-start d-flex align-items-center gap-2"
+                        @click="irHome(); abrirBoasVindas()">
+                    <i class="bi bi-stars" aria-hidden="true"></i>
+                    <span>Ver as boas-vindas de novo</span>
+                    <i class="bi bi-chevron-right ms-auto" aria-hidden="true"></i>
+                </button>
             </div>
 
             <!-- documentos institucionais (páginas estáticas, offline) -->
