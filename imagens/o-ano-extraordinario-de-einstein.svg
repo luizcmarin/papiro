@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">O Ano Extraordinário de Einstein — 1905, o tempo elástico e E = mc²</title>
+    <desc id="desc">O jogo pede que a nave chegue a γ = 2; esta ilustração mostra de onde vem o número.
+        A tabela liga a velocidade ao fator γ (10% de c quase não muda nada; 86,6% dobra; 99,9%
+        multiplica por 22). Mostra também os quatro trabalhos de 1905 e o que E = mc² significa em
+        energia: 1 kg de matéria valeria cerca de 25 bilhões de kWh.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f2f0fb"/>
+            <stop offset="1" stop-color="#ddd8f0"/>
+        </linearGradient>
+        <marker id="e-5a4a95" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#5a4a95"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#2e2555; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#5a4a95; font-size:18px; font-weight:700; }
+        .rotp { fill:#7d7499; font-size:14px; }
+        .painel { fill:#ffffff; stroke:#c8c0e4; stroke-width:2; }
+        .eq   { fill:#2e2555; font-size:26px; font-weight:800; }
+        .num  { fill:#2e2555; font-size:17px; font-weight:700; }
+        .ok   { fill:#2f8f5c; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">O ANO EXTRAORDINÁRIO DE EINSTEIN — 1905</text>
+    <text class="rotp" x="46" y="84" font-size="17">
+        Um funcionário do escritório de patentes publicou, em um só ano, quatro trabalhos que viraram a física do avesso.
+    </text>
+
+    <!-- ══ Esquerda: a tabela do fator γ ══════════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="812" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">QUANTO MAIS RÁPIDO, MAIS DEVAGAR ANDA O RELÓGIO</text>
+        <text class="rotp" x="24" y="60">γ = 1 ÷ √(1 − v²/c²) — o fator que estica o tempo</text>
+
+        <!-- cabeçalho da tabela -->
+        <g transform="translate(24,84)">
+            <rect x="0" y="0" width="764" height="34" rx="8" fill="#efecf9" stroke="#c8c0e4"/>
+            <text class="rotp" x="20" y="23" font-weight="700">VELOCIDADE (fração de c)</text>
+            <text class="rotp" x="300" y="23" font-weight="700">γ</text>
+            <text class="rotp" x="430" y="23" font-weight="700">12 MESES NA TERRA VALEM, A BORDO…</text>
+        </g>
+
+        <!-- linhas -->
+        <g transform="translate(24,124)">
+            <g>
+                <rect x="0" y="0" width="764" height="38" rx="8" fill="#faf9fe" stroke="#e5e0f3"/>
+                <text class="num" x="20" y="25">10% de c  (30.000 km/s)</text>
+                <text class="num" x="300" y="25">1,005</text>
+                <text class="rotp" x="430" y="25" font-size="15">11,9 meses — quase nada muda</text>
+            </g>
+            <g transform="translate(0,44)">
+                <rect x="0" y="0" width="764" height="38" rx="8" fill="#faf9fe" stroke="#e5e0f3"/>
+                <text class="num" x="20" y="25">50% de c</text>
+                <text class="num" x="300" y="25">1,15</text>
+                <text class="rotp" x="430" y="25" font-size="15">10,4 meses</text>
+            </g>
+            <g transform="translate(0,88)">
+                <rect x="0" y="0" width="764" height="38" rx="8" fill="#e6f6ec" stroke="#2f8f5c" stroke-width="2"/>
+                <text class="num ok" x="20" y="25">86,6% de c  ← o desafio do jogo</text>
+                <text class="num ok" x="300" y="25">2,00</text>
+                <text class="rotp" x="430" y="25" font-size="15" style="fill:#2f8f5c" font-weight="700">
+                    6 meses — o tempo anda pela METADE
+                </text>
+            </g>
+            <g transform="translate(0,132)">
+                <rect x="0" y="0" width="764" height="38" rx="8" fill="#faf9fe" stroke="#e5e0f3"/>
+                <text class="num" x="20" y="25">99% de c</text>
+                <text class="num" x="300" y="25">7,1</text>
+                <text class="rotp" x="430" y="25" font-size="15">1,7 mês</text>
+            </g>
+            <g transform="translate(0,176)">
+                <rect x="0" y="0" width="764" height="38" rx="8" fill="#faf9fe" stroke="#e5e0f3"/>
+                <text class="num" x="20" y="25">99,9% de c</text>
+                <text class="num" x="300" y="25">22,4</text>
+                <text class="rotp" x="430" y="25" font-size="15">16 dias — e nunca se alcança c</text>
+            </g>
+        </g>
+    </g>
+
+    <!-- ══ Direita: E = mc² ═══════════════════════════════════════════════ -->
+    <g transform="translate(886,112)">
+        <rect class="painel" x="0" y="0" width="468" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">E MASSA É ENERGIA GUARDADA</text>
+
+        <g transform="translate(24,60)">
+            <rect x="0" y="0" width="420" height="70" rx="10" fill="#efecf9" stroke="#c8c0e4" stroke-width="1.5"/>
+            <text class="eq" x="210" y="45" text-anchor="middle" font-size="34">E = mc²</text>
+        </g>
+
+        <g transform="translate(24,146)">
+            <rect x="0" y="0" width="420" height="72" rx="10" fill="#faf9fe" stroke="#e5e0f3" stroke-width="1.5"/>
+            <text class="rot" x="20" y="30" font-size="16">c = 299.792 km/s</text>
+            <text class="rotp" x="20" y="54">a luz dá 7 voltas na Terra em 1 segundo — e essa</text>
+            <text class="rotp" x="20" y="70" font-size="13">velocidade é a MESMA para quem quer que a meça.</text>
+        </g>
+
+        <path d="M234 226 V 244" stroke="#5a4a95" stroke-width="2.5" fill="none" marker-end="url(#e-5a4a95)"/>
+
+        <g transform="translate(24,252)">
+            <rect x="0" y="0" width="420" height="104" rx="10" fill="#e6f6ec" stroke="#2f8f5c" stroke-width="2"/>
+            <text class="rot ok" x="20" y="32" font-size="16">1 kg de matéria ≈ 25 bilhões de kWh</text>
+            <text class="rotp" x="20" y="58">Energia para uma cidade inteira — guardada num</text>
+            <text class="rotp" x="20" y="78">saco de açúcar. Na fissão do urânio, só 0,1% da</text>
+            <text class="rotp" x="20" y="94" font-size="13">massa vira energia — e já basta para uma usina.</text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé: os quatro trabalhos de 1905 ════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">OS QUATRO TRABALHOS DE UM ANO SÓ</text>
+
+        <g transform="translate(30,60)">
+            <rect x="0" y="0" width="300" height="122" rx="12" fill="#faf9fe" stroke="#e5e0f3" stroke-width="1.5"/>
+            <text class="rot" x="18" y="30" font-size="15">1 · Efeito fotoelétrico</text>
+            <text class="rotp" x="18" y="56" font-size="13">A luz também se comporta como</text>
+            <text class="rotp" x="18" y="76" font-size="13">grãos de energia. Deu-lhe o Nobel</text>
+            <text class="rotp" x="18" y="96" font-size="13">— e nasceu a física quântica.</text>
+        </g>
+
+        <g transform="translate(348,60)">
+            <rect x="0" y="0" width="300" height="122" rx="12" fill="#faf9fe" stroke="#e5e0f3" stroke-width="1.5"/>
+            <text class="rot" x="18" y="30" font-size="15">2 · Movimento browniano</text>
+            <text class="rotp" x="18" y="56" font-size="13">O tremor de um grão de pólen na</text>
+            <text class="rotp" x="18" y="76" font-size="13">água provou que as moléculas</text>
+            <text class="rotp" x="18" y="96" font-size="13">existem mesmo — e se agitam.</text>
+        </g>
+
+        <g transform="translate(666,60)">
+            <rect x="0" y="0" width="300" height="122" rx="12" fill="#faf9fe" stroke="#e5e0f3" stroke-width="1.5"/>
+            <text class="rot" x="18" y="30" font-size="15">3 · Relatividade especial</text>
+            <text class="rotp" x="18" y="56" font-size="13">O tempo não é o mesmo para todos:</text>
+            <text class="rotp" x="18" y="76" font-size="13">depende de quão rápido você anda.</text>
+            <text class="rotp" x="18" y="96" font-size="13">Hoje o GPS corrige isso todo dia.</text>
+        </g>
+
+        <g transform="translate(984,60)">
+            <rect x="0" y="0" width="300" height="122" rx="12" fill="#e6f6ec" stroke="#2f8f5c" stroke-width="2"/>
+            <text class="rot ok" x="18" y="30" font-size="15">4 · E = mc²</text>
+            <text class="rotp" x="18" y="56" font-size="13">Massa e energia são a mesma coisa</text>
+            <text class="rotp" x="18" y="76" font-size="13">em duas formas. E, mesmo assim,</text>
+            <text class="rotp" x="18" y="96" font-size="13">só arranhamos "as bordas" (Jó 26:14).</text>
+        </g>
+    </g>
+</svg>

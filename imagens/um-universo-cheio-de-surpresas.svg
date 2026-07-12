@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">Um Universo Cheio de Surpresas — 4% visível, 96% mistério</title>
+    <desc id="desc">O jogo pede a receita do cosmo; esta ilustração mostra por que os cientistas
+        chegaram a esses números. A curva de rotação das galáxias — elas giram rápido demais para a
+        matéria que se vê — revelou a matéria escura; a expansão que acelera revelou a energia
+        escura. Tudo o que se enxerga, do seu corpo às estrelas, é só 4% do universo.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#eef1fa" />
+            <stop offset="1" stop-color="#d8dcf0"/>
+        </linearGradient>
+        <marker id="u-4a4f95" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#4a4f95"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#232a55; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#4a4f95; font-size:18px; font-weight:700; }
+        .rotp { fill:#767c9e; font-size:14px; }
+        .painel { fill:#ffffff; stroke:#c2c7e2; stroke-width:2; }
+        .num  { fill:#232a55; font-size:20px; font-weight:800; }
+        .ok   { fill:#2f8f5c; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">UM UNIVERSO CHEIO DE SURPRESAS</text>
+    <text class="rotp" x="46" y="84" font-size="17">
+        Tudo o que a humanidade já viu, mediu e fotografou é 4% do que existe. O resto ninguém sabe o que é.
+    </text>
+
+    <!-- ══ Esquerda: a receita do cosmo ═══════════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="560" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">DO QUE O UNIVERSO É FEITO</text>
+
+        <!-- rosca -->
+        <g transform="translate(170,190)">
+            <!-- energia escura 74% -->
+            <circle r="90" fill="none" stroke="#3fb6d8" stroke-width="46"
+                    stroke-dasharray="418 147" transform="rotate(-90)"/>
+            <!-- matéria escura 22% -->
+            <circle r="90" fill="none" stroke="#8f7bd8" stroke-width="46"
+                    stroke-dasharray="124 441" transform="rotate(176)"/>
+            <!-- matéria comum 4% -->
+            <circle r="90" fill="none" stroke="#f0b429" stroke-width="46"
+                    stroke-dasharray="23 542" transform="rotate(255)"/>
+            <text class="num" x="0" y="-4" text-anchor="middle" font-size="26">96%</text>
+            <text class="rotp" x="0" y="20" text-anchor="middle" font-size="13">é mistério</text>
+        </g>
+
+        <!-- legenda -->
+        <g transform="translate(300,110)">
+            <rect x="0" y="0" width="18" height="18" rx="4" fill="#f0b429"/>
+            <text class="num" x="30" y="16" font-size="18">4%</text>
+            <text class="rot" x="76" y="16" font-size="15">matéria comum</text>
+            <text class="rotp" x="30" y="38" font-size="13">estrelas, planetas, você</text>
+
+            <rect x="0" y="66" width="18" height="18" rx="4" fill="#8f7bd8"/>
+            <text class="num" x="30" y="82" font-size="18">22%</text>
+            <text class="rot" x="76" y="82" font-size="15">matéria escura</text>
+            <text class="rotp" x="30" y="104" font-size="13">a "cola" que segura as galáxias</text>
+
+            <rect x="0" y="132" width="18" height="18" rx="4" fill="#3fb6d8"/>
+            <text class="num" x="30" y="148" font-size="18">74%</text>
+            <text class="rot" x="76" y="148" font-size="15">energia escura</text>
+            <text class="rotp" x="30" y="170" font-size="13">o empurrão que as afasta</text>
+        </g>
+
+        <text class="rotp" x="24" y="352" font-size="15">
+            Ninguém nunca viu, tocou ou capturou as duas escuras. Só se conhece o efeito delas.
+        </text>
+    </g>
+
+    <!-- ══ Direita: as duas provas ════════════════════════════════════════ -->
+    <g transform="translate(634,112)">
+        <rect class="painel" x="0" y="0" width="720" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">AS DUAS SURPRESAS QUE OBRIGARAM A INVENTÁ-LAS</text>
+
+        <!-- prova 1: curva de rotação -->
+        <g transform="translate(24,60)">
+            <rect x="0" y="0" width="330" height="290" rx="12" fill="#f3f4fb" stroke="#dcdfef" stroke-width="1.5"/>
+            <text class="rot" x="18" y="30" font-size="15">1 · As galáxias giram rápido demais</text>
+
+            <!-- eixos -->
+            <g transform="translate(40,60)">
+                <path d="M0 160 H 260" stroke="#a9afc9" stroke-width="2" marker-end="url(#u-4a4f95)"/>
+                <path d="M0 160 V 12" stroke="#a9afc9" stroke-width="2" marker-end="url(#u-4a4f95)"/>
+                <text class="rotp" x="130" y="180" font-size="11">distância do centro</text>
+                <text class="rotp" x="-20" y="96" font-size="11" text-anchor="middle"
+                      transform="rotate(-90 -20 96)">velocidade</text>
+
+                <!-- curva esperada (cai) -->
+                <path d="M6 150 C 40 40, 70 30, 100 46 C 150 74, 200 112, 250 130" fill="none"
+                      stroke="#c0392b" stroke-width="3" stroke-dasharray="6 6"/>
+                <text x="150" y="130" font-size="12" fill="#c0392b" font-weight="700">o esperado</text>
+
+                <!-- curva observada (plana) -->
+                <path d="M6 150 C 40 50, 70 40, 110 40 C 170 40, 210 42, 250 42" fill="none"
+                      stroke="#2f8f5c" stroke-width="3.5"/>
+                <text x="150" y="30" font-size="12" fill="#2f8f5c" font-weight="700">o observado</text>
+            </g>
+
+            <text class="rotp" x="18" y="258" font-size="12">Com a matéria que se VÊ, as bordas deveriam</text>
+            <text class="rotp" x="18" y="276" font-size="12">girar devagar. Giram depressa — e não se soltam.</text>
+        </g>
+
+        <!-- prova 2: expansão acelerada -->
+        <g transform="translate(370,60)">
+            <rect x="0" y="0" width="326" height="290" rx="12" fill="#f3f4fb" stroke="#dcdfef" stroke-width="1.5"/>
+            <text class="rot" x="18" y="30" font-size="15">2 · A expansão está ACELERANDO</text>
+
+            <g transform="translate(24,66)">
+                <!-- três instantes: galáxias cada vez mais afastadas -->
+                <g>
+                    <circle cx="20" cy="14" r="7" fill="#8f7bd8"/>
+                    <circle cx="58" cy="14" r="7" fill="#8f7bd8"/>
+                    <circle cx="96" cy="14" r="7" fill="#8f7bd8"/>
+                    <text class="rotp" x="150" y="18" font-size="12">antes</text>
+                </g>
+                <g transform="translate(0,60)">
+                    <circle cx="20" cy="14" r="7" fill="#8f7bd8"/>
+                    <circle cx="86" cy="14" r="7" fill="#8f7bd8"/>
+                    <circle cx="152" cy="14" r="7" fill="#8f7bd8"/>
+                    <text class="rotp" x="200" y="18" font-size="12">hoje</text>
+                </g>
+                <g transform="translate(0,120)">
+                    <circle cx="20" cy="14" r="7" fill="#3fb6d8"/>
+                    <circle cx="122" cy="14" r="7" fill="#3fb6d8"/>
+                    <circle cx="224" cy="14" r="7" fill="#3fb6d8"/>
+                    <text class="rotp" x="250" y="18" font-size="12">depois</text>
+                </g>
+                <path d="M14 164 H 264" stroke="#3fb6d8" stroke-width="2.5" marker-end="url(#u-4a4f95)"/>
+            </g>
+
+            <text class="rotp" x="18" y="258" font-size="12">A gravidade deveria FREAR a expansão. Em vez</text>
+            <text class="rotp" x="18" y="276" font-size="12">disso, ela corre cada vez mais — algo a empurra.</text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé ═════════════════════════════════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">O TAMANHO DA NOSSA IGNORÂNCIA</text>
+
+        <g transform="translate(30,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#f3f4fb" stroke="#dcdfef" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16">1929: o universo não está parado</text>
+            <text class="rotp" x="20" y="60">Edwin Hubble mostrou que as galáxias se afastam</text>
+            <text class="rotp" x="20" y="84">umas das outras. Até então, o céu era tido como</text>
+            <text class="rotp" x="20" y="104">fixo e eterno — e estava errado.</text>
+        </g>
+
+        <g transform="translate(452,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#f3f4fb" stroke="#dcdfef" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16">A nossa casa: 100.000 anos-luz</text>
+            <text class="rotp" x="20" y="60">É o diâmetro da Via Láctea — e ela é UMA entre</text>
+            <text class="rotp" x="20" y="84">bilhões de galáxias. A luz que sai de uma ponta</text>
+            <text class="rotp" x="20" y="104">leva mil séculos para chegar à outra.</text>
+        </g>
+
+        <g transform="translate(874,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#e6f6ec" stroke="#2f8f5c" stroke-width="2"/>
+            <text class="rot ok" x="20" y="32" font-size="16">Quanto mais se descobre…</text>
+            <text class="rotp" x="20" y="60">…maior fica o que falta descobrir. "Tudo ele fez</text>
+            <text class="rotp" x="20" y="84">bonito no seu devido tempo… sem que o homem</text>
+            <text class="rotp" x="20" y="104">descubra a obra que Deus fez." — Eclesiastes 3:11</text>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">O que Não se Vê a Olho Nu — a escada das potências de 10</title>
+    <desc id="desc">O jogo gira o botão da ampliação; esta ilustração mostra a escada que ele percorre.
+        Cada degrau multiplica por 10: do grão visível a olho nu (que já tem mais de 10 bilhões de
+        átomos) à gota fervilhando de criaturas, à célula, à molécula de DNA, ao átomo e ao núcleo,
+        cem mil vezes menor que o átomo. Mostra também onde cada instrumento para de enxergar.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#eef7f3"/>
+            <stop offset="1" stop-color="#d7e8e0"/>
+        </linearGradient>
+    </defs>
+
+    <style>
+        .cab  { fill:#14372c; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#1e7a5a; font-size:18px; font-weight:700; }
+        .rotp { fill:#5d7a70; font-size:14px; }
+        .painel { fill:#ffffff; stroke:#bfd9cf; stroke-width:2; }
+        .esc  { fill:#14372c; font-size:20px; font-weight:800; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">O QUE NÃO SE VÊ A OLHO NU</text>
+    <text class="rotp" x="46" y="84" font-size="17">
+        Cada degrau da escada multiplica a ampliação por 10 — e, a cada degrau, aparece mais ordem, não menos.
+    </text>
+
+    <!-- ══ A escada das escalas ═══════════════════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="1308" height="316" rx="16"/>
+        <text class="rot" x="24" y="38">A ESCADA DAS POTÊNCIAS DE 10</text>
+
+        <!-- degrau 1: olho nu -->
+        <g transform="translate(60,70)">
+            <rect x="0" y="0" width="190" height="150" rx="12" fill="#eef7f3" stroke="#bfd9cf" stroke-width="1.5"/>
+            <circle cx="95" cy="60" r="30" fill="#e8efeb" stroke="#bfd9cf"/>
+            <circle cx="95" cy="60" r="4" fill="#7d8f88"/>
+            <text class="esc" x="95" y="110" text-anchor="middle">1×</text>
+            <text class="rot" x="95" y="134" text-anchor="middle" font-size="15">a olho nu</text>
+            <text class="rotp" x="95" y="176" text-anchor="middle" font-size="13">um grão de poeira…</text>
+            <text class="rotp" x="95" y="194" text-anchor="middle" font-size="13">10 bilhões de átomos</text>
+        </g>
+
+        <!-- degrau 2: gota -->
+        <g transform="translate(268,70)">
+            <rect x="0" y="0" width="190" height="150" rx="12" fill="#eef7f3" stroke="#bfd9cf" stroke-width="1.5"/>
+            <circle cx="95" cy="60" r="34" fill="#dff0fa" stroke="#8fc6e6"/>
+            <ellipse cx="82" cy="52" rx="11" ry="5" fill="#4aa3d6" transform="rotate(-20 82 52)"/>
+            <ellipse cx="108" cy="70" rx="11" ry="5" fill="#5ec2a0" transform="rotate(15 108 70)"/>
+            <ellipse cx="92" cy="76" rx="8" ry="4" fill="#4aa3d6" transform="rotate(35 92 76)"/>
+            <text class="esc" x="95" y="110" text-anchor="middle">100×</text>
+            <text class="rot" x="95" y="134" text-anchor="middle" font-size="15">a gota d'água</text>
+            <text class="rotp" x="95" y="176" text-anchor="middle" font-size="13">"sem vida"? Está</text>
+            <text class="rotp" x="95" y="194" text-anchor="middle" font-size="13">cheia de criaturas</text>
+        </g>
+
+        <!-- degrau 3: célula -->
+        <g transform="translate(476,70)">
+            <rect x="0" y="0" width="190" height="150" rx="12" fill="#eef7f3" stroke="#bfd9cf" stroke-width="1.5"/>
+            <circle cx="95" cy="60" r="34" fill="#e8f6ee" stroke="#5ec2a0" stroke-width="2"/>
+            <circle cx="95" cy="60" r="12" fill="#8fb8f0"/>
+            <ellipse cx="72" cy="45" rx="7" ry="4" fill="#f0c27a"/>
+            <ellipse cx="116" cy="76" rx="7" ry="4" fill="#c9a0e8"/>
+            <text class="esc" x="95" y="110" text-anchor="middle">1.000×</text>
+            <text class="rot" x="95" y="134" text-anchor="middle" font-size="15">a célula</text>
+            <text class="rotp" x="95" y="176" text-anchor="middle" font-size="13">fábricas, transporte</text>
+            <text class="rotp" x="95" y="194" text-anchor="middle" font-size="13">e uma biblioteca</text>
+        </g>
+
+        <!-- degrau 4: molécula -->
+        <g transform="translate(684,70)">
+            <rect x="0" y="0" width="190" height="150" rx="12" fill="#eef7f3" stroke="#bfd9cf" stroke-width="1.5"/>
+            <g transform="translate(95,60)">
+                <path d="M-14 -30 C 14 -14, -14 14, 14 30" fill="none" stroke="#4aa3d6" stroke-width="3"/>
+                <path d="M14 -30 C -14 -14, 14 14, -14 30" fill="none" stroke="#4aa3d6" stroke-width="3"/>
+                <path d="M-9 -18 H 9 M-9 0 H 9 M-9 18 H 9" stroke="#5ec2a0" stroke-width="2.5"/>
+            </g>
+            <text class="esc" x="95" y="110" text-anchor="middle">10⁶×</text>
+            <text class="rot" x="95" y="134" text-anchor="middle" font-size="15">a molécula</text>
+            <text class="rotp" x="95" y="176" text-anchor="middle" font-size="13">o DNA: átomos numa</text>
+            <text class="rotp" x="95" y="194" text-anchor="middle" font-size="13">ordem exata</text>
+        </g>
+
+        <!-- degrau 5: átomo -->
+        <g transform="translate(892,70)">
+            <rect x="0" y="0" width="190" height="150" rx="12" fill="#eef7f3" stroke="#bfd9cf" stroke-width="1.5"/>
+            <g transform="translate(95,60)">
+                <ellipse rx="34" ry="12" fill="none" stroke="#8fb8f0" stroke-width="2"/>
+                <ellipse rx="34" ry="12" fill="none" stroke="#8fb8f0" stroke-width="2" transform="rotate(60)"/>
+                <ellipse rx="34" ry="12" fill="none" stroke="#8fb8f0" stroke-width="2" transform="rotate(-60)"/>
+                <circle r="7" fill="#e07a5f"/>
+                <circle cx="34" cy="0" r="4" fill="#2f6fb0"/>
+            </g>
+            <text class="esc" x="95" y="110" text-anchor="middle">10⁸×</text>
+            <text class="rot" x="95" y="134" text-anchor="middle" font-size="15">o átomo</text>
+            <text class="rotp" x="95" y="176" text-anchor="middle" font-size="13">elétrons: bilhões de</text>
+            <text class="rotp" x="95" y="194" text-anchor="middle" font-size="13">voltas/milissegundo</text>
+        </g>
+
+        <!-- degrau 6: núcleo -->
+        <g transform="translate(1100,70)">
+            <rect x="0" y="0" width="190" height="150" rx="12" fill="#e6f6ec" stroke="#1e7a5a" stroke-width="2"/>
+            <g transform="translate(95,60)">
+                <circle cx="-10" cy="-6" r="11" fill="#e07a5f"/>
+                <circle cx="10" cy="-2" r="11" fill="#8fb8f0"/>
+                <circle cx="-2" cy="12" r="11" fill="#e07a5f"/>
+                <circle cx="14" cy="16" r="11" fill="#8fb8f0"/>
+            </g>
+            <text class="esc" x="95" y="110" text-anchor="middle">10¹²×</text>
+            <text class="rot" x="95" y="134" text-anchor="middle" font-size="15">o núcleo</text>
+            <text class="rotp" x="95" y="176" text-anchor="middle" font-size="13">100.000 vezes menor</text>
+            <text class="rotp" x="95" y="194" text-anchor="middle" font-size="13">que o átomo</text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé ═════════════════════════════════════════════════════════ -->
+    <g transform="translate(46,452)">
+        <rect class="painel" x="0" y="0" width="1308" height="280" rx="16"/>
+        <text class="rot" x="24" y="38">ONDE CADA INSTRUMENTO PARA DE ENXERGAR</text>
+
+        <g transform="translate(30,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#eef7f3" stroke="#bfd9cf" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16">O olho: até ~0,1 mm</text>
+            <text class="rotp" x="20" y="60">É o limite. Abaixo disso, tudo o que existe some</text>
+            <text class="rotp" x="20" y="84">— e o que some é a maior parte do mundo. Foi só</text>
+            <text class="rotp" x="20" y="104">com a lente que a humanidade descobriu isso.</text>
+        </g>
+
+        <g transform="translate(452,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#eef7f3" stroke="#bfd9cf" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16">O microscópio de luz: ~2.000×</text>
+            <text class="rotp" x="20" y="60">Enxerga a gota, a célula, a bactéria. Mas a própria</text>
+            <text class="rotp" x="20" y="84">luz é "grossa" demais para mostrar uma molécula:</text>
+            <text class="rotp" x="20" y="104">daí em diante, é preciso outro tipo de olho.</text>
+        </g>
+
+        <g transform="translate(874,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#e6f6ec" stroke="#1e7a5a" stroke-width="2"/>
+            <text class="rot" x="20" y="32" font-size="16">O feixe de elétrons: milhões de ×</text>
+            <text class="rotp" x="20" y="60">Só com ele — e com o microscópio de tunelamento —</text>
+            <text class="rotp" x="20" y="84">os átomos aparecem, um a um, enfileirados numa</text>
+            <text class="rotp" x="20" y="104">grade regular. Nunca num monte desordenado.</text>
+        </g>
+
+        <text class="rotp" x="654" y="230" text-anchor="middle" font-size="15">
+            “As suas qualidades invisíveis são vistas claramente desde a criação do mundo… pelas coisas feitas.” — Romanos 1:20
+        </text>
+    </g>
+</svg>
