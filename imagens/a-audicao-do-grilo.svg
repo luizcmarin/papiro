@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Audição do Grilo — o ouvido na perna, sintonizado numa estação só</title>
+    <desc id="desc">O grilo ouve pelas patas dianteiras: uma membrana finíssima, o tímpano, vibra com o som.
+        E ela não responde a qualquer som — responde muito mais forte numa frequência específica, a do
+        canto do parceiro. É ressonância, como um rádio ajustado numa estação: fora dela, quase nada;
+        no ponto certo, a resposta dispara. É por isso que, num campo cheio de barulho, o grilo escuta
+        justamente o que precisa escutar.</desc>
+
+    <defs>
+        <linearGradient id="noite" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#16301f"/>
+            <stop offset="1" stop-color="#060f0a"/>
+        </linearGradient>
+        <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#c8f06a" stop-opacity="0.5"/>
+            <stop offset="1" stop-color="#c8f06a" stop-opacity="0"/>
+        </radialGradient>
+        <marker id="s-8fb27a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#8fb27a"/>
+        </marker>
+        <marker id="s-c8f06a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#c8f06a"/>
+        </marker>
+        <marker id="s-ff8f6b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#ff8f6b"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#eaf7dd; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#cfe6bb; font-size:18px; font-weight:700; }
+        .rotp { fill:#8fb27a; font-size:14px; }
+        .painel { fill:#102b1a; stroke:#3d6b48; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#noite)"/>
+
+    <text class="cab" x="46" y="54">A AUDIÇÃO DO GRILO</text>
+    <text class="rotp" x="46" y="84" font-size="17">Num campo cheio de barulho, ele escuta um som só — e é o que interessa.</text>
+
+    <!-- ══ Esquerda: o ouvido na perna ════════════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="640" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">O OUVIDO FICA NA PATA DA FRENTE</text>
+
+        <!-- o grilo -->
+        <g transform="translate(196,214)">
+            <!-- corpo -->
+            <ellipse cx="0" cy="0" rx="72" ry="34" fill="#4a3a1e" stroke="#a08a4a" stroke-width="2"/>
+            <ellipse cx="-58" cy="-10" rx="26" ry="24" fill="#5c4826" stroke="#a08a4a" stroke-width="2"/>
+            <circle cx="-70" cy="-16" r="4" fill="#0a0f07"/>
+            <!-- antenas -->
+            <g stroke="#a08a4a" stroke-width="2" fill="none">
+                <path d="M-76 -28 C -110 -60, -140 -70, -166 -66"/>
+                <path d="M-72 -30 C -100 -70, -126 -92, -152 -98"/>
+            </g>
+            <!-- asas -->
+            <path d="M-20 -22 C 10 -34, 50 -30, 66 -12 C 40 -6, 0 -8, -20 -22 Z"
+                  fill="#6b5730" stroke="#a08a4a" stroke-width="1.5"/>
+            <!-- perna traseira -->
+            <path d="M30 20 L 66 56 L 44 84" stroke="#a08a4a" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <!-- pata dianteira: é aqui que está o ouvido -->
+            <path d="M-44 18 L -56 62 L -34 88" stroke="#a08a4a" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="-53" cy="52" r="15" fill="none" stroke="#c8f06a" stroke-width="3"/>
+        </g>
+
+        <!-- a lupa, apontando para o tímpano -->
+        <path d="M156 300 L 246 330" stroke="#c8f06a" stroke-width="2.5" fill="none" marker-end="url(#s-c8f06a)"/>
+
+        <!-- o tímpano, ampliado -->
+        <g transform="translate(452,236)">
+            <circle cx="0" cy="0" r="86" fill="url(#glow)"/>
+            <circle cx="0" cy="0" r="66" fill="#1b3d24" stroke="#c8f06a" stroke-width="3"/>
+            <!-- a membrana vibrando -->
+            <g stroke="#c8f06a" stroke-width="2" fill="none" opacity="0.9">
+                <path d="M-48 -18 C -24 -34, 24 -2, 48 -18"/>
+                <path d="M-48 0 C -24 -16, 24 16, 48 0"/>
+                <path d="M-48 18 C -24 2, 24 34, 48 18"/>
+            </g>
+            <text class="rot" x="0" y="-92" text-anchor="middle" font-size="16" style="fill:#c8f06a">O TÍMPANO</text>
+            <text class="rotp" x="0" y="98" text-anchor="middle" font-size="13">uma membrana mais fina</text>
+            <text class="rotp" x="0" y="116" text-anchor="middle" font-size="13">que um fio de cabelo</text>
+        </g>
+
+        <!-- o som chegando -->
+        <g fill="none" stroke="#8fb27a" stroke-width="2" opacity="0.8">
+            <path d="M560 180 A 60 60 0 0 1 560 292"/>
+            <path d="M584 162 A 84 84 0 0 1 584 310"/>
+        </g>
+        <text class="rotp" x="616" y="336" text-anchor="end" font-size="13">o canto do parceiro chega</text>
+
+        <text class="rotp" x="24" y="358" font-size="15">
+            Ele não vira a cabeça para escutar: ele estica a perna.
+        </text>
+    </g>
+
+    <!-- ══ Direita: a curva da ressonância ════════════════════════════════ -->
+    <g transform="translate(714,112)">
+        <rect class="painel" x="0" y="0" width="640" height="380" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#c8f06a">A RESPOSTA DO TÍMPANO, FREQUÊNCIA POR FREQUÊNCIA</text>
+        <text class="rotp" x="24" y="60">como um rádio: fora da estação, chiado; na estação, som limpo</text>
+
+        <g transform="translate(80,110)">
+            <!-- eixos -->
+            <path d="M0 0 V 190 H 512" fill="none" stroke="#3d6b48" stroke-width="2"/>
+            <text class="rotp" x="-14" y="8" text-anchor="end" font-size="13">forte</text>
+            <text class="rotp" x="-14" y="192" text-anchor="end" font-size="13">nada</text>
+            <text class="rotp" x="-56" y="96" transform="rotate(-90,-56,96)" text-anchor="middle" font-weight="700">
+                o quanto vibra
+            </text>
+            <text class="rotp" x="256" y="228" text-anchor="middle" font-weight="700">frequência do som (kHz)</text>
+
+            <!-- marcas -->
+            <g stroke="#3d6b48" stroke-width="1.5">
+                <path d="M100 190 V 198"/><path d="M200 190 V 198"/><path d="M300 190 V 198"/><path d="M400 190 V 198"/>
+            </g>
+            <text class="rotp" x="100" y="216" text-anchor="middle" font-size="12">2</text>
+            <text class="rotp" x="200" y="216" text-anchor="middle" font-size="12">3,5</text>
+            <text class="rotp" x="300" y="216" text-anchor="middle" font-size="12">5</text>
+            <text class="rotp" x="400" y="216" text-anchor="middle" font-size="12">6,5</text>
+
+            <!-- o pico agudo da ressonância -->
+            <path d="M0 186 C 70 182, 150 172, 210 140 C 236 124, 246 30, 258 16
+                     C 270 30, 280 124, 306 142 C 366 176, 440 184, 512 187"
+                  fill="none" stroke="#c8f06a" stroke-width="3.5"/>
+
+            <path d="M258 26 V 190" stroke="#c8f06a" stroke-width="2" stroke-dasharray="6 5"/>
+            <circle cx="258" cy="16" r="8" fill="#c8f06a"/>
+            <text class="rot" x="258" y="-8" text-anchor="middle" font-size="16" style="fill:#c8f06a">
+                4,5 kHz — o canto do parceiro
+            </text>
+
+            <!-- fora da sintonia -->
+            <path d="M60 160 L 60 186" stroke="#ff8f6b" stroke-width="2" marker-end="url(#s-ff8f6b)"/>
+            <text class="rotp" x="60" y="152" text-anchor="middle" font-size="12" style="fill:#ff8f6b">quase</text>
+            <text class="rotp" x="60" y="136" text-anchor="middle" font-size="12" style="fill:#ff8f6b">não ouve</text>
+
+            <path d="M450 160 L 450 186" stroke="#ff8f6b" stroke-width="2" marker-end="url(#s-ff8f6b)"/>
+            <text class="rotp" x="450" y="152" text-anchor="middle" font-size="12" style="fill:#ff8f6b">também</text>
+            <text class="rotp" x="450" y="136" text-anchor="middle" font-size="12" style="fill:#ff8f6b">não ouve</text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé ═════════════════════════════════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">POR QUE SINTONIZAR É MELHOR DO QUE OUVIR TUDO</text>
+
+        <g transform="translate(30,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#0b2013" stroke="#3d6b48" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16" style="fill:#ff8f6b">Se ouvisse tudo</text>
+            <text class="rotp" x="20" y="60">O campo à noite é um berreiro: vento, folhas,</text>
+            <text class="rotp" x="20" y="84">sapos, mil outros insetos. O canto do parceiro</text>
+            <text class="rotp" x="20" y="104">se perderia no meio do barulho.</text>
+        </g>
+
+        <g transform="translate(452,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#14331d" stroke="#c8f06a" stroke-width="2"/>
+            <text class="rot" x="20" y="32" font-size="16" style="fill:#c8f06a">Ouvindo só uma nota</text>
+            <text class="rotp" x="20" y="60">O tímpano apaga o resto sozinho — sem gastar</text>
+            <text class="rotp" x="20" y="84">nenhum neurônio pensando. O filtro está na</text>
+            <text class="rotp" x="20" y="104">FORMA da membrana, não no cérebro.</text>
+        </g>
+
+        <g transform="translate(874,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#0b2013" stroke="#3d6b48" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16">E dois ouvidos, duas pernas</text>
+            <text class="rotp" x="20" y="60">O som chega antes na pata mais próxima da</text>
+            <text class="rotp" x="20" y="84">fonte. Comparando as duas, ele sabe de que</text>
+            <text class="rotp" x="20" y="104">lado veio o canto — e caminha para lá.</text>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        A diferença de tempo entre uma pata e a outra é de milionésimos de segundo — e é assim que ele se orienta no escuro.
+    </text>
+</svg>

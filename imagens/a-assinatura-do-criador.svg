@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Assinatura do Criador na Natureza — o ângulo de ouro</title>
+    <desc id="desc">O girassol acrescenta cada semente girada cerca de 137,5 graus em relação à anterior.
+        Esse ângulo é a volta dividida pela Regra de Ouro — e é o único que nunca se repete. Basta trocá-lo
+        por uma fração simples da volta, como 135 graus, que é três oitavos, para as sementes se alinharem
+        em oito braços e deixarem buracos enormes. Com 137,5 graus, elas se encaixam sem sobra, e as
+        espirais que aparecem no disco vêm sempre em números da sequência de Fibonacci.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#fdf6e2"/>
+            <stop offset="1" stop-color="#efe0b6"/>
+        </linearGradient>
+        <radialGradient id="disco" cx="0.4" cy="0.35" r="0.7">
+            <stop offset="0" stop-color="#7a5c2a"/>
+            <stop offset="1" stop-color="#463216"/>
+        </radialGradient>
+        <marker id="s-8a6a1f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#8a6a1f"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#5a4210; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#8a6a1f; font-size:18px; font-weight:700; }
+        .rotp { fill:#a68b52; font-size:14px; }
+        .painel { fill:#fffdf4; stroke:#d9c184; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">A ASSINATURA DO CRIADOR NA NATUREZA</text>
+    <text class="rotp" x="46" y="84" font-size="17">Um único ângulo empacota mil sementes sem deixar sobra. Erre por dois graus e aparecem buracos.</text>
+
+    <!-- ══ Esquerda: 135° — a fração simples que abre buracos ═════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="418" height="380" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#c0392b">GIRO DE 135°</text>
+        <text class="rotp" x="24" y="60">135° é 3/8 da volta — uma fração simples</text>
+
+        <g transform="translate(209,222)">
+            <circle cx="0" cy="0" r="118" fill="#6b4f26" stroke="#8a6a1f" stroke-width="2"/>
+            <g fill="#f0d264" stroke="#8a6a1f" stroke-width="0.6">
+                <circle cx="-5" cy="-5" r="2.9"/><circle cx="-0" cy="10" r="2.9"/><circle cx="9" cy="-9" r="2.9"/><circle cx="-14" cy="-0" r="2.9"/><circle cx="11" cy="11" r="2.9"/><circle cx="0" cy="-18" r="2.9"/>
+                <circle cx="-13" cy="13" r="2.9"/><circle cx="20" cy="0" r="2.9"/><circle cx="-15" cy="-15" r="2.9"/><circle cx="-0" cy="23" r="2.9"/><circle cx="17" cy="-17" r="2.9"/><circle cx="-25" cy="-0" r="2.9"/>
+                <circle cx="18" cy="18" r="2.9"/><circle cx="-0" cy="-27" r="2.9"/><circle cx="-20" cy="20" r="2.9"/><circle cx="29" cy="0" r="2.9"/><circle cx="-21" cy="-21" r="2.9"/><circle cx="-0" cy="31" r="2.9"/>
+                <circle cx="22" cy="-22" r="2.9"/><circle cx="-32" cy="-0" r="2.9"/><circle cx="23" cy="23" r="2.9"/><circle cx="0" cy="-34" r="2.9"/><circle cx="-24" cy="24" r="2.9"/><circle cx="35" cy="0" r="2.9"/>
+                <circle cx="-25" cy="-25" r="2.9"/><circle cx="-0" cy="37" r="2.9"/><circle cx="26" cy="-26" r="2.9"/><circle cx="-38" cy="0" r="2.9"/><circle cx="27" cy="27" r="2.9"/><circle cx="0" cy="-39" r="2.9"/>
+                <circle cx="-28" cy="28" r="2.9"/><circle cx="41" cy="0" r="2.9"/><circle cx="-29" cy="-29" r="2.9"/><circle cx="-0" cy="42" r="2.9"/><circle cx="30" cy="-30" r="2.9"/><circle cx="-43" cy="-0" r="2.9"/>
+                <circle cx="31" cy="31" r="2.9"/><circle cx="0" cy="-44" r="2.9"/><circle cx="-32" cy="32" r="2.9"/><circle cx="46" cy="0" r="2.9"/><circle cx="-33" cy="-33" r="2.9"/><circle cx="0" cy="47" r="2.9"/>
+                <circle cx="33" cy="-33" r="2.9"/><circle cx="-48" cy="-0" r="2.9"/><circle cx="34" cy="34" r="2.9"/><circle cx="0" cy="-49" r="2.9"/><circle cx="-35" cy="35" r="2.9"/><circle cx="50" cy="0" r="2.9"/>
+                <circle cx="-36" cy="-36" r="2.9"/><circle cx="-0" cy="51" r="2.9"/><circle cx="36" cy="-36" r="2.9"/><circle cx="-52" cy="-0" r="2.9"/><circle cx="37" cy="37" r="2.9"/><circle cx="0" cy="-53" r="2.9"/>
+                <circle cx="-38" cy="38" r="2.9"/><circle cx="54" cy="-0" r="2.9"/><circle cx="-38" cy="-38" r="2.9"/><circle cx="-0" cy="55" r="2.9"/><circle cx="39" cy="-39" r="2.9"/><circle cx="-56" cy="-0" r="2.9"/>
+                <circle cx="40" cy="40" r="2.9"/><circle cx="0" cy="-57" r="2.9"/><circle cx="-40" cy="40" r="2.9"/><circle cx="58" cy="0" r="2.9"/><circle cx="-41" cy="-41" r="2.9"/><circle cx="0" cy="58" r="2.9"/>
+                <circle cx="42" cy="-42" r="2.9"/><circle cx="-59" cy="-0" r="2.9"/><circle cx="42" cy="42" r="2.9"/><circle cx="-0" cy="-60" r="2.9"/><circle cx="-43" cy="43" r="2.9"/><circle cx="61" cy="0" r="2.9"/>
+                <circle cx="-43" cy="-43" r="2.9"/><circle cx="-0" cy="62" r="2.9"/><circle cx="44" cy="-44" r="2.9"/><circle cx="-63" cy="-0" r="2.9"/><circle cx="45" cy="45" r="2.9"/><circle cx="0" cy="-64" r="2.9"/>
+                <circle cx="-45" cy="45" r="2.9"/><circle cx="64" cy="0" r="2.9"/><circle cx="-46" cy="-46" r="2.9"/><circle cx="-0" cy="65" r="2.9"/><circle cx="46" cy="-46" r="2.9"/><circle cx="-66" cy="0" r="2.9"/>
+                <circle cx="47" cy="47" r="2.9"/><circle cx="0" cy="-67" r="2.9"/><circle cx="-47" cy="47" r="2.9"/><circle cx="68" cy="0" r="2.9"/><circle cx="-48" cy="-48" r="2.9"/><circle cx="-0" cy="68" r="2.9"/>
+                <circle cx="49" cy="-49" r="2.9"/><circle cx="-69" cy="-0" r="2.9"/><circle cx="49" cy="49" r="2.9"/><circle cx="0" cy="-70" r="2.9"/><circle cx="-50" cy="50" r="2.9"/><circle cx="71" cy="0" r="2.9"/>
+                <circle cx="-50" cy="-50" r="2.9"/><circle cx="0" cy="71" r="2.9"/><circle cx="51" cy="-51" r="2.9"/><circle cx="-72" cy="-0" r="2.9"/><circle cx="51" cy="51" r="2.9"/><circle cx="0" cy="-73" r="2.9"/>
+                <circle cx="-52" cy="52" r="2.9"/><circle cx="73" cy="0" r="2.9"/><circle cx="-52" cy="-52" r="2.9"/><circle cx="-0" cy="74" r="2.9"/><circle cx="53" cy="-53" r="2.9"/><circle cx="-75" cy="-0" r="2.9"/>
+                <circle cx="53" cy="53" r="2.9"/><circle cx="0" cy="-76" r="2.9"/><circle cx="-54" cy="54" r="2.9"/><circle cx="76" cy="-0" r="2.9"/><circle cx="-54" cy="-54" r="2.9"/><circle cx="-0" cy="77" r="2.9"/>
+                <circle cx="55" cy="-55" r="2.9"/><circle cx="-78" cy="-0" r="2.9"/><circle cx="55" cy="55" r="2.9"/><circle cx="-0" cy="-78" r="2.9"/><circle cx="-56" cy="56" r="2.9"/><circle cx="79" cy="0" r="2.9"/>
+                <circle cx="-56" cy="-56" r="2.9"/><circle cx="-0" cy="80" r="2.9"/><circle cx="56" cy="-56" r="2.9"/><circle cx="-80" cy="-0" r="2.9"/><circle cx="57" cy="57" r="2.9"/><circle cx="-0" cy="-81" r="2.9"/>
+                <circle cx="-57" cy="57" r="2.9"/><circle cx="81" cy="0" r="2.9"/><circle cx="-58" cy="-58" r="2.9"/><circle cx="-0" cy="82" r="2.9"/><circle cx="58" cy="-58" r="2.9"/><circle cx="-83" cy="0" r="2.9"/>
+                <circle cx="59" cy="59" r="2.9"/><circle cx="0" cy="-83" r="2.9"/><circle cx="-59" cy="59" r="2.9"/><circle cx="84" cy="0" r="2.9"/><circle cx="-60" cy="-60" r="2.9"/><circle cx="-0" cy="85" r="2.9"/>
+                <circle cx="60" cy="-60" r="2.9"/><circle cx="-85" cy="0" r="2.9"/><circle cx="60" cy="60" r="2.9"/><circle cx="0" cy="-86" r="2.9"/><circle cx="-61" cy="61" r="2.9"/><circle cx="86" cy="0" r="2.9"/>
+                <circle cx="-61" cy="-61" r="2.9"/><circle cx="0" cy="87" r="2.9"/><circle cx="62" cy="-62" r="2.9"/><circle cx="-88" cy="-0" r="2.9"/><circle cx="62" cy="62" r="2.9"/><circle cx="0" cy="-88" r="2.9"/>
+            </g>
+        </g>
+        <text class="rotp" x="209" y="364" text-anchor="middle" style="fill:#c0392b" font-weight="700">
+            oito braços — e um monte de espaço perdido
+        </text>
+    </g>
+
+    <!-- ══ Meio: 137,5° — o ângulo de ouro ════════════════════════════════ -->
+    <g transform="translate(490,112)">
+        <rect class="painel" x="0" y="0" width="418" height="380" rx="16" stroke="#2f8f3d" stroke-width="3"/>
+        <text class="rot" x="24" y="38" style="fill:#2f8f3d">GIRO DE 137,5°</text>
+        <text class="rotp" x="24" y="60">a volta dividida pela Regra de Ouro</text>
+
+        <g transform="translate(209,222)">
+            <circle cx="0" cy="0" r="118" fill="#6b4f26" stroke="#8a6a1f" stroke-width="2"/>
+            <g fill="#f0d264" stroke="#8a6a1f" stroke-width="0.6">
+                <circle cx="-5" cy="-5" r="2.9"/><circle cx="1" cy="10" r="2.9"/><circle cx="8" cy="-10" r="2.9"/><circle cx="-14" cy="3" r="2.9"/><circle cx="14" cy="9" r="2.9"/><circle cx="-5" cy="-17" r="2.9"/>
+                <circle cx="-9" cy="17" r="2.9"/><circle cx="19" cy="-7" r="2.9"/><circle cx="-20" cy="-8" r="2.9"/><circle cx="10" cy="21" r="2.9"/><circle cx="7" cy="-23" r="2.9"/><circle cx="-22" cy="12" r="2.9"/>
+                <circle cx="25" cy="6" r="2.9"/><circle cx="-15" cy="-22" r="2.9"/><circle cx="-4" cy="28" r="2.9"/><circle cx="22" cy="-19" r="2.9"/><circle cx="-30" cy="-1" r="2.9"/><circle cx="22" cy="22" r="2.9"/>
+                <circle cx="-1" cy="-31" r="2.9"/><circle cx="-21" cy="25" r="2.9"/><circle cx="33" cy="-4" r="2.9"/><circle cx="-28" cy="-19" r="2.9"/><circle cx="7" cy="34" r="2.9"/><circle cx="18" cy="-31" r="2.9"/>
+                <circle cx="-34" cy="11" r="2.9"/><circle cx="33" cy="16" r="2.9"/><circle cx="-14" cy="-35" r="2.9"/><circle cx="-13" cy="36" r="2.9"/><circle cx="34" cy="-18" r="2.9"/><circle cx="-38" cy="-10" r="2.9"/>
+                <circle cx="22" cy="34" r="2.9"/><circle cx="7" cy="-40" r="2.9"/><circle cx="-33" cy="25" r="2.9"/><circle cx="42" cy="4" r="2.9"/><circle cx="-29" cy="-31" r="2.9"/><circle cx="-0" cy="43" r="2.9"/>
+                <circle cx="30" cy="-32" r="2.9"/><circle cx="-44" cy="4" r="2.9"/><circle cx="36" cy="27" r="2.9"/><circle cx="-8" cy="-45" r="2.9"/><circle cx="-25" cy="39" r="2.9"/><circle cx="45" cy="-12" r="2.9"/>
+                <circle cx="-42" cy="-22" r="2.9"/><circle cx="16" cy="45" r="2.9"/><circle cx="18" cy="-45" r="2.9"/><circle cx="-44" cy="21" r="2.9"/><circle cx="47" cy="15" r="2.9"/><circle cx="-25" cy="-43" r="2.9"/>
+                <circle cx="-11" cy="49" r="2.9"/><circle cx="42" cy="-29" r="2.9"/><circle cx="-51" cy="-7" r="2.9"/><circle cx="33" cy="40" r="2.9"/><circle cx="2" cy="-52" r="2.9"/><circle cx="-37" cy="37" r="2.9"/>
+                <circle cx="53" cy="-2" r="2.9"/><circle cx="-41" cy="-35" r="2.9"/><circle cx="7" cy="54" r="2.9"/><circle cx="31" cy="-45" r="2.9"/><circle cx="-54" cy="12" r="2.9"/><circle cx="48" cy="28" r="2.9"/>
+                <circle cx="-17" cy="-54" r="2.9"/><circle cx="-24" cy="51" r="2.9"/><circle cx="53" cy="-22" r="2.9"/><circle cx="-54" cy="-20" r="2.9"/><circle cx="27" cy="51" r="2.9"/><circle cx="15" cy="-56" r="2.9"/>
+                <circle cx="-50" cy="32" r="2.9"/><circle cx="58" cy="10" r="2.9"/><circle cx="-36" cy="-47" r="2.9"/><circle cx="-5" cy="60" r="2.9"/><circle cx="45" cy="-41" r="2.9"/><circle cx="-61" cy="-0" r="2.9"/>
+                <circle cx="45" cy="42" r="2.9"/><circle cx="-5" cy="-62" r="2.9"/><circle cx="-38" cy="49" r="2.9"/><circle cx="62" cy="-11" r="2.9"/><circle cx="-53" cy="-34" r="2.9"/><circle cx="16" cy="61" r="2.9"/>
+                <circle cx="30" cy="-57" r="2.9"/><circle cx="-61" cy="22" r="2.9"/><circle cx="60" cy="25" r="2.9"/><circle cx="-28" cy="-59" r="2.9"/><circle cx="-20" cy="63" r="2.9"/><circle cx="57" cy="-33" r="2.9"/>
+                <circle cx="-65" cy="-14" r="2.9"/><circle cx="38" cy="55" r="2.9"/><circle cx="9" cy="-67" r="2.9"/><circle cx="-52" cy="43" r="2.9"/><circle cx="68" cy="3" r="2.9"/><circle cx="-48" cy="-48" r="2.9"/>
+                <circle cx="3" cy="69" r="2.9"/><circle cx="44" cy="-53" r="2.9"/><circle cx="-69" cy="9" r="2.9"/><circle cx="57" cy="40" r="2.9"/><circle cx="-15" cy="-69" r="2.9"/><circle cx="-35" cy="61" r="2.9"/>
+                <circle cx="68" cy="-21" r="2.9"/><circle cx="-65" cy="-30" r="2.9"/><circle cx="27" cy="66" r="2.9"/><circle cx="25" cy="-68" r="2.9"/><circle cx="-64" cy="33" r="2.9"/><circle cx="70" cy="19" r="2.9"/>
+                <circle cx="-39" cy="-62" r="2.9"/><circle cx="-13" cy="72" r="2.9"/><circle cx="59" cy="-45" r="2.9"/><circle cx="-74" cy="-6" r="2.9"/><circle cx="50" cy="55" r="2.9"/><circle cx="0" cy="-75" r="2.9"/>
+                <circle cx="-51" cy="55" r="2.9"/><circle cx="75" cy="-7" r="2.9"/><circle cx="-60" cy="-46" r="2.9"/><circle cx="13" cy="75" r="2.9"/><circle cx="41" cy="-65" r="2.9"/><circle cx="-74" cy="20" r="2.9"/>
+                <circle cx="68" cy="36" r="2.9"/><circle cx="-27" cy="-73" r="2.9"/><circle cx="-30" cy="72" r="2.9"/><circle cx="71" cy="-33" r="2.9"/><circle cx="-75" cy="-24" r="2.9"/><circle cx="39" cy="68" r="2.9"/>
+                <circle cx="17" cy="-77" r="2.9"/><circle cx="-65" cy="46" r="2.9"/><circle cx="79" cy="10" r="2.9"/><circle cx="-52" cy="-61" r="2.9"/><circle cx="-4" cy="80" r="2.9"/><circle cx="57" cy="-57" r="2.9"/>
+                <circle cx="-81" cy="4" r="2.9"/><circle cx="62" cy="52" r="2.9"/><circle cx="-11" cy="-81" r="2.9"/><circle cx="-47" cy="67" r="2.9"/><circle cx="80" cy="-18" r="2.9"/><circle cx="-72" cy="-41" r="2.9"/>
+                <circle cx="25" cy="79" r="2.9"/><circle cx="35" cy="-76" r="2.9"/><circle cx="-77" cy="32" r="2.9"/><circle cx="79" cy="29" r="2.9"/><circle cx="-39" cy="-75" r="2.9"/><circle cx="-22" cy="82" r="2.9"/>
+                <circle cx="72" cy="-46" r="2.9"/><circle cx="-84" cy="-15" r="2.9"/><circle cx="52" cy="68" r="2.9"/><circle cx="7" cy="-85" r="2.9"/><circle cx="-63" cy="58" r="2.9"/><circle cx="86" cy="0" r="2.9"/>
+                <circle cx="-64" cy="-59" r="2.9"/><circle cx="8" cy="87" r="2.9"/><circle cx="53" cy="-69" r="2.9"/><circle cx="-86" cy="15" r="2.9"/><circle cx="74" cy="47" r="2.9"/><circle cx="-23" cy="-85" r="2.9"/>
+            </g>
+        </g>
+        <text class="rotp" x="209" y="364" text-anchor="middle" style="fill:#2f8f3d" font-weight="700">
+            sem um buraco sequer — cabe tudo
+        </text>
+    </g>
+
+    <!-- ══ Direita: por que esse número ═══════════════════════════════════ -->
+    <g transform="translate(934,112)">
+        <rect class="painel" x="0" y="0" width="420" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">POR QUE ESSE NÚMERO?</text>
+
+        <g transform="translate(24,66)">
+            <rect x="0" y="0" width="372" height="104" rx="10" fill="#fdeee9" stroke="#c0392b" stroke-width="1.5"/>
+            <text class="rot" x="18" y="30" font-size="16" style="fill:#c0392b">Qualquer fração simples se repete</text>
+            <text class="rotp" x="18" y="56" font-size="13">3/8 da volta? Depois de 8 sementes, a nona cai</text>
+            <text class="rotp" x="18" y="76" font-size="13">bem em cima da primeira. Nascem 8 braços — e,</text>
+            <text class="rotp" x="18" y="94" font-size="13">entre eles, o vazio.</text>
+        </g>
+
+        <g transform="translate(24,186)">
+            <rect x="0" y="0" width="372" height="104" rx="10" fill="#eef7e8" stroke="#2f8f3d" stroke-width="2"/>
+            <text class="rot" x="18" y="30" font-size="16" style="fill:#2f8f3d">O ângulo de ouro não fecha nunca</text>
+            <text class="rotp" x="18" y="56" font-size="13">Ele não é fração de volta nenhuma. Por isso a</text>
+            <text class="rotp" x="18" y="76" font-size="13">semente nova sempre cai no maior buraco que</text>
+            <text class="rotp" x="18" y="94" font-size="13">ainda restava. Nunca há repetição.</text>
+        </g>
+
+        <g transform="translate(24,306)">
+            <rect x="0" y="0" width="372" height="54" rx="10" fill="#fdf3d4" stroke="#c9701e" stroke-width="1.5"/>
+            <text class="rotp" x="18" y="32" font-size="13">
+                Conte as espirais do disco: <tspan font-weight="700" style="fill:#c9701e">34, 55, 89</tspan> — sempre Fibonacci.
+            </text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé ═════════════════════════════════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">O MESMO ÂNGULO, EM TODA PARTE</text>
+
+        <g transform="translate(30,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#fdf8e6" stroke="#d9c184" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16">Na pinha e no abacaxi</text>
+            <text class="rotp" x="20" y="60">As escamas seguem o mesmo giro, e o número</text>
+            <text class="rotp" x="20" y="84">de espirais que dá para contar em cada sentido</text>
+            <text class="rotp" x="20" y="104">também cai na sequência: 8 e 13, 13 e 21.</text>
+        </g>
+
+        <g transform="translate(452,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#fdf8e6" stroke="#d9c184" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16">Não é enfeite: é engenharia</text>
+            <text class="rotp" x="20" y="60">Mais sementes no mesmo disco significa mais</text>
+            <text class="rotp" x="20" y="84">filhos por flor. O empacotamento perfeito vale</text>
+            <text class="rotp" x="20" y="104">comida, espaço e futuro para a planta.</text>
+        </g>
+
+        <g transform="translate(874,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#eef7e8" stroke="#2f8f3d" stroke-width="2"/>
+            <text class="rot" x="20" y="32" font-size="16" style="fill:#2f8f3d">E a planta não mede nada</text>
+            <text class="rotp" x="20" y="60">Ela não tem transferidor nem calculadora. Já</text>
+            <text class="rotp" x="20" y="84">nasce girando nesse ângulo — o único, entre</text>
+            <text class="rotp" x="20" y="104">infinitos possíveis, que não desperdiça espaço.</text>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        Uma flor de girassol pode guardar mais de mil sementes. Nenhuma delas fica de fora, e nenhuma fica espremida.
+    </text>
+</svg>

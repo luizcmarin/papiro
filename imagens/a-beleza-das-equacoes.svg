@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Beleza das Equações — o sinal de igual é o fiel da balança</title>
+    <desc id="desc">Uma equação é uma balança: o sinal de igual é o fiel, e os dois pratos têm de pesar o
+        mesmo. Resolver é achar o valor de x que nivela os pratos. E tudo o que se faz de um lado tem
+        de ser feito do outro — tirar 3 de um prato só entorta a balança; tirar 3 dos dois mantém o
+        equilíbrio. É essa regra única que resolve qualquer equação.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f5f2fb"/>
+            <stop offset="1" stop-color="#e0d9ef"/>
+        </linearGradient>
+        <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#b9a6e0"/>
+            <stop offset="1" stop-color="#8a75b8"/>
+        </linearGradient>
+        <marker id="s-6a5a92" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#6a5a92"/>
+        </marker>
+        <marker id="s-2f8f5c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#2f8f5c"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#3a2c60; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#6a5a92; font-size:18px; font-weight:700; }
+        .rotp { fill:#8d82ac; font-size:14px; }
+        .painel { fill:#ffffff; stroke:#c3b7e0; stroke-width:2; }
+        .eq   { fill:#3a2c60; font-size:26px; font-weight:800; }
+        .peso { fill:#7c6bb0; stroke:#54448a; stroke-width:1.5; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">A BELEZA DAS EQUAÇÕES</text>
+    <text class="rotp" x="46" y="84" font-size="17">O sinal de igual não é "a resposta vem aí". É o fiel de uma balança.</text>
+
+    <!-- ══ Esquerda: a balança pendendo e nivelando ═══════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="812" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">2x + 3 = 11 — QUAL x NIVELA OS PRATOS?</text>
+
+        <!-- x = 2: pende para a direita -->
+        <g transform="translate(190,180)">
+            <text class="rot" x="0" y="-52" text-anchor="middle" font-size="16" style="fill:#c0392b">x = 2</text>
+
+            <!-- coluna -->
+            <path d="M0 -30 V 92" stroke="#8a75b8" stroke-width="8"/>
+            <path d="M-30 92 H 30 L 22 106 H -22 Z" fill="url(#metal)"/>
+            <!-- braço inclinado (direita pesa mais) -->
+            <g transform="rotate(9)">
+                <path d="M-110 -30 H 110" stroke="#8a75b8" stroke-width="7" stroke-linecap="round"/>
+                <path d="M-110 -30 V 4" stroke="#8a75b8" stroke-width="2"/>
+                <path d="M110 -30 V 4" stroke="#8a75b8" stroke-width="2"/>
+                <path d="M-146 4 H -74 L -84 30 H -136 Z" fill="#efeaf9" stroke="#8a75b8" stroke-width="2"/>
+                <path d="M74 4 H 146 L 136 30 H 84 Z" fill="#efeaf9" stroke="#8a75b8" stroke-width="2"/>
+                <!-- 2x + 3 = 7 -->
+                <text class="rot" x="-110" y="24" text-anchor="middle" font-size="16">7</text>
+                <text class="rot" x="110" y="24" text-anchor="middle" font-size="16">11</text>
+            </g>
+            <text class="rotp" x="0" y="132" text-anchor="middle" style="fill:#c0392b">falta peso à esquerda</text>
+        </g>
+
+        <!-- x = 4: nivelada -->
+        <g transform="translate(480,180)">
+            <text class="rot" x="0" y="-52" text-anchor="middle" font-size="16" style="fill:#2f8f5c">x = 4</text>
+
+            <path d="M0 -30 V 92" stroke="#8a75b8" stroke-width="8"/>
+            <path d="M-30 92 H 30 L 22 106 H -22 Z" fill="url(#metal)"/>
+            <g>
+                <path d="M-110 -30 H 110" stroke="#2f8f5c" stroke-width="7" stroke-linecap="round"/>
+                <path d="M-110 -30 V 4" stroke="#8a75b8" stroke-width="2"/>
+                <path d="M110 -30 V 4" stroke="#8a75b8" stroke-width="2"/>
+                <path d="M-146 4 H -74 L -84 30 H -136 Z" fill="#e6f6ec" stroke="#2f8f5c" stroke-width="2"/>
+                <path d="M74 4 H 146 L 136 30 H 84 Z" fill="#e6f6ec" stroke="#2f8f5c" stroke-width="2"/>
+                <text class="rot" x="-110" y="24" text-anchor="middle" font-size="16" style="fill:#2f8f5c">11</text>
+                <text class="rot" x="110" y="24" text-anchor="middle" font-size="16" style="fill:#2f8f5c">11</text>
+            </g>
+            <circle cx="0" cy="-30" r="7" fill="#2f8f5c"/>
+            <text class="rotp" x="0" y="132" text-anchor="middle" style="fill:#2f8f5c" font-weight="700">
+                nivelou: é este o x
+            </text>
+        </g>
+
+        <!-- x = 6: pende para a esquerda -->
+        <g transform="translate(700,180)">
+            <text class="rot" x="0" y="-52" text-anchor="middle" font-size="16" style="fill:#c0392b">x = 6</text>
+
+            <path d="M0 -30 V 92" stroke="#8a75b8" stroke-width="8"/>
+            <path d="M-30 92 H 30 L 22 106 H -22 Z" fill="url(#metal)"/>
+            <g transform="rotate(-9)">
+                <path d="M-70 -30 H 70" stroke="#8a75b8" stroke-width="7" stroke-linecap="round"/>
+                <path d="M-70 -30 V 4" stroke="#8a75b8" stroke-width="2"/>
+                <path d="M70 -30 V 4" stroke="#8a75b8" stroke-width="2"/>
+                <path d="M-96 4 H -44 L -52 28 H -88 Z" fill="#efeaf9" stroke="#8a75b8" stroke-width="2"/>
+                <path d="M44 4 H 96 L 88 28 H 52 Z" fill="#efeaf9" stroke="#8a75b8" stroke-width="2"/>
+                <text class="rot" x="-70" y="24" text-anchor="middle" font-size="16">15</text>
+                <text class="rot" x="70" y="24" text-anchor="middle" font-size="16">11</text>
+            </g>
+            <text class="rotp" x="0" y="132" text-anchor="middle" style="fill:#c0392b">agora sobra</text>
+        </g>
+
+        <text class="rotp" x="24" y="348" font-size="15">
+            Resolver não é "achar a resposta". É procurar o valor que deixa os dois lados com o mesmo peso.
+        </text>
+    </g>
+
+    <!-- ══ Direita: a regra de ouro ═══════════════════════════════════════ -->
+    <g transform="translate(886,112)">
+        <rect class="painel" x="0" y="0" width="468" height="380" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#2f8f5c">A ÚNICA REGRA QUE EXISTE</text>
+        <text class="rotp" x="24" y="60">o que você faz de um lado, faça do outro</text>
+
+        <g transform="translate(24,86)">
+            <rect x="0" y="0" width="420" height="80" rx="10" fill="#f7f4fd" stroke="#c3b7e0" stroke-width="1.5"/>
+            <text class="eq" x="210" y="36" text-anchor="middle">2x + 3 = 11</text>
+            <text class="rotp" x="210" y="62" text-anchor="middle" font-size="13">a balança de partida</text>
+        </g>
+
+        <path d="M234 176 V 196" stroke="#6a5a92" stroke-width="2.5" fill="none" marker-end="url(#s-6a5a92)"/>
+        <text class="rotp" x="250" y="192" font-size="13">tire 3 dos DOIS pratos</text>
+
+        <g transform="translate(24,204)">
+            <rect x="0" y="0" width="420" height="80" rx="10" fill="#f7f4fd" stroke="#c3b7e0" stroke-width="1.5"/>
+            <text class="eq" x="210" y="36" text-anchor="middle">2x = 8</text>
+            <text class="rotp" x="210" y="62" text-anchor="middle" font-size="13">continua nivelada</text>
+        </g>
+
+        <path d="M234 294 V 312" stroke="#2f8f5c" stroke-width="2.5" fill="none" marker-end="url(#s-2f8f5c)"/>
+        <text class="rotp" x="250" y="308" font-size="13" style="fill:#2f8f5c">divida os DOIS por 2</text>
+
+        <g transform="translate(24,318)">
+            <rect x="0" y="0" width="420" height="46" rx="10" fill="#e6f6ec" stroke="#2f8f5c" stroke-width="2"/>
+            <text class="eq" x="210" y="33" text-anchor="middle" style="fill:#2f8f5c">x = 4</text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé ═════════════════════════════════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">E É POR ISSO QUE OS MATEMÁTICOS FALAM EM "BELEZA"</text>
+
+        <g transform="translate(30,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#f7f4fd" stroke="#c3b7e0" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16">Uma regra só, para tudo</text>
+            <text class="rotp" x="20" y="60">Some, subtraia, multiplique, divida — desde que</text>
+            <text class="rotp" x="20" y="84">faça nos dois lados, a igualdade se mantém. É a</text>
+            <text class="rotp" x="20" y="104">mesma regra da primeira série à física quântica.</text>
+        </g>
+
+        <g transform="translate(452,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#f7f4fd" stroke="#c3b7e0" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16">A equação diz mais do que parece</text>
+            <text class="rotp" x="20" y="60">"2x + 3 = 11" não é um pedido de conta. É uma</text>
+            <text class="rotp" x="20" y="84">afirmação sobre o mundo: existe um x, e um só,</text>
+            <text class="rotp" x="20" y="104">que faz esses dois lados serem a mesma coisa.</text>
+        </g>
+
+        <g transform="translate(874,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#e6f6ec" stroke="#2f8f5c" stroke-width="2"/>
+            <text class="rot" x="20" y="32" font-size="16" style="fill:#2f8f5c">O universo obedece a equações</text>
+            <text class="rotp" x="20" y="60">A queda de uma pedra, a órbita de um planeta e a</text>
+            <text class="rotp" x="20" y="84">luz de uma estrela seguem igualdades que cabem</text>
+            <text class="rotp" x="20" y="104">numa linha. Isso não tinha de ser assim — mas é.</text>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        "O mais incompreensível a respeito do universo é que ele seja compreensível." — e é em equações que ele se deixa compreender.
+    </text>
+</svg>

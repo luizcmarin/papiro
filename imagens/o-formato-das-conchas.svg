@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">O Formato das Conchas — a espiral que cresce sem mudar de forma</title>
+    <desc id="desc">A concha do náutilo cresce numa espiral logarítmica: a cada volta ela é multiplicada
+        por um fator constante. Por isso a forma nunca muda — o bicho só acrescenta uma câmara nova,
+        maior na mesma proporção, e nunca precisa refazer o que já construiu. Se a concha crescesse
+        somando sempre a mesma largura, como na espiral de Arquimedes, as câmaras ficariam do mesmo
+        tamanho e o animal, que cresce, não caberia mais dentro.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f7f1e6"/>
+            <stop offset="1" stop-color="#e5d8c4"/>
+        </linearGradient>
+        <linearGradient id="nacar" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#fff8ec"/>
+            <stop offset="0.5" stop-color="#f3ddc0"/>
+            <stop offset="1" stop-color="#d9b78f"/>
+        </linearGradient>
+        <marker id="s-8a6a4a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#8a6a4a"/>
+        </marker>
+        <marker id="s-2f8f5c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#2f8f5c"/>
+        </marker>
+        <marker id="s-c0392b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#c0392b"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#5a3f22; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#8a6a4a; font-size:18px; font-weight:700; }
+        .rotp { fill:#a89078; font-size:14px; }
+        .painel { fill:#fffcf6; stroke:#d8c3a5; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">O FORMATO DAS CONCHAS</text>
+    <text class="rotp" x="46" y="84" font-size="17">O náutilo não reforma a casa: ele só acrescenta um quarto maior — e a casa continua igual.</text>
+
+    <!-- ══ Esquerda: a concha em corte ════════════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="640" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">A CONCHA, ABERTA AO MEIO</text>
+        <text class="rotp" x="24" y="60">cada câmara nova é a anterior multiplicada pelo mesmo fator</text>
+
+        <g transform="translate(344,228) scale(2.0)">
+            <!-- o corpo da concha -->
+            <path d="M 6 0 L 6 -2 L 6 -4 L 5 -6 L 3 -7 L 1 -8 L -2 -8 L -5 -8 L -7 -6 L -9 -4 L -10 -1
+                     L -11 2 L -10 5 L -9 8 L -6 11 L -3 13 L 1 13 L 5 13 L 9 11 L 13 9 L 16 5 L 17 0
+                     L 17 -6 L 15 -11 L 12 -15 L 7 -19 L 1 -21 L -5 -22 L -12 -20 L -18 -16 L -23 -11
+                     L -27 -3 L -28 5 L -26 13 L -22 21 L -15 28 L -7 33 L 4 35 L 14 34 L 25 29 L 34 22
+                     L 41 11 L 44 -1 L 44 -15 L 39 -29 L 30 -41 L 18 -50 L 2 -55 L -15 -56 L -32 -51
+                     L -48 -41 L -61 -26 L -69 -8 L -72 14 L -67 36"
+                  fill="none" stroke="#c9a87c" stroke-width="12" stroke-linecap="round"/>
+            <path d="M 6 0 L 6 -2 L 6 -4 L 5 -6 L 3 -7 L 1 -8 L -2 -8 L -5 -8 L -7 -6 L -9 -4 L -10 -1
+                     L -11 2 L -10 5 L -9 8 L -6 11 L -3 13 L 1 13 L 5 13 L 9 11 L 13 9 L 16 5 L 17 0
+                     L 17 -6 L 15 -11 L 12 -15 L 7 -19 L 1 -21 L -5 -22 L -12 -20 L -18 -16 L -23 -11
+                     L -27 -3 L -28 5 L -26 13 L -22 21 L -15 28 L -7 33 L 4 35 L 14 34 L 25 29 L 34 22
+                     L 41 11 L 44 -1 L 44 -15 L 39 -29 L 30 -41 L 18 -50 L 2 -55 L -15 -56 L -32 -51
+                     L -48 -41 L -61 -26 L -69 -8 L -72 14 L -67 36"
+                  fill="none" stroke="url(#nacar)" stroke-width="9" stroke-linecap="round"/>
+
+            <!-- as paredes entre as câmaras: raios saindo do centro -->
+            <g stroke="#b08d63" stroke-width="1" opacity="0.9">
+                <path d="M0 0 L 17 0"/>
+                <path d="M0 0 L -28 5"/>
+                <path d="M0 0 L 44 -1"/>
+                <path d="M0 0 L -72 14"/>
+                <path d="M0 0 L -22 21"/>
+                <path d="M0 0 L 30 -41"/>
+            </g>
+            <circle cx="0" cy="0" r="2" fill="#8a6a4a"/>
+        </g>
+
+        <!-- os três raios, na mesma direção: cada um é o anterior × 2,6 -->
+        <g stroke="#2f8f5c" stroke-width="2.5" fill="none">
+            <path d="M344 228 L 366 228" marker-end="url(#s-2f8f5c)"/>
+            <path d="M344 244 L 410 244" marker-end="url(#s-2f8f5c)"/>
+            <path d="M344 260 L 516 260" marker-end="url(#s-2f8f5c)"/>
+        </g>
+        <text class="rotp" x="536" y="248" style="fill:#2f8f5c" font-weight="700">cada volta</text>
+        <text class="rotp" x="536" y="268" style="fill:#2f8f5c" font-weight="700">× 2,6</text>
+
+        <text class="rotp" x="24" y="356" font-size="14">
+            O animal mora só na última câmara. As de trás, vazias, viram os tanques que o fazem flutuar.
+        </text>
+    </g>
+
+    <!-- ══ Direita: somar × multiplicar ═══════════════════════════════════ -->
+    <g transform="translate(714,112)">
+        <rect class="painel" x="0" y="0" width="640" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">DUAS MANEIRAS DE ENROLAR UMA ESPIRAL</text>
+
+        <!-- Arquimedes -->
+        <g transform="translate(160,224)">
+            <path d="M 10 0 L 13 -4 L 14 -10 L 13 -16 L 9 -22 L 2 -27 L -7 -30 L -17 -29 L -28 -25
+                     L -37 -18 L -44 -6 L -47 8 L -46 23 L -40 38 L -29 51 L -13 60 L 6 65 L 26 64
+                     L 46 56 L 63 42 L 76 22 L 82 -1 L 82 -27 L 73 -52 L 56 -74 L 33 -90 L 5 -100
+                     L -25 -100 L -55 -91 L -82 -73 L -103 -47 L -116 -15 L -119 21"
+                  fill="none" stroke="#c0392b" stroke-width="3" transform="scale(0.72)"/>
+            <text class="rot" x="0" y="-118" text-anchor="middle" font-size="16" style="fill:#c0392b">SOMANDO</text>
+            <text class="rotp" x="0" y="112" text-anchor="middle" font-size="13" style="fill:#c0392b" font-weight="700">
+                as voltas ficam igualmente largas
+            </text>
+            <text class="rotp" x="0" y="132" text-anchor="middle" font-size="13" style="fill:#c0392b">
+                o quarto novo tem o tamanho do velho
+            </text>
+            <text class="rotp" x="0" y="152" text-anchor="middle" font-size="13" style="fill:#c0392b">
+                — e o bicho, que cresceu, não cabe
+            </text>
+        </g>
+
+        <!-- logarítmica -->
+        <g transform="translate(452,214)">
+            <path d="M 6 0 L 6 -2 L 6 -4 L 5 -6 L 3 -7 L 1 -8 L -2 -8 L -5 -8 L -7 -6 L -9 -4 L -10 -1
+                     L -11 2 L -10 5 L -9 8 L -6 11 L -3 13 L 1 13 L 5 13 L 9 11 L 13 9 L 16 5 L 17 0
+                     L 17 -6 L 15 -11 L 12 -15 L 7 -19 L 1 -21 L -5 -22 L -12 -20 L -18 -16 L -23 -11
+                     L -27 -3 L -28 5 L -26 13 L -22 21 L -15 28 L -7 33 L 4 35 L 14 34 L 25 29 L 34 22
+                     L 41 11 L 44 -1 L 44 -15 L 39 -29 L 30 -41 L 18 -50 L 2 -55 L -15 -56 L -32 -51
+                     L -48 -41 L -61 -26 L -69 -8 L -72 14 L -67 36"
+                  fill="none" stroke="#2f8f5c" stroke-width="3" transform="scale(1.5)"/>
+            <text class="rot" x="0" y="-128" text-anchor="middle" font-size="16" style="fill:#2f8f5c">MULTIPLICANDO</text>
+            <text class="rotp" x="0" y="122" text-anchor="middle" font-size="13" style="fill:#2f8f5c" font-weight="700">
+                cada volta é a anterior ampliada
+            </text>
+            <text class="rotp" x="0" y="142" text-anchor="middle" font-size="13" style="fill:#2f8f5c">
+                o quarto novo cresce junto com o dono
+            </text>
+            <text class="rotp" x="0" y="162" text-anchor="middle" font-size="13" style="fill:#2f8f5c">
+                — e a forma nunca muda
+            </text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé ═════════════════════════════════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">POR QUE ISSO É UMA SOLUÇÃO DE ENGENHARIA</text>
+
+        <g transform="translate(30,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#fbf5ea" stroke="#d8c3a5" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16">Nunca é preciso reformar</text>
+            <text class="rotp" x="20" y="60">O que já foi construído continua servindo, do</text>
+            <text class="rotp" x="20" y="84">primeiro dia até o último. A concha só cresce</text>
+            <text class="rotp" x="20" y="104">na boca — e nunca por dentro.</text>
+        </g>
+
+        <g transform="translate(452,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#fbf5ea" stroke="#d8c3a5" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16">A mesma forma em qualquer zoom</text>
+            <text class="rotp" x="20" y="60">Amplie um pedaço da espiral e você não</text>
+            <text class="rotp" x="20" y="84">consegue dizer se está vendo o começo ou</text>
+            <text class="rotp" x="20" y="104">o fim. É a mesma curva, em outra escala.</text>
+        </g>
+
+        <g transform="translate(874,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#eef7f0" stroke="#2f8f5c" stroke-width="2"/>
+            <text class="rot" x="20" y="32" font-size="16" style="fill:#2f8f5c">E ela aparece em toda parte</text>
+            <text class="rotp" x="20" y="60">No chifre do carneiro, na garra do falcão, no</text>
+            <text class="rotp" x="20" y="84">olho do furacão e no braço da galáxia. Sempre</text>
+            <text class="rotp" x="20" y="104">onde algo cresce sem mudar de forma.</text>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        Jakob Bernoulli pediu que gravassem essa espiral em seu túmulo, com a frase: "mudo, e volto a ser o mesmo".
+    </text>
+</svg>

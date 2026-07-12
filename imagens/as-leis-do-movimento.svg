@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">As Leis do Movimento — a órbita é uma queda que nunca acerta o chão</title>
+    <desc id="desc">Newton imaginou um canhão no alto de uma montanha: com pouca velocidade a bala cai perto;
+        com mais, cai longe; e existe uma velocidade em que ela cai tão depressa quanto a Terra se curva
+        embaixo dela — e então ela nunca chega ao chão. Isso é uma órbita. A 1 unidade astronômica do Sol,
+        essa velocidade é 29,78 km/s. Abaixo dela, o corpo mergulha em direção ao Sol; acima de 42,1 km/s,
+        que é 29,78 vezes a raiz de dois, ele escapa do Sistema Solar para sempre.</desc>
+
+    <defs>
+        <linearGradient id="espaco" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#101a33"/>
+            <stop offset="1" stop-color="#05070e"/>
+        </linearGradient>
+        <radialGradient id="sol" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#fff6cf"/>
+            <stop offset="0.45" stop-color="#ffcf49"/>
+            <stop offset="1" stop-color="#ff8a1f" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="faixa" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#ff6b6b"/>
+            <stop offset="0.42" stop-color="#ffd24d"/>
+            <stop offset="0.52" stop-color="#7bd389"/>
+            <stop offset="0.86" stop-color="#63c7e8"/>
+            <stop offset="1" stop-color="#a98fe8"/>
+        </linearGradient>
+        <marker id="s-8fa8d8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#8fa8d8"/>
+        </marker>
+        <marker id="s-7bd389" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#7bd389"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#eaf0ff; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#cdd8f2; font-size:18px; font-weight:700; }
+        .rotp { fill:#8fa8d8; font-size:14px; }
+        .painel { fill:#0f1830; stroke:#3a4d80; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#espaco)"/>
+    <g fill="#8fa8d8" opacity="0.45">
+        <circle cx="1180" cy="66" r="1.5"/><circle cx="1320" cy="140" r="1.2"/><circle cx="120" cy="700" r="1.4"/>
+        <circle cx="980" cy="762" r="1.2"/><circle cx="640" cy="756" r="1.5"/>
+    </g>
+
+    <text class="cab" x="46" y="54">AS LEIS DO MOVIMENTO</text>
+    <text class="rotp" x="46" y="84" font-size="17">Estar em órbita não é estar sem gravidade: é cair para sempre — e errar o alvo todas as vezes.</text>
+
+    <!-- ══ Esquerda: o canhão de Newton ═══════════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="640" height="380" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#ffd24d">O CANHÃO DE NEWTON</text>
+        <text class="rotp" x="24" y="60">a experiência que ele fez só de pensar, em 1687</text>
+
+        <g transform="translate(240,230)">
+            <!-- a órbita: o círculo que passa exatamente pela boca do canhão -->
+            <circle cx="0" cy="0" r="78" fill="none" stroke="#7bd389" stroke-width="3"/>
+
+            <!-- a Terra -->
+            <circle cx="0" cy="0" r="60" fill="#2b5b8f" stroke="#63a8d8" stroke-width="2"/>
+            <path d="M-44 -18 C -26 -30, -4 -14, 20 -24 C 32 -30, 44 -18, 46 -10
+                     C 24 2, -4 14, -30 6 C -40 2, -42 -8, -44 -18 Z" fill="#4ec07a" opacity="0.85"/>
+            <path d="M-30 28 C -12 18, 12 28, 30 20" stroke="#4ec07a" stroke-width="7"
+                  fill="none" opacity="0.8" stroke-linecap="round"/>
+
+            <!-- a montanha e o canhão, com a boca em cima da órbita -->
+            <path d="M-12 -60 L 0 -84 L 12 -60 Z" fill="#8fa8d8"/>
+            <rect x="-4" y="-90" width="24" height="9" rx="3" fill="#e8e8f0" transform="rotate(-10,-4,-90)"/>
+
+            <!-- trajetórias -->
+            <g fill="none" stroke-width="2.5">
+                <path d="M18 -86 C 48 -84, 62 -68, 60 -44" stroke="#ff6b6b"/>
+                <path d="M18 -86 C 70 -82, 96 -50, 92 -4" stroke="#ffd24d"/>
+                <path d="M18 -86 C 120 -104, 240 -80, 330 -32" stroke="#a98fe8"/>
+            </g>
+
+            <!-- as balas -->
+            <circle cx="60" cy="-44" r="6" fill="#ff6b6b"/>
+            <circle cx="92" cy="-4" r="6" fill="#ffd24d"/>
+            <circle cx="0" cy="-78" r="7" fill="#7bd389"/>
+            <circle cx="300" cy="-44" r="6" fill="#a98fe8"/>
+        </g>
+
+        <text class="rotp" x="30" y="336" style="fill:#ff6b6b">devagar: cai logo ali</text>
+        <text class="rotp" x="30" y="358" style="fill:#ffd24d">mais rápido: cai mais longe</text>
+        <text class="rotp" x="336" y="336" style="fill:#7bd389" font-weight="700">rápido o bastante: cai para sempre</text>
+        <text class="rotp" x="336" y="358" style="fill:#a98fe8">rápido demais: some no espaço</text>
+    </g>
+
+    <!-- ══ Direita: a régua da velocidade ═════════════════════════════════ -->
+    <g transform="translate(714,112)">
+        <rect class="painel" x="0" y="0" width="640" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">A 1 UA DO SOL — A DISTÂNCIA DA TERRA</text>
+        <text class="rotp" x="24" y="60">todo o destino do corpo cabe numa faixa estreita de velocidade</text>
+
+        <!-- as três órbitas, em volta do Sol -->
+        <g transform="translate(178,172)">
+            <!-- lenta: elipse que mergulha para dentro -->
+            <ellipse cx="-34" cy="0" rx="66" ry="46" fill="none" stroke="#ff6b6b"
+                     stroke-width="2.5" stroke-dasharray="6 5"/>
+            <!-- certa: o círculo -->
+            <circle cx="0" cy="0" r="100" fill="none" stroke="#7bd389" stroke-width="3.5"/>
+            <!-- rápida: escapa -->
+            <path d="M100 0 C 180 -20, 270 -74, 330 -140" fill="none" stroke="#a98fe8" stroke-width="2.5"/>
+
+            <!-- o Sol -->
+            <circle cx="0" cy="0" r="46" fill="url(#sol)"/>
+            <circle cx="0" cy="0" r="22" fill="#ffcf49"/>
+
+            <!-- o corpo lançado -->
+            <circle cx="100" cy="0" r="8" fill="#7bd389"/>
+        </g>
+
+        <!-- a régua -->
+        <g transform="translate(40,312)">
+            <rect x="0" y="0" width="560" height="20" rx="10" fill="url(#faixa)"/>
+            <g stroke="#eaf0ff" stroke-width="2">
+                <path d="M252 -8 V 28"/><path d="M470 -8 V 28"/>
+            </g>
+            <text class="rot" x="252" y="-16" text-anchor="middle" font-size="15" style="fill:#7bd389">29,78 km/s</text>
+            <text class="rot" x="470" y="-16" text-anchor="middle" font-size="15" style="fill:#a98fe8">42,1 km/s</text>
+
+            <text class="rotp" x="0" y="46" font-size="13" style="fill:#ff6b6b">devagar: mergulha no Sol</text>
+            <text class="rotp" x="252" y="46" text-anchor="middle" font-size="13" style="fill:#7bd389">exata: círculo perfeito</text>
+            <text class="rotp" x="560" y="46" text-anchor="end" font-size="13" style="fill:#a98fe8">acima: foge para sempre</text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé: a conta ════════════════════════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">A CONTA QUE DESCREVE OS TRÊS CASOS DE UMA VEZ</text>
+
+        <g transform="translate(30,64)">
+            <rect x="0" y="0" width="400" height="118" rx="12" fill="#0b1226" stroke="#3a4d80" stroke-width="1.5"/>
+            <text class="cab" x="20" y="52" font-size="26" style="fill:#7bd389">v = √( GM (2/r − 1/a) )</text>
+            <text class="rotp" x="20" y="82">r = onde o corpo está agora</text>
+            <text class="rotp" x="20" y="104">a = o tamanho da órbita que ele vai ter</text>
+        </g>
+
+        <g transform="translate(452,64)">
+            <rect x="0" y="0" width="400" height="118" rx="12" fill="#0b1226" stroke="#3a4d80" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16" style="fill:#ffd24d">A velocidade de escape é a de sempre × √2</text>
+            <text class="rotp" x="20" y="62">29,78 × 1,414 = 42,1 km/s. Não é um número</text>
+            <text class="rotp" x="20" y="86">escolhido a dedo: sai da mesma equação —</text>
+            <text class="rotp" x="20" y="106">é onde a órbita deixa de ser fechada.</text>
+        </g>
+
+        <g transform="translate(874,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#12261c" stroke="#7bd389" stroke-width="2"/>
+            <text class="rot" x="20" y="32" font-size="16" style="fill:#7bd389">E a Terra corre nessa velocidade</text>
+            <text class="rotp" x="20" y="62">Cerca de 30 km/s — 107 mil km por hora — há</text>
+            <text class="rotp" x="20" y="86">bilhões de anos, sem acelerar nem frear. Um</text>
+            <text class="rotp" x="20" y="106">pouco mais devagar, e já teríamos caído.</text>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        Você está agora mesmo nessa bala de canhão — caindo em volta do Sol a trinta quilômetros por segundo, sem sentir nada.
+    </text>
+</svg>

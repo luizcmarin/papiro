@@ -16,7 +16,7 @@
         "publicar": 1,
         "data_criacao": 1781893572384,
         "data_atualizacao": 1783178056069,
-        "imagem": ""
+        "imagem": "a-eficiencia-do-hexagono.svg"
     },
     {
         "id": 2,
@@ -35,7 +35,7 @@
         "publicar": 1,
         "data_criacao": 1781893572384,
         "data_atualizacao": 1783178026453,
-        "imagem": ""
+        "imagem": "o-codigo-do-crescimento.svg"
     },
     {
         "id": 3,
@@ -54,7 +54,7 @@
         "publicar": 1,
         "data_criacao": 1781893572384,
         "data_atualizacao": 1783178076012,
-        "imagem": ""
+        "imagem": "as-leis-do-movimento.svg"
     },
     {
         "id": 4,
@@ -73,7 +73,7 @@
         "publicar": 1,
         "data_criacao": 1781893572384,
         "data_atualizacao": 1783178092800,
-        "imagem": ""
+        "imagem": "variaveis-da-criacao.svg"
     },
     {
         "id": 5,
@@ -301,7 +301,7 @@
         "publicar": 1,
         "data_criacao": 1781893572384,
         "data_atualizacao": 1782935502654,
-        "imagem": ""
+        "imagem": "a-rota-das-abelhas.svg"
     },
     {
         "id": 22,
@@ -453,7 +453,7 @@
         "publicar": 1,
         "data_criacao": 1782597826112,
         "data_atualizacao": 1782597826112,
-        "imagem": ""
+        "imagem": "o-formato-das-conchas.svg"
     },
     {
         "id": 30,
@@ -567,7 +567,7 @@
         "publicar": 1,
         "data_criacao": 1782598461135,
         "data_atualizacao": 1782598461135,
-        "imagem": ""
+        "imagem": "o-cardume-sem-colisoes.svg"
     },
     {
         "id": 36,
@@ -719,7 +719,7 @@
         "publicar": 1,
         "data_criacao": 1782940024723,
         "data_atualizacao": 1782940024723,
-        "imagem": ""
+        "imagem": "a-audicao-do-grilo.svg"
     },
     {
         "id": 44,
@@ -776,7 +776,7 @@
         "publicar": 1,
         "data_criacao": 1783117771784,
         "data_atualizacao": 1783178209537,
-        "imagem": ""
+        "imagem": "a-beleza-das-equacoes.svg"
     },
     {
         "id": 47,
@@ -795,7 +795,7 @@
         "publicar": 1,
         "data_criacao": 1783120029308,
         "data_atualizacao": 1783121564187,
-        "imagem": ""
+        "imagem": "a-area-do-piso.svg"
     },
     {
         "id": 48,
@@ -814,7 +814,7 @@
         "publicar": 1,
         "data_criacao": 1783172243283,
         "data_atualizacao": 1783172915027,
-        "imagem": ""
+        "imagem": "a-assinatura-do-criador.svg"
     },
     {
         "id": 49,
@@ -833,7 +833,7 @@
         "publicar": 1,
         "data_criacao": 1783173587455,
         "data_atualizacao": 1783174868304,
-        "imagem": ""
+        "imagem": "a-matematica-das-compras.svg"
     },
     {
         "id": 50,
@@ -852,7 +852,7 @@
         "publicar": 1,
         "data_criacao": 1783175666883,
         "data_atualizacao": 1783176478125,
-        "imagem": ""
+        "imagem": "a-matematica-dos-esportes.svg"
     },
     {
         "id": 51,

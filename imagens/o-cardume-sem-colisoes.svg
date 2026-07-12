@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">O Cardume sem Colisões — três regras e nenhum chefe</title>
+    <desc id="desc">Ninguém comanda o cardume. Cada peixe olha apenas para os poucos vizinhos que consegue
+        ver e obedece a três regras simples: não encoste, aponte para o mesmo lado que eles e não fique
+        para trás. Da soma dessas três regras locais nasce um corpo único, que gira inteiro num
+        instante — e a distância de segurança tem de estar no ponto: curta demais, os peixes se batem;
+        longa demais, o cardume se desfaz.</desc>
+
+    <defs>
+        <linearGradient id="agua" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0d3a58"/>
+            <stop offset="1" stop-color="#04141f"/>
+        </linearGradient>
+        <marker id="s-63c7e8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#63c7e8"/>
+        </marker>
+        <marker id="s-ff8f6b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#ff8f6b"/>
+        </marker>
+        <marker id="s-7bd389" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#7bd389"/>
+        </marker>
+        <marker id="s-ffd24d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#ffd24d"/>
+        </marker>
+
+        <!-- um peixe, nadando para a direita -->
+        <g id="peixe">
+            <path d="M-12 0 C -8 -7, 6 -8, 14 0 C 6 8, -8 7, -12 0 Z" fill="#8fd8f0" stroke="#3f9dc4" stroke-width="1.2"/>
+            <path d="M-12 0 L -20 -6 L -18 0 L -20 6 Z" fill="#8fd8f0" stroke="#3f9dc4" stroke-width="1.2"/>
+            <circle cx="8" cy="-1.5" r="1.6" fill="#04141f"/>
+        </g>
+        <g id="peixeAlvo">
+            <path d="M-12 0 C -8 -7, 6 -8, 14 0 C 6 8, -8 7, -12 0 Z" fill="#ffd24d" stroke="#c9901e" stroke-width="1.2"/>
+            <path d="M-12 0 L -20 -6 L -18 0 L -20 6 Z" fill="#ffd24d" stroke="#c9901e" stroke-width="1.2"/>
+            <circle cx="8" cy="-1.5" r="1.6" fill="#04141f"/>
+        </g>
+    </defs>
+
+    <style>
+        .cab  { fill:#e6f6ff; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#cfe9f6; font-size:18px; font-weight:700; }
+        .rotp { fill:#87b2c8; font-size:14px; }
+        .painel { fill:#0a2a40; stroke:#2f6f92; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#agua)"/>
+
+    <text class="cab" x="46" y="54">O CARDUME SEM COLISÕES</text>
+    <text class="rotp" x="46" y="84" font-size="17">Milhares de peixes viram ao mesmo tempo. Nenhum deles sabe para onde o cardume está indo.</text>
+
+    <!-- ══ Esquerda: as três regras ═══════════════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="812" height="380" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#ffd24d">O QUE CADA PEIXE OLHA — SÓ OS VIZINHOS DE PERTO</text>
+        <text class="rotp" x="24" y="60">ele não vê o cardume inteiro. Vê uns poucos peixes — e obedece a três regras.</text>
+
+        <!-- regra 1: separação -->
+        <g transform="translate(146,214)">
+            <rect x="-116" y="-92" width="232" height="216" rx="12" fill="#082433" stroke="#2f6f92" stroke-width="1.5"/>
+            <text class="rot" x="0" y="-64" text-anchor="middle" font-size="15" style="fill:#ff8f6b">1 · NÃO ENCOSTE</text>
+
+            <circle cx="0" cy="10" r="44" fill="#ff8f6b" opacity="0.12" stroke="#ff8f6b"
+                    stroke-width="1.5" stroke-dasharray="5 4"/>
+            <use href="#peixeAlvo" x="0" y="10"/>
+            <g>
+                <use href="#peixe" x="-46" y="-14"/>
+                <use href="#peixe" x="44" y="36"/>
+            </g>
+            <g stroke="#ff8f6b" stroke-width="2" fill="none">
+                <path d="M-22 0 L -44 -10" marker-end="url(#s-ff8f6b)"/>
+                <path d="M22 22 L 44 30" marker-end="url(#s-ff8f6b)"/>
+            </g>
+            <text class="rotp" x="0" y="106" text-anchor="middle" font-size="13" style="fill:#ff8f6b">
+                perto demais? afaste-se
+            </text>
+        </g>
+
+        <!-- regra 2: alinhamento -->
+        <g transform="translate(406,214)">
+            <rect x="-116" y="-92" width="232" height="216" rx="12" fill="#082433" stroke="#2f6f92" stroke-width="1.5"/>
+            <text class="rot" x="0" y="-70" text-anchor="middle" font-size="15" style="fill:#63c7e8">2 · APONTE PARA</text>
+            <text class="rot" x="0" y="-52" text-anchor="middle" font-size="15" style="fill:#63c7e8">O MESMO LADO</text>
+
+            <g transform="rotate(-18)">
+                <use href="#peixe" x="-58" y="-20"/>
+                <use href="#peixe" x="-58" y="40"/>
+                <use href="#peixe" x="54" y="10"/>
+            </g>
+            <g transform="rotate(-18)"><use href="#peixeAlvo" x="0" y="10"/></g>
+            <g stroke="#63c7e8" stroke-width="2" fill="none">
+                <path d="M-70 60 L 70 -32" marker-end="url(#s-63c7e8)"/>
+            </g>
+            <text class="rotp" x="0" y="106" text-anchor="middle" font-size="13" style="fill:#63c7e8">
+                vire para onde eles viraram
+            </text>
+        </g>
+
+        <!-- regra 3: coesão -->
+        <g transform="translate(666,214)">
+            <rect x="-116" y="-92" width="232" height="216" rx="12" fill="#082433" stroke="#2f6f92" stroke-width="1.5"/>
+            <text class="rot" x="0" y="-70" text-anchor="middle" font-size="15" style="fill:#7bd389">3 · NÃO FIQUE</text>
+            <text class="rot" x="0" y="-52" text-anchor="middle" font-size="15" style="fill:#7bd389">PARA TRÁS</text>
+
+            <g>
+                <use href="#peixe" x="30" y="-24"/>
+                <use href="#peixe" x="56" y="12"/>
+                <use href="#peixe" x="24" y="44"/>
+                <use href="#peixeAlvo" x="-62" y="16"/>
+            </g>
+            <path d="M-36 14 L 6 12" stroke="#7bd389" stroke-width="2" fill="none" marker-end="url(#s-7bd389)"/>
+            <text class="rotp" x="0" y="106" text-anchor="middle" font-size="13" style="fill:#7bd389">
+                longe demais? volte para o grupo
+            </text>
+        </g>
+    </g>
+
+    <!-- ══ Direita: a distância certa ═════════════════════════════════════ -->
+    <g transform="translate(886,112)">
+        <rect class="painel" x="0" y="0" width="468" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">A DISTÂNCIA DE SEGURANÇA</text>
+        <text class="rotp" x="24" y="60">é o único número que precisa estar no ponto</text>
+
+        <!-- curta demais -->
+        <g transform="translate(24,92)">
+            <rect x="0" y="0" width="420" height="80" rx="10" fill="#082433" stroke="#ff8f6b" stroke-width="1.5"/>
+            <text class="rotp" x="16" y="24" font-size="13" style="fill:#ff8f6b" font-weight="700">curta demais</text>
+            <g>
+                <use href="#peixe" x="150" y="52"/><use href="#peixe" x="176" y="46"/>
+                <use href="#peixe" x="200" y="56"/><use href="#peixe" x="224" y="44"/>
+                <use href="#peixe" x="248" y="54"/><use href="#peixe" x="272" y="46"/>
+            </g>
+            <path d="M186 34 L 210 34" stroke="#ff8f6b" stroke-width="2"/>
+            <text class="rotp" x="404" y="58" text-anchor="end" font-size="13" style="fill:#ff8f6b">eles se batem</text>
+        </g>
+
+        <!-- certa -->
+        <g transform="translate(24,182)">
+            <rect x="0" y="0" width="420" height="80" rx="10" fill="#0e3b52" stroke="#7bd389" stroke-width="2"/>
+            <text class="rotp" x="16" y="24" font-size="13" style="fill:#7bd389" font-weight="700">no ponto</text>
+            <g>
+                <use href="#peixe" x="128" y="52"/><use href="#peixe" x="172" y="42"/>
+                <use href="#peixe" x="216" y="56"/><use href="#peixe" x="260" y="44"/>
+                <use href="#peixe" x="304" y="54"/>
+            </g>
+            <text class="rotp" x="404" y="58" text-anchor="end" font-size="13" style="fill:#7bd389">um corpo só</text>
+        </g>
+
+        <!-- longa demais -->
+        <g transform="translate(24,272)">
+            <rect x="0" y="0" width="420" height="80" rx="10" fill="#082433" stroke="#ffd24d" stroke-width="1.5"/>
+            <text class="rotp" x="16" y="24" font-size="13" style="fill:#ffd24d" font-weight="700">longa demais</text>
+            <g>
+                <use href="#peixe" x="112" y="56"/><use href="#peixe" x="192" y="40"/>
+                <use href="#peixe" x="278" y="60"/><use href="#peixe" x="360" y="38"/>
+            </g>
+            <text class="rotp" x="404" y="24" text-anchor="end" font-size="13" style="fill:#ffd24d">o cardume se desfaz</text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé ═════════════════════════════════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">O QUE NASCE DE TRÊS REGRAS BOBAS</text>
+
+        <!-- o cardume que se abre para o predador -->
+        <g transform="translate(44,58) scale(0.82)">
+            <g fill="none">
+                <path d="M0 60 C 60 10, 130 4, 190 30" stroke="#2f6f92" stroke-width="1.5" opacity="0.6"/>
+                <path d="M0 90 C 60 140, 130 146, 190 120" stroke="#2f6f92" stroke-width="1.5" opacity="0.6"/>
+            </g>
+            <g>
+                <use href="#peixe" x="24" y="46"/><use href="#peixe" x="62" y="30"/><use href="#peixe" x="104" y="22"/>
+                <use href="#peixe" x="146" y="26"/><use href="#peixe" x="186" y="36"/>
+                <use href="#peixe" x="24" y="104"/><use href="#peixe" x="62" y="120"/><use href="#peixe" x="104" y="128"/>
+                <use href="#peixe" x="146" y="124"/><use href="#peixe" x="186" y="114"/>
+            </g>
+            <!-- o predador, entrando no meio -->
+            <g transform="translate(112,75)">
+                <path d="M-44 0 C -30 -20, 24 -22, 52 0 C 24 22, -30 20, -44 0 Z"
+                      fill="#5a3f5f" stroke="#c08fd0" stroke-width="2"/>
+                <path d="M-44 0 L -64 -16 L -58 0 L -64 16 Z" fill="#5a3f5f" stroke="#c08fd0" stroke-width="2"/>
+                <circle cx="30" cy="-4" r="3" fill="#e6f6ff"/>
+            </g>
+            <text class="rotp" x="105" y="172" text-anchor="middle" font-size="15" font-weight="700">
+                o cardume se abre e fecha atrás dele
+            </text>
+        </g>
+
+        <g transform="translate(300,64)">
+            <rect x="0" y="0" width="466" height="118" rx="12" fill="#082433" stroke="#2f6f92" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16">Nenhum peixe decidiu isso</text>
+            <text class="rotp" x="20" y="60">Nenhum viu o predador inteiro. Nenhum avisou os</text>
+            <text class="rotp" x="20" y="84">outros. Cada um só afastou-se do vizinho e virou</text>
+            <text class="rotp" x="20" y="104">para o mesmo lado que ele. O buraco apareceu sozinho.</text>
+        </g>
+
+        <g transform="translate(786,64)">
+            <rect x="0" y="0" width="492" height="118" rx="12" fill="#0e3b52" stroke="#7bd389" stroke-width="2"/>
+            <text class="rot" x="20" y="32" font-size="16" style="fill:#7bd389">Isso tem nome: comportamento emergente</text>
+            <text class="rotp" x="20" y="60">O todo faz coisas que nenhuma das partes sabe fazer.</text>
+            <text class="rotp" x="20" y="84">Drones em formação, robôs de armazém e simulações de</text>
+            <text class="rotp" x="20" y="104">multidão usam hoje exatamente estas três regras.</text>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        A onda de virada atravessa um cardume mais depressa do que o tempo que um peixe leva para reagir ao vizinho.
+    </text>
+</svg>

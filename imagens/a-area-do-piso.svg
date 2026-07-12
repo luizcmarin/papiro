@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Área do Piso — a multiplicação é um atalho para contar</title>
+    <desc id="desc">Contar azulejo por azulejo funciona, mas é lento. Como as fileiras são todas iguais,
+        basta contar quantos cabem numa fileira e quantas fileiras existem: comprimento vezes largura.
+        E 12 metros quadrados admitem várias formas de cômodo — 4 por 3, 6 por 2, 12 por 1 — todas com
+        a mesma área, mas com paredes de tamanhos bem diferentes. É por isso que o pedreiro compra
+        azulejo pela área e rodapé pelo perímetro.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#eef4f8"/>
+            <stop offset="1" stop-color="#d5e2ec"/>
+        </linearGradient>
+        <linearGradient id="azul" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#a8d4ec"/>
+            <stop offset="1" stop-color="#7bb8dc"/>
+        </linearGradient>
+        <marker id="s-3f6f8f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#3f6f8f"/>
+        </marker>
+        <marker id="ini-3f6f8f" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="9" markerHeight="9"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M10 0 L0 5 L10 10 z" fill="#3f6f8f"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#1e3f55; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#3f6f8f; font-size:18px; font-weight:700; }
+        .rotp { fill:#6f93a8; font-size:14px; }
+        .painel { fill:#ffffff; stroke:#a9c9dd; stroke-width:2; }
+        .tile { fill:url(#azul); stroke:#ffffff; stroke-width:2; }
+        .num  { fill:#1e3f55; font-size:13px; font-weight:700; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">A ÁREA DO PISO</text>
+    <text class="rotp" x="46" y="84" font-size="17">Dá para contar um por um. Mas as fileiras são todas iguais — e é aí que a multiplicação entra.</text>
+
+    <!-- ══ Esquerda: contar × multiplicar ═════════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="812" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">O MESMO PISO, CONTADO DE DOIS JEITOS</text>
+
+        <!-- contando um a um -->
+        <g transform="translate(40,74)">
+            <text class="rotp" x="0" y="0" style="fill:#c0392b" font-weight="700">um a um: 1, 2, 3… 12</text>
+            <g transform="translate(0,16)">
+                <g class="tile">
+                    <rect x="0" y="0" width="52" height="52"/><rect x="52" y="0" width="52" height="52"/>
+                    <rect x="104" y="0" width="52" height="52"/><rect x="156" y="0" width="52" height="52"/>
+                    <rect x="0" y="52" width="52" height="52"/><rect x="52" y="52" width="52" height="52"/>
+                    <rect x="104" y="52" width="52" height="52"/><rect x="156" y="52" width="52" height="52"/>
+                    <rect x="0" y="104" width="52" height="52"/><rect x="52" y="104" width="52" height="52"/>
+                    <rect x="104" y="104" width="52" height="52"/><rect x="156" y="104" width="52" height="52"/>
+                </g>
+                <g class="num" text-anchor="middle">
+                    <text x="26" y="32">1</text><text x="78" y="32">2</text><text x="130" y="32">3</text><text x="182" y="32">4</text>
+                    <text x="26" y="84">5</text><text x="78" y="84">6</text><text x="130" y="84">7</text><text x="182" y="84">8</text>
+                    <text x="26" y="136">9</text><text x="78" y="136">10</text><text x="130" y="136">11</text><text x="182" y="136">12</text>
+                </g>
+            </g>
+            <text class="rotp" x="104" y="200" text-anchor="middle" font-size="13" style="fill:#c0392b">
+                funciona — mas é devagar
+            </text>
+        </g>
+
+        <!-- multiplicando -->
+        <g transform="translate(360,74)">
+            <text class="rotp" x="0" y="0" style="fill:#1f7a3d" font-weight="700">pelo atalho: 4 × 3</text>
+            <g transform="translate(0,16)">
+                <g class="tile">
+                    <rect x="0" y="0" width="52" height="52"/><rect x="52" y="0" width="52" height="52"/>
+                    <rect x="104" y="0" width="52" height="52"/><rect x="156" y="0" width="52" height="52"/>
+                    <rect x="0" y="52" width="52" height="52"/><rect x="52" y="52" width="52" height="52"/>
+                    <rect x="104" y="52" width="52" height="52"/><rect x="156" y="52" width="52" height="52"/>
+                    <rect x="0" y="104" width="52" height="52"/><rect x="52" y="104" width="52" height="52"/>
+                    <rect x="104" y="104" width="52" height="52"/><rect x="156" y="104" width="52" height="52"/>
+                </g>
+                <!-- a fileira destacada -->
+                <rect x="0" y="0" width="208" height="52" fill="none" stroke="#1f7a3d" stroke-width="3"/>
+                <text class="rotp" x="230" y="32" font-size="13" style="fill:#1f7a3d" font-weight="700">
+                    4 numa fileira
+                </text>
+
+                <!-- as três fileiras -->
+                <path d="M-16 4 V 152" stroke="#1f7a3d" stroke-width="2"
+                      marker-start="url(#ini-3f6f8f)" marker-end="url(#s-3f6f8f)"/>
+                <text class="rotp" x="-24" y="82" text-anchor="end" font-size="13" style="fill:#1f7a3d" font-weight="700">
+                    3
+                </text>
+                <text class="rotp" x="-24" y="100" text-anchor="end" font-size="13" style="fill:#1f7a3d">
+                    fileiras
+                </text>
+            </g>
+            <text class="cab" x="230" y="212" font-size="24" style="fill:#1f7a3d">4 × 3 = 12 m²</text>
+        </g>
+
+        <g transform="translate(40,318)">
+            <rect x="0" y="0" width="732" height="46" rx="10" fill="#eef7f0" stroke="#1f7a3d" stroke-width="1.5"/>
+            <text class="rotp" x="18" y="29">
+                Multiplicar é só um jeito rápido de somar fileiras iguais:
+                <tspan font-weight="700" style="fill:#1f7a3d">4 + 4 + 4 = 4 × 3</tspan>.
+            </text>
+        </g>
+    </g>
+
+    <!-- ══ Direita: as formas de 12 m² ════════════════════════════════════ -->
+    <g transform="translate(886,112)">
+        <rect class="painel" x="0" y="0" width="468" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">12 m² — MAS QUE FORMATO?</text>
+        <text class="rotp" x="24" y="60">todas com a mesma área. Nem todas com a mesma parede.</text>
+
+        <!-- 4x3 -->
+        <g transform="translate(28,88)">
+            <g class="tile" transform="scale(0.5)">
+                <rect x="0" y="0" width="52" height="52"/><rect x="52" y="0" width="52" height="52"/>
+                <rect x="104" y="0" width="52" height="52"/><rect x="156" y="0" width="52" height="52"/>
+                <rect x="0" y="52" width="52" height="52"/><rect x="52" y="52" width="52" height="52"/>
+                <rect x="104" y="52" width="52" height="52"/><rect x="156" y="52" width="52" height="52"/>
+                <rect x="0" y="104" width="52" height="52"/><rect x="52" y="104" width="52" height="52"/>
+                <rect x="104" y="104" width="52" height="52"/><rect x="156" y="104" width="52" height="52"/>
+            </g>
+            <text class="rot" x="130" y="24" font-size="16">4 × 3</text>
+            <text class="rotp" x="130" y="48" font-size="13">12 m² de azulejo</text>
+            <text class="rotp" x="130" y="68" font-size="13" style="fill:#1f7a3d" font-weight="700">14 m de rodapé</text>
+        </g>
+
+        <!-- 6x2 -->
+        <g transform="translate(28,190)">
+            <g class="tile" transform="scale(0.5)">
+                <rect x="0" y="0" width="52" height="52"/><rect x="52" y="0" width="52" height="52"/>
+                <rect x="104" y="0" width="52" height="52"/><rect x="156" y="0" width="52" height="52"/>
+                <rect x="208" y="0" width="52" height="52"/><rect x="260" y="0" width="52" height="52"/>
+                <rect x="0" y="52" width="52" height="52"/><rect x="52" y="52" width="52" height="52"/>
+                <rect x="104" y="52" width="52" height="52"/><rect x="156" y="52" width="52" height="52"/>
+                <rect x="208" y="52" width="52" height="52"/><rect x="260" y="52" width="52" height="52"/>
+            </g>
+            <text class="rot" x="186" y="24" font-size="16">6 × 2</text>
+            <text class="rotp" x="186" y="48" font-size="13">12 m² de azulejo</text>
+            <text class="rotp" x="186" y="68" font-size="13" style="fill:#c9701e" font-weight="700">16 m de rodapé</text>
+        </g>
+
+        <!-- 12x1 -->
+        <g transform="translate(28,292)">
+            <g class="tile" transform="scale(0.5)">
+                <rect x="0" y="0" width="52" height="52"/><rect x="52" y="0" width="52" height="52"/>
+                <rect x="104" y="0" width="52" height="52"/><rect x="156" y="0" width="52" height="52"/>
+                <rect x="208" y="0" width="52" height="52"/><rect x="260" y="0" width="52" height="52"/>
+                <rect x="312" y="0" width="52" height="52"/><rect x="364" y="0" width="52" height="52"/>
+                <rect x="416" y="0" width="52" height="52"/><rect x="468" y="0" width="52" height="52"/>
+                <rect x="520" y="0" width="52" height="52"/><rect x="572" y="0" width="52" height="52"/>
+            </g>
+            <text class="rot" x="24" y="56" font-size="16">12 × 1</text>
+            <text class="rotp" x="120" y="56" font-size="13">12 m² de azulejo, mas</text>
+            <text class="rotp" x="120" y="76" font-size="13" style="fill:#c0392b" font-weight="700">
+                26 m de rodapé — um corredor!
+            </text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé ═════════════════════════════════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">ÁREA E PERÍMETRO SÃO DUAS COISAS DIFERENTES</text>
+
+        <g transform="translate(30,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#f2f8fb" stroke="#a9c9dd" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16">A área é o que preenche</text>
+            <text class="rotp" x="20" y="60">É o chão inteiro: quantos azulejos, quantos litros</text>
+            <text class="rotp" x="20" y="84">de tinta, quantos metros de carpete. Mede-se em</text>
+            <text class="rotp" x="20" y="104">metros QUADRADOS (m²).</text>
+        </g>
+
+        <g transform="translate(452,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#f2f8fb" stroke="#a9c9dd" stroke-width="1.5"/>
+            <text class="rot" x="20" y="32" font-size="16">O perímetro é o que contorna</text>
+            <text class="rotp" x="20" y="60">É a volta: quantos metros de rodapé, de cerca,</text>
+            <text class="rotp" x="20" y="84">de fita. Mede-se em metros — sem o "quadrado".</text>
+            <text class="rotp" x="20" y="104">Dois pisos de 12 m² podem ter rodapés bem diferentes.</text>
+        </g>
+
+        <g transform="translate(874,64)">
+            <rect x="0" y="0" width="404" height="118" rx="12" fill="#eef7f0" stroke="#1f7a3d" stroke-width="2"/>
+            <text class="rot" x="20" y="32" font-size="16" style="fill:#1f7a3d">O quadrado é o mais econômico</text>
+            <text class="rotp" x="20" y="60">Entre todas as formas de 12 m², a mais próxima</text>
+            <text class="rotp" x="20" y="84">de um quadrado é a que tem a menor volta — e</text>
+            <text class="rotp" x="20" y="104">gasta menos parede. Como no favo da abelha.</text>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        Na loja, o azulejo se compra pela área; o rodapé, pelo perímetro. Trocar um pelo outro é levar material a menos — ou dinheiro jogado fora.
+    </text>
+</svg>

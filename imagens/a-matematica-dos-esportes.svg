@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Matemática dos Esportes — o ângulo que sai é o ângulo que entra</title>
+    <desc id="desc">No bilhar, a bola sai da tabela com o mesmo ângulo com que chegou. Por isso a tacada
+        pode ser prevista: existe um truque para acertá-la sem cálculo — refletir a caçapa para o outro
+        lado da tabela, como num espelho, e mirar direto no alvo imaginário. A linha reta até esse alvo
+        cruza a tabela exatamente no ponto onde a bola deve bater. E as quadras de todos os esportes são
+        figuras geométricas: retângulos, círculos e losangos, medidos ao centímetro.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#123a2a"/>
+            <stop offset="1" stop-color="#061510"/>
+        </linearGradient>
+        <linearGradient id="pano" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1f7a52"/>
+            <stop offset="1" stop-color="#15583b"/>
+        </linearGradient>
+        <marker id="s-ffd24d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#ffd24d"/>
+        </marker>
+        <marker id="s-8fc7aa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#8fc7aa"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#e8f8ef; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#cfe9da; font-size:18px; font-weight:700; }
+        .rotp { fill:#8fc7aa; font-size:14px; }
+        .painel { fill:#0d3324; stroke:#2f7a5a; stroke-width:2; }
+        .mesa { fill:url(#pano); stroke:#7a4f28; stroke-width:10; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">A MATEMÁTICA DOS ESPORTES</text>
+    <text class="rotp" x="46" y="84" font-size="17">No bilhar não basta força: a bola obedece a uma regra — e quem sabe a regra vê a jogada antes de dar a tacada.</text>
+
+    <!-- ══ Esquerda: a lei da reflexão ════════════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="812" height="380" rx="16"/>
+        <text class="rot" x="24" y="38" style="fill:#ffd24d">O ÂNGULO QUE ENTRA É O ÂNGULO QUE SAI</text>
+        <text class="rotp" x="24" y="60">e é isso que permite prever a tacada — e o truque do espelho</text>
+
+        <!-- a mesa -->
+        <g transform="translate(60,96)">
+            <rect class="mesa" x="0" y="0" width="692" height="248" rx="6"/>
+            <!-- caçapas -->
+            <g fill="#08160f">
+                <circle cx="0" cy="0" r="13"/><circle cx="346" cy="0" r="13"/><circle cx="692" cy="0" r="13"/>
+                <circle cx="0" cy="248" r="13"/><circle cx="346" cy="248" r="13"/><circle cx="692" cy="248" r="13"/>
+            </g>
+
+            <!-- a bola branca -->
+            <circle cx="120" cy="196" r="13" fill="#f5f7f2" stroke="#c9cfc4" stroke-width="1.5"/>
+            <text class="rotp" x="120" y="228" text-anchor="middle" font-size="12">a bola</text>
+
+            <!-- a bola vermelha (alvo) -->
+            <circle cx="560" cy="176" r="13" fill="#c0392b" stroke="#f0a89c" stroke-width="1.5"/>
+            <text class="rotp" x="560" y="212" text-anchor="middle" font-size="12" style="fill:#f0a89c">o alvo</text>
+
+            <!-- a trajetória: bate na tabela de cima em (330,0) -->
+            <g stroke="#ffd24d" stroke-width="3" fill="none">
+                <path d="M120 196 L 330 0"/>
+                <path d="M330 0 L 560 176" marker-end="url(#s-ffd24d)"/>
+            </g>
+
+            <!-- os dois ângulos, iguais -->
+            <path d="M330 0 V 46" stroke="#e8f8ef" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <path d="M300 34 A 46 46 0 0 1 330 46" fill="none" stroke="#ffd24d" stroke-width="2"/>
+            <path d="M330 46 A 46 46 0 0 1 366 34" fill="none" stroke="#ffd24d" stroke-width="2"/>
+            <text class="rot" x="290" y="70" font-size="15" style="fill:#ffd24d">α</text>
+            <text class="rot" x="364" y="70" font-size="15" style="fill:#ffd24d">α</text>
+
+            <text class="rotp" x="330" y="-16" text-anchor="middle" font-size="13" style="fill:#ffd24d" font-weight="700">
+                o ponto de batida
+            </text>
+        </g>
+    </g>
+
+    <!-- ══ Direita: o truque do espelho ═══════════════════════════════════ -->
+    <g transform="translate(886,112)">
+        <rect class="painel" x="0" y="0" width="468" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">O TRUQUE DO ESPELHO</text>
+        <text class="rotp" x="24" y="60">reflita o alvo para fora da mesa e mire na linha reta</text>
+
+        <g transform="translate(34,168)">
+            <!-- o mundo espelhado, acima da tabela -->
+            <rect x="0" y="-88" width="400" height="88" rx="4" fill="#0d3324" stroke="#2f7a5a"
+                  stroke-width="1.5" stroke-dasharray="6 5"/>
+            <text class="rotp" x="14" y="-68" font-size="12" style="fill:#8fc7aa">
+                o outro lado do espelho
+            </text>
+
+            <!-- mesa -->
+            <rect x="0" y="0" width="400" height="140" rx="4" fill="url(#pano)" stroke="#7a4f28" stroke-width="6"/>
+
+            <!-- bola e alvo -->
+            <circle cx="66" cy="110" r="11" fill="#f5f7f2" stroke="#c9cfc4" stroke-width="1.5"/>
+            <circle cx="330" cy="80" r="11" fill="#c0392b" stroke="#f0a89c" stroke-width="1.5"/>
+
+            <!-- o alvo espelhado -->
+            <circle cx="330" cy="-80" r="11" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="4 3"/>
+            <path d="M330 68 V -68" stroke="#8fc7aa" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <text class="rotp" x="316" y="-76" text-anchor="end" font-size="12" style="fill:#f0a89c">
+                o alvo, espelhado
+            </text>
+
+            <!-- a linha reta até o alvo espelhado -->
+            <path d="M66 110 L 330 -80" stroke="#8fc7aa" stroke-width="2" stroke-dasharray="7 5"/>
+
+            <!-- o ponto onde ela cruza a tabela -->
+            <circle cx="219" cy="0" r="6" fill="#ffd24d"/>
+
+            <!-- a jogada de verdade -->
+            <g stroke="#ffd24d" stroke-width="3" fill="none">
+                <path d="M66 110 L 219 0"/>
+                <path d="M219 0 L 330 80" marker-end="url(#s-ffd24d)"/>
+            </g>
+
+            <text class="rotp" x="200" y="170" text-anchor="middle" font-size="13" style="fill:#ffd24d" font-weight="700">
+                mire aqui — e a bola vai sozinha
+            </text>
+        </g>
+
+        <text class="rotp" x="24" y="366" font-size="13">
+            A reta até o alvo espelhado cruza a tabela no ponto exato da batida.
+        </text>
+    </g>
+
+    <!-- ══ Rodapé: as quadras são figuras ═════════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">E TODA QUADRA É UMA FIGURA GEOMÉTRICA — MEDIDA AO CENTÍMETRO</text>
+
+        <g transform="translate(40,60)">
+            <!-- futebol -->
+            <g>
+                <rect x="0" y="0" width="164" height="96" rx="3" fill="#12563a" stroke="#8fc7aa" stroke-width="2"/>
+                <path d="M82 0 V 96" stroke="#8fc7aa" stroke-width="1.5"/>
+                <circle cx="82" cy="48" r="18" fill="none" stroke="#8fc7aa" stroke-width="1.5"/>
+                <rect x="0" y="26" width="22" height="44" fill="none" stroke="#8fc7aa" stroke-width="1.5"/>
+                <rect x="142" y="26" width="22" height="44" fill="none" stroke="#8fc7aa" stroke-width="1.5"/>
+                <text class="rotp" x="82" y="118" text-anchor="middle" font-size="13" font-weight="700">Futebol</text>
+                <text class="rotp" x="82" y="136" text-anchor="middle" font-size="12">retângulo, ângulos de 90°</text>
+            </g>
+
+            <!-- basquete -->
+            <g transform="translate(266,0)">
+                <rect x="0" y="0" width="164" height="96" rx="3" fill="#12563a" stroke="#8fc7aa" stroke-width="2"/>
+                <path d="M0 18 A 62 30 0 0 1 0 78" fill="none" stroke="#8fc7aa" stroke-width="1.5"/>
+                <path d="M164 18 A 62 30 0 0 0 164 78" fill="none" stroke="#8fc7aa" stroke-width="1.5"/>
+                <rect x="0" y="34" width="30" height="28" fill="none" stroke="#8fc7aa" stroke-width="1.5"/>
+                <rect x="134" y="34" width="30" height="28" fill="none" stroke="#8fc7aa" stroke-width="1.5"/>
+                <circle cx="82" cy="48" r="12" fill="none" stroke="#8fc7aa" stroke-width="1.5"/>
+                <text class="rotp" x="82" y="118" text-anchor="middle" font-size="13" font-weight="700">Basquete</text>
+                <text class="rotp" x="82" y="136" text-anchor="middle" font-size="12">círculos, arcos e retângulos</text>
+            </g>
+
+            <!-- beisebol -->
+            <g transform="translate(532,0)">
+                <rect x="0" y="0" width="164" height="96" rx="3" fill="#12563a" stroke="#2f7a5a" stroke-width="1"/>
+                <path d="M82 88 L 26 48 L 82 10 L 138 48 Z" fill="none" stroke="#8fc7aa" stroke-width="2"/>
+                <g fill="#8fc7aa">
+                    <circle cx="82" cy="88" r="4"/><circle cx="26" cy="48" r="4"/>
+                    <circle cx="82" cy="10" r="4"/><circle cx="138" cy="48" r="4"/>
+                </g>
+                <text class="rotp" x="82" y="118" text-anchor="middle" font-size="13" font-weight="700">Beisebol</text>
+                <text class="rotp" x="82" y="136" text-anchor="middle" font-size="12">um losango exato</text>
+            </g>
+
+            <!-- amarelinha -->
+            <g transform="translate(798,0)">
+                <g fill="none" stroke="#8fc7aa" stroke-width="2">
+                    <rect x="54" y="74" width="28" height="22"/>
+                    <rect x="54" y="52" width="28" height="22"/>
+                    <rect x="26" y="30" width="28" height="22"/>
+                    <rect x="82" y="30" width="28" height="22"/>
+                    <rect x="54" y="8" width="28" height="22"/>
+                </g>
+                <g font-size="11" text-anchor="middle" fill="#cfe9da">
+                    <text x="68" y="90">1</text><text x="68" y="68">2</text>
+                    <text x="40" y="46">3</text><text x="96" y="46">4</text>
+                    <text x="68" y="24">5</text>
+                </g>
+                <text class="rotp" x="68" y="118" text-anchor="middle" font-size="13" font-weight="700">Amarelinha</text>
+                <text class="rotp" x="68" y="136" text-anchor="middle" font-size="12">quadrados e contagem</text>
+            </g>
+
+            <g transform="translate(950,0)">
+                <rect x="0" y="0" width="318" height="130" rx="10" fill="#12563a" stroke="#ffd24d" stroke-width="2"/>
+                <text class="rot" x="18" y="32" font-size="16" style="fill:#ffd24d">Mude uma medida…</text>
+                <text class="rotp" x="18" y="60" font-size="13">…e o jogo deixa de funcionar: o gol fica</text>
+                <text class="rotp" x="18" y="82" font-size="13">fácil demais, o arremesso impossível.</text>
+                <text class="rotp" x="18" y="108" font-size="13" style="fill:#ffd24d">
+                    A geometria é que faz a partida ser justa.
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

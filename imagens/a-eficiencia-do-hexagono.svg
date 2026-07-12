@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Eficiência do Hexágono — a menor parede possível</title>
+    <desc id="desc">Só três formas regulares ladrilham o plano sem deixar vão: o triângulo, o quadrado e
+        o hexágono — porque só os ângulos deles (60, 90 e 120 graus) cabem um número inteiro de vezes
+        nos 360 graus em volta de um ponto. O pentágono não fecha: sobram 36 graus. Entre as três que
+        fecham, para uma mesma área de célula, o hexágono é a que gasta menos parede — quase tanto
+        quanto um círculo, que gastaria menos ainda mas deixaria buracos.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#fdf6e0"/>
+            <stop offset="1" stop-color="#f0e2b8"/>
+        </linearGradient>
+        <linearGradient id="cera" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffd964"/>
+            <stop offset="1" stop-color="#e8ae2a"/>
+        </linearGradient>
+        <marker id="s-8a6a1f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#8a6a1f"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#5a4210; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#8a6a1f; font-size:18px; font-weight:700; }
+        .rotp { fill:#a68b52; font-size:14px; }
+        .painel { fill:#fffdf4; stroke:#d9c184; stroke-width:2; }
+        .cel  { fill:none; stroke:#c99a1e; stroke-width:3; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">A EFICIÊNCIA DO HEXÁGONO</text>
+    <text class="rotp" x="46" y="84" font-size="17">Guardar o máximo de mel gastando o mínimo de cera — e a abelha resolve isso desde que nasce.</text>
+
+    <!-- ══ Esquerda: quem consegue ladrilhar ══════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="640" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">PRIMEIRO: QUEM FECHA A RODA?</text>
+        <text class="rotp" x="24" y="60">em volta de um ponto há 360°. O ângulo da forma tem de caber um número inteiro de vezes.</text>
+
+        <!-- triângulo: 60° × 6 -->
+        <g transform="translate(96,168)">
+            <g class="cel" stroke="#7bb56b">
+                <path d="M0 0 L 42 0 L 21 -36 Z"/><path d="M0 0 L 21 -36 L -21 -36 Z"/>
+                <path d="M0 0 L -21 -36 L -42 0 Z"/><path d="M0 0 L -42 0 L -21 36 Z"/>
+                <path d="M0 0 L -21 36 L 21 36 Z"/><path d="M0 0 L 21 36 L 42 0 Z"/>
+            </g>
+            <circle cx="0" cy="0" r="4" fill="#5a4210"/>
+            <text class="rot" x="0" y="72" text-anchor="middle" font-size="16">60° × 6 = 360°</text>
+            <text class="rotp" x="0" y="94" text-anchor="middle" style="fill:#2f8f3d" font-weight="700">fecha</text>
+        </g>
+
+        <!-- quadrado: 90° × 4 -->
+        <g transform="translate(250,168)">
+            <g class="cel" stroke="#7bb56b">
+                <path d="M0 0 H 40 V -40 H 0 Z"/><path d="M0 0 H -40 V -40 H 0 Z"/>
+                <path d="M0 0 H -40 V 40 H 0 Z"/><path d="M0 0 H 40 V 40 H 0 Z"/>
+            </g>
+            <circle cx="0" cy="0" r="4" fill="#5a4210"/>
+            <text class="rot" x="0" y="72" text-anchor="middle" font-size="16">90° × 4 = 360°</text>
+            <text class="rotp" x="0" y="94" text-anchor="middle" style="fill:#2f8f3d" font-weight="700">fecha</text>
+        </g>
+
+        <!-- hexágono: 120° × 3 -->
+        <g transform="translate(404,168)">
+            <g class="cel" stroke="#e8952a">
+                <path d="M0 0 L 0 -44 L 38 -66 L 76 -44 L 76 0 L 38 22 Z"/>
+                <path d="M0 0 L 0 -44 L -38 -66 L -76 -44 L -76 0 L -38 22 Z"/>
+                <path d="M0 0 L -38 22 L -38 66 L 0 88 L 38 66 L 38 22 Z"/>
+            </g>
+            <circle cx="0" cy="0" r="4" fill="#5a4210"/>
+            <text class="rot" x="0" y="112" text-anchor="middle" font-size="16">120° × 3 = 360°</text>
+            <text class="rotp" x="0" y="134" text-anchor="middle" style="fill:#2f8f3d" font-weight="700">fecha</text>
+        </g>
+
+        <!-- pentágono: 108° × 3 = 324° → sobra -->
+        <g transform="translate(552,168)">
+            <g class="cel" stroke="#c0392b">
+                <path d="M0 0 L 0 -46 L 44 -32 L 44 14 L 22 32 Z"/>
+                <path d="M0 0 L 22 32 L -6 62 L -44 44 L -38 4 Z"/>
+                <path d="M0 0 L -38 4 L -60 -32 L -30 -62 L 0 -46 Z"/>
+            </g>
+            <path d="M0 0 L 44 14 A 46 46 0 0 0 22 32 Z" fill="#c0392b" opacity="0.35"/>
+            <circle cx="0" cy="0" r="4" fill="#5a4210"/>
+            <text class="rot" x="0" y="112" text-anchor="middle" font-size="16" style="fill:#c0392b">108° × 3 = 324°</text>
+            <text class="rotp" x="0" y="134" text-anchor="middle" style="fill:#c0392b" font-weight="700">sobram 36°: não fecha</text>
+        </g>
+
+        <g transform="translate(24,308)">
+            <rect x="0" y="0" width="592" height="54" rx="10" fill="#fdf3d4" stroke="#d9c184" stroke-width="1.5"/>
+            <text class="rotp" x="18" y="33">
+                Só estas <tspan font-weight="700" style="fill:#8a6a1f">três formas regulares</tspan>
+                ladrilham o plano. Todas as outras deixam vão. Agora, entre as três, é conta.
+            </text>
+        </g>
+    </g>
+
+    <!-- ══ Direita: quanto de cera cada uma gasta ═════════════════════════ -->
+    <g transform="translate(714,112)">
+        <rect class="painel" x="0" y="0" width="640" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">AGORA: QUAL GASTA MENOS PAREDE?</text>
+        <text class="rotp" x="24" y="60">a mesma área de célula em todas — muda só o contorno que é preciso construir</text>
+
+        <g transform="translate(30,90)">
+            <!-- triângulo -->
+            <g>
+                <path d="M20 40 L 52 40 L 36 12 Z" class="cel" stroke="#a68b52"/>
+                <text class="rot" x="74" y="38" font-size="16">Triângulo</text>
+                <rect x="190" y="20" width="380" height="26" rx="6" fill="#fdf3d4" stroke="#d9c184" stroke-width="1.5"/>
+                <rect x="190" y="20" width="340" height="26" rx="6" fill="#c0392b" opacity="0.8"/>
+                <text class="rotp" x="540" y="39" style="fill:#c0392b" font-weight="700">4,56</text>
+            </g>
+
+            <!-- quadrado -->
+            <g transform="translate(0,64)">
+                <rect x="22" y="14" width="28" height="28" class="cel" stroke="#a68b52"/>
+                <text class="rot" x="74" y="38" font-size="16">Quadrado</text>
+                <rect x="190" y="20" width="380" height="26" rx="6" fill="#fdf3d4" stroke="#d9c184" stroke-width="1.5"/>
+                <rect x="190" y="20" width="298" height="26" rx="6" fill="#e8952a"/>
+                <text class="rotp" x="498" y="39" style="fill:#c9701e" font-weight="700">4,00</text>
+            </g>
+
+            <!-- hexágono -->
+            <g transform="translate(0,128)">
+                <path d="M36 12 L 50 20 L 50 36 L 36 44 L 22 36 L 22 20 Z" class="cel" stroke="#e8952a"/>
+                <text class="rot" x="74" y="38" font-size="16" style="fill:#c9701e">Hexágono</text>
+                <rect x="190" y="20" width="380" height="26" rx="6" fill="#fdf3d4" stroke="#d9c184" stroke-width="1.5"/>
+                <rect x="190" y="20" width="277" height="26" rx="6" fill="url(#cera)"/>
+                <text class="rotp" x="477" y="39" style="fill:#8a6a1f" font-weight="700">3,72</text>
+            </g>
+
+            <!-- círculo: o sonho impossível -->
+            <g transform="translate(0,192)">
+                <circle cx="36" cy="28" r="15" class="cel" stroke="#6a9fd0" stroke-dasharray="5 4"/>
+                <text class="rot" x="74" y="34" font-size="16" style="fill:#3f7cae">Círculo</text>
+                <text class="rotp" x="74" y="54" font-size="12" style="fill:#3f7cae">gasta ainda menos — mas deixa buracos</text>
+                <rect x="190" y="14" width="380" height="26" rx="6" fill="#fdf3d4" stroke="#d9c184" stroke-width="1.5"/>
+                <rect x="190" y="14" width="264" height="26" rx="6" fill="#6a9fd0" opacity="0.55"/>
+                <text class="rotp" x="464" y="33" style="fill:#3f7cae" font-weight="700">3,54</text>
+            </g>
+        </g>
+
+        <text class="rotp" x="30" y="364" font-size="14">
+            Parede necessária para guardar a mesma quantidade de mel. Menos é melhor.
+        </text>
+    </g>
+
+    <!-- ══ Rodapé ═════════════════════════════════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+
+        <!-- favo, à esquerda -->
+        <g transform="translate(40,36)">
+            <g fill="url(#cera)" stroke="#c9701e" stroke-width="2">
+                <path d="M0 20 L 17 10 L 34 20 L 34 40 L 17 50 L 0 40 Z"/>
+                <path d="M34 0 L 51 -10 L 68 0 L 68 20 L 51 30 L 34 20 Z"/>
+                <path d="M34 40 L 51 30 L 68 40 L 68 60 L 51 70 L 34 60 Z"/>
+                <path d="M68 20 L 85 10 L 102 20 L 102 40 L 85 50 L 68 40 Z"/>
+                <path d="M102 0 L 119 -10 L 136 0 L 136 20 L 119 30 L 102 20 Z"/>
+                <path d="M102 40 L 119 30 L 136 40 L 136 60 L 119 70 L 102 60 Z"/>
+                <path d="M136 20 L 153 10 L 170 20 L 170 40 L 153 50 L 136 40 Z"/>
+            </g>
+            <text class="rotp" x="85" y="106" text-anchor="middle" font-weight="700">o favo, de verdade</text>
+        </g>
+
+        <g transform="translate(266,44)">
+            <text class="rot" x="0" y="26" font-size="17">O que a abelha resolveu antes de nós</text>
+            <text class="rotp" x="0" y="58">Que o hexágono era a melhor forma, a abelha já "sabia". Que ele é</text>
+            <text class="rotp" x="0" y="82">realmente o melhor de TODOS os jeitos de dividir um plano — inclusive</text>
+            <text class="rotp" x="0" y="106">os tortos, irregulares, que ninguém tinha testado — só foi provado em</text>
+            <text class="rotp" x="0" y="130">1999, pelo matemático Thomas Hales. Levou dois mil anos de matemática.</text>
+        </g>
+
+        <g transform="translate(946,44)">
+            <rect x="0" y="0" width="332" height="126" rx="12" fill="#fdf3d4" stroke="#c9701e" stroke-width="2"/>
+            <text class="rot" x="20" y="34" font-size="16" style="fill:#c9701e">E ela não usa régua</text>
+            <text class="rotp" x="20" y="62">Nenhuma abelha aprendeu geometria.</text>
+            <text class="rotp" x="20" y="86">Nenhuma mediu 120°. Cada uma faz a</text>
+            <text class="rotp" x="20" y="110">sua parte — e sai o favo perfeito.</text>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        Um quilo de cera custa à colmeia cerca de seis quilos de mel: cada milímetro de parede economizado é comida guardada.
+    </text>
+</svg>

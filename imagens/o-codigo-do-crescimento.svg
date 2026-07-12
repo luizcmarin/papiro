@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">O Código do Crescimento — a sequência e o giro de 137,5°</title>
+    <desc id="desc">Cada número da sequência é a soma dos dois anteriores, e é esse mesmo padrão que aparece
+        na contagem de pétalas. Ao crescer, a planta gira cada folha nova cerca de 137,5 graus em
+        relação à anterior. Com um giro que seja fração simples da volta — 90 graus, por exemplo —
+        as folhas se alinham em poucas fileiras e fazem sombra umas nas outras. Com 137,5 graus, elas
+        nunca se repetem: todas pegam sol.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f2f8ea"/>
+            <stop offset="1" stop-color="#dbe9cb"/>
+        </linearGradient>
+        <marker id="s-4a7c3f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#4a7c3f"/>
+        </marker>
+        <marker id="s-c0392b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#c0392b"/>
+        </marker>
+        <marker id="s-e8952a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#e8952a"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#22401a; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot  { fill:#3d6b32; font-size:18px; font-weight:700; }
+        .rotp { fill:#6f8f63; font-size:14px; }
+        .painel { fill:#ffffff; stroke:#aac79a; stroke-width:2; }
+        .num  { fill:#22401a; font-size:22px; font-weight:800; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">O CÓDIGO DO CRESCIMENTO</text>
+    <text class="rotp" x="46" y="84" font-size="17">A planta não sabe contar. Mas ela cresce como se soubesse — e nenhuma folha rouba o sol da outra.</text>
+
+    <!-- ══ Esquerda: a sequência e as pétalas ═════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="640" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">CADA NÚMERO É A SOMA DOS DOIS DE TRÁS</text>
+
+        <!-- a sequência -->
+        <g transform="translate(40,86)">
+            <g>
+                <circle cx="0" cy="0" r="22" fill="#e8f3df" stroke="#aac79a" stroke-width="2"/>
+                <text class="num" x="0" y="8" text-anchor="middle">1</text>
+                <circle cx="72" cy="0" r="22" fill="#e8f3df" stroke="#aac79a" stroke-width="2"/>
+                <text class="num" x="72" y="8" text-anchor="middle">1</text>
+                <circle cx="144" cy="0" r="22" fill="#e8f3df" stroke="#aac79a" stroke-width="2"/>
+                <text class="num" x="144" y="8" text-anchor="middle">2</text>
+                <circle cx="216" cy="0" r="22" fill="#e8f3df" stroke="#aac79a" stroke-width="2"/>
+                <text class="num" x="216" y="8" text-anchor="middle">3</text>
+                <circle cx="288" cy="0" r="22" fill="#e8f3df" stroke="#aac79a" stroke-width="2"/>
+                <text class="num" x="288" y="8" text-anchor="middle">5</text>
+                <circle cx="360" cy="0" r="22" fill="#e8f3df" stroke="#aac79a" stroke-width="2"/>
+                <text class="num" x="360" y="8" text-anchor="middle">8</text>
+                <circle cx="432" cy="0" r="24" fill="#dff0d3" stroke="#4a7c3f" stroke-width="2.5"/>
+                <text class="num" x="432" y="8" text-anchor="middle">13</text>
+                <circle cx="510" cy="0" r="26" fill="#4a7c3f" stroke="#22401a" stroke-width="2.5"/>
+                <text class="num" x="510" y="8" text-anchor="middle" fill="#ffffff">21</text>
+            </g>
+            <!-- as somas, por baixo -->
+            <g stroke="#4a7c3f" stroke-width="2" fill="none">
+                <path d="M360 26 C 380 62, 420 62, 432 28"/>
+                <path d="M432 26 C 456 66, 490 66, 508 28"/>
+            </g>
+            <text class="rotp" x="470" y="82" text-anchor="middle" style="fill:#4a7c3f" font-weight="700">
+                8 + 13 = 21
+            </text>
+        </g>
+
+        <text class="rot" x="24" y="216">E É ASSIM QUE AS PÉTALAS SE CONTAM</text>
+
+        <!-- flores com 3, 5 e 8 pétalas -->
+        <g transform="translate(120,288)">
+            <g fill="#f0d264" stroke="#c9a72a" stroke-width="1.5">
+                <ellipse cx="0" cy="-30" rx="11" ry="24"/>
+                <ellipse cx="26" cy="15" rx="11" ry="24" transform="rotate(120,26,15)"/>
+                <ellipse cx="-26" cy="15" rx="11" ry="24" transform="rotate(240,-26,15)"/>
+            </g>
+            <circle cx="0" cy="0" r="11" fill="#8a6a1f"/>
+            <text class="rotp" x="0" y="60" text-anchor="middle" font-weight="700">3 pétalas</text>
+            <text class="rotp" x="0" y="80" text-anchor="middle" font-size="12">lírio</text>
+        </g>
+        <g transform="translate(320,288)">
+            <g fill="#f0d264" stroke="#c9a72a" stroke-width="1.5">
+                <ellipse cx="0" cy="-30" rx="10" ry="24"/>
+                <ellipse cx="29" cy="-9" rx="10" ry="24" transform="rotate(72,29,-9)"/>
+                <ellipse cx="18" cy="25" rx="10" ry="24" transform="rotate(144,18,25)"/>
+                <ellipse cx="-18" cy="25" rx="10" ry="24" transform="rotate(216,-18,25)"/>
+                <ellipse cx="-29" cy="-9" rx="10" ry="24" transform="rotate(288,-29,-9)"/>
+            </g>
+            <circle cx="0" cy="0" r="11" fill="#8a6a1f"/>
+            <text class="rotp" x="0" y="60" text-anchor="middle" font-weight="700">5 pétalas</text>
+            <text class="rotp" x="0" y="80" text-anchor="middle" font-size="12">botão-de-ouro</text>
+        </g>
+        <g transform="translate(520,288)">
+            <g fill="#f0d264" stroke="#c9a72a" stroke-width="1.5">
+                <ellipse cx="0" cy="-30" rx="9" ry="24"/>
+                <ellipse cx="21" cy="-21" rx="9" ry="24" transform="rotate(45,21,-21)"/>
+                <ellipse cx="30" cy="0" rx="9" ry="24" transform="rotate(90,30,0)"/>
+                <ellipse cx="21" cy="21" rx="9" ry="24" transform="rotate(135,21,21)"/>
+                <ellipse cx="0" cy="30" rx="9" ry="24" transform="rotate(180,0,30)"/>
+                <ellipse cx="-21" cy="21" rx="9" ry="24" transform="rotate(225,-21,21)"/>
+                <ellipse cx="-30" cy="0" rx="9" ry="24" transform="rotate(270,-30,0)"/>
+                <ellipse cx="-21" cy="-21" rx="9" ry="24" transform="rotate(315,-21,-21)"/>
+            </g>
+            <circle cx="0" cy="0" r="11" fill="#8a6a1f"/>
+            <text class="rotp" x="0" y="60" text-anchor="middle" font-weight="700">8 pétalas</text>
+            <text class="rotp" x="0" y="80" text-anchor="middle" font-size="12">delfínio</text>
+        </g>
+    </g>
+
+    <!-- ══ Direita: o giro das folhas ═════════════════════════════════════ -->
+    <g transform="translate(714,112)">
+        <rect class="painel" x="0" y="0" width="640" height="380" rx="16"/>
+        <text class="rot" x="24" y="38">O GIRO DE CADA FOLHA NOVA</text>
+        <text class="rotp" x="24" y="60">o caule visto DE CIMA: cada folha nasce girada em relação à de baixo</text>
+
+        <!-- 90°: as folhas se empilham em 4 fileiras -->
+        <g transform="translate(166,220)">
+            <circle cx="0" cy="0" r="98" fill="#f4f8ef" stroke="#d4e3c8" stroke-width="1.5"/>
+            <!-- 8 folhas, de 90 em 90: caem sempre nos mesmos 4 lugares -->
+            <g fill="#7bb56b" stroke="#4a7c3f" stroke-width="1.5" opacity="0.95">
+                <ellipse cx="0" cy="-70" rx="14" ry="26"/>
+                <ellipse cx="70" cy="0" rx="26" ry="14"/>
+                <ellipse cx="0" cy="70" rx="14" ry="26"/>
+                <ellipse cx="-70" cy="0" rx="26" ry="14"/>
+            </g>
+            <g fill="#3d6b32" stroke="#22401a" stroke-width="1.5" opacity="0.9">
+                <ellipse cx="0" cy="-44" rx="12" ry="22"/>
+                <ellipse cx="44" cy="0" rx="22" ry="12"/>
+                <ellipse cx="0" cy="44" rx="12" ry="22"/>
+                <ellipse cx="-44" cy="0" rx="22" ry="12"/>
+            </g>
+            <circle cx="0" cy="0" r="10" fill="#8a6a1f"/>
+            <text class="rot" x="0" y="-118" text-anchor="middle" font-size="16" style="fill:#c0392b">GIRO DE 90°</text>
+            <text class="rotp" x="0" y="128" text-anchor="middle" style="fill:#c0392b" font-weight="700">
+                a 5ª folha cai em cima da 1ª
+            </text>
+            <text class="rotp" x="0" y="148" text-anchor="middle" style="fill:#c0392b">
+                só 4 fileiras — e muita sombra
+            </text>
+        </g>
+
+        <!-- 137,5°: nunca repete -->
+        <g transform="translate(462,220)">
+            <circle cx="0" cy="0" r="98" fill="#f4f8ef" stroke="#d4e3c8" stroke-width="1.5"/>
+            <!-- 10 folhas, giradas de 137,5° em 137,5°, raio crescendo -->
+            <g fill="#7bb56b" stroke="#4a7c3f" stroke-width="1.5">
+                <g transform="rotate(0)"><ellipse cx="0" cy="-32" rx="10" ry="17"/></g>
+                <g transform="rotate(137.5)"><ellipse cx="0" cy="-42" rx="10" ry="18"/></g>
+                <g transform="rotate(275)"><ellipse cx="0" cy="-50" rx="11" ry="19"/></g>
+                <g transform="rotate(52.5)"><ellipse cx="0" cy="-57" rx="11" ry="20"/></g>
+                <g transform="rotate(190)"><ellipse cx="0" cy="-63" rx="12" ry="21"/></g>
+                <g transform="rotate(327.5)"><ellipse cx="0" cy="-69" rx="12" ry="22"/></g>
+                <g transform="rotate(105)"><ellipse cx="0" cy="-74" rx="13" ry="22"/></g>
+                <g transform="rotate(242.5)"><ellipse cx="0" cy="-79" rx="13" ry="23"/></g>
+                <g transform="rotate(20)"><ellipse cx="0" cy="-84" rx="14" ry="24"/></g>
+                <g transform="rotate(157.5)"><ellipse cx="0" cy="-88" rx="14" ry="24"/></g>
+            </g>
+            <circle cx="0" cy="0" r="10" fill="#8a6a1f"/>
+            <text class="rot" x="0" y="-118" text-anchor="middle" font-size="16" style="fill:#2f8f3d">GIRO DE 137,5°</text>
+            <text class="rotp" x="0" y="128" text-anchor="middle" style="fill:#2f8f3d" font-weight="700">
+                nenhuma folha cai sobre outra
+            </text>
+            <text class="rotp" x="0" y="148" text-anchor="middle" style="fill:#2f8f3d">
+                todas pegam sol
+            </text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé: por que justo 137,5°? ══════════════════════════════════ -->
+    <g transform="translate(46,520)">
+        <rect class="painel" x="0" y="0" width="1308" height="212" rx="16"/>
+        <text class="rot" x="24" y="38">E POR QUE JUSTO 137,5°?</text>
+        <text class="rotp" x="24" y="60">porque qualquer giro que seja fração simples da volta acaba se repetindo</text>
+
+        <g transform="translate(30,80)">
+            <g>
+                <rect x="0" y="0" width="300" height="102" rx="12" fill="#fdeee9" stroke="#c0392b" stroke-width="1.5"/>
+                <text class="rot" x="20" y="32" font-size="16" style="fill:#c0392b">Giro de 180° = 1/2 da volta</text>
+                <text class="rotp" x="20" y="60">a 3ª folha já repete a 1ª</text>
+                <text class="rotp" x="20" y="84" style="fill:#c0392b">2 fileiras. Meia planta na sombra.</text>
+            </g>
+            <g transform="translate(320,0)">
+                <rect x="0" y="0" width="300" height="102" rx="12" fill="#fdeee9" stroke="#c0392b" stroke-width="1.5"/>
+                <text class="rot" x="20" y="32" font-size="16" style="fill:#c0392b">Giro de 120° = 1/3 da volta</text>
+                <text class="rotp" x="20" y="60">a 4ª folha já repete a 1ª</text>
+                <text class="rotp" x="20" y="84" style="fill:#c0392b">3 fileiras. Sombra de novo.</text>
+            </g>
+            <g transform="translate(640,0)">
+                <rect x="0" y="0" width="618" height="102" rx="12" fill="#eef7e8" stroke="#2f8f3d" stroke-width="2"/>
+                <text class="rot" x="20" y="32" font-size="16" style="fill:#2f8f3d">Giro de 137,5° = a volta dividida pela Regra de Ouro</text>
+                <text class="rotp" x="20" y="60">Essa fração não “fecha” nunca: por mais voltas que a planta dê, a folha nova sempre</text>
+                <text class="rotp" x="20" y="84" style="fill:#2f8f3d">cai no maior buraco que sobrou. É o único giro que não tem repetição — e é o que ela usa.</text>
+            </g>
+        </g>
+    </g>
+
+    <text class="rotp" x="46" y="768" font-size="15">
+        A planta não escolheu esse ângulo: ela já nasce girando assim. E é o único que não deixa nenhuma folha à sombra.
+    </text>
+</svg>
