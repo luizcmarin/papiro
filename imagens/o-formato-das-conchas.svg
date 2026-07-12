@@ -105,13 +105,13 @@
                      L -25 -100 L -55 -91 L -82 -73 L -103 -47 L -116 -15 L -119 21"
                   fill="none" stroke="#c0392b" stroke-width="3" transform="scale(0.72)"/>
             <text class="rot" x="0" y="-118" text-anchor="middle" font-size="16" style="fill:#c0392b">SOMANDO</text>
-            <text class="rotp" x="0" y="112" text-anchor="middle" font-size="13" style="fill:#c0392b" font-weight="700">
+            <text class="rotp" x="0" y="96" text-anchor="middle" font-size="13" style="fill:#c0392b" font-weight="700">
                 as voltas ficam igualmente largas
             </text>
-            <text class="rotp" x="0" y="132" text-anchor="middle" font-size="13" style="fill:#c0392b">
+            <text class="rotp" x="0" y="116" text-anchor="middle" font-size="13" style="fill:#c0392b">
                 o quarto novo tem o tamanho do velho
             </text>
-            <text class="rotp" x="0" y="152" text-anchor="middle" font-size="13" style="fill:#c0392b">
+            <text class="rotp" x="0" y="136" text-anchor="middle" font-size="13" style="fill:#c0392b">
                 — e o bicho, que cresceu, não cabe
             </text>
         </g>
@@ -126,13 +126,13 @@
                      L -48 -41 L -61 -26 L -69 -8 L -72 14 L -67 36"
                   fill="none" stroke="#2f8f5c" stroke-width="3" transform="scale(1.5)"/>
             <text class="rot" x="0" y="-128" text-anchor="middle" font-size="16" style="fill:#2f8f5c">MULTIPLICANDO</text>
-            <text class="rotp" x="0" y="122" text-anchor="middle" font-size="13" style="fill:#2f8f5c" font-weight="700">
+            <text class="rotp" x="0" y="106" text-anchor="middle" font-size="13" style="fill:#2f8f5c" font-weight="700">
                 cada volta é a anterior ampliada
             </text>
-            <text class="rotp" x="0" y="142" text-anchor="middle" font-size="13" style="fill:#2f8f5c">
+            <text class="rotp" x="0" y="126" text-anchor="middle" font-size="13" style="fill:#2f8f5c">
                 o quarto novo cresce junto com o dono
             </text>
-            <text class="rotp" x="0" y="162" text-anchor="middle" font-size="13" style="fill:#2f8f5c">
+            <text class="rotp" x="0" y="146" text-anchor="middle" font-size="13" style="fill:#2f8f5c">
                 — e a forma nunca muda
             </text>
         </g>

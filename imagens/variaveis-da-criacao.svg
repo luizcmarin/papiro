@@ -144,42 +144,38 @@
     <!-- ══ Baixo-direita: o painel de botões ══════════════════════════════ -->
     <g transform="translate(714,424)">
         <rect class="painel" x="0" y="0" width="640" height="308" rx="16"/>
-        <text class="rot" x="24" y="38" style="fill:#ffd24d">E NÃO SÃO DOIS BOTÕES — SÃO MUITOS</text>
-        <text class="rotp" x="24" y="60">cada um destes tem de estar no ponto AO MESMO TEMPO</text>
+        <text class="rot" x="24" y="38" style="fill:#ffd24d">OS DOIS BOTÕES DO DESAFIO</text>
+        <text class="rotp" x="24" y="60">e os dois têm de estar no ponto AO MESMO TEMPO</text>
 
-        <g transform="translate(28,84)">
-            <!-- cinco controles, todos centrados -->
+        <g transform="translate(28,96)">
             <g>
-                <text class="rotp" x="0" y="14" font-size="13">força da gravidade</text>
-                <rect x="200" y="2" width="380" height="12" rx="6" fill="#0b1226" stroke="#3a4d80" stroke-width="1.5"/>
-                <rect x="382" y="0" width="16" height="16" rx="4" fill="#7bd389"/>
-            </g>
-            <g transform="translate(0,40)">
-                <text class="rotp" x="0" y="14" font-size="13">distância ao Sol</text>
-                <rect x="200" y="2" width="380" height="12" rx="6" fill="#0b1226" stroke="#3a4d80" stroke-width="1.5"/>
-                <rect x="382" y="0" width="16" height="16" rx="4" fill="#7bd389"/>
-            </g>
-            <g transform="translate(0,80)">
-                <text class="rotp" x="0" y="14" font-size="13">inclinação do eixo</text>
-                <rect x="200" y="2" width="380" height="12" rx="6" fill="#0b1226" stroke="#3a4d80" stroke-width="1.5"/>
-                <rect x="382" y="0" width="16" height="16" rx="4" fill="#7bd389"/>
-            </g>
-            <g transform="translate(0,120)">
-                <text class="rotp" x="0" y="14" font-size="13">campo magnético</text>
-                <rect x="200" y="2" width="380" height="12" rx="6" fill="#0b1226" stroke="#3a4d80" stroke-width="1.5"/>
-                <rect x="382" y="0" width="16" height="16" rx="4" fill="#7bd389"/>
-            </g>
-            <g transform="translate(0,160)">
-                <text class="rotp" x="0" y="14" font-size="13">massa e órbita da Lua</text>
-                <rect x="200" y="2" width="380" height="12" rx="6" fill="#0b1226" stroke="#3a4d80" stroke-width="1.5"/>
-                <rect x="382" y="0" width="16" height="16" rx="4" fill="#7bd389"/>
+                <text class="rot" x="0" y="16" font-size="16">Gravidade</text>
+                <rect x="210" y="4" width="370" height="14" rx="7" fill="#0b1226" stroke="#3a4d80" stroke-width="1.5"/>
+                <rect x="377" y="1" width="20" height="20" rx="5" fill="#7bd389"/>
+                <text class="rotp" x="210" y="42" font-size="12" style="fill:#ff6b6b">fraca: o ar foge</text>
+                <text class="rotp" x="580" y="42" text-anchor="end" font-size="12" style="fill:#ffd24d">forte: o ar esmaga</text>
             </g>
 
-            <path d="M390 -8 V 186" stroke="#7bd389" stroke-width="2" stroke-dasharray="6 5" opacity="0.7"/>
+            <g transform="translate(0,80)">
+                <text class="rot" x="0" y="16" font-size="16">Distância ao Sol</text>
+                <rect x="210" y="4" width="370" height="14" rx="7" fill="#0b1226" stroke="#3a4d80" stroke-width="1.5"/>
+                <rect x="377" y="1" width="20" height="20" rx="5" fill="#7bd389"/>
+                <text class="rotp" x="210" y="42" font-size="12" style="fill:#ff6b6b">perto: a água ferve</text>
+                <text class="rotp" x="580" y="42" text-anchor="end" font-size="12" style="fill:#63c7e8">longe: a água congela</text>
+            </g>
+
+            <!-- a linha do ponto exato, atravessando os dois -->
+            <path d="M387 -8 V 104" stroke="#7bd389" stroke-width="2" stroke-dasharray="6 5" opacity="0.8"/>
+            <text class="rotp" x="387" y="-16" text-anchor="middle" font-size="12" style="fill:#7bd389" font-weight="700">
+                o ponto exato
+            </text>
         </g>
 
-        <text class="rotp" x="28" y="288" font-size="15" font-style="italic">
-            Todos na linha verde ao mesmo tempo. Mexa em um só e a vida some — e ainda há dezenas fora deste painel.
+        <text class="rotp" x="28" y="266" font-size="15" font-style="italic">
+            Mexa em um só e a vida some. E estes são apenas os dois que o desafio deixa você tocar —
+        </text>
+        <text class="rotp" x="28" y="290" font-size="15" font-style="italic">
+            fora deste painel há dezenas de outros, todos igualmente ajustados.
         </text>
     </g>
 </svg>

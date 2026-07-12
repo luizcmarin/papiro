@@ -91,7 +91,7 @@
             <path d="M560 180 A 60 60 0 0 1 560 292"/>
             <path d="M584 162 A 84 84 0 0 1 584 310"/>
         </g>
-        <text class="rotp" x="616" y="336" text-anchor="end" font-size="13">o canto do parceiro chega</text>
+        <text class="rotp" x="616" y="112" text-anchor="end" font-size="13">o canto do parceiro chega</text>
 
         <text class="rotp" x="24" y="358" font-size="15">
             Ele não vira a cabeça para escutar: ele estica a perna.

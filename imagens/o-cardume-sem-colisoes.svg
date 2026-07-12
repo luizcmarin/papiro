@@ -63,7 +63,7 @@
         <!-- regra 1: separação -->
         <g transform="translate(146,214)">
             <rect x="-116" y="-92" width="232" height="216" rx="12" fill="#082433" stroke="#2f6f92" stroke-width="1.5"/>
-            <text class="rot" x="0" y="-64" text-anchor="middle" font-size="15" style="fill:#ff8f6b">1 · NÃO ENCOSTE</text>
+            <text class="rot" x="0" y="-64" text-anchor="middle" font-size="14" style="fill:#ff8f6b">1 · NÃO ENCOSTE</text>
 
             <circle cx="0" cy="10" r="44" fill="#ff8f6b" opacity="0.12" stroke="#ff8f6b"
                     stroke-width="1.5" stroke-dasharray="5 4"/>
@@ -84,8 +84,8 @@
         <!-- regra 2: alinhamento -->
         <g transform="translate(406,214)">
             <rect x="-116" y="-92" width="232" height="216" rx="12" fill="#082433" stroke="#2f6f92" stroke-width="1.5"/>
-            <text class="rot" x="0" y="-70" text-anchor="middle" font-size="15" style="fill:#63c7e8">2 · APONTE PARA</text>
-            <text class="rot" x="0" y="-52" text-anchor="middle" font-size="15" style="fill:#63c7e8">O MESMO LADO</text>
+            <text class="rot" x="0" y="-70" text-anchor="middle" font-size="14" style="fill:#63c7e8">2 · APONTE PARA</text>
+            <text class="rot" x="0" y="-52" text-anchor="middle" font-size="14" style="fill:#63c7e8">O MESMO LADO</text>
 
             <g transform="rotate(-18)">
                 <use href="#peixe" x="-58" y="-20"/>
@@ -104,8 +104,8 @@
         <!-- regra 3: coesão -->
         <g transform="translate(666,214)">
             <rect x="-116" y="-92" width="232" height="216" rx="12" fill="#082433" stroke="#2f6f92" stroke-width="1.5"/>
-            <text class="rot" x="0" y="-70" text-anchor="middle" font-size="15" style="fill:#7bd389">3 · NÃO FIQUE</text>
-            <text class="rot" x="0" y="-52" text-anchor="middle" font-size="15" style="fill:#7bd389">PARA TRÁS</text>
+            <text class="rot" x="0" y="-70" text-anchor="middle" font-size="14" style="fill:#7bd389">3 · NÃO FIQUE</text>
+            <text class="rot" x="0" y="-52" text-anchor="middle" font-size="14" style="fill:#7bd389">PARA TRÁS</text>
 
             <g>
                 <use href="#peixe" x="30" y="-24"/>
@@ -169,7 +169,7 @@
         <text class="rot" x="24" y="38">O QUE NASCE DE TRÊS REGRAS BOBAS</text>
 
         <!-- o cardume que se abre para o predador -->
-        <g transform="translate(44,58) scale(0.82)">
+        <g transform="translate(48,56) scale(0.72)">
             <g fill="none">
                 <path d="M0 60 C 60 10, 130 4, 190 30" stroke="#2f6f92" stroke-width="1.5" opacity="0.6"/>
                 <path d="M0 90 C 60 140, 130 146, 190 120" stroke="#2f6f92" stroke-width="1.5" opacity="0.6"/>
@@ -187,7 +187,7 @@
                 <path d="M-44 0 L -64 -16 L -58 0 L -64 16 Z" fill="#5a3f5f" stroke="#c08fd0" stroke-width="2"/>
                 <circle cx="30" cy="-4" r="3" fill="#e6f6ff"/>
             </g>
-            <text class="rotp" x="105" y="172" text-anchor="middle" font-size="15" font-weight="700">
+            <text class="rotp" x="105" y="176" text-anchor="middle" font-size="17" font-weight="700">
                 o cardume se abre e fecha atrás dele
             </text>
         </g>
