@@ -72,25 +72,24 @@
             <rect width="652" height="136" rx="12" fill="#f2faf7" stroke="#bcd8d0"/>
             <text class="rot" x="20" y="30" font-size="16">VIZINHOS DE PORTA — SEPARADOS POR UM ÚNICO PRÓTON</text>
             <!-- ouro -->
-            <g transform="translate(20,44)">
-                <circle cx="36" cy="36" r="32" fill="#f5c53a" stroke="#c79a18" stroke-width="3"/>
-                <text class="celtx" x="36" y="30" font-size="17">Au</text>
-                <text class="celz" x="36" y="48" font-size="11">79 prótons</text>
-                <text class="num" x="86" y="28" font-size="15">OURO — sólido, dourado,</text>
-                <text class="num" x="86" y="48" font-size="15">precioso há milênios</text>
+            <g transform="translate(20,46)">
+                <circle cx="32" cy="40" r="30" fill="#f5c53a" stroke="#c79a18" stroke-width="3"/>
+                <text class="celtx" x="32" y="47" font-size="18">Au</text>
+                <text class="num" x="74" y="32" font-size="15">OURO — 79 prótons</text>
+                <text class="rotp" x="74" y="54" font-size="13">sólido, dourado, precioso</text>
             </g>
             <!-- seta +1 -->
-            <g transform="translate(310,60)">
-                <line x1="0" y1="18" x2="66" y2="18" stroke="#2a7a6a" stroke-width="3" marker-end="url(#s-2a7a6a)"/>
-                <text class="rot" x="30" y="8" font-size="15" text-anchor="middle">+1 próton</text>
+            <g transform="translate(268,60)">
+                <line x1="0" y1="24" x2="56" y2="24" stroke="#2a7a6a" stroke-width="3" marker-end="url(#s-2a7a6a)"/>
+                <text class="rot" x="28" y="10" font-size="14" text-anchor="middle">+1 próton</text>
             </g>
             <!-- mercúrio -->
-            <g transform="translate(400,44)">
-                <ellipse cx="36" cy="44" rx="32" ry="22" fill="#c9d4dd" stroke="#8fa3b5" stroke-width="3"/>
-                <ellipse cx="26" cy="38" rx="9" ry="5" fill="#eef3f7"/>
-                <text class="celz" x="36" y="48" font-size="11">80 prótons</text>
-                <text class="num" x="86" y="28" font-size="15">MERCÚRIO — líquido,</text>
-                <text class="num" x="86" y="48" font-size="15">prateado, escorregadio</text>
+            <g transform="translate(340,46)">
+                <ellipse cx="32" cy="44" rx="30" ry="20" fill="#c9d4dd" stroke="#8fa3b5" stroke-width="3"/>
+                <ellipse cx="23" cy="38" rx="8" ry="4.5" fill="#eef3f7"/>
+                <text class="celtx" x="32" y="50" font-size="14">Hg</text>
+                <text class="num" x="74" y="32" font-size="15">MERCÚRIO — 80 prótons</text>
+                <text class="rotp" x="74" y="54" font-size="13">líquido, prateado, escorregadio</text>
             </g>
         </g>
     </g>
