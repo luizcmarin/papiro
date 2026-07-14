@@ -80,8 +80,8 @@
             </g>
             <!-- seta +1 -->
             <g transform="translate(268,60)">
-                <line x1="0" y1="24" x2="56" y2="24" stroke="#2a7a6a" stroke-width="3" marker-end="url(#s-2a7a6a)"/>
-                <text class="rot" x="28" y="10" font-size="14" text-anchor="middle">+1 próton</text>
+                <line x1="0" y1="18" x2="56" y2="18" stroke="#2a7a6a" stroke-width="3" marker-end="url(#s-2a7a6a)"/>
+                <text class="rot" x="28" y="40" font-size="14" text-anchor="middle">+1 próton</text>
             </g>
             <!-- mercúrio -->
             <g transform="translate(340,46)">
