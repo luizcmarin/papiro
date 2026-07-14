@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">Os Elementos Surgiram por Acaso? — a escada 1→92 e as forças que seguram o átomo</title>
+    <desc id="desc">O jogo pede que a criança monte o átomo de ouro próton a próton; esta ilustração
+        mostra o contexto que o gráfico 3D não mostra: a ordem dos elementos é o número de prótons
+        (1, hidrogênio → 92, urânio, sem lacunas); Mendeleyev previu o germânio pela lacuna 32;
+        os vizinhos 79 e 80 (ouro e mercúrio) diferem por um único próton; e a força eletromagnética,
+        ~100 vezes mais fraca que a nuclear forte, é o ajuste que torna a química — e a vida — possível.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#eef6f4"/>
+            <stop offset="1" stop-color="#d9ece7"/>
+        </linearGradient>
+        <marker id="s-2a7a6a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10"
+                markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#2a7a6a"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab    { fill:#173f37; font-size:28px; font-weight:800; letter-spacing:1.2px; }
+        .rot    { fill:#2a7a6a; font-size:18px; font-weight:700; }
+        .rotp   { fill:#5f8078; font-size:14px; }
+        .painel { fill:#ffffff; stroke:#bcd8d0; stroke-width:2; }
+        .num    { fill:#173f37; font-size:17px; font-weight:700; }
+        .cel    { fill:#f2faf7; stroke:#bcd8d0; stroke-width:1.5; }
+        .celtx  { fill:#173f37; font-size:15px; font-weight:700; text-anchor:middle; }
+        .celz   { fill:#7fa39a; font-size:10px; text-anchor:middle; }
+        .ok     { fill:#2f8f5c; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">OS ELEMENTOS QUÍMICOS SURGIRAM POR ACASO?</text>
+    <text class="rotp" x="46" y="84" font-size="17">
+        Tudo — até a estrela mais distante — é feito de átomos. E o que decide QUAL elemento? Só o número de prótons no núcleo.
+    </text>
+
+    <!-- ══ Esquerda: a escada 1 → 92 (com a lacuna de Mendeleyev e os vizinhos 79/80) ══ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="700" height="392" rx="16"/>
+        <text class="rot" x="24" y="38">A ESCADA SEM DEGRAUS FALTANDO: 1 → 92</text>
+        <text class="rotp" x="24" y="60">cada próton a mais = um elemento novo, na ordem exata da tabela periódica</text>
+
+        <!-- fileira do começo da escada -->
+        <g transform="translate(24,84)">
+            <g><rect class="cel" width="72" height="64" rx="10"/><text class="celz" x="36" y="16">1 próton</text><text class="celtx" x="36" y="40" font-size="20">H</text><text class="celz" x="36" y="56">hidrogênio</text></g>
+            <g transform="translate(80,0)"><rect class="cel" width="72" height="64" rx="10"/><text class="celz" x="36" y="16">2</text><text class="celtx" x="36" y="40" font-size="20">He</text><text class="celz" x="36" y="56">hélio</text></g>
+            <g transform="translate(160,0)"><rect class="cel" width="72" height="64" rx="10"/><text class="celz" x="36" y="16">6</text><text class="celtx" x="36" y="40" font-size="20">C</text><text class="celz" x="36" y="56">carbono</text></g>
+            <g transform="translate(240,0)"><rect class="cel" width="72" height="64" rx="10"/><text class="celz" x="36" y="16">8</text><text class="celtx" x="36" y="40" font-size="20">O</text><text class="celz" x="36" y="56">oxigênio</text></g>
+            <g transform="translate(320,0)"><rect class="cel" width="72" height="64" rx="10"/><text class="celz" x="36" y="16">26</text><text class="celtx" x="36" y="40" font-size="20">Fe</text><text class="celz" x="36" y="56">ferro</text></g>
+            <!-- a lacuna que virou previsão -->
+            <g transform="translate(400,0)">
+                <rect width="120" height="64" rx="10" fill="#fff6e3" stroke="#d9a13a" stroke-width="2" stroke-dasharray="7 5"/>
+                <text class="celz" x="60" y="16" fill="#b07714">32 — a LACUNA</text>
+                <text class="celtx" x="60" y="40" font-size="20" fill="#b07714">Ge?</text>
+                <text class="celz" x="60" y="56" fill="#b07714">previsto em 1871</text>
+            </g>
+            <g transform="translate(528,0)"><rect class="cel" width="72" height="64" rx="10"/><text class="celz" x="36" y="16">92</text><text class="celtx" x="36" y="40" font-size="20">U</text><text class="celz" x="36" y="56">urânio</text></g>
+        </g>
+
+        <text class="rotp" x="24" y="188" font-size="15">
+            Mendeleyev olhou a lacuna nº 32 e previu o germânio — cor, peso, densidade e ponto de fusão —
+        </text>
+        <text class="rotp" x="24" y="208" font-size="15">
+            anos antes da descoberta. “As predições sobre o gálio e o escândio também se mostraram bem exatas.”
+        </text>
+
+        <!-- os vizinhos 79 e 80 -->
+        <g transform="translate(24,232)">
+            <rect width="652" height="136" rx="12" fill="#f2faf7" stroke="#bcd8d0"/>
+            <text class="rot" x="20" y="30" font-size="16">VIZINHOS DE PORTA — SEPARADOS POR UM ÚNICO PRÓTON</text>
+            <!-- ouro -->
+            <g transform="translate(20,44)">
+                <circle cx="36" cy="36" r="32" fill="#f5c53a" stroke="#c79a18" stroke-width="3"/>
+                <text class="celtx" x="36" y="30" font-size="17">Au</text>
+                <text class="celz" x="36" y="48" font-size="11">79 prótons</text>
+                <text class="num" x="86" y="28" font-size="15">OURO — sólido, dourado,</text>
+                <text class="num" x="86" y="48" font-size="15">precioso há milênios</text>
+            </g>
+            <!-- seta +1 -->
+            <g transform="translate(310,60)">
+                <line x1="0" y1="18" x2="66" y2="18" stroke="#2a7a6a" stroke-width="3" marker-end="url(#s-2a7a6a)"/>
+                <text class="rot" x="30" y="8" font-size="15" text-anchor="middle">+1 próton</text>
+            </g>
+            <!-- mercúrio -->
+            <g transform="translate(400,44)">
+                <ellipse cx="36" cy="44" rx="32" ry="22" fill="#c9d4dd" stroke="#8fa3b5" stroke-width="3"/>
+                <ellipse cx="26" cy="38" rx="9" ry="5" fill="#eef3f7"/>
+                <text class="celz" x="36" y="48" font-size="11">80 prótons</text>
+                <text class="num" x="86" y="28" font-size="15">MERCÚRIO — líquido,</text>
+                <text class="num" x="86" y="48" font-size="15">prateado, escorregadio</text>
+            </g>
+        </g>
+    </g>
+
+    <!-- ══ Direita: as forças que seguram o átomo ══════════════════════════ -->
+    <g transform="translate(770,112)">
+        <rect class="painel" x="0" y="0" width="584" height="392" rx="16"/>
+        <text class="rot" x="24" y="38">O QUE SEGURA O ÁTOMO NO LUGAR</text>
+        <text class="rotp" x="24" y="60">duas forças, na medida exata uma para a outra</text>
+
+        <!-- átomo esquemático -->
+        <g transform="translate(150,200)">
+            <ellipse rx="118" ry="46" fill="none" stroke="#7fb8ab" stroke-width="2" transform="rotate(-18)"/>
+            <ellipse rx="118" ry="46" fill="none" stroke="#7fb8ab" stroke-width="2" transform="rotate(42)"/>
+            <ellipse rx="118" ry="46" fill="none" stroke="#7fb8ab" stroke-width="2" transform="rotate(102)"/>
+            <!-- núcleo: prótons + nêutrons -->
+            <circle cx="-8" cy="-6" r="13" fill="#f0a63a"/>
+            <circle cx="8" cy="-4" r="13" fill="#9db4cc"/>
+            <circle cx="0" cy="8" r="13" fill="#f0a63a"/>
+            <circle cx="-12" cy="10" r="13" fill="#9db4cc"/>
+            <!-- elétrons -->
+            <circle cx="-104" cy="38" r="7" fill="#2e86c2"/>
+            <circle cx="96" cy="-52" r="7" fill="#2e86c2"/>
+            <circle cx="30" cy="108" r="7" fill="#2e86c2"/>
+        </g>
+
+        <g transform="translate(320,110)">
+            <text class="num" x="0" y="16" font-size="16" fill="#b07714">FORÇA NUCLEAR FORTE</text>
+            <text class="rotp" x="0" y="36" font-size="14">cola prótons e nêutrons no núcleo;</text>
+            <text class="rotp" x="0" y="54" font-size="14">~100× a eletromagnética — noutra</text>
+            <text class="rotp" x="0" y="72" font-size="14">proporção, o carbono não existiria</text>
+
+            <text class="num" x="0" y="112" font-size="16" fill="#1c6ea8">FORÇA ELETROMAGNÉTICA</text>
+            <text class="rotp" x="0" y="132" font-size="14">prende os elétrons ao núcleo;</text>
+            <text class="rotp" x="0" y="150" font-size="14">mais fraca, “nenhuma reação química</text>
+            <text class="rotp" x="0" y="168" font-size="14">seria possível no Universo”</text>
+        </g>
+
+        <g transform="translate(24,330)">
+            <rect width="536" height="44" rx="10" fill="#eaf6f1" stroke="#bcd8d0"/>
+            <text class="rotp" x="16" y="27" font-size="15">
+                2 átomos de hidrogênio + 1 de oxigênio = uma molécula da <tspan font-weight="700">preciosa água</tspan>
+            </text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé: três cartões-resumo ══════════════════════════════════════ -->
+    <g transform="translate(46,532)">
+        <g>
+            <rect class="painel" width="422" height="224" rx="16"/>
+            <text class="rot" x="22" y="40">PREVISTO ANTES DE EXISTIR?</text>
+            <text class="rotp" x="22" y="72" font-size="15">A ordem dos elementos permitiu prever</text>
+            <text class="rotp" x="22" y="92" font-size="15">o germânio, o gálio e o escândio antes</text>
+            <text class="rotp" x="22" y="112" font-size="15">de serem descobertos. E os elementos</text>
+            <text class="rotp" x="22" y="132" font-size="15">93–118, feitos em laboratório, também</text>
+            <text class="rotp" x="22" y="152" font-size="15">se encaixaram no padrão da tabela.</text>
+            <text class="num ok" x="22" y="192" font-size="16">Ordem que prevê o futuro não é acaso.</text>
+        </g>
+        <g transform="translate(443,0)">
+            <rect class="painel" width="422" height="224" rx="16"/>
+            <text class="rot" x="22" y="40">UM PRÓTON MUDA TUDO</text>
+            <text class="rotp" x="22" y="72" font-size="15">79 prótons: ouro, sólido e dourado.</text>
+            <text class="rotp" x="22" y="92" font-size="15">80 prótons: mercúrio, líquido prateado.</text>
+            <text class="rotp" x="22" y="112" font-size="15">Pequenas mudanças na disposição das</text>
+            <text class="rotp" x="22" y="132" font-size="15">partículas criam a enorme variedade</text>
+            <text class="rotp" x="22" y="152" font-size="15">de tudo o que existe.</text>
+            <text class="num ok" x="22" y="192" font-size="16">Variedade com regras é projeto.</text>
+        </g>
+        <g transform="translate(886,0)">
+            <rect class="painel" width="468" height="224" rx="16"/>
+            <text class="rot" x="22" y="40">VOCÊ É FEITO DESSA ESCADA</text>
+            <text class="rotp" x="22" y="72" font-size="15">Hidrogênio + oxigênio + carbono somam</text>
+            <text class="rotp" x="22" y="92" font-size="15">~98% dos átomos do seu corpo (o carbono</text>
+            <text class="rotp" x="22" y="112" font-size="15">é 20% do peso de todo ser vivo).</text>
+            <text class="rotp" x="22" y="140" font-size="15" font-style="italic">“Você conhece as leis que governam</text>
+            <text class="rotp" x="22" y="160" font-size="15" font-style="italic">o céu?” — Jó 38:33</text>
+            <text class="num ok" x="22" y="192" font-size="16">Isso teve um Projeto?</text>
+        </g>
+    </g>
+</svg>

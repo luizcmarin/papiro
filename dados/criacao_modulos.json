@@ -986,5 +986,24 @@
         "data_criacao": 1783865327624,
         "data_atualizacao": 1783865327624,
         "imagem": "um-universo-cheio-de-surpresas.svg"
+    },
+    {
+        "id": 58,
+        "titulo": "Os Elementos Surgiram por Acaso?",
+        "categoria": "universo",
+        "tipo": "elementos",
+        "icone": "bi-grid-3x3-gap",
+        "ordem": 75,
+        "conceito": "<p>“Todo objeto no Universo, até a estrela mais distante, é composto de <strong>átomos</strong>.” O que faz um punhado deles virar ferro, e outro virar ouro? Só uma coisa: o <strong>número de prótons</strong> no núcleo.</p><p>A ordem é perfeita: começa no <strong>1</strong> (hidrogênio, que abastece o Sol) e vai, <strong>sem pular nenhum número</strong>, até o <strong>92</strong> (urânio, o último que em geral ocorre naturalmente na Terra). Foi olhando as <strong>lacunas</strong> dessa tabela que Dmitri Mendeleyev <strong>previu</strong> o germânio (número 32) — cor, peso, densidade e ponto de fusão — anos antes de alguém o encontrar.</p><p>E veja os vizinhos <strong>79</strong> e <strong>80</strong>: o ouro, sólido e dourado; o mercúrio, líquido e prateado. A diferença? <strong>Um único próton.</strong> Tudo isso só funciona porque a <strong>força eletromagnética</strong> prende os elétrons ao núcleo — sem ela, “nenhuma reação química seria possível no Universo”.</p>",
+        "desafio": "<p>Monte os átomos você mesmo. Aperte <strong>+</strong> para acrescentar prótons ao núcleo, um a um — a cada próton, o átomo <strong>atrai os elétrons</strong> que aquele elemento precisa e as propriedades mudam na hora: massa, família, estado, camadas.</p><p>Passeie pela tabela (o painel mostra cada elemento que você criar) e cumpra a missão: <strong>monte o átomo de OURO — 79 prótons</strong>. Depois, dê um passo a mais e veja no que ele vira.</p>",
+        "reflexao": "<p>Uma escada de 92 degraus, sem nenhum degrau faltando; lacunas que <em>previram</em> elementos antes de serem descobertos; e até os elementos 93 a 118, feitos em laboratório, <strong>encaixando-se no mesmo padrão</strong>. Hidrogênio, oxigênio e carbono — três degraus dessa escada — somam <strong>98% dos átomos do seu corpo</strong>.</p><p>Acaso não escreve tabelas. “Você conhece as leis que governam o céu?” (Jó 38:33) — Isso teve um Projeto?</p>",
+        "referencia": "Jó 38:33 · Despertai! — “Os elementos químicos surgiram por acaso?”",
+        "link_jw": "https://wol.jw.org/pt/wol/d/r5/lp-t/102000722",
+        "config": "{\"alvo\":79,\"p0\":1,\"pMax\":118}",
+        "xp": 140,
+        "publicar": 1,
+        "data_criacao": 1784052490676,
+        "data_atualizacao": 1784052490676,
+        "imagem": "os-elementos-surgiram-por-acaso.svg"
     }
 ]
