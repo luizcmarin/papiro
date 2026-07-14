@@ -71,8 +71,11 @@
             <text class="rotp" x="30" y="170" font-size="13">o empurrão que as afasta</text>
         </g>
 
-        <text class="rotp" x="24" y="352" font-size="15">
-            Ninguém nunca viu, tocou ou capturou as duas escuras. Só se conhece o efeito delas.
+        <text class="rotp" x="24" y="338" font-size="15">
+            Ninguém nunca viu, tocou ou capturou as duas escuras.
+        </text>
+        <text class="rotp" x="24" y="360" font-size="15">
+            Só se conhece o efeito delas.
         </text>
     </g>
 

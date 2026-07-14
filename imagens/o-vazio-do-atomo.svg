@@ -47,34 +47,34 @@
         <text class="rot" x="24" y="38">SE O NÚCLEO FOSSE UMA BOLA DE TÊNIS…</text>
 
         <!-- o campo, o núcleo e a órbita distante -->
-        <g transform="translate(406,205)">
-            <ellipse cx="0" cy="0" rx="330" ry="118" fill="#e8f0fa" stroke="#bfd0e4" stroke-width="2"/>
-            <ellipse cx="0" cy="0" rx="330" ry="118" fill="none" stroke="#2f6fb0" stroke-width="2"
+        <g transform="translate(406,182)">
+            <ellipse cx="0" cy="0" rx="330" ry="96" fill="#e8f0fa" stroke="#bfd0e4" stroke-width="2"/>
+            <ellipse cx="0" cy="0" rx="330" ry="96" fill="none" stroke="#2f6fb0" stroke-width="2"
                      stroke-dasharray="7 8"/>
 
             <!-- núcleo: a bola de tênis -->
             <circle cx="0" cy="0" r="13" fill="url(#bola)" stroke="#a9b224" stroke-width="1.5"/>
             <path d="M-13 0 a 13 13 0 0 1 26 0" fill="none" stroke="#ffffff" stroke-width="2"/>
             <path d="M-13 0 a 13 13 0 0 0 26 0" fill="none" stroke="#ffffff" stroke-width="2"/>
-            <text class="rot" x="0" y="-26" text-anchor="middle" font-size="15">núcleo</text>
-            <text class="rotp" x="0" y="34" text-anchor="middle">bola de tênis · raio 3,5 cm</text>
+            <text class="rot" x="0" y="-28" text-anchor="middle" font-size="15">núcleo</text>
+            <text class="rotp" x="0" y="36" text-anchor="middle">bola de tênis · raio 3,5 cm</text>
 
             <!-- elétron na órbita -->
             <circle cx="330" cy="0" r="6" fill="#2f6fb0"/>
-            <text class="rot" x="330" y="-22" text-anchor="middle" font-size="15">elétron</text>
+            <text class="rot" x="302" y="-22" text-anchor="middle" font-size="15">elétron</text>
 
-            <!-- régua da distância -->
+            <!-- régua da distância (a medida fica acima da linha, longe da bola) -->
             <path d="M16 0 H 320" stroke="#2f6fb0" stroke-width="2" marker-end="url(#a-2f6fb0)"/>
-            <rect x="118" y="-20" width="112" height="30" rx="8" fill="#ffffff" stroke="#bfd0e4"/>
-            <text class="rot" x="174" y="1" text-anchor="middle" font-size="16">3 km</text>
+            <rect x="118" y="-38" width="112" height="30" rx="8" fill="#ffffff" stroke="#bfd0e4"/>
+            <text class="rot" x="174" y="-17" text-anchor="middle" font-size="16">3 km</text>
 
-            <text class="rotp" x="0" y="86" text-anchor="middle" font-size="15">
+            <text class="rotp" x="0" y="74" text-anchor="middle" font-size="15">
                 entre os dois, NADA — só vazio
             </text>
         </g>
 
         <!-- a conta -->
-        <g transform="translate(24,300)">
+        <g transform="translate(24,304)">
             <rect x="0" y="0" width="764" height="56" rx="10" fill="#eef5fd" stroke="#bfd0e4" stroke-width="1.5"/>
             <text class="eq" x="382" y="26" text-anchor="middle" font-size="20">3,5 cm × 86.000 ≈ 3.010 m</text>
             <text class="rotp" x="382" y="46" text-anchor="middle" font-size="14">
@@ -103,15 +103,15 @@
                 <text class="rotp" x="216" y="52" font-size="13">…</text>
             </g>
             <text class="rot" x="248" y="44" font-size="17">1.840 elétrons</text>
-            <text class="rotp" x="248" y="68" font-size="13">como uma geladeira e um biscoito</text>
+            <text class="rotp" x="110" y="80" font-size="13">a proporção de uma geladeira para um biscoito</text>
         </g>
 
         <!-- tamanho -->
         <g transform="translate(24,196)">
-            <rect x="0" y="0" width="420" height="76" rx="10" fill="#eef5fd" stroke="#bfd0e4" stroke-width="1.5"/>
-            <text class="rot" x="20" y="32" font-size="16">O núcleo é ~10.000 vezes menor</text>
-            <text class="rotp" x="20" y="56">…em diâmetro, que o átomo inteiro. E guarda</text>
-            <text class="rotp" x="20" y="72" font-size="13" style="fill:#68809c">quase toda a massa.</text>
+            <rect x="0" y="0" width="420" height="84" rx="10" fill="#eef5fd" stroke="#bfd0e4" stroke-width="1.5"/>
+            <text class="rot" x="20" y="30" font-size="16">O núcleo é ~10.000 vezes menor</text>
+            <text class="rotp" x="20" y="52">…em diâmetro, que o átomo inteiro.</text>
+            <text class="rotp" x="20" y="70">E guarda quase toda a massa.</text>
         </g>
 
         <!-- volume -->
