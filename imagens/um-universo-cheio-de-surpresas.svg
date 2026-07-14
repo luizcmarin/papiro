@@ -108,8 +108,8 @@
                 <text x="150" y="30" font-size="12" fill="#2f8f5c" font-weight="700">o observado</text>
             </g>
 
-            <text class="rotp" x="18" y="258" font-size="12">Com a matéria que se VÊ, as bordas deveriam</text>
-            <text class="rotp" x="18" y="276" font-size="12">girar devagar. Giram depressa — e não se soltam.</text>
+            <text class="rotp" x="18" y="258" font-size="12">Com a matéria que se vê, as bordas</text>
+            <text class="rotp" x="18" y="276" font-size="12">deveriam girar devagar — e giram depressa.</text>
         </g>
 
         <!-- prova 2: expansão acelerada -->
@@ -140,8 +140,8 @@
                 <path d="M14 164 H 264" stroke="#3fb6d8" stroke-width="2.5" marker-end="url(#u-4a4f95)"/>
             </g>
 
-            <text class="rotp" x="18" y="258" font-size="12">A gravidade deveria FREAR a expansão. Em vez</text>
-            <text class="rotp" x="18" y="276" font-size="12">disso, ela corre cada vez mais — algo a empurra.</text>
+            <text class="rotp" x="18" y="258" font-size="12">A gravidade deveria FREAR a expansão.</text>
+            <text class="rotp" x="18" y="276" font-size="12">Em vez disso, acelera — algo a empurra.</text>
         </g>
     </g>
 
