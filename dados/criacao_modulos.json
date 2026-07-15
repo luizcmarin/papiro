@@ -1005,5 +1005,24 @@
         "data_criacao": 1784052490676,
         "data_atualizacao": 1784052490676,
         "imagem": "os-elementos-surgiram-por-acaso.svg"
+    },
+    {
+        "id": 59,
+        "titulo": "A Perna da Gaivota no Gelo",
+        "categoria": "corpo",
+        "tipo": "gaivota",
+        "icone": "bi-thermometer-snow",
+        "ordem": 76,
+        "conceito": "<p>A gaivota fica em pé no <strong>gelo</strong> e não congela. Como ela conserva o calor do corpo, se os pés estão o tempo todo no frio?</p><p>O segredo é um <strong>“trocador de calor em contracorrente”</strong>: na perna, a <strong>artéria</strong> (sangue quente, descendo do corpo) e a <strong>veia</strong> (sangue frio, subindo do pé) correm <strong>coladas e em sentidos opostos</strong>. Assim, o sangue que sobe é reaquecido pelo que desce — quase todo o calor fica no corpo, em vez de escapar pelos pés.</p><p>Imagine dois canos, um com água quente e outro com água fria. Se correrem na <strong>mesma direção</strong>, só cerca de <strong>metade</strong> do calor passa de um para o outro. Se correrem em <strong>direções opostas</strong>, passa <strong>quase todo</strong>. É esse detalhe que muda tudo.</p>",
+        "desafio": "<p>Monte o trocador de calor da perna. Você controla duas coisas: o <strong>comprimento do contato</strong> entre a artéria e a veia (o slider) e o <strong>sentido do fluxo</strong> (os botões).</p><p>Missão: fazer o sangue <strong>voltar ao corpo ainda quente</strong> — recuperar pelo menos <strong>90% do calor</strong>. Repare no que acontece quando os fluxos vão na mesma direção, por mais que você alongue o contato.</p>",
+        "reflexao": "<p>Na mesma direção, o trocador <strong>satura em 50%</strong> — não importa o tamanho. Só em <strong>contracorrente</strong> o calor recuperado se aproxima de <strong>100%</strong>: os pés ficam frios e o corpo, quente. O engenheiro Arthur P. Fraas chamou o projeto da ave de <em>“um dos mais eficazes ‘trocadores de calor’ do mundo”</em> — e engenheiros humanos o <strong>copiam</strong>.</p><p>Copiamos o que já estava pronto na perna de uma gaivota. “Pergunta agora aos animais, e eles te instruirão.” (Jó 12:7-9) — Isso teve um Projeto?</p>",
+        "referencia": "Jó 12:7-9 · Brochura “A Vida Teve um Criador?” — biomimética: Imitação da perna da gaivota",
+        "link_jw": "https://www.jw.org/pt/biblioteca/brochuras/vida-teve-criador/biomimetica-quem-projetou-primeiro/",
+        "config": "{\"alvoEfic\":0.9,\"ntuMax\":12,\"tCorpo\":41,\"tGelo\":4,\"L0\":25}",
+        "xp": 130,
+        "publicar": 1,
+        "data_criacao": 1784128895182,
+        "data_atualizacao": 1784128895182,
+        "imagem": "a-perna-da-gaivota-no-gelo.svg"
     }
 ]
