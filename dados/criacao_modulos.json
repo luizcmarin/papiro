@@ -1024,5 +1024,24 @@
         "data_criacao": 1784128895182,
         "data_atualizacao": 1784128895182,
         "imagem": "a-perna-da-gaivota-no-gelo.svg"
+    },
+    {
+        "id": 60,
+        "titulo": "A Linha do Tempo da Criação",
+        "categoria": "universo",
+        "tipo": "linha_criacao",
+        "icone": "bi-hourglass-split",
+        "ordem": 77,
+        "conceito": "<p>O primeiro capítulo da Bíblia descreve a criação da Terra em uma <strong>sequência ordenada</strong> — e essa ordem, num relato escrito há mais de 3.400 anos, combina com o que a ciência hoje descreve.</p><p>Duas chaves ajudam a entender o texto. Primeira: <strong>“No princípio Deus criou os céus e a Terra”</strong> (Gênesis 1:1) é um evento <strong>à parte</strong> dos dias criativos — o Universo já existia por um tempo indeterminado (os geólogos estimam a Terra em ~4 bilhões de anos; o Universo, em até ~15 bilhões). Segunda: a palavra hebraica traduzida <strong>“dia”</strong> pode significar <strong>longos períodos</strong>, não 24 horas — Gênesis 2:4 chama os seis dias, juntos, de “um dia”.</p><p>Moisés escreveu da <strong>perspectiva de quem está na Terra</strong>. Por isso o Sol, que já existia, só é descrito como <strong>visível</strong> no 4º dia — quando o céu, antes carregado, clareou o suficiente.</p>",
+        "desafio": "<p>Diante de você estão os <strong>oito estágios</strong> do relato de Gênesis 1, fora de ordem. Toque em cada um na <strong>sequência em que aconteceram</strong>.</p><p>A cada toque, a <strong>Terra 3D</strong> muda de estágio: das trevas cobertas de vapor à luz difusa; a expansão que separa as águas; a terra firme que emerge e reverdece; o Sol que fica visível; e a vida que enche mares, céus e, por fim, a terra.</p>",
+        "reflexao": "<p>A ordem certa é: o início, a escuridão, e então os seis dias — luz, expansão, terra firme e vegetação, o Sol visível, as criaturas marinhas e aves, e os animais terrestres com o primeiro casal humano.</p><p>Repare no detalhe que muitos usam para “provar” um erro: como haveria luz no 1º dia e o Sol só no 4º? A resposta está na <strong>perspectiva</strong>: a luz difusa atravessou a atmosfera antes de o disco do Sol ficar <strong>visível</strong> da superfície. O relato não erra — só é preciso lê-lo com cuidado.</p><p>Uma ordem exata, escrita muito antes da geologia e da astronomia. “No princípio Deus criou os céus e a terra.” (Gênesis 1:1) — Isso teve um Projeto?</p>",
+        "referencia": "Gênesis 1:1 · Despertai! “A Verdadeira História da Criação”; brochura “A Ciência e o Relato de Gênesis”",
+        "link_jw": "https://www.jw.org/pt/biblioteca/revistas/g201403/verdadeira-historia-da-criacao/",
+        "config": "{}",
+        "xp": 140,
+        "publicar": 1,
+        "data_criacao": 1784130079670,
+        "data_atualizacao": 1784130079670,
+        "imagem": "a-linha-do-tempo-da-criacao.svg"
     }
 ]

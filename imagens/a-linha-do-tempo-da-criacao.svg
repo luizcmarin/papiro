@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A Linha do Tempo da Criação — os oito estágios de Gênesis 1</title>
+    <desc id="desc">O jogo pede ordenar os estágios; esta ilustração mostra a sequência de Gênesis 1
+        e as duas chaves que a harmonizam com a ciência: "No princípio" (Gênesis 1:1) é um evento à
+        parte, então o Universo já existia antes dos dias; e os "dias" são longos períodos, não de 24
+        horas. O Sol já existia, mas só ficou visível da superfície no 4º dia, quando o céu clareou.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#eef2fb"/>
+            <stop offset="1" stop-color="#dde3f3"/>
+        </linearGradient>
+        <linearGradient id="ceu" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#1a2340"/>
+            <stop offset="0.5" stop-color="#3f5a8c"/>
+            <stop offset="1" stop-color="#8fb8e6"/>
+        </linearGradient>
+    </defs>
+
+    <style>
+        .cab  { fill:#22305a; font-size:28px; font-weight:800; letter-spacing:1.1px; }
+        .rot  { fill:#3a4a80; font-size:18px; font-weight:700; }
+        .rotp { fill:#6b779c; font-size:14px; }
+        .painel { fill:#ffffff; stroke:#c4cce6; stroke-width:2; }
+        .dia  { fill:#22305a; font-size:15px; font-weight:800; }
+        .ok   { fill:#2f8f5c; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">A LINHA DO TEMPO DA CRIAÇÃO</text>
+    <text class="rotp" x="46" y="84" font-size="17">
+        Gênesis 1 descreve a formação da Terra numa ordem — e a ordem combina com o que a ciência hoje descreve.
+    </text>
+
+    <!-- ══ Faixa da linha do tempo (8 estágios) ═══════════════════════════ -->
+    <g transform="translate(46,110)">
+        <rect class="painel" x="0" y="0" width="1308" height="286" rx="16"/>
+        <!-- barra que vai do escuro ao claro -->
+        <rect x="24" y="120" width="1260" height="10" rx="5" fill="url(#ceu)"/>
+
+        <!-- 8 marcos -->
+        <!-- 0 O INÍCIO -->
+        <g transform="translate(40,0)">
+            <circle cx="30" cy="125" r="10" fill="#2a3357" stroke="#ffffff" stroke-width="3"/>
+            <text class="dia" x="30" y="44" text-anchor="middle">O INÍCIO</text>
+            <text class="rotp" x="30" y="64" text-anchor="middle" font-size="11">Gên 1:1</text>
+            <circle cx="30" cy="92" r="18" fill="#0b1024" stroke="#3a4a80"/>
+            <circle cx="30" cy="92" r="5" fill="#8fb8e6"/>
+            <text class="rotp" x="30" y="170" text-anchor="middle" font-size="11">céus e</text>
+            <text class="rotp" x="30" y="184" text-anchor="middle" font-size="11">Terra criados</text>
+        </g>
+        <!-- 1 ESCURIDÃO -->
+        <g transform="translate(198,0)">
+            <circle cx="30" cy="125" r="10" fill="#171c30" stroke="#ffffff" stroke-width="3"/>
+            <text class="dia" x="30" y="44" text-anchor="middle">ESCURIDÃO</text>
+            <text class="rotp" x="30" y="64" text-anchor="middle" font-size="11">Gên 1:2</text>
+            <circle cx="30" cy="92" r="18" fill="#0a0d18"/>
+            <text class="rotp" x="30" y="170" text-anchor="middle" font-size="11">água e trevas</text>
+            <text class="rotp" x="30" y="184" text-anchor="middle" font-size="11">sobre tudo</text>
+        </g>
+        <!-- 2 1º DIA -->
+        <g transform="translate(356,0)">
+            <circle cx="30" cy="125" r="10" fill="#2f3c66" stroke="#ffffff" stroke-width="3"/>
+            <text class="dia" x="30" y="44" text-anchor="middle">1º DIA</text>
+            <text class="rotp" x="30" y="64" text-anchor="middle" font-size="11">Gên 1:3-5</text>
+            <circle cx="30" cy="92" r="18" fill="#26365c"/>
+            <path d="M12 92 a18 18 0 0 1 36 0 z" fill="#7f93c4"/>
+            <text class="rotp" x="30" y="170" text-anchor="middle" font-size="11">luz difusa;</text>
+            <text class="rotp" x="30" y="184" text-anchor="middle" font-size="11">dia e noite</text>
+        </g>
+        <!-- 3 2º DIA -->
+        <g transform="translate(514,0)">
+            <circle cx="30" cy="125" r="10" fill="#3a4a7c" stroke="#ffffff" stroke-width="3"/>
+            <text class="dia" x="30" y="44" text-anchor="middle">2º DIA</text>
+            <text class="rotp" x="30" y="64" text-anchor="middle" font-size="11">Gên 1:6-8</text>
+            <circle cx="30" cy="92" r="18" fill="#2f508c"/>
+            <ellipse cx="30" cy="84" rx="15" ry="4" fill="#cfe0f5"/>
+            <text class="rotp" x="30" y="170" text-anchor="middle" font-size="11">a expansão</text>
+            <text class="rotp" x="30" y="184" text-anchor="middle" font-size="11">(o “Céu”)</text>
+        </g>
+        <!-- 4 3º DIA -->
+        <g transform="translate(672,0)">
+            <circle cx="30" cy="125" r="10" fill="#46639c" stroke="#ffffff" stroke-width="3"/>
+            <text class="dia" x="30" y="44" text-anchor="middle">3º DIA</text>
+            <text class="rotp" x="30" y="64" text-anchor="middle" font-size="11">Gên 1:9-13</text>
+            <circle cx="30" cy="92" r="18" fill="#2f6fc0"/>
+            <path d="M14 98 q10 -14 22 -2 q-4 8 -22 2" fill="#3ba054"/>
+            <text class="rotp" x="30" y="170" text-anchor="middle" font-size="11">terra firme</text>
+            <text class="rotp" x="30" y="184" text-anchor="middle" font-size="11">e vegetação</text>
+        </g>
+        <!-- 5 4º DIA -->
+        <g transform="translate(830,0)">
+            <circle cx="30" cy="125" r="10" fill="#6f8fc6" stroke="#ffffff" stroke-width="3"/>
+            <text class="dia" x="30" y="44" text-anchor="middle">4º DIA</text>
+            <text class="rotp" x="30" y="64" text-anchor="middle" font-size="11">Gên 1:14-19</text>
+            <circle cx="30" cy="92" r="18" fill="#3f7fc8"/>
+            <circle cx="42" cy="80" r="8" fill="#ffd257"/>
+            <text class="rotp" x="30" y="170" text-anchor="middle" font-size="11">Sol e Lua</text>
+            <text class="rotp" x="30" y="184" text-anchor="middle" font-size="11">ficam visíveis</text>
+        </g>
+        <!-- 6 5º DIA -->
+        <g transform="translate(988,0)">
+            <circle cx="30" cy="125" r="10" fill="#8fb0d8" stroke="#ffffff" stroke-width="3"/>
+            <text class="dia" x="30" y="44" text-anchor="middle">5º DIA</text>
+            <text class="rotp" x="30" y="64" text-anchor="middle" font-size="11">Gên 1:20-23</text>
+            <circle cx="30" cy="92" r="18" fill="#3f8fd0"/>
+            <path d="M18 86 q8 -8 16 0" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+            <ellipse cx="30" cy="98" rx="9" ry="4" fill="#bfe8ff"/>
+            <text class="rotp" x="30" y="170" text-anchor="middle" font-size="11">peixes</text>
+            <text class="rotp" x="30" y="184" text-anchor="middle" font-size="11">e aves</text>
+        </g>
+        <!-- 7 6º DIA -->
+        <g transform="translate(1146,0)">
+            <circle cx="30" cy="125" r="10" fill="#a9c6e6" stroke="#ffffff" stroke-width="3"/>
+            <text class="dia" x="30" y="44" text-anchor="middle">6º DIA</text>
+            <text class="rotp" x="30" y="64" text-anchor="middle" font-size="11">Gên 1:24-31</text>
+            <circle cx="30" cy="92" r="18" fill="#3ba054"/>
+            <circle cx="25" cy="90" r="4" fill="#ffe0a8"/>
+            <circle cx="35" cy="90" r="4" fill="#ffe0a8"/>
+            <text class="rotp" x="30" y="170" text-anchor="middle" font-size="11">animais e o</text>
+            <text class="rotp" x="30" y="184" text-anchor="middle" font-size="11">1º casal humano</text>
+        </g>
+
+        <text class="rotp" x="24" y="264" font-size="14" font-style="italic">
+            Eventos iniciados num “dia” continuaram nos seguintes — a passagem foi gradual, vista da superfície da Terra.
+        </text>
+    </g>
+
+    <!-- ══ Rodapé: três chaves de leitura ═════════════════════════════════ -->
+    <g transform="translate(46,420)">
+        <g>
+            <rect class="painel" width="422" height="336" rx="16"/>
+            <text class="rot" x="24" y="42">“NO PRINCÍPIO” É À PARTE</text>
+            <text class="rotp" x="24" y="76" font-size="15">Gênesis 1:1 descreve a criação dos</text>
+            <text class="rotp" x="24" y="98" font-size="15">céus e da Terra ANTES dos dias</text>
+            <text class="rotp" x="24" y="120" font-size="15">criativos (que começam no v. 3).</text>
+            <text class="rotp" x="24" y="156" font-size="15">Então a Bíblia não fixa a idade do</text>
+            <text class="rotp" x="24" y="178" font-size="15">Universo — e não contradiz os</text>
+            <text class="rotp" x="24" y="200" font-size="15">~4 bilhões de anos da Terra nem os</text>
+            <text class="rotp" x="24" y="222" font-size="15">~15 bilhões do cosmo.</text>
+            <text class="ok" x="24" y="286" font-size="17" font-weight="800">A ciência não contradiz o texto.</text>
+        </g>
+        <g transform="translate(443,0)">
+            <rect class="painel" width="422" height="336" rx="16"/>
+            <text class="rot" x="24" y="42">“DIA” = LONGO PERÍODO</text>
+            <text class="rotp" x="24" y="76" font-size="15">A palavra hebraica traduzida “dia”</text>
+            <text class="rotp" x="24" y="98" font-size="15">pode significar vários períodos, não</text>
+            <text class="rotp" x="24" y="120" font-size="15">apenas 24 horas.</text>
+            <text class="rotp" x="24" y="156" font-size="15">O próprio Gênesis 2:4 chama os seis</text>
+            <text class="rotp" x="24" y="178" font-size="15">dias, juntos, de “um dia”. A</text>
+            <text class="rotp" x="24" y="200" font-size="15">fraseologia indica longos períodos.</text>
+            <text class="ok" x="24" y="286" font-size="17" font-weight="800">Dias que são eras.</text>
+        </g>
+        <g transform="translate(886,0)">
+            <rect class="painel" width="468" height="336" rx="16" fill="#eef6f0" stroke="#a9dcc0"/>
+            <text class="rot ok" x="24" y="42">O SOL NO 4º DIA?</text>
+            <text class="rotp" x="24" y="76" font-size="15">A luz difusa já atravessava a</text>
+            <text class="rotp" x="24" y="98" font-size="15">atmosfera no 1º dia. O Sol já existia,</text>
+            <text class="rotp" x="24" y="120" font-size="15">mas só ficou VISÍVEL da superfície no</text>
+            <text class="rotp" x="24" y="142" font-size="15">4º dia, quando o céu carregado clareou.</text>
+            <text class="rotp" x="24" y="178" font-size="15" font-style="italic">Moisés escreveu do ponto de vista de</text>
+            <text class="rotp" x="24" y="200" font-size="15" font-style="italic">alguém na Terra — não do espaço.</text>
+            <text class="rotp" x="24" y="252" font-size="15">“No princípio Deus criou os céus</text>
+            <text class="rotp" x="24" y="274" font-size="15">e a terra.” — Gênesis 1:1</text>
+            <text class="ok" x="24" y="312" font-size="17" font-weight="800">Isso teve um Projeto?</text>
+        </g>
+    </g>
+</svg>
