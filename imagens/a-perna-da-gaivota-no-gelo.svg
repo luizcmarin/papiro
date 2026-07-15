@@ -102,13 +102,23 @@
         <text class="rot" x="24" y="38">NA PERNA DA AVE</text>
         <text class="rotp" x="24" y="60">artéria e veia coladas, em sentidos opostos</text>
 
-        <!-- gaivota simplificada em pé -->
+        <!-- gaivota em pé (silhueta mais definida) -->
         <g transform="translate(60,78)">
-            <!-- corpo + cabeça -->
-            <ellipse cx="120" cy="26" rx="70" ry="30" fill="#f2f5f8" stroke="#c8d4dc" stroke-width="2"/>
-            <circle cx="196" cy="10" r="20" fill="#f6f8fb" stroke="#c8d4dc" stroke-width="2"/>
-            <path d="M214 10 L236 6 L214 18 z" fill="#f2b23a"/>
-            <circle cx="200" cy="6" r="3" fill="#26323c"/>
+            <!-- corpo branco -->
+            <ellipse cx="104" cy="28" rx="64" ry="26" fill="#f4f7fa" stroke="#c0ccd6" stroke-width="2"/>
+            <!-- cauda -->
+            <path d="M42 30 L14 37 L46 41 Z" fill="#aebdc8"/>
+            <!-- asa dobrada (cinza) -->
+            <path d="M52 22 Q100 4 156 18 Q150 31 138 35 Q96 37 60 34 Q50 30 52 22 Z" fill="#c3ced8"/>
+            <!-- pescoço -->
+            <path d="M148 18 Q172 15 180 3 Q189 9 183 21 Q168 27 148 26 Z" fill="#f6f9fc" stroke="#c0ccd6" stroke-width="1.5"/>
+            <!-- cabeça -->
+            <circle cx="188" cy="3" r="16" fill="#f8fbfe" stroke="#c0ccd6" stroke-width="1.5"/>
+            <!-- bico amarelo com a marca vermelha típica da gaivota -->
+            <path d="M202 3 Q223 3 227 8 Q218 11 202 9 Z" fill="#f2b23a" stroke="#d69426" stroke-width="1"/>
+            <circle cx="216" cy="8" r="2.4" fill="#e0532f"/>
+            <!-- olho -->
+            <circle cx="193" cy="-1" r="3" fill="#26323c"/>
 
             <!-- os dois vasos na perna (contracorrente) -->
             <!-- artéria: quente em cima → esfria descendo -->
@@ -155,12 +165,12 @@
             <text class="rotp" x="22" y="72" font-size="15">O engenheiro Arthur P. Fraas chamou o</text>
             <text class="rotp" x="22" y="92" font-size="15">projeto da ave de “um dos mais eficazes</text>
             <text class="rotp" x="22" y="112" font-size="15">‘trocadores de calor’ do mundo”.</text>
-            <text class="rotp" x="22" y="140" font-size="15">O mesmo princípio aparece em radiadores</text>
-            <text class="rotp" x="22" y="160" font-size="15">e sistemas de aquecimento humanos.</text>
+            <text class="rotp" x="22" y="140" font-size="15">Engenheiros copiam o mesmo princípio em</text>
+            <text class="rotp" x="22" y="160" font-size="15">trocadores de calor de usinas e fábricas.</text>
             <text class="big" x="22" y="200" font-size="17" fill="#1d6f78">Nós imitamos; ela já vinha pronta.</text>
         </g>
         <g transform="translate(886,0)">
-            <rect class="painel" width="468" height="224" rx="16" fill="#eef8f2" stroke="#a9dcc0"/>
+            <rect class="painel" width="422" height="224" rx="16" fill="#eef8f2" stroke="#a9dcc0"/>
             <text class="rot ok" x="22" y="40">ISSO TEVE UM PROJETO?</text>
             <text class="rotp" x="22" y="76" font-size="15">Copiamos o que já estava pronto na perna</text>
             <text class="rotp" x="22" y="96" font-size="15">de uma gaivota. Um projeto que se imita</text>

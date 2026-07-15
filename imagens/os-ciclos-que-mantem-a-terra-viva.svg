@@ -46,24 +46,24 @@
         <path d="M91 282 A132 132 0 0 1 205 84" fill="none" stroke="#2f7fd0" stroke-width="3" marker-end="url(#c-agua)"/>
         <!-- nó 1: Sol / evaporação (topo) -->
         <g transform="translate(205,84)">
-            <circle class="no" r="34" stroke="#f0b429"/>
+            <circle class="no" r="32" stroke="#f0b429"/>
             <circle cx="0" cy="-2" r="14" fill="#ffd257"/>
-            <text class="not" y="26" fill="#8a6a12">1 evaporação</text>
+            <text class="not" y="58" fill="#8a6a12">1 evaporação</text>
         </g>
         <!-- nó 2: nuvem / condensação (dir. inferior) -->
         <g transform="translate(319,282)">
-            <circle class="no" r="34" stroke="#8fb8d8"/>
+            <circle class="no" r="32" stroke="#8fb8d8"/>
             <ellipse cx="0" cy="-4" rx="18" ry="10" fill="#dbe8f5"/>
-            <text class="not" y="26" fill="#3a6a90">2 condensação</text>
+            <text class="not" x="-34" y="-44" fill="#3a6a90">2 condensação</text>
         </g>
         <!-- nó 3: chuva (esq. inferior) -->
         <g transform="translate(91,282)">
-            <circle class="no" r="34" stroke="#5ab0ff"/>
+            <circle class="no" r="32" stroke="#5ab0ff"/>
             <ellipse cx="0" cy="-8" rx="16" ry="8" fill="#dbe8f5"/>
             <line x1="-8" y1="0" x2="-11" y2="12" stroke="#5ab0ff" stroke-width="2.5"/>
             <line x1="0" y1="0" x2="-3" y2="12" stroke="#5ab0ff" stroke-width="2.5"/>
             <line x1="8" y1="0" x2="5" y2="12" stroke="#5ab0ff" stroke-width="2.5"/>
-            <text class="not" y="26" fill="#2f7fb0">3 precipitação</text>
+            <text class="not" x="34" y="-44" fill="#2f7fb0">3 precipitação</text>
         </g>
         <text class="rotp" x="205" y="372" text-anchor="middle" font-size="12">~80 cm de água reciclada sobre toda a Terra por ano</text>
     </g>
@@ -78,24 +78,24 @@
         <path d="M91 282 A132 132 0 0 1 205 84" fill="none" stroke="#2f8f4a" stroke-width="3" marker-end="url(#c-carb)"/>
         <!-- 1 você exala CO2 -->
         <g transform="translate(205,84)">
-            <circle class="no" r="34" stroke="#c79a72"/>
+            <circle class="no" r="32" stroke="#c79a72"/>
             <circle cx="0" cy="-8" r="9" fill="#ffcf9e"/>
             <line x1="0" y1="1" x2="0" y2="16" stroke="#8a5a3a" stroke-width="3"/>
-            <text class="not" y="26" fill="#8a5a3a">1 exala CO₂</text>
+            <text class="not" y="58" fill="#8a5a3a">1 exala CO₂</text>
         </g>
         <!-- 2 fotossíntese -->
         <g transform="translate(319,282)">
-            <circle class="no" r="34" stroke="#3ba054"/>
+            <circle class="no" r="32" stroke="#3ba054"/>
             <line x1="0" y1="14" x2="0" y2="-6" stroke="#2f8f4a" stroke-width="3"/>
             <ellipse cx="-9" cy="2" rx="9" ry="5" fill="#3ba054"/>
             <ellipse cx="9" cy="2" rx="9" ry="5" fill="#3ba054"/>
-            <text class="not" y="26" fill="#237c3a">2 fotossíntese</text>
+            <text class="not" x="-34" y="-44" fill="#237c3a">2 fotossíntese</text>
         </g>
         <!-- 3 você inala O2 -->
         <g transform="translate(91,282)">
-            <circle class="no" r="34" stroke="#5ab0d8"/>
+            <circle class="no" r="32" stroke="#5ab0d8"/>
             <text x="0" y="6" text-anchor="middle" font-size="19" font-weight="800" fill="#2f8fb0">O₂</text>
-            <text class="not" y="26" fill="#2f8fb0">3 inala O₂</text>
+            <text class="not" x="34" y="-44" fill="#2f8fb0">3 inala O₂</text>
         </g>
         <text class="rotp" x="205" y="372" text-anchor="middle" font-size="12">o ar nunca fica sem oxigênio nem saturado de CO₂</text>
     </g>
@@ -110,25 +110,25 @@
         <path d="M91 282 A132 132 0 0 1 205 84" fill="none" stroke="#8054c0" stroke-width="3" marker-end="url(#c-nitro)"/>
         <!-- 1 raios fixam o N -->
         <g transform="translate(205,84)">
-            <circle class="no" r="34" stroke="#f0b429"/>
+            <circle class="no" r="32" stroke="#f0b429"/>
             <path d="M6 -16 L-8 4 L2 4 L-4 18 L12 -2 L2 -2 Z" fill="#ffd257"/>
-            <text class="not" y="26" fill="#8a6a12">1 fixação (raios)</text>
+            <text class="not" y="58" fill="#8a6a12">1 fixação (raios)</text>
         </g>
         <!-- 2 plantas e animais absorvem -->
         <g transform="translate(319,282)">
-            <circle class="no" r="34" stroke="#3ba054"/>
+            <circle class="no" r="32" stroke="#3ba054"/>
             <line x1="0" y1="14" x2="0" y2="-6" stroke="#2f8f4a" stroke-width="3"/>
             <ellipse cx="-9" cy="2" rx="9" ry="5" fill="#3ba054"/>
             <ellipse cx="9" cy="2" rx="9" ry="5" fill="#3ba054"/>
-            <text class="not" y="26" fill="#237c3a">2 absorção</text>
+            <text class="not" x="-34" y="-44" fill="#237c3a">2 absorção</text>
         </g>
         <!-- 3 bactérias decompõem -->
         <g transform="translate(91,282)">
-            <circle class="no" r="34" stroke="#8054c0"/>
+            <circle class="no" r="32" stroke="#8054c0"/>
             <ellipse cx="0" cy="0" rx="16" ry="10" fill="#b79ae0"/>
             <line x1="14" y1="-4" x2="22" y2="-8" stroke="#7248b0" stroke-width="2"/>
             <line x1="-14" y1="4" x2="-22" y2="8" stroke="#7248b0" stroke-width="2"/>
-            <text class="not" y="26" fill="#6a3aa0">3 decomposição</text>
+            <text class="not" x="34" y="-44" fill="#6a3aa0">3 decomposição</text>
         </g>
         <text class="rotp" x="205" y="372" text-anchor="middle" font-size="12">o nitrogênio é quase 80% do ar que respiramos</text>
     </g>
