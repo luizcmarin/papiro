@@ -1043,5 +1043,24 @@
         "data_criacao": 1784130079670,
         "data_atualizacao": 1784130079670,
         "imagem": "a-linha-do-tempo-da-criacao.svg"
+    },
+    {
+        "id": 61,
+        "titulo": "Os Ciclos que Mantêm a Terra Viva",
+        "categoria": "corpo",
+        "tipo": "ciclos_vida",
+        "icone": "bi-arrow-repeat",
+        "ordem": 78,
+        "conceito": "<p>Imagine uma cidade em que cortassem o ar puro e a água limpa e entupissem o esgoto: doença e morte viriam logo. Mas a Terra <strong>não é como um restaurante</strong>, onde os suprimentos vêm de fora e o lixo é levado embora. O ar puro e a água limpa <strong>não chegam do espaço</strong>, e o lixo <strong>não é despachado</strong> para lá.</p><p>Então como o planeta continua saudável? Por causa de <strong>ciclos naturais</strong> — laços fechados que reabastecem e purificam tudo, de graça, em silêncio: os ciclos da <strong>água</strong>, do <strong>carbono e oxigênio</strong> e do <strong>nitrogênio</strong>.</p><p>Só o ciclo da água recicla, por ano, o suficiente para cobrir a Terra inteira com quase <strong>80 cm</strong> de água. E tudo isso “de modo limpo, eficiente e silencioso”.</p>",
+        "desafio": "<p>Monte os <strong>três ciclos</strong>. Em cada um, toque os estágios na <strong>ordem em que a matéria circula</strong> — como é um laço, o que importa é o sentido: quando fecha, o <strong>anel 3D acende</strong>, as partículas voltam a girar e o planeta reverdece.</p><p>Feche os três (água, carbono-oxigênio e nitrogênio) para completar a <strong>reciclagem perfeita</strong> da Terra.</p>",
+        "reflexao": "<p>Nenhum ciclo tem “início” nem “fim” — a mesma água que você bebe já foi nuvem e chuva incontáveis vezes; o mesmo carbono já foi ar, folha e alimento. Os humanos, com toda a tecnologia, geram montanhas de <strong>lixo tóxico não reciclável</strong>; a Terra recicla <strong>tudo</strong>, de forma perfeita.</p><p>“Se o ecossistema da Terra tivesse realmente evoluído só por acaso, teria sido impossível alcançar tal nível perfeito de harmonia ambiental” (Michael A. Corey). Laços que se fecham com precisão não costumam surgir sozinhos. “Foi ele que formou a terra… não a criou simplesmente para nada; formou-a para ser habitada.” (Isaías 45:18) — Isso teve um Projeto?</p>",
+        "referencia": "Isaías 45:18 · Brochura “A Vida Teve um Criador?” — O Planeta Vivo: Ciclos naturais que sustentam a vida",
+        "link_jw": "https://www.jw.org/pt/biblioteca/brochuras/vida-teve-criador/o-planeta-vivo/",
+        "config": "{}",
+        "xp": 140,
+        "publicar": 1,
+        "data_criacao": 1784132504939,
+        "data_atualizacao": 1784132504939,
+        "imagem": "os-ciclos-que-mantem-a-terra-viva.svg"
     }
 ]

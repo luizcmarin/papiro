@@ -1680,6 +1680,17 @@
                                     </div>
                                 </template>
 
+                                <!-- Ciclos: progresso (quantos laços já fecharam) -->
+                                <template x-if="puzzle.viz.comp === 'ciclos' && puzzleInfo">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge fs-6" :class="puzzleInfo.ok ? 'text-bg-success' : 'text-bg-primary'">
+                                            <i class="bi bi-arrow-repeat me-1" aria-hidden="true"></i>
+                                            <span x-text="puzzleInfo.feitos.length"></span>/<span x-text="puzzleInfo.ids.length"></span> ciclos fechados
+                                        </span>
+                                        <span class="small text-muted">Ciclo em foco: <span class="fw-semibold" x-text="puzzleInfo.nome"></span></span>
+                                    </div>
+                                </template>
+
                                 <!-- Linha do tempo: selo do estágio atual da Terra -->
                                 <template x-if="puzzle.viz.comp === 'terra_criacao' && puzzleInfo">
                                     <div class="d-flex align-items-center gap-2 mb-2">
@@ -1884,6 +1895,49 @@
                                 </div>
                                 <div class="alert py-2 mb-0 mt-2"
                                      :class="puzzleInfo && puzzleInfo.ok ? 'alert-success' : 'alert-secondary'"
+                                     x-text="puzzleInfo && puzzleInfo.leitura"></div>
+                            </div>
+                        </template>
+
+                        <!-- ARQUÉTIPO: ciclos (montar os ciclos naturais) ────── -->
+                        <template x-if="puzzle.arquetipo === 'ciclos'">
+                            <div>
+                                <!-- Seletor de ciclo (mostra quais já fecharam) -->
+                                <div class="btn-group w-100 mb-3" role="group" aria-label="Ciclo">
+                                    <template x-for="(c, id) in puzzle.ciclos" :key="id">
+                                        <button type="button" class="btn btn-sm"
+                                                :class="puzzle.ativo === id ? 'btn-primary' : 'btn-outline-primary'"
+                                                :disabled="resolvido" @click="setCicloAtivo(id)">
+                                            <i class="bi me-1" :class="cicloFechado(id) ? 'bi-check-circle-fill' : 'bi-arrow-repeat'" aria-hidden="true"></i>
+                                            <span x-text="c.nome"></span>
+                                        </button>
+                                    </template>
+                                </div>
+
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <p class="small text-muted mb-0">Toque os estágios na ordem em que a matéria circula. Como é um ciclo, o que importa é o sentido — ele fecha em laço.</p>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary ms-2 flex-shrink-0"
+                                            :disabled="resolvido || !cicloAtivo().ordem.length" @click="resetCiclo()">
+                                        <i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <template x-for="it in cicloAtivo().itens" :key="it.id">
+                                        <button type="button" class="btn text-start d-flex align-items-center gap-2"
+                                                :class="posicaoCiclo(it.id) ? 'btn-primary' : 'btn-outline-secondary'"
+                                                :disabled="resolvido" @click="alternarCiclo(it.id)">
+                                            <span class="badge rounded-pill flex-shrink-0"
+                                                  :class="posicaoCiclo(it.id) ? 'text-bg-light' : 'text-bg-secondary'"
+                                                  x-text="posicaoCiclo(it.id) || '+'"></span>
+                                            <span>
+                                                <span class="fw-semibold" x-text="it.curto"></span>
+                                                <span class="d-block small" :class="posicaoCiclo(it.id) ? '' : 'text-muted'" x-text="it.texto"></span>
+                                            </span>
+                                        </button>
+                                    </template>
+                                </div>
+                                <div class="alert py-2 mb-0 mt-2"
+                                     :class="puzzleInfo && puzzleInfo.ok ? 'alert-success' : (puzzleInfo && puzzleInfo.completoAtivo ? 'alert-info' : 'alert-secondary')"
                                      x-text="puzzleInfo && puzzleInfo.leitura"></div>
                             </div>
                         </template>

@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">Os Ciclos que Mantêm a Terra Viva — água, carbono-oxigênio e nitrogênio</title>
+    <desc id="desc">O jogo pede fechar cada ciclo; esta ilustração mostra os três laços que reciclam
+        o planeta. Água: o Sol evapora, o vapor condensa em nuvens, a chuva volta ao solo. Carbono e
+        oxigênio: exalamos CO2, as plantas o absorvem e liberam O2, que inalamos. Nitrogênio: raios
+        fixam o N do ar, as plantas o absorvem, e bactérias o devolvem ao solo. Laços sem começo nem
+        fim, que purificam o ar e a água sem nada vir de fora nem lixo sair para o espaço.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#eaf4f1"/>
+            <stop offset="1" stop-color="#d6e9e3"/>
+        </linearGradient>
+        <marker id="c-agua" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#2f7fd0"/></marker>
+        <marker id="c-carb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#2f8f4a"/></marker>
+        <marker id="c-nitro" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8054c0"/></marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#13463c; font-size:28px; font-weight:800; letter-spacing:1.1px; }
+        .rot  { fill:#1d6f5e; font-size:18px; font-weight:700; }
+        .rotp { fill:#5c7b74; font-size:13px; }
+        .painel { fill:#ffffff; stroke:#bcd8d0; stroke-width:2; }
+        .no   { fill:#f4faf8; stroke-width:2; }
+        .not  { font-size:12px; font-weight:700; text-anchor:middle; }
+        .ok   { fill:#2f8f5c; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">OS CICLOS QUE MANTÊM A TERRA VIVA</text>
+    <text class="rotp" x="46" y="84" font-size="16">
+        A Terra não recebe ar e água de fora, nem manda lixo para o espaço. Laços fechados reciclam tudo — de graça e em silêncio.
+    </text>
+
+    <!-- ══ Três ciclos, cada um num painel ════════════════════════════════ -->
+    <!-- Ciclo da água -->
+    <g transform="translate(46,112)">
+        <rect class="painel" width="410" height="392" rx="16"/>
+        <text class="rot" x="24" y="40" fill="#1c6ea8">CICLO DA ÁGUA</text>
+        <!-- laço -->
+        <circle cx="205" cy="216" r="128" fill="none" stroke="#8fc4ec" stroke-width="2" stroke-dasharray="4 6"/>
+        <path d="M205 84 A132 132 0 0 1 319 282" fill="none" stroke="#2f7fd0" stroke-width="3" marker-end="url(#c-agua)"/>
+        <path d="M319 282 A132 132 0 0 1 91 282" fill="none" stroke="#2f7fd0" stroke-width="3" marker-end="url(#c-agua)"/>
+        <path d="M91 282 A132 132 0 0 1 205 84" fill="none" stroke="#2f7fd0" stroke-width="3" marker-end="url(#c-agua)"/>
+        <!-- nó 1: Sol / evaporação (topo) -->
+        <g transform="translate(205,84)">
+            <circle class="no" r="34" stroke="#f0b429"/>
+            <circle cx="0" cy="-2" r="14" fill="#ffd257"/>
+            <text class="not" y="26" fill="#8a6a12">1 evaporação</text>
+        </g>
+        <!-- nó 2: nuvem / condensação (dir. inferior) -->
+        <g transform="translate(319,282)">
+            <circle class="no" r="34" stroke="#8fb8d8"/>
+            <ellipse cx="0" cy="-4" rx="18" ry="10" fill="#dbe8f5"/>
+            <text class="not" y="26" fill="#3a6a90">2 condensação</text>
+        </g>
+        <!-- nó 3: chuva (esq. inferior) -->
+        <g transform="translate(91,282)">
+            <circle class="no" r="34" stroke="#5ab0ff"/>
+            <ellipse cx="0" cy="-8" rx="16" ry="8" fill="#dbe8f5"/>
+            <line x1="-8" y1="0" x2="-11" y2="12" stroke="#5ab0ff" stroke-width="2.5"/>
+            <line x1="0" y1="0" x2="-3" y2="12" stroke="#5ab0ff" stroke-width="2.5"/>
+            <line x1="8" y1="0" x2="5" y2="12" stroke="#5ab0ff" stroke-width="2.5"/>
+            <text class="not" y="26" fill="#2f7fb0">3 precipitação</text>
+        </g>
+        <text class="rotp" x="205" y="372" text-anchor="middle" font-size="12">~80 cm de água reciclada sobre toda a Terra por ano</text>
+    </g>
+
+    <!-- Ciclo do carbono e oxigênio -->
+    <g transform="translate(495,112)">
+        <rect class="painel" width="410" height="392" rx="16"/>
+        <text class="rot" x="24" y="40">CARBONO E OXIGÊNIO</text>
+        <circle cx="205" cy="216" r="128" fill="none" stroke="#a9dcc0" stroke-width="2" stroke-dasharray="4 6"/>
+        <path d="M205 84 A132 132 0 0 1 319 282" fill="none" stroke="#2f8f4a" stroke-width="3" marker-end="url(#c-carb)"/>
+        <path d="M319 282 A132 132 0 0 1 91 282" fill="none" stroke="#2f8f4a" stroke-width="3" marker-end="url(#c-carb)"/>
+        <path d="M91 282 A132 132 0 0 1 205 84" fill="none" stroke="#2f8f4a" stroke-width="3" marker-end="url(#c-carb)"/>
+        <!-- 1 você exala CO2 -->
+        <g transform="translate(205,84)">
+            <circle class="no" r="34" stroke="#c79a72"/>
+            <circle cx="0" cy="-8" r="9" fill="#ffcf9e"/>
+            <line x1="0" y1="1" x2="0" y2="16" stroke="#8a5a3a" stroke-width="3"/>
+            <text class="not" y="26" fill="#8a5a3a">1 exala CO₂</text>
+        </g>
+        <!-- 2 fotossíntese -->
+        <g transform="translate(319,282)">
+            <circle class="no" r="34" stroke="#3ba054"/>
+            <line x1="0" y1="14" x2="0" y2="-6" stroke="#2f8f4a" stroke-width="3"/>
+            <ellipse cx="-9" cy="2" rx="9" ry="5" fill="#3ba054"/>
+            <ellipse cx="9" cy="2" rx="9" ry="5" fill="#3ba054"/>
+            <text class="not" y="26" fill="#237c3a">2 fotossíntese</text>
+        </g>
+        <!-- 3 você inala O2 -->
+        <g transform="translate(91,282)">
+            <circle class="no" r="34" stroke="#5ab0d8"/>
+            <text x="0" y="6" text-anchor="middle" font-size="19" font-weight="800" fill="#2f8fb0">O₂</text>
+            <text class="not" y="26" fill="#2f8fb0">3 inala O₂</text>
+        </g>
+        <text class="rotp" x="205" y="372" text-anchor="middle" font-size="12">o ar nunca fica sem oxigênio nem saturado de CO₂</text>
+    </g>
+
+    <!-- Ciclo do nitrogênio -->
+    <g transform="translate(944,112)">
+        <rect class="painel" width="410" height="392" rx="16"/>
+        <text class="rot" x="24" y="40" fill="#7248b0">NITROGÊNIO</text>
+        <circle cx="205" cy="216" r="128" fill="none" stroke="#cbb6ec" stroke-width="2" stroke-dasharray="4 6"/>
+        <path d="M205 84 A132 132 0 0 1 319 282" fill="none" stroke="#8054c0" stroke-width="3" marker-end="url(#c-nitro)"/>
+        <path d="M319 282 A132 132 0 0 1 91 282" fill="none" stroke="#8054c0" stroke-width="3" marker-end="url(#c-nitro)"/>
+        <path d="M91 282 A132 132 0 0 1 205 84" fill="none" stroke="#8054c0" stroke-width="3" marker-end="url(#c-nitro)"/>
+        <!-- 1 raios fixam o N -->
+        <g transform="translate(205,84)">
+            <circle class="no" r="34" stroke="#f0b429"/>
+            <path d="M6 -16 L-8 4 L2 4 L-4 18 L12 -2 L2 -2 Z" fill="#ffd257"/>
+            <text class="not" y="26" fill="#8a6a12">1 fixação (raios)</text>
+        </g>
+        <!-- 2 plantas e animais absorvem -->
+        <g transform="translate(319,282)">
+            <circle class="no" r="34" stroke="#3ba054"/>
+            <line x1="0" y1="14" x2="0" y2="-6" stroke="#2f8f4a" stroke-width="3"/>
+            <ellipse cx="-9" cy="2" rx="9" ry="5" fill="#3ba054"/>
+            <ellipse cx="9" cy="2" rx="9" ry="5" fill="#3ba054"/>
+            <text class="not" y="26" fill="#237c3a">2 absorção</text>
+        </g>
+        <!-- 3 bactérias decompõem -->
+        <g transform="translate(91,282)">
+            <circle class="no" r="34" stroke="#8054c0"/>
+            <ellipse cx="0" cy="0" rx="16" ry="10" fill="#b79ae0"/>
+            <line x1="14" y1="-4" x2="22" y2="-8" stroke="#7248b0" stroke-width="2"/>
+            <line x1="-14" y1="4" x2="-22" y2="8" stroke="#7248b0" stroke-width="2"/>
+            <text class="not" y="26" fill="#6a3aa0">3 decomposição</text>
+        </g>
+        <text class="rotp" x="205" y="372" text-anchor="middle" font-size="12">o nitrogênio é quase 80% do ar que respiramos</text>
+    </g>
+
+    <!-- ══ Rodapé: reciclagem perfeita ════════════════════════════════════ -->
+    <g transform="translate(46,532)">
+        <g>
+            <rect class="painel" width="640" height="224" rx="16"/>
+            <text class="rot" x="24" y="42">LAÇOS SEM COMEÇO NEM FIM</text>
+            <text class="rotp" x="24" y="76" font-size="15">A mesma água que você bebe já foi nuvem e chuva</text>
+            <text class="rotp" x="24" y="98" font-size="15">incontáveis vezes. O mesmo carbono já foi ar, folha</text>
+            <text class="rotp" x="24" y="120" font-size="15">e alimento. Nada entra do espaço; nada é jogado fora.</text>
+            <text class="rotp" x="24" y="156" font-size="15">Tudo circula — “de modo limpo, eficiente e silencioso”.</text>
+            <text class="ok" x="24" y="196" font-size="18" font-weight="800">Reciclagem perfeita, movida a Sol.</text>
+        </g>
+        <g transform="translate(662,0)">
+            <rect class="painel" width="646" height="224" rx="16" fill="#eef8f2" stroke="#a9dcc0"/>
+            <text class="rot ok" x="24" y="42">ISSO TEVE UM PROJETO?</text>
+            <text class="rotp" x="24" y="78" font-size="15">Os humanos, com toda a tecnologia, geram montanhas</text>
+            <text class="rotp" x="24" y="100" font-size="15">de lixo tóxico não reciclável. A Terra recicla TUDO,</text>
+            <text class="rotp" x="24" y="122" font-size="15">de forma perfeita, por processos químicos engenhosos.</text>
+            <text class="rotp" x="24" y="158" font-size="15" font-style="italic">“Formou a terra… para ser habitada.” — Isaías 45:18</text>
+            <text class="ok" x="24" y="200" font-size="18" font-weight="800">Harmonia que não surge por acaso.</text>
+        </g>
+    </g>
+</svg>
