@@ -154,7 +154,7 @@
             <text class="ok" x="24" y="286" font-size="17" font-weight="800">Dias que são eras.</text>
         </g>
         <g transform="translate(886,0)">
-            <rect class="painel" width="468" height="336" rx="16" fill="#eef6f0" stroke="#a9dcc0"/>
+            <rect class="painel" width="422" height="336" rx="16" fill="#eef6f0" stroke="#a9dcc0"/>
             <text class="rot ok" x="24" y="42">O SOL NO 4º DIA?</text>
             <text class="rotp" x="24" y="76" font-size="15">A luz difusa já atravessava a</text>
             <text class="rotp" x="24" y="98" font-size="15">atmosfera no 1º dia. O Sol já existia,</text>
