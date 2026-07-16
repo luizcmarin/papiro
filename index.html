@@ -249,12 +249,28 @@
                     </button>
                 </div>
 
-                <!-- busca -->
-                <input type="search"
-                       class="form-control mb-3"
-                       placeholder="Buscar anotações…"
-                       x-model="busca"
-                       @input="aoBuscar()">
+                <!-- busca + filtro por modelo -->
+                <div class="row g-2 mb-3">
+                    <div class="col-12 col-md-7">
+                        <input type="search"
+                               class="form-control"
+                               placeholder="Buscar anotações…"
+                               x-model="busca"
+                               @input="aoBuscar()">
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <select class="form-select"
+                                aria-label="Filtrar por modelo"
+                                @change="filtrarModelo($event.target.value)">
+                            <option value="">Todos os modelos</option>
+                            <template x-for="m in modelos" :key="m.chave">
+                                <option :value="m.chave"
+                                        :selected="modeloChave === m.chave"
+                                        x-text="m.rotulo"></option>
+                            </template>
+                        </select>
+                    </div>
+                </div>
 
                 <!-- chips de pasta -->
                 <div class="d-flex flex-wrap gap-2 mb-2">
@@ -4161,12 +4177,12 @@
                     <button type="button" class="btn btn-sm"
                             :class="visao === 'escritor' ? 'btn-success' : 'btn-outline-secondary'"
                             @click="trocarVisao('escritor')" title="Agrupada por escritor">
-                        <i class="bi bi-pen d-sm-none"></i><span class="d-none d-sm-inline">Escritor</span>
+                        <i class="bi bi-person-lines-fill d-sm-none"></i><span class="d-none d-sm-inline">Escritor</span>
                     </button>
                     <button type="button" class="btn btn-sm"
                             :class="visao === 'celebracao' ? 'btn-success' : 'btn-outline-secondary'"
-                            @click="trocarVisao('celebracao')" title="Roteiro para a época da Celebração da morte de Cristo">
-                        <i class="bi bi-cup d-sm-none"></i><span class="d-none d-sm-inline">Celebração</span>
+                            @click="trocarVisao('celebracao')" title="Leitura para a época da Celebração da morte de Cristo">
+                        <i class="bi bi-calendar-week d-sm-none"></i><span class="d-none d-sm-inline">Celebração</span>
                     </button>
                 </div>
 
@@ -4195,7 +4211,7 @@
                                 <!-- cabeçalho de grupo (visão por escritor) -->
                                 <template x-if="item.grupo !== undefined">
                                     <div class="d-flex align-items-center gap-2 mt-2 px-1">
-                                        <i class="bi bi-pen text-success"></i>
+                                        <i class="bi bi-person-lines-fill text-success"></i>
                                         <span class="fw-bold flex-grow-1" x-text="item.grupo"></span>
                                         <span class="small text-muted"
                                               x-text="`${grupoLidos(item.livros)}/${grupoCapitulos(item.livros)} cap.`"></span>
