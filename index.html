@@ -2016,6 +2016,62 @@
                             </div>
                         </template>
 
+                        <!-- ARQUÉTIPO: etapas ("Entenda Melhor") ──────────────
+                             Derivação guiada: um passo por vez, cada um com UMA
+                             pergunta e UM controle. O passo seguinte só aparece
+                             quando o atual fecha. -->
+                        <template x-if="puzzle.arquetipo === 'etapas' && passoAtual()">
+                            <div>
+                                <!-- Trilha: onde estamos na derivação -->
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <template x-for="(p, i) in puzzle.passos" :key="p.id">
+                                        <span class="flex-fill rounded-pill"
+                                              style="height:.35rem"
+                                              :class="i < puzzle.atual ? 'bg-success' : i === puzzle.atual ? 'bg-primary' : 'bg-secondary-subtle'"></span>
+                                    </template>
+                                    <span class="badge text-bg-light border flex-shrink-0">
+                                        <span x-text="puzzle.atual + 1"></span>/<span x-text="puzzle.passos.length"></span>
+                                    </span>
+                                </div>
+
+                                <h2 class="h6 fw-bold mb-1" x-text="passoAtual().titulo"></h2>
+                                <p class="small mb-1" x-text="passoAtual().pergunta"></p>
+                                <p class="small text-muted fst-italic mb-3">
+                                    <i class="bi bi-book me-1" aria-hidden="true"></i><span x-text="passoAtual().verso"></span>
+                                </p>
+
+                                <!-- Passo de escolha -->
+                                <template x-if="passoAtual().entrada === 'escolha'">
+                                    <div class="d-grid gap-2">
+                                        <template x-for="o in passoAtual().opcoes" :key="o.id">
+                                            <button type="button" class="btn text-start"
+                                                    :class="puzzle.escolhido === o.id ? 'btn-primary' : 'btn-outline-secondary'"
+                                                    :disabled="resolvido" @click="puzzle.escolhido = o.id">
+                                                <span class="fw-semibold" x-text="o.rotulo"></span>
+                                                <small class="d-block" :class="puzzle.escolhido === o.id ? '' : 'text-muted'" x-text="o.nota"></small>
+                                            </button>
+                                        </template>
+                                    </div>
+                                </template>
+
+                                <!-- Passo de slider (a conta se forma enquanto arrasta) -->
+                                <template x-if="passoAtual().entrada === 'slider'">
+                                    <div>
+                                        <label class="form-label small d-flex justify-content-between mb-1">
+                                            <span x-text="passoAtual().rotulo"></span>
+                                            <span class="fw-semibold" x-text="puzzle.valores[passoAtual().prop] + (passoAtual().suf || '')"></span>
+                                        </label>
+                                        <input type="range" class="form-range"
+                                               :min="passoAtual().min" :max="passoAtual().max" :step="passoAtual().step"
+                                               :disabled="resolvido" x-model.number="puzzle.valores[passoAtual().prop]">
+                                        <div class="alert py-2 mb-0 mt-2"
+                                             :class="puzzleInfo && puzzleInfo.ok ? 'alert-success' : 'alert-secondary'"
+                                             x-text="puzzleInfo && puzzleInfo.leitura"></div>
+                                    </div>
+                                </template>
+                            </div>
+                        </template>
+
                         <!-- fallback: tipo sem renderizador -->
                         <template x-if="puzzle.arquetipo === 'pronto'">
                             <p class="text-center text-muted py-3 mb-0">Leia a reflexão a seguir.</p>
@@ -2027,7 +2083,11 @@
                         </template>
                         <template x-if="puzzle.arquetipo !== 'pronto'">
                             <div class="d-grid mt-3">
-                                <button class="btn btn-primary" :disabled="!podeVerificar || resolvido" @click="verificar()">Verificar</button>
+                                <!-- Na derivação guiada, o botão fecha o passo e libera o
+                                     seguinte — só o último "verifica" o módulo. -->
+                                <button class="btn btn-primary" :disabled="!podeVerificar || resolvido" @click="verificar()"
+                                        x-text="puzzle.arquetipo === 'etapas' && puzzle.atual < puzzle.passos.length - 1
+                                                ? 'Confirmar e avançar' : 'Verificar'"></button>
                             </div>
                         </template>
 
@@ -2064,7 +2124,10 @@
 
                         <div class="card mb-3 border-success-subtle">
                             <div class="card-body">
-                                <div class="text-uppercase small fw-semibold text-success mb-2">Teve um Projeto?</div>
+                                <!-- "Entenda Melhor" fecha explicando o assunto, não apontando
+                                     projeto numa criatura — o selo acompanha a categoria. -->
+                                <div class="text-uppercase small fw-semibold text-success mb-2"
+                                     x-text="moduloAtual.categoria === 'entenda' ? 'O que você acabou de entender' : 'Teve um Projeto?'"></div>
                                 <div class="papiro-prosa" x-html="moduloAtual.reflexao"></div>
                                 <template x-if="moduloAtual.referencia">
                                     <p class="fst-italic text-muted mt-3 mb-0">
@@ -2074,7 +2137,7 @@
                                 <template x-if="moduloAtual.link_jw">
                                     <p class="small mt-2 mb-0">
                                         <i class="bi bi-box-arrow-up-right me-1"></i>
-                                        <a :href="moduloAtual.link_jw" target="_blank" rel="noopener" class="link-secondary">Ler no jw.org — “Teve um Projeto?”</a>
+                                        <a :href="moduloAtual.link_jw" target="_blank" rel="noopener" class="link-secondary">Ler a fonte no jw.org</a>
                                     </p>
                                 </template>
                             </div>

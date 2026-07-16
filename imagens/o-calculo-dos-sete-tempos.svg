@@ -1,0 +1,229 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">O cálculo dos sete tempos — de Daniel 4 a outubro de 1914</title>
+    <desc id="desc">A conta inteira numa página. O sonho: uma árvore enorme (o governo de Deus,
+        exercido pelos reis em Jerusalém) é derrubada em outubro de 607 AEC, quando a Babilônia
+        destrói Jerusalém; o toco fica cintado por "sete tempos" e depois torna a crescer. A cadeia
+        da conta: Apocalipse 12:6 mede um período em 1.260 dias e o 12:14 chama o mesmo período de
+        3 tempos e meio, logo um tempo é 1.260 ÷ 3,5 = 360 dias; sete tempos são 7 × 360 = 2.520
+        dias; pela regra "um dia por um ano" (Números 14:34; Ezequiel 4:6) são 2.520 anos. A
+        armadilha: não existe ano zero — 1 AEC encosta em 1 EC —, então de outubro de 607 AEC a
+        outubro de 1 AEC são 606 anos e daí a outubro de 1914 são 1.914: 606 + 1.914 = 2.520. A
+        soma direta 607 + 1.914 daria 2.521 porque conta um ano que nunca existiu.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#eef1fa"/>
+            <stop offset="1" stop-color="#dbe1f2"/>
+        </linearGradient>
+        <marker id="seta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#3c4a9e"/>
+        </marker>
+        <marker id="seta-ouro" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#b07d10"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#232a55; font-size:28px; font-weight:800; letter-spacing:1.1px; }
+        .rot  { fill:#3c4a9e; font-size:18px; font-weight:700; }
+        .rotp { fill:#5f6788; font-size:13px; }
+        .painel { fill:#ffffff; stroke:#c3cbe8; stroke-width:2; }
+        .not  { font-size:12px; font-weight:700; text-anchor:middle; fill:#5f6788; }
+        .cx   { font-size:15px; font-weight:800; text-anchor:middle; }
+        .ok   { fill:#2f8f5c; }
+        .err  { fill:#c94a45; }
+        .ouro { fill:#b07d10; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">O CÁLCULO DOS SETE TEMPOS — DANIEL 4</text>
+    <text class="rotp" x="46" y="84" font-size="16">
+        Fama de pesadelo, mas são quatro passos e uma armadilha. A Bíblia dá cada número; o último degrau é só saber que o ano zero não existe.
+    </text>
+
+    <!-- ══ Painel 1: o sonho ══════════════════════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" width="420" height="380" rx="16"/>
+        <text class="rot" x="24" y="40">1. O SONHO</text>
+        <text class="rotp" x="24" y="62">A árvore é o governo de Deus, exercido pelos reis</text>
+        <text class="rotp" x="24" y="80">em Jerusalém, no “trono de Jeová”. — 1 Crô. 29:23</text>
+
+        <!-- vinheta 1: a árvore de pé -->
+        <g transform="translate(76,232)">
+            <circle cx="0" cy="-72" r="24" fill="#2f8f4a"/>
+            <circle cx="-17" cy="-52" r="16" fill="#3ba054"/>
+            <circle cx="17" cy="-54" r="15" fill="#3ba054"/>
+            <rect x="-6" y="-42" width="12" height="42" fill="#8a5a3a" rx="2"/>
+            <text class="not" y="24">de pé</text>
+            <text class="not" y="40" font-weight="400">o Reino de Deus</text>
+        </g>
+        <path d="M112 202 L146 202" stroke="#3c4a9e" stroke-width="2" marker-end="url(#seta)"/>
+
+        <!-- vinheta 2: derrubada -->
+        <g transform="translate(182,232)">
+            <g transform="rotate(-64) translate(0,0)">
+                <circle cx="0" cy="-72" r="24" fill="#7f8f6a"/>
+                <circle cx="-17" cy="-52" r="16" fill="#8b9a76"/>
+                <rect x="-6" y="-42" width="12" height="42" fill="#8a5a3a" rx="2"/>
+            </g>
+            <rect x="-8" y="-14" width="16" height="14" fill="#6b4630" rx="2"/>
+            <text class="not" y="24" fill="#c94a45">derrubada</text>
+            <text class="not" y="40" font-weight="400">out. 607 AEC</text>
+        </g>
+        <path d="M232 202 L266 202" stroke="#3c4a9e" stroke-width="2" marker-end="url(#seta)"/>
+
+        <!-- vinheta 3: o toco cintado -->
+        <g transform="translate(300,232)">
+            <rect x="-11" y="-24" width="22" height="24" fill="#8a5a3a" rx="2"/>
+            <rect x="-14" y="-19" width="28" height="5" fill="#596070" rx="2"/>
+            <rect x="-14" y="-10" width="28" height="5" fill="#b87333" rx="2"/>
+            <text class="not" y="24" fill="#b07d10">toco cintado</text>
+            <text class="not" y="40" font-weight="400">“sete tempos”</text>
+        </g>
+        <path d="M336 202 L370 202" stroke="#3c4a9e" stroke-width="2" marker-end="url(#seta)"/>
+
+        <!-- vinheta 4: rebrota -->
+        <g transform="translate(392,232)">
+            <rect x="-11" y="-24" width="22" height="24" fill="#8a5a3a" rx="2"/>
+            <rect x="-3" y="-52" width="6" height="30" fill="#6f8f3a" rx="2"/>
+            <circle cx="0" cy="-60" r="13" fill="#5fc46a"/>
+            <circle cx="-11" cy="-48" r="8" fill="#5fc46a"/>
+            <text class="not" y="24" fill="#2f8f5c">rebrota</text>
+            <text class="not" y="40" font-weight="400">out. 1914</text>
+        </g>
+
+        <rect x="24" y="296" width="372" height="62" rx="10" fill="#f4f6fd" stroke="#c3cbe8"/>
+        <text class="rotp" x="40" y="320">Derrubar a árvore = interromper esse governo. Isso</text>
+        <text class="rotp" x="40" y="340">aconteceu quando Nabucodonosor destruiu Jerusalém.</text>
+    </g>
+
+    <!-- ══ Painel 2: a cadeia da conta ════════════════════════════════════ -->
+    <g transform="translate(490,112)">
+        <rect class="painel" width="420" height="380" rx="16"/>
+        <text class="rot" x="24" y="40">2. A CADEIA DA CONTA</text>
+        <text class="rotp" x="24" y="62">Cada número vem da própria Bíblia.</text>
+
+        <!-- degrau 1 -->
+        <g transform="translate(24,80)">
+            <rect width="372" height="46" rx="10" fill="#e9effb" stroke="#a9b8e8"/>
+            <text class="cx" x="186" y="22" fill="#232a55">1.260 dias</text>
+            <text class="not" x="186" y="38" font-weight="400">Apocalipse 12:6</text>
+        </g>
+        <path d="M210 130 L210 148" stroke="#3c4a9e" stroke-width="2" marker-end="url(#seta)"/>
+        <text class="rotp" x="222" y="145">÷ 3½ — o 12:14 chama o MESMO período</text>
+        <text class="rotp" x="222" y="160">de “um tempo, tempos e meio tempo”</text>
+
+        <!-- degrau 2 -->
+        <g transform="translate(24,166)">
+            <rect width="372" height="46" rx="10" fill="#e9effb" stroke="#a9b8e8"/>
+            <text class="cx" x="186" y="22" fill="#232a55">1 tempo = 360 dias</text>
+            <text class="not" x="186" y="38" font-weight="400">um ano de 12 meses de 30 — conferido em Ap. 11:2, 3 (42 meses)</text>
+        </g>
+        <path d="M210 216 L210 234" stroke="#3c4a9e" stroke-width="2" marker-end="url(#seta)"/>
+        <text class="rotp" x="222" y="231">× 7 — “sete tempos” (Daniel 4:16, 23)</text>
+
+        <!-- degrau 3 -->
+        <g transform="translate(24,238)">
+            <rect width="372" height="46" rx="10" fill="#e9effb" stroke="#a9b8e8"/>
+            <text class="cx" x="186" y="22" fill="#232a55">2.520 dias</text>
+            <text class="not" x="186" y="38" font-weight="400">o dobro dos 1.260</text>
+        </g>
+        <path d="M210 288 L210 306" stroke="#b07d10" stroke-width="2" marker-end="url(#seta-ouro)"/>
+        <text class="rotp" x="222" y="303">um dia por um ano — Núm. 14:34; Ezeq. 4:6</text>
+
+        <!-- degrau 4 -->
+        <g transform="translate(24,310)">
+            <rect width="372" height="50" rx="10" fill="#fdf4e0" stroke="#e8c47a"/>
+            <text class="cx" x="186" y="24" fill="#b07d10" font-size="17">2.520 ANOS</text>
+            <text class="not" x="186" y="40" font-weight="400">out. 607 AEC → out. 1914 EC</text>
+        </g>
+    </g>
+
+    <!-- ══ Painel 3: a armadilha do ano zero ══════════════════════════════ -->
+    <g transform="translate(934,112)">
+        <rect class="painel" width="420" height="380" rx="16"/>
+        <text class="rot" x="24" y="40">3. A ARMADILHA</text>
+        <text class="rotp" x="24" y="62">O calendário não tem ano zero: de 1 AEC passa-se</text>
+        <text class="rotp" x="24" y="80">DIRETO para 1 EC. Nada falta no tempo — falta um número.</text>
+
+        <!-- o fantasma -->
+        <g transform="translate(210,124)">
+            <rect x="-40" y="0" width="80" height="38" rx="6" fill="#fbe3e2" stroke="#c94a45" stroke-dasharray="5 4"/>
+            <text class="cx" x="0" y="25" fill="#c94a45">ano 0</text>
+            <line x1="-40" y1="0" x2="40" y2="38" stroke="#c94a45" stroke-width="3"/>
+            <line x1="40" y1="0" x2="-40" y2="38" stroke="#c94a45" stroke-width="3"/>
+            <text class="not" x="0" y="56" fill="#c94a45">nunca existiu</text>
+        </g>
+        <path d="M210 186 L210 206" stroke="#c94a45" stroke-width="2" stroke-dasharray="4 4"/>
+
+        <!-- a régua contígua -->
+        <g transform="translate(35,212)">
+            <g>
+                <rect x="0" y="0" width="86" height="44" fill="#8090b4" rx="4"/>
+                <text class="cx" x="43" y="28" fill="#ffffff">2 AEC</text>
+            </g>
+            <g>
+                <rect x="88" y="0" width="86" height="44" fill="#8090b4" rx="4"/>
+                <text class="cx" x="131" y="28" fill="#ffffff">1 AEC</text>
+            </g>
+            <g>
+                <rect x="176" y="0" width="86" height="44" fill="#3aa0ff" rx="4"/>
+                <text class="cx" x="219" y="28" fill="#ffffff">1 EC</text>
+            </g>
+            <g>
+                <rect x="264" y="0" width="86" height="44" fill="#3aa0ff" rx="4"/>
+                <text class="cx" x="307" y="28" fill="#ffffff">2 EC</text>
+            </g>
+            <rect x="172" y="-6" width="8" height="56" fill="#b07d10" rx="2"/>
+            <text class="not" x="176" y="66" fill="#b07d10">1 AEC encosta em 1 EC</text>
+        </g>
+
+        <!-- as duas contas -->
+        <g transform="translate(24,304)">
+            <rect width="372" height="26" rx="6" fill="#fbe3e2" stroke="#e0a9a6"/>
+            <text x="16" y="18" font-size="14" font-weight="700" class="err">607 + 1.914 = 2.521</text>
+            <text x="188" y="18" font-size="12" class="rotp" fill="#a06a68">✗ a soma direta conta o ano 0</text>
+        </g>
+        <g transform="translate(24,338)">
+            <rect width="372" height="26" rx="6" fill="#e7f6ee" stroke="#a9dcc0"/>
+            <text x="16" y="18" font-size="14" font-weight="700" class="ok">606 + 1.914 = 2.520</text>
+            <text x="188" y="18" font-size="12" class="rotp" fill="#5a8a72">✓ 607 AEC → 1 AEC são 606 anos</text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé: três cartões ═══════════════════════════════════════════ -->
+    <g transform="translate(46,532)">
+        <g>
+            <rect class="painel" width="420" height="224" rx="16"/>
+            <text class="rot" x="24" y="42">POR QUE ANOS, E NÃO DIAS?</text>
+            <text class="rotp" x="24" y="76" font-size="14">Nabucodonosor de fato passou sete anos sem sanidade:</text>
+            <text class="rotp" x="24" y="98" font-size="14">foi o cumprimento pequeno (Daniel 4:25).</text>
+            <text class="rotp" x="24" y="128" font-size="14">Mas 2.520 dias depois da queda de Jerusalém estamos</text>
+            <text class="rotp" x="24" y="150" font-size="14">em 600 AEC — e as nações continuaram governando.</text>
+            <text class="rotp" x="24" y="180" font-size="14" font-style="italic">Séculos depois Jesus ainda falava desses tempos</text>
+            <text class="rotp" x="24" y="202" font-size="14" font-style="italic">como algo em curso. — Lucas 21:24</text>
+        </g>
+        <g transform="translate(444,0)">
+            <rect class="painel" width="420" height="224" rx="16" fill="#fdf9ee" stroke="#e8c47a"/>
+            <text class="rot ouro" x="24" y="42">A CONTA, FECHADA</text>
+            <text class="rotp" x="24" y="76" font-size="14">Início: outubro de 607 AEC — Jerusalém cai e o</text>
+            <text class="rotp" x="24" y="98" font-size="14">“trono de Jeová” fica vago. — 2 Reis 25:1, 8-10</text>
+            <text x="24" y="134" font-size="15" font-weight="700" fill="#5f6788">606 anos (out. 607 AEC → out. 1 AEC)</text>
+            <text x="24" y="158" font-size="15" font-weight="700" fill="#5f6788">+ 1.914 anos (out. 1 AEC → out. 1914 EC)</text>
+            <line x1="24" y1="168" x2="300" y2="168" stroke="#b07d10" stroke-width="2"/>
+            <text class="ouro" x="24" y="196" font-size="20" font-weight="800">= 2.520 anos → outubro de 1914</text>
+        </g>
+        <g transform="translate(888,0)">
+            <rect class="painel" width="420" height="224" rx="16" fill="#eef8f2" stroke="#a9dcc0"/>
+            <text class="rot ok" x="24" y="42">O QUE ISSO SIGNIFICA</text>
+            <text class="rotp" x="24" y="76" font-size="14">O sonho foi dado “para que os viventes saibam que o</text>
+            <text class="rotp" x="24" y="98" font-size="14">Altíssimo é Governante no reino da humanidade”.</text>
+            <text class="rotp" x="24" y="120" font-size="14">— Daniel 4:17</text>
+            <text class="rotp" x="24" y="152" font-size="14">A árvore torna a crescer: o Reino é entregue “àquele</text>
+            <text class="rotp" x="24" y="174" font-size="14">que tem o direito legal”. — Ezeq. 21:25-27; Luc. 1:30-33</text>
+            <text class="ok" x="24" y="206" font-size="17" font-weight="800">Uma conta que a própria Bíblia ensina.</text>
+        </g>
+    </g>
+</svg>

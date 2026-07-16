@@ -1062,5 +1062,24 @@
         "data_criacao": 1781893572384,
         "data_atualizacao": 1783178092800,
         "imagem": "variaveis-da-criacao.svg"
+    },
+    {
+        "id": 62,
+        "titulo": "O Cálculo dos Sete Tempos",
+        "categoria": "entenda",
+        "tipo": "sete_tempos",
+        "icone": "bi-hourglass-split",
+        "ordem": 57,
+        "conceito": "<p>Poucos assuntos assustam tanto quanto este. A pessoa ouve “<strong>2.520 anos</strong>”, “<strong>607 AEC</strong>”, “<strong>1914</strong>”, vê uma tabela pronta na tela — e sente que aquilo saiu do nada. Some a fama de conta difícil e o resultado é gente que decora o número sem nunca ter entendido de onde ele vem.</p><p>Mas a conta não é difícil: são <strong>quatro passos e uma armadilha</strong>. E o mais importante: <strong>cada número vem da própria Bíblia</strong>, não de fora dela.</p><p>Tudo começa num sonho. O rei Nabucodonosor vê uma <strong>árvore enorme</strong> ser derrubada; o toco fica preso por uma cinta de ferro e cobre durante “<strong>sete tempos</strong>”, e depois torna a crescer. (Daniel 4:10-16) A árvore representa o <strong>governo de Deus na Terra</strong>, exercido pelos reis em Jerusalém, que se assentavam no “trono de Jeová”. (1 Crônicas 29:23) Derrubar a árvore é <strong>interromper</strong> esse governo — o que aconteceu quando a Babilônia destruiu Jerusalém.</p><p>Falta então descobrir <strong>quanto dura</strong> “sete tempos”. E é a Bíblia que responde.</p>",
+        "desafio": "<p>Nada de tabela pronta: <strong>a conta é sua</strong>. Você vai refazer os cinco passos, um por vez — e cada um só libera o seguinte quando fecha.</p><p>Descubra onde a contagem começa, divida os <strong>1.260 dias</strong> de Apocalipse 12:6 pelos <strong>3½ tempos</strong> do versículo 14 para achar o tamanho de um “tempo”, empilhe os sete, aplique a regra “<strong>um dia por um ano</strong>” e conte até o fim.</p><p>No último passo, cuidado: <strong>a soma direta engana</strong>, e é exatamente ali que quase todo mundo tropeça.</p><p>A cena 3D acompanha o raciocínio — a árvore do sonho cai, o toco fica cintado pelos sete tempos e só <strong>rebrota</strong> quando a sua conta fechar.</p>",
+        "reflexao": "<p>Repare no que você <em>não</em> precisou fazer: nenhum número veio de fora. A Bíblia disse quantos dias eram (Apocalipse 12:6), explicou que aquilo eram 3½ tempos (12:14), mandou contar sete (Daniel 4:16), ensinou a regra “um dia para cada ano” (Números 14:34; Ezequiel 4:6) e apontou o marco inicial (2 Reis 25:1, 8-10). <strong>A conta se explica sozinha</strong> — o que faltava era alguém mostrar os degraus em vez do resultado.</p><p>E a armadilha do ano zero? Ela não é um detalhe chato: é o motivo pelo qual 607 + 1.914 = 2.521 e mesmo assim a resposta é <strong>1914</strong>. Como não existe ano 0, de outubro de 607 AEC a outubro de 1 AEC são 606 anos, e de outubro de 1 AEC a outubro de 1914 EC são 1.914: <strong>606 + 1.914 = 2.520</strong>.</p><p>O toco rebrota. O sonho foi dado “para que os viventes saibam que o Altíssimo é Governante no reino da humanidade e que ele o dá a quem quiser”. (Daniel 4:17) O governo interrompido em 607 AEC foi entregue, em outubro de 1914, “àquele que tem o direito legal”: Jesus Cristo — humilde de coração, exatamente como foi profetizado. (Ezequiel 21:25-27; Lucas 1:30-33; Mateus 11:29)</p><p>Aquilo que parecia um pesadelo de números era, o tempo todo, um <strong>relógio</strong>.</p>",
+        "referencia": "Daniel 4:10-17, 20-26 · Lucas 21:24 · “O que a cronologia bíblica indica sobre o ano de 1914?” (jw.org — Perguntas Bíblicas); “1914 — um ano significativo na profecia bíblica” (apêndice do livro “O Que a Bíblia Realmente Ensina?”); “Tempos designados das nações” (Estudo Perspicaz das Escrituras, vol. 3)",
+        "link_jw": "https://wol.jw.org/pt/wol/d/r5/lp-t/502014148",
+        "config": "{}",
+        "xp": 150,
+        "publicar": 1,
+        "data_criacao": 1784246222844,
+        "data_atualizacao": 1784246222844,
+        "imagem": "o-calculo-dos-sete-tempos.svg"
     }
 ]
