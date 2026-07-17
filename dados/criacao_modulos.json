@@ -1081,5 +1081,24 @@
         "data_criacao": 1784246222844,
         "data_atualizacao": 1784246222844,
         "imagem": "o-calculo-dos-sete-tempos.svg"
+    },
+    {
+        "id": 63,
+        "titulo": "A Estrutura de Revelação",
+        "categoria": "entenda",
+        "tipo": "revelacao",
+        "icone": "bi-hurricane",
+        "ordem": 58,
+        "conceito": "<p>Revelação tem fama de ser o livro mais confuso da Bíblia. Feras, trombetas, tigelas, selos, cavaleiros — parece que os símbolos vêm um atrás do outro, sem mapa. E quem tenta ler do começo ao fim geralmente se perde num ponto específico, sem entender por quê.</p><p>O problema quase nunca é o significado dos símbolos. É a <strong>arquitetura</strong>. Depois da introdução (Revelação 1:1-9), o livro pode ser encarado como <strong>16 visões</strong> — e é aqui que está a pegadinha: <strong>elas não formam uma fila</strong>.</p><p>Algumas visões não vêm <em>depois</em> das outras. Vêm <strong>DENTRO</strong> delas. O Cordeiro recebe um rolo com sete selos; mas o sétimo selo, ao ser aberto, não traz um evento — <strong>traz sete trombetas</strong>. E a sétima trombeta, por sua vez, também não traz um evento: traz o Reino.</p><p>Quem lê sem enxergar esse encaixe acha que está numa fila de 20 acontecimentos. Está, na verdade, dentro de um <strong>rolo que se dobra sobre si mesmo</strong>.</p>",
+        "desafio": "<p>Percorra <strong>as 16 visões</strong>. Toque cada uma para abrir o resumo do quadro e ver, ao lado, exatamente <strong>onde ela cai</strong> no livro e como se encaixa no rolo.</p><p>Repare no mapa de cima: ele mostra a <strong>largura real</strong> de cada visão em versículos — algumas são enormes, outras cabem em um capítulo curto.</p><p>E acompanhe a <strong>espiral</strong>: a volta de fora são os sete selos. Procure o ponto em que ela <strong>não termina — entra para dentro</strong>. Duas visões fazem isso. Encontre as duas.</p>",
+        "reflexao": "<p>Agora a planta do livro está à vista. A espiral dá uma volta nos <strong>sete selos</strong>; no sétimo, em vez de acabar, ela entra e vira as <strong>sete trombetas</strong>; na sétima trombeta, entra de novo e chega ao miolo: <strong>o Reino de Jeová e do seu Cristo</strong> (Revelação 11:15). Nenhuma linha foi cortada — porque o livro não corta. Ele <em>encaixa</em>.</p><p>Isso explica a confusão de tanta gente: o sétimo selo parecia um anticlímax (“abriu e não aconteceu nada?”), quando na verdade ele é a porta de tudo o que vem em seguida. E as sete tigelas, note, são <strong>outra</strong> série de sete — a 10ª visão — e não saem de dentro dos selos. Nem todo “sete” do livro está no mesmo encaixe.</p><p>Vale reparar também no que o mapa mostra sem dizer: o livro dedica 62 versículos às mensagens às sete congregações — conselho prático — e 17 aos quatro cavaleiros. A proporção conta uma história.</p><p>Revelação termina com uma visão gloriosa da Nova Jerusalém e com um convite que cabe em uma palavra: <strong>“Vem!”</strong> (Revelação 22:17) Um livro com arquitetura assim não foi rabiscado às pressas — foi <em>projetado</em> para ser entendido.</p>",
+        "referencia": "Revelação 1:1–22:21 · Quadro “A Estrutura do Livro de Revelação”, páginas 98-99 do livro “Revelação — Seu Grandioso Clímax Está Próximo!” (capítulo “Quatro cavaleiros a galope!”)",
+        "link_jw": "https://www.jw.org/pt/biblioteca/livros/Revela%C3%A7%C3%A3o-Seu-Grandioso-Cl%C3%ADmax-Est%C3%A1-Pr%C3%B3ximo/Quatro-cavaleiros-a-galope/",
+        "config": "{}",
+        "xp": 140,
+        "publicar": 1,
+        "data_criacao": 1784248026391,
+        "data_atualizacao": 1784248026391,
+        "imagem": "a-estrutura-de-revelacao.svg"
     }
 ]

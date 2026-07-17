@@ -2072,6 +2072,53 @@
                             </div>
                         </template>
 
+                        <!-- ARQUÉTIPO: explorar ("Entenda Melhor") ────────────
+                             Mapa navegável: tocar um item o abre e o acende na viz.
+                             Fecha quando o investigador percorreu tudo. -->
+                        <template x-if="puzzle.arquetipo === 'explorar' && puzzleInfo">
+                            <div>
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge fs-6" :class="puzzleInfo.ok ? 'text-bg-success' : 'text-bg-primary'">
+                                        <i class="bi bi-compass me-1" aria-hidden="true"></i>
+                                        <span x-text="puzzleInfo.vistos.length"></span>/<span x-text="puzzleInfo.total"></span> visões
+                                    </span>
+                                    <span class="small text-muted">Toque cada visão para abri-la.</span>
+                                </div>
+
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <template x-for="it in puzzle.itens" :key="it.id">
+                                        <button type="button" class="btn btn-sm position-relative"
+                                                style="min-width:3rem"
+                                                :class="puzzle.ativo === it.id ? 'btn-warning'
+                                                        : itemVisto(it.id) ? 'btn-primary' : 'btn-outline-secondary'"
+                                                @click="explorarItem(it.id)" x-text="it.rotulo"></button>
+                                    </template>
+                                </div>
+
+                                <div class="card border-warning-subtle mb-2">
+                                    <div class="card-body py-2 px-3">
+                                        <div class="d-flex align-items-center gap-2 mb-1">
+                                            <span class="badge text-bg-warning" x-text="puzzleInfo.rotulo + ' visão'"></span>
+                                            <span class="small fw-semibold text-muted" x-text="'Revelação ' + puzzleInfo.ref"></span>
+                                            <template x-if="puzzleInfo.desdobra">
+                                                <span class="badge text-bg-danger ms-auto">
+                                                    <i class="bi bi-box-arrow-in-down-right me-1" aria-hidden="true"></i>desdobra
+                                                </span>
+                                            </template>
+                                        </div>
+                                        <p class="small mb-2" x-text="puzzleInfo.resumo"></p>
+                                        <div class="alert py-2 px-2 mb-0 small"
+                                             :class="puzzleInfo.desdobra ? 'alert-warning' : 'alert-secondary'"
+                                             x-text="puzzleInfo.encaixe"></div>
+                                    </div>
+                                </div>
+
+                                <div class="alert py-2 mb-0"
+                                     :class="puzzleInfo.ok ? 'alert-success' : 'alert-secondary'"
+                                     x-text="puzzleInfo.leitura"></div>
+                            </div>
+                        </template>
+
                         <!-- fallback: tipo sem renderizador -->
                         <template x-if="puzzle.arquetipo === 'pronto'">
                             <p class="text-center text-muted py-3 mb-0">Leia a reflexão a seguir.</p>
