@@ -2131,10 +2131,12 @@
                         <template x-if="puzzle.arquetipo !== 'pronto'">
                             <div class="d-grid mt-3">
                                 <!-- Na derivação guiada, o botão fecha o passo e libera o
-                                     seguinte — só o último "verifica" o módulo. -->
+                                     seguinte — só o último "verifica" o módulo. No mapa
+                                     (explorar) não há resposta a conferir: ele conclui. -->
                                 <button class="btn btn-primary" :disabled="!podeVerificar || resolvido" @click="verificar()"
                                         x-text="puzzle.arquetipo === 'etapas' && puzzle.atual < puzzle.passos.length - 1
-                                                ? 'Confirmar e avançar' : 'Verificar'"></button>
+                                                    ? 'Confirmar e avançar'
+                                                : puzzle.arquetipo === 'explorar' ? 'Concluir o mapa' : 'Verificar'"></button>
                             </div>
                         </template>
 
