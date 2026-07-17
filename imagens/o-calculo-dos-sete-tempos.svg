@@ -111,18 +111,18 @@
             <text class="cx" x="186" y="22" fill="#232a55">1.260 dias</text>
             <text class="not" x="186" y="38" font-weight="400">Apocalipse 12:6</text>
         </g>
-        <path d="M210 130 L210 148" stroke="#3c4a9e" stroke-width="2" marker-end="url(#seta)"/>
-        <text class="rotp" x="222" y="145">÷ 3½ — o 12:14 chama o MESMO período</text>
-        <text class="rotp" x="222" y="160">de “um tempo, tempos e meio tempo”</text>
+        <path d="M54 130 L54 148" stroke="#3c4a9e" stroke-width="2" marker-end="url(#seta)"/>
+        <text class="rotp" x="70" y="141">÷ 3½ — o 12:14 chama o MESMO período</text>
+        <text class="rotp" x="70" y="157">de “um tempo, tempos e meio tempo”</text>
 
         <!-- degrau 2 -->
         <g transform="translate(24,166)">
             <rect width="372" height="46" rx="10" fill="#e9effb" stroke="#a9b8e8"/>
             <text class="cx" x="186" y="22" fill="#232a55">1 tempo = 360 dias</text>
-            <text class="not" x="186" y="38" font-weight="400">um ano de 12 meses de 30 — conferido em Ap. 11:2, 3 (42 meses)</text>
+            <text class="not" x="186" y="38" font-weight="400">12 meses de 30 dias — cf. Ap. 11:2, 3 (42 meses)</text>
         </g>
-        <path d="M210 216 L210 234" stroke="#3c4a9e" stroke-width="2" marker-end="url(#seta)"/>
-        <text class="rotp" x="222" y="231">× 7 — “sete tempos” (Daniel 4:16, 23)</text>
+        <path d="M54 216 L54 234" stroke="#3c4a9e" stroke-width="2" marker-end="url(#seta)"/>
+        <text class="rotp" x="70" y="231">× 7 — “sete tempos” (Daniel 4:16, 23)</text>
 
         <!-- degrau 3 -->
         <g transform="translate(24,238)">
@@ -130,8 +130,8 @@
             <text class="cx" x="186" y="22" fill="#232a55">2.520 dias</text>
             <text class="not" x="186" y="38" font-weight="400">o dobro dos 1.260</text>
         </g>
-        <path d="M210 288 L210 306" stroke="#b07d10" stroke-width="2" marker-end="url(#seta-ouro)"/>
-        <text class="rotp" x="222" y="303">um dia por um ano — Núm. 14:34; Ezeq. 4:6</text>
+        <path d="M54 288 L54 306" stroke="#b07d10" stroke-width="2" marker-end="url(#seta-ouro)"/>
+        <text class="rotp" x="70" y="303">um dia por um ano — Núm. 14:34; Ezeq. 4:6</text>
 
         <!-- degrau 4 -->
         <g transform="translate(24,310)">
