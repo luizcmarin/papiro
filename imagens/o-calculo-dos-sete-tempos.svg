@@ -72,20 +72,20 @@
             <text class="not" y="24" fill="#c94a45">derrubada</text>
             <text class="not" y="40" font-weight="400">out. 607 AEC</text>
         </g>
-        <path d="M232 202 L266 202" stroke="#3c4a9e" stroke-width="2" marker-end="url(#seta)"/>
+        <path d="M224 202 L252 202" stroke="#3c4a9e" stroke-width="2" marker-end="url(#seta)"/>
 
         <!-- vinheta 3: o toco cintado -->
-        <g transform="translate(300,232)">
+        <g transform="translate(276,232)">
             <rect x="-11" y="-24" width="22" height="24" fill="#8a5a3a" rx="2"/>
             <rect x="-14" y="-19" width="28" height="5" fill="#596070" rx="2"/>
             <rect x="-14" y="-10" width="28" height="5" fill="#b87333" rx="2"/>
             <text class="not" y="24" fill="#b07d10">toco cintado</text>
             <text class="not" y="40" font-weight="400">“sete tempos”</text>
         </g>
-        <path d="M336 202 L370 202" stroke="#3c4a9e" stroke-width="2" marker-end="url(#seta)"/>
+        <path d="M308 202 L336 202" stroke="#3c4a9e" stroke-width="2" marker-end="url(#seta)"/>
 
         <!-- vinheta 4: rebrota -->
-        <g transform="translate(392,232)">
+        <g transform="translate(368,232)">
             <rect x="-11" y="-24" width="22" height="24" fill="#8a5a3a" rx="2"/>
             <rect x="-3" y="-52" width="6" height="30" fill="#6f8f3a" rx="2"/>
             <circle cx="0" cy="-60" r="13" fill="#5fc46a"/>

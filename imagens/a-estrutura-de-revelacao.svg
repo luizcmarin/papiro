@@ -4,9 +4,9 @@
     <desc id="desc">Depois da introdução (Apocalipse 1:1-9), o livro pode ser encarado como 16 visões. Elas não
         formam uma fila: o Cordeiro recebe um rolo de sete selos e, ao ser aberto o sétimo selo, não vem um
         evento — vêm sete trombetas, e as seis primeiras são a 5ª visão. A sétima trombeta, por sua vez,
-        anuncia o terceiro ai: a entrada do Reino de Jeová e do seu Cristo, na 6ª visão. A espiral desenha
-        esse encaixe: a volta de fora são os sete selos e, no sétimo, a linha não termina — entra para dentro
-        e vira as sete trombetas, chegando ao miolo, o Reino. As sete tigelas são outra série de sete, na 10ª
+        anuncia o terceiro ai: a entrada do Reino de Jeová e do seu Cristo, na 6ª visão. O rolo aberto mostra
+        esse encaixe: de um lado os sete selos e, ao abrir o sétimo, o rolo não termina — ele vira
+        e segue nas sete trombetas, chegando ao miolo, o Reino. As sete tigelas são outra série de sete, na 10ª
         visão, e não saem de dentro dos selos.</desc>
 
     <defs>
@@ -30,8 +30,6 @@
             <stop offset="0" stop-color="#ffe08a"/>
             <stop offset="1" stop-color="#f0b429"/>
         </radialGradient>
-        <path id="rv-selo" fill="none" d="M235.0 48.0 L239.2 48.3 L243.5 48.7 L247.7 49.3 L251.8 50.0 L256.0 50.8 L260.1 51.8 L264.2 52.9 L268.2 54.1 L272.2 55.4 L276.1 56.9 L280.0 58.5 L283.8 60.2 L287.5 62.1 L291.2 64.0 L294.8 66.1 L298.3 68.3 L301.8 70.5 L305.1 72.9 L308.4 75.4 L311.6 78.0 L314.7 80.7 L317.7 83.5 L320.6 86.4 L323.5 89.4 L326.2 92.4 L328.8 95.5 L333.3 101.6 L335.6 104.9 L337.8 108.3 L339.9 111.8 L341.8 115.3 L343.7 118.9 L345.4 122.5 L347.0 126.2 L348.5 129.9 L349.8 133.7 L351.0 137.5 L352.1 141.3 L353.1 145.2 L353.9 149.1 L354.6 153.0 L355.2 156.9 L355.7 160.8 L356.0 164.7 L356.2 168.7 L356.3 172.6 L356.3 176.5 L356.1 180.4 L355.8 184.3 L355.4 188.2 L354.8 192.0 L354.2 195.8 L353.4 199.6 L351.6 206.6 L350.4 210.3 L349.2 213.9 L347.8 217.5 L346.4 221.1 L344.8 224.5 L343.1 228.0 L341.3 231.3 L339.4 234.6 L337.4 237.8 L335.2 241.0 L333.0 244.1 L330.7 247.1 L328.4 250.0 L325.9 252.8 L323.3 255.6 L320.7 258.2 L318.0 260.8 L315.2 263.2 L312.3 265.6 L309.3 267.9 L306.3 270.1 L303.3 272.1 L300.1 274.1 L296.9 276.0 L293.7 277.7 L290.4 279.4 L284.2 282.1 L280.8 283.5 L277.3 284.7 L273.9 285.8 L270.4 286.8 L266.9 287.6 L263.3 288.4 L259.8 289.0 L256.2 289.5 L252.6 289.9 L249.0 290.2 L245.5 290.4 L241.9 290.5 L238.3 290.4 L234.8 290.2 L231.2 289.9 L227.7 289.5 L224.2 289.0 L220.7 288.4 L217.3 287.7 L213.8 286.8 L210.5 285.9 L207.1 284.8 L203.8 283.6 L200.6 282.4 L197.4 281.0 L194.2 279.5 L188.5 276.5 L185.5 274.8 L182.6 273.0 L179.8 271.0 L177.0 269.0 L174.3 266.9 L171.6 264.7 L169.1 262.5 L166.6 260.1 L164.2 257.7 L161.9 255.2 L159.7 252.7 L157.5 250.1 L155.5 247.4 L153.5 244.7 L151.7 241.9 L149.9 239.0 L148.2 236.1 L146.7 233.2 L145.2 230.2 L143.8 227.2 L142.5 224.1 L141.4 221.1 L140.3 217.9 L139.3 214.8 L138.5 211.6 L137.7 208.4 L136.6 202.5 L136.1 199.2 L135.8 196.0 L135.6 192.8 L135.4 189.5 L135.4 186.3 L135.5 183.1 L135.6 179.9 L135.9 176.7 L136.3 173.5 L136.8 170.4 L137.4 167.2 L138.0 164.1 L138.8 161.1 L139.7 158.0 L140.7 155.0 L141.7 152.1 L142.9 149.1 L144.1 146.3 L145.5 143.4 L146.9 140.7 L148.4 138.0 L150.0 135.3 L151.7 132.7 L153.5 130.1 L155.3 127.7 L157.2 125.3 L160.9 120.9 L163.1 118.7 L165.2 116.6 L167.5 114.5 L169.8 112.6 L172.1 110.7 L174.5 108.8 L177.0 107.1 L179.5 105.5 L182.1 103.9 L184.7 102.4 L187.3 101.0 L190.0 99.7 L192.7 98.5 L195.4 97.4 L198.2 96.4 L201.0 95.4 L203.8 94.6 L206.7 93.8 L209.5 93.2 L212.4 92.6 L215.3 92.2 L218.1 91.8 L221.0 91.5 L223.9 91.3 L226.8 91.2 L229.7 91.2"/>
-        <path id="rv-trmb" fill="none" d="M235.0 91.5 L237.8 91.8 L240.7 92.1 L243.5 92.6 L246.3 93.1 L249.0 93.7 L251.7 94.5 L254.4 95.3 L257.1 96.1 L259.7 97.1 L262.3 98.2 L264.9 99.3 L267.4 100.5 L269.8 101.8 L272.2 103.2 L274.6 104.6 L276.9 106.1 L279.1 107.7 L281.3 109.3 L283.4 111.0 L285.5 112.8 L287.5 114.6 L289.4 116.5 L291.3 118.5 L293.1 120.5 L294.8 122.5 L296.5 124.7 L299.3 128.7 L300.8 130.9 L302.1 133.2 L303.4 135.5 L304.6 137.9 L305.8 140.2 L306.8 142.6 L307.8 145.1 L308.7 147.5 L309.5 150.0 L310.2 152.5 L310.8 155.0 L311.4 157.5 L311.8 160.0 L312.2 162.6 L312.5 165.1 L312.7 167.6 L312.9 170.2 L312.9 172.7 L312.9 175.2 L312.8 177.8 L312.6 180.3 L312.3 182.7 L312.0 185.2 L311.5 187.7 L311.0 190.1 L310.5 192.5 L309.2 196.9 L308.4 199.3 L307.5 201.5 L306.5 203.8 L305.5 206.0 L304.5 208.2 L303.3 210.3 L302.1 212.4 L300.8 214.4 L299.5 216.4 L298.1 218.4 L296.6 220.3 L295.1 222.1 L293.6 223.9 L291.9 225.6 L290.3 227.3 L288.5 228.9 L286.8 230.4 L285.0 231.9 L283.1 233.3 L281.2 234.7 L279.3 236.0 L277.4 237.2 L275.4 238.3 L273.4 239.4 L271.3 240.4 L269.2 241.4 L265.3 242.9 L263.2 243.7 L261.0 244.3 L258.9 244.9 L256.7 245.5 L254.5 245.9 L252.3 246.3 L250.1 246.6 L247.9 246.8 L245.7 247.0 L243.5 247.1 L241.4 247.1 L239.2 247.1 L237.0 246.9 L234.9 246.7 L232.7 246.5 L230.6 246.1 L228.5 245.7 L226.4 245.3 L224.3 244.7 L222.3 244.2 L220.3 243.5 L218.3 242.8 L216.4 242.0 L214.4 241.1 L212.6 240.2 L210.7 239.3 L207.4 237.3 L205.7 236.2 L204.0 235.1 L202.3 233.8 L200.7 232.6 L199.2 231.3 L197.7 229.9 L196.2 228.5 L194.8 227.1 L193.5 225.6 L192.2 224.0 L191.0 222.5 L189.8 220.9 L188.7 219.3 L187.6 217.6 L186.6 215.9 L185.6 214.2 L184.8 212.5 L183.9 210.8 L183.2 209.0 L182.4 207.2 L181.8 205.4 L181.2 203.6 L180.7 201.8 L180.2 199.9 L179.8 198.1 L179.5 196.2 L179.0 192.8 L178.8 190.9 L178.7 189.1 L178.7 187.2 L178.7 185.4 L178.8 183.6 L178.9 181.7 L179.1 179.9 L179.4 178.1 L179.7 176.4 L180.1 174.6 L180.5 172.9 L181.0 171.2 L181.5 169.5 L182.1 167.8 L182.7 166.2 L183.4 164.5 L184.1 163.0 L184.9 161.4 L185.8 159.9 L186.6 158.4 L187.6 157.0 L188.5 155.5 L189.5 154.2 L190.6 152.8 L191.7 151.5 L192.8 150.3 L195.0 148.1 L196.2 146.9 L197.4 145.9 L198.7 144.8 L200.0 143.8 L201.3 142.9 L202.7 142.0 L204.1 141.1 L205.5 140.3 L206.9 139.6 L208.3 138.9 L209.8 138.3 L211.3 137.7 L212.7 137.1 L214.2 136.6 L215.7 136.2 L217.2 135.8 L218.7 135.5 L220.3 135.2 L221.8 134.9 L223.3 134.7 L224.8 134.6 L226.3 134.5 L227.8 134.5 L229.3 134.5 L230.8 134.6 L232.3 134.7"/>
     </defs>
 
     <style>
@@ -97,7 +95,7 @@
         <text class="lin" x="120" y="268" font-size="11" fill="#7d749b">Babilônia, a Grande, e a fera escarlate</text>
         <text class="lin" x="24" y="287" font-weight="800">12ª</text>
         <text class="lin" x="48" y="287">18:1–19:10</text>
-        <text class="lin" x="120" y="287" font-size="11" fill="#7d749b">a queda de Babilônia; o casamento do Cordeiro</text>
+        <text class="lin" x="120" y="287" font-size="11" fill="#7d749b">a queda de Babilônia; casamento do Cordeiro</text>
         <text class="lin" x="24" y="306" font-weight="800">13ª</text>
         <text class="lin" x="48" y="306">19:11-21</text>
         <text class="lin" x="120" y="306" font-size="11" fill="#7d749b">Jesus lidera os exércitos celestiais</text>
@@ -114,58 +112,65 @@
 
     <g transform="translate(460,112)">
         <rect class="painel" width="470" height="380" rx="16"/>
-        <text class="rot" x="22" y="36">O ROLO EM ESPIRAL</text>
-        <text class="rotp" x="22" y="56">um pergaminho enrolado, selado com sete selos</text>
-        <g transform="translate(0,30)">
-        <!-- luz quente do pergaminho -->
-        <ellipse cx="235" cy="182" rx="150" ry="150" fill="url(#luzRolo)"/>
-        <!-- SOMBRA das voltas (dá espessura de papel enrolado) -->
-        <use href="#rv-selo" stroke="#b48a4e" stroke-width="34" stroke-linecap="round" opacity=".45"/>
-        <use href="#rv-trmb" stroke="#b48a4e" stroke-width="34" stroke-linecap="round" opacity=".45"/>
-        <!-- corpo de PERGAMINHO -->
-        <use href="#rv-selo" stroke="url(#pergaminho)" stroke-width="29" stroke-linecap="round"/>
-        <use href="#rv-trmb" stroke="url(#pergaminho)" stroke-width="29" stroke-linecap="round"/>
-        <!-- brilho no alto de cada volta -->
-        <use href="#rv-selo" stroke="#fffaec" stroke-width="7" stroke-linecap="round" opacity=".55"/>
-        <use href="#rv-trmb" stroke="#fffaec" stroke-width="7" stroke-linecap="round" opacity=".55"/>
+        <text class="rot" x="22" y="36">O ROLO ABERTO</text>
+        <text class="rotp" x="22" y="56">os sete selos de um lado; ao abrir o 7º, o rolo VIRA nas sete trombetas</text>
+
+        <!-- luz quente sobre o pergaminho -->
+        <ellipse cx="230" cy="205" rx="210" ry="120" fill="url(#luzRolo)"/>
+
+        <!-- roletes (as duas varetas do rolo aberto) -->
+        <g><rect x="23" y="100" width="14" height="204" rx="7" fill="#6b4a2a"/><rect x="28" y="106" width="3.2" height="192" rx="1.6" fill="#9c7040" opacity=".65"/><ellipse cx="30" cy="100" rx="11" ry="6" fill="#7d5730"/><ellipse cx="30" cy="304" rx="11" ry="6" fill="#7d5730"/></g>
+        <g><rect x="433" y="100" width="14" height="204" rx="7" fill="#6b4a2a"/><rect x="438" y="106" width="3.2" height="192" rx="1.6" fill="#9c7040" opacity=".65"/><ellipse cx="440" cy="100" rx="11" ry="6" fill="#7d5730"/><ellipse cx="440" cy="304" rx="11" ry="6" fill="#7d5730"/></g>
+
+        <!-- SOMBRA das duas tiras + da virada -->
+        <rect x="40" y="116" width="378" height="54" rx="12" fill="#b48a4e" opacity=".4"/>
+        <rect x="40" y="234" width="378" height="54" rx="12" fill="#b48a4e" opacity=".4"/>
+        <path d="M400 143 Q 442 150 442 202 Q 442 254 400 261" fill="none" stroke="#b48a4e" stroke-width="34" stroke-linecap="round" opacity=".4"/>
+
+        <!-- PERGAMINHO: tira de cima (selos), a virada e a tira de baixo (trombetas) -->
+        <path d="M400 143 Q 438 150 438 202 Q 438 254 400 261" fill="none" stroke="url(#pergaminho)" stroke-width="29" stroke-linecap="round"/>
+        <rect x="44" y="120" width="372" height="46" rx="9" fill="url(#pergaminho)"/>
+        <rect x="44" y="238" width="372" height="46" rx="9" fill="url(#pergaminho)"/>
+        <!-- brilho no alto de cada tira -->
+        <rect x="52" y="125" width="352" height="5" rx="2.5" fill="#fffaec" opacity=".6"/>
+        <rect x="52" y="243" width="352" height="5" rx="2.5" fill="#fffaec" opacity=".6"/>
+
         <!-- TINTA de identidade: azul nos selos, roxo nas trombetas -->
-        <use href="#rv-selo" stroke="#2f6fb0" stroke-width="6" stroke-linecap="round" opacity=".85"/>
-        <use href="#rv-trmb" stroke="#8659c4" stroke-width="6" stroke-linecap="round" opacity=".85"/>
+        <path d="M100 143 L400 143" stroke="#2f6fb0" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+        <path d="M400 261 L100 261" stroke="#8659c4" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+        <!-- a VIRADA: a tinta troca de cor (ouro) exatamente onde o 7º selo abre -->
+        <path d="M400 143 Q 424 150 424 202 Q 424 254 400 261" fill="none" stroke="#e0a83c" stroke-width="4.5" stroke-linecap="round"/>
+        <text x="446" y="206" font-size="11" font-weight="800" fill="#b07d10" text-anchor="middle" transform="rotate(90 446 206)">a virada</text>
 
-        <!-- ponta solta do rolo: a aba de pergaminho que se desenrola no topo -->
-        <path d="M240 46 C214 36 190 40 182 56 C190 46 212 44 238 54 Z" fill="url(#pergaminho)" stroke="#c9ab74" stroke-width="1.2"/>
-        <path d="M182 56 C186 48 196 45 205 47" fill="none" stroke="#b48a4e" stroke-width="1.1" opacity=".6"/>
-
-        <!-- O MIOLO: o Reino -->
-        <circle cx="235" cy="180" r="34" fill="url(#reinoRolo)" stroke="#b07d10" stroke-width="2.5"/>
-        <circle cx="235" cy="180" r="34" fill="none" stroke="#fff3d0" stroke-width="1" opacity=".7"/>
-        <text x="235" y="175" font-size="12" font-weight="800" text-anchor="middle" fill="#5c4a10">O REINO</text>
-        <text x="235" y="190" font-size="9.5" text-anchor="middle" fill="#7a6320">3º ai · 11:15</text>
-
-        <!-- os SETE SELOS (azul) na volta externa -->
-        <g class="selo-cera"><circle cx="287.5" cy="62.1" r="11.4" fill="#7c5a1e" opacity=".28"/><circle cx="287.5" cy="62.1" r="10" fill="#2f6fb0" stroke="#184e86" stroke-width="1.4"/><ellipse cx="284.3" cy="58.7" rx="4.0" ry="2.8" fill="#ffffff" opacity=".35"/><text x="287.5" y="62.6" text-anchor="middle" dominant-baseline="central" font-size="9.5" font-weight="800" fill="#fff">1</text></g>
-        <g class="selo-cera"><circle cx="353.9" cy="149.1" r="11.4" fill="#7c5a1e" opacity=".28"/><circle cx="353.9" cy="149.1" r="10" fill="#2f6fb0" stroke="#184e86" stroke-width="1.4"/><ellipse cx="350.7" cy="145.7" rx="4.0" ry="2.8" fill="#ffffff" opacity=".35"/><text x="353.9" y="149.6" text-anchor="middle" dominant-baseline="central" font-size="9.5" font-weight="800" fill="#fff">2</text></g>
-        <g class="selo-cera"><circle cx="328.4" cy="250.0" r="11.4" fill="#7c5a1e" opacity=".28"/><circle cx="328.4" cy="250.0" r="10" fill="#2f6fb0" stroke="#184e86" stroke-width="1.4"/><ellipse cx="325.2" cy="246.6" rx="4.0" ry="2.8" fill="#ffffff" opacity=".35"/><text x="328.4" y="250.5" text-anchor="middle" dominant-baseline="central" font-size="9.5" font-weight="800" fill="#fff">3</text></g>
-        <g class="selo-cera"><circle cx="238.3" cy="290.4" r="11.4" fill="#7c5a1e" opacity=".28"/><circle cx="238.3" cy="290.4" r="10" fill="#2f6fb0" stroke="#184e86" stroke-width="1.4"/><ellipse cx="235.1" cy="287.0" rx="4.0" ry="2.8" fill="#ffffff" opacity=".35"/><text x="238.3" y="290.9" text-anchor="middle" dominant-baseline="central" font-size="9.5" font-weight="800" fill="#fff">4</text></g>
-        <g class="selo-cera"><circle cx="155.5" cy="247.4" r="11.4" fill="#7c5a1e" opacity=".28"/><circle cx="155.5" cy="247.4" r="10" fill="#2f6fb0" stroke="#184e86" stroke-width="1.4"/><ellipse cx="152.3" cy="244.0" rx="4.0" ry="2.8" fill="#ffffff" opacity=".35"/><text x="155.5" y="247.9" text-anchor="middle" dominant-baseline="central" font-size="9.5" font-weight="800" fill="#fff">5</text></g>
-        <g class="selo-cera"><circle cx="138.8" cy="161.1" r="11.4" fill="#7c5a1e" opacity=".28"/><circle cx="138.8" cy="161.1" r="10" fill="#2f6fb0" stroke="#184e86" stroke-width="1.4"/><ellipse cx="135.6" cy="157.7" rx="4.0" ry="2.8" fill="#ffffff" opacity=".35"/><text x="138.8" y="161.6" text-anchor="middle" dominant-baseline="central" font-size="9.5" font-weight="800" fill="#fff">6</text></g>
-        <g class="selo-cera"><circle cx="192.7" cy="98.5" r="11.4" fill="#7c5a1e" opacity=".28"/><circle cx="192.7" cy="98.5" r="10" fill="#2f6fb0" stroke="#184e86" stroke-width="1.4"/><ellipse cx="189.5" cy="95.1" rx="4.0" ry="2.8" fill="#ffffff" opacity=".35"/><text x="192.7" y="99.0" text-anchor="middle" dominant-baseline="central" font-size="9.5" font-weight="800" fill="#fff">7</text></g>
-
-        <!-- as SETE TROMBETAS (roxo) na volta interna -->
-        <g class="tromb-marca"><circle cx="269.8" cy="101.8" r="9.9" fill="#7c5a1e" opacity=".28"/><circle cx="269.8" cy="101.8" r="8.5" fill="#8659c4" stroke="#5a3597" stroke-width="1.4"/><ellipse cx="267.1" cy="98.9" rx="3.4" ry="2.4" fill="#ffffff" opacity=".35"/><text x="269.8" y="102.3" text-anchor="middle" dominant-baseline="central" font-size="8.1" font-weight="800" fill="#fff">1</text></g>
-        <g class="tromb-marca"><circle cx="311.8" cy="160.0" r="9.9" fill="#7c5a1e" opacity=".28"/><circle cx="311.8" cy="160.0" r="8.5" fill="#8659c4" stroke="#5a3597" stroke-width="1.4"/><ellipse cx="309.1" cy="157.1" rx="3.4" ry="2.4" fill="#ffffff" opacity=".35"/><text x="311.8" y="160.5" text-anchor="middle" dominant-baseline="central" font-size="8.1" font-weight="800" fill="#fff">2</text></g>
-        <g class="tromb-marca"><circle cx="293.6" cy="223.9" r="9.9" fill="#7c5a1e" opacity=".28"/><circle cx="293.6" cy="223.9" r="8.5" fill="#8659c4" stroke="#5a3597" stroke-width="1.4"/><ellipse cx="290.9" cy="221.0" rx="3.4" ry="2.4" fill="#ffffff" opacity=".35"/><text x="293.6" y="224.4" text-anchor="middle" dominant-baseline="central" font-size="8.1" font-weight="800" fill="#fff">3</text></g>
-        <g class="tromb-marca"><circle cx="237.0" cy="246.9" r="9.9" fill="#7c5a1e" opacity=".28"/><circle cx="237.0" cy="246.9" r="8.5" fill="#8659c4" stroke="#5a3597" stroke-width="1.4"/><ellipse cx="234.3" cy="244.0" rx="3.4" ry="2.4" fill="#ffffff" opacity=".35"/><text x="237.0" y="247.4" text-anchor="middle" dominant-baseline="central" font-size="8.1" font-weight="800" fill="#fff">4</text></g>
-        <g class="tromb-marca"><circle cx="188.7" cy="219.3" r="9.9" fill="#7c5a1e" opacity=".28"/><circle cx="188.7" cy="219.3" r="8.5" fill="#8659c4" stroke="#5a3597" stroke-width="1.4"/><ellipse cx="186.0" cy="216.4" rx="3.4" ry="2.4" fill="#ffffff" opacity=".35"/><text x="188.7" y="219.8" text-anchor="middle" dominant-baseline="central" font-size="8.1" font-weight="800" fill="#fff">5</text></g>
-        <g class="tromb-marca"><circle cx="181.5" cy="169.5" r="9.9" fill="#7c5a1e" opacity=".28"/><circle cx="181.5" cy="169.5" r="8.5" fill="#8659c4" stroke="#5a3597" stroke-width="1.4"/><ellipse cx="178.8" cy="166.6" rx="3.4" ry="2.4" fill="#ffffff" opacity=".35"/><text x="181.5" y="170.0" text-anchor="middle" dominant-baseline="central" font-size="8.1" font-weight="800" fill="#fff">6</text></g>
-        <g class="tromb-marca"><circle cx="212.7" cy="137.1" r="9.9" fill="#7c5a1e" opacity=".28"/><circle cx="212.7" cy="137.1" r="8.5" fill="#8659c4" stroke="#5a3597" stroke-width="1.4"/><ellipse cx="210.0" cy="134.2" rx="3.4" ry="2.4" fill="#ffffff" opacity=".35"/><text x="212.7" y="137.6" text-anchor="middle" dominant-baseline="central" font-size="8.1" font-weight="800" fill="#fff">7</text></g>
-
+        <!-- os SETE SELOS (azul), a volta de cima -->
+        <g><circle cx="100" cy="144.4" r="16.2" fill="#7c5a1e" opacity=".22"/><circle cx="100" cy="143" r="15" fill="#2f6fb0" stroke="#184e86" stroke-width="1.6"/><ellipse cx="95.2" cy="137.9" rx="6.0" ry="4.2" fill="#fff" opacity=".33"/><text x="100" y="143.5" text-anchor="middle" dominant-baseline="central" font-size="14.2" font-weight="800" fill="#fff">1</text></g>
+        <g><circle cx="150" cy="144.4" r="16.2" fill="#7c5a1e" opacity=".22"/><circle cx="150" cy="143" r="15" fill="#2f6fb0" stroke="#184e86" stroke-width="1.6"/><ellipse cx="145.2" cy="137.9" rx="6.0" ry="4.2" fill="#fff" opacity=".33"/><text x="150" y="143.5" text-anchor="middle" dominant-baseline="central" font-size="14.2" font-weight="800" fill="#fff">2</text></g>
+        <g><circle cx="200" cy="144.4" r="16.2" fill="#7c5a1e" opacity=".22"/><circle cx="200" cy="143" r="15" fill="#2f6fb0" stroke="#184e86" stroke-width="1.6"/><ellipse cx="195.2" cy="137.9" rx="6.0" ry="4.2" fill="#fff" opacity=".33"/><text x="200" y="143.5" text-anchor="middle" dominant-baseline="central" font-size="14.2" font-weight="800" fill="#fff">3</text></g>
+        <g><circle cx="250" cy="144.4" r="16.2" fill="#7c5a1e" opacity=".22"/><circle cx="250" cy="143" r="15" fill="#2f6fb0" stroke="#184e86" stroke-width="1.6"/><ellipse cx="245.2" cy="137.9" rx="6.0" ry="4.2" fill="#fff" opacity=".33"/><text x="250" y="143.5" text-anchor="middle" dominant-baseline="central" font-size="14.2" font-weight="800" fill="#fff">4</text></g>
+        <g><circle cx="300" cy="144.4" r="16.2" fill="#7c5a1e" opacity=".22"/><circle cx="300" cy="143" r="15" fill="#2f6fb0" stroke="#184e86" stroke-width="1.6"/><ellipse cx="295.2" cy="137.9" rx="6.0" ry="4.2" fill="#fff" opacity=".33"/><text x="300" y="143.5" text-anchor="middle" dominant-baseline="central" font-size="14.2" font-weight="800" fill="#fff">5</text></g>
+        <g><circle cx="350" cy="144.4" r="16.2" fill="#7c5a1e" opacity=".22"/><circle cx="350" cy="143" r="15" fill="#2f6fb0" stroke="#184e86" stroke-width="1.6"/><ellipse cx="345.2" cy="137.9" rx="6.0" ry="4.2" fill="#fff" opacity=".33"/><text x="350" y="143.5" text-anchor="middle" dominant-baseline="central" font-size="14.2" font-weight="800" fill="#fff">6</text></g>
+        <g><circle cx="400" cy="144.4" r="16.2" fill="#7c5a1e" opacity=".22"/><circle cx="400" cy="143" r="15" fill="#2f6fb0" stroke="#184e86" stroke-width="1.6"/><ellipse cx="395.2" cy="137.9" rx="6.0" ry="4.2" fill="#fff" opacity=".33"/><text x="400" y="143.5" text-anchor="middle" dominant-baseline="central" font-size="14.2" font-weight="800" fill="#fff">7</text></g>
         <!-- a 4ª visão, encaixada entre o 6º e o 7º selo -->
-        <circle cx="159" cy="123" r="6.5" fill="#ffc857" stroke="#b07d10" stroke-width="1.5"/>
-        <text x="159" y="106" font-size="11" font-weight="800" text-anchor="middle" fill="#b07d10">4ª</text>
-        </g>
-        <text class="rotp" x="22" y="356" font-size="12"><tspan fill="#1c6ea8" font-weight="800">● os 7 selos</tspan>   <tspan fill="#7248b0" font-weight="800">● as 7 trombetas</tspan>   <tspan fill="#b07d10" font-weight="800">● o Reino</tspan></text>
-        <text class="rotp" x="22" y="373" font-size="11.5">No 7º selo o rolo não termina: entra para dentro. É o mesmo pergaminho.</text>
+        <circle cx="375" cy="113" r="6.5" fill="#ffc857" stroke="#b07d10" stroke-width="1.5"/>
+        <line x1="375" y1="119" x2="375" y2="128" stroke="#b07d10" stroke-width="1.4" stroke-dasharray="2 2"/>
+        <text x="375" y="103" font-size="11" font-weight="800" text-anchor="middle" fill="#b07d10">4ª</text>
+
+        <!-- as SETE TROMBETAS (roxo), a volta de baixo -->
+        <g><circle cx="400" cy="262.4" r="14.2" fill="#7c5a1e" opacity=".22"/><circle cx="400" cy="261" r="13" fill="#8659c4" stroke="#5a3597" stroke-width="1.6"/><ellipse cx="395.8" cy="256.6" rx="5.2" ry="3.6" fill="#fff" opacity=".33"/><text x="400" y="261.5" text-anchor="middle" dominant-baseline="central" font-size="12.3" font-weight="800" fill="#fff">1</text></g>
+        <g><circle cx="350" cy="262.4" r="14.2" fill="#7c5a1e" opacity=".22"/><circle cx="350" cy="261" r="13" fill="#8659c4" stroke="#5a3597" stroke-width="1.6"/><ellipse cx="345.8" cy="256.6" rx="5.2" ry="3.6" fill="#fff" opacity=".33"/><text x="350" y="261.5" text-anchor="middle" dominant-baseline="central" font-size="12.3" font-weight="800" fill="#fff">2</text></g>
+        <g><circle cx="300" cy="262.4" r="14.2" fill="#7c5a1e" opacity=".22"/><circle cx="300" cy="261" r="13" fill="#8659c4" stroke="#5a3597" stroke-width="1.6"/><ellipse cx="295.8" cy="256.6" rx="5.2" ry="3.6" fill="#fff" opacity=".33"/><text x="300" y="261.5" text-anchor="middle" dominant-baseline="central" font-size="12.3" font-weight="800" fill="#fff">3</text></g>
+        <g><circle cx="250" cy="262.4" r="14.2" fill="#7c5a1e" opacity=".22"/><circle cx="250" cy="261" r="13" fill="#8659c4" stroke="#5a3597" stroke-width="1.6"/><ellipse cx="245.8" cy="256.6" rx="5.2" ry="3.6" fill="#fff" opacity=".33"/><text x="250" y="261.5" text-anchor="middle" dominant-baseline="central" font-size="12.3" font-weight="800" fill="#fff">4</text></g>
+        <g><circle cx="200" cy="262.4" r="14.2" fill="#7c5a1e" opacity=".22"/><circle cx="200" cy="261" r="13" fill="#8659c4" stroke="#5a3597" stroke-width="1.6"/><ellipse cx="195.8" cy="256.6" rx="5.2" ry="3.6" fill="#fff" opacity=".33"/><text x="200" y="261.5" text-anchor="middle" dominant-baseline="central" font-size="12.3" font-weight="800" fill="#fff">5</text></g>
+        <g><circle cx="150" cy="262.4" r="14.2" fill="#7c5a1e" opacity=".22"/><circle cx="150" cy="261" r="13" fill="#8659c4" stroke="#5a3597" stroke-width="1.6"/><ellipse cx="145.8" cy="256.6" rx="5.2" ry="3.6" fill="#fff" opacity=".33"/><text x="150" y="261.5" text-anchor="middle" dominant-baseline="central" font-size="12.3" font-weight="800" fill="#fff">6</text></g>
+        <g><circle cx="100" cy="262.4" r="14.2" fill="#7c5a1e" opacity=".22"/><circle cx="100" cy="261" r="13" fill="#8659c4" stroke="#5a3597" stroke-width="1.6"/><ellipse cx="95.8" cy="256.6" rx="5.2" ry="3.6" fill="#fff" opacity=".33"/><text x="100" y="261.5" text-anchor="middle" dominant-baseline="central" font-size="12.3" font-weight="800" fill="#fff">7</text></g>
+
+        <!-- O MIOLO: o Reino, ao fim das trombetas -->
+        <circle cx="58" cy="261" r="21" fill="url(#reinoRolo)" stroke="#b07d10" stroke-width="2.5"/>
+        <text x="58" y="256" font-size="10.5" font-weight="800" text-anchor="middle" fill="#5c4a10">O REINO</text>
+        <text x="58" y="269" font-size="8.5" text-anchor="middle" fill="#7a6320">11:15</text>
+
+        <text class="rotp" x="22" y="330" font-size="12"><tspan fill="#1c6ea8" font-weight="800">● os 7 selos</tspan>   <tspan fill="#7248b0" font-weight="800">● as 7 trombetas</tspan>   <tspan fill="#b07d10" font-weight="800">● o Reino</tspan></text>
+        <text class="rotp" x="22" y="348" font-size="11.5">Ao abrir o 7º selo o rolo não acaba: ele VIRA e segue nas trombetas.</text>
     </g>
 
     <g transform="translate(954,112)">
@@ -225,7 +230,7 @@
             <text class="rot" x="24" y="42">NEM TODO “SETE” ENCAIXA</text>
             <text class="rotp" x="24" y="76" font-size="14">As sete tigelas da ira também são sete — mas são</text>
             <text class="rotp" x="24" y="98" font-size="14">a 10ª visão, e NÃO saem de dentro dos selos.</text>
-            <text class="rotp" x="24" y="128" font-size="14">Por isso elas ficam fora da espiral: reconhecer o</text>
+            <text class="rotp" x="24" y="128" font-size="14">Por isso elas ficam fora do rolo: reconhecer o</text>
             <text class="rotp" x="24" y="150" font-size="14">que encaixa é tão importante quanto o que não.</text>
             <text class="rotp" x="24" y="184" font-size="14" font-style="italic">— Apocalipse 15:1–16:21</text>
         </g>
