@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A estrutura do livro de Revelação — 16 visões e o rolo que se dobra sobre si mesmo</title>
+    <desc id="desc">Depois da introdução (Revelação 1:1-9), o livro pode ser encarado como 16 visões. Elas não
+        formam uma fila: o Cordeiro recebe um rolo de sete selos e, ao ser aberto o sétimo selo, não vem um
+        evento — vêm sete trombetas, e as seis primeiras são a 5ª visão. A sétima trombeta, por sua vez,
+        anuncia o terceiro ai: a entrada do Reino de Jeová e do seu Cristo, na 6ª visão. A espiral desenha
+        esse encaixe: a volta de fora são os sete selos e, no sétimo, a linha não termina — entra para dentro
+        e vira as sete trombetas, chegando ao miolo, o Reino. As sete tigelas são outra série de sete, na 10ª
+        visão, e não saem de dentro dos selos.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f2eefb"/>
+            <stop offset="1" stop-color="#e0d9f3"/>
+        </linearGradient>
+        <marker id="st" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#6b46c1"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#2e2352; font-size:28px; font-weight:800; letter-spacing:1.1px; }
+        .rot  { fill:#6b46c1; font-size:18px; font-weight:700; }
+        .rotp { fill:#635a83; font-size:13px; }
+        .painel { fill:#ffffff; stroke:#cdc3ea; stroke-width:2; }
+        .selo   { fill:none; stroke:#3aa0ff; stroke-width:24; stroke-linecap:round; }
+        .tromb  { fill:none; stroke:#a679e8; stroke-width:24; stroke-linecap:round; }
+        .num    { fill:#ffffff; font-size:12px; font-weight:800; text-anchor:middle; dominant-baseline:central; }
+        .lin    { fill:#463b6b; font-size:12.5px; }
+        .linn   { fill:#6b46c1; font-size:12.5px; font-weight:800; }
+        .ouro   { fill:#b07d10; }
+        .ok     { fill:#2f8f5c; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">A ESTRUTURA DE REVELAÇÃO — O ROLO QUE SE DOBRA</text>
+    <text class="rotp" x="46" y="84" font-size="16">
+        O livro não é uma fila de símbolos. Depois da introdução (1:1-9), são 16 visões — e algumas não vêm DEPOIS das outras: vêm DENTRO delas.
+    </text>
+    <g transform="translate(46,112)">
+        <rect class="painel" width="390" height="380" rx="16"/>
+        <text class="rot" x="22" y="36">AS 16 VISÕES</text>
+        <text class="rotp" x="22" y="56">as que se DESDOBRAM estão em roxo</text>
+        <text class="lin" x="24" y="78" font-weight="800">1ª</text>
+        <text class="lin" x="48" y="78">1:10–3:22</text>
+        <text class="lin" x="132" y="78" font-size="11.5" fill="#7d749b">mensagens às sete congregações</text>
+        <text class="lin" x="24" y="97" font-weight="800">2ª</text>
+        <text class="lin" x="48" y="97">4:1–5:14</text>
+        <text class="lin" x="132" y="97" font-size="11.5" fill="#7d749b">o trono; o rolo é entregue ao Cordeiro</text>
+        <text class="lin" x="24" y="116" font-weight="800">3ª</text>
+        <text class="lin" x="48" y="116">6:1-17</text>
+        <text class="lin" x="132" y="116" font-size="11.5" fill="#7d749b">os seis primeiros selos; os quatro cavaleiros</text>
+        <text class="lin" x="24" y="135" font-weight="800">4ª</text>
+        <text class="lin" x="48" y="135">7:1-17</text>
+        <text class="lin" x="132" y="135" font-size="11.5" fill="#7d749b">os 144.000 selados; a grande multidão</text>
+        <rect x="18" y="142" width="354" height="19" rx="4" fill="#f3ecff"/>
+        <text class="linn" x="24" y="154" font-weight="800">5ª</text>
+        <text class="linn" x="48" y="154">8:1–9:21</text>
+        <text class="lin" x="132" y="154" font-size="11.5" fill="#7d749b">o 7º selo abre: seis toques de trombeta</text>
+        <rect x="18" y="161" width="354" height="19" rx="4" fill="#f3ecff"/>
+        <text class="linn" x="24" y="173" font-weight="800">6ª</text>
+        <text class="linn" x="48" y="173">10:1–11:19</text>
+        <text class="lin" x="132" y="173" font-size="11.5" fill="#7d749b">o pequeno rolo; a 7ª trombeta: o Reino</text>
+        <text class="lin" x="24" y="192" font-weight="800">7ª</text>
+        <text class="lin" x="48" y="192">12:1-17</text>
+        <text class="lin" x="132" y="192" font-size="11.5" fill="#7d749b">o nascimento do Reino; Satanás lançado</text>
+        <text class="lin" x="24" y="211" font-weight="800">8ª</text>
+        <text class="lin" x="48" y="211">13:1-18</text>
+        <text class="lin" x="132" y="211" font-size="11.5" fill="#7d749b">a fera do mar; a fera de dois chifres</text>
+        <text class="lin" x="24" y="230" font-weight="800">9ª</text>
+        <text class="lin" x="48" y="230">14:1-20</text>
+        <text class="lin" x="132" y="230" font-size="11.5" fill="#7d749b">os 144.000 no Monte Sião; a ceifa</text>
+        <text class="lin" x="24" y="249" font-weight="800">10ª</text>
+        <text class="lin" x="48" y="249">15:1–16:21</text>
+        <text class="lin" x="132" y="249" font-size="11.5" fill="#7d749b">as sete tigelas da ira</text>
+        <text class="lin" x="24" y="268" font-weight="800">11ª</text>
+        <text class="lin" x="48" y="268">17:1-18</text>
+        <text class="lin" x="132" y="268" font-size="11.5" fill="#7d749b">Babilônia, a Grande, e a fera escarlate</text>
+        <text class="lin" x="24" y="287" font-weight="800">12ª</text>
+        <text class="lin" x="48" y="287">18:1–19:10</text>
+        <text class="lin" x="132" y="287" font-size="11.5" fill="#7d749b">a queda de Babilônia; o casamento do Cordeiro</text>
+        <text class="lin" x="24" y="306" font-weight="800">13ª</text>
+        <text class="lin" x="48" y="306">19:11-21</text>
+        <text class="lin" x="132" y="306" font-size="11.5" fill="#7d749b">Jesus lidera os exércitos celestiais</text>
+        <text class="lin" x="24" y="325" font-weight="800">14ª</text>
+        <text class="lin" x="48" y="325">20:1-10</text>
+        <text class="lin" x="132" y="325" font-size="11.5" fill="#7d749b">Satanás no abismo; o Reinado Milenar</text>
+        <text class="lin" x="24" y="344" font-weight="800">15ª</text>
+        <text class="lin" x="48" y="344">20:11–21:8</text>
+        <text class="lin" x="132" y="344" font-size="11.5" fill="#7d749b">a ressurreição; novo céu e nova terra</text>
+        <text class="lin" x="24" y="363" font-weight="800">16ª</text>
+        <text class="lin" x="48" y="363">21:9–22:5</text>
+        <text class="lin" x="132" y="363" font-size="11.5" fill="#7d749b">a Nova Jerusalém; “Vem!”</text>
+    </g>
+
+    <g transform="translate(460,112)">
+        <rect class="painel" width="470" height="380" rx="16"/>
+        <text class="rot" x="22" y="36">O ROLO EM ESPIRAL</text>
+        <g transform="translate(0,22)">
+        <path class="selo" d="M235.0 48.0 L239.2 48.3 L243.5 48.7 L247.7 49.3 L251.8 50.0 L256.0 50.8 L260.1 51.8 L264.2 52.9 L268.2 54.1 L272.2 55.4 L276.1 56.9 L280.0 58.5 L283.8 60.2 L287.5 62.1 L291.2 64.0 L294.8 66.1 L298.3 68.3 L301.8 70.5 L305.1 72.9 L308.4 75.4 L311.6 78.0 L314.7 80.7 L317.7 83.5 L320.6 86.4 L323.5 89.4 L326.2 92.4 L328.8 95.5"/>
+        <path class="selo" d="M333.3 101.6 L335.6 104.9 L337.8 108.3 L339.9 111.8 L341.8 115.3 L343.7 118.9 L345.4 122.5 L347.0 126.2 L348.5 129.9 L349.8 133.7 L351.0 137.5 L352.1 141.3 L353.1 145.2 L353.9 149.1 L354.6 153.0 L355.2 156.9 L355.7 160.8 L356.0 164.7 L356.2 168.7 L356.3 172.6 L356.3 176.5 L356.1 180.4 L355.8 184.3 L355.4 188.2 L354.8 192.0 L354.2 195.8 L353.4 199.6"/>
+        <path class="selo" d="M351.6 206.6 L350.4 210.3 L349.2 213.9 L347.8 217.5 L346.4 221.1 L344.8 224.5 L343.1 228.0 L341.3 231.3 L339.4 234.6 L337.4 237.8 L335.2 241.0 L333.0 244.1 L330.7 247.1 L328.4 250.0 L325.9 252.8 L323.3 255.6 L320.7 258.2 L318.0 260.8 L315.2 263.2 L312.3 265.6 L309.3 267.9 L306.3 270.1 L303.3 272.1 L300.1 274.1 L296.9 276.0 L293.7 277.7 L290.4 279.4"/>
+        <path class="selo" d="M284.2 282.1 L280.8 283.5 L277.3 284.7 L273.9 285.8 L270.4 286.8 L266.9 287.6 L263.3 288.4 L259.8 289.0 L256.2 289.5 L252.6 289.9 L249.0 290.2 L245.5 290.4 L241.9 290.5 L238.3 290.4 L234.8 290.2 L231.2 289.9 L227.7 289.5 L224.2 289.0 L220.7 288.4 L217.3 287.7 L213.8 286.8 L210.5 285.9 L207.1 284.8 L203.8 283.6 L200.6 282.4 L197.4 281.0 L194.2 279.5"/>
+        <path class="selo" d="M188.5 276.5 L185.5 274.8 L182.6 273.0 L179.8 271.0 L177.0 269.0 L174.3 266.9 L171.6 264.7 L169.1 262.5 L166.6 260.1 L164.2 257.7 L161.9 255.2 L159.7 252.7 L157.5 250.1 L155.5 247.4 L153.5 244.7 L151.7 241.9 L149.9 239.0 L148.2 236.1 L146.7 233.2 L145.2 230.2 L143.8 227.2 L142.5 224.1 L141.4 221.1 L140.3 217.9 L139.3 214.8 L138.5 211.6 L137.7 208.4"/>
+        <path class="selo" d="M136.6 202.5 L136.1 199.2 L135.8 196.0 L135.6 192.8 L135.4 189.5 L135.4 186.3 L135.5 183.1 L135.6 179.9 L135.9 176.7 L136.3 173.5 L136.8 170.4 L137.4 167.2 L138.0 164.1 L138.8 161.1 L139.7 158.0 L140.7 155.0 L141.7 152.1 L142.9 149.1 L144.1 146.3 L145.5 143.4 L146.9 140.7 L148.4 138.0 L150.0 135.3 L151.7 132.7 L153.5 130.1 L155.3 127.7 L157.2 125.3"/>
+        <path class="selo" d="M160.9 120.9 L163.1 118.7 L165.2 116.6 L167.5 114.5 L169.8 112.6 L172.1 110.7 L174.5 108.8 L177.0 107.1 L179.5 105.5 L182.1 103.9 L184.7 102.4 L187.3 101.0 L190.0 99.7 L192.7 98.5 L195.4 97.4 L198.2 96.4 L201.0 95.4 L203.8 94.6 L206.7 93.8 L209.5 93.2 L212.4 92.6 L215.3 92.2 L218.1 91.8 L221.0 91.5 L223.9 91.3 L226.8 91.2 L229.7 91.2"/>
+        <path class="tromb" d="M235.0 91.5 L237.8 91.8 L240.7 92.1 L243.5 92.6 L246.3 93.1 L249.0 93.7 L251.7 94.5 L254.4 95.3 L257.1 96.1 L259.7 97.1 L262.3 98.2 L264.9 99.3 L267.4 100.5 L269.8 101.8 L272.2 103.2 L274.6 104.6 L276.9 106.1 L279.1 107.7 L281.3 109.3 L283.4 111.0 L285.5 112.8 L287.5 114.6 L289.4 116.5 L291.3 118.5 L293.1 120.5 L294.8 122.5 L296.5 124.7"/>
+        <path class="tromb" d="M299.3 128.7 L300.8 130.9 L302.1 133.2 L303.4 135.5 L304.6 137.9 L305.8 140.2 L306.8 142.6 L307.8 145.1 L308.7 147.5 L309.5 150.0 L310.2 152.5 L310.8 155.0 L311.4 157.5 L311.8 160.0 L312.2 162.6 L312.5 165.1 L312.7 167.6 L312.9 170.2 L312.9 172.7 L312.9 175.2 L312.8 177.8 L312.6 180.3 L312.3 182.7 L312.0 185.2 L311.5 187.7 L311.0 190.1 L310.5 192.5"/>
+        <path class="tromb" d="M309.2 196.9 L308.4 199.3 L307.5 201.5 L306.5 203.8 L305.5 206.0 L304.5 208.2 L303.3 210.3 L302.1 212.4 L300.8 214.4 L299.5 216.4 L298.1 218.4 L296.6 220.3 L295.1 222.1 L293.6 223.9 L291.9 225.6 L290.3 227.3 L288.5 228.9 L286.8 230.4 L285.0 231.9 L283.1 233.3 L281.2 234.7 L279.3 236.0 L277.4 237.2 L275.4 238.3 L273.4 239.4 L271.3 240.4 L269.2 241.4"/>
+        <path class="tromb" d="M265.3 242.9 L263.2 243.7 L261.0 244.3 L258.9 244.9 L256.7 245.5 L254.5 245.9 L252.3 246.3 L250.1 246.6 L247.9 246.8 L245.7 247.0 L243.5 247.1 L241.4 247.1 L239.2 247.1 L237.0 246.9 L234.9 246.7 L232.7 246.5 L230.6 246.1 L228.5 245.7 L226.4 245.3 L224.3 244.7 L222.3 244.2 L220.3 243.5 L218.3 242.8 L216.4 242.0 L214.4 241.1 L212.6 240.2 L210.7 239.3"/>
+        <path class="tromb" d="M207.4 237.3 L205.7 236.2 L204.0 235.1 L202.3 233.8 L200.7 232.6 L199.2 231.3 L197.7 229.9 L196.2 228.5 L194.8 227.1 L193.5 225.6 L192.2 224.0 L191.0 222.5 L189.8 220.9 L188.7 219.3 L187.6 217.6 L186.6 215.9 L185.6 214.2 L184.8 212.5 L183.9 210.8 L183.2 209.0 L182.4 207.2 L181.8 205.4 L181.2 203.6 L180.7 201.8 L180.2 199.9 L179.8 198.1 L179.5 196.2"/>
+        <path class="tromb" d="M179.0 192.8 L178.8 190.9 L178.7 189.1 L178.7 187.2 L178.7 185.4 L178.8 183.6 L178.9 181.7 L179.1 179.9 L179.4 178.1 L179.7 176.4 L180.1 174.6 L180.5 172.9 L181.0 171.2 L181.5 169.5 L182.1 167.8 L182.7 166.2 L183.4 164.5 L184.1 163.0 L184.9 161.4 L185.8 159.9 L186.6 158.4 L187.6 157.0 L188.5 155.5 L189.5 154.2 L190.6 152.8 L191.7 151.5 L192.8 150.3"/>
+        <path class="tromb" d="M195.0 148.1 L196.2 146.9 L197.4 145.9 L198.7 144.8 L200.0 143.8 L201.3 142.9 L202.7 142.0 L204.1 141.1 L205.5 140.3 L206.9 139.6 L208.3 138.9 L209.8 138.3 L211.3 137.7 L212.7 137.1 L214.2 136.6 L215.7 136.2 L217.2 135.8 L218.7 135.5 L220.3 135.2 L221.8 134.9 L223.3 134.7 L224.8 134.6 L226.3 134.5 L227.8 134.5 L229.3 134.5 L230.8 134.6 L232.3 134.7"/>
+            <circle cx="235" cy="180" r="33" fill="#ffc857" stroke="#b07d10" stroke-width="2"/>
+            <text x="235" y="176" font-size="11.5" font-weight="800" text-anchor="middle" fill="#2e2352">O REINO</text>
+            <text x="235" y="191" font-size="9.5" text-anchor="middle" fill="#5c4a10">3º ai · 11:15</text>
+        <text class="num" x="287.5" y="62.1">1</text>
+        <text class="num" x="353.9" y="149.1">2</text>
+        <text class="num" x="328.4" y="250.0">3</text>
+        <text class="num" x="238.3" y="290.4">4</text>
+        <text class="num" x="155.5" y="247.4">5</text>
+        <text class="num" x="138.8" y="161.1">6</text>
+        <text class="num" x="192.7" y="98.5">7</text>
+        <text class="num" x="269.8" y="101.8">1</text>
+        <text class="num" x="311.8" y="160.0">2</text>
+        <text class="num" x="293.6" y="223.9">3</text>
+        <text class="num" x="237.0" y="246.9">4</text>
+        <text class="num" x="188.7" y="219.3">5</text>
+        <text class="num" x="181.5" y="169.5">6</text>
+        <text class="num" x="212.7" y="137.1">7</text>
+            <circle cx="159.0" cy="123.1" r="6.5" fill="#ffc857" stroke="#b07d10" stroke-width="1.5"/>
+            <text x="159" y="106" font-size="11" font-weight="800" text-anchor="middle" fill="#b07d10">4ª</text>
+        </g>
+        <text class="rotp" x="22" y="356" font-size="12"><tspan fill="#1c6ea8" font-weight="800">━ os 7 selos</tspan>   <tspan fill="#7248b0" font-weight="800">━ as 7 trombetas</tspan>   <tspan fill="#b07d10" font-weight="800">● o Reino</tspan></text>
+        <text class="rotp" x="22" y="373" font-size="11.5">No 7º selo a linha não termina: entra para dentro. É o mesmo rolo.</text>
+    </g>
+
+    <g transform="translate(954,112)">
+        <rect class="painel" width="400" height="380" rx="16"/>
+        <text class="rot" x="22" y="36">O ENCAIXE</text>
+        <text class="rotp" x="22" y="56">onde quase todo mundo se perde</text>
+        <g transform="translate(22,76)">
+            <rect width="356" height="38" rx="8" fill="#e9effb" stroke="#a9b8e8"/>
+            <text x="12" y="17" font-size="12.5" font-weight="800" fill="#232a55">O ROLO — 7 selos</text>
+            <text x="12" y="31" font-size="11" fill="#7d749b">2ª visão · Jeová o entrega ao Cordeiro</text>
+        </g>
+        <path d="M34 114 L34 124" stroke="#6b46c1" stroke-width="1.6" marker-end="url(#st)"/>
+        <g transform="translate(30,126)">
+            <rect width="348" height="38" rx="8" fill="#e9f4ff" stroke="#8fc4ec"/>
+            <text x="12" y="17" font-size="12.5" font-weight="800" fill="#1c6ea8">selos 1 a 6</text>
+            <text x="12" y="31" font-size="11" fill="#7d749b">3ª visão · os quatro cavaleiros</text>
+        </g>
+        <path d="M42 164 L42 174" stroke="#6b46c1" stroke-width="1.6" marker-end="url(#st)"/>
+        <g transform="translate(38,176)">
+            <rect width="340" height="38" rx="8" fill="#f3ecff" stroke="#c4a6f0"/>
+            <text x="12" y="17" font-size="12.5" font-weight="800" fill="#6b46c1">7º SELO → não é um evento</text>
+            <text x="12" y="31" font-size="11" fill="#7d749b">abre-se em SETE TROMBETAS (8:1)</text>
+        </g>
+        <path d="M50 214 L50 224" stroke="#6b46c1" stroke-width="1.6" marker-end="url(#st)"/>
+        <g transform="translate(46,226)">
+            <rect width="332" height="38" rx="8" fill="#f3ecff" stroke="#c4a6f0"/>
+            <text x="12" y="17" font-size="12.5" font-weight="800" fill="#6b46c1">trombetas 1 a 6</text>
+            <text x="12" y="31" font-size="11" fill="#7d749b">5ª visão · a 5ª e a 6ª = 1º e 2º ai</text>
+        </g>
+        <path d="M58 264 L58 274" stroke="#6b46c1" stroke-width="1.6" marker-end="url(#st)"/>
+        <g transform="translate(54,276)">
+            <rect width="324" height="38" rx="8" fill="#fdf4e0" stroke="#e8c47a"/>
+            <text x="12" y="17" font-size="12.5" font-weight="800" fill="#b07d10">7ª TROMBETA → nem esta é um evento</text>
+            <text x="12" y="31" font-size="11" fill="#7d749b">6ª visão · anuncia o 3º ai</text>
+        </g>
+        <path d="M66 314 L66 324" stroke="#6b46c1" stroke-width="1.6" marker-end="url(#st)"/>
+        <g transform="translate(62,326)">
+            <rect width="316" height="38" rx="8" fill="#fff6dd" stroke="#ffc857"/>
+            <text x="12" y="17" font-size="12.5" font-weight="800" fill="#8a5f00">O REINO de Jeová e do seu Cristo</text>
+            <text x="12" y="31" font-size="11" fill="#7d749b">11:15 · o miolo do rolo</text>
+        </g>
+        <rect x="22" y="378" width="0" height="0"/>
+    </g>
+
+    <g transform="translate(46,532)">
+        <g>
+            <rect class="painel" width="420" height="224" rx="16"/>
+            <text class="rot" x="24" y="42">POR QUE ISSO CONFUNDE</text>
+            <text class="rotp" x="24" y="76" font-size="14">Quem lê em fila espera que o sétimo selo traga um</text>
+            <text class="rotp" x="24" y="98" font-size="14">acontecimento — e acha que não aconteceu nada.</text>
+            <text class="rotp" x="24" y="128" font-size="14">Mas o sétimo selo é a própria porta: dele saem as</text>
+            <text class="rotp" x="24" y="150" font-size="14">sete trombetas. O livro não corta; ele encaixa.</text>
+            <text class="rotp" x="24" y="184" font-size="14" font-style="italic">Duas visões se desdobram: a 5ª e a 6ª.</text>
+        </g>
+        <g transform="translate(444,0)">
+            <rect class="painel" width="420" height="224" rx="16" fill="#f6f1ff" stroke="#c4a6f0"/>
+            <text class="rot" x="24" y="42">NEM TODO “SETE” ENCAIXA</text>
+            <text class="rotp" x="24" y="76" font-size="14">As sete tigelas da ira também são sete — mas são</text>
+            <text class="rotp" x="24" y="98" font-size="14">a 10ª visão, e NÃO saem de dentro dos selos.</text>
+            <text class="rotp" x="24" y="128" font-size="14">Por isso elas ficam fora da espiral: reconhecer o</text>
+            <text class="rotp" x="24" y="150" font-size="14">que encaixa é tão importante quanto o que não.</text>
+            <text class="rotp" x="24" y="184" font-size="14" font-style="italic">— Revelação 15:1–16:21</text>
+        </g>
+        <g transform="translate(888,0)">
+            <rect class="painel" width="420" height="224" rx="16" fill="#eef8f2" stroke="#a9dcc0"/>
+            <text class="rot ok" x="24" y="42">O QUE A PLANTA REVELA</text>
+            <text class="rotp" x="24" y="76" font-size="14">O livro dedica 62 versículos a conselho prático às</text>
+            <text class="rotp" x="24" y="98" font-size="14">sete congregações — e 17 aos quatro cavaleiros.</text>
+            <text class="rotp" x="24" y="128" font-size="14">Tudo converge para um miolo: o Reino (11:15) e a</text>
+            <text class="rotp" x="24" y="150" font-size="14">Nova Jerusalém, que fecha com um convite: “Vem!”</text>
+            <text class="ok" x="24" y="192" font-size="17" font-weight="800">Arquitetura assim não se rabisca: projeta-se.</text>
+        </g>
+    </g>
+</svg>
