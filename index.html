@@ -1495,7 +1495,7 @@
         </section>
 
         <!-- ══ Teve um projeto? (Arquitetura da Criação) ═══════════════════════ -->
-        <section x-show="rota.modulo === 'criacao'"
+        <section x-show="rota.modulo === 'criacao' || rota.modulo === 'entenda'"
                  x-data="criacao()"
                  x-init="init()">
 
@@ -1507,13 +1507,11 @@
                     <button class="btn btn-sm btn-outline-secondary" @click="irEstudo()" aria-label="Voltar">
                         <i class="bi bi-arrow-left" aria-hidden="true"></i>
                     </button>
-                    <h1 class="h5 mb-0 me-auto">Teve um Projeto?</h1>
+                    <h1 class="h5 mb-0 me-auto" x-text="tituloModo"></h1>
                     <span class="badge text-bg-light border" x-text="`${totalConcluidos}/${total}`"></span>
                 </div>
 
-                <p class="text-muted small mb-3">
-                    Descubra os mistérios escondidos na criação e dê louvor à sabedoria do Criador, Jeová.
-                </p>
+                <p class="text-muted small mb-3" x-text="subtituloModo"></p>
 
                 <div class="progress mb-4" style="height:6px" role="progressbar">
                     <div class="progress-bar" :style="`width:${progressoPercent}%`"></div>
@@ -1528,12 +1526,14 @@
 
                 <template x-for="grupo in categorias" :key="grupo.chave">
                     <div class="mb-4">
+                        <template x-if="agrupado">
                         <div class="d-flex align-items-center gap-2 mb-2">
                             <span class="text-uppercase small fw-semibold text-muted" x-text="grupo.rotulo"></span>
                             <template x-if="grupo.concluida">
                                 <span class="badge text-bg-success" title="Categoria concluída"><i class="bi bi-patch-check-fill"></i></span>
                             </template>
                         </div>
+                        </template>
                         <div class="row g-3">
                             <template x-for="m in grupo.modulos" :key="m.id">
                                 <div class="col-6 col-lg-4">
@@ -5302,7 +5302,7 @@
         </section>
 
         <!-- ══ FALLBACK — módulos Em breve ══════════════════════════════════ -->
-        <section x-show="rota.modulo !== 'home' && rota.modulo !== 'hub' && rota.modulo !== 'sobre' && rota.modulo !== 'cartao' && rota.modulo !== 'ice' && rota.modulo !== 'anotacoes' && rota.modulo !== 'guias' && rota.modulo !== 'poesia' && rota.modulo !== 'receitas' && rota.modulo !== 'jogo' && rota.modulo !== 'criacao' && rota.modulo !== 'caderno' && rota.modulo !== 'prep' && rota.modulo !== 'financeiro' && rota.modulo !== 'metas' && rota.modulo !== 'ministerio' && rota.modulo !== 'estudo' && rota.modulo !== 'leitura' && rota.modulo !== 'calendario' && rota.modulo !== 'perfil'"
+        <section x-show="rota.modulo !== 'home' && rota.modulo !== 'hub' && rota.modulo !== 'sobre' && rota.modulo !== 'cartao' && rota.modulo !== 'ice' && rota.modulo !== 'anotacoes' && rota.modulo !== 'guias' && rota.modulo !== 'poesia' && rota.modulo !== 'receitas' && rota.modulo !== 'jogo' && rota.modulo !== 'criacao' && rota.modulo !== 'entenda' && rota.modulo !== 'caderno' && rota.modulo !== 'prep' && rota.modulo !== 'financeiro' && rota.modulo !== 'metas' && rota.modulo !== 'ministerio' && rota.modulo !== 'estudo' && rota.modulo !== 'leitura' && rota.modulo !== 'calendario' && rota.modulo !== 'perfil'"
                  class="papiro-app">
             <div class="d-flex align-items-center gap-2 mb-4">
                 <button class="btn btn-sm btn-outline-secondary" @click="irHome()">
