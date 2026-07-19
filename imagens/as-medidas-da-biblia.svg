@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">As medidas da Bíblia — do côvado ao estádio, encostadas na nossa realidade</title>
+    <desc id="desc">As medidas do apêndice B14-A da Tradução do Novo Mundo em tamanho real de
+        comparação. As medidas lineares vêm do corpo: um dedo é 1,85 cm, uma largura de mão são
+        quatro dedos (7,4 cm), um palmo são três larguras de mão (22,2 cm) e o côvado, a medida mais
+        usada, vai do cotovelo à ponta do dedo médio: 44,5 cm. Há ainda o côvado longo, de 51,8 cm
+        (sete larguras de mão), a braça de 1,8 m, a cana de 2,67 m e o estádio romano de 185 m. As
+        capacidades formam uma escada única: o logue de 0,31 litro, o him de 3,67 litros, o gômer de
+        2,2 litros, o bato de 22 litros para líquidos, a efa de 22 litros para secos — a mesma
+        capacidade — e o coro de 220 litros. Três exemplos fecham o quadro: a arca de Noé tinha 300
+        côvados, isto é, 133,5 metros, mais que um campo de futebol; Golias media seis côvados e um
+        palmo, cerca de 2,89 metros; e o mar de fundição do templo continha 2.000 batos, 44.000
+        litros, o equivalente a 44 caixas d'água de mil litros.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#eef1fa"/>
+            <stop offset="1" stop-color="#dbe1f2"/>
+        </linearGradient>
+        <marker id="seta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#3c4a9e"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#232a55; font-size:28px; font-weight:800; letter-spacing:1.1px; }
+        .rot  { fill:#3c4a9e; font-size:18px; font-weight:700; }
+        .rotp { fill:#5f6788; font-size:13px; }
+        .painel { fill:#ffffff; stroke:#c3cbe8; stroke-width:2; }
+        .not  { font-size:12px; font-weight:700; text-anchor:middle; fill:#5f6788; }
+        .cx   { font-size:15px; font-weight:800; text-anchor:middle; }
+        .val  { font-size:14px; font-weight:800; fill:#232a55; }
+        .ouro { fill:#b07d10; }
+        .ok   { fill:#2f8f5c; }
+        .cota { stroke:#3c4a9e; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">AS MEDIDAS DA BÍBLIA — B14-A</text>
+    <text class="rotp" x="46" y="84" font-size="16">
+        A tabela de conversão não resolve nada sozinha: “300 côvados” não vira imagem na cabeça de ninguém. Estas medidas vieram do corpo — e cabem na sua realidade.
+    </text>
+
+    <!-- ══ Painel 1: as medidas do corpo ══════════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" width="640" height="330" rx="16"/>
+        <text class="rot" x="24" y="38">1. AS MEDIDAS SAÍRAM DO CORPO</text>
+        <text class="rotp" x="24" y="60">O côvado é o antebraço: do cotovelo à ponta do dedo médio.</text>
+
+        <!-- braço estilizado com a cota do côvado -->
+        <g transform="translate(40,86)">
+            <path d="M20 150 L70 96 L470 40" stroke="#e0b48c" stroke-width="30" stroke-linecap="round" fill="none"/>
+            <circle cx="70" cy="96" r="16" fill="#e0b48c"/>
+            <text class="not" x="70" y="140">cotovelo</text>
+            <text class="not" x="470" y="18">ponta do dedo médio</text>
+            <line class="cota" x1="70" y1="70" x2="470" y2="70" marker-end="url(#seta)"/>
+            <line class="cota" x1="70" y1="60" x2="70" y2="80"/>
+            <line class="cota" x1="470" y1="60" x2="470" y2="80"/>
+            <rect x="215" y="56" width="112" height="26" rx="6" fill="#ffffff"/>
+            <text class="cx" x="271" y="74" fill="#3c4a9e">CÔVADO 44,5 cm</text>
+        </g>
+
+        <!-- escada das medidas menores, em escala -->
+        <g transform="translate(40,240)">
+            <rect x="0" y="0" width="17" height="16" rx="3" fill="#c3cbe8"/>
+            <text class="not" x="8" y="34">dedo</text>
+            <text class="not" x="8" y="50" font-weight="400">1,85 cm</text>
+
+            <rect x="70" y="0" width="66" height="16" rx="3" fill="#a9b5d6"/>
+            <text class="not" x="103" y="34">largura da mão</text>
+            <text class="not" x="103" y="50" font-weight="400">7,4 cm · 4 dedos</text>
+
+            <rect x="200" y="0" width="200" height="16" rx="3" fill="#7d8dc0"/>
+            <text class="not" x="300" y="34">palmo</text>
+            <text class="not" x="300" y="50" font-weight="400">22,2 cm · 3 larguras</text>
+
+            <rect x="440" y="0" width="140" height="16" rx="3" fill="#3c4a9e"/>
+            <text class="not" x="510" y="34" fill="#3c4a9e">côvado longo</text>
+            <text class="not" x="510" y="50" font-weight="400">51,8 cm · 7 larguras</text>
+        </g>
+    </g>
+
+    <!-- ══ Painel 2: as capacidades ═══════════════════════════════════════ -->
+    <g transform="translate(716,112)">
+        <rect class="painel" width="638" height="330" rx="16"/>
+        <text class="rot" x="24" y="38">2. UMA ESCADA SÓ DE CAPACIDADES</text>
+        <text class="rotp" x="24" y="60">A efa (secos) e o bato (líquidos) têm a mesma capacidade: 22 litros.</text>
+
+        <g transform="translate(40,84)">
+            <!-- coro -->
+            <rect x="0" y="10" width="120" height="180" rx="8" fill="#3aa0ff" opacity=".85"/>
+            <text class="cx" x="60" y="212" fill="#232a55">CORO</text>
+            <text class="not" x="60" y="232" font-weight="400">220 L · 10 batos</text>
+
+            <!-- bato -->
+            <rect x="170" y="118" width="86" height="72" rx="6" fill="#3aa0ff"/>
+            <text class="cx" x="213" y="212" fill="#232a55">BATO</text>
+            <text class="not" x="213" y="232" font-weight="400">22 L · líquidos</text>
+
+            <!-- efa -->
+            <rect x="300" y="118" width="86" height="72" rx="6" fill="#b07d10"/>
+            <text class="cx" x="343" y="212" fill="#232a55">EFA</text>
+            <text class="not" x="343" y="232" font-weight="400">22 L · secos</text>
+
+            <!-- gômer -->
+            <rect x="432" y="168" width="44" height="22" rx="4" fill="#b07d10" opacity=".75"/>
+            <text class="cx" x="454" y="212" fill="#232a55">GÔMER</text>
+            <text class="not" x="454" y="232" font-weight="400">2,2 L · 1/10 efa</text>
+
+            <!-- him / logue -->
+            <rect x="516" y="176" width="30" height="14" rx="3" fill="#7d8dc0"/>
+            <text class="cx" x="531" y="212" fill="#232a55">HIM</text>
+            <text class="not" x="531" y="232" font-weight="400">3,67 L</text>
+
+            <line class="cota" x1="170" y1="106" x2="386" y2="106"/>
+            <text class="not" x="278" y="98" fill="#2f8f5c">a mesma capacidade</text>
+        </g>
+        <text class="rotp" x="40" y="308">O maná: cada israelita recolhia um gômer por dia. (Êxodo 16:16, 36)</text>
+    </g>
+
+    <!-- ══ Rodapé: três exemplos que dão escala ═══════════════════════════ -->
+    <g transform="translate(46,466)">
+        <rect class="painel" width="420" height="230" rx="16"/>
+        <text class="rot" x="24" y="40">A ARCA DE NOÉ</text>
+        <text class="val" x="24" y="68">300 côvados = 133,5 m</text>
+        <g transform="translate(24,90)">
+            <rect x="0" y="0" width="372" height="20" rx="4" fill="#8a5a3a"/>
+            <text class="not" x="186" y="36" font-weight="400">arca — 133,5 m</text>
+            <rect x="0" y="52" width="293" height="14" rx="4" fill="#3ba054"/>
+            <text class="not" x="146" y="86" font-weight="400">campo de futebol — 105 m</text>
+            <rect x="0" y="102" width="33" height="10" rx="3" fill="#c3cbe8"/>
+            <text class="not" x="60" y="112" font-weight="400" text-anchor="start">ônibus — 12 m</text>
+        </g>
+        <text class="rotp" x="24" y="216">Gênesis 6:15 — 133,5 × 22,25 × 13,35 m.</text>
+    </g>
+
+    <g transform="translate(490,466)">
+        <rect class="painel" width="420" height="230" rx="16"/>
+        <text class="rot" x="24" y="40">GOLIAS</text>
+        <text class="val" x="24" y="68">6 côvados e 1 palmo = 2,89 m</text>
+        <g transform="translate(40,88)">
+            <!-- pessoa 1,75 m -->
+            <g fill="#3aa0ff">
+                <circle cx="40" cy="60" r="9"/>
+                <rect x="31" y="72" width="18" height="40" rx="6"/>
+                <rect x="32" y="110" width="7" height="30" rx="3"/>
+                <rect x="42" y="110" width="7" height="30" rx="3"/>
+            </g>
+            <text class="not" x="40" y="158" font-weight="400">1,75 m</text>
+            <!-- Golias -->
+            <g fill="#b07d10">
+                <circle cx="140" cy="20" r="14"/>
+                <rect x="126" y="38" width="28" height="62" rx="9"/>
+                <rect x="128" y="98" width="11" height="42" rx="5"/>
+                <rect x="143" y="98" width="11" height="42" rx="5"/>
+            </g>
+            <text class="not" x="140" y="158" font-weight="700" fill="#b07d10">2,89 m</text>
+            <!-- porta -->
+            <rect x="250" y="34" width="60" height="106" rx="3" fill="#ffffff" stroke="#c3cbe8" stroke-width="2"/>
+            <text class="not" x="280" y="158" font-weight="400">porta 2,10 m</text>
+            <line x1="0" y1="140" x2="340" y2="140" stroke="#c3cbe8" stroke-width="2"/>
+        </g>
+        <text class="rotp" x="24" y="216">1 Samuel 17:4 — a couraça dele pesava 57 kg.</text>
+    </g>
+
+    <g transform="translate(934,466)">
+        <rect class="painel" width="420" height="230" rx="16"/>
+        <text class="rot" x="24" y="40">O “MAR DE FUNDIÇÃO”</text>
+        <text class="val" x="24" y="68">2.000 batos = 44.000 litros</text>
+        <g transform="translate(24,88)">
+            <g fill="#3aa0ff">
+                <rect x="0" y="0" width="26" height="20" rx="3"/><rect x="34" y="0" width="26" height="20" rx="3"/>
+                <rect x="68" y="0" width="26" height="20" rx="3"/><rect x="102" y="0" width="26" height="20" rx="3"/>
+                <rect x="136" y="0" width="26" height="20" rx="3"/><rect x="170" y="0" width="26" height="20" rx="3"/>
+                <rect x="204" y="0" width="26" height="20" rx="3"/><rect x="238" y="0" width="26" height="20" rx="3"/>
+                <rect x="272" y="0" width="26" height="20" rx="3"/><rect x="306" y="0" width="26" height="20" rx="3"/>
+                <rect x="340" y="0" width="26" height="20" rx="3"/>
+                <rect x="0" y="28" width="26" height="20" rx="3"/><rect x="34" y="28" width="26" height="20" rx="3"/>
+                <rect x="68" y="28" width="26" height="20" rx="3"/><rect x="102" y="28" width="26" height="20" rx="3"/>
+                <rect x="136" y="28" width="26" height="20" rx="3"/><rect x="170" y="28" width="26" height="20" rx="3"/>
+                <rect x="204" y="28" width="26" height="20" rx="3"/><rect x="238" y="28" width="26" height="20" rx="3"/>
+                <rect x="272" y="28" width="26" height="20" rx="3"/><rect x="306" y="28" width="26" height="20" rx="3"/>
+                <rect x="340" y="28" width="26" height="20" rx="3"/>
+                <rect x="0" y="56" width="26" height="20" rx="3"/><rect x="34" y="56" width="26" height="20" rx="3"/>
+                <rect x="68" y="56" width="26" height="20" rx="3"/><rect x="102" y="56" width="26" height="20" rx="3"/>
+                <rect x="136" y="56" width="26" height="20" rx="3"/><rect x="170" y="56" width="26" height="20" rx="3"/>
+                <rect x="204" y="56" width="26" height="20" rx="3"/><rect x="238" y="56" width="26" height="20" rx="3"/>
+                <rect x="272" y="56" width="26" height="20" rx="3"/><rect x="306" y="56" width="26" height="20" rx="3"/>
+                <rect x="340" y="56" width="26" height="20" rx="3"/>
+                <rect x="0" y="84" width="26" height="20" rx="3"/><rect x="34" y="84" width="26" height="20" rx="3"/>
+                <rect x="68" y="84" width="26" height="20" rx="3"/><rect x="102" y="84" width="26" height="20" rx="3"/>
+                <rect x="136" y="84" width="26" height="20" rx="3"/><rect x="170" y="84" width="26" height="20" rx="3"/>
+                <rect x="204" y="84" width="26" height="20" rx="3"/><rect x="238" y="84" width="26" height="20" rx="3"/>
+                <rect x="272" y="84" width="26" height="20" rx="3"/><rect x="306" y="84" width="26" height="20" rx="3"/>
+                <rect x="340" y="84" width="26" height="20" rx="3"/>
+            </g>
+            <text class="not" x="186" y="122" font-weight="400">cada caixa = 1.000 litros · 44 caixas</text>
+        </g>
+        <text class="rotp" x="24" y="216">1 Reis 7:23-26 — apoiado sobre doze touros de cobre.</text>
+    </g>
+
+    <text class="rotp" x="46" y="736" font-size="15">
+        DISTÂNCIAS: 1 estádio romano = 185 m. Emaús ficava a 60 estádios de Jerusalém — 11,1 km, cerca de duas horas e meia a pé. (Lucas 24:13)
+    </text>
+    <text class="rotp" x="46" y="762" font-size="13">
+        Fonte: apêndice B14-A, “Medidas”, da Tradução do Novo Mundo das Escrituras Sagradas (wol.jw.org).
+    </text>
+</svg>

@@ -1100,5 +1100,43 @@
         "data_criacao": 1784248026391,
         "data_atualizacao": 1784323528088,
         "imagem": "a-estrutura-de-revelacao.svg"
+    },
+    {
+        "id": 64,
+        "titulo": "As Medidas da Bíblia",
+        "categoria": "entenda",
+        "tipo": "medidas_biblia",
+        "icone": "bi-rulers",
+        "ordem": 59,
+        "conceito": "<p>“A arca tinha <strong>300 côvados</strong> de comprimento.” “Golias media <strong>seis côvados e um palmo</strong>.” “O mar de fundição continha <strong>2.000 batos</strong>.” A gente lê, concorda com a cabeça — e não enxerga absolutamente nada. O número passa, e a cena bíblica fica sem tamanho.</p><p>A Tradução do Novo Mundo traz uma tabela de conversão no apêndice <strong>B14-A</strong>, e ela é ótima. Só que consultar uma tabela não resolve o problema: <strong>saber que um côvado tem 44,5 cm não é a mesma coisa que enxergar 300 deles</strong>.</p><p>O detalhe bonito é de onde essas medidas vieram. Não havia um padrão guardado num cofre: elas vieram <strong>do corpo</strong>. Um dedo, uma largura de mão (quatro dedos), um palmo (três larguras), e o côvado — <strong>o antebraço inteiro</strong>, do cotovelo à ponta do dedo médio. Você carrega a régua com você desde que nasceu.</p><p>As capacidades seguem a mesma lógica prática, numa escada simples que vai do <strong>logue</strong> (0,31 L) ao <strong>coro</strong> (220 L). E ali mora uma elegância que quase ninguém percebe: a <strong>efa</strong>, que mede secos, e o <strong>bato</strong>, que mede líquidos, têm exatamente a mesma capacidade.</p>",
+        "desafio": "<p>Nada de consultar tabela: <strong>a conversão é sua</strong>. São seis passos, um por vez, e cada um só libera o seguinte quando fecha.</p><p>Descubra de que parte do corpo saiu o côvado, meça <strong>a arca de Noé</strong> em metros e veja contra o que ela encosta, levante <strong>Golias</strong> ao lado de uma pessoa e de uma porta, encha o <strong>“mar” do templo</strong> em caixas d’água, ponha os <strong>gômeres</strong> de maná dentro da efa e estique a caminhada até <strong>Emaús</strong> em quilômetros.</p><p>A cena mede junto: cada medida bíblica aparece <strong>lado a lado, na mesma escala</strong>, com algo cujo tamanho você já conhece.</p>",
+        "reflexao": "<p>Agora os números têm corpo. A arca não era um barquinho de desenho animado: <strong>133,5 m de comprimento</strong> — mais que um campo de futebol —, por 22,25 m de largura e 13,35 m de altura. Golias não era só “um homem grande”: <strong>2,89 m</strong>, alto demais para passar por uma porta, com uma couraça de 57 kg. E contra isso foi um pastorzinho com cinco pedras, dizendo que “a batalha pertence a Jeová”. (1 Samuel 17:45-47)</p><p>Repare no que o apêndice B14-A revela sobre quem escreveu a Bíblia: as medidas são <strong>práticas, humanas e consistentes</strong>. Vieram do braço e da mão porque foram feitas para gente comum usar no campo, na feira e na obra — e mesmo assim se encaixam numa escada exata, em que a efa e o bato empatam em 22 litros e ambos são um décimo do coro.</p><p>Vale reparar também no maná: <strong>um gômer por pessoa</strong>, todo dia. Quem recolheu muito não teve demais; quem recolheu pouco não teve falta. (Êxodo 16:18) A medida não era enfeite — era o registro de um cuidado diário e exato.</p><p>Da próxima vez que você ler “sessenta estádios”, não vai passar batido: são <strong>11 km</strong>, duas horas e meia de caminhada — e ainda deu tempo de voltar correndo a Jerusalém para contar que tinham visto o Senhor.</p>",
+        "referencia": "Gênesis 6:15 · 1 Samuel 17:4 · 1 Reis 7:23-26 · Êxodo 16:16, 36 · Lucas 24:13 · Apêndice B14-A, “Medidas”, da Tradução do Novo Mundo das Escrituras Sagradas",
+        "link_jw": "https://wol.jw.org/pt/wol/d/r5/lp-t/1001070235",
+        "config": "{}",
+        "xp": 130,
+        "publicar": 1,
+        "data_criacao": 1784483934613,
+        "data_atualizacao": 1784483934613,
+        "imagem": "as-medidas-da-biblia.svg"
+    },
+    {
+        "id": 65,
+        "titulo": "O Dinheiro e os Pesos da Bíblia",
+        "categoria": "entenda",
+        "tipo": "dinheiro_biblia",
+        "icone": "bi-coin",
+        "ordem": 60,
+        "conceito": "<p>Este é o irmão mais perigoso do problema das medidas. Quando alguém lê “<strong>300 denários</strong>”, “<strong>duas moedinhas</strong>” ou “<strong>10.000 talentos</strong>”, não faz ideia se aquilo é muito ou pouco — e sem isso <strong>as parábolas de Jesus perdem exatamente o contraste que as sustenta</strong>.</p><p>Repare: a história do escravo que foi perdoado e saiu cobrando o conservo só funciona se a diferença entre as duas dívidas for <em>absurda</em>. A oferta da viúva só emociona se dermos ao seu valor a <strong>miudeza real</strong> que ele tinha. E o protesto de Judas contra o perfume só se explica se soubermos o que aquele frasco custava.</p><p>O apêndice <strong>B14-B</strong> traz a tabela — gera, beca, pim, siclo, mina, talento; lépton, quadrante, assário, denário, dracma. Mas tabela nenhuma vira intuição. O que vira é uma régua só, que qualquer pessoa entende sem converter nada: <strong>o dia de trabalho</strong>.</p><p>É essa a chave. Um denário era o <strong>salário de um dia de doze horas</strong>. A partir daí, tudo na Bíblia ganha preço.</p>",
+        "desafio": "<p>São cinco passos, e a régua é sempre a mesma: <strong>dias de trabalho</strong>.</p><p>Descubra quanto valia um <strong>denário</strong>, fatie esse denário até achar o tamanho das <strong>duas moedinhas da viúva</strong>, suba a escada de pesos do <strong>siclo ao talento</strong>, meça a distância entre as <strong>duas dívidas</strong> da parábola do escravo impiedoso e conte quantos meses de salário Maria derramou nos pés de Jesus.</p><p>Aviso: no passo das dívidas, a barra maior <strong>não cabe na tela</strong> — e isso não é defeito do desenho. É o ponto da parábola.</p>",
+        "reflexao": "<p>Agora as cenas têm peso. A viúva pôs no cofre <strong>1/64 do salário de um dia</strong> — cerca de <strong>onze minutos de trabalho</strong>. Os ricos despejavam punhados de moedas ali, e ainda assim Jesus disse que ela “lançou mais do que todos”: eles deram <em>do que sobrava</em>, e ela deu <strong>tudo o que tinha para viver</strong>. (Lucas 21:4)</p><p>E a parábola do escravo impiedoso: a dívida perdoada era <strong>600.000 vezes maior</strong> que a que ele saiu cobrando — cerca de 200.000 anos de trabalho contra uns três meses. Jesus escolheu números impossíveis <em>de propósito</em>. Feita a conta, ninguém erra a moral: comparado ao que Jeová nos perdoa, o que temos a perdoar uns aos outros é sempre pequeno.</p><p>O perfume de Maria custou <strong>dez meses de salário</strong> num único frasco. Judas chamou aquilo de desperdício — mas ele roubava do cofre. (João 12:6) Ela entendeu o que estava por vir, e o gesto é contado até hoje, exatamente como Jesus disse que seria.</p><p>Uma última observação sobre a honestidade do texto: os pesos formam uma escada exata (50 siclos numa mina, 60 minas num talento), e a Bíblia insiste que ela seja respeitada — “<strong>tenham balanças exatas, pesos exatos</strong>”. (Levítico 19:35, 36) O Deus que manda medir direito é o mesmo que pesa cada oferta pelo que ela custa a quem dá.</p>",
+        "referencia": "Mateus 20:2 · Lucas 21:1-4 · Mateus 18:23-35 · João 12:3-5 · Levítico 19:35, 36 · Apêndice B14-B, “Dinheiro e pesos”, da Tradução do Novo Mundo das Escrituras Sagradas",
+        "link_jw": "https://wol.jw.org/pt/wol/d/r5/lp-t/1001070236",
+        "config": "{}",
+        "xp": 130,
+        "publicar": 1,
+        "data_criacao": 1784483934619,
+        "data_atualizacao": 1784483934619,
+        "imagem": "o-dinheiro-e-os-pesos-da-biblia.svg"
     }
 ]
