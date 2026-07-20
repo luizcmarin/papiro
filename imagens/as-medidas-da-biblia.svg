@@ -9,18 +9,49 @@
         capacidades formam uma escada única: o logue de 0,31 litro, o him de 3,67 litros, o gômer de
         2,2 litros, o bato de 22 litros para líquidos, a efa de 22 litros para secos — a mesma
         capacidade — e o coro de 220 litros. Três exemplos fecham o quadro: a arca de Noé tinha 300
-        côvados, isto é, 133,5 metros, mais que um campo de futebol; Golias media seis côvados e um
-        palmo, cerca de 2,89 metros; e o mar de fundição do templo continha 2.000 batos, 44.000
-        litros, o equivalente a 44 caixas d'água de mil litros.</desc>
+        côvados, isto é, 133,5 metros, mais que um campo de futebol, e era uma caixa retangular, não
+        um barco de proa curva; Golias media seis côvados e um palmo, cerca de 2,89 metros; e o mar
+        de fundição do templo continha 2.000 batos, 44.000 litros, o equivalente a 44 caixas d'água
+        de mil litros.</desc>
 
     <defs>
         <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0" stop-color="#eef1fa"/>
             <stop offset="1" stop-color="#dbe1f2"/>
         </linearGradient>
-        <marker id="seta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="#3c4a9e"/>
-        </marker>
+        <linearGradient id="pele" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f6d3b0"/>
+            <stop offset="0.55" stop-color="#eabf96"/>
+            <stop offset="1" stop-color="#c08a5e"/>
+        </linearGradient>
+        <linearGradient id="bronze" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#7d4f1c"/>
+            <stop offset="0.45" stop-color="#a9702e"/>
+            <stop offset="1" stop-color="#8a5a22"/>
+        </linearGradient>
+        <linearGradient id="barro" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#c99a6a"/>
+            <stop offset="0.5" stop-color="#e3c49c"/>
+            <stop offset="1" stop-color="#b98a5c"/>
+        </linearGradient>
+
+        <symbol id="jarro" viewBox="0 0 100 120">
+            <path d="M34 2 h32 v10 q22 14 26 44 q4 34 -14 52 q-8 8 -28 8 h-4 q-20 0 -28 -8
+                     q-18 -18 -14 -52 q4 -30 26 -44 v-10 z"
+                  stroke="#8a6b4a" stroke-width="3" vector-effect="non-scaling-stroke"/>
+        </symbol>
+        <!-- Caixa d'água de mil litros: corpo cônico, tampa e nível de água. -->
+        <symbol id="cxdagua" viewBox="0 0 20 18">
+            <path d="M2.4 3 H17.6 L20 18 H0 Z" fill="#3aa0ff" stroke="#2a7fcc" stroke-width="1"/>
+            <rect x="0.6" y="0" width="18.8" height="3.4" rx="1.4" fill="#2a7fcc"/>
+        </symbol>
+        <!-- Touro de cobre do "mar de fundição". -->
+        <symbol id="touro" viewBox="0 0 24 26">
+            <rect x="3" y="8" width="18" height="11" rx="4" fill="#a9702e"/>
+            <circle cx="19" cy="7" r="5" fill="#8a5a22"/>
+            <path d="M15 4 L12 0 M23 4 L26 0" stroke="#8a5a22" stroke-width="2"/>
+            <path d="M6 19 v6 M17 19 v6" stroke="#8a5a22" stroke-width="3"/>
+        </symbol>
     </defs>
 
     <style>
@@ -29,18 +60,21 @@
         .rotp { fill:#5f6788; font-size:13px; }
         .painel { fill:#ffffff; stroke:#c3cbe8; stroke-width:2; }
         .not  { font-size:12px; font-weight:700; text-anchor:middle; fill:#5f6788; }
+        .sub  { font-size:11px; font-weight:400; text-anchor:middle; fill:#5f6788; }
         .cx   { font-size:15px; font-weight:800; text-anchor:middle; }
         .val  { font-size:14px; font-weight:800; fill:#232a55; }
-        .ouro { fill:#b07d10; }
-        .ok   { fill:#2f8f5c; }
-        .cota { stroke:#3c4a9e; stroke-width:2; }
+        .esq  { text-anchor:start; }
+        .dir  { text-anchor:end; }
+        .cota { stroke:#3c4a9e; stroke-width:2; fill:none; }
+        .guia { stroke:#c3cbe8; stroke-width:1.2; stroke-dasharray:3 3; }
+        .tag  { fill:#ffffff; stroke:#c3cbe8; stroke-width:1; }
     </style>
 
     <rect width="1400" height="800" fill="url(#fundo)"/>
 
     <text class="cab" x="46" y="54">AS MEDIDAS DA BÍBLIA — B14-A</text>
     <text class="rotp" x="46" y="84" font-size="16">
-        A tabela de conversão não resolve nada sozinha: “300 côvados” não vira imagem na cabeça de ninguém. Estas medidas vieram do corpo — e cabem na sua realidade.
+        “Trezentos côvados” não vira imagem nenhuma na cabeça. Cada medida abaixo está encostada em algo cujo tamanho você já conhece.
     </text>
 
     <!-- ══ Painel 1: as medidas do corpo ══════════════════════════════════ -->
@@ -49,36 +83,64 @@
         <text class="rot" x="24" y="38">1. AS MEDIDAS SAÍRAM DO CORPO</text>
         <text class="rotp" x="24" y="60">O côvado é o antebraço: do cotovelo à ponta do dedo médio.</text>
 
-        <!-- braço estilizado com a cota do côvado -->
-        <g transform="translate(40,86)">
-            <path d="M20 150 L70 96 L470 40" stroke="#e0b48c" stroke-width="30" stroke-linecap="round" fill="none"/>
-            <circle cx="70" cy="96" r="16" fill="#e0b48c"/>
-            <text class="not" x="70" y="140">cotovelo</text>
-            <text class="not" x="470" y="18">ponta do dedo médio</text>
-            <line class="cota" x1="70" y1="70" x2="470" y2="70" marker-end="url(#seta)"/>
-            <line class="cota" x1="70" y1="60" x2="70" y2="80"/>
-            <line class="cota" x1="470" y1="60" x2="470" y2="80"/>
-            <rect x="215" y="56" width="112" height="26" rx="6" fill="#ffffff"/>
-            <text class="cx" x="271" y="74" fill="#3c4a9e">CÔVADO 44,5 cm</text>
+        <!-- braço: úmero, cotovelo, antebraço, palma e cinco dedos -->
+        <line x1="60" y1="225" x2="110" y2="185" stroke="#c08a5e" stroke-width="86" stroke-linecap="round"/>
+        <line x1="60" y1="225" x2="110" y2="185" stroke="#eabf96" stroke-width="78" stroke-linecap="round"/>
+        <g transform="translate(110,185) rotate(-6.97)">
+            <path d="M-8 -44 Q 110 -50 317 -20 L 317 20 Q 110 44 -8 44 Z"
+                  fill="url(#pele)" stroke="rgba(90,55,25,.28)" stroke-width="1.4"/>
+            <path d="M322 16 Q 386 46 404 34" stroke="#c08a5e" stroke-width="22"
+                  stroke-linecap="round" fill="none"/>
+            <rect x="310" y="-30" width="84" height="60" rx="13"
+                  fill="url(#pele)" stroke="rgba(90,55,25,.28)" stroke-width="1.4"/>
+            <g fill="url(#pele)" stroke="rgba(90,55,25,.24)" stroke-width="1">
+                <rect x="386" y="-28" width="47" height="13" rx="6.5"/>
+                <rect x="386" y="-13.5" width="67" height="13" rx="6.5"/>
+                <rect x="386" y="1" width="54" height="13" rx="6.5"/>
+                <rect x="386" y="15.5" width="30" height="13" rx="6.5"/>
+            </g>
+            <g fill="rgba(255,255,255,.55)">
+                <rect x="425" y="-25" width="7" height="7" rx="2"/>
+                <rect x="445" y="-10.5" width="7" height="7" rx="2"/>
+                <rect x="432" y="4" width="7" height="7" rx="2"/>
+                <rect x="408" y="18.5" width="7" height="7" rx="2"/>
+            </g>
+            <path d="M0 -32 A 32 32 0 0 1 0 32" stroke="rgba(90,55,25,.25)" stroke-width="1.6" fill="none"/>
         </g>
 
+        <!-- cota do côvado, acima do braço, sem encostar nele -->
+        <line class="guia" x1="110" y1="104" x2="110" y2="146"/>
+        <line class="guia" x1="562" y1="104" x2="562" y2="126"/>
+        <path class="cota" d="M110 96 H562 M110 88 V104 M562 88 V104"/>
+        <rect class="tag" x="278" y="83" width="130" height="26" rx="13"/>
+        <text class="cx" x="343" y="100" fill="#3c4a9e">CÔVADO 44,5 cm</text>
+
+        <!-- nomes das duas pontas, fora do desenho, ligados por linha-guia -->
+        <line class="guia" x1="210" y1="224" x2="118" y2="198"/>
+        <rect class="tag" x="168" y="224" width="84" height="24" rx="12"/>
+        <text class="not" x="210" y="240">cotovelo</text>
+
+        <line class="guia" x1="500" y1="170" x2="556" y2="136"/>
+        <rect class="tag" x="424" y="170" width="152" height="24" rx="12"/>
+        <text class="not" x="500" y="186">ponta do dedo médio</text>
+
         <!-- escada das medidas menores, em escala -->
-        <g transform="translate(40,240)">
+        <g transform="translate(40,262)">
             <rect x="0" y="0" width="17" height="16" rx="3" fill="#c3cbe8"/>
             <text class="not" x="8" y="34">dedo</text>
-            <text class="not" x="8" y="50" font-weight="400">1,85 cm</text>
+            <text class="sub" x="8" y="50">1,85 cm</text>
 
-            <rect x="70" y="0" width="66" height="16" rx="3" fill="#a9b5d6"/>
-            <text class="not" x="103" y="34">largura da mão</text>
-            <text class="not" x="103" y="50" font-weight="400">7,4 cm · 4 dedos</text>
+            <rect x="76" y="0" width="66" height="16" rx="3" fill="#a9b5d6"/>
+            <text class="not" x="109" y="34">largura da mão</text>
+            <text class="sub" x="109" y="50">7,4 cm · 4 dedos</text>
 
-            <rect x="200" y="0" width="200" height="16" rx="3" fill="#7d8dc0"/>
-            <text class="not" x="300" y="34">palmo</text>
-            <text class="not" x="300" y="50" font-weight="400">22,2 cm · 3 larguras</text>
+            <rect x="210" y="0" width="200" height="16" rx="3" fill="#7d8dc0"/>
+            <text class="not" x="310" y="34">palmo</text>
+            <text class="sub" x="310" y="50">22,2 cm · 3 larguras</text>
 
-            <rect x="440" y="0" width="140" height="16" rx="3" fill="#3c4a9e"/>
-            <text class="not" x="510" y="34" fill="#3c4a9e">côvado longo</text>
-            <text class="not" x="510" y="50" font-weight="400">51,8 cm · 7 larguras</text>
+            <rect x="452" y="0" width="140" height="16" rx="3" fill="#3c4a9e"/>
+            <text class="not" x="522" y="34" fill="#3c4a9e">côvado longo</text>
+            <text class="sub" x="522" y="50">51,8 cm · 7 larguras</text>
         </g>
     </g>
 
@@ -88,117 +150,156 @@
         <text class="rot" x="24" y="38">2. UMA ESCADA SÓ DE CAPACIDADES</text>
         <text class="rotp" x="24" y="60">A efa (secos) e o bato (líquidos) têm a mesma capacidade: 22 litros.</text>
 
-        <g transform="translate(40,84)">
-            <!-- coro -->
-            <rect x="0" y="10" width="120" height="180" rx="8" fill="#3aa0ff" opacity=".85"/>
-            <text class="cx" x="60" y="212" fill="#232a55">CORO</text>
-            <text class="not" x="60" y="232" font-weight="400">220 L · 10 batos</text>
-
-            <!-- bato -->
-            <rect x="170" y="118" width="86" height="72" rx="6" fill="#3aa0ff"/>
-            <text class="cx" x="213" y="212" fill="#232a55">BATO</text>
-            <text class="not" x="213" y="232" font-weight="400">22 L · líquidos</text>
-
-            <!-- efa -->
-            <rect x="300" y="118" width="86" height="72" rx="6" fill="#b07d10"/>
-            <text class="cx" x="343" y="212" fill="#232a55">EFA</text>
-            <text class="not" x="343" y="232" font-weight="400">22 L · secos</text>
-
-            <!-- gômer -->
-            <rect x="432" y="168" width="44" height="22" rx="4" fill="#b07d10" opacity=".75"/>
-            <text class="cx" x="454" y="212" fill="#232a55">GÔMER</text>
-            <text class="not" x="454" y="232" font-weight="400">2,2 L · 1/10 efa</text>
-
-            <!-- him / logue -->
-            <rect x="516" y="176" width="30" height="14" rx="3" fill="#7d8dc0"/>
-            <text class="cx" x="531" y="212" fill="#232a55">HIM</text>
-            <text class="not" x="531" y="232" font-weight="400">3,67 L</text>
-
-            <line class="cota" x1="170" y1="106" x2="386" y2="106"/>
-            <text class="not" x="278" y="98" fill="#2f8f5c">a mesma capacidade</text>
+        <g>
+            <use href="#jarro" x="54"  y="99"  width="115" height="139" fill="url(#barro)"/>
+            <use href="#jarro" x="194" y="174" width="53"  height="64"  fill="#7fc0f5"/>
+            <use href="#jarro" x="290" y="174" width="53"  height="64"  fill="url(#barro)"/>
+            <use href="#jarro" x="391" y="208" width="25"  height="30"  fill="url(#barro)"/>
+            <use href="#jarro" x="469" y="203" width="29"  height="35"  fill="#7fc0f5"/>
+            <use href="#jarro" x="544" y="222" width="13"  height="16"  fill="#7fc0f5"/>
         </g>
-        <text class="rotp" x="40" y="308">O maná: cada israelita recolhia um gômer por dia. (Êxodo 16:16, 36)</text>
+
+        <g stroke="none">
+            <text class="not" x="112" y="264">CORO</text>
+            <text class="sub" x="112" y="280">220 L · 10 batos</text>
+            <text class="not" x="221" y="264">BATO</text>
+            <text class="sub" x="221" y="280">22 L · líquidos</text>
+            <text class="not" x="317" y="264">EFA</text>
+            <text class="sub" x="317" y="280">22 L · secos</text>
+            <text class="not" x="404" y="264">GÔMER</text>
+            <text class="sub" x="404" y="280">2,2 L · 1/10 efa</text>
+            <text class="not" x="484" y="264">HIM</text>
+            <text class="sub" x="484" y="280">3,67 L</text>
+            <text class="not" x="551" y="264">LOGUE</text>
+            <text class="sub" x="551" y="280">0,31 L</text>
+        </g>
+
+        <path class="cota" d="M206 172 H332 M206 172 V180 M332 172 V180" stroke="#2f8f5c"/>
+        <rect class="tag" x="199" y="148" width="140" height="24" rx="12"/>
+        <text class="not" x="269" y="164" fill="#2f8f5c">a mesma capacidade</text>
+
+        <text class="rotp" x="24" y="312">O maná: cada israelita recolhia um gômer por dia. (Êxodo 16:16, 36)</text>
     </g>
 
     <!-- ══ Rodapé: três exemplos que dão escala ═══════════════════════════ -->
-    <g transform="translate(46,466)">
-        <rect class="painel" width="420" height="230" rx="16"/>
-        <text class="rot" x="24" y="40">A ARCA DE NOÉ</text>
-        <text class="val" x="24" y="68">300 côvados = 133,5 m</text>
-        <g transform="translate(24,90)">
-            <rect x="0" y="0" width="372" height="20" rx="4" fill="#8a5a3a"/>
-            <text class="not" x="186" y="36" font-weight="400">arca — 133,5 m</text>
-            <rect x="0" y="52" width="293" height="14" rx="4" fill="#3ba054"/>
-            <text class="not" x="146" y="86" font-weight="400">campo de futebol — 105 m</text>
-            <rect x="0" y="102" width="33" height="10" rx="3" fill="#c3cbe8"/>
-            <text class="not" x="60" y="112" font-weight="400" text-anchor="start">ônibus — 12 m</text>
-        </g>
-        <text class="rotp" x="24" y="216">Gênesis 6:15 — 133,5 × 22,25 × 13,35 m.</text>
-    </g>
+    <g transform="translate(46,452)">
+        <rect class="painel" width="420" height="250" rx="16"/>
+        <text class="rot" x="24" y="38">A ARCA DE NOÉ</text>
+        <text class="val" x="24" y="64">300 côvados = 133,5 m — uma CAIXA, não um barco</text>
 
-    <g transform="translate(490,466)">
-        <rect class="painel" width="420" height="230" rx="16"/>
-        <text class="rot" x="24" y="40">GOLIAS</text>
-        <text class="val" x="24" y="68">6 côvados e 1 palmo = 2,89 m</text>
-        <g transform="translate(40,88)">
-            <!-- pessoa 1,75 m -->
-            <g fill="#3aa0ff">
-                <circle cx="40" cy="60" r="9"/>
-                <rect x="31" y="72" width="18" height="40" rx="6"/>
-                <rect x="32" y="110" width="7" height="30" rx="3"/>
-                <rect x="42" y="110" width="7" height="30" rx="3"/>
-            </g>
-            <text class="not" x="40" y="158" font-weight="400">1,75 m</text>
-            <!-- Golias -->
-            <g fill="#b07d10">
-                <circle cx="140" cy="20" r="14"/>
-                <rect x="126" y="38" width="28" height="62" rx="9"/>
-                <rect x="128" y="98" width="11" height="42" rx="5"/>
-                <rect x="143" y="98" width="11" height="42" rx="5"/>
-            </g>
-            <text class="not" x="140" y="158" font-weight="700" fill="#b07d10">2,89 m</text>
-            <!-- porta -->
-            <rect x="250" y="34" width="60" height="106" rx="3" fill="#ffffff" stroke="#c3cbe8" stroke-width="2"/>
-            <text class="not" x="280" y="158" font-weight="400">porta 2,10 m</text>
-            <line x1="0" y1="140" x2="340" y2="140" stroke="#c3cbe8" stroke-width="2"/>
-        </g>
-        <text class="rotp" x="24" y="216">1 Samuel 17:4 — a couraça dele pesava 57 kg.</text>
-    </g>
-
-    <g transform="translate(934,466)">
-        <rect class="painel" width="420" height="230" rx="16"/>
-        <text class="rot" x="24" y="40">O “MAR DE FUNDIÇÃO”</text>
-        <text class="val" x="24" y="68">2.000 batos = 44.000 litros</text>
+        <!-- ônibus -->
         <g transform="translate(24,88)">
-            <g fill="#3aa0ff">
-                <rect x="0" y="0" width="26" height="20" rx="3"/><rect x="34" y="0" width="26" height="20" rx="3"/>
-                <rect x="68" y="0" width="26" height="20" rx="3"/><rect x="102" y="0" width="26" height="20" rx="3"/>
-                <rect x="136" y="0" width="26" height="20" rx="3"/><rect x="170" y="0" width="26" height="20" rx="3"/>
-                <rect x="204" y="0" width="26" height="20" rx="3"/><rect x="238" y="0" width="26" height="20" rx="3"/>
-                <rect x="272" y="0" width="26" height="20" rx="3"/><rect x="306" y="0" width="26" height="20" rx="3"/>
-                <rect x="340" y="0" width="26" height="20" rx="3"/>
-                <rect x="0" y="28" width="26" height="20" rx="3"/><rect x="34" y="28" width="26" height="20" rx="3"/>
-                <rect x="68" y="28" width="26" height="20" rx="3"/><rect x="102" y="28" width="26" height="20" rx="3"/>
-                <rect x="136" y="28" width="26" height="20" rx="3"/><rect x="170" y="28" width="26" height="20" rx="3"/>
-                <rect x="204" y="28" width="26" height="20" rx="3"/><rect x="238" y="28" width="26" height="20" rx="3"/>
-                <rect x="272" y="28" width="26" height="20" rx="3"/><rect x="306" y="28" width="26" height="20" rx="3"/>
-                <rect x="340" y="28" width="26" height="20" rx="3"/>
-                <rect x="0" y="56" width="26" height="20" rx="3"/><rect x="34" y="56" width="26" height="20" rx="3"/>
-                <rect x="68" y="56" width="26" height="20" rx="3"/><rect x="102" y="56" width="26" height="20" rx="3"/>
-                <rect x="136" y="56" width="26" height="20" rx="3"/><rect x="170" y="56" width="26" height="20" rx="3"/>
-                <rect x="204" y="56" width="26" height="20" rx="3"/><rect x="238" y="56" width="26" height="20" rx="3"/>
-                <rect x="272" y="56" width="26" height="20" rx="3"/><rect x="306" y="56" width="26" height="20" rx="3"/>
-                <rect x="340" y="56" width="26" height="20" rx="3"/>
-                <rect x="0" y="84" width="26" height="20" rx="3"/><rect x="34" y="84" width="26" height="20" rx="3"/>
-                <rect x="68" y="84" width="26" height="20" rx="3"/><rect x="102" y="84" width="26" height="20" rx="3"/>
-                <rect x="136" y="84" width="26" height="20" rx="3"/><rect x="170" y="84" width="26" height="20" rx="3"/>
-                <rect x="204" y="84" width="26" height="20" rx="3"/><rect x="238" y="84" width="26" height="20" rx="3"/>
-                <rect x="272" y="84" width="26" height="20" rx="3"/><rect x="306" y="84" width="26" height="20" rx="3"/>
-                <rect x="340" y="84" width="26" height="20" rx="3"/>
-            </g>
-            <text class="not" x="186" y="122" font-weight="400">cada caixa = 1.000 litros · 44 caixas</text>
+            <rect x="0" y="6" width="34" height="16" rx="4" fill="#e8b33a" stroke="#a97f18"/>
+            <rect x="3" y="9" width="16" height="6" rx="2" fill="#7ec4f2"/>
+            <rect x="22" y="9" width="9" height="6" rx="2" fill="#7ec4f2"/>
+            <circle cx="9" cy="23" r="3.4" fill="#3a3f52"/><circle cx="27" cy="23" r="3.4" fill="#3a3f52"/>
         </g>
-        <text class="rotp" x="24" y="216">1 Reis 7:23-26 — apoiado sobre doze touros de cobre.</text>
+        <text class="sub esq" x="70" y="100">ônibus urbano — 12 m</text>
+        <rect x="70" y="106" width="29" height="12" rx="3" fill="#c3cbe8"/>
+
+        <!-- campo de futebol -->
+        <g transform="translate(24,134)">
+            <rect x="0" y="4" width="34" height="22" rx="2" fill="#3ba054"/>
+            <rect x="1.5" y="5.5" width="31" height="19" fill="none" stroke="#ffffff" stroke-width="1"/>
+            <path d="M17 5.5 V24.5" stroke="#ffffff" stroke-width="1"/>
+            <circle cx="17" cy="15" r="4" fill="none" stroke="#ffffff" stroke-width="1"/>
+        </g>
+        <text class="sub esq" x="70" y="146">campo de futebol — 105 m</text>
+        <rect x="70" y="152" width="252" height="12" rx="3" fill="#3ba054"/>
+
+        <!-- arca: casco retangular, cobertura reta, porta lateral -->
+        <g transform="translate(24,180)">
+            <rect x="0" y="14" width="36" height="13" fill="#8a5a3a" stroke="rgba(0,0,0,.25)"/>
+            <rect x="4" y="3" width="28" height="11" fill="#b58356" stroke="rgba(0,0,0,.22)"/>
+            <g fill="rgba(0,0,0,.35)">
+                <rect x="7" y="6" width="3" height="5"/><rect x="13" y="6" width="3" height="5"/>
+                <rect x="19" y="6" width="3" height="5"/><rect x="25" y="6" width="3" height="5"/>
+            </g>
+            <rect x="16" y="18" width="5" height="9" fill="rgba(0,0,0,.45)"/>
+        </g>
+        <text class="sub esq" x="70" y="192">arca de Noé — 133,5 m</text>
+        <rect x="70" y="198" width="320" height="12" rx="3" fill="#8a5a3a"/>
+
+        <text class="rotp" x="24" y="234">Gênesis 6:15 — 133,5 × 22,25 × 13,35 m, cerca de 40.000 m³.</text>
+    </g>
+
+    <g transform="translate(490,452)">
+        <rect class="painel" width="420" height="250" rx="16"/>
+        <text class="rot" x="24" y="38">GOLIAS</text>
+        <text class="val" x="24" y="64">6 côvados e 1 palmo = 2,89 m</text>
+
+        <g transform="translate(0,200) scale(0.86) translate(0,-198)">
+        <line x1="24" y1="198" x2="396" y2="198" stroke="#c3cbe8" stroke-width="2"/>
+
+        <!-- pessoa de 1,75 m (73 px) -->
+        <g fill="#3aa0ff">
+            <ellipse cx="70" cy="130" rx="6" ry="7.5"/>
+            <rect x="67" y="136" width="6" height="7" rx="2"/>
+            <path d="M56 145 q1 18 6 30 h16 q5 -12 6 -30 q-14 -5 -28 0 z"/>
+            <path d="M60 148 l-5 22 l3 8" stroke="#3aa0ff" stroke-width="6"
+                  stroke-linecap="round" fill="none"/>
+            <path d="M80 148 l5 22 l-3 8" stroke="#3aa0ff" stroke-width="6"
+                  stroke-linecap="round" fill="none"/>
+            <path d="M66 175 l-3 23" stroke="#3aa0ff" stroke-width="8" stroke-linecap="round"/>
+            <path d="M75 175 l3 23" stroke="#3aa0ff" stroke-width="8" stroke-linecap="round"/>
+        </g>
+        <text class="sub" x="70" y="216">pessoa — 1,75 m</text>
+
+        <!-- Golias de 2,89 m (120 px), com elmo, escudo e lança -->
+        <g>
+            <path d="M196 78 l-4 -14" stroke="#c94a45" stroke-width="6" stroke-linecap="round"/>
+            <path d="M226 198 L206 62" stroke="#8a6015" stroke-width="5" stroke-linecap="round"/>
+            <ellipse cx="196" cy="88" rx="10" ry="12" fill="#b07d10"/>
+            <path d="M186 86 a10 12 0 0 1 20 0 z" fill="#8a6015"/>
+            <rect x="192" y="98" width="9" height="10" rx="3" fill="#b07d10"/>
+            <path d="M172 110 q2 30 10 48 h28 q8 -18 10 -48 q-24 -9 -48 0 z" fill="#b07d10"/>
+            <path d="M178 114 l-8 36 l4 12" stroke="#b07d10" stroke-width="10"
+                  stroke-linecap="round" fill="none"/>
+            <path d="M214 114 l8 36 l-4 12" stroke="#b07d10" stroke-width="10"
+                  stroke-linecap="round" fill="none"/>
+            <path d="M188 158 l-5 40" stroke="#b07d10" stroke-width="13" stroke-linecap="round"/>
+            <path d="M202 158 l5 40" stroke="#b07d10" stroke-width="13" stroke-linecap="round"/>
+            <ellipse cx="166" cy="146" rx="13" ry="20" fill="#8a6015"/>
+        </g>
+        <text class="not" x="196" y="216" fill="#b07d10">Golias — 2,89 m</text>
+
+        <!-- porta comum de 2,10 m (87 px) -->
+        <rect x="300" y="107" width="62" height="91" rx="2" fill="#ffffff" stroke="#8b93ad" stroke-width="2"/>
+        <rect x="308" y="115" width="46" height="34" rx="2" fill="#f2f5fc" stroke="#c3cbe8"/>
+        <rect x="308" y="155" width="46" height="34" rx="2" fill="#f2f5fc" stroke="#c3cbe8"/>
+        <circle cx="352" cy="154" r="3" fill="#b07d10"/>
+        </g>
+        <text class="sub" x="331" y="216">porta — 2,10 m</text>
+
+        <text class="rotp" x="24" y="240">1 Samuel 17:4 — a couraça dele pesava 5.000 siclos, 57 kg.</text>
+    </g>
+
+    <g transform="translate(934,452)">
+        <rect class="painel" width="420" height="250" rx="16"/>
+        <text class="rot" x="24" y="38">O “MAR DE FUNDIÇÃO”</text>
+        <text class="val" x="24" y="64">2.000 batos = 44.000 litros</text>
+
+        <!-- a bacia de cobre sobre os doze touros -->
+        <g transform="translate(24,86)">
+            <path d="M0 14 q4 52 44 52 q40 0 44 -52 z" fill="url(#bronze)" stroke="rgba(0,0,0,.28)"/>
+            <ellipse cx="44" cy="14" rx="44" ry="9" fill="#3aa0ff" opacity=".55"/>
+            <ellipse cx="44" cy="14" rx="44" ry="9" fill="none" stroke="#c98c33" stroke-width="5"/>
+            <use href="#touro" x="10" y="62" width="20" height="22"/>
+            <use href="#touro" x="34" y="62" width="20" height="22"/>
+            <use href="#touro" x="58" y="62" width="20" height="22"/>
+        </g>
+        <text class="sub" x="68" y="206">o “mar” — 2.000 batos</text>
+
+        <!-- 44 caixas d'água de mil litros: 4 linhas de 11 -->
+        <g>
+            <use href="#cxdagua" x="150" y="96" width="20" height="18"/> <use href="#cxdagua" x="172" y="96" width="20" height="18"/> <use href="#cxdagua" x="194" y="96" width="20" height="18"/> <use href="#cxdagua" x="216" y="96" width="20" height="18"/> <use href="#cxdagua" x="238" y="96" width="20" height="18"/> <use href="#cxdagua" x="260" y="96" width="20" height="18"/> <use href="#cxdagua" x="282" y="96" width="20" height="18"/> <use href="#cxdagua" x="304" y="96" width="20" height="18"/> <use href="#cxdagua" x="326" y="96" width="20" height="18"/> <use href="#cxdagua" x="348" y="96" width="20" height="18"/> <use href="#cxdagua" x="370" y="96" width="20" height="18"/>
+            <use href="#cxdagua" x="150" y="122" width="20" height="18"/> <use href="#cxdagua" x="172" y="122" width="20" height="18"/> <use href="#cxdagua" x="194" y="122" width="20" height="18"/> <use href="#cxdagua" x="216" y="122" width="20" height="18"/> <use href="#cxdagua" x="238" y="122" width="20" height="18"/> <use href="#cxdagua" x="260" y="122" width="20" height="18"/> <use href="#cxdagua" x="282" y="122" width="20" height="18"/> <use href="#cxdagua" x="304" y="122" width="20" height="18"/> <use href="#cxdagua" x="326" y="122" width="20" height="18"/> <use href="#cxdagua" x="348" y="122" width="20" height="18"/> <use href="#cxdagua" x="370" y="122" width="20" height="18"/>
+            <use href="#cxdagua" x="150" y="148" width="20" height="18"/> <use href="#cxdagua" x="172" y="148" width="20" height="18"/> <use href="#cxdagua" x="194" y="148" width="20" height="18"/> <use href="#cxdagua" x="216" y="148" width="20" height="18"/> <use href="#cxdagua" x="238" y="148" width="20" height="18"/> <use href="#cxdagua" x="260" y="148" width="20" height="18"/> <use href="#cxdagua" x="282" y="148" width="20" height="18"/> <use href="#cxdagua" x="304" y="148" width="20" height="18"/> <use href="#cxdagua" x="326" y="148" width="20" height="18"/> <use href="#cxdagua" x="348" y="148" width="20" height="18"/> <use href="#cxdagua" x="370" y="148" width="20" height="18"/>
+            <use href="#cxdagua" x="150" y="174" width="20" height="18"/> <use href="#cxdagua" x="172" y="174" width="20" height="18"/> <use href="#cxdagua" x="194" y="174" width="20" height="18"/> <use href="#cxdagua" x="216" y="174" width="20" height="18"/> <use href="#cxdagua" x="238" y="174" width="20" height="18"/> <use href="#cxdagua" x="260" y="174" width="20" height="18"/> <use href="#cxdagua" x="282" y="174" width="20" height="18"/> <use href="#cxdagua" x="304" y="174" width="20" height="18"/> <use href="#cxdagua" x="326" y="174" width="20" height="18"/> <use href="#cxdagua" x="348" y="174" width="20" height="18"/> <use href="#cxdagua" x="370" y="174" width="20" height="18"/>
+        </g>
+        <text class="sub" x="270" y="206">44 caixas d’água de mil litros</text>
+
+        <text class="rotp" x="24" y="236">1 Reis 7:23-26 — apoiado sobre doze touros de cobre.</text>
     </g>
 
     <text class="rotp" x="46" y="736" font-size="15">

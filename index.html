@@ -2034,6 +2034,17 @@
                                     </span>
                                 </div>
 
+                                <!-- Conclusão do passo anterior, rotulada como tal -->
+                                <template x-if="puzzle.conclusao">
+                                    <div class="alert alert-success py-2 px-3 small mb-3">
+                                        <span class="fw-bold d-block mb-1">
+                                            <i class="bi bi-check-circle-fill me-1" aria-hidden="true"></i>
+                                            <span x-text="puzzle.conclusaoTitulo"></span>
+                                        </span>
+                                        <span x-text="puzzle.conclusao"></span>
+                                    </div>
+                                </template>
+
                                 <h2 class="h6 fw-bold mb-1" x-text="passoAtual().titulo"></h2>
                                 <p class="small mb-1" x-text="passoAtual().pergunta"></p>
                                 <p class="small text-muted fst-italic mb-3">

@@ -2,19 +2,21 @@
      aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
     <title id="tit">O dinheiro e os pesos da Bíblia — tudo medido em dias de trabalho</title>
     <desc id="desc">As moedas e os pesos do apêndice B14-B da Tradução do Novo Mundo, convertidos na
-        única régua que dispensa tabela: o dia de trabalho. Nas Escrituras Hebraicas os pesos formam
-        uma escada: a gera de 0,57 g, a beca de 5,7 g (dez geras), o pim de 7,8 g, o siclo de 11,4 g,
-        a mina de 570 g (cinquenta siclos) e o talento de 34,2 kg (sessenta minas). Nas Escrituras
-        Gregas Cristãs as moedas se encadeiam assim: o lépton é meio quadrante, o quadrante vale dois
-        léptons, o assário vale quatro quadrantes e o denário vale sessenta e quatro quadrantes, ou
-        seja, cento e vinte e oito léptons. O denário, moeda romana de prata de 3,85 g, era o salário
-        de um dia de doze horas; a dracma grega valia o mesmo; o didracma, dois dias; o tetradracma,
-        quatro dias; a mina grega, cem dias; e o talento grego, cerca de vinte anos de trabalho. Três
-        cenas mostram o efeito disso: as duas moedinhas de lépton da viúva valiam um sessenta e
-        quatro avos de um dia, cerca de onze minutos de trabalho; a dívida de dez mil talentos da
-        parábola equivalia a sessenta milhões de dias, seiscentas mil vezes mais que os cem denários
-        que o mesmo homem foi cobrar; e a libra de nardo derramada por Maria valia trezentos
-        denários, dez meses de salário.</desc>
+        única régua que dispensa tabela: o dia de trabalho, e daí em reais pelo salário mínimo
+        brasileiro arredondado, mil e seiscentos reais por mês, ou cerca de cinquenta e três reais
+        por dia. Nas Escrituras Hebraicas os pesos formam uma escada: a gera de 0,57 g, a beca de
+        5,7 g (dez geras), o pim de 7,8 g, o siclo de 11,4 g, a mina de 570 g (cinquenta siclos) e o
+        talento de 34,2 kg (sessenta minas). Nas Escrituras Gregas Cristãs as moedas se encadeiam
+        assim: o lépton é meio quadrante, o quadrante vale dois léptons, o assário vale quatro
+        quadrantes e o denário vale sessenta e quatro quadrantes, ou seja, cento e vinte e oito
+        léptons. O denário, moeda romana de prata de 3,85 g, era o salário de um dia de doze horas;
+        a dracma grega valia o mesmo; o didracma, dois dias; o tetradracma, quatro dias; a mina
+        grega, cem dias; e o talento grego, cerca de vinte anos de trabalho. Três cenas mostram o
+        efeito disso: as duas moedinhas de lépton da viúva valiam um sessenta e quatro avos de um
+        dia, cerca de onze minutos de trabalho, menos de um real; a dívida de dez mil talentos da
+        parábola equivalia a sessenta milhões de dias, mais de três bilhões de reais, seiscentas mil
+        vezes mais que os cem denários que o mesmo homem foi cobrar; e a libra de nardo derramada
+        por Maria valia trezentos denários, dez meses de salário, dezesseis mil reais.</desc>
 
     <defs>
         <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
@@ -23,8 +25,24 @@
         </linearGradient>
         <linearGradient id="some" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0" stop-color="#b07d10"/>
-            <stop offset="1" stop-color="#b07d10" stop-opacity=".15"/>
+            <stop offset="0.7" stop-color="#b07d10"/>
+            <stop offset="1" stop-color="#b07d10" stop-opacity=".08"/>
         </linearGradient>
+        <radialGradient id="ouro" cx="35%" cy="32%" r="72%">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="0.35" stop-color="#b07d10"/>
+            <stop offset="1" stop-color="#6d4d09"/>
+        </radialGradient>
+        <radialGradient id="prata" cx="35%" cy="32%" r="72%">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset="0.35" stop-color="#b9c2d6"/>
+            <stop offset="1" stop-color="#6f7896"/>
+        </radialGradient>
+        <radialGradient id="cobre" cx="35%" cy="32%" r="72%">
+            <stop offset="0" stop-color="#ffe0bd"/>
+            <stop offset="0.35" stop-color="#b5762f"/>
+            <stop offset="1" stop-color="#6d4415"/>
+        </radialGradient>
     </defs>
 
     <style>
@@ -33,163 +51,227 @@
         .rotp { fill:#5f6788; font-size:13px; }
         .painel { fill:#ffffff; stroke:#c3cbe8; stroke-width:2; }
         .not  { font-size:12px; font-weight:700; text-anchor:middle; fill:#5f6788; }
+        .sub  { font-size:11px; font-weight:400; text-anchor:middle; fill:#5f6788; }
         .cx   { font-size:15px; font-weight:800; text-anchor:middle; }
         .val  { font-size:14px; font-weight:800; fill:#232a55; }
-        .ouro { fill:#b07d10; }
-        .ok   { fill:#2f8f5c; }
+        .reais{ font-size:12px; font-weight:800; fill:#2f8f5c; }
+        .esq  { text-anchor:start; }
+        .dir  { text-anchor:end; }
+        .tag  { fill:#ffffff; stroke:#c3cbe8; stroke-width:1; }
     </style>
 
     <rect width="1400" height="800" fill="url(#fundo)"/>
 
     <text class="cab" x="46" y="54">O DINHEIRO E OS PESOS DA BÍBLIA — B14-B</text>
     <text class="rotp" x="46" y="84" font-size="16">
-        Sem saber se um denário era muito ou pouco, as parábolas de Jesus perdem o contraste que as sustenta. A régua que dispensa tabela é esta: um denário = um dia de trabalho de 12 horas.
+        A régua que dispensa tabela: um denário = um dia de trabalho de 12 horas. E, pelo salário mínimo arredondado (R$ 1.600 ÷ 30 dias), um dia ≈ R$ 53.
     </text>
 
-    <!-- ══ Painel 1: os pesos hebraicos ═══════════════════════════════════ -->
+    <!-- ══ Painel 1: os pesos hebraicos, na balança ═══════════════════════ -->
     <g transform="translate(46,112)">
         <rect class="painel" width="640" height="300" rx="16"/>
         <text class="rot" x="24" y="38">1. OS PESOS DAS ESCRITURAS HEBRAICAS</text>
-        <text class="rotp" x="24" y="60">Antes de ser dinheiro, o talento era peso — e pesava mesmo.</text>
+        <text class="rotp" x="24" y="60">Antes de ser dinheiro, o talento era peso — e sessenta minas o equilibram.</text>
 
-        <g transform="translate(48,88)">
-            <rect x="0" y="132" width="16" height="16" rx="3" fill="#b9c2d6"/>
-            <text class="not" x="8" y="168">siclo</text>
-            <text class="not" x="8" y="184" font-weight="400">11,4 g</text>
-
-            <rect x="86" y="98" width="50" height="50" rx="4" fill="#b5762f"/>
-            <text class="not" x="111" y="168">mina</text>
-            <text class="not" x="111" y="184" font-weight="400">570 g · 50 siclos</text>
-
-            <rect x="210" y="10" width="138" height="138" rx="6" fill="#b07d10"/>
-            <text class="not" x="279" y="168" fill="#b07d10">TALENTO</text>
-            <text class="not" x="279" y="184" font-weight="400">34,2 kg · 60 minas</text>
-
-            <line x1="0" y1="148" x2="530" y2="148" stroke="#c3cbe8" stroke-width="2"/>
-
-            <text class="rotp" x="400" y="46">gera 0,57 g</text>
-            <text class="rotp" x="400" y="70">beca 5,7 g · 10 geras</text>
-            <text class="rotp" x="400" y="94">pim 7,8 g · ⅔ de siclo</text>
-            <text class="rotp" x="400" y="118">darico (ouro persa) 8,4 g</text>
+        <!-- balança de dois pratos, nivelada -->
+        <g transform="translate(212,96)">
+            <rect x="-8" y="0" width="16" height="96" rx="6" fill="#8a6b4a"/>
+            <rect x="-48" y="96" width="96" height="12" rx="6" fill="#8a6b4a"/>
+            <path d="M-124 0 H124" stroke="#6f5a3c" stroke-width="7" stroke-linecap="round"/>
+            <circle cy="0" r="9" fill="#b07d10"/>
+            <path d="M-124 0 L-158 40 M-124 0 L-90 40" stroke="#8b93ad" stroke-width="1.4"/>
+            <path d="M-158 40 q34 26 68 0 z" fill="#9aa4bd" stroke="rgba(0,0,0,.25)" stroke-width="1.5"/>
+            <path d="M124 0 L90 40 M124 0 L158 40" stroke="#8b93ad" stroke-width="1.4"/>
+            <path d="M90 40 q34 26 68 0 z" fill="#9aa4bd" stroke="rgba(0,0,0,.25)" stroke-width="1.5"/>
+            <rect x="-146" y="4" width="44" height="36" rx="4" fill="#b07d10" stroke="rgba(0,0,0,.25)"/>
+            <text class="not" x="-124" y="26" fill="#ffffff">talento</text>
+            <g fill="#b5762f" stroke="rgba(0,0,0,.2)" stroke-width="0.6">
+                <rect x="96" y="30" width="9" height="8"/><rect x="107" y="30" width="9" height="8"/>
+                <rect x="118" y="30" width="9" height="8"/><rect x="129" y="30" width="9" height="8"/>
+                <rect x="140" y="30" width="9" height="8"/>
+                <rect x="101" y="21" width="9" height="8"/><rect x="112" y="21" width="9" height="8"/>
+                <rect x="123" y="21" width="9" height="8"/><rect x="134" y="21" width="9" height="8"/>
+                <rect x="107" y="12" width="9" height="8"/><rect x="118" y="12" width="9" height="8"/>
+                <rect x="129" y="12" width="9" height="8"/>
+                <rect x="112" y="3" width="9" height="8"/><rect x="123" y="3" width="9" height="8"/>
+            </g>
         </g>
-        <text class="rotp" x="24" y="278">Um talento pesa como uma criança de dez anos. Davi tomou uma coroa de um talento de ouro. (2 Samuel 12:30)</text>
+        <text class="not" x="88" y="196">1 TALENTO</text>
+        <text class="sub" x="88" y="212">34,2 kg</text>
+        <text class="not" x="336" y="196">60 MINAS</text>
+        <text class="sub" x="336" y="212">570 g cada</text>
+
+        <!-- a escada completa dos pesos, em coluna, sem tocar no desenho -->
+        <g transform="translate(452,92)">
+            <rect x="0" y="0" width="164" height="120" rx="10" fill="#f3f6fd" stroke="#c3cbe8"/>
+            <text class="rotp" x="14" y="22">gera — 0,57 g</text>
+            <text class="rotp" x="14" y="44">beca — 5,7 g · 10 geras</text>
+            <text class="rotp" x="14" y="66">pim — 7,8 g · ⅔ de siclo</text>
+            <text class="rotp" x="14" y="88">siclo — 11,4 g · 20 geras</text>
+            <text class="rotp" x="14" y="110">darico (ouro persa) — 8,4 g</text>
+        </g>
+
+        <text class="rotp" x="24" y="252">50 siclos = 1 mina · 60 minas = 1 talento. Um talento pesa como uma criança de dez anos.</text>
+        <text class="rotp" x="24" y="276">Davi tomou uma coroa de um talento de ouro. (2 Samuel 12:30)</text>
     </g>
 
     <!-- ══ Painel 2: as moedas gregas/romanas em dias ═════════════════════ -->
     <g transform="translate(716,112)">
         <rect class="painel" width="638" height="300" rx="16"/>
         <text class="rot" x="24" y="38">2. AS MOEDAS, EM DIAS DE TRABALHO</text>
-        <text class="rotp" x="24" y="60">Cada degrau é o salário de quantos dias de 12 horas.</text>
+        <text class="rotp" x="24" y="60">Cada degrau é o salário de quantos dias de 12 horas — e quanto isso dá hoje.</text>
 
-        <g transform="translate(30,80)">
-            <circle cx="24" cy="24" r="9" fill="#b5762f"/>
-            <text class="not" x="24" y="52">lépton</text>
-            <text class="not" x="24" y="68" font-weight="400">½ quadrante</text>
+        <g transform="translate(34,86)">
+            <circle cx="24" cy="26" r="10" fill="url(#cobre)" stroke="rgba(0,0,0,.3)" stroke-width="1.2"/>
+            <text class="not" x="24" y="56">lépton</text>
+            <text class="sub" x="24" y="72">½ quadrante</text>
 
-            <circle cx="120" cy="24" r="12" fill="#b5762f"/>
-            <text class="not" x="120" y="52">quadrante</text>
-            <text class="not" x="120" y="68" font-weight="400">2 léptons</text>
+            <circle cx="124" cy="26" r="13" fill="url(#cobre)" stroke="rgba(0,0,0,.3)" stroke-width="1.2"/>
+            <circle cx="124" cy="26" r="9" fill="none" stroke="rgba(0,0,0,.2)" stroke-width="1"/>
+            <text class="not" x="124" y="56">quadrante</text>
+            <text class="sub" x="124" y="72">2 léptons</text>
 
-            <circle cx="222" cy="24" r="15" fill="#b5762f"/>
-            <text class="not" x="222" y="52">assário</text>
-            <text class="not" x="222" y="68" font-weight="400">4 quadrantes</text>
+            <circle cx="228" cy="26" r="16" fill="url(#cobre)" stroke="rgba(0,0,0,.3)" stroke-width="1.2"/>
+            <circle cx="228" cy="26" r="12" fill="none" stroke="rgba(0,0,0,.2)" stroke-width="1"/>
+            <text class="not" x="228" y="56">assário</text>
+            <text class="sub" x="228" y="72">4 quadrantes</text>
 
-            <circle cx="330" cy="24" r="19" fill="#b07d10"/>
-            <text class="cx" x="330" y="29" fill="#ffffff">D</text>
-            <text class="not" x="330" y="52" fill="#b07d10">DENÁRIO</text>
-            <text class="not" x="330" y="68" font-weight="400">64 quadrantes · 3,85 g</text>
+            <circle cx="340" cy="26" r="21" fill="url(#ouro)" stroke="rgba(0,0,0,.3)" stroke-width="1.4"/>
+            <circle cx="340" cy="26" r="17" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="1.5"/>
+            <text class="cx" x="340" y="31" fill="#ffffff">D</text>
+            <text class="not" x="340" y="56" fill="#b07d10">DENÁRIO</text>
+            <text class="sub" x="340" y="72">1 dia · 3,85 g · ≈ R$ 53</text>
 
-            <circle cx="450" cy="24" r="19" fill="#b9c2d6"/>
-            <text class="not" x="450" y="52">dracma</text>
-            <text class="not" x="450" y="68" font-weight="400">= 1 dia também</text>
+            <circle cx="458" cy="26" r="21" fill="url(#prata)" stroke="rgba(0,0,0,.3)" stroke-width="1.4"/>
+            <circle cx="458" cy="26" r="17" fill="none" stroke="rgba(0,0,0,.2)" stroke-width="1.2"/>
+            <text class="not" x="458" y="56">dracma</text>
+            <text class="sub" x="458" y="72">1 dia também</text>
 
-            <circle cx="552" cy="24" r="24" fill="#b9c2d6"/>
-            <text class="not" x="552" y="56">tetradracma</text>
-            <text class="not" x="552" y="72" font-weight="400">4 dias</text>
+            <circle cx="546" cy="26" r="26" fill="url(#prata)" stroke="rgba(0,0,0,.3)" stroke-width="1.4"/>
+            <circle cx="546" cy="26" r="21" fill="none" stroke="rgba(0,0,0,.2)" stroke-width="1.2"/>
+            <text class="not" x="546" y="64">tetradracma</text>
+            <text class="sub" x="546" y="80">4 dias · R$ 213</text>
         </g>
 
-        <g transform="translate(54,196)">
-            <text class="not" x="-20" y="12" text-anchor="end" font-weight="400">1 dia</text>
-            <rect x="0" y="2" width="4" height="12" rx="2" fill="#3aa0ff"/>
-            <text class="not" x="-20" y="34" text-anchor="end" font-weight="400">mina · 100 dias</text>
-            <rect x="0" y="24" width="80" height="12" rx="2" fill="#3aa0ff"/>
-            <text class="not" x="-20" y="56" text-anchor="end" font-weight="400">talento · ~20 anos</text>
-            <rect x="0" y="46" width="480" height="12" rx="2" fill="url(#some)"/>
-            <text class="not" x="500" y="56" text-anchor="start" font-weight="400">6.000 dias →</text>
+        <!-- as três barras da escala, com o rótulo DENTRO do painel -->
+        <g transform="translate(24,192)">
+            <text class="sub dir" x="204" y="12">1 denário · 1 dia · R$ 53</text>
+            <rect x="212" y="3" width="4" height="12" rx="2" fill="#3aa0ff"/>
+            <text class="sub dir" x="204" y="40">mina grega · 100 dias · R$ 5.300</text>
+            <rect x="212" y="31" width="70" height="12" rx="2" fill="#3aa0ff"/>
+            <text class="sub dir" x="204" y="68">talento grego · 6.000 dias · R$ 320.000</text>
+            <rect x="212" y="59" width="372" height="12" rx="2" fill="url(#some)"/>
+            <text class="sub dir" x="584" y="90">≈ 20 anos de trabalho, e a barra ainda escapa da página →</text>
         </g>
     </g>
 
     <!-- ══ Rodapé: três cenas que só a conta explica ══════════════════════ -->
-    <g transform="translate(46,436)">
-        <rect class="painel" width="420" height="260" rx="16"/>
-        <text class="rot" x="24" y="40">A OFERTA DA VIÚVA</text>
-        <text class="val" x="24" y="68">2 léptons = 11 minutos de trabalho</text>
-        <g transform="translate(210,150)">
-            <circle r="62" fill="#b9c2d6"/>
-            <path d="M0 0 L0 -62 A62 62 0 0 1 6.1 -61.7 Z" fill="#b07d10"/>
-            <circle r="62" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <g transform="translate(46,432)">
+        <rect class="painel" width="420" height="264" rx="16"/>
+        <text class="rot" x="24" y="38">A OFERTA DA VIÚVA</text>
+        <text class="val" x="24" y="64">2 léptons = 11 minutos de trabalho</text>
+        <text class="reais" x="24" y="84">menos de R$ 1 — e era tudo o que ela tinha</text>
+
+        <g transform="translate(150,168)">
+            <circle r="58" fill="url(#prata)"/>
+            <circle r="47" fill="none" stroke="rgba(0,0,0,.22)" stroke-width="2"/>
+            <path d="M0 0 L0 -58 A58 58 0 0 1 5.7 -57.7 Z" fill="#b07d10"/>
         </g>
-        <text class="not" x="210" y="232" font-weight="400">1 denário = 128 léptons · a fatia dourada é a oferta dela</text>
-        <text class="rotp" x="24" y="252">Lucas 21:1-4 — “ela lançou mais do que todos”.</text>
+        <text class="sub" x="150" y="236">1 denário = 128 léptons</text>
+
+        <g transform="translate(300,168)">
+            <circle cx="0" cy="0" r="11" fill="url(#cobre)"/>
+            <circle cx="30" cy="0" r="11" fill="url(#cobre)"/>
+            <text class="sub" x="15" y="32">as duas moedinhas</text>
+            <text class="sub" x="15" y="48">dela, em tamanho real</text>
+        </g>
+        <path d="M232 168 L268 168" stroke="#c3cbe8" stroke-width="1.4" stroke-dasharray="3 3"/>
+
+        <text class="rotp" x="24" y="254">Lucas 21:1-4 — “ela lançou mais do que todos”.</text>
     </g>
 
-    <g transform="translate(490,436)">
-        <rect class="painel" width="420" height="260" rx="16"/>
-        <text class="rot" x="24" y="40">AS DUAS DÍVIDAS</text>
-        <text class="val" x="24" y="68">600.000 vezes de diferença</text>
-        <g transform="translate(24,96)">
-            <rect x="0" y="0" width="3" height="22" rx="1.5" fill="#3aa0ff"/>
-            <text class="not" x="14" y="16" text-anchor="start" font-weight="400">100 denários — o que ele foi cobrar</text>
-            <rect x="0" y="46" width="372" height="22" rx="2" fill="url(#some)"/>
-            <text class="not" x="10" y="62" text-anchor="start" fill="#ffffff">60.000.000 de dias — o que lhe foi perdoado</text>
-            <text class="not" x="300" y="92" font-weight="400">a barra segue muito além da página →</text>
+    <g transform="translate(490,432)">
+        <rect class="painel" width="420" height="264" rx="16"/>
+        <text class="rot" x="24" y="38">AS DUAS DÍVIDAS</text>
+        <text class="val" x="24" y="64">600.000 vezes de diferença</text>
+
+        <g transform="translate(24,90)">
+            <text class="sub esq" x="0" y="10">100 denários — o que ele foi cobrar</text>
+            <rect x="0" y="18" width="3" height="18" rx="1.5" fill="#3aa0ff"/>
+            <text class="reais esq" x="12" y="32" fill="#3c4a9e">R$ 5.300</text>
+
+            <text class="sub esq" x="0" y="70">60.000.000 de dias — o que lhe foi perdoado</text>
+            <rect x="0" y="78" width="372" height="18" rx="2" fill="url(#some)"/>
+            <text class="not esq" x="10" y="92" fill="#ffffff">R$ 3.200.000.000</text>
+            <text class="sub esq" x="150" y="118">a barra segue por 200.000 anos →</text>
         </g>
-        <text class="rotp" x="24" y="238">Mateus 18:23-35 — 10.000 talentos × 6.000 dracmas.</text>
+
+        <text class="rotp" x="24" y="228">Mateus 18:23-35 — 10.000 talentos × 6.000 dracmas,</text>
+        <text class="rotp" x="24" y="250">contra 100 dias. Ninguém erra a moral depois da conta.</text>
     </g>
 
-    <g transform="translate(934,436)">
-        <rect class="painel" width="420" height="260" rx="16"/>
-        <text class="rot" x="24" y="40">O PERFUME DE MARIA</text>
-        <text class="val" x="24" y="68">300 denários = 10 meses de salário</text>
-        <g transform="translate(30,90)">
+    <g transform="translate(934,432)">
+        <rect class="painel" width="420" height="264" rx="16"/>
+        <text class="rot" x="24" y="38">O PERFUME DE MARIA</text>
+        <text class="val" x="24" y="64">300 denários = 10 meses de salário</text>
+        <text class="reais" x="24" y="84">10 × R$ 1.600 = R$ 16.000 num só frasco</text>
+
+        <g transform="translate(28,104)">
             <rect x="0" y="26" width="46" height="86" rx="14" fill="#f3ece0" stroke="#b07d10" stroke-width="2.5"/>
+            <path d="M4 68 h38 v40 a10 10 0 0 1 -10 8 h-18 a10 10 0 0 1 -10 -8 z" fill="#b07d10" opacity=".45"/>
             <rect x="16" y="4" width="14" height="26" rx="3" fill="#f3ece0" stroke="#b07d10" stroke-width="2.5"/>
-            <text class="not" x="23" y="132" font-weight="400">327 g</text>
-            <g fill="#b07d10">
-                <circle cx="90" cy="10" r="3"/><circle cx="106" cy="10" r="3"/><circle cx="122" cy="10" r="3"/>
-                <circle cx="138" cy="10" r="3"/><circle cx="154" cy="10" r="3"/><circle cx="170" cy="10" r="3"/>
-                <circle cx="186" cy="10" r="3"/><circle cx="202" cy="10" r="3"/><circle cx="218" cy="10" r="3"/>
-                <circle cx="234" cy="10" r="3"/><circle cx="250" cy="10" r="3"/><circle cx="266" cy="10" r="3"/>
-                <circle cx="90" cy="30" r="3"/><circle cx="106" cy="30" r="3"/><circle cx="122" cy="30" r="3"/>
-                <circle cx="138" cy="30" r="3"/><circle cx="154" cy="30" r="3"/><circle cx="170" cy="30" r="3"/>
-                <circle cx="186" cy="30" r="3"/><circle cx="202" cy="30" r="3"/><circle cx="218" cy="30" r="3"/>
-                <circle cx="234" cy="30" r="3"/><circle cx="250" cy="30" r="3"/><circle cx="266" cy="30" r="3"/>
-                <circle cx="90" cy="50" r="3"/><circle cx="106" cy="50" r="3"/><circle cx="122" cy="50" r="3"/>
-                <circle cx="138" cy="50" r="3"/><circle cx="154" cy="50" r="3"/><circle cx="170" cy="50" r="3"/>
-                <circle cx="186" cy="50" r="3"/><circle cx="202" cy="50" r="3"/><circle cx="218" cy="50" r="3"/>
-                <circle cx="234" cy="50" r="3"/><circle cx="250" cy="50" r="3"/><circle cx="266" cy="50" r="3"/>
-                <circle cx="90" cy="70" r="3"/><circle cx="106" cy="70" r="3"/><circle cx="122" cy="70" r="3"/>
-                <circle cx="138" cy="70" r="3"/><circle cx="154" cy="70" r="3"/><circle cx="170" cy="70" r="3"/>
-                <circle cx="186" cy="70" r="3"/><circle cx="202" cy="70" r="3"/><circle cx="218" cy="70" r="3"/>
-                <circle cx="234" cy="70" r="3"/><circle cx="250" cy="70" r="3"/><circle cx="266" cy="70" r="3"/>
-                <circle cx="90" cy="90" r="3"/><circle cx="106" cy="90" r="3"/><circle cx="122" cy="90" r="3"/>
-                <circle cx="138" cy="90" r="3"/><circle cx="154" cy="90" r="3"/><circle cx="170" cy="90" r="3"/>
-                <circle cx="186" cy="90" r="3"/><circle cx="202" cy="90" r="3"/><circle cx="218" cy="90" r="3"/>
-                <circle cx="234" cy="90" r="3"/><circle cx="250" cy="90" r="3"/><circle cx="266" cy="90" r="3"/>
-                <circle cx="90" cy="110" r="3"/><circle cx="106" cy="110" r="3"/><circle cx="122" cy="110" r="3"/>
-                <circle cx="138" cy="110" r="3"/><circle cx="154" cy="110" r="3"/><circle cx="170" cy="110" r="3"/>
-                <circle cx="186" cy="110" r="3"/><circle cx="202" cy="110" r="3"/><circle cx="218" cy="110" r="3"/>
-                <circle cx="234" cy="110" r="3"/><circle cx="250" cy="110" r="3"/><circle cx="266" cy="110" r="3"/>
-            </g>
-            <text class="not" x="178" y="132" font-weight="400">cada ponto = um dia de trabalho</text>
+            <text class="sub" x="23" y="132">327 g</text>
         </g>
-        <text class="rotp" x="24" y="238">João 12:3-5 — “Deixem-na em paz.”</text>
+
+        <!-- 300 pontos: cada um é um dia de trabalho -->
+        <g transform="translate(118,112)" fill="#b07d10">
+            <g id="linha-dias">
+                <circle cx="0" cy="0" r="2.5"/>
+                <circle cx="9" cy="0" r="2.5"/>
+                <circle cx="18" cy="0" r="2.5"/>
+                <circle cx="27" cy="0" r="2.5"/>
+                <circle cx="36" cy="0" r="2.5"/>
+                <circle cx="45" cy="0" r="2.5"/>
+                <circle cx="54" cy="0" r="2.5"/>
+                <circle cx="63" cy="0" r="2.5"/>
+                <circle cx="72" cy="0" r="2.5"/>
+                <circle cx="81" cy="0" r="2.5"/>
+                <circle cx="90" cy="0" r="2.5"/>
+                <circle cx="99" cy="0" r="2.5"/>
+                <circle cx="108" cy="0" r="2.5"/>
+                <circle cx="117" cy="0" r="2.5"/>
+                <circle cx="126" cy="0" r="2.5"/>
+                <circle cx="135" cy="0" r="2.5"/>
+                <circle cx="144" cy="0" r="2.5"/>
+                <circle cx="153" cy="0" r="2.5"/>
+                <circle cx="162" cy="0" r="2.5"/>
+                <circle cx="171" cy="0" r="2.5"/>
+                <circle cx="180" cy="0" r="2.5"/>
+                <circle cx="189" cy="0" r="2.5"/>
+                <circle cx="198" cy="0" r="2.5"/>
+                <circle cx="207" cy="0" r="2.5"/>
+                <circle cx="216" cy="0" r="2.5"/>
+                <circle cx="225" cy="0" r="2.5"/>
+                <circle cx="234" cy="0" r="2.5"/>
+                <circle cx="243" cy="0" r="2.5"/>
+                <circle cx="252" cy="0" r="2.5"/>
+                <circle cx="261" cy="0" r="2.5"/>
+            </g>
+            <use href="#linha-dias" y="12"/><use href="#linha-dias" y="24"/>
+            <use href="#linha-dias" y="36"/><use href="#linha-dias" y="48"/>
+            <use href="#linha-dias" y="60"/><use href="#linha-dias" y="72"/>
+            <use href="#linha-dias" y="84"/><use href="#linha-dias" y="96"/>
+            <use href="#linha-dias" y="108"/>
+        </g>
+        <text class="sub" x="248" y="236">cada ponto = um dia de trabalho · 300 dias</text>
+
+        <text class="rotp" x="24" y="254">João 12:3-5 — “Deixem-na em paz.”</text>
     </g>
 
     <text class="rotp" x="46" y="736" font-size="15">
-        A régua: um denário (ou uma dracma) = um dia de 12 horas. Daí saem o didracma (2 dias), o tetradracma (4 dias), a mina (100 dias) e o talento (≈20 anos).
+        A régua: um denário (ou uma dracma) = um dia de 12 horas ≈ R$ 53. Daí saem o didracma (2 dias), o tetradracma (4 dias), a mina (100 dias) e o talento (≈ 20 anos).
     </text>
     <text class="rotp" x="46" y="762" font-size="13">
-        Fonte: apêndice B14-B, “Dinheiro e pesos”, da Tradução do Novo Mundo das Escrituras Sagradas (wol.jw.org).
+        Fonte: apêndice B14-B, “Dinheiro e pesos”, da Tradução do Novo Mundo das Escrituras Sagradas (wol.jw.org). Salário mínimo de R$ 1.621 arredondado para R$ 1.600.
     </text>
 </svg>
