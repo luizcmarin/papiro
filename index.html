@@ -2372,6 +2372,136 @@
 
         </section>
 
+        <!-- ══ CRONOLOGIA (Bíblica/Mundial) ═══════════════════════════════════ -->
+        <section x-show="rota.modulo === 'cronologia'"
+                 x-data="cronologia()"
+                 x-init="init()">
+        <div class="papiro-app">
+
+            <!-- cabeçalho -->
+            <div class="d-flex align-items-center gap-2 mb-3">
+                <button class="btn btn-sm btn-outline-secondary" @click="voltar()" aria-label="Voltar">
+                    <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                </button>
+                <h1 class="h5 mb-0 me-auto">Cronologia</h1>
+                <span class="badge bg-secondary-subtle text-secondary-emphasis"
+                      x-text="total"></span>
+            </div>
+
+            <p class="text-muted small">
+                De um lado a cronologia bíblica, do outro a história mundial — e cada
+                evento com a fonte de onde saiu.
+            </p>
+
+            <!-- busca + trilhas -->
+            <div class="d-flex gap-2 mb-3 flex-wrap">
+                <input type="search"
+                       class="form-control flex-grow-1"
+                       style="min-width:12rem"
+                       placeholder="Buscar eventos…"
+                       x-model="busca">
+                <button class="btn btn-sm"
+                        :class="verBiblica ? 'btn-primary' : 'btn-outline-secondary'"
+                        @click="verBiblica = !verBiblica">
+                    <i class="bi bi-book me-1" aria-hidden="true"></i>Bíblica
+                </button>
+                <button class="btn btn-sm"
+                        :class="verMundial ? 'btn-warning' : 'btn-outline-secondary'"
+                        @click="verMundial = !verMundial">
+                    <i class="bi bi-globe-americas me-1" aria-hidden="true"></i>Mundial
+                </button>
+            </div>
+
+            <!-- barra de contexto: Criação → hoje -->
+            <div class="papiro-crono-contexto" role="navigation" aria-label="Períodos">
+                <template x-for="p in paradas" :key="p.chave">
+                    <button type="button"
+                            class="papiro-crono-parada"
+                            :class="{
+                                'papiro-crono-parada--atual': periodoAtual === p.chave,
+                                'papiro-crono-parada--ausente': !p.presente
+                            }"
+                            :disabled="!p.presente"
+                            :title="p.rotulo"
+                            @click="saltarPara(p.chave)">
+                        <span x-text="p.rotulo"></span>
+                    </button>
+                </template>
+            </div>
+
+            <!-- vazio -->
+            <div x-show="vazio" class="text-center text-muted py-5">
+                <i class="bi bi-signpost-split fs-2 d-block mb-2" aria-hidden="true"></i>
+                <span>Nenhum evento encontrado.</span>
+                <div class="mt-2">
+                    <button class="btn btn-sm btn-outline-secondary" @click="limparBusca()">
+                        Limpar filtros
+                    </button>
+                </div>
+            </div>
+
+            <!-- linha do tempo -->
+            <template x-for="g in grupos" :key="g.chave">
+                <div class="papiro-crono-grupo">
+
+                    <h2 class="papiro-crono-era"
+                        :id="'cronologia-periodo-' + g.chave"
+                        :data-cronologia-periodo="g.chave"
+                        x-text="g.rotulo"></h2>
+
+                    <div class="papiro-crono-linha">
+                        <template x-for="e in g.eventos" :key="e.id">
+                            <div class="papiro-crono-item"
+                                 :class="eBiblica(e) ? 'papiro-crono-item--biblica' : 'papiro-crono-item--mundial'">
+
+                                <div class="papiro-crono-marco">
+                                    <span class="papiro-crono-ano" x-text="rotuloAno(e)"></span>
+                                    <span class="papiro-crono-ponto"
+                                          :class="e.destaque ? 'papiro-crono-ponto--destaque' : ''"></span>
+                                </div>
+
+                                <div class="card papiro-crono-card"
+                                     :class="e.destaque ? 'papiro-crono-card--destaque' : ''"
+                                     role="button" tabindex="0"
+                                     @click="alternar(e)"
+                                     @keydown.enter="alternar(e)">
+                                    <div class="card-body py-2 px-3">
+                                        <p class="fw-semibold mb-0 lh-sm">
+                                            <i class="bi me-1 text-muted"
+                                               :class="e.icone || 'bi-dot'" aria-hidden="true"></i>
+                                            <span x-text="e.titulo"></span>
+                                        </p>
+
+                                        <template x-if="estaAberto(e)">
+                                            <div class="mt-2">
+                                                <div class="small lh-sm" x-html="e.resumo"></div>
+
+                                                <p class="text-muted small fst-italic mt-2 mb-2"
+                                                   x-show="e.referencia"
+                                                   x-text="e.referencia"></p>
+
+                                                <a class="btn btn-sm btn-outline-primary"
+                                                   :href="e.link_fonte"
+                                                   target="_blank" rel="noopener"
+                                                   @click.stop>
+                                                    <i class="bi bi-box-arrow-up-right me-1" aria-hidden="true"></i>
+                                                    <span x-text="e.obra_fonte || 'Ver a fonte'"></span>
+                                                </a>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </template>
+                    </div>
+
+                </div>
+            </template>
+
+        </div>
+        </section>
+
         <!-- ══ PREP (Esteja Preparado) ════════════════════════════════════════ -->
         <section x-show="rota.modulo === 'prep'"
                  x-data="prep()"
@@ -5317,7 +5447,7 @@
         </section>
 
         <!-- ══ FALLBACK — módulos Em breve ══════════════════════════════════ -->
-        <section x-show="rota.modulo !== 'home' && rota.modulo !== 'hub' && rota.modulo !== 'sobre' && rota.modulo !== 'cartao' && rota.modulo !== 'ice' && rota.modulo !== 'anotacoes' && rota.modulo !== 'guias' && rota.modulo !== 'poesia' && rota.modulo !== 'receitas' && rota.modulo !== 'jogo' && rota.modulo !== 'criacao' && rota.modulo !== 'entenda' && rota.modulo !== 'caderno' && rota.modulo !== 'prep' && rota.modulo !== 'financeiro' && rota.modulo !== 'metas' && rota.modulo !== 'ministerio' && rota.modulo !== 'estudo' && rota.modulo !== 'leitura' && rota.modulo !== 'calendario' && rota.modulo !== 'perfil'"
+        <section x-show="rota.modulo !== 'home' && rota.modulo !== 'hub' && rota.modulo !== 'sobre' && rota.modulo !== 'cartao' && rota.modulo !== 'ice' && rota.modulo !== 'anotacoes' && rota.modulo !== 'guias' && rota.modulo !== 'poesia' && rota.modulo !== 'receitas' && rota.modulo !== 'jogo' && rota.modulo !== 'criacao' && rota.modulo !== 'entenda' && rota.modulo !== 'cronologia' && rota.modulo !== 'caderno' && rota.modulo !== 'prep' && rota.modulo !== 'financeiro' && rota.modulo !== 'metas' && rota.modulo !== 'ministerio' && rota.modulo !== 'estudo' && rota.modulo !== 'leitura' && rota.modulo !== 'calendario' && rota.modulo !== 'perfil'"
                  class="papiro-app">
             <div class="d-flex align-items-center gap-2 mb-4">
                 <button class="btn btn-sm btn-outline-secondary" @click="irHome()">
