@@ -7,7 +7,7 @@
 // - dados/*.json (conteúdo curado): NETWORK-FIRST.
 // Incremente CACHE_VERSAO ao publicar mudanças no shell.
 
-const CACHE_VERSAO = 'papiro-v143';
+const CACHE_VERSAO = 'papiro-v144';
 // Nomes estáveis (sem hash) emitidos pelo build a partir de index.html.
 const SHELL = [
     './',
@@ -30,11 +30,16 @@ const SHELL = [
 // wasm=cache-first), garantindo o armazenamento offline a partir do 2º acesso.
 
 self.addEventListener('install', (event) => {
+    // `cache: 'reload'` obriga a buscar da rede, ignorando o cache HTTP do navegador.
+    // Sem isso o shell novo pode ser precacheado com um index.js ANTIGO ainda válido
+    // para o browser — e aí o index.html novo roda contra o bundle velho, que é como
+    // "classeItem is not defined" aparece no console.
+    const doZero = SHELL.map((u) => new Request(u, { cache: 'reload' }));
     event.waitUntil(
         caches.open(CACHE_VERSAO)
-            .then((cache) => cache.addAll(SHELL))
-            .then(() => self.skipWaiting())
+            .then((cache) => cache.addAll(doZero))
             .catch(() => { /* assets podem ainda não existir no 1º deploy */ })
+            .then(() => self.skipWaiting())
     );
 });
 
@@ -48,12 +53,25 @@ self.addEventListener('activate', (event) => {
     );
 });
 
+// Guarda no cache SEM derrubar a resposta. Três cuidados:
+// - `cache.put` REJEITA para resposta parcial (206, típica de range request), opaca
+//   (cross-origin) ou esquema não-http; sem o catch isso vira "Uncaught (in promise)"
+//   no console, ruído que esconde erro de verdade;
+// - guardar um 404/500 seria pior que não guardar: o offline passaria a servir o erro;
+// - a gravação é em segundo plano de propósito — a resposta volta na hora.
+function guardarNoCache(req, resp) {
+    if (!resp || resp.status !== 200 || resp.type === 'opaque') return;
+    const copia = resp.clone();
+    caches.open(CACHE_VERSAO)
+        .then((cache) => cache.put(req, copia))
+        .catch(() => { /* 206/opaca/quota — seguir sem cachear */ });
+}
+
 // Busca na rede e atualiza o cache; cai no cache em caso de falha (offline).
 function networkFirst(req) {
     return fetch(req)
         .then((resp) => {
-            const copia = resp.clone();
-            caches.open(CACHE_VERSAO).then((cache) => cache.put(req, copia));
+            guardarNoCache(req, resp);
             return resp;
         })
         .catch(() => caches.match(req).then((c) => c || caches.match('./index.html')));
@@ -62,8 +80,7 @@ function networkFirst(req) {
 // Serve do cache (rápido) e atualiza em segundo plano; busca na rede se faltar.
 function cacheFirst(req) {
     return caches.match(req).then((c) => c || fetch(req).then((resp) => {
-        const copia = resp.clone();
-        caches.open(CACHE_VERSAO).then((cache) => cache.put(req, copia));
+        guardarNoCache(req, resp);
         return resp;
     }));
 }
