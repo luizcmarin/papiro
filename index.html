@@ -2390,7 +2390,9 @@
 
             <p class="text-muted small">
                 De um lado a cronologia bíblica, do outro a história mundial — e cada
-                evento com a fonte de onde saiu.
+                evento com a fonte de onde saiu. Os cards <span class="papiro-crono-legenda papiro-crono-legenda--historica">históricos</span>
+                vêm de acervos oficiais fora de jw.org (UNESCO, Louvre, ONU, arquivos e
+                museus nacionais) e seguem a datação acadêmica convencional.
             </p>
 
             <!-- busca + trilhas -->
@@ -2409,6 +2411,11 @@
                         :class="verMundial ? 'btn-warning' : 'btn-outline-secondary'"
                         @click="verMundial = !verMundial">
                     <i class="bi bi-globe-americas me-1" aria-hidden="true"></i>Mundial
+                </button>
+                <button class="btn btn-sm"
+                        :class="verHistorica ? 'btn-info' : 'btn-outline-secondary'"
+                        @click="verHistorica = !verHistorica">
+                    <i class="bi bi-bank me-1" aria-hidden="true"></i>Histórica
                 </button>
             </div>
 
@@ -2451,8 +2458,7 @@
 
                     <div class="papiro-crono-linha">
                         <template x-for="e in g.eventos" :key="e.id">
-                            <div class="papiro-crono-item"
-                                 :class="eBiblica(e) ? 'papiro-crono-item--biblica' : 'papiro-crono-item--mundial'">
+                            <div class="papiro-crono-item" :class="classeItem(e)">
 
                                 <div class="papiro-crono-marco">
                                     <span class="papiro-crono-ano" x-text="rotuloAno(e)"></span>
@@ -2470,6 +2476,11 @@
                                             <i class="bi me-1 text-muted"
                                                :class="e.icone || 'bi-dot'" aria-hidden="true"></i>
                                             <span x-text="e.titulo"></span>
+                                            <!-- o selo diz o que a cor sozinha não diria a quem
+                                                 não distingue as duas trilhas da direita -->
+                                            <template x-if="eHistorica(e)">
+                                                <span class="badge papiro-crono-selo ms-1">registro oficial</span>
+                                            </template>
                                         </p>
 
                                         <template x-if="estaAberto(e)">
