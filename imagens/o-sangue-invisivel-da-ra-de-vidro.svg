@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">O Sangue Invisível da Rã-de-Vidro — como ela fica transparente sem coagular</title>
+    <desc id="desc">Para se esconder na folha, a rã-de-vidro recolhe cerca de 90% das hemácias para o
+        fígado enquanto dorme: sem o vermelho do sangue na pele, ela fica transparente. Sangue tão
+        concentrado normalmente coagula e mata; uma ação anticoagulante o mantém fluido enquanto
+        guardado, sem perder a coagulação normal de um ferimento. Acordada, o sangue circula e o
+        predador a vê; dormindo, o sangue some no fígado e o predador não a enxerga.</desc>
+
+    <defs>
+        <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#eef6ee"/>
+            <stop offset="1" stop-color="#dcecdd"/>
+        </linearGradient>
+        <linearGradient id="folha" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3f9e56"/>
+            <stop offset="1" stop-color="#2b7a3f"/>
+        </linearGradient>
+        <radialGradient id="sangue" cx="0.4" cy="0.35" r="0.8">
+            <stop offset="0" stop-color="#e0596b"/>
+            <stop offset="1" stop-color="#b32438"/>
+        </radialGradient>
+        <marker id="rv-s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#b32438"/>
+        </marker>
+    </defs>
+
+    <style>
+        .cab  { fill:#1c5030; font-size:28px; font-weight:800; letter-spacing:1px; }
+        .rot  { fill:#2f7d4a; font-size:18px; font-weight:700; }
+        .rotp { fill:#5c7b64; font-size:14px; }
+        .big  { fill:#1c5030; font-size:22px; font-weight:800; }
+        .ok   { fill:#2f8f5c; }
+        .warn { fill:#c33a2e; }
+        .painel { fill:#ffffff; stroke:#bcd8c2; stroke-width:2; }
+    </style>
+
+    <rect width="1400" height="800" fill="url(#fundo)"/>
+
+    <text class="cab" x="46" y="54">O SANGUE INVISÍVEL DA RÃ-DE-VIDRO</text>
+    <text class="rotp" x="46" y="84" font-size="17">
+        Para sumir na folha, a rã esconde o próprio sangue — e precisa impedir que ele coagule enquanto o guarda.
+    </text>
+
+    <!-- ══ Esquerda: acordada × dormindo ══════════════════════════════════ -->
+    <g transform="translate(46,112)">
+        <rect class="painel" x="0" y="0" width="760" height="392" rx="16"/>
+        <text class="rot" x="24" y="38">O QUE ACONTECE QUANDO ELA DORME</text>
+        <text class="rotp" x="24" y="60">o sangue vermelho sai da pele e vai para o fígado — a rã fica transparente</text>
+
+        <!-- ACORDADA -->
+        <g transform="translate(30,90)">
+            <rect x="0" y="0" width="344" height="276" rx="12" fill="#fff3f2" stroke="#f0c4bd"/>
+            <text class="warn" x="20" y="30" font-size="16" font-weight="700">ACORDADA — o predador a vê</text>
+
+            <!-- folha -->
+            <ellipse cx="172" cy="158" rx="126" ry="96" fill="url(#folha)"/>
+            <line x1="60" y1="200" x2="284" y2="116" stroke="#bfe6c6" stroke-width="2" opacity="0.6"/>
+            <line x1="60" y1="116" x2="284" y2="200" stroke="#bfe6c6" stroke-width="2" opacity="0.6"/>
+
+            <!-- rã opaca com sangue circulando -->
+            <g transform="translate(172,158)" stroke-linecap="round">
+                <g stroke="#5aa869" stroke-width="16" fill="none">
+                    <path d="M-38,-18 Q-78,-40 -92,-8"/>
+                    <path d="M38,-18 Q78,-40 92,-8"/>
+                    <path d="M-34,45 Q-92,50 -70,104"/>
+                    <path d="M34,45 Q92,50 70,104"/>
+                </g>
+                <ellipse cx="0" cy="0" rx="46" ry="64" fill="#6cbf78" stroke="#4f9a5e" stroke-width="2"/>
+                <ellipse cx="0" cy="-58" rx="40" ry="34" fill="#6cbf78" stroke="#4f9a5e" stroke-width="2"/>
+                <!-- rede de vasos vermelhos bem visível -->
+                <g stroke="#c62f43" stroke-width="3" fill="none" opacity="0.92">
+                    <path d="M0,-30 L0,45 M-22,-10 L22,-10 M-18,18 L18,18 M-14,-40 L-2,-58 M14,-40 L2,-58"/>
+                </g>
+                <circle cx="-10" cy="-6" r="7" fill="#d42a40"/>
+                <!-- olhos abertos -->
+                <circle cx="-20" cy="-78" r="12" fill="#f2f7ec"/><circle cx="-20" cy="-78" r="8" fill="#d9a72e"/><circle cx="-20" cy="-78" r="3.5" fill="#20160a"/>
+                <circle cx="20" cy="-78" r="12" fill="#f2f7ec"/><circle cx="20" cy="-78" r="8" fill="#d9a72e"/><circle cx="20" cy="-78" r="3.5" fill="#20160a"/>
+            </g>
+            <text x="24" y="256" class="rotp" font-size="13">👀 sangue vermelho na pele = fácil de achar</text>
+        </g>
+
+        <!-- DORMINDO -->
+        <g transform="translate(390,90)">
+            <rect x="0" y="0" width="344" height="276" rx="12" fill="#eef8f1" stroke="#a9dcc0"/>
+            <text class="ok" x="20" y="30" font-size="16" font-weight="700">DORMINDO — some na folha</text>
+
+            <!-- folha -->
+            <ellipse cx="172" cy="158" rx="126" ry="96" fill="url(#folha)"/>
+            <line x1="60" y1="200" x2="284" y2="116" stroke="#bfe6c6" stroke-width="2.5" opacity="0.85"/>
+            <line x1="60" y1="116" x2="284" y2="200" stroke="#bfe6c6" stroke-width="2.5" opacity="0.85"/>
+            <line x1="172" y1="70" x2="172" y2="246" stroke="#bfe6c6" stroke-width="2.5" opacity="0.85"/>
+
+            <!-- rã transparente: a folha aparece através dela -->
+            <g transform="translate(172,158)" stroke-linecap="round">
+                <g stroke="#8fcf9b" stroke-width="16" fill="none" opacity="0.35">
+                    <path d="M-38,-18 Q-78,-40 -92,-8"/>
+                    <path d="M38,-18 Q78,-40 92,-8"/>
+                    <path d="M-34,45 Q-92,50 -70,104"/>
+                    <path d="M34,45 Q92,50 70,104"/>
+                </g>
+                <ellipse cx="0" cy="0" rx="46" ry="64" fill="#bfe6c6" fill-opacity="0.22" stroke="#7cc08c" stroke-width="2"/>
+                <ellipse cx="0" cy="-58" rx="40" ry="34" fill="#bfe6c6" fill-opacity="0.22" stroke="#7cc08c" stroke-width="2"/>
+                <!-- ossos esverdeados aparecendo -->
+                <g stroke="#8fe6a2" stroke-width="2.5" opacity="0.8" fill="none">
+                    <path d="M-34,45 Q-92,50 -70,104 M34,45 Q92,50 70,104"/>
+                </g>
+                <!-- fígado inchado, com o sangue todo empacotado -->
+                <ellipse cx="0" cy="16" rx="26" ry="30" fill="url(#sangue)"/>
+                <g fill="#e86678">
+                    <circle cx="-8" cy="6" r="3"/><circle cx="6" cy="2" r="3"/><circle cx="-2" cy="16" r="3"/>
+                    <circle cx="10" cy="18" r="3"/><circle cx="-11" cy="22" r="3"/><circle cx="2" cy="28" r="3"/><circle cx="12" cy="10" r="3"/>
+                </g>
+                <!-- olhos fechados (dormindo) -->
+                <path d="M-30,-78 q10,7 20,0" stroke="#4f9a5e" stroke-width="3" fill="none"/>
+                <path d="M10,-78 q10,7 20,0" stroke="#4f9a5e" stroke-width="3" fill="none"/>
+            </g>
+            <!-- seta: sangue → fígado -->
+            <text x="20" y="256" class="ok" font-size="13" font-weight="700">🫥 ~90% do sangue guardado no fígado</text>
+        </g>
+    </g>
+
+    <!-- ══ Direita: o perigo do coágulo ═══════════════════════════════════ -->
+    <g transform="translate(834,112)">
+        <rect class="painel" x="0" y="0" width="520" height="392" rx="16"/>
+        <text class="rot" x="24" y="38">O PERIGO: SANGUE CONCENTRADO COAGULA</text>
+        <text class="rotp" x="24" y="60">guardar tanto sangue junto pediria um bloco sólido — a não ser que…</text>
+
+        <!-- SEM anticoagulante → coágulo -->
+        <g transform="translate(24,80)">
+            <rect x="0" y="0" width="472" height="126" rx="12" fill="#fff3f2" stroke="#f0c4bd"/>
+            <text class="warn" x="18" y="28" font-size="15" font-weight="700">SEM anticoagulante</text>
+            <!-- vaso com coágulo (grumo escuro) -->
+            <rect x="18" y="44" width="300" height="46" rx="23" fill="#f7dcd9"/>
+            <g>
+                <ellipse cx="150" cy="67" rx="70" ry="24" fill="#7a1522"/>
+                <g fill="#4a0d16">
+                    <circle cx="120" cy="60" r="7"/><circle cx="145" cy="72" r="7"/><circle cx="170" cy="60" r="7"/><circle cx="135" cy="76" r="6"/><circle cx="182" cy="72" r="6"/>
+                </g>
+            </g>
+            <text x="360" y="62" font-size="28">☠</text>
+            <text x="336" y="98" class="warn" font-size="14" font-weight="700">coagula — fatal</text>
+        </g>
+
+        <!-- COM anticoagulante → flui -->
+        <g transform="translate(24,220)">
+            <rect x="0" y="0" width="472" height="140" rx="12" fill="#eef8f1" stroke="#a9dcc0"/>
+            <text class="ok" x="18" y="28" font-size="15" font-weight="700">COM anticoagulante</text>
+            <!-- vaso com hemácias soltas, empacotadas mas fluidas -->
+            <rect x="18" y="42" width="300" height="46" rx="23" fill="#f7dcd9"/>
+            <g fill="#d63a4e">
+                <circle cx="46" cy="65" r="9"/><circle cx="74" cy="65" r="9"/><circle cx="102" cy="65" r="9"/><circle cx="130" cy="65" r="9"/>
+                <circle cx="158" cy="65" r="9"/><circle cx="186" cy="65" r="9"/><circle cx="214" cy="65" r="9"/><circle cx="242" cy="65" r="9"/><circle cx="270" cy="65" r="9"/>
+            </g>
+            <text x="360" y="60" font-size="26">✔</text>
+            <text x="338" y="86" class="ok" font-size="14" font-weight="700">flui, seguro</text>
+            <text class="rotp" x="18" y="118" font-size="13">E num corte a rã ainda coagula normal — o freio é só para o sangue guardado.</text>
+        </g>
+    </g>
+
+    <!-- ══ Rodapé: três cartões ═══════════════════════════════════════════ -->
+    <g transform="translate(46,532)">
+        <g>
+            <rect class="painel" width="422" height="224" rx="16"/>
+            <text class="rot" x="22" y="40">OS NÚMEROS</text>
+            <text class="big warn" x="22" y="92" font-size="34">90%</text>
+            <text class="rotp" x="120" y="80" font-size="15">das hemácias vão</text>
+            <text class="rotp" x="120" y="100" font-size="15">para o fígado.</text>
+            <text class="big" x="22" y="150" font-size="30" fill="#2f7d4a">+40%</text>
+            <text class="rotp" x="120" y="138" font-size="15">o fígado aumenta —</text>
+            <text class="rotp" x="120" y="158" font-size="15">e o esconde com cristais.</text>
+            <text class="rotp" x="22" y="200" font-size="14">Vive do sul do México ao norte da América do Sul.</text>
+        </g>
+        <g transform="translate(443,0)">
+            <rect class="painel" width="422" height="224" rx="16"/>
+            <text class="rot" x="22" y="40">OS MÉDICOS QUEREM COPIAR</text>
+            <text class="rotp" x="22" y="76" font-size="15">Ligar e desligar a coagulação na hora</text>
+            <text class="rotp" x="22" y="96" font-size="15">certa é algo que a medicina ainda tenta</text>
+            <text class="rotp" x="22" y="116" font-size="15">dominar. Pesquisadores estudam a rã</text>
+            <text class="rotp" x="22" y="136" font-size="15">para criar melhores anticoagulantes</text>
+            <text class="rotp" x="22" y="156" font-size="15">para as pessoas.</text>
+            <text class="big" x="22" y="200" font-size="17" fill="#2f7d4a">Nós copiamos; ela já vinha pronta.</text>
+        </g>
+        <g transform="translate(886,0)">
+            <rect class="painel" width="422" height="224" rx="16" fill="#eef8f1" stroke="#a9dcc0"/>
+            <text class="rot ok" x="22" y="40">ISSO TEVE UM PROJETO?</text>
+            <text class="rotp" x="22" y="76" font-size="15">Controlar o próprio sangue com tanta</text>
+            <text class="rotp" x="22" y="96" font-size="15">precisão — invisível para caçar-se, mas</text>
+            <text class="rotp" x="22" y="116" font-size="15">pronto para estancar um corte.</text>
+            <text class="rotp" x="22" y="152" font-size="15" font-style="italic">“A vida da carne está no</text>
+            <text class="rotp" x="22" y="172" font-size="15" font-style="italic">sangue.” — Levítico 17:11</text>
+            <text class="big ok" x="22" y="206" font-size="17">Isso teve um Projeto?</text>
+        </g>
+    </g>
+</svg>

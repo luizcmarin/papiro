@@ -34,17 +34,23 @@
             <div class="progress-bar progress-bar-striped progress-bar-animated w-100"></div>
         </div>
 
-        <!-- Aviso de app atualizado (SW novo instalado) -->
-        <template x-if="appAtualizado">
+        <!-- Banner de mensagem padrão: sincronização de conteúdo, app atualizado, etc.
+             Fonte única de avisos transitórios/ação, alimentado por mostrarMensagem(). -->
+        <template x-if="mensagem">
         <div class="position-fixed bottom-0 start-50 translate-middle-x mb-3 px-3 w-100"
-             style="z-index:2100;max-width:26rem">
-            <div class="card shadow-lg border-0 papiro-acento papiro-acento--primary">
-                <div class="card-body py-2 px-3 d-flex align-items-center gap-2">
-                    <i class="bi bi-stars text-primary fs-5" aria-hidden="true"></i>
-                    <div class="small me-auto">O Papiro foi atualizado. Recarregue para usar a nova versão.</div>
-                    <button class="btn btn-sm btn-primary flex-shrink-0" @click="recarregarApp()">Recarregar</button>
+             style="z-index:2100;max-width:26rem" role="status" aria-live="polite">
+            <div class="card shadow-lg border-0 papiro-acento" :class="`papiro-acento--${mensagem.tom}`">
+                <div class="card-body py-2 px-3 d-flex align-items-start gap-2">
+                    <i class="bi fs-5 flex-shrink-0" :class="[mensagem.icone, `text-${mensagem.tom}`]" aria-hidden="true"></i>
+                    <div class="small me-auto pt-1">
+                        <div class="fw-semibold" x-show="mensagem.titulo" x-text="mensagem.titulo"></div>
+                        <div class="text-body-secondary" x-text="mensagem.texto"></div>
+                    </div>
+                    <button x-show="mensagem.acaoRotulo" class="btn btn-sm flex-shrink-0"
+                            :class="`btn-${mensagem.tom}`" @click="executarAcaoMensagem()"
+                            x-text="mensagem.acaoRotulo"></button>
                     <button class="btn btn-sm btn-outline-secondary flex-shrink-0 border-0"
-                            @click="appAtualizado = false" aria-label="Fechar">
+                            @click="fecharMensagem()" aria-label="Fechar">
                         <i class="bi bi-x-lg" aria-hidden="true"></i>
                     </button>
                 </div>
