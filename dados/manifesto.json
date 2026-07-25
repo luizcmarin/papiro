@@ -1,52 +1,52 @@
 {
-    "gerado_em": "2026-07-25T20:11:01+00:00",
+    "gerado_em": "2026-07-25T22:03:50+00:00",
     "modulos": {
         "perguntas": {
-            "versao": 1785010261,
+            "versao": "d87ec6b5ab6c55fbff8c30b5169fcf99",
             "registros": 1624
         },
         "poesias": {
-            "versao": 1785010261,
+            "versao": "92bb7081c7cc44836ac9ff56a23f00da",
             "registros": 21
         },
         "receitas": {
-            "versao": 1785010261,
+            "versao": "97f5d7b2be476266c400f218f5d54c8d",
             "registros": 4
         },
         "kits": {
-            "versao": 1785010261,
+            "versao": "07a49fc8c9299b051d3c4d38d965c16f",
             "registros": 6
         },
         "estoque_catalogo": {
-            "versao": 1785010261,
+            "versao": "e92ac5885cef17c02a57317c857782b3",
             "registros": 32
         },
         "guias": {
-            "versao": 1785010261,
+            "versao": "66a94b15b50c4939eb97d7d485219e1d",
             "registros": 15
         },
         "vibes": {
-            "versao": 1785010261,
+            "versao": "bdbc5e603fc8f7b3be4f953f5b825fd3",
             "registros": 100
         },
         "criacao_modulos": {
-            "versao": 1785010261,
+            "versao": "3703210c059b721f9cefcf9c5f84cc6a",
             "registros": 61
         },
         "cronologia": {
-            "versao": 1785010261,
+            "versao": "93c89c3471ebcc39120a7b19110eb359",
             "registros": 594
         },
         "categorias": {
-            "versao": 1785010261,
+            "versao": "a29045012d4dcf4e959f5a2931bb77e4",
             "registros": 16
         },
         "anotacao_modelos": {
-            "versao": 1785010261,
+            "versao": "2759905348e0e61dce5e4af921bdbca2",
             "registros": 7
         },
         "calendario_tipos": {
-            "versao": 1785010261,
+            "versao": "dfe4a3885b088a37aff9e64f84d4b3c2",
             "registros": 6
         }
     }
