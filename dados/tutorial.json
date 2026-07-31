@@ -1,0 +1,211 @@
+[
+  {
+    "id": 1,
+    "modulo_id": "",
+    "titulo": "Visão geral",
+    "resumo": "O que é o Papiro e como ele guarda suas coisas",
+    "conteudo": "<p>O Papiro é um aplicativo <strong>do seu aparelho</strong>. Tudo o que você escreve — anotações, metas, finanças, relatórios — fica gravado localmente e não é enviado a servidor nenhum.</p><p>A tela inicial é o mapa do app: cada tile abre um módulo, e alguns tiles são <em>hubs</em>, que agrupam módulos parecidos. O botão de voltar do cabeçalho sempre sobe um nível.</p><p>O botão de sincronizar, na tela inicial, baixa o <strong>conteúdo curado</strong> (guias, poesias, receitas, perguntas do jogo). Ele nunca apaga o que é seu, e o app funciona sem rede: sincronizar só atualiza o acervo.</p><p>Em cada módulo, o botão “?” do cabeçalho abre exatamente o tópico daquele módulo aqui no tutorial.</p>",
+    "ordem": 1,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  },
+  {
+    "id": 2,
+    "modulo_id": "anotacoes",
+    "titulo": "Anotações",
+    "resumo": "Escrever, organizar em pastas e apresentar",
+    "conteudo": "<p>Serve para tudo que você escreve: reuniões, discursos, visitas, estudos. Toque em <strong>+</strong> e escolha um modelo — ele já entra com os títulos prontos.</p><p>A gravação é automática: o texto é salvo pouco depois de você parar de digitar, e o rodapé do editor mostra a hora do último salvamento. Sem título, nada é gravado.</p><p>Dicas: <strong>fixe</strong> a anotação que você abre toda semana; <strong>arquive</strong> em vez de excluir o que já passou; e use o modo <strong>apresentar</strong> para ler no palco — o texto rola sozinho e a velocidade é ajustável.</p>",
+    "ordem": 2,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  },
+  {
+    "id": 3,
+    "modulo_id": "guias",
+    "titulo": "Guias",
+    "resumo": "Ler os guias do acervo e escrever os seus",
+    "conteudo": "<p>Os guias são explicações prontas, que vêm no acervo curado. A lista mistura os do acervo com os seus; os seus aparecem com a marca <em>Minha</em>.</p><p>No guia aberto você pode ouvir em voz alta, apresentar com rolagem automática ou compartilhar o texto. Editar e excluir só valem para os seus.</p><p>Dica: toque em <strong>+</strong> para escrever um guia próprio — ele fica no aparelho e nunca é substituído por uma sincronização.</p>",
+    "ordem": 3,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  },
+  {
+    "id": 4,
+    "modulo_id": "poesia",
+    "titulo": "Poesia",
+    "resumo": "Ler o acervo, favoritar e escrever",
+    "conteudo": "<p>O acervo de poesias é curado; as suas entram pelo <strong>+</strong> e ficam misturadas na mesma lista, com a marca <em>Minha</em>.</p><p>Na leitura há navegação sequencial (anterior/próxima) pelo acervo, barra de progresso, leitura em voz alta e modo apresentação.</p><p>Dica: a <strong>estrela</strong> marca favoritos, e favoritos sobem para o topo da lista. O botão de informação, na lista, explica o propósito das obras.</p>",
+    "ordem": 4,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  },
+  {
+    "id": 5,
+    "modulo_id": "receitas",
+    "titulo": "Receitas",
+    "resumo": "Buscar por categoria e guardar as suas",
+    "conteudo": "<p>A lista traz o acervo curado e as suas receitas. Os chips de emoji filtram por categoria — toque de novo no chip aceso para ver todas.</p><p>Ingredientes e modo de preparo são campos de <strong>linhas</strong>: um item por linha. É o formato que fica legível na leitura e na hora de ouvir em voz alta.</p><p>Dica: aqui você pode editar até as receitas do acervo — a sua versão fica no aparelho.</p>",
+    "ordem": 5,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  },
+  {
+    "id": 6,
+    "modulo_id": "jogo",
+    "titulo": "Língua Pura",
+    "resumo": "Praticar com as perguntas do acervo",
+    "conteudo": "<p>É um jogo de perguntas para fixar o que você estuda. As perguntas vêm do acervo curado e aumentam a cada sincronização.</p><p>Dica: erre sem medo — a explicação de cada resposta é a parte que ensina.</p>",
+    "ordem": 6,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  },
+  {
+    "id": 7,
+    "modulo_id": "criacao",
+    "titulo": "Teve um Projeto?",
+    "resumo": "Puzzles sobre o projeto na natureza",
+    "conteudo": "<p>Cada módulo apresenta um ser vivo e o que a engenharia aprendeu dele. Você mexe nos controles do gráfico e vê o efeito na hora.</p><p>Dica: a ilustração de cada módulo ensina o que o puzzle não mostra — a conta, o mecanismo, o contexto. Vale abrir.</p>",
+    "ordem": 7,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  },
+  {
+    "id": 8,
+    "modulo_id": "entenda",
+    "titulo": "Entenda Melhor",
+    "resumo": "Assuntos explicados com gráficos",
+    "conteudo": "<p>Assuntos que rendem mais quando visualizados: escalas, medições, cronologias. Os controles ficam dentro do próprio gráfico, e os textos mudam conforme você mexe.</p><p>Dica: as referências ficam no fim de cada assunto — vale conferir a fonte.</p>",
+    "ordem": 8,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  },
+  {
+    "id": 9,
+    "modulo_id": "cronologia",
+    "titulo": "Cronologia",
+    "resumo": "A linha do tempo dos períodos bíblicos",
+    "conteudo": "<p>A linha do tempo vai da criação aos nossos dias. Toque num período para posicionar a linha nele e ver os eventos daquele trecho.</p><p>Dica: use junto do Caderno de Estudo — datar o que você lê ajuda a fixar.</p>",
+    "ordem": 9,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  },
+  {
+    "id": 10,
+    "modulo_id": "caderno",
+    "titulo": "Caderno de Estudo",
+    "resumo": "Perguntas e respostas do seu estudo",
+    "conteudo": "<p>Um caderno para as suas perguntas e o que você descobriu sobre cada uma. Diferente das Anotações, aqui o formato é pergunta e resposta.</p><p>Dica: registre a pergunta assim que ela aparecer, mesmo sem resposta. A lista de perguntas abertas é o seu roteiro de estudo.</p>",
+    "ordem": 10,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  },
+  {
+    "id": 11,
+    "modulo_id": "prep",
+    "titulo": "Esteja Preparado",
+    "resumo": "Kits, estoque e documentos",
+    "conteudo": "<p>Reúne o preparo para emergências: listas de verificação (kits), estoque de alimentos com validade e um cofre de documentos.</p><p>O cofre guarda os documentos <strong>cifrados</strong> no próprio aparelho, com a sua senha. Sem a senha ninguém abre — nem o app.</p><p>Dica: comece pelo kit sugerido e marque o que já tem; o indicador de prontidão mostra o quanto falta.</p>",
+    "ordem": 11,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  },
+  {
+    "id": 12,
+    "modulo_id": "financeiro",
+    "titulo": "Financeiro",
+    "resumo": "Entradas, saídas e recorrências",
+    "conteudo": "<p>Lançamentos de entrada e saída por categoria, com recorrências para o que repete todo mês.</p><p>Dica: crie as categorias que você realmente usa e apague as que não usa — relatório com categoria vazia não informa nada.</p>",
+    "ordem": 12,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  },
+  {
+    "id": 13,
+    "modulo_id": "metas",
+    "titulo": "Metas",
+    "resumo": "Objetivos com progresso",
+    "conteudo": "<p>Metas com prazo e progresso, acessadas de dentro de Vida e Ministério.</p><p>Dica: meta boa é a que caber num número — horas, capítulos, visitas. O progresso se calcula sozinho a partir dele.</p>",
+    "ordem": 13,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  },
+  {
+    "id": 14,
+    "modulo_id": "ministerio",
+    "titulo": "Vida e Ministério",
+    "resumo": "Relatório do mês e contadores",
+    "conteudo": "<p>Os contadores do mês e o relatório. Os contadores somam durante o dia, e o relatório fecha o mês com o total.</p><p>Dica: registre no fim de cada saída, não no fim do mês — é a diferença entre um número exato e um número lembrado.</p>",
+    "ordem": 14,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  },
+  {
+    "id": 15,
+    "modulo_id": "estudo",
+    "titulo": "Modo Estudo",
+    "resumo": "Sessões de estudo com tempo",
+    "conteudo": "<p>Marca sessões de estudo com duração, para você ver quanto tempo dedicou e a quê.</p><p>Dica: uma sessão curta registrada vale mais que uma longa esquecida.</p>",
+    "ordem": 15,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  },
+  {
+    "id": 16,
+    "modulo_id": "leitura",
+    "titulo": "Leitura da Bíblia",
+    "resumo": "Acompanhar a leitura por livro",
+    "conteudo": "<p>Acompanha a leitura livro por livro, marcando o que já foi lido.</p><p>Dica: o progresso é por capítulo — marcar assim que terminar mantém o histórico honesto.</p>",
+    "ordem": 16,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  },
+  {
+    "id": 17,
+    "modulo_id": "calendario",
+    "titulo": "Calendário",
+    "resumo": "Eventos por tipo",
+    "conteudo": "<p>Eventos do mês, coloridos por tipo (reunião, assembleia, saída de campo, pessoal).</p><p>Dica: os tipos padrão já vêm criados; você pode criar os seus e reaproveitar em cada evento.</p>",
+    "ordem": 17,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  },
+  {
+    "id": 18,
+    "modulo_id": "perfil",
+    "titulo": "Perfil / ICE",
+    "resumo": "Seus dados e o cartão de emergência",
+    "conteudo": "<p>Guarda os seus dados, incluindo as informações de emergência (ICE) e a recusa de sangue.</p><p>Dica: preencha os contatos de emergência mesmo que pareça improvável precisar — é a tela que outra pessoa vai abrir no seu lugar.</p>",
+    "ordem": 18,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  },
+  {
+    "id": 19,
+    "modulo_id": "tutorial",
+    "titulo": "Tutorial",
+    "resumo": "Este próprio guia",
+    "conteudo": "<p>Este módulo. A lista tem um tópico por módulo, e cada módulo tem um botão “?” que abre o tópico dele direto.</p><p>O conteúdo é curado: ele melhora a cada sincronização, sem precisar atualizar o app.</p>",
+    "ordem": 19,
+    "publicar": 1,
+    "data_criacao": 1785436392754,
+    "data_atualizacao": 1785436392754
+  }
+]

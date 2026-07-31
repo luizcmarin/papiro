@@ -1,1022 +1,1022 @@
 [
-    {
-        "id": 2,
-        "nome": "Mochila de Emergência (72 h)",
-        "icone": "🎒",
-        "publicar": 1,
-        "data_criacao": 1781968121737,
-        "data_atualizacao": 1782835449742,
-        "itens": [
-            {
-                "id": 157,
-                "kit_id": 2,
-                "rotulo": "Água potável",
-                "quantidade": "4 L por pessoa/dia",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Para até 3 dias; trocar a cada 6 meses",
-                "publicar": 1
-            },
-            {
-                "id": 158,
-                "kit_id": 2,
-                "rotulo": "Cloro ou pastilhas de purificação",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Tratar a água em último caso",
-                "publicar": 1
-            },
-            {
-                "id": 159,
-                "kit_id": 2,
-                "rotulo": "Alimentos não perecíveis",
-                "quantidade": "3 dias",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Enlatados e barras que não precisam de cozimento",
-                "publicar": 1
-            },
-            {
-                "id": 160,
-                "kit_id": 2,
-                "rotulo": "Barras de cereal / energéticas",
-                "quantidade": "1 caixa",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 161,
-                "kit_id": 2,
-                "rotulo": "Leite em pó ou longa vida",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 162,
-                "kit_id": 2,
-                "rotulo": "Alimentos para bebês",
-                "quantidade": "Conforme a idade",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Se houver bebê na família",
-                "publicar": 1
-            },
-            {
-                "id": 163,
-                "kit_id": 2,
-                "rotulo": "Abridor de latas manual",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 164,
-                "kit_id": 2,
-                "rotulo": "Fogareiro portátil + gás",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 165,
-                "kit_id": 2,
-                "rotulo": "Fósforos e isqueiro",
-                "quantidade": "1 jogo",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Guardar à prova d’água",
-                "publicar": 1
-            },
-            {
-                "id": 166,
-                "kit_id": 2,
-                "rotulo": "Utensílios e pratos descartáveis",
-                "quantidade": "1 jogo",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 167,
-                "kit_id": 2,
-                "rotulo": "Sal e açúcar",
-                "quantidade": "Pequena reserva",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 168,
-                "kit_id": 2,
-                "rotulo": "Lanterna",
-                "quantidade": "1 por pessoa",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "À prova d’água, se possível",
-                "publicar": 1
-            },
-            {
-                "id": 169,
-                "kit_id": 2,
-                "rotulo": "Pilhas reservas",
-                "quantidade": "1 jogo extra",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Conferir o tamanho certo",
-                "publicar": 1
-            },
-            {
-                "id": 170,
-                "kit_id": 2,
-                "rotulo": "Rádio a pilhas ou a manivela",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Para receber alertas oficiais",
-                "publicar": 1
-            },
-            {
-                "id": 171,
-                "kit_id": 2,
-                "rotulo": "Power bank + cabos",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Manter carregado",
-                "publicar": 1
-            },
-            {
-                "id": 172,
-                "kit_id": 2,
-                "rotulo": "Velas",
-                "quantidade": "1 jogo",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 173,
-                "kit_id": 2,
-                "rotulo": "Apito",
-                "quantidade": "1 por pessoa",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Para pedir socorro",
-                "publicar": 1
-            },
-            {
-                "id": 174,
-                "kit_id": 2,
-                "rotulo": "Canivete multiuso",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 175,
-                "kit_id": 2,
-                "rotulo": "Corda / paracord",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 176,
-                "kit_id": 2,
-                "rotulo": "Lona plástica e fita silver tape",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Abrigo improvisado e vedação",
-                "publicar": 1
-            },
-            {
-                "id": 177,
-                "kit_id": 2,
-                "rotulo": "Barraca",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Se possível",
-                "publicar": 1
-            },
-            {
-                "id": 178,
-                "kit_id": 2,
-                "rotulo": "Cobertor ou saco de dormir",
-                "quantidade": "1 por pessoa",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Modelo aluminizado para emergência",
-                "publicar": 1
-            },
-            {
-                "id": 179,
-                "kit_id": 2,
-                "rotulo": "Capa de chuva / poncho",
-                "quantidade": "1 por pessoa",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 180,
-                "kit_id": 2,
-                "rotulo": "Muda de roupa",
-                "quantidade": "1 por pessoa",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 181,
-                "kit_id": 2,
-                "rotulo": "Calçado fechado e botas de borracha",
-                "quantidade": "1 par",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Botas úteis em enchentes",
-                "publicar": 1
-            },
-            {
-                "id": 182,
-                "kit_id": 2,
-                "rotulo": "Máscaras de proteção",
-                "quantidade": "1 caixa",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 183,
-                "kit_id": 2,
-                "rotulo": "Boia ou colete salva-vidas",
-                "quantidade": "Conforme o risco",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Áreas com risco de enchente",
-                "publicar": 1
-            },
-            {
-                "id": 184,
-                "kit_id": 2,
-                "rotulo": "Kit de higiene pessoal",
-                "quantidade": "1 jogo",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Sabonete, escova e creme dental, papel higiênico",
-                "publicar": 1
-            },
-            {
-                "id": 185,
-                "kit_id": 2,
-                "rotulo": "Álcool em gel",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 186,
-                "kit_id": 2,
-                "rotulo": "Lenços umedecidos",
-                "quantidade": "1 pacote",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 187,
-                "kit_id": 2,
-                "rotulo": "Itens de higiene íntima / absorventes",
-                "quantidade": "1 pacote",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 188,
-                "kit_id": 2,
-                "rotulo": "Toalha de secagem rápida",
-                "quantidade": "1 por pessoa",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 189,
-                "kit_id": 2,
-                "rotulo": "Sacos de lixo / plásticos resistentes",
-                "quantidade": "1 rolo",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Também servem de impermeável",
-                "publicar": 1
-            },
-            {
-                "id": 190,
-                "kit_id": 2,
-                "rotulo": "Água sanitária / desinfetante",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Saneamento e tratamento de água",
-                "publicar": 1
-            },
-            {
-                "id": 192,
-                "kit_id": 2,
-                "rotulo": "Repelente de insetos",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Mosquitos aumentam após enchentes",
-                "publicar": 1
-            },
-            {
-                "id": 193,
-                "kit_id": 2,
-                "rotulo": "Protetor solar",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 194,
-                "kit_id": 2,
-                "rotulo": "Óculos/lentes ou aparelho auditivo reservas",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Incluir as pilhas do aparelho",
-                "publicar": 1
-            },
-            {
-                "id": 195,
-                "kit_id": 2,
-                "rotulo": "Itens de mobilidade",
-                "quantidade": "Conforme a necessidade",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Bengala ou andador",
-                "publicar": 1
-            },
-            {
-                "id": 196,
-                "kit_id": 2,
-                "rotulo": "Fraldas e lenços para bebês ou idosos",
-                "quantidade": "Conforme a necessidade",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 197,
-                "kit_id": 2,
-                "rotulo": "Mamadeira e chupeta",
-                "quantidade": "1 jogo",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Se houver bebê",
-                "publicar": 1
-            },
-            {
-                "id": 198,
-                "kit_id": 2,
-                "rotulo": "Item de conforto da criança",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Brinquedo ou cobertor preferido",
-                "publicar": 1
-            },
-            {
-                "id": 199,
-                "kit_id": 2,
-                "rotulo": "Ração e água para animais",
-                "quantidade": "3 dias",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Se houver pets",
-                "publicar": 1
-            },
-            {
-                "id": 200,
-                "kit_id": 2,
-                "rotulo": "Coleira, guia e carteira de vacinação do pet",
-                "quantidade": "1 jogo",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Se houver pets",
-                "publicar": 1
-            }
-        ]
-    },
-    {
-        "id": 3,
-        "nome": "Primeiros Socorros",
-        "icone": "🩹",
-        "publicar": 1,
-        "data_criacao": 1781968121737,
-        "data_atualizacao": 1782835449742,
-        "itens": [
-            {
-                "id": 201,
-                "kit_id": 3,
-                "rotulo": "Bandagens adesivas",
-                "quantidade": "Vários tamanhos",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 202,
-                "kit_id": 3,
-                "rotulo": "Gaze estéril",
-                "quantidade": "1 caixa",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 203,
-                "kit_id": 3,
-                "rotulo": "Atadura de crepe",
-                "quantidade": "2",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 204,
-                "kit_id": 3,
-                "rotulo": "Esparadrapo / fita médica",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 205,
-                "kit_id": 3,
-                "rotulo": "Antisséptico",
-                "quantidade": "1 frasco",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Álcool 70% ou clorexidina",
-                "publicar": 1
-            },
-            {
-                "id": 206,
-                "kit_id": 3,
-                "rotulo": "Soro fisiológico",
-                "quantidade": "2 frascos",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Limpeza de ferimentos e olhos",
-                "publicar": 1
-            },
-            {
-                "id": 207,
-                "kit_id": 3,
-                "rotulo": "Luvas descartáveis",
-                "quantidade": "1 caixa",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 208,
-                "kit_id": 3,
-                "rotulo": "Tesoura sem ponta",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 209,
-                "kit_id": 3,
-                "rotulo": "Pinça",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 210,
-                "kit_id": 3,
-                "rotulo": "Termômetro",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 211,
-                "kit_id": 3,
-                "rotulo": "Pomada para queimaduras",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 212,
-                "kit_id": 3,
-                "rotulo": "Compressa fria instantânea",
-                "quantidade": "2",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 213,
-                "kit_id": 3,
-                "rotulo": "Manual de primeiros socorros",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            }
-        ]
-    },
-    {
-        "id": 4,
-        "nome": "Medicamentos",
-        "icone": "💊",
-        "publicar": 1,
-        "data_criacao": 1781968121737,
-        "data_atualizacao": 1782835449742,
-        "itens": [
-            {
-                "id": 214,
-                "kit_id": 4,
-                "rotulo": "Medicamentos de uso contínuo",
-                "quantidade": "7 a 30 dias",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Conforme a prescrição (inclui os de idosos)",
-                "publicar": 1
-            },
-            {
-                "id": 215,
-                "kit_id": 4,
-                "rotulo": "Receitas médicas atualizadas",
-                "quantidade": "1 cópia",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 216,
-                "kit_id": 4,
-                "rotulo": "Analgésico (paracetamol/dipirona)",
-                "quantidade": "1 cartela",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 219,
-                "kit_id": 4,
-                "rotulo": "Antialérgico",
-                "quantidade": "1 cartela",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 220,
-                "kit_id": 4,
-                "rotulo": "Antidiarreico",
-                "quantidade": "1 cartela",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 221,
-                "kit_id": 4,
-                "rotulo": "Antiácido",
-                "quantidade": "1 cartela",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 222,
-                "kit_id": 4,
-                "rotulo": "Sais de reidratação oral",
-                "quantidade": "4 envelopes",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Para diarreia e desidratação",
-                "publicar": 1
-            }
-        ]
-    },
-    {
-        "id": 6,
-        "nome": "Kit Veicular e Manutenção",
-        "icone": "🚗",
-        "publicar": 1,
-        "data_criacao": 1781968121737,
-        "data_atualizacao": 1782835449742,
-        "itens": [
-            {
-                "id": 223,
-                "kit_id": 6,
-                "rotulo": "Estepe calibrado",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Conferir a calibragem",
-                "publicar": 1
-            },
-            {
-                "id": 224,
-                "kit_id": 6,
-                "rotulo": "Macaco e chave de roda",
-                "quantidade": "1 jogo",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 225,
-                "kit_id": 6,
-                "rotulo": "Calibrador de pneus",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 226,
-                "kit_id": 6,
-                "rotulo": "Triângulo de sinalização",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 227,
-                "kit_id": 6,
-                "rotulo": "Cabos para chupeta (bateria)",
-                "quantidade": "1 jogo",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 228,
-                "kit_id": 6,
-                "rotulo": "Ferramentas básicas",
-                "quantidade": "1 jogo",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Chave de fenda e alicate",
-                "publicar": 1
-            },
-            {
-                "id": 229,
-                "kit_id": 6,
-                "rotulo": "Óleo do motor e fluido de arrefecimento",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Completar quando necessário",
-                "publicar": 1
-            },
-            {
-                "id": 230,
-                "kit_id": 6,
-                "rotulo": "Extintor de incêndio",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Verificar a validade",
-                "publicar": 1
-            },
-            {
-                "id": 231,
-                "kit_id": 6,
-                "rotulo": "Carregador veicular de celular",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 232,
-                "kit_id": 6,
-                "rotulo": "Luvas de trabalho",
-                "quantidade": "1 par",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 233,
-                "kit_id": 6,
-                "rotulo": "Cópia dos documentos do veículo",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            }
-        ]
-    },
-    {
-        "id": 7,
-        "nome": "Documentos e Valores",
-        "icone": "📄",
-        "publicar": 1,
-        "data_criacao": 1781968121737,
-        "data_atualizacao": 1782835449742,
-        "itens": [
-            {
-                "id": 234,
-                "kit_id": 7,
-                "rotulo": "Documentos pessoais (RG, CPF, CNH)",
-                "quantidade": "Cópias",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Plastificadas ou em saco impermeável",
-                "publicar": 1
-            },
-            {
-                "id": 235,
-                "kit_id": 7,
-                "rotulo": "Certidões (nascimento, casamento)",
-                "quantidade": "Cópias",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 236,
-                "kit_id": 7,
-                "rotulo": "Apólices de seguro",
-                "quantidade": "Cópias",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 237,
-                "kit_id": 7,
-                "rotulo": "Cartão do plano de saúde",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 238,
-                "kit_id": 7,
-                "rotulo": "Cartão de informações médicas",
-                "quantidade": "1 por pessoa",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Alergias, tipo sanguíneo, remédios",
-                "publicar": 1
-            },
-            {
-                "id": 239,
-                "kit_id": 7,
-                "rotulo": "Dinheiro em espécie",
-                "quantidade": "Reserva",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Notas pequenas e moedas",
-                "publicar": 1
-            },
-            {
-                "id": 240,
-                "kit_id": 7,
-                "rotulo": "Chaves reservas (casa e carro)",
-                "quantidade": "1 jogo",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 241,
-                "kit_id": 7,
-                "rotulo": "Pen drive com digitalizações",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Documentos e fotos importantes",
-                "publicar": 1
-            },
-            {
-                "id": 242,
-                "kit_id": 7,
-                "rotulo": "Fotos recentes da família",
-                "quantidade": "1 jogo",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Ajudam na identificação",
-                "publicar": 1
-            }
-        ]
-    },
-    {
-        "id": 13,
-        "nome": "Plano Familiar de Emergência",
-        "icone": "🆘",
-        "publicar": 1,
-        "data_criacao": 1781969821229,
-        "data_atualizacao": 1782835449742,
-        "itens": [
-            {
-                "id": 243,
-                "kit_id": 13,
-                "rotulo": "Lista de contatos de emergência",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Familiares, vizinhos e serviços",
-                "publicar": 1
-            },
-            {
-                "id": 244,
-                "kit_id": 13,
-                "rotulo": "Lista de telefones úteis",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Defesa Civil, bombeiros, hospital",
-                "publicar": 1
-            },
-            {
-                "id": 245,
-                "kit_id": 13,
-                "rotulo": "Contato de referência fora da cidade",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Caso a rede local caia",
-                "publicar": 1
-            },
-            {
-                "id": 246,
-                "kit_id": 13,
-                "rotulo": "Ponto de encontro próximo",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Perto de casa",
-                "publicar": 1
-            },
-            {
-                "id": 247,
-                "kit_id": 13,
-                "rotulo": "Ponto de encontro distante",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Se não for possível voltar para casa",
-                "publicar": 1
-            },
-            {
-                "id": 248,
-                "kit_id": 13,
-                "rotulo": "Rotas de fuga do bairro",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Pelo menos dois caminhos",
-                "publicar": 1
-            },
-            {
-                "id": 249,
-                "kit_id": 13,
-                "rotulo": "Endereço dos abrigos oficiais",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Defesa Civil do município",
-                "publicar": 1
-            },
-            {
-                "id": 250,
-                "kit_id": 13,
-                "rotulo": "Mapa de rotas elevadas e abrigos",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Áreas com risco de enchente",
-                "publicar": 1
-            },
-            {
-                "id": 251,
-                "kit_id": 13,
-                "rotulo": "Função de cada um da família",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Quem cuida de crianças, idosos e pets",
-                "publicar": 1
-            },
-            {
-                "id": 252,
-                "kit_id": 13,
-                "rotulo": "Plano para crianças, idosos e pets",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "",
-                "publicar": 1
-            },
-            {
-                "id": 253,
-                "kit_id": 13,
-                "rotulo": "Como desligar água, luz e gás",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Saber a localização dos registros",
-                "publicar": 1
-            },
-            {
-                "id": 254,
-                "kit_id": 13,
-                "rotulo": "Extintor de incêndio (ABC)",
-                "quantidade": "1 por andar",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Verificar a validade e a pressão",
-                "publicar": 1
-            },
-            {
-                "id": 256,
-                "kit_id": 13,
-                "rotulo": "Cobertor antichamas",
-                "quantidade": "1",
-                "esta_marcado": 0,
-                "data_vencimento": 0,
-                "observacoes": "Manter perto da cozinha",
-                "publicar": 1
-            }
-        ]
-    }
+  {
+    "id": 2,
+    "nome": "Mochila de Emergência (72 h)",
+    "icone": "🎒",
+    "publicar": 1,
+    "data_criacao": 1781968121737,
+    "data_atualizacao": 1782835449742,
+    "itens": [
+      {
+        "id": 157,
+        "kit_id": 2,
+        "rotulo": "Água potável",
+        "quantidade": "4 L por pessoa/dia",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Para até 3 dias; trocar a cada 6 meses",
+        "publicar": 1
+      },
+      {
+        "id": 158,
+        "kit_id": 2,
+        "rotulo": "Cloro ou pastilhas de purificação",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Tratar a água em último caso",
+        "publicar": 1
+      },
+      {
+        "id": 159,
+        "kit_id": 2,
+        "rotulo": "Alimentos não perecíveis",
+        "quantidade": "3 dias",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Enlatados e barras que não precisam de cozimento",
+        "publicar": 1
+      },
+      {
+        "id": 160,
+        "kit_id": 2,
+        "rotulo": "Barras de cereal / energéticas",
+        "quantidade": "1 caixa",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 161,
+        "kit_id": 2,
+        "rotulo": "Leite em pó ou longa vida",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 162,
+        "kit_id": 2,
+        "rotulo": "Alimentos para bebês",
+        "quantidade": "Conforme a idade",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Se houver bebê na família",
+        "publicar": 1
+      },
+      {
+        "id": 163,
+        "kit_id": 2,
+        "rotulo": "Abridor de latas manual",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 164,
+        "kit_id": 2,
+        "rotulo": "Fogareiro portátil + gás",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 165,
+        "kit_id": 2,
+        "rotulo": "Fósforos e isqueiro",
+        "quantidade": "1 jogo",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Guardar à prova d’água",
+        "publicar": 1
+      },
+      {
+        "id": 166,
+        "kit_id": 2,
+        "rotulo": "Utensílios e pratos descartáveis",
+        "quantidade": "1 jogo",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 167,
+        "kit_id": 2,
+        "rotulo": "Sal e açúcar",
+        "quantidade": "Pequena reserva",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 168,
+        "kit_id": 2,
+        "rotulo": "Lanterna",
+        "quantidade": "1 por pessoa",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "À prova d’água, se possível",
+        "publicar": 1
+      },
+      {
+        "id": 169,
+        "kit_id": 2,
+        "rotulo": "Pilhas reservas",
+        "quantidade": "1 jogo extra",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Conferir o tamanho certo",
+        "publicar": 1
+      },
+      {
+        "id": 170,
+        "kit_id": 2,
+        "rotulo": "Rádio a pilhas ou a manivela",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Para receber alertas oficiais",
+        "publicar": 1
+      },
+      {
+        "id": 171,
+        "kit_id": 2,
+        "rotulo": "Power bank + cabos",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Manter carregado",
+        "publicar": 1
+      },
+      {
+        "id": 172,
+        "kit_id": 2,
+        "rotulo": "Velas",
+        "quantidade": "1 jogo",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 173,
+        "kit_id": 2,
+        "rotulo": "Apito",
+        "quantidade": "1 por pessoa",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Para pedir socorro",
+        "publicar": 1
+      },
+      {
+        "id": 174,
+        "kit_id": 2,
+        "rotulo": "Canivete multiuso",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 175,
+        "kit_id": 2,
+        "rotulo": "Corda / paracord",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 176,
+        "kit_id": 2,
+        "rotulo": "Lona plástica e fita silver tape",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Abrigo improvisado e vedação",
+        "publicar": 1
+      },
+      {
+        "id": 177,
+        "kit_id": 2,
+        "rotulo": "Barraca",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Se possível",
+        "publicar": 1
+      },
+      {
+        "id": 178,
+        "kit_id": 2,
+        "rotulo": "Cobertor ou saco de dormir",
+        "quantidade": "1 por pessoa",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Modelo aluminizado para emergência",
+        "publicar": 1
+      },
+      {
+        "id": 179,
+        "kit_id": 2,
+        "rotulo": "Capa de chuva / poncho",
+        "quantidade": "1 por pessoa",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 180,
+        "kit_id": 2,
+        "rotulo": "Muda de roupa",
+        "quantidade": "1 por pessoa",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 181,
+        "kit_id": 2,
+        "rotulo": "Calçado fechado e botas de borracha",
+        "quantidade": "1 par",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Botas úteis em enchentes",
+        "publicar": 1
+      },
+      {
+        "id": 182,
+        "kit_id": 2,
+        "rotulo": "Máscaras de proteção",
+        "quantidade": "1 caixa",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 183,
+        "kit_id": 2,
+        "rotulo": "Boia ou colete salva-vidas",
+        "quantidade": "Conforme o risco",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Áreas com risco de enchente",
+        "publicar": 1
+      },
+      {
+        "id": 184,
+        "kit_id": 2,
+        "rotulo": "Kit de higiene pessoal",
+        "quantidade": "1 jogo",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Sabonete, escova e creme dental, papel higiênico",
+        "publicar": 1
+      },
+      {
+        "id": 185,
+        "kit_id": 2,
+        "rotulo": "Álcool em gel",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 186,
+        "kit_id": 2,
+        "rotulo": "Lenços umedecidos",
+        "quantidade": "1 pacote",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 187,
+        "kit_id": 2,
+        "rotulo": "Itens de higiene íntima / absorventes",
+        "quantidade": "1 pacote",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 188,
+        "kit_id": 2,
+        "rotulo": "Toalha de secagem rápida",
+        "quantidade": "1 por pessoa",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 189,
+        "kit_id": 2,
+        "rotulo": "Sacos de lixo / plásticos resistentes",
+        "quantidade": "1 rolo",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Também servem de impermeável",
+        "publicar": 1
+      },
+      {
+        "id": 190,
+        "kit_id": 2,
+        "rotulo": "Água sanitária / desinfetante",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Saneamento e tratamento de água",
+        "publicar": 1
+      },
+      {
+        "id": 192,
+        "kit_id": 2,
+        "rotulo": "Repelente de insetos",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Mosquitos aumentam após enchentes",
+        "publicar": 1
+      },
+      {
+        "id": 193,
+        "kit_id": 2,
+        "rotulo": "Protetor solar",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 194,
+        "kit_id": 2,
+        "rotulo": "Óculos/lentes ou aparelho auditivo reservas",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Incluir as pilhas do aparelho",
+        "publicar": 1
+      },
+      {
+        "id": 195,
+        "kit_id": 2,
+        "rotulo": "Itens de mobilidade",
+        "quantidade": "Conforme a necessidade",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Bengala ou andador",
+        "publicar": 1
+      },
+      {
+        "id": 196,
+        "kit_id": 2,
+        "rotulo": "Fraldas e lenços para bebês ou idosos",
+        "quantidade": "Conforme a necessidade",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 197,
+        "kit_id": 2,
+        "rotulo": "Mamadeira e chupeta",
+        "quantidade": "1 jogo",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Se houver bebê",
+        "publicar": 1
+      },
+      {
+        "id": 198,
+        "kit_id": 2,
+        "rotulo": "Item de conforto da criança",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Brinquedo ou cobertor preferido",
+        "publicar": 1
+      },
+      {
+        "id": 199,
+        "kit_id": 2,
+        "rotulo": "Ração e água para animais",
+        "quantidade": "3 dias",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Se houver pets",
+        "publicar": 1
+      },
+      {
+        "id": 200,
+        "kit_id": 2,
+        "rotulo": "Coleira, guia e carteira de vacinação do pet",
+        "quantidade": "1 jogo",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Se houver pets",
+        "publicar": 1
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "nome": "Primeiros Socorros",
+    "icone": "🩹",
+    "publicar": 1,
+    "data_criacao": 1781968121737,
+    "data_atualizacao": 1782835449742,
+    "itens": [
+      {
+        "id": 201,
+        "kit_id": 3,
+        "rotulo": "Bandagens adesivas",
+        "quantidade": "Vários tamanhos",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 202,
+        "kit_id": 3,
+        "rotulo": "Gaze estéril",
+        "quantidade": "1 caixa",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 203,
+        "kit_id": 3,
+        "rotulo": "Atadura de crepe",
+        "quantidade": "2",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 204,
+        "kit_id": 3,
+        "rotulo": "Esparadrapo / fita médica",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 205,
+        "kit_id": 3,
+        "rotulo": "Antisséptico",
+        "quantidade": "1 frasco",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Álcool 70% ou clorexidina",
+        "publicar": 1
+      },
+      {
+        "id": 206,
+        "kit_id": 3,
+        "rotulo": "Soro fisiológico",
+        "quantidade": "2 frascos",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Limpeza de ferimentos e olhos",
+        "publicar": 1
+      },
+      {
+        "id": 207,
+        "kit_id": 3,
+        "rotulo": "Luvas descartáveis",
+        "quantidade": "1 caixa",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 208,
+        "kit_id": 3,
+        "rotulo": "Tesoura sem ponta",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 209,
+        "kit_id": 3,
+        "rotulo": "Pinça",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 210,
+        "kit_id": 3,
+        "rotulo": "Termômetro",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 211,
+        "kit_id": 3,
+        "rotulo": "Pomada para queimaduras",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 212,
+        "kit_id": 3,
+        "rotulo": "Compressa fria instantânea",
+        "quantidade": "2",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 213,
+        "kit_id": 3,
+        "rotulo": "Manual de primeiros socorros",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "nome": "Medicamentos",
+    "icone": "💊",
+    "publicar": 1,
+    "data_criacao": 1781968121737,
+    "data_atualizacao": 1782835449742,
+    "itens": [
+      {
+        "id": 214,
+        "kit_id": 4,
+        "rotulo": "Medicamentos de uso contínuo",
+        "quantidade": "7 a 30 dias",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Conforme a prescrição (inclui os de idosos)",
+        "publicar": 1
+      },
+      {
+        "id": 215,
+        "kit_id": 4,
+        "rotulo": "Receitas médicas atualizadas",
+        "quantidade": "1 cópia",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 216,
+        "kit_id": 4,
+        "rotulo": "Analgésico (paracetamol/dipirona)",
+        "quantidade": "1 cartela",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 219,
+        "kit_id": 4,
+        "rotulo": "Antialérgico",
+        "quantidade": "1 cartela",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 220,
+        "kit_id": 4,
+        "rotulo": "Antidiarreico",
+        "quantidade": "1 cartela",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 221,
+        "kit_id": 4,
+        "rotulo": "Antiácido",
+        "quantidade": "1 cartela",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 222,
+        "kit_id": 4,
+        "rotulo": "Sais de reidratação oral",
+        "quantidade": "4 envelopes",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Para diarreia e desidratação",
+        "publicar": 1
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "nome": "Kit Veicular e Manutenção",
+    "icone": "🚗",
+    "publicar": 1,
+    "data_criacao": 1781968121737,
+    "data_atualizacao": 1782835449742,
+    "itens": [
+      {
+        "id": 223,
+        "kit_id": 6,
+        "rotulo": "Estepe calibrado",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Conferir a calibragem",
+        "publicar": 1
+      },
+      {
+        "id": 224,
+        "kit_id": 6,
+        "rotulo": "Macaco e chave de roda",
+        "quantidade": "1 jogo",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 225,
+        "kit_id": 6,
+        "rotulo": "Calibrador de pneus",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 226,
+        "kit_id": 6,
+        "rotulo": "Triângulo de sinalização",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 227,
+        "kit_id": 6,
+        "rotulo": "Cabos para chupeta (bateria)",
+        "quantidade": "1 jogo",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 228,
+        "kit_id": 6,
+        "rotulo": "Ferramentas básicas",
+        "quantidade": "1 jogo",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Chave de fenda e alicate",
+        "publicar": 1
+      },
+      {
+        "id": 229,
+        "kit_id": 6,
+        "rotulo": "Óleo do motor e fluido de arrefecimento",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Completar quando necessário",
+        "publicar": 1
+      },
+      {
+        "id": 230,
+        "kit_id": 6,
+        "rotulo": "Extintor de incêndio",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Verificar a validade",
+        "publicar": 1
+      },
+      {
+        "id": 231,
+        "kit_id": 6,
+        "rotulo": "Carregador veicular de celular",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 232,
+        "kit_id": 6,
+        "rotulo": "Luvas de trabalho",
+        "quantidade": "1 par",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 233,
+        "kit_id": 6,
+        "rotulo": "Cópia dos documentos do veículo",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "nome": "Documentos e Valores",
+    "icone": "📄",
+    "publicar": 1,
+    "data_criacao": 1781968121737,
+    "data_atualizacao": 1782835449742,
+    "itens": [
+      {
+        "id": 234,
+        "kit_id": 7,
+        "rotulo": "Documentos pessoais (RG, CPF, CNH)",
+        "quantidade": "Cópias",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Plastificadas ou em saco impermeável",
+        "publicar": 1
+      },
+      {
+        "id": 235,
+        "kit_id": 7,
+        "rotulo": "Certidões (nascimento, casamento)",
+        "quantidade": "Cópias",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 236,
+        "kit_id": 7,
+        "rotulo": "Apólices de seguro",
+        "quantidade": "Cópias",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 237,
+        "kit_id": 7,
+        "rotulo": "Cartão do plano de saúde",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 238,
+        "kit_id": 7,
+        "rotulo": "Cartão de informações médicas",
+        "quantidade": "1 por pessoa",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Alergias, tipo sanguíneo, remédios",
+        "publicar": 1
+      },
+      {
+        "id": 239,
+        "kit_id": 7,
+        "rotulo": "Dinheiro em espécie",
+        "quantidade": "Reserva",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Notas pequenas e moedas",
+        "publicar": 1
+      },
+      {
+        "id": 240,
+        "kit_id": 7,
+        "rotulo": "Chaves reservas (casa e carro)",
+        "quantidade": "1 jogo",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 241,
+        "kit_id": 7,
+        "rotulo": "Pen drive com digitalizações",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Documentos e fotos importantes",
+        "publicar": 1
+      },
+      {
+        "id": 242,
+        "kit_id": 7,
+        "rotulo": "Fotos recentes da família",
+        "quantidade": "1 jogo",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Ajudam na identificação",
+        "publicar": 1
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "nome": "Plano Familiar de Emergência",
+    "icone": "🆘",
+    "publicar": 1,
+    "data_criacao": 1781969821229,
+    "data_atualizacao": 1782835449742,
+    "itens": [
+      {
+        "id": 243,
+        "kit_id": 13,
+        "rotulo": "Lista de contatos de emergência",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Familiares, vizinhos e serviços",
+        "publicar": 1
+      },
+      {
+        "id": 244,
+        "kit_id": 13,
+        "rotulo": "Lista de telefones úteis",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Defesa Civil, bombeiros, hospital",
+        "publicar": 1
+      },
+      {
+        "id": 245,
+        "kit_id": 13,
+        "rotulo": "Contato de referência fora da cidade",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Caso a rede local caia",
+        "publicar": 1
+      },
+      {
+        "id": 246,
+        "kit_id": 13,
+        "rotulo": "Ponto de encontro próximo",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Perto de casa",
+        "publicar": 1
+      },
+      {
+        "id": 247,
+        "kit_id": 13,
+        "rotulo": "Ponto de encontro distante",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Se não for possível voltar para casa",
+        "publicar": 1
+      },
+      {
+        "id": 248,
+        "kit_id": 13,
+        "rotulo": "Rotas de fuga do bairro",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Pelo menos dois caminhos",
+        "publicar": 1
+      },
+      {
+        "id": 249,
+        "kit_id": 13,
+        "rotulo": "Endereço dos abrigos oficiais",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Defesa Civil do município",
+        "publicar": 1
+      },
+      {
+        "id": 250,
+        "kit_id": 13,
+        "rotulo": "Mapa de rotas elevadas e abrigos",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Áreas com risco de enchente",
+        "publicar": 1
+      },
+      {
+        "id": 251,
+        "kit_id": 13,
+        "rotulo": "Função de cada um da família",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Quem cuida de crianças, idosos e pets",
+        "publicar": 1
+      },
+      {
+        "id": 252,
+        "kit_id": 13,
+        "rotulo": "Plano para crianças, idosos e pets",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "",
+        "publicar": 1
+      },
+      {
+        "id": 253,
+        "kit_id": 13,
+        "rotulo": "Como desligar água, luz e gás",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Saber a localização dos registros",
+        "publicar": 1
+      },
+      {
+        "id": 254,
+        "kit_id": 13,
+        "rotulo": "Extintor de incêndio (ABC)",
+        "quantidade": "1 por andar",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Verificar a validade e a pressão",
+        "publicar": 1
+      },
+      {
+        "id": 256,
+        "kit_id": 13,
+        "rotulo": "Cobertor antichamas",
+        "quantidade": "1",
+        "esta_marcado": 0,
+        "data_vencimento": 0,
+        "observacoes": "Manter perto da cozinha",
+        "publicar": 1
+      }
+    ]
+  }
 ]

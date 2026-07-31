@@ -1,53 +1,57 @@
 {
-    "gerado_em": "2026-07-25T22:03:50+00:00",
-    "modulos": {
-        "perguntas": {
-            "versao": "d87ec6b5ab6c55fbff8c30b5169fcf99",
-            "registros": 1624
-        },
-        "poesias": {
-            "versao": "92bb7081c7cc44836ac9ff56a23f00da",
-            "registros": 21
-        },
-        "receitas": {
-            "versao": "97f5d7b2be476266c400f218f5d54c8d",
-            "registros": 4
-        },
-        "kits": {
-            "versao": "07a49fc8c9299b051d3c4d38d965c16f",
-            "registros": 6
-        },
-        "estoque_catalogo": {
-            "versao": "e92ac5885cef17c02a57317c857782b3",
-            "registros": 32
-        },
-        "guias": {
-            "versao": "66a94b15b50c4939eb97d7d485219e1d",
-            "registros": 15
-        },
-        "vibes": {
-            "versao": "bdbc5e603fc8f7b3be4f953f5b825fd3",
-            "registros": 100
-        },
-        "criacao_modulos": {
-            "versao": "3703210c059b721f9cefcf9c5f84cc6a",
-            "registros": 61
-        },
-        "cronologia": {
-            "versao": "93c89c3471ebcc39120a7b19110eb359",
-            "registros": 594
-        },
-        "categorias": {
-            "versao": "a29045012d4dcf4e959f5a2931bb77e4",
-            "registros": 16
-        },
-        "anotacao_modelos": {
-            "versao": "2759905348e0e61dce5e4af921bdbca2",
-            "registros": 7
-        },
-        "calendario_tipos": {
-            "versao": "dfe4a3885b088a37aff9e64f84d4b3c2",
-            "registros": 6
-        }
+  "gerado_em": "2026-07-31T00:03:57.237Z",
+  "modulos": {
+    "perguntas": {
+      "versao": "a184e183ee86c86b2833f6c96e3ee7c4",
+      "registros": 1624
+    },
+    "poesias": {
+      "versao": "72b7af9997edf47d2ff8060e57a9c2d5",
+      "registros": 21
+    },
+    "receitas": {
+      "versao": "6ea73776b96d10918532cf67da708b94",
+      "registros": 4
+    },
+    "kits": {
+      "versao": "292ebcf9d3fcc02e5a947b45be2ccbef",
+      "registros": 6
+    },
+    "estoque_catalogo": {
+      "versao": "8a23515795270aeb52e4dac9dd12c308",
+      "registros": 32
+    },
+    "guias": {
+      "versao": "1f8979876b1af8ccdd7874affb1d5dd8",
+      "registros": 15
+    },
+    "vibes": {
+      "versao": "f48d268885e9187fff0ef999b495bcee",
+      "registros": 100
+    },
+    "criacao_modulos": {
+      "versao": "434003b5cd3abbbb418e4ce0c7a12cc3",
+      "registros": 61
+    },
+    "cronologia": {
+      "versao": "45eb43f605bc05f29cb4bef58f5651cb",
+      "registros": 594
+    },
+    "categorias": {
+      "versao": "c5650f6eb3203e14dafd15092f90d731",
+      "registros": 16
+    },
+    "anotacao_modelos": {
+      "versao": "190626385ad13986c2efe087100a032c",
+      "registros": 7
+    },
+    "calendario_tipos": {
+      "versao": "c27057a3bad542efb50a72df8c505f59",
+      "registros": 6
+    },
+    "tutorial": {
+      "versao": "353e318edd8523535a26eb8e124ea823",
+      "registros": 19
     }
+  }
 }
