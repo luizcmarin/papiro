@@ -1140,6 +1140,25 @@
     "imagem": "o-dinheiro-e-os-pesos-da-biblia.svg"
   },
   {
+    "id": 67,
+    "titulo": "Medição Rádio-Carbono",
+    "categoria": "entenda",
+    "tipo": "carbono",
+    "icone": "bi-clock-history",
+    "ordem": 61,
+    "conceito": "<p>Todo ser vivo respira o mesmo ar. E nesse ar existe um átomo raríssimo — <strong>um em cada trilhão</strong> — que é fabricado lá em cima, quando raios cósmicos batem no nitrogênio: o <strong>carbono-14</strong>.</p><p>Enquanto a planta cresce e o animal come, os dois ficam com a mesma proporção do ar. No dia em que morrem, a reposição para — e o C-14 que ficou começa a decair, com uma regularidade que não depende de temperatura, pressão nem opinião: <strong>metade a cada 5.730 anos</strong>.</p><p>Medir o que sobrou é ler um relógio. A física é firme. O que decide se o número serve é outra coisa: <em>de onde a amostra veio e em que estado ela chegou</em>.</p>",
+    "desafio": "<p>Você vai montar o método por dentro — de onde vem o C-14, quanto ele dura, como a fração vira idade — e depois <strong>quebrar uma medição de propósito</strong>, três vezes.</p><p>Vai ver 1,9% de carbono novo arrancarem dez mil anos de uma amostra. Vai descontar o efeito reservatório de uma concha que já nasceu velha. E vai descobrir por que uma data às vezes volta com dois intervalos possíveis em vez de um número.</p><p>No fim, um julgamento: <strong>o que uma data de carbono bem feita autoriza dizer?</strong></p>",
+    "reflexao": "<p>Repare no que você <em>não</em> concluiu. Não concluiu que o método é inútil — o decaimento é medido em laboratório e conferido contra amostras de idade conhecida, como madeira de tumbas datadas por documentos e anéis de árvore contados um a um. Dentro do alcance dele, e bem feita, a medição acerta.</p><p>Também não concluiu que todo número publicado é exato como está escrito. Você mesmo viu três coisas concretas estragarem uma medição, e nenhuma delas aparece no número final — aparecem na <strong>margem</strong>, e a margem é parte do resultado.</p><p>Entre desprezar e engolir há um terceiro caminho, e é o mais difícil dos três: perguntar de onde veio a amostra, qual era o contexto e qual foi o intervalo declarado. <strong>&ldquo;O simplório acredita em cada palavra, mas o sagaz considera seus passos.&rdquo;</strong> (Provérbios 14:15) E: &ldquo;Quando alguém responde antes de ouvir o assunto, isso é tolice.&rdquo; (Provérbios 18:13)</p><p>Ler um resultado como o próprio laboratório o escreveu não é desconfiar da ciência. É a única forma de levá-la a sério.</p>",
+    "referencia": "Provérbios 14:15; 18:13 · “O relógio radiocarbônico” (Despertai! — wol.jw.org, doc 101986687); “Datas radiocarbônicas ligadas aos anéis das árvores” (doc 101972242); “A cronologia científica ou bíblica — qual merece sua fé?” (doc 101972243) · Willard F. Libby, Nobel de Química de 1960 · curva de calibração IntCal (dendrocronologia)",
+    "link_jw": "https://wol.jw.org/pt/wol/d/r5/lp-t/101986687",
+    "config": "{}",
+    "xp": 140,
+    "publicar": 1,
+    "data_criacao": 1785959686891,
+    "data_atualizacao": 1785959686891,
+    "imagem": "medicao-radio-carbono.svg"
+  },
+  {
     "id": 66,
     "titulo": "O Sangue Invisível da Rã-de-Vidro",
     "categoria": "animal",
