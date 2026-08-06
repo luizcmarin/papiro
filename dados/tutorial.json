@@ -3,209 +3,220 @@
     "id": 1,
     "modulo_id": "",
     "titulo": "Visão geral",
-    "resumo": "O que é o Papiro e como ele guarda suas coisas",
-    "conteudo": "<p>O Papiro é um aplicativo <strong>do seu aparelho</strong>. Tudo o que você escreve — anotações, metas, finanças, relatórios — fica gravado localmente e não é enviado a servidor nenhum.</p><p>A tela inicial é o mapa do app: cada tile abre um módulo, e alguns tiles são <em>hubs</em>, que agrupam módulos parecidos. O botão de voltar do cabeçalho sempre sobe um nível.</p><p>O botão de sincronizar, na tela inicial, baixa o <strong>conteúdo curado</strong> (guias, poesias, receitas, perguntas do jogo). Ele nunca apaga o que é seu, e o app funciona sem rede: sincronizar só atualiza o acervo.</p><p>Em cada módulo, o botão “?” do cabeçalho abre exatamente o tópico daquele módulo aqui no tutorial.</p>",
+    "resumo": "O que é o Papiro, como ele guarda suas coisas e como se anda nele",
+    "conteudo": "<p>O Papiro é um aplicativo <strong>do seu aparelho</strong>. Não existe conta, não existe nuvem e não existe rastreador. Anotações, finanças, perfil, metas e relatórios são gravados num banco de dados dentro do próprio celular ou computador — e não saem de lá.</p><h3>A tela inicial é um painel, não um menu</h3><p>Cada cartão abre uma área do app <em>e resume o que está acontecendo dentro dela</em>: quantas anotações você escreveu hoje, quantos eventos tem na agenda, quantas contas estão a vencer, a que altura vai a leitura da Bíblia. O painel <strong>conta, mas nunca mostra cifra</strong> — ele diz \"3 contas a vencer\", não quanto elas somam, para que ninguém leia o seu saldo por cima do seu ombro.</p><p>Alguns cartões são <strong>hubs</strong>: eles não abrem um módulo, abrem um grupo deles. \"Meu Estudo Pessoal\" reúne Caderno, Modo Estudo, Leitura, Cronologia, Poesia e os dois módulos de puzzles; \"Pessoal\" reúne Perfil, Financeiro e Metas. O botão <strong>←</strong> do cabeçalho sempre devolve você um nível acima, nunca para o lugar errado.</p><h3>O botão “?” existe em toda tela</h3><p>No cabeçalho de qualquer módulo há um <strong>?</strong> que abre, direto, o tópico deste tutorial correspondente àquele módulo. Você não precisa procurar na lista: pergunte de dentro da tela em que está.</p><h3>O rodapé é o mesmo em todo lugar</h3><p>Ele dá acesso a <em>Sobre</em> e <em>Privacidade</em>, e traz cinco atalhos que valem de qualquer tela, inclusive de dentro de um módulo: <strong>Nova anotação</strong>, <strong>Ajuda deste módulo</strong>, <strong>Cartão de contato</strong>, <strong>Ficha de emergência</strong> e <strong>Alternar tema</strong>. A ficha de emergência estar a um toque de qualquer lugar é proposital — quem vai abri-la, um dia, talvez não seja você.</p><h3>Sincronizar: o que sobe e o que desce</h3><p>O tile <strong>Sincronizar conteúdo</strong>, na tela inicial, baixa o <em>acervo curado</em>: guias, poesias, receitas, perguntas do quiz, eventos da cronologia, os módulos de puzzle e este tutorial. É um caminho de <strong>mão única</strong> — desce conteúdo novo, e nada do que você escreveu sobe. Sem internet o app continua inteiro; só não recebe conteúdo novo.</p><p>O que você cria fica <strong>misturado ao acervo</strong> nas mesmas listas, marcado com <em>Minha</em>. Sincronizar nunca apaga o que é seu.</p><h3>Instalar na tela inicial</h3><p>Pelo menu do navegador, escolha “Instalar aplicativo” ou “Adicionar à tela inicial”. O Papiro passa a abrir em tela cheia, sem barra de endereço, e a funcionar offline por completo. Se sair uma versão nova enquanto você usa, aparece um aviso com um botão <em>Recarregar</em> — nada é perdido.</p><blockquote>Perdeu as boas-vindas? A tela <strong>Sobre</strong> tem um botão que as reabre do primeiro passo.</blockquote>",
     "ordem": 1,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   },
   {
     "id": 2,
     "modulo_id": "anotacoes",
     "titulo": "Anotações",
-    "resumo": "Escrever, organizar em pastas e apresentar",
-    "conteudo": "<p>Serve para tudo que você escreve: reuniões, discursos, visitas, estudos. Toque em <strong>+</strong> e escolha um modelo — ele já entra com os títulos prontos.</p><p>A gravação é automática: o texto é salvo pouco depois de você parar de digitar, e o rodapé do editor mostra a hora do último salvamento. Sem título, nada é gravado.</p><p>Dicas: <strong>fixe</strong> a anotação que você abre toda semana; <strong>arquive</strong> em vez de excluir o que já passou; e use o modo <strong>apresentar</strong> para ler no palco — o texto rola sozinho e a velocidade é ajustável.</p>",
+    "resumo": "Modelos, pastas, autosave, apresentação e notas de rodapé",
+    "conteudo": "<p>É onde vai tudo o que você escreve: reuniões, discursos, visitas, estudos, ideias soltas. Toque em <strong>+</strong> e o app pergunta o <strong>modelo</strong> antes do texto — o modelo entra com os títulos e a estrutura já prontos, e é o que evita começar de uma folha em branco.</p><h3>O atalho da reunião escolhe o modelo pelo dia</h3><p>A ação <strong>“Ir para a reunião”</strong> sugere o modelo pelo <em>dia da semana em que você está</em>. Numa quinta ela oferece o modelo da reunião do meio de semana; no domingo, o da reunião do fim de semana. É um toque em vez de três.</p><p>Trocar o modelo de uma anotação que já tem texto <strong>substitui o conteúdo</strong>, e o app pede confirmação antes — porque não há como desfazer.</p><h3>A gravação é automática, e ela mostra a hora</h3><p>O texto é salvo pouco depois de você parar de digitar. O rodapé do editor mostra <em>Salvando…</em> e depois <em>Salvo às 14:32</em>. Enquanto não houver título, ele avisa que precisa de um — sem título a anotação não fecha. Fechar a aba depois de ver a hora do salvamento não perde nada.</p><h3>Pastas, fixadas e arquivadas</h3><p>As pastas viram <strong>chips de filtro</strong> no topo da lista, ao lado de <em>Todas</em> e <em>Arquivadas</em>. Excluir uma pasta <strong>não apaga as anotações dela</strong>: elas voltam para “Sem pasta”.</p><p><strong>Fixar</strong> prende a anotação no alto da lista. <strong>Arquivar</strong> a tira da lista principal sem apagá-la — é o lugar do que já cumpriu o papel mas você não quer perder. As duas são reversíveis; excluir não é.</p><h3>A busca lê o corpo, não só o título</h3><p>Procurar por uma palavra que você escreveu no meio do texto encontra a anotação. É o que faz valer a pena escrever com as palavras que você vai procurar depois.</p><h3>Apresentar, ouvir e compartilhar</h3><p>O modo <strong>Apresentação</strong> rola o texto sozinho, com velocidade ajustável — serve para ler de pé, com o aparelho apoiado. Ele <strong>numera as notas de rodapé</strong> e as junta no fim, o que muda tudo num discurso. A <strong>leitura em voz alta</strong> usa a voz do próprio sistema, e pode ser pausada e retomada.</p><blockquote>Texto colado de fora entra <strong>limpo</strong>: script, evento embutido e link <em>javascript:</em> são removidos na hora de salvar. Copie da web sem medo.</blockquote>",
     "ordem": 2,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   },
   {
     "id": 3,
     "modulo_id": "guias",
     "titulo": "Guias",
-    "resumo": "Ler os guias do acervo e escrever os seus",
-    "conteudo": "<p>Os guias são explicações prontas, que vêm no acervo curado. A lista mistura os do acervo com os seus; os seus aparecem com a marca <em>Minha</em>.</p><p>No guia aberto você pode ouvir em voz alta, apresentar com rolagem automática ou compartilhar o texto. Editar e excluir só valem para os seus.</p><p>Dica: toque em <strong>+</strong> para escrever um guia próprio — ele fica no aparelho e nunca é substituído por uma sincronização.</p>",
+    "resumo": "Procedimentos do acervo e os seus, dentro do Esteja Preparado",
+    "conteudo": "<p>Guias são explicações longas e passo a passo — o que fazer numa emergência, como conduzir um procedimento, como se preparar para algo. Eles ficam <strong>dentro do Esteja Preparado</strong>, e não na tela inicial, porque é ali que se procura por eles quando são necessários.</p><h3>O acervo e os seus, na mesma lista</h3><p>Os guias curados chegam pela sincronização e melhoram sozinhos a cada vez. Os que você escreve entram pelo <strong>+</strong> e aparecem na mesma lista com a marca <em>Minha</em>. Editar e excluir valem só para os seus — um guia do acervo não pode ser alterado, e é isso que garante que ele continue igual depois de cada sincronização.</p><h3>Ler quando não dá para segurar o aparelho</h3><p>Qualquer guia pode ser <strong>ouvido em voz alta</strong> ou <strong>apresentado</strong> com rolagem automática. Numa situação em que as mãos estão ocupadas, essa é a diferença entre um procedimento seguido e um procedimento lido pela metade.</p><h3>Compartilhar</h3><p>O botão de compartilhar entrega o texto do guia para o aplicativo que você escolher. Serve para mandar uma orientação a quem precisa dela agora e não tem o Papiro instalado.</p><blockquote>Escreva os <em>seus</em> guias antes de precisar deles. Guia bom é o que você escreveu com calma e leu com pressa.</blockquote>",
     "ordem": 3,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   },
   {
     "id": 4,
     "modulo_id": "poesia",
     "titulo": "Poesia",
-    "resumo": "Ler o acervo, favoritar e escrever",
-    "conteudo": "<p>O acervo de poesias é curado; as suas entram pelo <strong>+</strong> e ficam misturadas na mesma lista, com a marca <em>Minha</em>.</p><p>Na leitura há navegação sequencial (anterior/próxima) pelo acervo, barra de progresso, leitura em voz alta e modo apresentação.</p><p>Dica: a <strong>estrela</strong> marca favoritos, e favoritos sobem para o topo da lista. O botão de informação, na lista, explica o propósito das obras.</p>",
+    "resumo": "Ler o acervo em sequência, favoritar e escrever as suas",
+    "conteudo": "<p>Um acervo de poesias curado, mais as que você escrever. As suas entram pelo <strong>+</strong> e ficam na mesma lista, marcadas com <em>Minha</em>.</p><h3>A leitura é sequencial, e é essa a graça</h3><p>Dentro de uma poesia há <strong>Anterior</strong> e <strong>Próxima</strong>: você atravessa o acervo inteiro sem voltar à lista, como quem folheia um livro. Uma barra mostra o quanto já percorreu. Há também leitura em voz alta e modo apresentação.</p><h3>A estrela não é enfeite</h3><p>Favoritar cria a sua antologia dentro do acervo. O painel da tela inicial conta quantas você tem, e é por elas que se volta — um acervo grande sem favoritos vira um lugar por onde se passa, não um lugar aonde se volta.</p><h3>Sobre estas obras</h3><p>O acervo traz um aviso próprio, do autor, sobre o propósito e o caráter literário das obras — inclusive de que os personagens são fictícios. Vale ler uma vez: ele explica de que lugar os textos falam.</p><blockquote>Escrevendo a sua: o texto é apresentado em fonte serifada e com espaçamento fechado, para que a quebra de verso apareça como você a escreveu.</blockquote>",
     "ordem": 4,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   },
   {
     "id": 5,
     "modulo_id": "receitas",
     "titulo": "Receitas",
-    "resumo": "Buscar por categoria e guardar as suas",
-    "conteudo": "<p>A lista traz o acervo curado e as suas receitas. Os chips de emoji filtram por categoria — toque de novo no chip aceso para ver todas.</p><p>Ingredientes e modo de preparo são campos de <strong>linhas</strong>: um item por linha. É o formato que fica legível na leitura e na hora de ouvir em voz alta.</p><p>Dica: aqui você pode editar até as receitas do acervo — a sua versão fica no aparelho.</p>",
+    "resumo": "Filtrar por categoria e guardar as suas, em formato de linhas",
+    "conteudo": "<p>A lista traz o acervo curado e as suas receitas, juntas. Os <strong>chips de emoji</strong> no topo filtram por categoria — e tocar de novo no chip aceso <em>desliga</em> o filtro e volta a mostrar todas. É um detalhe que economiza uma viagem ao \"Todas\".</p><h3>Ingredientes e preparo são campos de linhas</h3><p>Escreva <strong>um ingrediente por linha</strong> e <strong>um passo por linha</strong>. Não é capricho de formato: é o que faz a receita ficar legível na leitura, o que permite conferir item por item com as mãos sujas, e o que faz a <strong>leitura em voz alta</strong> pausar entre um passo e outro em vez de despejar tudo num fôlego só.</p><h3>Favoritar</h3><p>A estrela marca as que você realmente faz. Numa lista que cresce a cada sincronização, é o que separa \"o que existe\" de \"o que é meu\".</p><blockquote>Cozinhando: abra a receita, toque em <strong>Ler em voz alta</strong> e deixe o aparelho de lado. Dá para pausar e retomar sem perder o ponto.</blockquote>",
     "ordem": 5,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   },
   {
     "id": 6,
     "modulo_id": "jogo",
     "titulo": "Língua Pura",
-    "resumo": "Praticar com as perguntas do acervo",
-    "conteudo": "<p>É um jogo de perguntas para fixar o que você estuda. As perguntas vêm do acervo curado e aumentam a cada sincronização.</p><p>Dica: erre sem medo — a explicação de cada resposta é a parte que ensina.</p>",
+    "resumo": "Quiz com dois modos, dificuldade, XP e explicação de cada resposta",
+    "conteudo": "<p>Um jogo de perguntas para fixar o que você estuda. As perguntas vêm do acervo curado e aumentam a cada sincronização.</p><h3>Dois modos, e eles servem a coisas diferentes</h3><p><strong>Estudo</strong> não tem relógio: você pensa o quanto quiser. <strong>Desafio</strong> põe um cronômetro em cada pergunta e paga <strong>bônus de XP por velocidade e por sequência de acertos</strong> — e se o tempo acabar, a pergunta conta como errada. Use Estudo para aprender e Desafio para testar o que já sabe.</p><h3>Dificuldade</h3><p>Dá para jogar com <em>Todas</em> ou fixar em Fácil, Médio ou Difícil. Uma dificuldade precisa de pelo menos duas perguntas ainda não respondidas para abrir uma partida — se acabarem, o app avisa e sugere sincronizar ou trocar de faixa.</p><h3>XP, dica e nível</h3><p>Cada acerto rende XP, que se acumula entre partidas e vira <strong>nível</strong>. A <strong>dica</strong> custa XP: é uma troca real, não um botão de graça. O saldo aparece antes de começar, para você decidir se pode gastar.</p><h3>A explicação é a parte que ensina</h3><p>Toda resposta — certa ou errada — abre uma <strong>explicação</strong>. Errar aqui não custa nada e é onde o aprendizado acontece; acertar por sorte, sem ler a explicação, não deixa nada.</p><h3>Reiniciar não apaga o seu progresso</h3><p><strong>Reiniciar</strong> zera a lista de perguntas já respondidas para você poder rodar tudo de novo — e <strong>mantém o seu XP</strong>. É seguro.</p><blockquote>Na tela de resultado há <strong>“Anotar no Caderno de Estudo”</strong>: ele já cria a anotação com o seu placar e deixa o espaço para você escrever o que aprendeu.</blockquote>",
     "ordem": 6,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   },
   {
     "id": 7,
     "modulo_id": "criacao",
     "titulo": "Teve um Projeto?",
-    "resumo": "Puzzles sobre o projeto na natureza",
-    "conteudo": "<p>Cada módulo apresenta um ser vivo e o que a engenharia aprendeu dele. Você mexe nos controles do gráfico e vê o efeito na hora.</p><p>Dica: a ilustração de cada módulo ensina o que o puzzle não mostra — a conta, o mecanismo, o contexto. Vale abrir.</p>",
+    "resumo": "Puzzles sobre o projeto na natureza, com conceito, desafio e reflexão",
+    "conteudo": "<p>Cada módulo apresenta um ser vivo, ou um mecanismo dele, e o que a engenharia humana aprendeu copiando aquilo. São dezenas deles, divididos em A Natureza e A Terra, O Reino Animal, O Corpo Humano, Matemática, e Universo e Física.</p><h3>Todo módulo tem três tempos</h3><p><strong>Conceito</strong> apresenta o assunto e a pergunta. <strong>Desafio</strong> é o puzzle — você mexe em sliders, escolhe opções, monta rotas, ordena eventos, e o gráfico responde na hora. <strong>Reflexão</strong> só aparece depois que o desafio fecha, e é onde a conclusão é tirada. A ordem importa: a reflexão significa outra coisa depois de você ter feito a conta com as próprias mãos.</p><h3>A ilustração ensina o que o puzzle não mostra</h3><p>A imagem no alto do conceito não é decoração. Ela traz a conta, o mecanismo e o contexto que o gráfico interativo deixa de fora. Toque nela para <strong>ampliar</strong> — em tela cheia dá para ler os rótulos.</p><h3>O selo de Estudo Diligente</h3><p>Ao concluir um módulo, aparece um campo do <strong>Caderno do Investigador</strong>. Escrever ali, com as suas palavras, o que aquele módulo lhe ensinou conquista o selo de <strong>Estudo Diligente</strong> — e a anotação vai para o Caderno de Estudo, onde você a reencontra depois pela origem.</p><h3>A fonte fica sempre à mão</h3><p>No fim de cada módulo há o link <strong>Fonte: jw.org</strong>, que abre o material de onde o assunto saiu. A conta é do app; a base é citada.</p><blockquote>Nos gráficos 3D: arraste para girar, e use pinça ou a roda do mouse para aproximar. Há módulos em que o ângulo revela coisas que a vista de frente esconde.</blockquote>",
     "ordem": 7,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   },
   {
     "id": 8,
     "modulo_id": "entenda",
     "titulo": "Entenda Melhor",
-    "resumo": "Assuntos explicados com gráficos",
-    "conteudo": "<p>Assuntos que rendem mais quando visualizados: escalas, medições, cronologias. Os controles ficam dentro do próprio gráfico, e os textos mudam conforme você mexe.</p><p>Dica: as referências ficam no fim de cada assunto — vale conferir a fonte.</p>",
+    "resumo": "Assuntos difíceis derivados passo a passo, com as fontes citadas",
+    "conteudo": "<p>Mesma máquina de puzzles de “Teve um Projeto?”, assunto diferente: aqui entram os temas que travam as pessoas justamente por serem <em>abstratos</em> — escalas, medidas antigas, cronologia, datação por carbono, a trajetória da Bíblia através dos séculos.</p><h3>Eles conduzem uma derivação, não escondem uma resposta</h3><p>Os assuntos maiores vêm em forma de <strong>trilha</strong>: uma sequência de passos curtos, cada um com uma pergunta, <em>um</em> controle e uma leitura ao vivo. Você move o controle, vê a conta se formar e fecha o passo sozinho. No fim, refez o raciocínio inteiro — em vez de ter lido uma tabela pronta.</p><p>A barra de degraus no alto mostra em que passo você está e quantos faltam. Um passo errado não pune: ele responde <em>por que</em> está errado, e é essa resposta que ensina.</p><h3>Os números saem do modelo, não de uma tabela</h3><p>Quando o assunto tem uma fórmula, ela é a fonte de tudo o que a tela mostra. É por isso que mexer num slider muda o texto junto com o desenho: os dois leem a mesma conta. Um resultado que surpreende — e há alguns — é consequência da conta, não um efeito escrito à mão.</p><h3>As referências ficam no fim</h3><p>Cada assunto termina com as fontes de onde ele saiu, com título e código do documento, e um link para o jw.org. Vale conferir: é o que separa um app que <em>afirma</em> de um app que <em>mostra de onde tirou</em>.</p><blockquote>Alguns módulos daqui rendem mais em tela deitada — as linhas do tempo e as curvas ganham largura, e os rótulos param de se apertar.</blockquote>",
     "ordem": 8,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   },
   {
     "id": 9,
     "modulo_id": "cronologia",
     "titulo": "Cronologia",
-    "resumo": "A linha do tempo dos períodos bíblicos",
-    "conteudo": "<p>A linha do tempo vai da criação aos nossos dias. Toque num período para posicionar a linha nele e ver os eventos daquele trecho.</p><p>Dica: use junto do Caderno de Estudo — datar o que você lê ajuda a fixar.</p>",
+    "resumo": "Duas linhas do tempo lado a lado, com a fonte de cada evento",
+    "conteudo": "<p>A linha do tempo vai da criação aos nossos dias, e ela tem <strong>duas leituras correndo juntas</strong>: de um lado a cronologia bíblica, do outro os fatos da história geral. Ver as duas no mesmo eixo é o ponto do módulo.</p><h3>A barra de eras é o controle principal</h3><p>No alto fica uma faixa com os períodos. Toque num deles para posicionar a linha ali e ver o que aconteceu naquele trecho. Ela <strong>fica colada ao cabeçalho enquanto você rola</strong>, então você nunca perde a referência de onde está no tempo.</p><h3>Cada card tem uma cor, e a cor diz a origem</h3><p>Os eventos vêm em três trilhas, com cores próprias: <strong>bíblica</strong>, <strong>mundial</strong> e <strong>histórica</strong>. Os cards “históricos” vêm de acervos oficiais <em>fora</em> do jw.org — UNESCO, Louvre, ONU, arquivos e museus nacionais — e seguem a <strong>datação acadêmica convencional</strong>. Isso está dito no app de propósito: as duas datações nem sempre coincidem, e o módulo não finge que coincidem.</p><h3>Todo evento aponta para a fonte</h3><p>Cada card tem <strong>Ver a fonte</strong>, que abre o documento de onde ele saiu. Nada aqui é afirmação sem endereço.</p><h3>Busca</h3><p>A busca varre a linha inteira por nome, povo, rei ou acontecimento — útil quando você sabe o <em>quê</em> mas não sabe o <em>quando</em>, que é o caso mais comum.</p><blockquote>Use junto do <strong>Caderno de Estudo</strong>: datar o que você lê é o que transforma uma lista de nomes numa sequência que faz sentido.</blockquote>",
     "ordem": 9,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   },
   {
     "id": 10,
     "modulo_id": "caderno",
     "titulo": "Caderno de Estudo",
-    "resumo": "Perguntas e respostas do seu estudo",
-    "conteudo": "<p>Um caderno para as suas perguntas e o que você descobriu sobre cada uma. Diferente das Anotações, aqui o formato é pergunta e resposta.</p><p>Dica: registre a pergunta assim que ela aparecer, mesmo sem resposta. A lista de perguntas abertas é o seu roteiro de estudo.</p>",
+    "resumo": "Onde tudo o que você aprendeu se junta, por origem",
+    "conteudo": "<p>O Caderno é o ponto de chegada do que você estuda no app. Ele reúne, num lugar só, o que você escreveu em <strong>Teve um Projeto?</strong>, no <strong>Modo Estudo</strong> e na <strong>Língua Pura</strong> — mais as anotações que você criar direto aqui.</p><h3>O filtro de origem é o que dá sentido à pilha</h3><p>Toda anotação carrega a <strong>origem</strong> de onde veio. Filtrar por ela responde perguntas concretas: \"o que eu tirei dos puzzles?\", \"o que sobrou das minhas sessões de estudo?\". Sem esse filtro, um caderno com cem entradas é só um monte.</p><h3>Três campos, e o do meio é o mais útil</h3><p><strong>Título</strong> é opcional. <strong>Conteúdo</strong> é obrigatório — é o que você aprendeu, com as suas palavras. E <strong>Referência</strong> é o campo que a maioria pula e depois faz falta: módulo, texto bíblico, publicação, assunto. É por ele que você reencontra a origem meses depois.</p><h3>Diferente das Anotações</h3><p>As Anotações servem para <em>registrar</em> — reuniões, discursos, visitas. O Caderno serve para <em>concluir</em>: uma entrada aqui deve responder \"o que isto me ensinou\". São dois gestos diferentes, e por isso são dois módulos.</p><blockquote>Escreva a conclusão no calor do estudo, não depois. O que não foi escrito em cinco minutos raramente é escrito em cinco dias.</blockquote>",
     "ordem": 10,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   },
   {
     "id": 11,
     "modulo_id": "prep",
     "titulo": "Esteja Preparado",
-    "resumo": "Kits, estoque e documentos",
-    "conteudo": "<p>Reúne o preparo para emergências: listas de verificação (kits), estoque de alimentos com validade e um cofre de documentos.</p><p>O cofre guarda os documentos <strong>cifrados</strong> no próprio aparelho, com a sua senha. Sem a senha ninguém abre — nem o app.</p><p>Dica: comece pelo kit sugerido e marque o que já tem; o indicador de prontidão mostra o quanto falta.</p>",
+    "resumo": "Checklists, estoque com validade, calculadora de autonomia e cofre cifrado",
+    "conteudo": "<p>Reúne tudo o que é preparo: listas de verificação, estoque de alimentos com controle de validade, uma calculadora de autonomia e um cofre de documentos. Os <strong>Guias</strong> também moram aqui.</p><h3>O índice de prontidão</h3><p>No alto da tela há um índice que combina <strong>o quanto dos seus checklists está cumprido</strong> com <strong>quantos dias de comida você tem</strong>. É um número só, e serve para responder de relance a única pergunta que importa: estou pronto ou não?</p><h3>Kits: um checklist por situação</h3><p>Crie um kit por cenário — mochila de 72 horas, kit do carro, documentos para levar. Cada item tem descrição, quantidade e observações, e o kit pode receber um <strong>emoji</strong> que o torna reconhecível na lista sem ler. Há um kit sugerido já pronto para começar.</p><h3>Estoque: a validade é o assunto</h3><p>Cada item guarda categoria, <strong>peso unitário em gramas</strong>, <strong>calorias por 100 g</strong> e <strong>validade</strong>. É dessa informação que sai tudo o mais. A lista avisa sozinha: <em>vencido há 12 d</em>, <em>vence hoje</em>, <em>vence em 20 d</em> — e o contador de alertas fica visível no topo. Estoque sem controle de validade é estoque que falha exatamente no dia em que se precisa dele.</p><h3>A calculadora de autonomia</h3><p>Você informa <strong>quantas pessoas</strong>, a <strong>faixa etária</strong> e o <strong>nível de atividade física</strong>; ela cruza isso com as calorias do seu estoque e devolve quantos <strong>dias de autonomia</strong> você tem, a <strong>água sugerida</strong>, o <strong>peso total</strong> a carregar e quanto isso representa da <strong>meta de 30 dias</strong>.</p><p>A parte de <strong>logística tática</strong> separa os <em>dias sem água nem fogo</em> dos <em>dias com cozimento</em> — porque um estoque cheio de arroz cru não alimenta ninguém num apagão. E há um aviso específico quando faltam <strong>itens de fibra e vitaminas</strong>: numa autonomia longa isso vira problema de saúde antes de virar problema de caloria.</p><h3>O cofre: leia isto antes de usar</h3><p>O cofre guarda documentos <strong>cifrados no próprio aparelho</strong>. O <strong>PIN não é gravado em lugar nenhum</strong> — dele se <em>deriva</em> a chave que cifra cada arquivo. Em outras palavras: <strong>se você esquecer o PIN, não há como recuperar o que está guardado.</strong> Nem você, nem o app, nem ninguém. Não existe \"esqueci minha senha\" aqui.</p><p>O cofre <strong>tranca sozinho quando você sai da tela</strong>. Um documento guardado com um PIN antigo não abre com um PIN novo — o app diz isso claramente em vez de fingir que o arquivo corrompeu.</p><blockquote>Comece pelo kit sugerido e ajuste. Uma lista imperfeita que existe vale mais que a lista perfeita que você faria no fim de semana que vem.</blockquote>",
     "ordem": 11,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   },
   {
     "id": 12,
     "modulo_id": "financeiro",
     "titulo": "Financeiro",
-    "resumo": "Entradas, saídas e recorrências",
-    "conteudo": "<p>Lançamentos de entrada e saída por categoria, com recorrências para o que repete todo mês.</p><p>Dica: crie as categorias que você realmente usa e apague as que não usa — relatório com categoria vazia não informa nada.</p>",
+    "resumo": "Entradas, saídas, categorias e recorrências — e o que cada exclusão faz",
+    "conteudo": "<p>Lançamentos de entrada e de saída, organizados por categoria, com recorrências para o que se repete todo mês.</p><h3>Três coisas diferentes: transação, categoria e recorrência</h3><p>A <strong>transação</strong> é o fato: entrou ou saiu tanto, tal dia. A <strong>categoria</strong> é a etiqueta que dá sentido ao conjunto. A <strong>recorrência</strong> é a regra do que se repete — aluguel, mensalidade, salário — e é ela que evita relançar a mesma coisa doze vezes por ano.</p><h3>Excluir não destrói o histórico</h3><p>Duas regras que evitam sustos:</p><ul><li>Excluir uma <strong>categoria</strong><em>não</em> apaga as transações dela. Elas continuam existindo, apenas ficam sem categoria.</li><li>Excluir uma <strong>recorrência</strong><em>não</em> apaga os lançamentos que ela já gerou. O passado fica como está; só o futuro para de ser gerado.</li></ul><h3>O painel conta, mas não mostra cifra</h3><p>Na tela inicial, o cartão do Financeiro diz \"<em>2 contas a vencer</em>\" — e não quanto elas somam. É deliberado: o resumo tem de ser útil de relance sem expor o seu dinheiro a quem estiver olhando a tela junto com você.</p><h3>Categorias e Metas conversam</h3><p>Uma meta financeira pode apontar para uma <strong>categoria do Financeiro</strong>, e aí o progresso dela é calculado a partir dos lançamentos — você não digita o avanço, ele acontece.</p><blockquote>Crie as categorias que você realmente usa e apague as que não usa. Relatório com categoria vazia não informa nada, e ainda esconde as que informam.</blockquote>",
     "ordem": 12,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   },
   {
     "id": 13,
     "modulo_id": "metas",
     "titulo": "Metas",
-    "resumo": "Objetivos com progresso",
-    "conteudo": "<p>Metas com prazo e progresso, acessadas de dentro de Vida e Ministério.</p><p>Dica: meta boa é a que caber num número — horas, capítulos, visitas. O progresso se calcula sozinho a partir dele.</p>",
+    "resumo": "Objetivos com prazo e progresso — digitado ou calculado sozinho",
+    "conteudo": "<p>Metas com título, categoria, alvo, prazo e progresso. Você chega nelas pelo hub <strong>Pessoal</strong> e também por um atalho dentro de <strong>Vida e Ministério</strong>.</p><h3>Meta boa é a que cabe num número</h3><p>Horas, capítulos, visitas, reais, quilos. O <strong>alvo</strong> tem uma unidade, e é dela que sai a barra de progresso. Uma meta escrita como intenção (\"ler mais\") não tem como avançar sozinha; escrita como número (\"60 capítulos até dezembro\"), tem.</p><h3>Metas automáticas: o progresso não é digitado</h3><p>Algumas metas são <strong>automáticas</strong>: o avanço vem do módulo de origem e o campo de progresso fica bloqueado. Uma meta de horas de campo, por exemplo, soma as horas dos seus relatórios do Ministério — se você pudesse digitar o progresso ali, estaria se dando avanço que ninguém trabalhou. Uma meta financeira ligada a uma categoria funciona do mesmo jeito.</p><p>Por isso uma meta automática recém-criada <strong>nasce em zero</strong>, e é o certo: ela vai subir quando o trabalho aparecer no módulo de origem.</p><h3>Concluir e reabrir</h3><p>Meta concluída sai do filtro <em>Ativas</em> e vai para <em>Concluídas</em>, sem ser apagada. Reabrir devolve. O resumo no topo conta as duas: em andamento e concluídas.</p><blockquote>Prazo é parte da meta, não enfeite. Sem data final, \"progresso de 40%\" não diz se você está adiantado ou atrasado.</blockquote>",
     "ordem": 13,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   },
   {
     "id": 14,
     "modulo_id": "ministerio",
     "titulo": "Vida e Ministério",
-    "resumo": "Relatório do mês e contadores",
-    "conteudo": "<p>Os contadores do mês e o relatório. Os contadores somam durante o dia, e o relatório fecha o mês com o total.</p><p>Dica: registre no fim de cada saída, não no fim do mês — é a diferença entre um número exato e um número lembrado.</p>",
+    "resumo": "Contadores do mês, relatórios e o acompanhamento dos estudos",
+    "conteudo": "<p>Três coisas num módulo: os <strong>contadores do mês</strong>, os <strong>relatórios</strong> e o acompanhamento dos seus <strong>estudos bíblicos</strong>. Os atalhos no topo levam a Relatórios, Estudos, Metas e <em>Fazer mais</em>.</p><h3>Contadores: some durante o mês, feche no fim</h3><p>São cinco — <strong>tempo, estudos, revisitas, publicações e vídeos</strong> — e eles existem para serem tocados <em>no dia</em>, logo depois de cada saída. Há um botão <strong>+1h</strong> para o caso mais comum.</p><p>Quando o mês fecha, <strong>Gerar relatório do mês</strong> transforma os contadores num relatório: as horas viram horas, os estudos viram estudos, e revisitas, publicações e vídeos entram automaticamente nas <em>observações</em> já escritos por extenso. Depois disso, <strong>Zerar contadores</strong> começa o mês seguinte do zero.</p><h3>Relatórios</h3><p>Cada relatório guarda mês, ano, <strong>tipo de publicador</strong>, se participou, horas, meta de horas, estudos e observações. Ele pode ser marcado como <strong>enviado</strong> ou <strong>pendente</strong> — e a tela inicial avisa quando o relatório do mês ainda não foi feito ou não foi enviado.</p><p><strong>Compartilhar</strong> monta o texto pronto, formatado, para colar onde você o entrega.</p><h3>Estudos: cada um tem uma linha do tempo</h3><p>Um estudo guarda nome, contato, endereço, publicação atual, dia da semana e horário. Mas o que faz diferença é a <strong>linha do tempo</strong>: depois de cada estudo você registra a data, <strong>onde parou</strong> (\"lição 12, parágrafo 5\") e um comentário. Da próxima vez, você não precisa lembrar — está escrito.</p><p>Quando um estudo passa muitos dias sem registro, ele ganha o selo <strong>Esfriando</strong>, e a tela inicial avisa quantos estão nessa situação. Não é cobrança: é a informação que some sozinha da cabeça de qualquer um.</p><p>Excluir um estudo <strong>apaga a linha do tempo dele junto</strong> — o app avisa antes.</p><blockquote>Registre no fim de cada saída, não no fim do mês. É a diferença entre um número exato e um número lembrado.</blockquote>",
     "ordem": 14,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   },
   {
     "id": 15,
-    "modulo_id": "estudo",
-    "titulo": "Modo Estudo",
-    "resumo": "Sessões de estudo com tempo",
-    "conteudo": "<p>Marca sessões de estudo com duração, para você ver quanto tempo dedicou e a quê.</p><p>Dica: uma sessão curta registrada vale mais que uma longa esquecida.</p>",
+    "modulo_id": "servico",
+    "titulo": "Fazer Mais",
+    "resumo": "Transformar um alvo de horas no que ele pede de cada saída",
+    "conteudo": "<p>Uma meta anual não cabe na cabeça de ninguém. \"Duas horas e meia, três vezes por semana\" cabe. Este planejador faz exatamente essa tradução. Você chega nele pelo quarto atalho da tela de <strong>Vida e Ministério</strong>, ao lado do de Metas.</p><h3>Três coisas entram, e o resto é conta</h3><p>Você escolhe a <strong>modalidade</strong>, o <strong>alvo de horas</strong>, o <strong>período</strong> em meses e os <strong>dias da semana</strong> em que pretende sair. Com isso, o app mostra o que aquilo significa <em>em cada saída</em>, por semana, por mês e no ritmo de um ano — mais o total de saídas do período.</p><p>Se o alvo não couber nos dias escolhidos, ele avisa em vez de mostrar um número impossível: <em>mais de dez horas numa só saída</em> significa acrescentar dias, alongar o período ou reduzir o alvo. E sem nenhum dia marcado não há conta nenhuma a fazer — o app pede que você escolha ao menos um.</p><h3>O calendário usa o mês real, não a média</h3><p>O calendário abaixo mostra o mês concreto, com as saídas marcadas nos dias que você escolheu — e a diferença aparece. Um mês com nove saídas pede mais de cada uma do que a média anual sugere. Usar a média no calendário seria mais fácil e estaria errado no mês em que você vai sair.</p><h3>Registrar como meta</h3><p>O botão <strong>Registrar como meta</strong> grava o plano em <strong>Metas</strong>, como meta <em>automática</em> de horas. Ela nasce em zero e <strong>acompanha sozinha as horas dos seus relatórios</strong> do Ministério — você não digita progresso, ele aparece conforme o trabalho é lançado.</p><h3>Sobre as horas de cada modalidade</h3><p>Os números que preenchem o campo ao trocar de modalidade são um <strong>ponto de partida</strong>, não uma exigência afirmada por este app. A instrução vigente é que manda, e o rodapé traz os links das publicações para você conferir.</p><blockquote>O alvo é seu, e é livre. O planejador não julga o número — ele só mostra, sem arredondar, o que aquele número pede de cada sábado de manhã.</blockquote>",
     "ordem": 15,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   },
   {
     "id": 16,
-    "modulo_id": "leitura",
-    "titulo": "Leitura da Bíblia",
-    "resumo": "Acompanhar a leitura por livro",
-    "conteudo": "<p>Acompanha a leitura livro por livro, marcando o que já foi lido.</p><p>Dica: o progresso é por capítulo — marcar assim que terminar mantém o histórico honesto.</p>",
+    "modulo_id": "estudo",
+    "titulo": "Modo Estudo",
+    "resumo": "Uma sessão com oração, cronômetro e a pérola que fica",
+    "conteudo": "<p>Uma sessão de estudo do começo ao fim: escolha o tipo, ore, cronometre e guarde a pérola.</p><h3>Antes de começar</h3><p>Você define o <strong>tipo de estudo</strong>, o <strong>assunto</strong> e um <strong>alvo de tempo</strong>. Ao tocar em Começar, o app abre um lembrete de <strong>oração</strong> antes de ligar o relógio — pedir o espírito santo para entender o que vai ler e para aplicar o que aprender. É um passo de propósito: ele separa \"abrir uma publicação\" de \"estudar\".</p><h3>O cronômetro não atrapalha</h3><p>Quando o alvo de tempo é atingido, o app <strong>não interrompe nada</strong>: ele avisa e diz para seguir enquanto o assunto render. O alvo é uma referência mínima, não um limite.</p><p>O tempo é medido pelo relógio de parede. Se você sair do app e voltar, a contagem está certa.</p><h3>A pérola é o ponto do módulo</h3><p>Ao encerrar, o app pergunta: <em>tantos minutos de estudo — o que você leva daqui?</em> Uma ideia, um texto, uma aplicação. E o que você escrever pode ir para três lugares:</p><ul><li><strong>Virar anotação</strong>, em Anotações;</li><li><strong>Salvar no caderno</strong>, no Caderno de Estudo, com a origem marcada;</li><li><strong>Salvar sessão</strong>, que guarda só o registro de tempo.</li></ul><p>Há também <strong>Descartar</strong>, para a sessão que não valeu como estudo. Descartar é honesto e existe por isso.</p><h3>Histórico</h3><p>O histórico soma quantas sessões e quanto tempo total. A tela inicial mostra as horas de foco do mês.</p><blockquote>Uma sessão curta registrada vale mais que uma longa esquecida. O histórico só ajuda se for verdadeiro.</blockquote>",
     "ordem": 16,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   },
   {
     "id": 17,
-    "modulo_id": "calendario",
-    "titulo": "Calendário",
-    "resumo": "Eventos por tipo",
-    "conteudo": "<p>Eventos do mês, coloridos por tipo (reunião, assembleia, saída de campo, pessoal).</p><p>Dica: os tipos padrão já vêm criados; você pode criar os seus e reaproveitar em cada evento.</p>",
+    "modulo_id": "leitura",
+    "titulo": "Leitura da Bíblia",
+    "resumo": "Quatro maneiras de percorrer os 66 livros",
+    "conteudo": "<p>Acompanha a sua leitura livro por livro e capítulo por capítulo. O progresso geral aparece no topo e também no painel da tela inicial.</p><h3>Quatro visualizações, quatro leituras diferentes</h3><ul><li><strong>Canônica</strong> — a ordem de Gênesis a Apocalipse, como o livro está.</li><li><strong>Cronológica</strong> — pela estimativa de <em>quando cada livro foi escrito</em>. Ler nessa ordem muda a percepção de como a revelação foi se formando.</li><li><strong>Escritor</strong> — agrupada por quem escreveu. Ler Paulo inteiro em sequência, ou Lucas inteiro, mostra o estilo e as preocupações de cada um.</li><li><strong>Celebração</strong> — o <strong>roteiro da Celebração</strong>, com os acontecimentos da última semana de Jesus na Terra, de Nisã 8 a 16. É leitura por trecho, dia a dia, para a época da Celebração da morte de Cristo.</li></ul><p>Trocar de visualização <strong>não perde nada</strong>: o que você marcou como lido continua marcado em todas elas. São quatro maneiras de olhar o mesmo progresso.</p><h3>Marcar</h3><p>Dá para marcar capítulo por capítulo ou o <strong>livro inteiro</strong> de uma vez, e <strong>limpar</strong> um livro se você quiser recomeçá-lo.</p><blockquote>Marque assim que terminar o capítulo. O progresso só vale alguma coisa enquanto for honesto — e um mapa de leitura preenchido de memória não é mapa de nada.</blockquote>",
     "ordem": 17,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   },
   {
     "id": 18,
-    "modulo_id": "perfil",
-    "titulo": "Perfil / ICE",
-    "resumo": "Seus dados e o cartão de emergência",
-    "conteudo": "<p>Guarda os seus dados, incluindo as informações de emergência (ICE) e a recusa de sangue.</p><p>Dica: preencha os contatos de emergência mesmo que pareça improvável precisar — é a tela que outra pessoa vai abrir no seu lugar.</p>",
+    "modulo_id": "calendario",
+    "titulo": "Calendário",
+    "resumo": "Cinco vistas, tipos de evento configuráveis e três indicadores",
+    "conteudo": "<p>Os seus eventos, coloridos pelo tipo. Cinco visualizações: <strong>Dia</strong>, <strong>Semana</strong>, <strong>Mês</strong>, <strong>Ano</strong> e <strong>Agenda</strong> — a última é uma lista corrida, que costuma ser a mais prática no celular.</p><h3>Os três indicadores do topo</h3><ul><li><strong>Horas/semana</strong> — quanto do seu tempo já está comprometido.</li><li><strong>Conflitos</strong> — quantos eventos se sobrepõem. É o indicador que evita descobrir a colisão na hora dela.</li><li><strong>Próx. especial</strong> — quantos dias faltam para o próximo evento marcado como especial.</li></ul><h3>Tipos de evento são seus</h3><p>Os tipos padrão já vêm criados — reunião, assembleia, saída de campo, pessoal — e você pode criar outros, cada um com <strong>nome, cor e ícone</strong>. Há uma opção por tipo: <strong>“Contar no próximo especial”</strong>, que é o que faz uma assembleia aparecer no indicador e um compromisso rotineiro não aparecer.</p><p>Um tipo que já tem eventos <strong>não pode ser excluído</strong> — o app diz isso em vez de deixar eventos órfãos para trás.</p><h3>Criar rápido</h3><p>Tocar num espaço vazio do dia ou da semana já abre o formulário <em>naquele dia e naquela hora</em>. Eventos de <strong>dia inteiro</strong> dispensam horário.</p><blockquote>O cartão do Calendário na tela inicial mostra o que é de hoje. Se ele vive vazio, é sinal de que a agenda está na sua cabeça, e não aqui.</blockquote>",
     "ordem": 18,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   },
   {
     "id": 19,
-    "modulo_id": "tutorial",
-    "titulo": "Tutorial",
-    "resumo": "Este próprio guia",
-    "conteudo": "<p>Este módulo. A lista tem um tópico por módulo, e cada módulo tem um botão “?” que abre o tópico dele direto.</p><p>O conteúdo é curado: ele melhora a cada sincronização, sem precisar atualizar o app.</p>",
+    "modulo_id": "perfil",
+    "titulo": "Perfil / ICE",
+    "resumo": "Seus dados, o cartão de contato e a ficha que outra pessoa vai abrir",
+    "conteudo": "<p>Este módulo tem duas metades, e a segunda é a que importa mais: os <strong>seus dados</strong>, e as <strong>informações de emergência</strong> que alguém pode precisar ler <em>no seu lugar</em>.</p><h3>Cartão de contato</h3><p>Nome, telefone, e-mail, link pessoal e uma observação. Com nome e telefone preenchidos, o app gera um <strong>cartão de visita com QR</strong> — no padrão vCard, que qualquer celular reconhece e salva direto na agenda. Ele fica a um toque no rodapé, de qualquer tela.</p><h3>Saúde (ICE)</h3><p>Tipo sanguíneo, doador de órgãos, alergias, medicamentos em uso e observações médicas. Se houver gestação, entram os meses e a data prevista do parto.</p><h3>Diretrizes de sangue (DPA)</h3><p>A recusa de transfusão, as <strong>frações aceitas por consciência</strong>, o contato do <strong>CoLiH</strong> e o link do scan do cartão físico. Há um controle para marcar que o <strong>cartão físico está atualizado e assinado</strong>, com a data — e o app passa a avisar quando faltam poucos dias para renovar, e a marcar como <em>vencido</em> quando passa. É o tipo de prazo que ninguém lembra sozinho.</p><h3>A ficha de emergência</h3><p>Reunindo tudo isso, o rodapé oferece a <strong>Ficha de emergência</strong>: uma tela única, de leitura imediata, com o essencial em destaque — inclusive o aviso de <strong>não aplicar sangue</strong> e a marca de <strong>gestante</strong>, quando for o caso. Entram também os dados que um atendimento pede: cartão SUS, CPF do titular e a UPA ou hospital de referência.</p><blockquote>Preencha os contatos de emergência mesmo parecendo improvável precisar. Esta é a única tela do Papiro escrita para ser lida <em>por outra pessoa</em> — e no pior dia possível.</blockquote>",
     "ordem": 19,
     "publicar": 1,
-    "data_criacao": 0,
-    "data_atualizacao": 0
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
+  },
+  {
+    "id": 20,
+    "modulo_id": "tutorial",
+    "titulo": "Tutorial",
+    "resumo": "Este próprio guia, e como ele se atualiza",
+    "conteudo": "<p>Este módulo. A lista tem um tópico por módulo do app, na mesma ordem em que eles aparecem na tela inicial, e a <strong>Visão geral</strong> fica separada no alto porque não fala de um módulo, fala do app inteiro.</p><h3>O “?” é o caminho curto</h3><p>Você quase nunca precisa vir até aqui. O cabeçalho de cada módulo tem um <strong>?</strong> que abre o tópico daquele módulo direto. O Tutorial e o Sobre não têm esse botão — eles <em>são</em> a referência, e o botão levaria à tela em que você já está.</p><h3>Ele melhora sem atualizar o app</h3><p>O conteúdo destes tópicos é <strong>curado</strong> e vem pela sincronização, junto com guias, poesias e receitas. Quando um módulo ganha um recurso, o texto correspondente chega no próximo <em>Sincronizar conteúdo</em> — sem baixar versão nova.</p><p>Se um módulo novo chegar antes do texto dele, o app diz honestamente que o tópico ainda não foi escrito, em vez de mostrar uma tela vazia.</p><blockquote>Vale ler de ponta a ponta uma vez. A maioria dos tópicos tem uma regra que só se descobriria errando — e as regras de excluir, do cofre e das metas automáticas são as que mais custam caro para descobrir do jeito difícil.</blockquote>",
+    "ordem": 20,
+    "publicar": 1,
+    "data_criacao": 1786024462903,
+    "data_atualizacao": 1786024462903
   }
 ]

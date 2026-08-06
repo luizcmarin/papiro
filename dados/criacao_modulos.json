@@ -1159,6 +1159,25 @@
     "imagem": "medicao-radio-carbono.svg"
   },
   {
+    "id": 68,
+    "titulo": "A Trajetória da Bíblia",
+    "categoria": "entenda",
+    "tipo": "trajetoria_biblia",
+    "icone": "bi-translate",
+    "ordem": 62,
+    "conceito": "<p>Nenhum manuscrito <em>original</em> da Bíblia sobreviveu. Nenhum. Os materiais eram perecíveis, e o que temos são <strong>cópias de cópias</strong> — milhares delas, em hebraico, aramaico e grego, além de traduções feitas desde o século 3 AEC.</p><p>Isso soa como um problema, e é o oposto: é justamente por serem <strong>milhares</strong> que elas se conferem umas contra as outras. Rolos do Mar Morto mil anos mais antigos que o melhor manuscrito medieval trazem variações de fraseologia — e nenhuma que mude o sentido.</p><p>Mas uma coisa <em>saiu</em> do texto pelo caminho, e não por acidente de cópia. O Tetragrama — as quatro letras hebraicas do nome de Deus — ocorre quase <strong>7.000 vezes</strong> nas Escrituras Hebraicas. Na maioria das Bíblias de hoje ele não aparece nenhuma.</p>",
+    "desafio": "<p>Você vai percorrer <strong>vinte e cinco séculos</strong> numa linha do tempo de duas faixas: em cima o texto, embaixo o nome divino.</p><p>Vai descobrir qual foi a primeira tradução da Bíblia (e que ela <em>trazia</em> o Nome, em letras hebraicas dentro do grego). Vai arrastar um século até achar exatamente onde os manuscritos param de trazê-lo. Vai encontrar Jerônimo escrevendo que o Nome existe — e traduzindo sem ele. Vai ver o que custou a Tyndale devolvê-lo ao inglês em 1530, e quantos anos a Bíblia em português de Almeida levou para ficar pronta.</p><p>No fim, um julgamento: <strong>o que a trajetória inteira autoriza dizer?</strong></p>",
+    "reflexao": "<p>Repare que a linha do tempo tem <em>duas</em> histórias, e elas não terminam igual.</p><p>A do texto é uma história de preservação: copistas, massoretas, 220 manuscritos bíblicos achados no mar Morto, e a conclusão de William H. Green de que <strong>“nenhuma outra obra da antiguidade foi transmitida com tanta exatidão”</strong>. Essa parte é conferível — por comparação, não por confiança.</p><p>A do Nome é uma história de decisão humana, e tem data. Copistas do século 4 o trocaram por Ký·ri·os, “Senhor”. Jerônimo sabia que ele estava lá e não o usou. Mil anos depois, um homem que morreria queimado o devolveu ao inglês. É digno de nota que se alterou <strong>apenas o nome mais vital de todos</strong> — nenhum outro nome bíblico recebeu tratamento igual.</p><p>E é por a remoção estar documentada que ela é reversível: sabe-se <em>onde</em> o Nome estava. <strong>“A palavra do nosso Deus permanece para sempre.”</strong> (Isaías 40:8) A palavra permaneceu. O nome dentro dela esperou vinte séculos para ser recolocado — e hoje traduções em mais de 300 idiomas o trazem de volta.</p>",
+    "referencia": "Isaías 40:8; Mateus 6:9 · Tradução do Novo Mundo (Bíblia de Estudo), apêndices A1 “Princípios de tradução da Bíblia”, A3 “Como a Bíblia chegou até nós”, A4 “O nome divino nas Escrituras Hebraicas” e A5 “O nome divino nas Escrituras Gregas Cristãs” (jw.org) · “O Nome Divino”, Estudo Perspicaz nas Escrituras, vol. 1 (wol.jw.org, doc 1200000757) · verbetes “Septuaginta”, “Vulgata” e “Tyndale, William” (Estudo Perspicaz) · “A primeira Bíblia em português — uma história de perseverança” (doc 2007483) · “‘Completamente equipados para toda boa obra’”, A Sentinela (público) 1.º/8/2015 · alcance de hoje: jw.org/pt/biblioteca/biblia, consultado em 6/8/2026",
+    "link_jw": "https://www.jw.org/pt/biblioteca/biblia/biblia-de-estudo/apendice-a/tetragrama-nome-divino/",
+    "config": "{}",
+    "xp": 150,
+    "publicar": 1,
+    "data_criacao": 1786018667392,
+    "data_atualizacao": 1786018667392,
+    "imagem": "a-trajetoria-da-biblia.svg"
+  },
+  {
     "id": 66,
     "titulo": "O Sangue Invisível da Rã-de-Vidro",
     "categoria": "animal",
