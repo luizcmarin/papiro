@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "nome": "Bloco de tempo",
+    "nome": "Consulta",
     "cor_chave": "tertiary",
     "icone": "relogio",
     "ordem": 2,

@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">A trajetória da Bíblia — o texto, e o nome divino através das eras</title>
+    <desc id="desc">Uma linha do tempo de vinte e cinco séculos, com duas faixas. Em cima, o
+        percurso do texto: a Septuaginta grega no Egito a partir do século 3 AEC, os Rolos do Mar
+        Morto, as primeiras versões em armênio, copta, etíope, georgiano, latim e siríaco, a Vulgata
+        de Jerônimo por volta de 405 EC, o Códice de Leningrado de 1008, o Novo Testamento inglês de
+        Tyndale em 1526, a Bíblia em português de Almeida concluída em 1751 e a Tradução do Novo
+        Mundo, de 1950 a hoje, em 344 idiomas inteira ou em parte. Embaixo, o nome divino: presente
+        no texto hebraico quase 7.000 vezes e também nas cópias gregas da Septuaginta, como o P.
+        Fouad Inv. 266 do século 1 AEC; retirado a partir do século 4, quando o Códice Vaticano e o
+        Códice Sinaítico já não o trazem e o Alexandrino o substitui pela forma abreviada de
+        Kýrios, Senhor; e de volta em parte a partir de 1530, quando o Pentateuco de Tyndale traz
+        Iehouah, a primeira ocorrência do nome pessoal de Deus numa Bíblia em inglês. O eixo é
+        comprimido por eras para que os últimos cinco séculos, onde se concentram os marcos,
+        continuem legíveis.</desc>
+
+    <defs>
+        <pattern id="hachura" width="12" height="12" patternUnits="userSpaceOnUse"
+                 patternTransform="rotate(45)">
+            <rect width="12" height="12" fill="#2f8f5c"/>
+            <rect width="5" height="12" fill="#eef2fa"/>
+        </pattern>
+    </defs>
+
+    <rect width="1400" height="800" fill="#eef2fa"/>
+
+    <text x="700" y="62" text-anchor="middle" font-size="34" font-weight="800" fill="#232a55">
+        A trajetória da Bíblia
+    </text>
+    <text x="700" y="98" text-anchor="middle" font-size="20" fill="#5f6788">
+        vinte e cinco séculos de cópia e tradução — e o que aconteceu com o nome divino
+    </text>
+
+    <!-- ── A faixa de cima: o texto ─────────────────────────────────────── -->
+    <text x="60" y="150" font-size="19" font-weight="700" fill="#5f6788">o texto</text>
+
+    <g font-size="16" fill="#3c4a9e" font-weight="700" text-anchor="middle">
+        <g stroke="#3c4a9e" stroke-width="2.5">
+            <line x1="150" y1="420" x2="150" y2="300"/>
+            <line x1="330" y1="420" x2="330" y2="250"/>
+            <line x1="470" y1="420" x2="470" y2="330"/>
+            <line x1="620" y1="420" x2="620" y2="260"/>
+            <line x1="800" y1="420" x2="800" y2="330"/>
+            <line x1="980" y1="420" x2="980" y2="250"/>
+            <line x1="1150" y1="420" x2="1150" y2="330"/>
+            <line x1="1300" y1="420" x2="1300" y2="260"/>
+        </g>
+        <g fill="#3c4a9e">
+            <circle cx="150" cy="300" r="7"/>
+            <circle cx="330" cy="250" r="7"/>
+            <circle cx="470" cy="330" r="7"/>
+            <circle cx="620" cy="260" r="7"/>
+            <circle cx="800" cy="330" r="7"/>
+            <circle cx="980" cy="250" r="7"/>
+            <circle cx="1150" cy="330" r="7"/>
+            <circle cx="1300" cy="260" r="7"/>
+        </g>
+        <text x="150" y="284">280 AEC</text>
+        <text x="150" y="264" fill="#232a55" font-weight="600">Septuaginta grega</text>
+        <text x="330" y="234">98 EC</text>
+        <text x="330" y="214" fill="#232a55" font-weight="600">Escrituras Gregas concluídas</text>
+        <text x="470" y="314">150 EC</text>
+        <text x="470" y="294" fill="#232a55" font-weight="600">copta, siríaco, latim…</text>
+        <text x="620" y="244">405 EC</text>
+        <text x="620" y="224" fill="#232a55" font-weight="600">Vulgata, de Jerônimo</text>
+        <text x="800" y="314">1008</text>
+        <text x="800" y="294" fill="#232a55" font-weight="600">Códice de Leningrado</text>
+        <text x="980" y="234">1526</text>
+        <text x="980" y="214" fill="#232a55" font-weight="600">Tyndale, em inglês</text>
+        <text x="1150" y="314">1751</text>
+        <text x="1150" y="294" fill="#232a55" font-weight="600">Almeida, em português</text>
+        <text x="1300" y="244">1950–hoje</text>
+        <text x="1300" y="224" fill="#232a55" font-weight="600">Tradução do Novo Mundo</text>
+    </g>
+
+    <!-- ── O eixo, comprimido por eras ──────────────────────────────────── -->
+    <line x1="60" y1="420" x2="1360" y2="420" stroke="#5f6788" stroke-width="3"/>
+    <g stroke="#c3cbe8" stroke-width="2">
+        <line x1="80" y1="410" x2="80" y2="430"/>
+        <line x1="290" y1="410" x2="290" y2="430"/>
+        <line x1="500" y1="410" x2="500" y2="430"/>
+        <line x1="720" y1="410" x2="720" y2="430"/>
+        <line x1="900" y1="410" x2="900" y2="430"/>
+        <line x1="1080" y1="410" x2="1080" y2="430"/>
+        <line x1="1250" y1="410" x2="1250" y2="430"/>
+        <line x1="1360" y1="410" x2="1360" y2="430"/>
+    </g>
+    <g font-size="15" fill="#5f6788" text-anchor="middle">
+        <text x="80" y="452">900 AEC</text>
+        <text x="290" y="452">1 EC</text>
+        <text x="500" y="452">500</text>
+        <text x="720" y="452">1000</text>
+        <text x="900" y="452">1500</text>
+        <text x="1080" y="452">1700</text>
+        <text x="1250" y="452">1900</text>
+        <text x="1360" y="452">2026</text>
+    </g>
+    <text x="700" y="482" text-anchor="middle" font-size="14" fill="#5f6788" font-style="italic">
+        eixo comprimido por eras — os últimos cinco séculos concentram dois terços dos marcos
+    </text>
+
+    <!-- ── A faixa de baixo: o nome divino ──────────────────────────────── -->
+    <text x="60" y="540" font-size="19" font-weight="700" fill="#5f6788">o nome divino</text>
+
+    <g font-size="16" font-weight="700" text-anchor="middle">
+        <g stroke="#b07d10" stroke-width="2.5">
+            <line x1="95" y1="420" x2="95" y2="520"/>
+            <line x1="240" y1="420" x2="240" y2="560"/>
+            <line x1="430" y1="420" x2="430" y2="520"/>
+            <line x1="1010" y1="420" x2="1010" y2="560"/>
+        </g>
+        <g fill="#b07d10">
+            <circle cx="95" cy="520" r="7"/>
+            <circle cx="240" cy="560" r="7"/>
+            <circle cx="430" cy="520" r="7"/>
+            <circle cx="1010" cy="560" r="7"/>
+        </g>
+        <text x="95" y="512" fill="#b07d10" dy="-8">Pedra Moabita</text>
+        <text x="240" y="590" fill="#b07d10">P. Fouad Inv. 266 — o Tetragrama</text>
+        <text x="240" y="610" fill="#232a55" font-weight="600">em letras hebraicas, no texto grego</text>
+        <text x="430" y="512" fill="#c94a45" dy="-8">séc. 4: Vaticano e Sinaítico já sem o Nome</text>
+        <text x="1010" y="590" fill="#b07d10">1530: Tyndale, “Iehouah”</text>
+        <text x="1010" y="610" fill="#232a55" font-weight="600">o Nome volta ao inglês</text>
+    </g>
+
+    <!-- A barra do Nome: presente, substituído, de volta em parte. -->
+    <rect x="60" y="650" width="418" height="46" rx="6" fill="#3c4a9e"/>
+    <rect x="478" y="650" width="532" height="46" rx="6" fill="#c3cbe8"/>
+    <rect x="1010" y="650" width="350" height="46" rx="6" fill="url(#hachura)"/>
+
+    <g font-size="17" font-weight="700" text-anchor="middle">
+        <text x="269" y="680" fill="#ffffff">no texto e nas cópias</text>
+        <text x="744" y="680" fill="#232a55">substituído por “Senhor”</text>
+        <text x="1185" y="680" fill="#ffffff">de volta, em parte</text>
+    </g>
+
+    <text x="700" y="740" text-anchor="middle" font-size="18" fill="#232a55">
+        Quase <tspan font-weight="800">7.000</tspan> ocorrências no texto hebraico. A Tradução do
+        Novo Mundo restaura <tspan font-weight="800">7.216</tspan>, sendo
+        <tspan font-weight="800">237</tspan> nas Escrituras Gregas Cristãs.
+    </text>
+    <text x="700" y="772" text-anchor="middle" font-size="15" fill="#5f6788">
+        Fontes: apêndices A1, A3, A4 e A5 da Tradução do Novo Mundo (Bíblia de Estudo);
+        “O Nome Divino” (it-1); verbetes “Septuaginta”, “Vulgata” e “Tyndale”.
+    </text>
+</svg>

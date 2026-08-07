@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800" role="img"
+     aria-labelledby="tit desc" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <title id="tit">Medição rádio-carbono — o relógio, e o que o atrasa</title>
+    <desc id="desc">O caminho do carbono-14: raios cósmicos batem no nitrogênio-14 da alta
+        atmosfera e o convertem em carbono-14, que se mistura ao ar como gás carbônico. A planta o
+        absorve, o animal come a planta, e todo ser vivo fica com a mesma proporção do ar enquanto
+        está vivo. Na morte a reposição para e o carbono-14 decai pela metade a cada 5.730 anos: a
+        curva desce para 50% em uma meia-vida, 25% em duas e cerca de 6% em quatro, ficando
+        inutilizável depois de umas dez, perto de 50.000 anos. Três coisas estragam a leitura: a
+        contaminação por carbono moderno, que numa amostra antiga arranca milhares de anos porque o
+        sinal original já era menos de 1%; o efeito reservatório, que faz conchas e ossos de dieta
+        marinha nascerem séculos mais velhos; e os platôs da curva de calibração, trechos quase
+        horizontais em que uma única medida corresponde a um intervalo largo de idades verdadeiras.
+        A conclusão é de bom senso: a física é firme, e o que decide o valor de uma data é a
+        qualidade da amostra e a margem declarada.</desc>
+
+    <defs>
+        <linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#5d86b8"/>
+            <stop offset="1" stop-color="#cfe0f5"/>
+        </linearGradient>
+    </defs>
+
+    <rect width="1400" height="800" fill="#eef2fa"/>
+
+    <!-- ── A atmosfera e a fabricação do C-14 ───────────────────────────── -->
+    <rect x="40" y="56" width="620" height="300" rx="16" fill="url(#ceu)"/>
+    <rect x="40" y="316" width="620" height="40" rx="0" fill="#8a9c62"/>
+
+    <text x="350" y="92" text-anchor="middle" font-size="21" font-weight="700" fill="#ffffff">
+        A fábrica fica no alto
+    </text>
+
+    <g stroke="#f2c14e" stroke-width="4" stroke-linecap="round">
+        <path d="M110 108 L136 156"/>
+        <path d="M232 100 L258 148"/>
+        <path d="M470 104 L496 152"/>
+        <path d="M590 110 L616 158"/>
+    </g>
+    <text x="120" y="186" font-size="15" font-weight="600" fill="#23324d">raios cósmicos</text>
+
+    <circle cx="272" cy="214" r="34" fill="#5f6788"/>
+    <text x="272" y="222" text-anchor="middle" font-size="24" font-weight="800" fill="#ffffff">N</text>
+    <text x="300" y="200" font-size="14" font-weight="700" fill="#ffffff">14</text>
+
+    <text x="352" y="224" text-anchor="middle" font-size="34" font-weight="800" fill="#23324d">→</text>
+
+    <circle cx="432" cy="214" r="34" fill="#c94a45"/>
+    <text x="432" y="222" text-anchor="middle" font-size="24" font-weight="800" fill="#ffffff">C</text>
+    <text x="460" y="200" font-size="14" font-weight="700" fill="#ffffff">14</text>
+
+    <path d="M432 254 C 500 300, 420 300, 350 316" fill="none" stroke="#c94a45" stroke-width="3"
+          stroke-dasharray="8 6"/>
+
+    <g stroke="#3f7a35" stroke-width="6" stroke-linecap="round">
+        <path d="M350 316 L350 268"/>
+    </g>
+    <ellipse cx="330" cy="278" rx="20" ry="9" transform="rotate(-28 330 278)" fill="#4e9c41"/>
+    <ellipse cx="370" cy="278" rx="20" ry="9" transform="rotate(28 370 278)" fill="#4e9c41"/>
+
+    <text x="350" y="344" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">
+        enquanto vive, repõe o que decai
+    </text>
+
+    <!-- ── A curva de decaimento ────────────────────────────────────────── -->
+    <rect x="700" y="56" width="660" height="300" rx="16" fill="#ffffff" stroke="#c3cbe8"/>
+    <text x="1030" y="92" text-anchor="middle" font-size="21" font-weight="700" fill="#232a55">
+        Metade a cada 5.730 anos
+    </text>
+
+    <g stroke="#5f6788" stroke-width="2" fill="none">
+        <path d="M760 120 L760 316 L1320 316"/>
+    </g>
+    <g stroke="#c3cbe8" stroke-width="1.5" stroke-dasharray="3 5">
+        <path d="M900 120 L900 316"/>
+        <path d="M1040 120 L1040 316"/>
+        <path d="M1180 120 L1180 316"/>
+        <path d="M1320 120 L1320 316"/>
+    </g>
+
+    <path d="M760 130 C 830 130, 860 210, 900 223 C 960 243, 1000 280, 1040 285
+             C 1110 294, 1150 307, 1180 309 C 1250 313, 1290 315, 1320 316"
+          fill="none" stroke="#3c4a9e" stroke-width="4"/>
+
+    <g font-size="14" fill="#5f6788" text-anchor="end">
+        <text x="752" y="135">100%</text>
+        <text x="752" y="228">50%</text>
+        <text x="752" y="290">25%</text>
+    </g>
+    <g font-size="14" fill="#5f6788" text-anchor="middle">
+        <text x="900" y="338">1 meia-vida</text>
+        <text x="1040" y="338">2</text>
+        <text x="1180" y="338">3</text>
+        <text x="1320" y="338">4</text>
+    </g>
+
+    <circle cx="900" cy="223" r="8" fill="#b07d10"/>
+    <text x="912" y="206" font-size="15" font-weight="700" fill="#b07d10">5.730 anos</text>
+
+    <!-- ── Os três estragos ─────────────────────────────────────────────── -->
+    <text x="700" y="424" text-anchor="middle" font-size="22" font-weight="800" fill="#232a55">
+        Três coisas estragam a leitura
+    </text>
+
+    <g>
+        <rect x="40" y="452" width="420" height="220" rx="16" fill="#ffffff" stroke="#c3cbe8"/>
+        <text x="250" y="490" text-anchor="middle" font-size="18" font-weight="700" fill="#c94a45">
+            Contaminação
+        </text>
+        <text x="250" y="522" text-anchor="middle" font-size="15" fill="#232a55">
+            1,9% de carbono moderno
+        </text>
+        <text x="250" y="548" text-anchor="middle" font-size="15" fill="#232a55">
+            numa amostra de 40.000 anos
+        </text>
+        <text x="250" y="596" text-anchor="middle" font-size="26" font-weight="800" fill="#c94a45">
+            40.000 → 30.000
+        </text>
+        <text x="250" y="640" text-anchor="middle" font-size="14" fill="#5f6788">
+            o que restava do original já era menos de 1%
+        </text>
+    </g>
+
+    <g>
+        <rect x="490" y="452" width="420" height="220" rx="16" fill="#ffffff" stroke="#c3cbe8"/>
+        <text x="700" y="490" text-anchor="middle" font-size="18" font-weight="700" fill="#3aa0ff">
+            Efeito reservatório
+        </text>
+        <text x="700" y="522" text-anchor="middle" font-size="15" fill="#232a55">
+            a água ficou séculos longe do ar
+        </text>
+        <text x="700" y="548" text-anchor="middle" font-size="15" fill="#232a55">
+            e decaiu o tempo todo
+        </text>
+        <text x="700" y="596" text-anchor="middle" font-size="26" font-weight="800" fill="#3aa0ff">
+            a concha já nasce velha
+        </text>
+        <text x="700" y="640" text-anchor="middle" font-size="14" fill="#5f6788">
+            viés conhecido: mede-se e corrige-se, por região
+        </text>
+    </g>
+
+    <g>
+        <rect x="940" y="452" width="420" height="220" rx="16" fill="#ffffff" stroke="#c3cbe8"/>
+        <text x="1150" y="490" text-anchor="middle" font-size="18" font-weight="700" fill="#b07d10">
+            Platô de calibração
+        </text>
+        <text x="1150" y="522" text-anchor="middle" font-size="15" fill="#232a55">
+            onde a curva deita, uma medida
+        </text>
+        <text x="1150" y="548" text-anchor="middle" font-size="15" fill="#232a55">
+            cabe em muitas idades
+        </text>
+        <text x="1150" y="596" text-anchor="middle" font-size="26" font-weight="800" fill="#b07d10">
+            margem larga, e honesta
+        </text>
+        <text x="1150" y="640" text-anchor="middle" font-size="14" fill="#5f6788">
+            a data continua certa — diz menos, abertamente
+        </text>
+    </g>
+
+    <!-- ── O juízo ──────────────────────────────────────────────────────── -->
+    <rect x="40" y="700" width="1320" height="66" rx="16" fill="#232a55"/>
+    <text x="700" y="742" text-anchor="middle" font-size="20" font-weight="700" fill="#ffffff">
+        A física é firme. O que decide é a qualidade da amostra — e a margem faz parte do resultado.
+    </text>
+</svg>

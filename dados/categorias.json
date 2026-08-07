@@ -24,6 +24,14 @@
     "publicar": 1
   },
   {
+    "id": 17,
+    "nome": "Donativos",
+    "icone": "[JW]",
+    "hex_cor": "#3498DB",
+    "limite_mensal": 0,
+    "publicar": 1
+  },
+  {
     "id": 8,
     "nome": "Educação",
     "icone": "🎓",

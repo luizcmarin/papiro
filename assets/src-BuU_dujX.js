@@ -1,0 +1,2 @@
+function e(e){return e}var t=e({name:`papiro`,displayName:`Papiro`,apiEndpoint:`./dados`,themeColor:`#0d6efd`,targets:[`pwa`],features:{anotacoes:!0,guias:!0,poesia:!0,receitas:!0,jogo:!0,criacao:!0,entenda:!0,cronologia:!0,caderno:!0,prep:!0,financeiro:!0,metas:!0,ministerio:!0,servico:!0,estudo:!0,leitura:!0,calendario:!0,perfil:!0,tutorial:!0,sobre:!0}});export{t};
+//# sourceMappingURL=src-BuU_dujX.js.map
