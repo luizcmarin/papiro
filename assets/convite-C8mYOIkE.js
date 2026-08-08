@@ -1,4 +1,4 @@
-import{t as e}from"./src-BuU_dujX.js";import{t}from"./strings-7lrUkA26.js";import{d as n,f as r,l as i,u as a}from"./index-Usv0NSFy.js";var o=`https://luizcmarin.github.io/papiro`;function s(e=o){return`${t.convite.mensagem}\n\n${e}`}function c(e){return`https://wa.me/?text=${encodeURIComponent(s(e))}`}async function l(e){let{default:t}=await n(async()=>{let{default:e}=await import(`./qrcode-DtWdxa9d.js`);return{default:e}},[],import.meta.url),r=t(0,`M`);return r.addData(e),r.make(),r.createDataURL(6,8)}async function u(e){try{await navigator.clipboard.writeText(s(e)),i(t.convite.copiado)}catch{i(t.leitura.semCopiar,`warning`)}}async function d(n){if(typeof navigator.share!=`function`){await u(n);return}try{await navigator.share({title:e.displayName,text:t.convite.mensagem,url:n})}catch{}}function f(){let n=o,i=``;return a(t.convite.titulo,void 0,(a,o,s)=>(i===``&&l(n).then(e=>{i=e,s()}),r`
+import{t as e}from"./src-BuU_dujX.js";import{t}from"./strings-7lrUkA26.js";import{d as n,f as r,l as i,u as a}from"./index-BJjGpUu5.js";var o=`https://luizcmarin.github.io/papiro`;function s(e=o){return`${t.convite.mensagem}\n\n${e}`}function c(e){return`https://wa.me/?text=${encodeURIComponent(s(e))}`}async function l(e){let{default:t}=await n(async()=>{let{default:e}=await import(`./qrcode-DtWdxa9d.js`);return{default:e}},[],import.meta.url),r=t(0,`M`);return r.addData(e),r.make(),r.createDataURL(6,8)}async function u(e){try{await navigator.clipboard.writeText(s(e)),i(t.convite.copiado)}catch{i(t.leitura.semCopiar,`warning`)}}async function d(n){if(typeof navigator.share!=`function`){await u(n);return}try{await navigator.share({title:e.displayName,text:t.convite.mensagem,url:n})}catch{}}function f(){let n=o,i=``;return a(t.convite.titulo,void 0,(a,o,s)=>(i===``&&l(n).then(e=>{i=e,s()}),r`
         <div class="convite">
           <img class="convite__logo" src="icons/papiro.svg" alt="" aria-hidden="true" />
           <h2 class="convite__nome">${e.displayName}</h2>
@@ -27,4 +27,4 @@ import{t as e}from"./src-BuU_dujX.js";import{t}from"./strings-7lrUkA26.js";impor
           </st-button>
         </div>
       `),{semCabecalho:!0,classe:`dialogo-convite`})}export{f as abrirConvite};
-//# sourceMappingURL=convite-CltDbRUs.js.map
+//# sourceMappingURL=convite-C8mYOIkE.js.map
